@@ -140,37 +140,45 @@
    "approved": true
   },
   "sukkah-20a-10-10": {
-   "note": "Reish Lakish, about to quote a ruling of Rabbi Hiyya and his sons, first honored them: 'I am the atonement for Rabbi Hiyya and his sons.' When Torah was forgotten in the Land of Israel, he said, Ezra came up from Babylonia and reestablished it; when it was forgotten again, Hillel the Babylonian came up and reestablished it; and when it was forgotten yet again, Rabbi Hiyya and his sons came up and reestablished it. He then cited their ruling that Rabbi Dosa and the Sages did not disagree about the soft mats of Usha.",
-   "why": "Reish Lakish had just explained a disputed word as meaning ordinary mats; the Gemara shows he is consistent, since he cites Rabbi Hiyya and his sons on which mats Rabbi Dosa and the Sages argued over.",
+   "note": "Reish Lakish said: I am the atonement for Rabbi Ḥiyya and his sons. When the Torah was forgotten in the Land of Israel, Ezra came up from Babylonia and reestablished it; when it was forgotten again, Hillel the Babylonian came up and reestablished it; when it was forgotten yet again, Rabbi Ḥiyya and his sons came up and reestablished it. He then cites their ruling: Rabbi Dosa and the Rabbis agreed that the mats of Usha can become ritually impure and those of Tiberias cannot, and disagreed only about mats from other places.",
+   "why": "The Gemara is asking what the word ḥotzalot means. Reish Lakish says it means plain mats, and this tribute introduces the teaching of Rabbi Ḥiyya and his sons on which that view rests.",
    "people": [
     {
      "name": "Reish Lakish",
-     "about": "The Sage who praises Rabbi Hiyya and his sons and quotes their ruling."
+     "about": "Sage who honors Rabbi Ḥiyya and his sons and cites their ruling"
     },
     {
-     "name": "Rabbi Hiyya",
-     "about": "A Sage who, with his sons, came up from Babylonia and restored forgotten Torah, in Reish Lakish's account."
+     "name": "Rabbi Ḥiyya",
+     "about": "Came up from Babylonia with his sons and restored forgotten Torah"
     },
     {
      "name": "Ezra",
-     "about": "Came up from Babylonia and reestablished the forgotten Torah, the first of the three in Reish Lakish's list."
+     "about": "Came up from Babylonia and restored the forgotten Torah"
     },
     {
      "name": "Hillel the Babylonian",
-     "about": "Came up from Babylonia and reestablished the Torah when it was forgotten a second time."
+     "about": "Came up from Babylonia and restored the forgotten Torah"
+    },
+    {
+     "name": "Rabbi Dosa",
+     "about": "Sage whose dispute with the Rabbis about mats is explained"
     }
    ],
    "terms": [
     {
      "term": "I am the atonement for",
-     "meaning": "A phrase of deep respect, roughly 'may I suffer in their place', said before quoting someone greatly honored."
+     "meaning": "An expression of deep devotion and respect for someone."
     },
     {
-     "term": "Mats of Usha",
-     "meaning": "Soft mats made in the town of Usha for lying on; because they are made for use, they can become ritually impure."
+     "term": "ritually impure",
+     "meaning": "A state, under Torah law, that bars a person or object from holy use; some objects can take it on and others cannot."
+    },
+    {
+     "term": "Usha and Tiberias",
+     "meaning": "Two towns: the text says Usha's mats were made for lying on and Tiberias' mats for partitions and roofing."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "sukkah-20b-6-6": {
@@ -256,34 +264,34 @@
    "approved": true
   },
   "sukkah-27a-0-1": {
-   "note": "When people brought Rabban Yohanan ben Zakkai a cooked dish to taste, and brought Rabban Gamliel two dates and a bucket of water, each said: take them up to the sukka. In contrast, when they gave Rabbi Tzadok less than an egg-bulk of food, he took it in a cloth, ate it outside the sukka, and said no blessing after it.",
-   "why": "The prior mishna allows a snack outside the sukka; the Gemara says this one teaches that a person may be stricter. It then infers from Rabbi Tzadok that an egg-bulk would need a sukka, against Rav Yosef and Abaye, and rejects the inference.",
+   "note": "Rabban Yoḥanan ben Zakkai was brought a cooked dish to taste, and Rabban Gamliel was brought two dates and a bucket of water, and each said: take them up to the sukka. But when Rabbi Tzadok was given less than an egg-bulk of food, he took it in a cloth, ate it outside the sukka, and did not say a blessing after it.",
+   "why": "The previous mishna allows a snack outside the sukka, so the Gemara asks why this one tells a story that seems to contradict it; it answers that one may choose to be strict, then weighs Rabbi Tzadok's case against Rav Yosef and Abaye.",
    "people": [
     {
-     "name": "Rabban Yohanan ben Zakkai",
-     "about": "Was brought a cooked dish to taste and had it taken to the sukka."
+     "name": "Rabban Yoḥanan ben Zakkai",
+     "about": "Brought a cooked dish to taste, he insists on eating it in the sukka"
     },
     {
      "name": "Rabban Gamliel",
-     "about": "Was brought two dates and a bucket of water and had them taken to the sukka."
+     "about": "Brought two dates and water, he insists on having them in the sukka"
     },
     {
      "name": "Rabbi Tzadok",
-     "about": "Ate less than an egg-bulk of food outside the sukka, holding it in a cloth."
+     "about": "Eats a small amount outside the sukka without a blessing afterward"
     }
    ],
    "terms": [
     {
-     "term": "Egg-bulk",
-     "meaning": "The volume of an egg, a standard minimum measure for food in Jewish law."
+     "term": "sukka",
+     "meaning": "The booth in which Jews eat during the festival of Sukkot."
     },
     {
-     "term": "Blessing after eating",
-     "meaning": "The thanks recited after a meal; the translation explains Rabbi Tzadok held it is not required for so small an amount."
+     "term": "egg-bulk",
+     "meaning": "A measure of food the size of an egg; less than that is treated here as too little to require a sukka, hand-washing or a blessing afterward."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "sukkah-27b-7-7": {
    "note": "Rabbi Elai went to greet his teacher, Rabbi Eliezer, in Lod on the Festival. Rabbi Eliezer said to him: 'Elai, you are not one of those who rest on the Festival.' For Rabbi Eliezer used to say: 'I praise the lazy, who do not leave their houses on the Festival,' since it is written, 'You shall rejoice, you and your household.'",

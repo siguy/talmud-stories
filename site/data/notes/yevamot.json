@@ -274,38 +274,38 @@
    "why": "Rav has ruled that a slave bought from a gentile who immerses for conversion before his new Jewish owner immerses him goes free. Rav Hisda infers from this case that had they immersed after her they would not have gone free, and raises it as a challenge; Rava answers it."
   },
   "yevamot-46a-9-9": {
-   "note": "When Rav Ashi wanted to immerse his slave Minyamin, he handed him over to Ravina and Rav Aha son of Rava and told them he would hold them responsible for him. They put a bridle on Minyamin's neck; at the moment of immersion they loosened it, and then tightened it again.",
-   "why": "Shmuel has just said an owner must hold his slave firmly in the water, so that the immersion counts as entering slavery rather than conversion to freedom. This incident shows how it was done; the Gemara then explains each step.",
+   "note": "When Rav Ashi wanted his slave Minyamin immersed, he handed him to Ravina and Rav Aḥa son of Rava, warning that he would hold them responsible. They put a bridle on his neck, loosened it at the moment of immersion and tightened it again at once; the Gemara explains this let the water reach him and kept him from declaring first that he was immersing to become a free man. As he lifted his head from the water they put a bucket of clay on it and told him: Go, take this to your master's house.",
+   "why": "Shmuel has just said that to stop a slave from declaring his immersion is for freedom, the owner must hold him tightly in the water; this incident shows how that was done.",
    "people": [
     {
      "name": "Minyamin",
-     "about": "Rav Ashi's slave, who is being immersed."
+     "about": "Rav Ashi's slave, who is to be immersed"
     },
     {
      "name": "Rav Ashi",
-     "about": "Minyamin's owner, who hands him to two Sages for the immersion."
+     "about": "Minyamin's master"
     },
     {
      "name": "Ravina",
-     "about": "One of the two Sages who perform the immersion."
+     "about": "One of the two Sages who carry out the immersion"
     },
     {
-     "name": "Rav Aḥa, son of Rava",
-     "about": "The other Sage who performs the immersion."
+     "name": "Rav Aḥa son of Rava",
+     "about": "The other Sage who carries out the immersion"
     }
    ],
    "terms": [
     {
-     "term": "immerse",
-     "meaning": "A gentile slave acquired by a Jew is immersed in a ritual bath. If the slave declares it is for conversion as a free man, he goes free."
+     "term": "immersion",
+     "meaning": "Dipping in a ritual pool; a slave immersed for slavery joins a Jewish household as a slave, but if he immerses for freedom it makes him a free Jew."
     },
     {
-     "term": "bridle",
-     "meaning": "A strap placed on the slave's neck to show the owner's control during the immersion."
+     "term": "interposition",
+     "meaning": "Anything between the body and the water, which makes a ritual immersion invalid."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "yevamot-46a-13-14": {
    "note": "Rabbi Ḥiyya bar Abba visited Gavla and saw several things that troubled the rules: women pregnant by men who were circumcised but had not yet immersed to finish converting, wine being poured by non-Jews, and lupines cooked by non-Jews that Jews were eating. He said nothing there, but reported it to Rabbi Yoḥanan. Rabbi Yoḥanan told him to announce publicly that the children were mamzerim and the wine and lupines forbidden, being strict because the townspeople were not learned and might otherwise slip into real violations.",
@@ -898,33 +898,42 @@
    "approved": false
   },
   "yevamot-77b-8-9": {
-   "note": "Rav Shmuel bar Yehuda came from Eretz Yisrael and reported a baraita taught before Rabbi Yochanan about whether Ammonite women and their children are fit to marry into the congregation. Rabbi Yochanan told him to go teach it outside the study hall, meaning it is not accepted law. He said the first part was already well known and the second was unnecessary, since the son of an Ammonite is simply an Ammonite.",
+   "note": "When Rav Shmuel bar Yehuda came from the Land of Israel, he reported that Rabbi Zakkai once recited a baraita before Rabbi Yoḥanan: an Ammonite woman is fit, her son from an Ammonite man is unfit, and her daughter is fit, but only when both parents converted; her daughter from an Ammonite married to a Jewish woman is unfit. Rabbi Yoḥanan told him: Go out and teach it outside. He took the teaching apart line by line, showing which parts were obvious, and rejected the last line.",
+   "why": "Rav Yosef has just supported Rabbi Yoḥanan's view that the daughter of an Ammonite convert and a Jewish woman may marry a priest; this report shows Rabbi Yoḥanan dismissing a baraita that says otherwise.",
    "people": [
     {
      "name": "Rav Shmuel bar Yehuda",
-     "about": "came from Eretz Yisrael"
+     "about": "A Sage who brings this report from the Land of Israel"
     },
     {
      "name": "Rabbi Zakkai",
-     "about": "taught the baraita before Rabbi Yochanan"
+     "about": "The Sage who recites the baraita"
     },
     {
-     "name": "Rabbi Yochanan",
-     "about": "rejected it"
+     "name": "Rabbi Yoḥanan",
+     "about": "The Sage who rejects the baraita"
     }
    ],
    "terms": [
     {
-     "term": "baraita",
-     "meaning": "A teaching from the time of the Mishnah that was not included in it."
+     "term": "Ammonite",
+     "meaning": "A member of a nation the Torah bars from marrying into Israel; the Sages apply the ban to men only."
     },
     {
-     "term": "Ammonite",
-     "meaning": "A member of the ancient nation of Ammon; Ammonite men may not marry into the congregation, but the women may."
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages that was not included in the Mishna."
+    },
+    {
+     "term": "Go out and teach it outside",
+     "meaning": "A dismissal: this teaching is unreliable and should not be studied in the study hall."
+    },
+    {
+     "term": "priesthood",
+     "meaning": "Families of priests descended from Aaron, who may marry only women of qualifying lineage."
     }
    ],
-   "approved": true,
-   "why": "Rabbi Yohanan has just been cited as permitting the daughter of an Ammonite convert and a Jewish woman to marry a priest. This teaching says she is unfit, so he rejects it as unreliable."
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "yevamot-78a-12-12": {
    "note": "Rabbi Yehuda recalls his friend Minyamin, an Egyptian convert who studied with Rabbi Akiva. Minyamin said that he, a first-generation Egyptian convert, had married another first-generation Egyptian convert, and that he planned to marry off his son to a second-generation Egyptian convert so that his grandson would be allowed to enter the congregation. The Gemara adds that Rabbi Yohanan told the teacher reciting this account to change it: Minyamin meant to marry his son to a first-generation convert.",
@@ -1602,26 +1611,30 @@
    "approved": true
   },
   "yevamot-108a-7-7": {
-   "note": "The daughters-in-law of Abdan rebelled against their husbands. Rabbi sent a pair of Sages to examine them. Some women said to them, 'Look, your husbands are coming,' and they answered, 'Let them be your husbands.'",
-   "why": "The Gemara asks whether Rabbi Yehuda ben Beteira's rule, that a minor's betrothal to another man counts as refusing her husband, applies even if she was married. Rabbi calls this reply the greatest refusal, but the Gemara says they were only betrothed.",
+   "note": "The daughters-in-law of Abdan rebelled against their husbands, and Rabbi Yehuda HaNasi sent two Sages to look into it. When some women said to the daughters-in-law, Look, your husbands are coming, they answered: Let them be your husbands. Rabbi Yehuda HaNasi said: There is no greater refusal than this.",
+   "why": "The Gemara is asking whether something other than a formal refusal can end a minor's marriage, even after full marriage; it brings this case, argues the women may only have been betrothed, and still rules with Rabbi Yehuda ben Beteira.",
    "people": [
     {
      "name": "Abdan",
-     "about": "The father-in-law of the young wives who reject their husbands."
+     "about": "The man whose daughters-in-law rebel against their husbands"
     },
     {
-     "name": "Rabbi",
-     "about": "Rabbi Yehuda HaNasi, who sends two Sages to examine the women."
+     "name": "Rabbi Yehuda HaNasi",
+     "about": "The leader of the Sages who sends two Sages and rules on the case"
     }
    ],
    "terms": [
     {
-     "term": "rebelled",
-     "meaning": "Here, the young wives refused to stay married to their husbands; a girl married off as a minor could end the marriage by refusing."
+     "term": "refusal",
+     "meaning": "A girl married off as a minor by her mother or brother could leave the marriage by declaring she refuses her husband, without a divorce."
+    },
+    {
+     "term": "betrothed and married",
+     "meaning": "Jewish marriage had two stages: betrothal, which already binds the couple, and full marriage, when they begin living together."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "yevamot-108b-10-11": {
    "note": "In a time of danger a ruling was needed: may a girl who left her first husband by a bill of divorce, and her second by refusal, return to the first? Those involved hired a man for four hundred dinars to carry the question. He asked Rabbi Akiva, who was in prison, and he forbade it; he asked Rabbi Yehuda ben Beteira in Netzivin, and he forbade it too. Rav Yehuda, quoting Rav, reads this into the verse 'We have drunk our water for money.'",
@@ -1658,25 +1671,41 @@
    "approved": true
   },
   "yevamot-108b-14-14": {
-   "note": "In this telling, the question was whether a minor could refuse her marriage after her husband's death so that levirate marriage could go ahead. Those involved hired two men for four hundred dinars. They asked Rabbi Akiva in prison, and he forbade it; they asked Rabbi Yehuda ben Beteira in Netzivin, and he forbade it too.",
-   "why": "Rabbi Yishmael, son of Rabbi Yosei, says the question in Rav's version was too obvious to need asking, and gives this version instead, about refusal after the husband's death.",
+   "note": "In a time of Roman persecution, a question had to be sent to the Sages. Rabbi Yishmael son of Rabbi Yosei says it concerned a girl who, as a minor, married a man's maternal uncle, and then married that man's paternal brother, who died: could she now refuse her first marriage, undoing it, so that her co-wife could marry the man in levirate marriage? Those involved hired two men for four hundred dinars, who asked Rabbi Akiva in prison and Rabbi Yehuda ben Beteira in Netzivin. Both forbade it.",
+   "why": "The Gemara is identifying which Sages stand behind the mishna's rules on a minor who left one husband by divorce and another by refusal; Rav cited this episode, and Rabbi Yishmael son of Rabbi Yosei corrects which question was asked.",
    "people": [
     {
+     "name": "Rabbi Yishmael son of Rabbi Yosei",
+     "about": "The Sage who says what question was really asked"
+    },
+    {
      "name": "Rabbi Akiva",
-     "about": "Asked the question while in prison and ruled it forbidden."
+     "about": "A Sage held in a Roman prison, who forbids it"
     },
     {
      "name": "Rabbi Yehuda ben Beteira",
-     "about": "Asked the question in Netzivin and also ruled it forbidden."
+     "about": "A Sage in Netzivin, who also forbids it"
     }
    ],
    "terms": [
     {
-     "term": "dinar",
-     "meaning": "A silver coin; four hundred dinars was a large fee, reflecting the danger of the errand."
+     "term": "refusal",
+     "meaning": "A girl married off as a minor could leave the marriage by declaring she refuses her husband, which undoes it."
+    },
+    {
+     "term": "levirate marriage",
+     "meaning": "When a man dies childless, his brother may marry his widow, or one of his widows if he had several."
+    },
+    {
+     "term": "co-wife",
+     "meaning": "Another wife of the same husband."
+    },
+    {
+     "term": "secondary forbidden relative",
+     "meaning": "A relative one may not marry by rabbinic law, beyond the Torah's own list."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "yevamot-110a-4-6": {

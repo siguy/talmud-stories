@@ -124,7 +124,7 @@
         '<h1>' + esc(refLabel(s)) + '</h1>' +
         (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') +
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span> ') +
-        (s.extended ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
+        (s.extended && (s.extended.start_back || s.extended.end_forward) ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
         (s.summary ? '<p class="summary">' + esc(s.summary) + '</p>' : '') + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
         '<div class="actions"><button id="read-btn" class="btn primary" aria-pressed="' + read.has(id) + '"></button>' +
         '<a class="btn" href="' + sefariaUrl(s) + '" target="_blank" rel="noopener">Open on Sefaria</a></div>' +

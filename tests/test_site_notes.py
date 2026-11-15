@@ -50,10 +50,12 @@ def test_a_flagged_draft_is_held():
     assert n["approved"] is False and held[STORY["id"]].startswith("Not a story")
 
 
-def test_a_person_not_in_the_story_holds_the_draft():
+def test_a_person_from_outside_the_story_is_a_warning_not_a_hold():
+    """Simon 2026-11-15: names from the surrounding discussion are fine as background."""
     held = {}
+    B.PERSON_WARNINGS.clear()
     run({}, draft(people=[{"name": "Rabbi Akiva", "about": "x"}]), held)
-    assert "Rabbi Akiva" in held[STORY["id"]]
+    assert STORY["id"] not in held and any("Rabbi Akiva" in w for w in B.PERSON_WARNINGS)
 
 
 def test_a_bad_why_on_an_approved_note_is_dropped_and_the_note_still_ships():

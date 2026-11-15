@@ -1,0 +1,798 @@
+{
+ "arakhin-19a-3-9": {
+  "action": "adjust",
+  "first_pos": 637,
+  "last_pos": 637,
+  "reason": "The incident of Yirmatya's mother is told in full in segment 6; segments 7-12 are rulings on weight vows and the Gemara's reconciliation of the incident."
+ },
+ "avodah_zarah-11b-2-3": {
+  "action": "keep",
+  "reason": "Segments 6-7 hold the whole description of the Roman festival, with the legal discussion outside on both sides."
+ },
+ "avodah_zarah-17b-3-13": {
+  "action": "merge",
+  "merge_with": "avodah_zarah-18a-3-3",
+  "reason": "The directly following site story gives the reason for the daughter's sentence, which completes this same trial narrative."
+ },
+ "avodah_zarah-19a-18-18": {
+  "action": "keep",
+  "reason": "Segment 7 mixes the end of Rav Hisda's words with Rabbi Tanhum's teaching and cannot be cut, so it stays; the boundaries are otherwise right."
+ },
+ "avodah_zarah-20b-2-2": {
+  "action": "keep",
+  "reason": "The incident it answers is a separate site story not adjacent to this segment, and the segments before are legal, so no boundary change can complete it."
+ },
+ "avodah_zarah-37a-2-3": {
+  "action": "adjust",
+  "first_pos": 1003,
+  "last_pos": 1005,
+  "reason": "Segment 8 answers the story's closing question (what else he permitted), so it is added to finish the exchange."
+ },
+ "avodah_zarah-39a-10-10": {
+  "action": "merge",
+  "merge_with": "avodah_zarah-39a-9-9",
+  "reason": "The directly preceding site story holds the setting of the same Rabba bar bar Hana incident (the tzahanta called batei)."
+ },
+ "avodah_zarah-39a-9-9": {
+  "action": "merge",
+  "merge_with": "avodah_zarah-39a-10-10",
+  "reason": "The directly following site story is the ending of the same Rabba bar bar Hana incident that this segment begins."
+ },
+ "avodah_zarah-43a-13-15": {
+  "action": "adjust",
+  "first_pos": 1215,
+  "last_pos": 1216,
+  "reason": "Segment 6 is a pure legal baraita on replicas of Temple vessels; the Hasmonean candelabrum report is in segments 7-8."
+ },
+ "bava_batra-11a-0-0": {
+  "action": "adjust",
+  "first_pos": 260,
+  "last_pos": 261,
+  "reason": "Segment 6 is the end of a sentence begun in segment 5 (Rava gave the money to gentile poor and Rabbi Ami was angry because...), so segment 5 is added to make it readable."
+ },
+ "bava_batra-11a-1-3": {
+  "action": "keep",
+  "reason": "Binyamin the righteous and King Munbaz are two different charity stories sharing one background, which is acceptable, and dropping Munbaz would remove it from the site."
+ },
+ "bava_batra-149a-2-4": {
+  "action": "adjust",
+  "first_pos": 3178,
+  "last_pos": 3181,
+  "reason": "Segment 9 holds the outcome (the document of admission and Rava's anger), so it is added to complete the story."
+ },
+ "bava_batra-151b-7-7": {
+  "action": "keep",
+  "reason": "The incident and the legal objection share one segment that cannot be cut, and the surrounding segments are legal argument."
+ },
+ "bava_batra-155a-3-3": {
+  "action": "adjust",
+  "first_pos": 3293,
+  "last_pos": 3293,
+  "reason": "The Bnei Brak incident is in segment 6; segments 7-9 are legal argument about age and puberty."
+ },
+ "bava_batra-30b-5-7": {
+  "action": "keep",
+  "reason": "The two land cases are separate stories sharing one background, which is acceptable, and each is told in full with the legal discussion outside."
+ },
+ "bava_batra-31a-8-9": {
+  "action": "adjust",
+  "first_pos": 808,
+  "last_pos": 810,
+  "reason": "Rav Nahman's reply to Rava ends mid-sentence and is completed in segment 8."
+ },
+ "bava_batra-32a-6-6": {
+  "action": "adjust",
+  "first_pos": 827,
+  "last_pos": 829,
+  "reason": "Segment 8 holds Rabba's ruling and Rav Yosef's reply, the outcome of the case."
+ },
+ "bava_batra-32b-2-2": {
+  "action": "adjust",
+  "first_pos": 830,
+  "last_pos": 831,
+  "reason": "Segment 7 holds Rabba's ruling and Rav Yosef's reply on this case; segment 8 is the general halakha for both cases."
+ },
+ "bava_batra-46a-7-8": {
+  "action": "adjust",
+  "first_pos": 1046,
+  "last_pos": 1048,
+  "reason": "Abaye's case and Rava's verdict are in segments 6-8; segment 9 is Rav Ashi's and Rav Aha's hypothetical legal tactics."
+ },
+ "bava_batra-58a-11-13": {
+  "action": "merge",
+  "merge_with": "bava_batra-58a-8-10",
+  "reason": "The directly preceding site story tells how Rabbi Bena'a was imprisoned, which this story's release and judgeship continue as one narrative."
+ },
+ "bava_batra-58a-8-10": {
+  "action": "merge",
+  "merge_with": "bava_batra-58a-11-13",
+  "reason": "Rabbi Bena'a's imprisonment (8) leads straight into his wife's riddle and his release (9-13), the next site story directly after this one; they are one set of events."
+ },
+ "bava_batra-60b-10-12": {
+  "action": "adjust",
+  "first_pos": 1321,
+  "last_pos": 1326,
+  "reason": "Rabbi Yehoshua's speech breaks off at 8; 9-11 complete his practical conclusion (leave part unplastered, the meal, the woman, the verse), and the Gemara's exposition in 12-13 is left out."
+ },
+ "bava_batra-7b-13-15": {
+  "action": "adjust",
+  "first_pos": 165,
+  "last_pos": 172,
+  "reason": "Segment 9 finishes Rabbi Yohanan's sentence ('these are Torah scholars') and is the gap between the two tax incidents, which share one theme; including it removes the mid-sentence break."
+ },
+ "bava_batra-82b-14-15": {
+  "action": "adjust",
+  "first_pos": 1760,
+  "last_pos": 1763,
+  "reason": "Rav Yosef's account finishes in 9 with his conclusion that the measure is four cubits; the Gemara's proofs from 10 onward stay out."
+ },
+ "bava_kamma-112a-13-14": {
+  "action": "merge",
+  "merge_with": "bava_kamma-112b-1-1",
+  "reason": "One story across the page break; the reviewer of 112b said it continues 112a's case (one segment between)."
+ },
+ "bava_kamma-115a-24-25": {
+  "action": "adjust",
+  "first_pos": 4121,
+  "last_pos": 4123,
+  "reason": "Rava's own ruling in 8 resolves the stolen-scroll case; the next mishna in 9 stays out."
+ },
+ "bava_kamma-38a-12-12": {
+  "action": "adjust",
+  "first_pos": 1399,
+  "last_pos": 1400,
+  "reason": "Segment 7 completes the story with the officials' reasoning and their decision not to tell the kingdom; 8 begins a separate site story."
+ },
+ "bava_kamma-38a-14-15": {
+  "action": "adjust",
+  "first_pos": 1401,
+  "last_pos": 1405,
+  "reason": "Ulla's application of the lesson to the dead daughter (10) completes the consolation; 11 onward is separate exposition."
+ },
+ "bava_kamma-51a-0-0": {
+  "action": "keep",
+  "reason": "No allowed change fixes this: it has no events of its own and is only the Rav Nahman/Rava legal exchange continuing site story bava_kamma-50b-16-17. Segment 5 sits between them, so they can't be merged. It should be dropped from the site or folded into that story by hand."
+ },
+ "bava_kamma-83a-0-2": {
+  "action": "adjust",
+  "first_pos": 2976,
+  "last_pos": 2977,
+  "reason": "Segment 6 is pure argument over Greek language that starts mid-sentence; 7-8 hold the only narrative (Rabban Shimon ben Gamliel's report and the Avtolmos permission)."
+ },
+ "bava_kamma-91a-20-22": {
+  "action": "keep",
+  "reason": "The incident survives only as the Gemara's quotations of the mishna mixed with its questions (6 and 8), and no neighbouring segment holds a fuller telling, so no better boundary exists."
+ },
+ "bava_metzia-42a-11-11": {
+  "action": "merge",
+  "merge_with": "bava_metzia-42b-0-2",
+  "reason": "One story across the page break; the reviewer said the 42b part completes the 42a incident."
+ },
+ "bava_metzia-42b-4-4": {
+  "action": "adjust",
+  "first_pos": 1358,
+  "last_pos": 1362,
+  "reason": "The parties' claims (7-8) and the resolution in 10 (the trader's oath and the cowherd paying for the meat) finish the case; 11 is a separate site story."
+ },
+ "bava_metzia-42b-9-9": {
+  "action": "adjust",
+  "first_pos": 1363,
+  "last_pos": 1365,
+  "reason": "The bailee's and brewer's claims (7-8) finish the case as told. 9-10 are the Gemara's analysis, and the final payment line (11) is beyond the 4-segment limit."
+ },
+ "bava_metzia-59b-1-10": {
+  "action": "adjust",
+  "first_pos": 1812,
+  "last_pos": 1822,
+  "reason": "Segment 5 holds the scene's opening ('On that day Rabbi Eliezer answered all possible answers...') alongside the akhnai explanation, so it comes in. The Kelim mishna in 4 is legal background and stays out."
+ },
+ "bava_metzia-64b-6-6": {
+  "action": "adjust",
+  "first_pos": 1969,
+  "last_pos": 1972,
+  "reason": "Rava's rebuttals and his father's retraction ('I retract') in 7-9 complete the exchange; Abaye's rulings in 10 onward stay out."
+ },
+ "bava_metzia-66b-11-11": {
+  "action": "adjust",
+  "first_pos": 2022,
+  "last_pos": 2024,
+  "reason": "The seller's refusal, Rav Pappa's view (7) and Rav Aha's rebuttal (8) finish the dispute; 9 starts a separate case."
+ },
+ "bava_metzia-81b-0-0": {
+  "action": "adjust",
+  "first_pos": 2438,
+  "last_pos": 2439,
+  "reason": "Segment 5 holds this version's setup (not his turn, guard my cloak as payment) after the Gemara's question, so it comes in to give a complete retelling."
+ },
+ "bava_metzia-84a-11-17": {
+  "action": "keep",
+  "reason": "Two complete stories (Reish Lakish and Rabbi Yohanan; Rabbi Elazar son of Rabbi Shimon's afflictions to burial) told back to back with no legal argument between; trimming either end would drop a whole story."
+ },
+ "bava_metzia-84b-13-18": {
+  "action": "adjust",
+  "first_pos": 2531,
+  "last_pos": 2537,
+  "reason": "Segment 12 finishes Rabbi's list of the three modest people, which segment 11 cuts off mid-sentence."
+ },
+ "bava_metzia-85b-4-4": {
+  "action": "adjust",
+  "first_pos": 2564,
+  "last_pos": 2565,
+  "reason": "Segment 7 is Rabbi Hiyya's explanation of what he does to keep the Torah from being forgotten, the end of the exchange."
+ },
+ "beitzah-28a-5-5": {
+  "action": "keep",
+  "reason": "A single segment mixing the event with the Gemara's question; it cannot be cut and nothing nearby within reach finishes it."
+ },
+ "bekhorot-29b-14-14": {
+  "action": "adjust",
+  "first_pos": 913,
+  "last_pos": 915,
+  "reason": "Segment 8 is Rava's answer explaining that the butcher used nuts to lure children into bringing him forbidden fat, which completes the story."
+ },
+ "bekhorot-30b-17-17": {
+  "action": "adjust",
+  "first_pos": 944,
+  "last_pos": 944,
+  "reason": "Only segment 6 tells the incident of the woman; segments 7-9 are legal opinions on whether haverim who retract are taken back."
+ },
+ "bekhorot-31b-7-8": {
+  "action": "adjust",
+  "first_pos": 968,
+  "last_pos": 970,
+  "reason": "Segment 8 gives the answer to why Rav Sheshet cared, closing the story; segment 6 stays because segment 7 refers to the explanation he gave there."
+ },
+ "berakhot-18b-3-3": {
+  "action": "adjust",
+  "first_pos": 863,
+  "last_pos": 865,
+  "reason": "Segments 7-8 hold the brother's rebuttal and their conclusion, which end the dialogue."
+ },
+ "berakhot-26a-0-0": {
+  "action": "keep",
+  "reason": "The single story segment mixes the end of the ruling with the Mar Zutra incident and cannot be cut; the following segments are legal."
+ },
+ "berakhot-28b-22-23": {
+  "action": "adjust",
+  "first_pos": 1286,
+  "last_pos": 1288,
+  "reason": "The events end when Shmuel HaKatan is not removed (segment 8); segments 9-12 are the Gemara's argument and segment 13 belongs to another site story."
+ },
+ "berakhot-29a-5-5": {
+  "action": "keep",
+  "reason": "A single-sentence segment with nothing to trim; it is not the same events as the neighbouring Shmuel HaKatan story, so merging is wrong."
+ },
+ "berakhot-51b-5-6": {
+  "action": "adjust",
+  "first_pos": 2182,
+  "last_pos": 2184,
+  "reason": "Segment 5 is the opening of the incident: Ulla's visit and his refusal to send the cup to Yalta."
+ },
+ "berakhot-61b-15-15": {
+  "action": "keep",
+  "reason": "Two separate short incidents on the same subject (Rabba's bricks, Rabbi Akiva following Rabbi Yehoshua) side by side with no argument between; trimming would drop one whole incident."
+ },
+ "chagigah-18a-9-9": {
+  "action": "keep",
+  "reason": "A single segment mixing the Alexa incident with the objection; it cannot be cut and what follows is legal analysis."
+ },
+ "chagigah-3a-14-17": {
+  "action": "adjust",
+  "first_pos": 30,
+  "last_pos": 35,
+  "reason": "Segments 10-11 finish Rabbi Elazar ben Azarya's second teaching, which segment 9 begins; the closing praise is beyond reach."
+ },
+ "chullin-106a-1-1": {
+  "action": "keep",
+  "reason": "Segment 6 is the full first-waters incident; the next segment is a separate site story about a different incident (final waters), so it cannot be added or merged."
+ },
+ "chullin-106a-2-3": {
+  "action": "adjust",
+  "first_pos": 3053,
+  "last_pos": 3053,
+  "reason": "Segment 6 is the final-waters incident; segment 7 is only Ravin's alternative version and a mnemonic, not story."
+ },
+ "chullin-116a-13-15": {
+  "action": "adjust",
+  "first_pos": 3339,
+  "last_pos": 3340,
+  "reason": "Segment 6 is a baraita about local legal customs; the story of Levi at Yosef the bird hunter's house is segments 7-8."
+ },
+ "chullin-44a-5-5": {
+  "action": "keep",
+  "reason": "A single segment that mixes Rami bar Yehezkel's arrival with the halakhic statement; it cannot be cut and what follows is legal."
+ },
+ "chullin-48a-14-15": {
+  "action": "keep",
+  "reason": "Two short market anecdotes (Rabbi Yirmeya; Rava about Rav Nahman) back to back on the same question with no argument between; trimming would drop one."
+ },
+ "chullin-56b-5-5": {
+  "action": "keep",
+  "reason": "Rabbi Yitzhak bar Yosef's hen is a separate incident from Rabbi Yehoshua ben Levi's hen and is complete in one segment."
+ },
+ "chullin-59b-8-10": {
+  "action": "keep",
+  "reason": "Two linked emperor-and-Rabbi-Yehoshua exchanges in one sequence; splitting would orphan the second, and the span holds no legal argument."
+ },
+ "eruvin-101b-0-0": {
+  "action": "keep",
+  "reason": "The short poultry-market incident is complete in the one segment; the mishna lead-in cannot be cut from it."
+ },
+ "eruvin-104a-13-13": {
+  "action": "adjust",
+  "first_pos": 3604,
+  "last_pos": 3605,
+  "reason": "Adds Rabba's reply to Ulla, which completes the exchange; the segment also opens Abaye's objection but cannot be split."
+ },
+ "eruvin-43b-10-10": {
+  "action": "keep",
+  "reason": "Only this segment carries the port incident; the segments around it are legal or unrelated, so nothing better is available."
+ },
+ "eruvin-47b-0-0": {
+  "action": "keep",
+  "reason": "The short report of Yosef the priest going to Tzeidan is complete as it stands; what follows is a halakhic ruling."
+ },
+ "eruvin-60a-6-6": {
+  "action": "adjust",
+  "first_pos": 2099,
+  "last_pos": 2103,
+  "reason": "Adds Abaye's successive retractions, which are part of the Kakunya story (the 4-segment limit stops it just before his closing remark)."
+ },
+ "eruvin-64a-0-2": {
+  "action": "adjust",
+  "first_pos": 2230,
+  "last_pos": 2233,
+  "reason": "Adds the segment naming Rav Huna son of Rav Yehoshua reporting to Rava, so the exchange no longer starts mid-sentence."
+ },
+ "eruvin-68b-0-3": {
+  "action": "adjust",
+  "first_pos": 2377,
+  "last_pos": 2382,
+  "reason": "Starts at Ravina's question so the exchange is not cut mid-sentence; the site story it continues is not directly adjacent, so merge is not possible."
+ },
+ "gittin-14a-18-18": {
+  "action": "adjust",
+  "first_pos": 356,
+  "last_pos": 361,
+  "reason": "Adds Rabbi Ahai's questions and verdict 'you acted well', which end the story."
+ },
+ "gittin-37a-10-12": {
+  "action": "adjust",
+  "first_pos": 1012,
+  "last_pos": 1013,
+  "reason": "Drops the opening baraita stating the law; the story of Rabbi Asi's relative starts at segment 7."
+ },
+ "gittin-38a-16-17": {
+  "action": "adjust",
+  "first_pos": 1053,
+  "last_pos": 1053,
+  "reason": "The Pumbedita maidservant case is complete in segment 6; segments 7-8 are the Gemara's objection that only cites another precedent."
+ },
+ "gittin-56a-14-17": {
+  "action": "adjust",
+  "first_pos": 1664,
+  "last_pos": 1671,
+  "reason": "Extends through Rabban Yohanan's reply to Vespasian, the barrel parable, the messenger and the shoe episode (the 4-segment limit stops before the Yavne request)."
+ },
+ "gittin-56b-17-17": {
+  "action": "adjust",
+  "first_pos": 1685,
+  "last_pos": 1689,
+  "reason": "Adds Onkelos's consultations with Balaam and Jesus, which belong to the same story."
+ },
+ "gittin-57a-4-8": {
+  "action": "adjust",
+  "first_pos": 1691,
+  "last_pos": 1695,
+  "reason": "Drops Rabbi Elazar's coda to the Kamtza story and adds Rav Asi's massacre account, which ends the King's Mountain story."
+ },
+ "gittin-6a-18-18": {
+  "action": "adjust",
+  "first_pos": 123,
+  "last_pos": 124,
+  "reason": "Adds the end of Rav's answer ('but if you do, you provide benefit') so the story does not stop mid-sentence."
+ },
+ "ketubot-103a-24-32": {
+  "action": "adjust",
+  "first_pos": 2702,
+  "last_pos": 2713,
+  "reason": "Keeps the deathbed instructions and their immediate sequel; stops before the launderer story (a separate site story) and the long Gemara analysis that follows."
+ },
+ "ketubot-69b-10-12": {
+  "action": "adjust",
+  "first_pos": 1739,
+  "last_pos": 1742,
+  "reason": "Ilfa's story ends with his answer at segment 9; Rav Hisda's ruling and the mishna on children's sales are legal material."
+ },
+ "ketubot-8a-12-12": {
+  "action": "keep",
+  "reason": "Both short reports sit in one segment, which cannot be split."
+ },
+ "kiddushin-12b-10-10": {
+  "action": "adjust",
+  "first_pos": 313,
+  "last_pos": 313,
+  "reason": "The myrtle-mat case and Rava's ruling are complete in segment 6; segments 9-11 are the legal debate over his proof."
+ },
+ "kiddushin-29b-15-15": {
+  "action": "adjust",
+  "first_pos": 858,
+  "last_pos": 858,
+  "reason": "The Rav Hamnuna incident is segment 6 alone; segment 10 is the tail of Rav Hisda's boast plus Rava's advice on marrying off a son, not part of this story."
+ },
+ "kiddushin-31a-12-12": {
+  "action": "adjust",
+  "first_pos": 911,
+  "last_pos": 911,
+  "reason": "Rav Dimi's account of Dama ben Netina and his mother is segment 6; segment 8 is the end of Avimi's separate teaching about sons."
+ },
+ "kiddushin-70a-11-16": {
+  "action": "merge",
+  "merge_with": "kiddushin-70b-1-8",
+  "reason": "One story across the page break (the two halves merged into each other in review)."
+ },
+ "makkot-16b-6-6": {
+  "action": "keep",
+  "reason": "The one-sentence incident of the man Rav Yehuda flogged shares its only segment with the ruling, and segments cannot be cut."
+ },
+ "makkot-24b-1-2": {
+  "action": "adjust",
+  "first_pos": 705,
+  "last_pos": 707,
+  "reason": "Adds segment 8, which gives the two prophecies and the Sages' reply 'Akiva, you have comforted us', the end of the story."
+ },
+ "megillah-26b-12-12": {
+  "action": "adjust",
+  "first_pos": 980,
+  "last_pos": 981,
+  "reason": "Adds segment 7, where the Rabbis object and Rava admits there is no remedy, closing the Roman synagogue incident."
+ },
+ "megillah-27a-23-25": {
+  "action": "adjust",
+  "first_pos": 1009,
+  "last_pos": 1011,
+  "reason": "Drops segment 6, the baraita stating the general rule; the Rav Huna incident runs from segment 7 to 9."
+ },
+ "megillah-28a-9-10": {
+  "action": "adjust",
+  "first_pos": 1044,
+  "last_pos": 1046,
+  "reason": "Adds segment 8, Rabbi Nehunya's answer to Akiva's question about longevity, the point of the episode."
+ },
+ "meilah-7a-10-11": {
+  "action": "adjust",
+  "first_pos": 146,
+  "last_pos": 149,
+  "reason": "Adds segments 8-9, which finish Rabbi Akiva's reply to Rabbi Shimon; the later Reish Lakish discussion is analysis and stays out."
+ },
+ "menachot-103b-18-20": {
+  "action": "merge",
+  "merge_with": "menachot-104a-0-1",
+  "reason": "One story split across two pages with one segment between; Rabbi Beivai's closing line ends it."
+ },
+ "menachot-15b-5-5": {
+  "action": "keep",
+  "reason": "A single mixed segment re-citing the vineyard incident inside the legal argument; nothing can be trimmed, though it duplicates the earlier citation (menachot-15a-15-15), which is not adjacent."
+ },
+ "menachot-38a-0-1": {
+  "action": "adjust",
+  "first_pos": 1191,
+  "last_pos": 1191,
+  "reason": "Drops segment 6, the tail of the Gemara's answer about the earlier version; segment 7 is the alternative version of the Ravina and Mar bar Rav Ashi incident."
+ },
+ "moed_katan-11a-13-13": {
+  "action": "adjust",
+  "first_pos": 333,
+  "last_pos": 334,
+  "reason": "Adds segment 7, where Abaye challenges Rava's permission and Rava replies, completing the Bedita river incident."
+ },
+ "moed_katan-4a-21-21": {
+  "action": "adjust",
+  "first_pos": 90,
+  "last_pos": 92,
+  "reason": "Adds segments 7-8, which finish Rabba Tosefa'a's sentence and record his retraction, ending the exchange."
+ },
+ "moed_katan-9a-19-22": {
+  "action": "merge",
+  "merge_with": "moed_katan-9b-3-4",
+  "reason": "The father's blessings and the son's encounter are one story; the reviewer asked for the halves to be joined."
+ },
+ "nazir-20a-1-2": {
+  "action": "keep",
+  "reason": "The Queen Helene narrative is in mishna segment 3, beyond the two-segment reach, and the STORY segments are pure analysis; this needs manual re-anchoring or removal rather than a boundary fix."
+ },
+ "nedarim-50b-8-10": {
+  "action": "adjust",
+  "first_pos": 888,
+  "last_pos": 890,
+  "reason": "Drops segment 6, the separate fig-compote lawsuit; the bar Kappara wedding and laughter stories run from segment 7 to 9."
+ },
+ "nedarim-66b-3-5": {
+  "action": "keep",
+  "reason": "Two back-to-back konam-vow incidents told as one unit; a split is not an available action, and both segments are narrative with no legal argument to drop."
+ },
+ "nedarim-81a-5-5": {
+  "action": "adjust",
+  "first_pos": 1352,
+  "last_pos": 1353,
+  "reason": "Segment 7 holds Vardimus's answer to Isi's question, which completes the exchange."
+ },
+ "nedarim-91b-2-4": {
+  "action": "keep",
+  "reason": "Two consecutive adultery cases ruled on by Rava; both are complete narrative and a split is not an available action."
+ },
+ "niddah-64b-18-18": {
+  "action": "adjust",
+  "first_pos": 2368,
+  "last_pos": 2368,
+  "reason": "The incident is the single report in segment 6; segments 7-13 are the Gemara's legal analysis of how the nights were divided."
+ },
+ "niddah-66a-22-22": {
+  "action": "adjust",
+  "first_pos": 2423,
+  "last_pos": 2425,
+  "reason": "Rav Hanina's question and Ravina's explanation in segments 7-8 finish the episode."
+ },
+ "pesachim-112a-11-12": {
+  "action": "adjust",
+  "first_pos": 3244,
+  "last_pos": 3248,
+  "reason": "The remaining three of the five instructions (the pot, and the fruit and marriage teachings) are in segments 8-10."
+ },
+ "pesachim-49a-15-15": {
+  "action": "keep",
+  "reason": "The thinness is in the content itself, not the boundaries; the neighbouring segments are separate brief reports or legal teaching."
+ },
+ "pesachim-57b-0-0": {
+  "action": "adjust",
+  "first_pos": 1656,
+  "last_pos": 1657,
+  "reason": "Segment 5 contains the king and queen's dispute and the summoning of Yissakhar that open the scene; it mixes in prior material but cannot be cut."
+ },
+ "pesachim-86b-6-7": {
+  "action": "adjust",
+  "first_pos": 2575,
+  "last_pos": 2577,
+  "reason": "Segment 8 holds his answers about the cup, the two sips and not turning his face, completing the conversation."
+ },
+ "rosh_hashanah-19a-5-5": {
+  "action": "adjust",
+  "first_pos": 476,
+  "last_pos": 477,
+  "reason": "Segment 5 contains the decree, Yehuda ben Shammua and the visit to the matron that open the story; its legal lead-in cannot be separated."
+ },
+ "sanhedrin-100a-7-7": {
+  "action": "adjust",
+  "first_pos": 3695,
+  "last_pos": 3696,
+  "reason": "Segment 5 contains Rabbi Yohanan's teaching and the student's mockery that set up the story."
+ },
+ "sanhedrin-101a-10-16": {
+  "action": "adjust",
+  "first_pos": 3732,
+  "last_pos": 3740,
+  "reason": "Akiva's proof from Manasseh and its conclusion 'afflictions are cherished' are in segments 13-14; the two visit accounts are kept together as a split is not available."
+ },
+ "sanhedrin-28b-18-22": {
+  "action": "adjust",
+  "first_pos": 927,
+  "last_pos": 932,
+  "reason": "Segment 11 holds Abaye's final objection and Rav Yosef's 'go away, they won't let me give it to you', the story's ending."
+ },
+ "sanhedrin-52b-3-3": {
+  "action": "keep",
+  "reason": "The thinness comes from the mishna's own brief report; the adjacent site story 52b-4-4 is a separate incident, as the Gemara itself says, so no merge or extension fits."
+ },
+ "sanhedrin-68a-6-6": {
+  "action": "merge",
+  "merge_with": "sanhedrin-68a-0-9",
+  "reason": "This cucumber episode is Rabbi Eliezer's own words in the middle of his deathbed scene, directly between segments of site story sanhedrin-68a-0-9."
+ },
+ "sanhedrin-82a-4-5": {
+  "action": "keep",
+  "reason": "The concern is about the translation's identification, not the boundaries; the story runs complete from the skull's discovery to its burning."
+ },
+ "sanhedrin-91a-13-14": {
+  "action": "adjust",
+  "first_pos": 3380,
+  "last_pos": 3382,
+  "reason": "Segment 8 holds Geviha's argument from Abraham's gifts, which resolves the case."
+ },
+ "sanhedrin-93b-7-7": {
+  "action": "keep",
+  "reason": "The concern is about the translation, not the boundaries; the story is complete in segment 6."
+ },
+ "shabbat-104a-3-3": {
+  "action": "adjust",
+  "first_pos": 2241,
+  "last_pos": 2244,
+  "reason": "The children's interpretations continue through segment 9 (kuf and reish); segment 10 is a Gemara aside and shin/tav in segment 11 is beyond the allowed extension."
+ },
+ "shabbat-115a-6-6": {
+  "action": "adjust",
+  "first_pos": 2483,
+  "last_pos": 2483,
+  "reason": "Segment 7 is the Gemara's analysis of which tanna'im disagree, not part of the incident."
+ },
+ "shabbat-118b-13-13": {
+  "action": "adjust",
+  "first_pos": 2550,
+  "last_pos": 2551,
+  "reason": "Segment 7 finishes Abaye's sentence that is cut off mid-clause in segment 6."
+ },
+ "shabbat-145b-9-10": {
+  "action": "keep",
+  "reason": "The events (dozing, waking, rebuke, first answer) are complete; the remaining answers are scriptural exposition, and the last one lies beyond the 4-segment limit, so extending would still leave it unfinished."
+ },
+ "shabbat-152a-3-5": {
+  "action": "adjust",
+  "first_pos": 3624,
+  "last_pos": 3625,
+  "reason": "Segment 6 is a run of aphorisms on youth and age; the story is the eunuch's exchange with Rabbi Yehoshua ben Korha in 7-8."
+ },
+ "shabbat-19b-4-4": {
+  "action": "keep",
+  "reason": "The excommunication and the fire-rescue mention share one segment, which cannot be split."
+ },
+ "shabbat-39a-5-5": {
+  "action": "keep",
+  "reason": "A single segment that cannot be cut; the surrounding segments are pure legal argument and would add nothing narrative."
+ },
+ "shabbat-46a-7-7": {
+  "action": "adjust",
+  "first_pos": 864,
+  "last_pos": 865,
+  "reason": "Segment 7 completes the cited baraita and gives Rav Nahman bar Yitzhak's closing remark that Rava did not embarrass Rav Avya."
+ },
+ "shabbat-53b-15-18": {
+  "action": "adjust",
+  "first_pos": 1083,
+  "last_pos": 1085,
+  "reason": "Drop the brief Antioch goats incident (6), which belongs to the legal discussion, keeping the story of the father who nursed his son with the Sages' reactions."
+ },
+ "shabbat-65b-2-2": {
+  "action": "keep",
+  "reason": "Single segment; the adjacent material is legal analysis and the earlier site story is not directly adjacent, so no better boundary exists."
+ },
+ "shevuot-41b-8-11": {
+  "action": "adjust",
+  "first_pos": 1315,
+  "last_pos": 1317,
+  "reason": "Keep the one case with a narrative arc (repayment, money lost, hearing before Rav Nahman) and drop the separate Reuven-and-Shimon case in 6."
+ },
+ "shevuot-42a-6-9": {
+  "action": "adjust",
+  "first_pos": 1328,
+  "last_pos": 1329,
+  "reason": "Keep the two-versus-three witnesses case with Rav Huna's objection; drop the separate first case (6) and the repeated alternate version (9)."
+ },
+ "sotah-20a-8-14": {
+  "action": "adjust",
+  "first_pos": 680,
+  "last_pos": 681,
+  "reason": "The exchange between Rabbi Meir and Rabbi Yishmael is 6-7; segments 8-12 are the Gemara's analysis and resolution of contradicting versions."
+ },
+ "sotah-41b-2-5": {
+  "action": "keep",
+  "reason": "Every segment mixes the mishna's account of Agrippa with Gemara questions, so none can be dropped without losing the story."
+ },
+ "sotah-48a-3-4": {
+  "action": "adjust",
+  "first_pos": 1556,
+  "last_pos": 1558,
+  "reason": "Segment 5 names Yohanan the High Priest and tells of his investigation, which the story's speech in 6 responds to."
+ },
+ "sukkah-20a-10-10": {
+  "action": "adjust",
+  "first_pos": 502,
+  "last_pos": 503,
+  "reason": "Segment 7 completes Rabbi Hiyya's statement on the mats of Usha that is cut off mid-sentence."
+ },
+ "sukkah-21b-7-7": {
+  "action": "keep",
+  "reason": "The mishna's telling at 20b is out of reach and the adjacent segments are legal argument; the segment stands as is."
+ },
+ "sukkah-27a-0-1": {
+  "action": "adjust",
+  "first_pos": 644,
+  "last_pos": 646,
+  "reason": "Segment 5 contains the incident's opening (the dish and the dates brought) that segment 6 finishes."
+ },
+ "taanit-21a-1-5": {
+  "action": "adjust",
+  "first_pos": 566,
+  "last_pos": 571,
+  "reason": "Segment 11 gives Ilfa's answer to the old man, which ends the episode."
+ },
+ "taanit-23a-3-8": {
+  "action": "adjust",
+  "first_pos": 636,
+  "last_pos": 642,
+  "reason": "Segment 12 completes Shimon ben Shetah's message to Honi, cut off mid-sentence."
+ },
+ "taanit-25a-0-1": {
+  "action": "adjust",
+  "first_pos": 697,
+  "last_pos": 699,
+  "reason": "Segment 5 holds the story's opening, the wife heating the empty oven, which segment 6 continues mid-sentence."
+ },
+ "taanit-27b-0-0": {
+  "action": "adjust",
+  "first_pos": 776,
+  "last_pos": 778,
+  "reason": "Segment 5 begins the account (four watches return, the prophets arise) and 7 finishes it with the prophets' stipulation."
+ },
+ "taanit-28a-4-5": {
+  "action": "keep",
+  "reason": "The short origin account of the families' wood donation and the prophets' stipulation is complete; the next segments are the mishna and other site stories."
+ },
+ "taanit-5b-7-10": {
+  "action": "adjust",
+  "first_pos": 112,
+  "last_pos": 117,
+  "reason": "Extend through the end of the tree parable and Rabbi Yitzhak's blessing, which complete the leave-taking scene."
+ },
+ "tamid-31b-14-14": {
+  "action": "merge",
+  "merge_with": "tamid-32b-0-3",
+  "reason": "The adjacent site story opens with the women's reply about the golden bread and Alexander's lesson, the end of this same campaign narrative."
+ },
+ "yevamot-108a-7-7": {
+  "action": "adjust",
+  "first_pos": 3389,
+  "last_pos": 3390,
+  "reason": "Add Rabbi's verdict 'There is no greater refusal than this', which ends the incident; that segment also holds the ruling but cannot be split."
+ },
+ "yevamot-108b-14-14": {
+  "action": "adjust",
+  "first_pos": 3414,
+  "last_pos": 3415,
+  "reason": "Add the question that the two hired messengers carried to Rabbi Akiva and Rabbi Yehuda ben Beteira, without which the one-line story has no content."
+ },
+ "yevamot-46a-9-9": {
+  "action": "adjust",
+  "first_pos": 1445,
+  "last_pos": 1446,
+  "reason": "Add the next segment, where the bucket of clay is placed on Minyamin's head after immersion, completing the incident."
+ },
+ "yevamot-63a-13-13": {
+  "action": "keep",
+  "reason": "Two short related anecdotes on difficult wives joined by a segment that cannot be split; the closing segment resolves the second anecdote."
+ },
+ "yevamot-63a-6-6": {
+  "action": "keep",
+  "reason": "Single segment mixing sayings with Rabbi Elazar's remark to the field; nothing to trim or add."
+ },
+ "yevamot-65b-15-17": {
+  "action": "keep",
+  "reason": "Two linked incidents about women and the commandment to have children share one background; both are complete and the next segment is another site story."
+ },
+ "yevamot-75b-15-15": {
+  "action": "adjust",
+  "first_pos": 2384,
+  "last_pos": 2385,
+  "reason": "Drop the final segment, Shmuel's ruling on a punctured member and Rava's analysis, which is legal discussion after the two incidents."
+ },
+ "yevamot-77b-8-9": {
+  "action": "adjust",
+  "first_pos": 2442,
+  "last_pos": 2445,
+  "reason": "Extend through Rabbi Yohanan's full reply, which ends with his repeated 'Go out and teach it outside'."
+ },
+ "yoma-23b-1-1": {
+  "action": "keep",
+  "reason": "The incident itself is in a non-adjacent site story that cannot be added; the next segment is only the Gemara's answer to the dilemma."
+ },
+ "yoma-87b-2-2": {
+  "action": "adjust",
+  "first_pos": 2244,
+  "last_pos": 2245,
+  "reason": "Add the question that Rabbi Hanina's dream explanation answers; the incident itself is site story yoma-87a-16-16, not directly adjacent, so it cannot be merged."
+ },
+ "zevachim-59a-9-9": {
+  "action": "adjust",
+  "first_pos": 1915,
+  "last_pos": 1916,
+  "reason": "Add the answering verse and Rav Kahana's remark that this was the verse Rav forgot, which close the story."
+ }
+}

@@ -1106,7 +1106,11 @@
    "start_segment": 18,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 11 holds Abaye's final objection and Rav Yosef's 'go away, they won't let me give it to you', the story's ending."
+   },
    "reviewed": false,
    "summary": "Rav Yosef initially intends to validate a gift deed signed by relatives, but after a persistent challenge from Abaye regarding the interpretation of Shmuel's ruling, he instructs the recipient to use an alternative legal method.",
    "segments": [
@@ -1139,6 +1143,12 @@
      "i": 22,
      "he": "אֲמַר לֵיהּ: זִיל, קַנְיַהּ בְּעֵדֵי מְסִירָה, כְּרַבִּי אֶלְעָזָר.",
      "en": "Due to Abaye’s objection, Rav Yosef <b>said to</b> the one holding the deed of gift: Since the witnesses signed on the document are disqualified from bearing witness together, <b>go</b> and <b>acquire</b> the gift <b>by means of</b> the <b>witnesses who observed the transmission</b> of the deed to you, <b>in accordance with</b> the opinion of <b>Rabbi Elazar,</b> who maintains that the witnesses who effect the transaction are not those who signed the deed but rather those who observed its transmission. A legal document is signed by witnesses merely to enhance its authority, not to effect the transaction."
+    },
+    {
+     "ref": "Sanhedrin 28b",
+     "i": 23,
+     "he": "וְהָאָמַר רַבִּי אַבָּא: מוֹדֶה רַבִּי אֶלְעָזָר בִּמְזוּיָּף מִתּוֹכוֹ שֶׁהוּא פָּסוּל? אֲמַר לֵיהּ: זִיל, לָא שָׁבְקִי לִי דְּאוֹתְבִינֵּיהּ לָךְ.",
+     "en": "Abaye raised an objection: <b>But doesn’t Rabbi Abba say</b> that <b>Rabbi Elazar concedes with regard to</b> a document whose <b>falsification is inherent in it, that</b> the deed <b>is not valid</b> despite the fact that it was properly transferred? In other words, although the signatures on a legal document are unnecessary insofar as effecting the transaction is concerned, a document that includes invalid signatures is not valid, and this is in order to prevent others from relying upon these witnesses. Rav Yosef <b>said to</b> the one holding the deed of gift: <b>Go</b> away; the rabbis <b>do not let me give you</b> the gift."
     }
    ],
    "span": [
@@ -1148,7 +1158,7 @@
      "end": 22
     }
    ],
-   "words": 339,
+   "words": 441,
    "minutes": 3
   },
   {
@@ -2628,7 +2638,11 @@
    "start_segment": 13,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 8 holds Geviha's argument from Abraham's gifts, which resolves the case."
+   },
    "reviewed": false,
    "summary": "Geviha ben Pesisa defends the Jewish claim to the land of Canaan against the descendants of Ishmael and Keturah before Alexander the Great.",
    "segments": [
@@ -2643,6 +2657,12 @@
      "i": 14,
      "he": "אָמַר לָהֶן גְּבִיהָא בֶּן פְּסִיסָא לַחֲכָמִים: תְּנוּ לִי רְשׁוּת וְאֵלֵךְ וְאָדוּן עִמָּהֶם לִפְנֵי אֲלֶכְּסַנְדְּרוֹס מוֹקְדוֹן. אִם יְנַצְּחוּנִי אִמְרוּ: הֶדְיוֹט שֶׁבָּנוּ נִצַּחְתֶּם, וְאִם אֲנִי אֲנַצֵּחַ אוֹתָם אִמְרוּ לָהֶם: תּוֹרַת מֹשֶׁה רַבֵּינוּ נִצְּחַתְכֶם. נָתְנוּ לוֹ רְשׁוּת, הָלַךְ וְדָן עִמָּהֶן.",
      "en": "<b>Geviha ben Pesisa said to the Sages: Give me permission and I will go and deliberate with them before Alexander of Macedon. If they will defeat me, say</b> to them: <b>You have defeated an ordinary</b> person <b>from among us,</b> and until you overcome our Sages, it is no victory. <b>And if I will defeat them, say to them: The Torah of Moses, our teacher, defeated you,</b> and attribute no significance to me. The Sages <b>gave him permission, and he went and deliberated with them.</b>"
+    },
+    {
+     "ref": "Sanhedrin 91a",
+     "i": 15,
+     "he": "אָמַר לָהֶם: מֵהֵיכָן אַתֶּם מְבִיאִין רְאָיָיה? אָמְרוּ לוֹ: מִן הַתּוֹרָה. אָמַר לָהֶן: אַף אֲנִי לֹא אָבִיא רְאָיָיה אֶלָּא מִן הַתּוֹרָה, שֶׁנֶּאֱמַר: ״וַיִּתֵּן אַבְרָהָם אֶת כׇּל אֲשֶׁר לוֹ לְיִצְחָק. וְלִבְנֵי הַפִּילַגְשִׁים אֲשֶׁר לְאַבְרָהָם נָתַן אַבְרָהָם מַתָּנֹת״. אָב שֶׁנָּתַן אֲגִטִּין לְבָנָיו בְּחַיָּיו וְשִׁיגֵּר זֶה מֵעַל זֶה, כְּלוּם יֵשׁ לָזֶה עַל זֶה כְּלוּם? מַאי מַתָּנוֹת? אָמַר רַבִּי יִרְמְיָה בַּר אַבָּא: מְלַמֵּד שֶׁמָּסַר לָהֶם שֵׁם טוּמְאָה.",
+     "en": "Geviha ben Pesisa <b>said to</b> the descendants of Ishmael: <b>From where are you citing proof</b> that the land of Canaan belongs to both you and the Jewish people? <b>They said to him: From the Torah.</b> Geviha ben Pesisa <b>said to them: I too will cite proof to you only from the Torah, as it is stated: “And Abraham gave all that he had to Isaac. But to the sons of the concubines that Abraham had, Abraham gave gifts,</b> and he sent them away from his son, while he yet lived, eastward, to the east country” (Genesis 25:5–6). In the case of <b>a father who gave a document of bequest [<i>agatin</i>] to his sons during his lifetime and sent one</b> of the sons <b>away from the other, does</b> the one who was sent away <b>have any claim against the other?</b> The father himself divided his property. The Gemara asks: <b>What</b> were these <b>gifts</b> that Abraham gave to the sons of the concubines? <b>Rabbi Yirmeya bar Abba says:</b> This <b>teaches that</b> Abraham <b>provided them</b> with the <b>name</b> of the supernatural spirit of <b>impurity,</b> enabling them to perform witchcraft."
     }
    ],
    "span": [
@@ -2652,8 +2672,8 @@
      "end": 14
     }
    ],
-   "words": 178,
-   "minutes": 2
+   "words": 366,
+   "minutes": 3
   },
   {
    "id": "sanhedrin-93b-7-7",
@@ -2899,10 +2919,20 @@
    "start_segment": 7,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 5 contains Rabbi Yohanan's teaching and the student's mockery that set up the story."
+   },
    "reviewed": false,
    "summary": "A student who mocked Rabbi Yoḥanan's teaching about the future glory of Jerusalem saw a vision of angels confirming the teaching, but was ultimately punished by the Rabbi for his initial lack of faith.",
    "segments": [
+    {
+     "ref": "Sanhedrin 100a",
+     "i": 6,
+     "he": "אֲמַר לֵיהּ: הָא [הַאי] סַיּוֹעֵי קָא מְסַיַּיע לֵיהּ [לָךְ]! אֶלָּא אִי שְׁמִיעַ לָךְ הָא, שְׁמִיעַ לָךְ: כִּי הָא דְּיָתֵיב רַבִּי יוֹחָנָן וְקָא דָרֵישׁ: עָתִיד הַקָּדוֹשׁ בָּרוּךְ הוּא לְהָבִיא אֲבָנִים טוֹבוֹת וּמַרְגָּלִיּוֹת שֶׁהֵן שְׁלֹשִׁים עַל שְׁלֹשִׁים אַמּוֹת, וְחוֹקֵק בָּהֶם עֶשֶׂר בְּרוּם עֶשְׂרִים, וּמַעֲמִידָן בְּשַׁעֲרֵי יְרוּשָׁלַיִם, שֶׁנֶּאֱמַר ״וְשַׂמְתִּי כַּדְכֹד שִׁמְשֹׁתַיִךְ וּשְׁעָרַיִךְ לְאַבְנֵי אֶקְדָּח וְגוֹ׳״. לִגְלֵג עָלָיו אוֹתוֹ תַּלְמִיד, אָמַר: הַשְׁתָּא כְּבֵיעֲתָא דְצִילְצְלָא לָא מַשְׁכְּחִינַן, כּוּלֵּי הַאי מַשְׁכְּחִינַן?",
+     "en": "Rabbi Zeira <b>said to him: But isn’t he supporting your</b> statement? He meant no disrespect. <b>Rather, if you heard</b> that at times supporting the statement of a Sage is irreverent, <b>this</b> is what <b>you heard:</b> It is <b>like that</b> case in <b>which Rabbi Yoḥanan sat and taught: The Holy One, Blessed be He, is destined to bring precious stones and jewels that are thirty by thirty cubits, and He will bore in them</b> an opening <b>ten</b> cubits wide <b>by twenty</b> cubits <b>in height and place them</b> to serve <b>as the gates of Jerusalem, as it is stated: “And I will make your pinnacles of rubies and your gates of carbuncles”</b> (Isaiah 54:12). <b>A certain student mocked him</b> and <b>said: Now,</b> at present, <b>we do not find</b> precious stones <b>comparable</b> in size to <b>the egg of a palm dove.</b> Will <b>we find</b> stones <b>as large as</b> those <b>that</b> you described?"
+    },
     {
      "ref": "Sanhedrin 100a",
      "i": 7,
@@ -2917,8 +2947,8 @@
      "end": 7
     }
    ],
-   "words": 135,
-   "minutes": 1
+   "words": 284,
+   "minutes": 2
   },
   {
    "id": "sanhedrin-101a-8-8",
@@ -2956,12 +2986,17 @@
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 101a",
    "refs": [
-    "Sanhedrin 101a"
+    "Sanhedrin 101a",
+    "Sanhedrin 101b"
    ],
    "start_segment": 10,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Akiva's proof from Manasseh and its conclusion 'afflictions are cherished' are in segments 13-14; the two visit accounts are kept together as a split is not available."
+   },
    "reviewed": false,
    "summary": "When Rabbi Eliezer falls ill and despairs, his students visit him, and Rabbi Akiva's optimistic perspective on suffering causes the bedridden sage to sit up and listen.",
    "segments": [
@@ -3006,6 +3041,18 @@
      "i": 16,
      "he": "נַעֲנָה רַבִּי עֲקִיבָא וְאָמַר: חֲבִיבִין יִסּוּרִין. אָמַר לָהֶם: סַמְּכוּנִי וְאֶשְׁמְעָה דִּבְרֵי עֲקִיבָא תַּלְמִידִי שֶׁאָמַר חֲבִיבִין יִסּוּרִין. אָמַר לוֹ: עֲקִיבָא, זוֹ מִנַּיִן לָךְ? אָמַר: מִקְרָא אֲנִי דּוֹרֵשׁ: ״בֶּן שְׁתֵּים עֶשְׂרֵה שָׁנָה מְנַשֶּׁה בְמׇלְכוֹ וַחֲמִשִּׁים וְחָמֵשׁ שָׁנָה מָלַךְ בִּירוּשָׁלִָים [וְגוֹ׳] וַיַּעַשׂ הָרַע בְּעֵינֵי ה׳״, וּכְתִיב:",
      "en": "<b>Rabbi Akiva responded and said: Afflictions are cherished.</b> When Rabbi Eliezer heard this <b>he said to</b> his attendants: <b>Support me</b> so I can sit <b>and hear the statement of Akiva my student, who said: Afflictions are cherished.</b> Rabbi Eliezer <b>said to him: Akiva, from where do you</b> derive <b>this?</b> Rabbi Akiva <b>said: I interpret a verse</b> in order to derive it. It is written: <b>“Manasseh was twelve years old when he began to reign and he reigned fifty-five years in Jerusalem…And he performed that which was evil in the eyes of the Lord”</b> (II Kings 21:1–2). <b>And it is written:</b>"
+    },
+    {
+     "ref": "Sanhedrin 101b",
+     "i": 0,
+     "he": "״גַּם אֵלֶּה מִשְׁלֵי שְׁלֹמֹה אֲשֶׁר הֶעְתִּיקוּ אַנְשֵׁי חִזְקִיָּה מֶלֶךְ יְהוּדָה״. וְכִי חִזְקִיָּה מֶלֶךְ יְהוּדָה לְכׇל הָעוֹלָם כּוּלּוֹ לִימֵּד תּוֹרָה, וְלִמְנַשֶּׁה בְּנוֹ לֹא לִימֵּד תּוֹרָה? אֶלָּא, מִכׇּל טוֹרַח שֶׁטָּרַח בּוֹ וּמִכׇּל עָמָל שֶׁעָמֵל בּוֹ, לֹא הֶעֱלָהוּ לְמוּטָב אֶלָּא יִסּוּרִין, שֶׁנֶּאֱמַר: ״וַיְדַבֵּר ה׳ אֶל מְנַשֶּׁה וְאֶל עַמּוֹ וְלֹא הִקְשִׁיבוּ. וַיָּבֵא ה׳ עֲלֵיהֶם אֶת שָׂרֵי הַצָּבָא אֲשֶׁר לְמֶלֶךְ אַשּׁוּר וַיִּלְכְּדוּ אֶת מְנַשֶּׁה בַּחֹחִים וַיַּאַסְרֻהוּ בַּנְחֻשְׁתַּיִם וַיּוֹלִיכֻהוּ בָּבֶלָה״.",
+     "en": "<b>“These too are the proverbs of Solomon, which the men of Hezekiah, king of Judea, copied”</b> (Proverbs 25:1), indicating that Hezekiah taught Torah and disseminated it to the multitudes. <b>And</b> is it conceivable that <b>Hezekiah, king of Judea, taught Torah to the entire world and to Manasseh his son he did not teach Torah? Rather,</b> Hezekiah certainly taught Manasseh much Torah; nevertheless, <b>from all his exertion to</b> teach <b>him and from all his toil to</b> teach <b>him,</b> it was <b>only afflictions</b> that <b>elevated him to</b> the path of <b>good, as it is stated: “And the Lord spoke to Manasseh and to his people but they would not heed. And the Lord brought upon them the captains of the army of the king of Assyria, who took Manasseh with hooks, and bound him with chains, and carried him to Babylonia”</b> (II Chronicles 33:10–11)."
+    },
+    {
+     "ref": "Sanhedrin 101b",
+     "i": 1,
+     "he": "וּכְתִיב: ״וּכְהָצֵר לוֹ חִלָּה אֶת פְּנֵי ה׳ אֱלֹהָיו וַיִּכָּנַע מְאֹד מִלִּפְנֵי אֱלֹהֵי אֲבוֹתָיו. וַיִּתְפַּלֵּל אֵלָיו וַיֵּעָתֶר לוֹ וַיִּשְׁמַע תְּחִנָּתוֹ וַיְשִׁיבֵהוּ יְרוּשָׁלִַים לְמַלְכוּתוֹ וַיֵּדַע מְנַשֶּׁה כִּי ה׳ הוּא הָאֱלֹהִים״. הָא לָמַדְתָּ שֶׁחֲבִיבִין יִסּוּרִין.",
+     "en": "<b>And it is written</b> thereafter: <b>“And when he was in distress, he sought the Lord his God, and humbled himself greatly before the God of his fathers, and he prayed to Him and He was entreated of him, and He heard his supplication, and brought him back to Jerusalem into his kingdom; then Manasseh knew that the Lord He was God”</b> (II Chronicles 33:12–13). <b>You learned</b> from <b>this that afflictions are cherished.</b>"
     }
    ],
    "span": [
@@ -3015,8 +3062,8 @@
      "end": 16
     }
    ],
-   "words": 545,
-   "minutes": 4
+   "words": 759,
+   "minutes": 6
   },
   {
    "id": "sanhedrin-102a-17-17",

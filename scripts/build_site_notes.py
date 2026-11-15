@@ -35,6 +35,7 @@ FLAGS_DOC = ROOT / "docs" / "findings" / "2026-10-12-septimus-note-flags.md"
 TAG = re.compile(r"<[^>]+>")
 HEBREW = re.compile(r"[֐-׿]")
 LIMITS = {"note": 800, "why": 300}
+PERSON_WARNINGS = []
 
 
 def fold(s):
@@ -77,7 +78,9 @@ def problems_with(rec, story):
         # "Rava's servant" -> rava; any distinctive word of the name will do (spellings vary: Hananya / Hanania)
         words = [w for w in fold(re.sub(r"['’]s\b", "", p.get("name", ""))).split() if w not in titles and len(w) > 2]
         if words and not any(w in english for w in words):
-            out.append(f"person '{clean(p.get('name'), 80)}' not found in the English")
+            # Not a hold (Simon 2026-11-15): a person from the surrounding discussion is fair background.
+            # Counted and printed, so a misspelt or invented name still gets seen.
+            PERSON_WARNINGS.append(f"{story['id']}: person '{clean(p.get('name'), 80)}' is not in the story's English")
     return out
 
 
@@ -195,8 +198,11 @@ def main(argv):
         print(f"{t:14} notes={len(on_site):4}/{len(stories):<4} approved={sum(bool(n.get('approved')) for n in on_site):4} "
               f"why={sum(bool(n.get('why')) for n in on_site):4} drafted={ev['drafted']} why_added={ev['why_added']} "
               f"held_now={ev['held']} missing={len(ev['missing'])} stale_kept={len(stale)}")
-    unknown = sorted(set(parts) - known)
+    # a draft for a card a merge absorbed (site/data/redirects.json) is expected, not a problem
+    redirected = set(json.loads((DATA / "redirects.json").read_text())) if (DATA / "redirects.json").exists() else set()
+    unknown = sorted(set(parts) - known - redirected)
     print("TOTAL", total, f"held={sum(i in known for i in held)}")
+    print(f"person-warnings={len(PERSON_WARNINGS)} (not holds)")
     if not report:
         HELD.parent.mkdir(parents=True, exist_ok=True)
         HELD.write_text(json.dumps(dict(sorted(held.items())), ensure_ascii=False, indent=1))

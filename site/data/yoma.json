@@ -1737,10 +1737,20 @@
    "start_segment": 2,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Add the question that Rabbi Hanina's dream explanation answers; the incident itself is site story yoma-87a-16-16, not directly adjacent, so it cannot be merged."
+   },
    "reviewed": false,
    "summary": "Rabbi Ḥanina sees a dream foretelling Rav's rise to leadership and purposely avoids reconciling with him so that Rav will move to Babylon to fulfill the prophecy.",
    "segments": [
+    {
+     "ref": "Yoma 87b",
+     "i": 1,
+     "he": "וְהֵיכִי עָבֵיד הָכִי? וְהָאָמַר רַבִּי יוֹסֵי בַּר חֲנִינָא: כׇּל הַמְבַקֵּשׁ מָטוּ מֵחֲבֵירוֹ אַל יְבַקֵּשׁ מִמֶּנּוּ יוֹתֵר מִשָּׁלֹשׁ פְּעָמִים! רַב שָׁאנֵי. וְרַבִּי חֲנִינָא, הֵיכִי עָבֵיד הָכִי? וְהָאָמַר רָבָא: כׇּל הַמַּעֲבִיר עַל מִדּוֹתָיו — מַעֲבִירִין לוֹ עַל כׇּל פְּשָׁעָיו!",
+     "en": "The Gemara asks: <b>How could</b> Rav <b>act this way? Didn’t Rabbi Yosei bar Ḥanina say: Anyone who requests forgiveness from another should not ask more than three times?</b> The Gemara answers: <b>Rav is different,</b> since he was very pious and forced himself to act beyond the letter of the law. The Gemara asks: <b>And how could Rabbi Ḥanina act this way</b> and refuse to forgive Rav, though he asked many times? <b>Didn’t Rava say:</b> With regard to <b>anyone who suppresses his honor</b> and forgives someone for hurting him, God <b>pardons all his sins?</b>"
+    },
     {
      "ref": "Yoma 87b",
      "i": 2,
@@ -1755,7 +1765,7 @@
      "end": 2
     }
    ],
-   "words": 180,
+   "words": 273,
    "minutes": 2
   }
  ],

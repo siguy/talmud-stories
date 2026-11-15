@@ -560,7 +560,7 @@
     }
    ],
    "drafted": "shas1",
-   "approved": false
+   "approved": true
   },
   "nedarim-49b-9-9": {
    "note": "A heretic taunted Rabbi Yehuda that his plump, ruddy face looked like that of a moneylender or a pig breeder, people who grew rich without effort. Rabbi Yehuda answered that both trades are forbidden to Jews. His healthy color, he said, came from something else: there were twenty-four bathrooms between his home and the study hall, and he went into every one of them each time.",
@@ -719,38 +719,42 @@
    "approved": true
   },
   "nedarim-50b-8-10": {
-   "note": "A man gave a friend his slave to be taught a thousand kinds of fig compote; the friend taught only eight hundred, and the man sued before Rabbi Yehuda HaNasi, who marveled that he had never seen such plenty. Later Rabbi Yehuda HaNasi held a lavish wedding for his son but did not invite bar Kappara. Bar Kappara remarked that if those who defy God's will are rewarded so richly, those who do it must get far more. He was invited, and said that if the righteous get this much in this world, they will get far more in the World-to-Come. Because calamity came on days Rabbi Yehuda HaNasi laughed, he promised bar Kappara forty se'a of wheat not to make him laugh. Bar Kappara put a huge tarred basket on his head and came to collect, and Rabbi Yehuda HaNasi laughed.",
-   "why": "The Gemara has just explained a mishna's ruling by defining a kind of fig used for compote; the compote case follows from that, and the Gemara then moves to other incidents involving Rabbi Yehuda HaNasi.",
+   "note": "Rabbi Yehuda HaNasi made a wedding for his son, Rabbi Shimon. On the wedding canopy was written that 24,000 myriad dinars had been spent on it, yet he did not invite bar Kappara. Bar Kappara said: if those who go against God's will get such reward, how much more those who do His will. Rabbi Yehuda HaNasi then invited him, and bar Kappara said: if those who do His will get this much in this world, how much more in the World-to-Come. In another episode, because calamity struck the world on any day Rabbi Yehuda HaNasi laughed, he offered bar Kappara forty se'a of wheat not to make him laugh. Bar Kappara put a tar-smeared basket upside down on his head and came to collect his wheat; Rabbi Yehuda HaNasi laughed, and bar Kappara said he was only taking what he was owed.",
+   "why": "The discussion has moved from kinds of figs to a story of Rabbi Yehuda HaNasi marveling at a thousand fig dishes; it continues with stories of his wealth and his dealings with bar Kappara.",
    "people": [
     {
      "name": "Rabbi Yehuda HaNasi",
-     "about": "Called simply Rabbi; the wealthy head of the Sages, who judges the compote case and hosts his son's wedding."
-    },
-    {
-     "name": "bar Kappara",
-     "about": "A witty Sage who is left off the wedding guest list and later makes Rabbi Yehuda HaNasi laugh."
+     "about": "The wealthy leader who makes the wedding and who tries to keep bar Kappara from making him laugh."
     },
     {
      "name": "Rabbi Shimon",
-     "about": "Son of Rabbi Yehuda HaNasi, whose wedding is described."
+     "about": "The son of Rabbi Yehuda HaNasi, whose wedding this is."
+    },
+    {
+     "name": "bar Kappara",
+     "about": "A Sage left off the wedding guest list, known here for his sharp wit."
     }
    ],
    "terms": [
     {
+     "term": "myriad",
+     "meaning": "Ten thousand."
+    },
+    {
+     "term": "dinar",
+     "meaning": "A silver coin; the sum on the canopy is meant to sound enormous."
+    },
+    {
      "term": "se'a",
-     "meaning": "A measure of volume for grain, roughly a few gallons."
+     "meaning": "A measure of volume for grain."
     },
     {
      "term": "World-to-Come",
-     "meaning": "The life after this one, where the righteous receive their full reward."
-    },
-    {
-     "term": "myriad",
-     "meaning": "Ten thousand."
+     "meaning": "The reward of the righteous after this life."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "nedarim-51a-1-4": {
    "note": "Bar Kappara told the daughter of Rabbi Yehuda HaNasi that tomorrow he would drink wine to her father's dancing and her mother's singing. Her husband, ben Elasa, a very rich man, was invited to the wedding of Rabbi Shimon, son of Rabbi Yehuda HaNasi. There bar Kappara asked Rabbi Yehuda HaNasi the meaning of words the Torah uses for forbidden sexual acts, refuted every answer, and then offered his own explanation only once Rabbi Yehuda HaNasi's wife had poured him wine and Rabbi Yehuda HaNasi had got up and danced for him. This happened three times. Ben Elasa could not bear to see his father-in-law humiliated, and he and his wife got up and left the wedding.",
@@ -1023,34 +1027,38 @@
    "approved": true
   },
   "nedarim-81a-5-5": {
-   "note": "Isi bar Yehuda stayed away from Rabbi Yosei's academy for three days. Rabbi Yosei's son Vardimus found him and asked why. Isi answered that he could not come when he did not understand the reasoning behind one of Rabbi Yosei's teachings: that people's own laundry comes before the lives of others. What verse supports this? Vardimus offered to try to explain. The story stops with Isi's question and does not give Vardimus's answer.",
-   "why": "The Gemara has been discussing how much laundering clothes matters, and returns to that topic here; the teaching Isi asks about ranks a town's own laundry above others' lives.",
+   "note": "Isi bar Yehuda stayed away from Rabbi Yosei's academy for three days. Vardimus, Rabbi Yosei's son, found him and asked why. Isi said he could not attend when he did not understand Rabbi Yosei's reasoning, and named the puzzle: Rabbi Yosei teaches that a town's own laundry takes precedence over the lives of others, but what verse is that based on? Vardimus explained it from the verse about the land around the Levite cities, which is for their animals and for all their beasts. The word for beasts can also be read as their lives, and since that would be obvious, it must mean something vital to life, namely laundry, because grimy clothes cause real suffering.",
+   "why": "The Gemara returns to Rabbi Yosei's ruling that a town's laundry comes before others' lives, and the story supplies the verse behind it before the discussion turns to Rabbi Yosei's view of vows about bathing.",
    "people": [
     {
      "name": "Isi bar Yehuda",
-     "about": "A student who skips Rabbi Yosei's academy because he cannot understand one of his rulings."
+     "about": "A student who stopped attending Rabbi Yosei's academy because he could not follow one of his rulings."
     },
     {
      "name": "Vardimus",
-     "about": "Son of Rabbi Yosei, who seeks out Isi and offers to explain his father's reasoning."
+     "about": "The son of Rabbi Yosei, who explains his father's reasoning."
     },
     {
      "name": "Rabbi Yosei",
-     "about": "Head of the academy, whose teaching on laundry puzzles Isi."
+     "about": "The Sage whose academy Isi attended and whose ruling puzzled him."
     }
    ],
    "terms": [
     {
      "term": "academy",
-     "meaning": "A house of study where a Sage taught his students."
+     "meaning": "A house of Torah study headed by a Sage."
     },
     {
      "term": "baraita",
-     "meaning": "A teaching of the early Sages that was not included in the Mishna, the core collection of their rulings."
+     "meaning": "A teaching of the early Sages that was not included in the Mishna, the core text the Gemara discusses."
+    },
+    {
+     "term": "Levite cities",
+     "meaning": "Towns the Torah assigned to the tribe of Levi, with open land around them."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "nedarim-89b-5-5": {
    "note": "A man vowed that if he married before he had learned the law, all benefit from the world would be forbidden to him. He worked as hard as a man running up a ladder and a rope, but could not learn it. Rav Aha bar Rav Huna came and misled him, letting him think the vow would not take effect, and the man married. Then Rav Aha bar Rav Huna smeared him with clay, since clothing was now forbidden to him, and brought him before Rav Hisda to have the vow dissolved. Rava praised the plan, saying only a great man like Rav Aha bar Rav Huna would be wise enough to think of it.",

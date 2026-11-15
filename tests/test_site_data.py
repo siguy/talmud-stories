@@ -19,7 +19,10 @@ def test_site_data_counts_match_the_goldens():
         # BORDERLINE, LOW_CONFIDENCE, NOT_A_STORY or mishnah_stories[]. A golden YES/HIGH he never
         # answered (Ketubot 17a:3) is the only gap allowed between the two counts.
         n = sum(1 for p in g["pages"] for s in p.get("stories", []) if s.get("classification") in ("YES", "HIGH_CONFIDENCE"))
-        assert n - len(d["stories"]) == {"ketubot": 1}.get(t, 0), t
+        # A display merge (septimus_site_decisions.json `merge`) shows N golden stories as one card: N-1 fewer.
+        merged = sum(len(grp["members"]) - 1 for grp in json.loads(
+            (ROOT / "results/shas_run/septimus_site_decisions.json").read_text())["merge"]["groups"] if grp["tractate"] == t)
+        assert n - len(d["stories"]) == {"ketubot": 1}.get(t, 0) + merged, t
         assert all(s["reviewed"] and not s["in_mishnah"] for s in d["stories"]), t
         assert all(g["he"] and g["en"] for s in d["stories"] for g in s["segments"])
     y = json.loads((ROOT / "site/data/yevamot.json").read_text())
@@ -75,7 +78,16 @@ def test_boundary_extensions_are_display_only_and_bounded():
     # (ids are permanent since 2026-11-14 and no longer encode the range -- scripts/story_ids.py)
     for s in by_id.values():
         shown = {(g["ref"], g["i"]) for g in s["segments"]}
-        assert {(p["ref"], i) for p in s["span"] for i in range(p["start"], p["end"] + 1)} <= shown, s["id"]
+        source = {(p["ref"], i) for p in s["span"] for i in range(p["start"], p["end"] + 1)}
+        e = s["extended"] or {}
+        if e.get("start_trim") or e.get("end_trim"):
+            # Simon 2026-11-15: legal argument may be trimmed off the ends -- what is shown is then less than the span,
+            # and every trimmed segment is still in the source (nothing invented)
+            assert shown, s["id"]
+            if not (e.get("start_back") or e.get("end_forward")):
+                assert shown < source, s["id"]   # trimmed only: what is shown is part of the source, nothing added
+            continue
+        assert source <= shown, s["id"]
         assert s["extended"] or len(shown) == sum(p["end"] - p["start"] + 1 for p in s["span"]), s["id"]
 
 
@@ -83,7 +95,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 23680, "kiddushin": 11861, "gittin": 25149, "yevamot": 18055, "berakhot": 24919}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept; second twin-pass pass: yevamot -1, berakhot -2
+SITE_WORDS = {"ketubot": 21778, "kiddushin": 11456, "gittin": 25811, "yevamot": 18627, "berakhot": 24851}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept; second twin-pass pass: yevamot -1, berakhot -2; 2026-11-15 boundary review (legal argument trimmed, cut-off stories finished, split stories merged; work/done/2026-11-15-shas-background-notes.md): ketubot -1902, kiddushin -405, gittin +662, yevamot +572, berakhot -68
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -294,7 +306,8 @@ def test_low_pool_promotions_carry_provenance_and_match_the_decision():
     assert len(tagged) == 80, len(tagged)                 # 0 dropped on 2026-11-14; a drop is named on stderr
     by_cells = {frozenset(tuple(c) for c in p["cells"]): p for p in ps}
     for s in tagged:
-        p = by_cells[frozenset((g["ref"], g["i"]) for g in s["segments"])]   # bounded by the unit's detector span
+        # matched by the SOURCE span: a display extension or trim (boundary review, 2026-11-15) changes what is shown
+        p = by_cells[frozenset((x["ref"], i) for x in s["span"] for i in range(x["start"], x["end"] + 1))]
         reasons = {p["grader"][k]["reason"] for k in ("pass1", "pass2")}
         assert s["summary"] not in reasons, s["id"]
 
@@ -526,13 +539,13 @@ def test_merge_decisions_join_cards_and_redirect_the_absorbed_ids():
     red = json.loads((ROOT / "site/data/redirects.json").read_text())
     written = json.loads(WRITTEN.read_text())["summaries"]
     groups = _decisions()["merge"]["groups"]
-    assert len(groups) == 3
+    assert len(groups) >= 3   # 3 from the 2026-11-14 triage; the 2026-11-15 boundary review added more
     for g in groups:
         assert g["decided_by"] and g["reason"] and g["source"] and g["keep"] in [m["card"] for m in g["members"]], g
         cells = {(m["ref"], i) for m in g["members"] for i in range(m["start_segment"], m["end_segment"] + 1)}
         [s] = [s for s in site[g["tractate"]]["stories"] if {(x["ref"], x["i"]) for x in s["segments"]} & cells]
         assert s["id"] == g["keep"] and s["extended"] is None
-        assert {(x["ref"], x["i"]) for x in s["segments"]} == cells
+        assert cells <= {(x["ref"], x["i"]) for x in s["segments"]}   # plus at most 2 bridging segments (build asserts)
         assert reg["ids"][g["keep"]]["status"] == "active" and reg["ids"][g["keep"]]["span"] == s["span"]
         assert s["summary"] == written[g["keep"]].strip()
         for m in g["members"]:

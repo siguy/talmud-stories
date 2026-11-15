@@ -29,7 +29,7 @@
     }
    ],
    "drafted": "shas1",
-   "approved": false
+   "approved": true
   },
   "megillah-5a-18-18": {
    "note": "Rabbi Elazar reported in the name of Rabbi Hanina that Rabbi Yehuda HaNasi planted a sapling on Purim, bathed in Tzippori on the seventeenth of Tammuz when the market wagons were passing, and sought to abolish the fast of the Ninth of Av, and that the Sages did not agree with him. Rabbi Abba bar Zavda said to Rabbi Elazar that it had not happened that way. That year, he said, the Ninth of Av fell on Shabbat and was postponed to Sunday, and Rabbi Yehuda HaNasi said that since it had been pushed off, it should be pushed off altogether; the Rabbis did not agree with him. Rabbi Elazar applied to him the verse 'Two are better than one.'",
@@ -231,7 +231,7 @@
     }
    ],
    "drafted": "shas1",
-   "approved": false
+   "approved": true
   },
   "megillah-18a-24-28": {
    "note": "The Sages did not know what several rare words meant, and learned them from everyday speech. They heard the maidservant in Rabbi Yehuda HaNasi's house ask Sages coming in a few at a time, 'How long will you come in seirugin seirugin?', and learned that seirugin means at intervals. They heard her use other words while talking to a man scattering purslane, to a man twirling his hair, and to a friend she told to sweep the house, and so learned the words for purslane, for turning something round, and for a broom. Rabba bar bar Hana told how an Arab he was traveling with said to him, 'Take your yehav and throw it on my camel,' and he understood that yehav means a load.",
@@ -528,60 +528,60 @@
    "approved": true
   },
   "megillah-26b-12-12": {
-   "note": "A synagogue of the Jews of Rome opened onto a room where a corpse lay, so the impurity of the dead spread into the synagogue, and the priests, who may not be under the same roof as a corpse, could not go in to pray. They came to Rava. He told them to lift the synagogue's ark and set it down in the doorway between the rooms: a wooden object made to stay in one place cannot itself become impure, so it blocks impurity from passing. His colleagues go on to challenge this solution in the discussion that follows.",
-   "why": "Rava has just given a run of rulings on the holiness of the ark and its fittings; here he uses the ark itself as a practical barrier. The Rabbis then object that an ark is sometimes moved with a scroll inside, and Rava concedes there is then no remedy.",
+   "note": "A synagogue of the Jews of Rome opened onto a room where a corpse was lying, so the impurity of the dead spread into the synagogue, and the priests, who must avoid that impurity, could not go in to pray. They came to Rava, who told them to lift the ark and set it down in the opening between the rooms: a wooden utensil made to stay in one place cannot become impure, so it blocks the impurity. The Rabbis objected that the ark is sometimes moved with a Torah scroll still inside it, which makes it an ordinary movable utensil. Rava answered that if so, there is no remedy.",
+   "why": "The Gemara is collecting Rava's rulings about the ark, its curtain and the cases that hold Torah scrolls; this case adds one more ruling of his about the ark, this time about its legal status as a wooden utensil.",
    "people": [
     {
      "name": "Rava",
-     "about": "The Sage the priests consulted, who told them to use the ark as a barrier."
+     "about": "The Sage the priests consult; he proposes using the ark as a barrier, then concedes the objection."
     }
    ],
    "terms": [
     {
      "term": "ritual impurity of a corpse",
-     "meaning": "A state of impurity spread by a dead body to people and objects under the same roof; priests are forbidden to contract it."
+     "meaning": "A dead body imparts the most severe form of ritual impurity, which spreads through a roofed space. Priests are forbidden to contract it."
     },
     {
      "term": "ark",
-     "meaning": "The cabinet in which a synagogue's Torah scrolls are kept."
+     "meaning": "The cabinet in a synagogue where the Torah scrolls are kept."
     },
     {
-     "term": "wooden utensil designated to rest",
-     "meaning": "A wooden object made to stay put, which the law treats as unable to become impure, so it can act as a barrier."
+     "term": "a wooden utensil designated to rest",
+     "meaning": "In the purity laws, a large wooden object made to stay in place rather than be carried about cannot become impure, and so can act as a barrier against impurity."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "megillah-27a-23-25": {
-   "note": "Rav Huna declared a fast day, and Rav Ḥana bar Ḥanilai came to him with all the people of his town. They were asked to give charity and they gave. When they were ready to go home, they asked Rav Huna to hand the money back so they could support the poor of their own town. Rav Huna answered with a teaching: the money goes home with visitors only where the town has no town scholar; where there is one, it is given to him. All the more so here, he said, since both his poor and theirs rely on him.",
-   "why": "Rabbi Yoḥanan, citing Rabbi Meir, has ruled that visitors who pledge charity in another town take the money home for their own poor, and a baraita confirms it. Rav Huna's case marks a limit to that ruling.",
+   "note": "Rav Huna once decreed a fast day. Rav Hana bar Hanilai and all the people of his town came to Rav Huna, and charity was imposed on them, which they gave. When they were about to go home, they asked Rav Huna to give the money back so they could support the poor of their own town with it. Rav Huna refused, citing a teaching that where a town has a scholar overseeing its needs, the money goes to him, and adding that the poor of his town and theirs alike rely on him.",
+   "why": "A teaching just cited rules that townspeople who pledge charity while visiting another town take the money home for their own poor; this story shows the exception, when the town has a scholar in charge of its needs.",
    "people": [
     {
      "name": "Rav Huna",
-     "about": "The Sage who declared the fast and kept the charity collected from the visitors."
+     "about": "The Sage who decreed the fast and kept the charity, saying the poor of both towns rely on him."
     },
     {
-     "name": "Rav Ḥana bar Ḥanilai",
-     "about": "He came with the people of his town and asked for their charity back."
+     "name": "Rav Hana bar Hanilai",
+     "about": "He came with the people of his town to Rav Huna on the fast day."
     }
    ],
    "terms": [
     {
      "term": "fast day",
-     "meaning": "A day of public fasting and prayer declared in a time of trouble, when charity was also collected."
-    },
-    {
-     "term": "town scholar",
-     "meaning": "A Torah scholar who oversees a community's affairs, including how its charity is used."
+     "meaning": "A public fast declared by the community's leaders, often in time of trouble, when people also gave charity."
     },
     {
      "term": "baraita",
-     "meaning": "A teaching from the early Sages that was not included in the Mishna."
+     "meaning": "A teaching of the early Sages that was not included in the Mishna, the core text the Gemara discusses."
+    },
+    {
+     "term": "town scholar",
+     "meaning": "A Torah scholar responsible for managing a community's affairs, including the use of charity funds."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "megillah-27b-20-21": {
    "note": "Rav Huna once stood before Rav with a piece of straw tied around him for a belt. Rav asked what this was. Rav Huna said he had had no wine to sanctify the Sabbath day, so he pawned his belt and bought wine with it. Rav said: may it be God's will that you be wrapped in silk. Later, at the wedding of Rav Huna's son Rabba, Rav Huna, a short man, was lying on a bed, and his daughters and daughters-in-law came in and threw their silk garments on him until he was wrapped in silk. When Rav heard, he was angry: why, when I blessed you, did you not answer, And likewise to the Master?",
@@ -631,30 +631,26 @@
    "approved": true
   },
   "megillah-28a-9-10": {
-   "note": "Rabbi Akiva asked Rabbi Neḥunya the Great in what merit he had lived so long. Rabbi Neḥunya's attendants came and began beating Rabbi Akiva, and he climbed up and sat at the top of a date palm. From there he asked a question about the daily offering: if the verse says lamb, why does it also say one? Rabbi Neḥunya told his attendants: he is a young Torah scholar, let him be. He then answered that one means the finest of its flock. His answer to the first question comes next in the discussion.",
-   "why": "The Gemara is collecting Sages' answers to the question of how they earned long life; this is one more such asking, and Rabbi Neḥunya's own list of merits follows straight after.",
+   "note": "Rabbi Akiva asked Rabbi Nehunya the Great what virtue had earned him a long life. Rabbi Nehunya's attendants took the question as disrespect and began beating Rabbi Akiva, who climbed to the top of a date palm. From there he asked another question: if the Torah says the daily offering is a lamb, why does it add the word one? Hearing this, Rabbi Nehunya told his attendants that he was a young Torah scholar and to let him be. He answered that one means the finest of the flock, and that his long life came because he never accepted gifts, never insisted on getting even with those who wronged him, and was openhanded with his money.",
+   "why": "The Gemara is explaining each of Rabbi Nehunya's virtues by pointing to the conduct of other Sages, and goes on to similar stories of Sages asked how they merited long life.",
    "people": [
     {
      "name": "Rabbi Akiva",
-     "about": "He asked Rabbi Neḥunya about his long life, was beaten by the attendants, and won his hearing with a Torah question."
+     "about": "The young scholar who asks Rabbi Nehunya about his long life and is beaten by the attendants."
     },
     {
-     "name": "Rabbi Neḥunya the Great",
-     "about": "The elderly Sage whom Rabbi Akiva questioned."
+     "name": "Rabbi Nehunya the Great",
+     "about": "The aged Sage who stops his attendants and answers Rabbi Akiva."
     }
    ],
    "terms": [
     {
      "term": "daily offering",
-     "meaning": "The lamb sacrificed in the Temple every morning and afternoon, described in Numbers 28."
-    },
-    {
-     "term": "young Torah scholar",
-     "meaning": "A promising student of Torah; recognizing Rabbi Akiva as one, Rabbi Neḥunya had him spared."
+     "meaning": "The lamb sacrificed in the Temple every morning and every afternoon."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "megillah-28b-14-15": {
    "note": "Reish Lakish was traveling and came to a deep puddle; a man came along, lifted him onto his shoulders and began carrying him across. Reish Lakish asked whether he had read the Bible; he had. Had he studied Mishna? Four of its orders, the man said. Reish Lakish said: you have hewn four mountains and you carry the son of Lakish on your shoulders? Throw the son of Lakish into the water. The man said he was glad to serve the Master. Then, said Reish Lakish, learn from me this teaching of Rabbi Zeira: Jewish women took on themselves to wait seven clean days even for a spot of blood the size of a mustard seed.",

@@ -464,17 +464,25 @@
    "approved": true
   },
   "berakhot-18b-3-3": {
-   "note": "After Rabbi Ḥiyya's death, his sons went out to the villages and forgot what they had learned, and struggled to remember it. One said to the other: Does our father know of our anguish? The other answered: How would he know? It is written, \"His sons are honored yet he shall not know it.\" The account breaks off here; the reply to this comes in the discussion that follows.",
-   "why": "The Gemara has been debating whether the dead know what happens among the living, and has read \"the dead know nothing\" as referring to the wicked. The brothers' exchange carries that question on.",
+   "note": "The sons of Rabbi Ḥiyya went out to the villages, forgot what they had learned, and struggled to recall it. One asked whether their dead father knew of their anguish. The other answered from Job: His sons are honored yet he shall not know it. The first replied with the next verse, Only in his flesh does he feel pain, and Rabbi Yitzḥak's teaching that maggots hurt the dead like a needle in living flesh. They concluded that the dead know of their own pain but not of the pain of others.",
+   "why": "The Gemara has just said the righteous are called living even in death and applied 'the dead know nothing' to the wicked; the brothers' exchange asks what the dead know, and the Gemara then challenges their answer with a story of spirits in a cemetery.",
    "people": [
     {
+     "name": "The sons of Rabbi Ḥiyya",
+     "about": "Two brothers who forget their learning and wonder whether their father knows"
+    },
+    {
      "name": "Rabbi Ḥiyya",
-     "about": "The brothers' late father, whom they wonder about."
+     "about": "Their dead father"
+    },
+    {
+     "name": "Rabbi Yitzḥak",
+     "about": "A Sage whose teaching about the pain of the dead one brother quotes"
     }
    ],
    "terms": [],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "berakhot-18b-6-9": {
    "note": "In a drought year a pious man gave a poor man a dinar on the eve of Rosh HaShana. His wife mocked him, and he went and slept in the cemetery. He heard two spirits talking: one could not roam because she was buried in a mat of reeds, so the other went and heard from behind the heavenly curtain that hail would strike crops sown in the first rainy season. He sowed in the second, and only his crops were spared. The next year he heard that blight would strike the second sowing, sowed in the first, and was spared again. His wife asked why and he told her. Soon she quarreled with the dead girl's mother and taunted her that her daughter was buried in reeds. The next year the spirits said: our words have been heard among the living.",
@@ -1111,50 +1119,42 @@
    "approved": true
   },
   "berakhot-28b-22-23": {
-   "note": "In Yavne, Shimon HaPakuli set the eighteen blessings of the daily prayer in order before Rabban Gamliel. Rabban Gamliel asked the Sages whether anyone knew how to compose a blessing against the heretics, and Shmuel HaKatan stood up and composed it. The next year, leading the prayer, Shmuel HaKatan forgot that blessing and tried for two or three hours to recall it, and they did not remove him from leading the prayer.",
-   "why": "The Gemara asked why the eighteen blessings are nineteen, and Rabbi Levi said the blessing against heretics was added at Yavne; this tells how. The Gemara then asks why Shmuel HaKatan was not removed, given Rav's rule that one who errs in that blessing is removed as a suspected heretic.",
+   "note": "Shimon HaPakuli arranged the eighteen blessings in order before Rabban Gamliel in Yavne. Rabban Gamliel asked the Sages whether anyone knew how to compose the blessing against the heretics, and Shmuel HaKatan stood up and composed it. The next year, leading the prayer, he forgot it and spent two or three hours trying to recall it, and they did not remove him.",
+   "why": "The Gemara has just asked why the prayer of eighteen blessings has nineteen, answering that the blessing of the heretics was added in Yavne; afterward it asks why Shmuel HaKatan was not removed, since a leader who errs in that blessing is suspected of heresy.",
    "people": [
     {
      "name": "Shimon HaPakuli",
-     "about": "Set the eighteen blessings in order before Rabban Gamliel."
+     "about": "The Sage who set the eighteen blessings in order"
     },
     {
      "name": "Rabban Gamliel",
-     "about": "Asked who could compose the blessing against the heretics."
+     "about": "The Nasi, head of the Sages in Yavne, who asks for the new blessing"
     },
     {
      "name": "Shmuel HaKatan",
-     "about": "Composed the blessing, then forgot it a year later."
-    },
-    {
-     "name": "Abaye",
-     "about": "Argues in the Gemara that a good person does not become wicked."
-    },
-    {
-     "name": "Yoḥanan the High Priest",
-     "about": "Cited as one who served eighty years and became a Sadducee."
+     "about": "The Sage who composes the blessing against the heretics and later forgets it"
     }
    ],
    "terms": [
     {
      "term": "eighteen blessings",
-     "meaning": "The Amida, the central standing prayer said each day."
+     "meaning": "The central prayer of the Jewish service, recited standing, also called the Amida."
     },
     {
      "term": "blessing of the heretics",
-     "meaning": "A blessing added to the Amida asking God to bring down heretics and informers."
+     "meaning": "A blessing added to the prayer asking God to defeat informers and heretics."
+    },
+    {
+     "term": "Yavne",
+     "meaning": "The town where the Sages gathered and led the community after the destruction of the Temple."
     },
     {
      "term": "prayer leader",
-     "meaning": "The person who recites the prayer aloud for the congregation."
-    },
-    {
-     "term": "Sadducee",
-     "meaning": "A member of a Second Temple group that rejected the Sages' teachings."
+     "meaning": "The person who recites the prayer aloud on behalf of the congregation."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "berakhot-29a-5-5": {
    "note": "The Gemara cites a mishna: Do not be sure of yourself until the day you die, for Yoḥanan the High Priest served in the High Priesthood for eighty years and in the end became a Sadducee.",
@@ -2233,30 +2233,46 @@
    "approved": true
   },
   "berakhot-51b-5-6": {
-   "note": "After Ulla refused to send the cup of blessing to Rav Nahman's wife Yalta, quoting a teaching that a woman is blessed through her husband, Yalta heard. She rose in a rage, went into the wine store and broke four hundred barrels of wine. Rav Nahman asked Ulla to send her another cup. Ulla sent one with the message that all the wine in that barrel was wine of blessing. She sent back: \"From peddlers come words, and from rags come lice.\"",
-   "why": "The Gemara has been listing the practices for the cup of blessing, including sending it to one's household so the wife is blessed; this incident tests that practice.",
+   "note": "Ulla visited Rav Naḥman, ate, led Grace after Meals, and handed the cup of blessing to Rav Naḥman. Rav Naḥman asked him to send the cup to his wife Yalta. Ulla refused, citing Rabbi Yoḥanan that a woman's offspring are blessed only through her husband, from the verse: He will bless the fruit of your body. Yalta heard, rose in a rage, went into the wine store and broke four hundred barrels of wine. At Rav Naḥman's request Ulla sent her another cup with word that all the wine in the barrel was wine of blessing. She sent back: from peddlers, words, and from rags, lice.",
+   "why": "The Gemara has just listed how the cup of blessing is handled, ending with sending it to one's household so one's wife will be blessed; Ulla's refusal disputes that last practice.",
    "people": [
     {
-     "name": "Yalta",
-     "about": "Rav Nahman's wife, daughter of the Exilarch, who broke the wine barrels in anger."
-    },
-    {
-     "name": "Rav Nahman",
-     "about": "Yalta's husband and Ulla's host."
-    },
-    {
      "name": "Ulla",
-     "about": "A guest who led Grace and would not send Yalta the cup."
+     "about": "A visiting Sage who leads Grace after Meals and refuses to send Yalta the cup"
+    },
+    {
+     "name": "Rav Naḥman",
+     "about": "Ulla's host, Yalta's husband"
+    },
+    {
+     "name": "Yalta",
+     "about": "Rav Naḥman's wife, who smashes the wine barrels in anger"
+    },
+    {
+     "name": "Rabbi Yoḥanan",
+     "about": "The Sage whose teaching Ulla quotes"
+    },
+    {
+     "name": "Rabbi Natan",
+     "about": "A Sage who taught the same idea in a baraita"
     }
    ],
    "terms": [
     {
+     "term": "Grace after Meals",
+     "meaning": "The blessings said after eating bread, sometimes over a cup of wine."
+    },
+    {
      "term": "cup of blessing",
-     "meaning": "A cup of wine held by the leader while reciting Grace after Meals."
+     "meaning": "The cup of wine held while leading Grace after Meals, then drunk and shared."
+    },
+    {
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages that was not included in the Mishna."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "berakhot-53b-16-16": {
    "note": "Two students ate and did not say Grace. One forgot by accident, and following Beit Shammai he went back to where he had eaten, and found a purse of gold. The other skipped it on purpose and, following Beit Hillel, did not go back, and a lion ate him.",

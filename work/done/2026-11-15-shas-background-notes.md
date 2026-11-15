@@ -4,7 +4,7 @@ capability: [publication]
 tractate: []
 blocked_by: []
 awaiting: []
-writes: [results/site_notes/, site/index.html, .gitignore, site/data/notes/, site/app.js, site/style.css, scripts/build_site_notes.py, scripts/approve_notes.py, scripts/draft_site_notes.py, src/prompts/site_note_v2.md, tests/test_site_notes.py, docs/findings/2026-10-12-septimus-note-flags.md]
+writes: [results/site_notes/, scripts/review_site_boundaries.py, scripts/build_site_data.py, site/data/, results/shas_run/septimus_site_decisions.json, results/shas_run/site_summaries_written.json, tests/test_site_data.py, site/index.html, .gitignore, site/data/notes/, site/app.js, site/style.css, scripts/build_site_notes.py, scripts/approve_notes.py, scripts/draft_site_notes.py, src/prompts/site_note_v2.md, tests/test_site_notes.py, docs/findings/2026-10-12-septimus-note-flags.md]
 finding:
 superseded_by:
 ---
@@ -120,3 +120,25 @@ Counts from `python3 scripts/build_site_notes.py --report`, asserted by `tests/t
   about notes; they stay draft until someone reads them.
 - **Seen in passing, not fixed here:** Ketubot 2b and 3a tell the same ferry story twice; several flagged pairs are
   one story split across two site entries (e.g. Rav Yehuda and Rav Nahman's court case).
+
+### Follow-up, same day: boundaries fixed (Simon 2026-11-15)
+
+Simon: drop the legal argument, finish cut-off stories, a person from the surrounding discussion is fine
+background, two cards that are really one story become one. **Now 1,804 stories (7 merged), every one with a note;
+1,739 approved, 65 held.**
+
+- `scripts/review_site_boundaries.py`: the 154 flagged passages, each shown with 5 segments either side and which
+  other site story owns them, went to 8 subagent reviewers: 43 keep, 94 adjust, 12 merge (incl. 5 pairs the reviewers
+  described as one story but could not merge across a 1-2 segment gap; a merge may now bridge up to 2 segments).
+  Applied as display-only boundaries: 99 stories widened, 27 trimmed (new `start_trim` / `end_trim` in
+  `boundary_extensions.json`, schema and build), 7 merges in `septimus_site_decisions.json`. 3 refused and left as
+  they were (an extension of 5, a pair 4 apart, a story nested inside another); Bava Batra 58a's merge dropped
+  because two site cards overlap there.
+- The 98 stories whose text changed were redrafted (`results/site_notes/bfix1notes`), merged cards got a written
+  summary from their note's first sentence.
+- The name check is a printed warning, not a hold (14 warnings).
+- **Still held, 65:** passages a fresh reader still doubts after the review -- mostly two incidents joined (needs a
+  split, which the site cannot do) or a story whose events sit outside the passage. Listed in
+  `docs/findings/2026-10-12-septimus-note-flags.md`. Reviewers named two that look like no story at all
+  (`bava_kamma-51a-0-0`, `nazir-20a-1-2`); they still ship, without an approved note.
+- Word pins in `tests/test_site_data.py` moved with the boundaries (Ketubot -1,902 words: trimmed argument).

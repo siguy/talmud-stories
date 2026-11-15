@@ -1045,7 +1045,7 @@
    ],
    "terms": [],
    "drafted": "shas1",
-   "approved": false
+   "approved": true
   },
   "eruvin-53b-23-23": {
    "note": "Rabbi Yosei HaGelili was walking along the road when he met Berurya, and asked her: by which road shall we go to Lod? She answered: foolish Galilean, didn't the Sages say, do not talk much with a woman? You should have said: which way to Lod?",
@@ -1182,34 +1182,42 @@
    "approved": true
   },
   "eruvin-60a-6-6": {
-   "note": "Residents of the city of Kakunya came to Rav Yosef and asked for someone to set up an eiruv for their city. Rav Yosef sent Abaye, telling him to make sure no one in the study hall could object to it. Abaye saw some houses that opened onto the river and not onto the city, and said: let these be the section left out of the eiruv. The story here ends there; what Abaye decided in the end is not part of it.",
-   "why": "The Gemara is discussing how an eiruv is set up for a city, where the rule is that part of it must be left out. Abaye's visit to Kakunya tests what may count as that left-out part.",
+   "note": "Residents of the town of Kakunya asked Rav Yosef to send someone to set up an eiruv for their town. He sent Abaye, warning him to make sure there would be no outcry against it in the study hall. Abaye saw some houses that opened onto the river rather than the town and decided they could be the part left outside the eiruv. Then he changed his mind again and again: such houses do not qualify, so he would cut windows to link them; windows are unnecessary, as Rabba bar Avuh's eiruv in Meḥoza shows; that case is different, so windows are needed; and finally, windows are not needed, since a straw storehouse in Pumbedita once served as the part left out.",
+   "why": "The mishna says a public city that became private may not have one eiruv for all of it unless a section is left out. Abaye's reversals show how hard that rule is to apply, and afterward he grasps Rav Yosef's warning.",
    "people": [
     {
      "name": "Rav Yosef",
-     "about": "Sage the people of Kakunya asked for help; he sent Abaye."
+     "about": "Sends Abaye to make the eiruv and warns him to avoid criticism"
     },
     {
      "name": "Abaye",
-     "about": "Rav Yosef's student, sent to set up the eiruv."
+     "about": "Sent to make the eiruv; keeps reversing his ruling"
+    },
+    {
+     "name": "Rabba bar Avuh",
+     "about": "Made an eiruv for Meḥoza neighborhood by neighborhood"
+    },
+    {
+     "name": "Mar bar Pofidata",
+     "about": "Owned the straw storehouse left outside Pumbedita's eiruv"
     }
    ],
    "terms": [
     {
      "term": "eiruv",
-     "meaning": "A legal arrangement that joins the homes of a town or courtyard so that carrying among them is permitted on Shabbat."
+     "meaning": "A legal arrangement that joins many homes into one shared domain, so that carrying is permitted there on Shabbat."
     },
     {
-     "term": "section excluded",
-     "meaning": "For a city that was once public, the Sages required that part of it be left out of the eiruv as a reminder; this part is called the excluded section."
+     "term": "the excluded section",
+     "meaning": "A part of the town deliberately left out of the eiruv, as the mishna requires for a town that was once public."
     },
     {
-     "term": "study hall",
-     "meaning": "The house where the Sages studied, where a flawed ruling would be openly criticized."
+     "term": "mishna",
+     "meaning": "The early code of Jewish law on which the Talmud's discussion is built."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "eruvin-61a-12-12": {
    "note": "Rabbi Yehuda HaNasi had allowed the people of Geder, a town at the top of a slope, to go down to Hamtan on Shabbat, but did not let the people of Hamtan go up to Geder. When Rav Dimi came from the Land of Israel to Babylonia, he explained the real reason: the people of Geder used to assault the people of Hamtan. So the rule was not a ruling about Shabbat limits at all but an ordinance Rabbi made to keep the peace.",
@@ -1366,26 +1374,30 @@
    "approved": true
   },
   "eruvin-64a-0-2": {
-   "note": "Rav Huna son of Rav Yehoshua had reported Abaye's advice to Rava. Rava objected that it abolished the eiruv in that alleyway, since people would see them carrying without one. Rav Huna answered that the residents would make an eiruv anyway as a reminder. Rava said people would then think an eiruv works even where a gentile has not rented out his rights. Rav Huna said they would make a public announcement. Rava retorted: will an announcement reach the children?",
-   "why": "This continues the case of the gentile Lahman bar Ristak, who would not rent his rights. Rava rejects Abaye's way around him and then offers his own: one neighbor should befriend the gentile and become like his hired worker.",
+   "note": "Rav Huna son of Rav Yehoshua went and told Rava of Abaye's ruling that Jews sharing an alleyway with a gentile could all give up their rights to one of them, who could then carry there. Rava objected that this would abolish the eiruv in that alleyway. Rav Huna answered that they could still make an eiruv as a reminder; Rava said people would then think an eiruv works even where a gentile lives. Rav Huna said they would make an announcement; Rava retorted: will you make an announcement for the children?",
+   "why": "Abaye has just told the Jewish neighbors of a gentile to give up their rights in the alleyway to one person; this exchange rejects that solution, and Rava then offers his own: borrowing a place from the gentile.",
    "people": [
     {
-     "name": "Rava",
-     "about": "The Sage who objected to Abaye's advice."
+     "name": "Rav Huna son of Rav Yehoshua",
+     "about": "Reports Abaye's ruling to Rava and defends it"
     },
     {
-     "name": "Rav Huna son of Rav Yehoshua",
-     "about": "He reported Abaye's advice to Rava and defended it."
+     "name": "Rava",
+     "about": "Raises objection after objection to the ruling"
     }
    ],
    "terms": [
     {
      "term": "eiruv",
-     "meaning": "An arrangement set up before Shabbat that joins neighbors' homes into one shared area, so they may carry objects in a common courtyard or alleyway."
+     "meaning": "A legal arrangement that joins homes into one shared domain so that carrying is permitted on Shabbat; a gentile resident who has not rented out his share blocks it."
+    },
+    {
+     "term": "giving up rights",
+     "meaning": "Renouncing one's share in a shared space for Shabbat, so that others may carry there."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "eruvin-64b-4-9": {
    "note": "Rabban Gamliel was riding a donkey from Akko to Keziv, with his student Rabbi Elai walking behind. He found loaves of bread on the road and told Elai to pick them up, then met a gentile and said: Mavgai, take these loaves from Elai. Elai asked the man his name and whether Rabban Gamliel had ever met him. It was Mavgai, and they had never met, so they learned Rabban Gamliel had spoken by divine inspiration. At Keziv a man came to have a vow released. Rabban Gamliel confirmed with Elai that they had drunk a quarter-log of Italian wine and told the man to follow them until the wine wore off. After three mil, at the Ladder of Tyre, he got down, wrapped himself in his shawl, sat, and released the vow.",
@@ -1516,37 +1528,37 @@
    "approved": true
   },
   "eruvin-68b-0-3": {
-   "note": "Ravina pressed Rava, who planned to give up his rights in his courtyard so water could be carried to a baby. Why not stay where you are, renounce in their favor, and then have them renounce back to you, as Rav permits? Rava answered that on that point he follows Shmuel, who forbids renouncing back and forth. Ravina objected that Shmuel's reason is the same one that forbids renouncing from one courtyard to another, which Rava was doing. Rava replied that Shmuel's reason is different: renouncing back and forth would make the words of the Sages a laughingstock.",
-   "why": "The Gemara then takes up Rav and Shmuel's dispute over renouncing and renouncing back, and asks whether it matches an older disagreement between Rabbi Eliezer and the Rabbis.",
+   "note": "A baby's warm water for his Shabbat circumcision had spilled, and Rava offered to give up his rights to his own courtyard so water could be carried over from it. Ravina challenged him: didn't Shmuel say rights cannot be given up from one courtyard to another? Rava said he followed Rabbi Yoḥanan on that. Ravina asked why, then, Rava did not stay where he was, give up his rights, and have the others give theirs back to him afterward, as Rav allows. Rava said that on this he followed Shmuel, who forbids it. Ravina pressed that both rulings rest on one reason; Rava answered that Shmuel's reason here is different: so that the Sages' rules do not become a joke.",
+   "why": "The Gemara has been telling of spilled circumcision water on Shabbat; Rava's plan leads into the question whether rights can be given up and given back, which the Gemara then takes up as a dispute between Rav and Shmuel.",
    "people": [
     {
      "name": "Ravina",
-     "about": "He questioned Rava's plan and its consistency."
+     "about": "Challenges Rava's plan with Shmuel's rulings"
     },
     {
      "name": "Rava",
-     "about": "He planned to renounce his courtyard rights for a baby's sake and defended his reasoning."
-    },
-    {
-     "name": "Rav",
-     "about": "A Sage quoted as allowing one resident to renounce to another and then receive the rights back."
+     "about": "Plans to give up his rights to his courtyard so the baby's water can be carried"
     },
     {
      "name": "Shmuel",
-     "about": "A Sage quoted as forbidding that back-and-forth renouncing."
+     "about": "Sage whose rulings on giving up rights are quoted"
+    },
+    {
+     "name": "Rabbi Yoḥanan",
+     "about": "Sage who allows giving up rights from one courtyard to another"
     }
    ],
    "terms": [
     {
-     "term": "renouncing one's rights",
-     "meaning": "Giving up one's share in a shared courtyard to others for Shabbat, so they may carry there without an eiruv."
+     "term": "giving up rights to a courtyard",
+     "meaning": "On Shabbat, a resident who did not join the eiruv can renounce his share in a shared courtyard so that others may carry there."
     },
     {
-     "term": "the Master",
-     "meaning": "A respectful way of addressing a Sage; here Ravina means Rava."
+     "term": "eiruv",
+     "meaning": "A legal arrangement that joins homes and courtyards into one shared domain so that carrying is permitted on Shabbat."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "eruvin-68b-13-16": {
@@ -1880,25 +1892,37 @@
    "approved": true
   },
   "eruvin-104a-13-13": {
-   "note": "Ulla was visiting the house of Rav Menashe when a man came and knocked at the door. Ulla said: \"Who is that? May his body be desecrated, as he desecrates Shabbat,\" because knocking makes a sound. The story ends with Ulla's curse; the reply comes in the discussion that follows.",
-   "why": "The mishna allows drawing water with a noisy wheel only in the Temple, and the Gemara is asking whether making any sound is forbidden on Shabbat. Rabba answers Ulla that only a pleasant musical sound was forbidden, and Abaye then challenges him.",
+   "note": "Ulla was staying at the house of Rav Menashe on Shabbat when a man came and knocked on the door. Ulla said: Who is that? May his body be desecrated, since he desecrates Shabbat. Rabba told him the Sages forbade only musical sounds on Shabbat, not knocking. Abaye raised an objection to Rabba from a teaching that allows drawing wine with a siphon and dripping water for a sick person on Shabbat; the answer does not come within the story.",
+   "why": "After the mishna's ruling on drawing water from the Cistern of the Exiles on Shabbat, the Gemara turns to whether making a sound on Shabbat is forbidden; Ulla's curse and Rabba's reply open that debate.",
    "people": [
     {
      "name": "Ulla",
-     "about": "A Sage visiting Rav Menashe's house, who curses the man knocking on the door."
+     "about": "Visiting Sage who curses the man knocking on Shabbat"
     },
     {
      "name": "Rav Menashe",
-     "about": "The host whose house Ulla is visiting."
+     "about": "The host at whose house Ulla was staying"
+    },
+    {
+     "name": "Rabba",
+     "about": "Says only musical sounds are forbidden on Shabbat"
+    },
+    {
+     "name": "Abaye",
+     "about": "Raises an objection to Rabba's view"
     }
    ],
    "terms": [
     {
-     "term": "desecrates Shabbat",
-     "meaning": "Breaks one of the rules of the Sabbath rest. Here Ulla holds that even producing a sound by knocking counts."
+     "term": "Cistern of the Exiles",
+     "meaning": "A cistern named in the mishna, from which the mishna allows water to be drawn on Shabbat."
+    },
+    {
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages that was not included in the Mishna."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "eruvin-104a-24-25": {

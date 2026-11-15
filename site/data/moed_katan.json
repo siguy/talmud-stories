@@ -7,12 +7,17 @@
    "tractate": "moed_katan",
    "ref": "Moed Katan 4a",
    "refs": [
-    "Moed Katan 4a"
+    "Moed Katan 4a",
+    "Moed Katan 4b"
    ],
    "start_segment": 21,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Adds segments 7-8, which finish Rabba Tosefa'a's sentence and record his retraction, ending the exchange."
+   },
    "reviewed": false,
    "summary": "While walking along a road, Ravina and Rabba Tosefa’a witness a man drawing water on the intermediate days of a Festival, leading Rabba Tosefa’a to suggest he be excommunicated.",
    "segments": [
@@ -21,6 +26,18 @@
      "i": 21,
      "he": "רָבִינָא וְרַבָּה תּוֹסְפָאָה הֲווֹ קָא אָזְלִי בְּאוֹרְחָא. חֲזוֹ לְהָהוּא גַּבְרָא דַּהֲוָה דָּלֵי דַּוְולָא בְּחוּלָּא דְּמוֹעֲדָא, אֲמַר לֵיהּ רַבָּה תּוֹסְפָאָה לְרָבִינָא: לֵיתֵי מָר לְשַׁמְּתֵיהּ. אֲמַר לֵיהּ: וְהָתַנְיָא: מַדְלִין לִירָקוֹת כְּדֵי לְאוֹכְלָן. אֲמַר לֵיהּ: מִי סָבְרַתְּ מַאי ״מַדְלִין״ — מַדְלִין מַיָּא? מַאי",
      "en": "The Gemara relates that <b>Ravina and Rabba Tosefa’a were</b> once <b>walking along the road</b> when <b>they saw a certain man that was drawing</b> water <b>with a bucket on the intermediate days of a Festival. Rabba Tosefa’a said to Ravina: Let the Master come and excommunicate him</b> for transgressing the words of the Sages. Ravina <b>said to him: But isn’t it taught</b> in a <i>baraita</i>: <b>One may draw for vegetables in order to eat them,</b> and so he has not committed a transgression. Rabba Tosefa’a <b>said to him: Do you maintain</b> that <b>what is</b> meant by <b>one may draw</b> [<b><i>madlin</i></b>] <b>is</b> that <b>one may draw water</b> in order to irrigate the vegetables? This is not so. Rather, <b>what is</b> meant by"
+    },
+    {
+     "ref": "Moed Katan 4b",
+     "i": 0,
+     "he": "״מַדְלִין״ — שַׁלּוֹפֵי. כְּדִתְנַן: הַמֵּידֵל בַּגְּפָנִים, כְּשֵׁם שֶׁהוּא מֵידֵל בְּשֶׁלּוֹ — כָּךְ הוּא מֵידֵל בְּשֶׁל עֲנִיִּים, דִּבְרֵי רַבִּי יְהוּדָה. רַבִּי מֵאִיר אוֹמֵר: בְּשֶׁלּוֹ רַשַּׁאי, וְאֵינוֹ רַשַּׁאי בְּשֶׁל עֲנִיִּים.",
+     "en": "<b>one may draw</b> is that <b>one may pull out</b> some of the vegetables that are growing densely together. The <i>baraita</i> comes to teach that one is permitted to thin out a garden bed on the intermediate days of a Festival in order to eat on the Festival those that he removes, but he is prohibited to do so in order to enhance the appearance of those that remain. <b>As we learned</b> in a mishna (<i>Pe’a</i> 7:5): <b>One who thins out [<i>meidel</i>] the vines</b> in his vineyard, <b>just as he may thin out his own</b> vines, <b>so too, he may thin out</b> the vines set aside for <b>the poor.</b> Since he is doing it for the sake of the vines, he may also thin out what he leaves for the poor; this is <b>the statemen</b>t <b>of Rabbi Yehuda. Rabbi Meir</b> disagrees and <b>says: His own</b> vines <b>he is permitted</b> to thin out, <b>but he is not permitted</b> to thin out the vines set aside <b>for the poor.</b> This mishna indicates that the term <i>meidel</i> can be used to mean thinning out and does not refer only to drawing water."
+    },
+    {
+     "ref": "Moed Katan 4b",
+     "i": 1,
+     "he": "אֲמַר לֵיהּ, וְהָתַנְיָא: מַדְלִין מַיִם לִירָקוֹת כְּדֵי לְאוֹכְלָן! אֲמַר לֵיהּ: אִי תַּנְיָא — תַּנְיָא.",
+     "en": "Ravina <b>said to</b> Rabba Tosefa’a: <b>But wasn’t it</b> explicitly <b>taught</b> in a <i>baraita</i>: <b>One may draw water</b> to irrigate <b>vegetables in order to eat them?</b> Rabba Tosefa’a <b>said to him: If it is taught</b> explicitly in a <i>baraita</i>, the <i>halakha</i> is as <b>it is taught,</b> and I retract my statement."
     }
    ],
    "span": [
@@ -30,8 +47,8 @@
      "end": 21
     }
    ],
-   "words": 123,
-   "minutes": 1
+   "words": 367,
+   "minutes": 3
   },
   {
    "id": "moed_katan-8a-18-18",
@@ -228,7 +245,11 @@
    "start_segment": 13,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Adds segment 7, where Abaye challenges Rava's permission and Rava replies, completing the Bedita river incident."
+   },
    "reviewed": false,
    "summary": "When the Bedita River overflowed and left fish stranded, the people gathered them and Rava permitted salting them to prevent loss.",
    "segments": [
@@ -237,6 +258,12 @@
      "i": 13,
      "he": "כְּבָשִׁין שֶׁהוּא יָכוֹל לֶאֱכוֹל בַּמּוֹעֵד — כּוֹבְשָׁן. בְּדִיתָא לְבַאי כְּווֹרֵי, אֲזוּל כּוּלֵּי עָלְמָא צוּד אַיְיתוֹ כְּווֹרֵי, שְׁרָא לְהוּ רָבָא לְמִימְלַח מִינַּיְיהוּ.",
      "en": "§ It was taught in the mishna: With regard to all <b>preserved food from which he can eat on the Festival, he</b> may <b>preserve them</b> on the intermediate days of a Festival. The Gemara relates that the <b>Bedita</b> River once <b>overflowed,</b> depositing large quantities of <b>fish</b> in small water deposits on the river bank on the intermediate days of a Festival. <b>Everyone went and trapped and brought</b> home <b>fish,</b> and <b>Rava permitted them to salt</b> some <b>of</b> the fish."
+    },
+    {
+     "ref": "Moed Katan 11a",
+     "i": 14,
+     "he": "אֲמַר לֵיהּ אַבָּיֵי, וְהָא תְּנַן: כְּבָשִׁין שֶׁהוּא יָכוֹל לֶאֱכוֹל מֵהֶן בַּמּוֹעֵד — כּוֹבְשָׁן! אֲמַר לֵיהּ: כֵּיוָן דְּמֵעִיקָּרָא אַדַּעְתָּא דַאֲכִילָה אַיְיתִינְהוּ, וְאִי שָׁבֵיק לְהוּ פָּסְדִי, כִּפְרַקְמַטְיָא הָאָבֵד דָּמֵי, וּשְׁרֵי.",
+     "en": "<b>Abaye said to him: Didn’t we learn</b> in the mishna: With regard to <b>all preserved food from which he can eat on the Festival, he</b> may <b>preserve them</b> on the intermediate days of a Festival? In this case it was impossible to eat that much fish on the Festival, and therefore preserving them should have been prohibited. Rava <b>said to him: Since they initially brought</b> these fish <b>with the intention of eating</b> them on the Festival, and it only became clear afterward that they had brought too many, <b>and if one would leave them</b> without salting them <b>they would be ruined, they are</b> treated <b>like merchandise that will be lost, and</b> therefore preserving them <b>is permitted.</b>"
     }
    ],
    "span": [
@@ -246,8 +273,8 @@
      "end": 13
     }
    ],
-   "words": 79,
-   "minutes": 1
+   "words": 195,
+   "minutes": 2
   },
   {
    "id": "moed_katan-11b-11-12",

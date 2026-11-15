@@ -330,7 +330,11 @@
    "start_segment": 14,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 8 is Rava's answer explaining that the butcher used nuts to lure children into bringing him forbidden fat, which completes the story."
+   },
    "reviewed": false,
    "summary": "A butcher suspected of selling forbidden fat is penalized by Rava, who bans him from selling even unrelated items like nuts. A butcher is caught selling forbidden fat, leading Rava to penalize him by banning him from selling nuts, which prompts a legal inquiry by Rav Pappa.",
    "segments": [
@@ -345,6 +349,12 @@
      "i": 0,
      "he": "תַּרְבָּא דְּאַטְמָא בְּמַר דְּכַנְתָּא, קַנְסֵיהּ רָבָא לְזַבּוֹנֵי אֲפִילּוּ אַמְגּוֹזֵי. אֲמַר לֵיהּ רַב פָּפָּא לְרָבָא: כְּמַאן? כְּרַבִּי יְהוּדָה? אִי כְּרַבִּי יְהוּדָה, אֲפִילּוּ מַיִם וָמֶלַח נָמֵי!",
      "en": "<b>fat of the</b> kidney adjacent to the <b>thigh,</b> which is forbidden, in place <b>of fat of the intestines,</b> which is permitted. <b>Rava penalized him</b> and prohibited him <b>even from selling nuts. Rav Pappa said to Rava: In accordance with</b> which opinion in the mishna is your ruling? It must be <b>in accordance with</b> the opinion of <b>Rabbi Yehuda. If it is in accordance with</b> the opinion of <b>Rabbi Yehuda,</b> then you should prohibit this butcher from selling <b>even water and salt.</b>"
+    },
+    {
+     "ref": "Bekhorot 30a",
+     "i": 1,
+     "he": "לְעוֹלָם רַבִּי שִׁמְעוֹן, וּבְאִיסּוּרָא דְּגוּפֵיהּ קָנְסִינַן לֵיהּ. סְתָם דַּרְדְּקֵי גְּרוּ בְּאַמְגּוֹזֵי, וְאָזֵיל וּמְשַׁבֵּשׁ לִבְנֵי טַבָּחֵי, וְגָרֵי לְהוּ בְּאַמְגּוֹזֵי, וּמַיְיתוּ לֵיהּ תַּרְבָּא דְּאַטְמָא, וּמְזַבֵּין לֵיהּ בְּמַר דְּכַנְתָּא.",
+     "en": "Rava replied: <b>Actually,</b> my ruling is in accordance with the opinion of <b>Rabbi Shimon,</b> who holds that one is suspected only about those items that are related to the prohibition in question. <b>And we are</b> in fact <b>penalizing him with regard to</b> items related to <b>the prohibition itself.</b> How so? <b>Ordinary children are enticed by nuts, and</b> that individual <b>went and misled the children of butchers and enticed them with nuts, and they brought him fat of the</b> kidney that is adjacent to the <b>thigh, and he sold it as</b> though it were <b>fat of the intestines.</b>"
     }
    ],
    "span": [
@@ -359,8 +369,8 @@
      "end": 0
     }
    ],
-   "words": 94,
-   "minutes": 1
+   "words": 191,
+   "minutes": 2
   },
   {
    "id": "bekhorot-30b-12-14",
@@ -410,13 +420,18 @@
    "tractate": "bekhorot",
    "ref": "Bekhorot 30b",
    "refs": [
-    "Bekhorot 30b",
-    "Bekhorot 31a"
+    "Bekhorot 30b"
    ],
    "start_segment": 17,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Only segment 6 tells the incident of the woman; segments 7-9 are legal opinions on whether haverim who retract are taken back.",
+    "start_trim": 0,
+    "end_trim": 3
+   },
    "reviewed": false,
    "summary": "A woman who used to tie phylacteries for her first husband (a scholar) ends up grinding grain for her second husband (an am ha'aretz).",
    "segments": [
@@ -425,24 +440,6 @@
      "i": 17,
      "he": "רַבִּי מֵאִיר אוֹמֵר: אַף הֵן צְרִיכִין לְקַבֵּל עֲלֵיהֶן דִּבְרֵי חֲבֵירוּת לְכַתְּחִלָּה. רַבִּי שִׁמְעוֹן בֶּן אֶלְעָזָר אוֹמֵר מִשּׁוּם רַבִּי מֵאִיר: מַעֲשֶׂה בְּאִשָּׁה אַחַת שֶׁנִּשֵּׂאת לְחָבֵר וְהָיְתָה קוֹמַעַת לוֹ תְּפִילִּין עַל יָדוֹ, נִשֵּׂאת לְעַם הָאָרֶץ וְהָיְתָה קוֹשֶׁרֶת לוֹ קִשְׁרֵי מוֹכֵס עַל יָדוֹ.",
      "en": "The <i>baraita</i> continues: <b>Rabbi Meir says: They too must accept</b> upon themselves a commitment to observe <b>the matters</b> associated with <b><i>ḥaver</i> status <i>ab initio</i>. And similarly, Rabbi Shimon ben Elazar would</b> illustrate this point and <b>say in the name of Rabbi Meir:</b> There was <b>an incident involving a certain woman who married a <i>ḥaver</i> and would tie [<i>koma’at</i>] for him phylacteries on his hand,</b> and she later <b>married a tax collector and would tie for him tax seals on his hand,</b> which shows that her new husband had a great influence on her level of piety."
-    },
-    {
-     "ref": "Bekhorot 31a",
-     "i": 0,
-     "he": "תָּנוּ רַבָּנַן: וְכוּלָּן שֶׁחָזְרוּ בָּהֶן אֵין מְקַבְּלִין אוֹתָן עוֹלָמִית, דִּבְרֵי רַבִּי מֵאִיר. רַבִּי יְהוּדָה אוֹמֵר: חָזְרוּ בְּמַטְמוֹנִיּוֹת — אֵין מְקַבְּלִין אוֹתָן, בְּפַרְהֶסְיָא — מְקַבְּלִין אוֹתָן.",
-     "en": "With regard to an <i>am ha’aretz</i> who accepts upon himself the stringent practices of a <i>ḥaver</i>, <b>the Sages taught</b> in a <i>baraita</i>: <b>And</b> with regard to <b>all of them, when they retract</b> and return to being <i>amei ha’aretz</i>, <b>they are never accepted</b> as <i>ḥaverim</i>; this is <b>the statement of Rabbi Meir. Rabbi Yehuda says:</b> If <b>they retracted in private,</b> while in public they continue to act as <i>ḥaverim</i>, <b>they are not accepted,</b> but if they retract <b>in public [<i>befarheseya</i>], they are accepted,</b> as they can be trusted."
-    },
-    {
-     "ref": "Bekhorot 31a",
-     "i": 1,
-     "he": "אִיכָּא דְּאָמְרִי: אִם עָשׂוּ דִּבְרֵיהֶן בְּמַטְמוֹנִיּוֹת — מְקַבְּלִין אוֹתָן, בְּפַרְהֶסְיָא — אֵין מְקַבְּלִין אוֹתָן.",
-     "en": "<b>There are</b> those <b>who say</b> another version of this discussion: If <b>they performed their actions</b> as <i>ḥaverim</i> even <b>in private,</b> when they initially accepted the status of <i>ḥaverim</i>, then <b>they are accepted</b> when they wish to return to that status. Conversely, if they performed their actions as <i>ḥaverim</i> only <b>in public, they are not accepted.</b>"
-    },
-    {
-     "ref": "Bekhorot 31a",
-     "i": 2,
-     "he": "רַבִּי שִׁמְעוֹן וְרַבִּי יְהוֹשֻׁעַ בֶּן קׇרְחָה אוֹמְרִים: בֵּין כָּךְ וּבֵין כָּךְ מְקַבְּלִין אוֹתָן, מִשּׁוּם שֶׁנֶּאֱמַר: ״שׁוּבוּ בָּנִים שׁוֹבָבִים״. אָמַר רַבִּי יִצְחָק אִישׁ כְּפַר עַכּוֹ אָמַר רַבִּי יוֹחָנָן: הֲלָכָה כְּאוֹתוֹ הַזּוּג.",
-     "en": "<b>Rabbi Shimon and Rabbi Yehoshua ben Korḥa say: Both</b> in <b>this</b> case <b>and</b> in <b>that</b> case <b>they are accepted, as it is stated: “Return, you backsliding children;</b> I will heal your backslidings” (Jeremiah 3:22). <b>Rabbi Yitzḥak of the village of Akko says</b> that <b>Rabbi Yoḥanan says: The <i>halakha</i></b> is <b>in accordance with</b> the opinion of <b>that pair,</b> Rabbi Shimon and Rabbi Yehoshua ben Korḥa, i.e., those who return are accepted in both cases."
     }
    ],
    "span": [
@@ -457,8 +454,8 @@
      "end": 2
     }
    ],
-   "words": 322,
-   "minutes": 3
+   "words": 99,
+   "minutes": 1
   },
   {
    "id": "bekhorot-31a-4-5",
@@ -507,7 +504,11 @@
    "start_segment": 7,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 8 gives the answer to why Rav Sheshet cared, closing the story; segment 6 stays because segment 7 refers to the explanation he gave there."
+   },
    "reviewed": false,
    "summary": "Rav Sheshet's attendant, Rav Idi, overheard his master's resolution to a legal problem and taught it in the study hall as his own, leading an angry Rav Sheshet to curse him.",
    "segments": [
@@ -522,6 +523,12 @@
      "i": 8,
      "he": "רַבִּי אִידִי סַרְסְיֵהּ דְּרַב שֵׁשֶׁת הֲוָה שַׁמְעַהּ מִינֵּיהּ, אֲזַל אַמְרַהּ בֵּי מִדְרְשָׁא וְלָא אַמְרַהּ מִשְּׁמֵיהּ, שְׁמַע רַב שֵׁשֶׁת אִיקְּפַד, אֲמַר: מַאן דְּעָקֵיץ לִיעְקְצֵיהּ עַקְרַבָּא, וְרַב שֵׁשֶׁת מַאי נָפְקָא לֵיהּ מִינַּהּ? דְּאָמַר רַב יְהוּדָה אָמַר רַב: מַאי דִּכְתִיב ״אָגוּרָה בְּאׇהׇלְךָ עוֹלָמִים״? וְכִי אִיפְשָׁר לְאָדָם לָגוּר בִּשְׁנֵי עוֹלָמִים?",
      "en": "The Gemara relates: <b>Rav Idi, the attendant [<i>saraseih</i>] of Rav Sheshet, heard</b> this explanation <b>from</b> Rav Sheshet. Rav Idi <b>went and stated</b> the matter <b>in the study hall, but did not say it in his</b> master’s <b>name. Rav Sheshet heard</b> what he had done and <b>was annoyed.</b> Rav Sheshet <b>said: The one who stung me, let him be stung by a scorpion.</b> The Gemara asks: <b>And</b> as for <b>Rav Sheshet, what difference does it make to him</b> whether or not his interpretation was cited in his name? The Gemara answers that this is <b>as Rav Yehuda says</b> that <b>Rav says: What</b> is the meaning of that <b>which is written: “I will dwell in Your tent forever [<i>olamim</i>]”</b> (Psalms 61:5)? Rav asked: <b>But is it possible for a person to live in two worlds [<i>olamim</i>],</b> this world and the next, simultaneously?"
+    },
+    {
+     "ref": "Bekhorot 31b",
+     "i": 9,
+     "he": "אֶלָּא אָמַר דָּוִד: רִבּוֹנוֹ שֶׁל עוֹלָם, יֹאמְרוּ דְּבַר שְׁמוּעָה מִפִּי בְּעוֹלָם הַזֶּה. דְּאָמַר רַבִּי יוֹחָנָן מִשּׁוּם רַבִּי שִׁמְעוֹן בֶּן יוֹחַי: כׇּל תַּלְמִיד חָכָם שֶׁאוֹמְרִים דְּבַר שְׁמוּעָה מִפִּיו בְּעוֹלָם הַזֶּה — שִׂפְתוֹתָיו דּוֹבְבוֹת בַּקֶּבֶר.",
+     "en": "<b>Rather, David,</b> who recited this psalm, <b>said</b> to God: <b>Master of the Universe, let</b> people <b>say a matter of <i>halakha</i> in my name in this world</b> after I have passed on to another world. <b>As Rabbi Yoḥanan said in the name of Rabbi Shimon ben Yoḥai:</b> With regard to <b>any Torah scholar in whose name a matter of <i>halakha</i> is stated in this world, his lips mouth</b> the words <b>in the grave,</b> as though he were speaking."
     }
    ],
    "span": [
@@ -531,8 +538,8 @@
      "end": 8
     }
    ],
-   "words": 243,
-   "minutes": 2
+   "words": 320,
+   "minutes": 3
   },
   {
    "id": "bekhorot-36a-8-9",

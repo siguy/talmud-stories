@@ -19,38 +19,38 @@
    "approved": true
   },
   "sotah-20a-8-14": {
-   "note": "Rabbi Meir recalled that while studying with Rabbi Akiva he put iron sulfate in the ink, and Rabbi Akiva said nothing. When he came to Rabbi Yishmael, he was asked his work and said he was a scribe. Rabbi Yishmael warned him that adding or leaving out one letter could destroy the whole world. Rabbi Meir replied that he put iron sulfate in his ink. Rabbi Yishmael asked: may that be put in ink? The Torah says of the sota scroll \"he shall blot them out\", so the writing must be erasable. The Gemara explains that Rabbi Meir meant he did not even fear a fly rubbing out part of a letter. A second version reverses the order of his teachers and which one forbade it; the Gemara explains he studied with Rabbi Akiva, then Rabbi Yishmael, then Rabbi Akiva again.",
-   "why": "The mishna describes the sota ritual, in which curses written on a scroll are blotted out into the water she drinks. This story establishes that such writing must be erasable, and the Gemara goes on to say which sacred writings may use iron sulfate.",
+   "note": "Rabbi Meir recalled that while studying with Rabbi Akiva he used to add iron sulfate to the ink he wrote Torah scrolls with, and Rabbi Akiva said nothing. When he came to study with Rabbi Yishmael, Rabbi Yishmael asked his trade, and on hearing he was a scribe warned him to be careful, since leaving out or adding a single letter could destroy the whole world. Rabbi Meir replied that he put iron sulfate into his ink. Rabbi Yishmael objected: the Torah says the curses of the sota scroll are to be blotted out, so the writing must be erasable.",
+   "why": "The mishna has just described the woman suspected of adultery drinking the water into which the scroll's curses are blotted; the Gemara opens with this exchange over ink that cannot be erased, then raises a version with the teachers reversed.",
    "people": [
     {
      "name": "Rabbi Meir",
-     "about": "A scribe and student who added iron sulfate to his ink."
+     "about": "A scribe of Torah scrolls who tells of studying with two teachers."
     },
     {
      "name": "Rabbi Akiva",
-     "about": "One of Rabbi Meir's teachers."
+     "about": "One of Rabbi Meir's teachers, who did not object to his ink."
     },
     {
      "name": "Rabbi Yishmael",
-     "about": "A teacher who warned Rabbi Meir about his work as a scribe."
+     "about": "Another teacher of Rabbi Meir, who warned him about his work and his ink."
     }
    ],
    "terms": [
     {
      "term": "iron sulfate",
-     "meaning": "A substance added to ink that makes writing hard to erase."
+     "meaning": "A substance added to ink to make the writing permanent so it cannot be washed off."
     },
     {
      "term": "sota",
-     "meaning": "A wife suspected of adultery who undergoes a Temple ritual: curses are written on a scroll, blotted into water, and she drinks it."
+     "meaning": "A wife suspected of adultery. In the Temple rite, curses were written on a scroll and dissolved in water that she drank."
     },
     {
-     "term": "dalet and reish",
-     "meaning": "Two Hebrew letters that differ only by a small corner; rubbing it off turns one into the other."
+     "term": "scribe",
+     "meaning": "One who writes Torah scrolls and other sacred texts by hand, where every letter must be exact."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "sotah-21a-16-16": {
    "note": "Rav Dimi reported that Hillel and Shevna were brothers. Hillel devoted himself to Torah study and stayed poor, while Shevna went into business and grew rich. In the end Shevna said to Hillel: come, let us join together and divide, offering half his wealth for half the reward of Hillel's study. A Divine Voice went out and said: \"If a man would give all the fortune of his house for love, he would utterly be condemned.\"",
@@ -273,29 +273,34 @@
    "approved": true
   },
   "sotah-48a-3-4": {
-   "note": "Yohanan the High Priest had sent messengers across the land and learned that people set aside the main priestly portion of their crops but were careless with the tithes. He gathered them and said: My sons, eating untithed produce, or the priest's share of the tithe, carries a death penalty from Heaven, just as the main priestly portion does. He then made an ordinance: whoever buys produce from an unlearned person must set aside first and second tithe himself, give the priest's share of the first tithe to a priest, and eat the second tithe in Jerusalem. But a Levite or a poor person claiming the first tithe or the poor man's tithe must bring proof.",
-   "why": "The Gemara has asked whether people still tithed in Yohanan the High Priest's day, since he canceled the declaration of tithes. This baraita shows many did not, and the Gemara resolves it: he made two ordinances, one for the careful and one for produce bought from the unlearned.",
-   "people": [],
-   "terms": [
+   "note": "Yohanan the High Priest sent messengers throughout the Land of Israel and found that people set aside only the main priestly gift from their produce, while some gave the first and second tithes and some did not. He told them that eating produce without the tithe of the tithe taken, or untithed produce, carries a penalty of death at the hand of Heaven, just as with the main gift. He then made an ordinance: anyone who buys produce from an unlearned person must set aside the first and second tithes himself. The tithe of the tithe goes to a priest and the second tithe is eaten in Jerusalem, but the Levite and the poor cannot demand their shares without proof.",
+   "why": "The mishna says Yohanan the High Priest abolished the declaration of tithes; the Gemara had explained that people gave the tithe to priests rather than Levites, and this account, showing many did not tithe at all, challenges that, leading to the answer that he made two separate ordinances.",
+   "people": [
     {
-     "term": "Teruma gedola",
-     "meaning": "The main priestly portion, the first share of a crop given to a priest."
-    },
-    {
-     "term": "Teruma of the tithe",
-     "meaning": "The tenth of the Levite's first tithe that the Levite must pass on to a priest."
-    },
-    {
-     "term": "Am ha'aretz",
-     "meaning": "An unlearned person, not trusted to have set aside the required tithes."
-    },
-    {
-     "term": "Second tithe",
-     "meaning": "A tenth of the crop that the owner brings to Jerusalem and eats there."
+     "name": "Yohanan the High Priest",
+     "about": "He investigated tithing across the land and instituted the ordinance on doubtfully tithed produce."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "terms": [
+    {
+     "term": "teruma gedola",
+     "meaning": "The main gift from a harvest that must be given to a priest before the produce may be eaten."
+    },
+    {
+     "term": "tithes",
+     "meaning": "Tenths of produce: the first tithe goes to the Levites, who give a tenth of it to priests; the second tithe is eaten by its owner in Jerusalem; the poor man's tithe goes to the poor."
+    },
+    {
+     "term": "am ha'aretz",
+     "meaning": "An unlearned person, who could not be trusted to have set aside the required tithes."
+    },
+    {
+     "term": "demai",
+     "meaning": "Produce bought from someone who may not have tithed it; Yohanan's decree requires the buyer to tithe it."
+    }
+   ],
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "sotah-48a-17-17": {
    "note": "Rav Huna taught that the songs of men hauling ships or leading herds are permitted, but the singing of weavers is forbidden. Later Rav Huna banned all song, and food became so plentiful that a hundred ducks, or a hundred se'a of wheat, sold for a dinar and no one wanted them. Then Rav Hisda came and made light of the ban, and afterward a single duck could not be found even for a dinar.",

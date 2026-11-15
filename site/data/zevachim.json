@@ -171,7 +171,11 @@
    "start_segment": 9,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Add the answering verse and Rav Kahana's remark that this was the verse Rav forgot, which close the story."
+   },
    "reviewed": false,
    "summary": "Rav Kahana travels to Eretz Yisrael and discovers the scriptural source that his teacher Rav had forgotten regarding damaged altars.",
    "segments": [
@@ -180,6 +184,12 @@
      "i": 9,
      "he": "אָמַר רַב: מִזְבֵּחַ שֶׁנִּפְגַּם – כׇּל הַקֳּדָשִׁים שֶׁנִּשְׁחֲטוּ שָׁם פְּסוּלִין. מִקְרָא הוּא בְּיָדֵינוּ, וּשְׁכַחְנוּהוּ. כִּי סְלֵיק רַב כָּהֲנָא, אַשְׁכְּחֵיהּ לְרַבִּי שִׁמְעוֹן בְּרַבִּי דְּקָאָמַר מִשּׁוּם רַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי: מִנַּיִן לַמִּזְבֵּחַ שֶׁנִּפְגַּם – שֶׁכׇּל הַקֳּדָשִׁים שֶׁנִּשְׁחֲטוּ שָׁם פְּסוּלִין?",
      "en": "§ <b>Rav says:</b> In a case of <b>an altar that was damaged, all sacrificial</b> animals <b>that were slaughtered there</b> are <b>disqualified.</b> Rav continues: <b>We have a verse</b> as the source for this <i>halakha</i> <b>but we have forgotten</b> which one <b>it</b> is. <b>When Rav Kahana,</b> Rav’s disciple, <b>ascended</b> from Babylonia to Eretz Yisrael, <b>he found Rabbi Shimon, son of Rabbi</b> Yehuda HaNasi, <b>saying in the name of Rabbi Yishmael, son of Rabbi Yosei: From where</b> is it derived that in the case of <b>an altar that was damaged, that all sacrificial</b> animals <b>that were slaughtered there</b> are <b>disqualified?</b>"
+    },
+    {
+     "ref": "Zevachim 59a",
+     "i": 10,
+     "he": "שֶׁנֶּאֱמַר: ״וְזָבַחְתָּ עָלָיו אֶת עֹלֹתֶיךָ וְאֶת שְׁלָמֶיךָ״ – וְכִי עָלָיו אַתָּה זוֹבֵחַ?! אֶלָּא כְּשֶׁהוּא שָׁלֵם, וְלֹא כְּשֶׁהוּא חָסֵר. אָמַר: הַיְינוּ קְרָא דְּאִישְׁתְּמִיט לֵיהּ לְרַב.",
+     "en": "It is derived from a verse, <b>as it is stated</b> in the verse with regard to the altar: “An altar of earth you shall make for Me, <b>and you shall slaughter upon it your burnt offerings and your peace offerings [<i>shelamekha</i>]”</b> (Exodus 20:21). <b>Is it</b> true that <b>you slaughter</b> sacrificial animals <b>on</b> the altar itself? They are slaughtered on the ground near the altar. No, <b>rather,</b> the verse indicates that one is able to slaughter the sacrificial animals on account of the altar, i.e., <b>when</b> the altar <b>is complete [<i>shalem</i>], but not when it is lacking,</b> i.e., damaged. Rav Kahana <b>said: This is the verse that eluded Rav.</b>"
     }
    ],
    "span": [
@@ -189,8 +199,8 @@
      "end": 9
     }
    ],
-   "words": 97,
-   "minutes": 1
+   "words": 209,
+   "minutes": 2
   },
   {
    "id": "zevachim-62a-9-9",

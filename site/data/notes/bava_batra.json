@@ -376,16 +376,29 @@
    "approved": true
   },
   "bava_batra-11a-0-0": {
-   "note": "This is the close of the Gemara's account of a gift from the Persian queen mother to Rava, which Rabbi Ami had criticized. Rabbi Ami was angry only because the people who told him about it did not finish the report: they left out that Rava had given the money to the gentile poor, not to the Jewish poor.",
-   "why": "The Gemara has asked why Rabbi Ami objected when Rava accepted the gift for the sake of peace with the kingdom; this line resolves the dispute by showing Rava had done what Rabbi Ami wanted.",
+   "note": "Ifera Hurmiz, mother of King Shapur of Persia, sent four hundred dinars to Rabbi Ami, who refused them, and then to Rava, who accepted them to keep peace with the kingdom. Rabbi Ami was angry. The Gemara explains that Rabbi Ami thought Rava should have given the money to poor gentiles rather than poor Jews, and in fact Rava had done just that. Rabbi Ami was angry only because the people who told him the story had not told it to the end.",
+   "why": "The Sages have been debating whether charity given by non-Jewish nations earns them merit. This incident shows two Sages facing the question in practice, when a Persian queen sends a gift.",
    "people": [
     {
-     "name": "Rav Ami",
-     "about": "Also called Rabbi Ami; the Sage who was angry with Rava over the gift."
+     "name": "Rabbi Ami",
+     "about": "Sage who refused the queen's gift and was angry that Rava accepted it."
+    },
+    {
+     "name": "Rava",
+     "about": "Sage who accepted the gift to keep peace with the kingdom and gave it to poor gentiles."
     }
    ],
-   "terms": [],
-   "drafted": "shas1",
+   "terms": [
+    {
+     "term": "gentile",
+     "meaning": "A person who is not Jewish."
+    },
+    {
+     "term": "peace with the kingdom",
+     "meaning": "Keeping good relations with the ruling power, here the Persian king's court."
+    }
+   ],
+   "drafted": "bfix1notes",
    "approved": false
   },
   "bava_batra-11a-1-1": {
@@ -836,26 +849,26 @@
    "approved": true
   },
   "bava_batra-31a-8-9": {
-   "note": "Two men disputed a piece of land, each saying it had belonged to his ancestors. The first brought witnesses that it had been his ancestors' land and that he had used it for the years needed to establish ownership; the second brought witnesses only that he had used it for those years. Rav Nahman said the two testimonies about use cancel each other out, leaving the testimony about the ancestors, so the land goes to the first man. Rava objected that this testimony had been contradicted. Rav Nahman began to answer that although it was contradicted about the use of the land, and here the text breaks off.",
-   "why": "The Gemara has just ruled that a litigant may revise his claim; it now turns to contradictory witnesses, and next asks whether Rav Nahman and Rava differ as Rav Huna and Rav Hisda do over witnesses who contradict each other.",
+   "note": "Two people each claimed a piece of land had belonged to their ancestors. The first brought witnesses that it had been his ancestors' and that he had worked it for the years needed to establish ownership; the second brought witnesses only that he had worked it for those years. Rav Naḥman ruled that the two testimonies about working the land cancel each other out, leaving the testimony about the ancestors, so the land stays with the first man. Rava objected that the first man's witnesses had been contradicted. Rav Naḥman answered that they were contradicted only about working the land, not about whose ancestors owned it.",
+   "why": "The Gemara next asks whether Rav Naḥman and Rava are repeating an older dispute between Rav Huna and Rav Ḥisda: whether witnesses contradicted by other witnesses may still be believed.",
    "people": [
     {
-     "name": "Rav Nahman",
-     "about": "The judge who awards the land to the man with witnesses about his ancestors."
+     "name": "Rav Naḥman",
+     "about": "Judge who awarded the land to the man whose ancestors' ownership went unchallenged."
     },
     {
      "name": "Rava",
-     "about": "A Sage who objects that this testimony was contradicted."
+     "about": "Sage who objected that contradicted witnesses cannot be relied on."
     }
    ],
    "terms": [
     {
      "term": "presumption of ownership",
-     "meaning": "In this law, someone who uses property openly for three straight years, with no protest from the owner, is presumed to have bought it, even without a deed."
+     "meaning": "If someone openly works land and eats its produce for the required number of years without protest, the court presumes he owns it."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_batra-31b-4-8": {
    "note": "The case continues: the second man, who at first had witnesses only to his use of the land, then brought witnesses that it had belonged to his own ancestors. Rav Nahman said: we put the first man on the land and we can take him off it, and we are not worried about contempt of court. Rava, or some say Rabbi Zeira, objected from a teaching about a woman whose divorce or husband's death is disputed by two pairs of witnesses: if she remarried before contrary witnesses came, Rabbi Menahem son of Rabbi Yosei says she need not leave. Rav Nahman said he had meant to act, but since Rava and also Rav Hamnuna in Syria had raised this objection, he would not. Then he went out and did act. Onlookers thought he had made a mistake, but the Gemara says he relied on great authorities.",
@@ -892,43 +905,55 @@
    "approved": true
   },
   "bava_batra-32a-6-6": {
-   "note": "A man found another on his land and asked what he was doing there. The occupant said he had bought it from him and showed a bill of sale. The man said the bill was forged. The occupant leaned over and whispered to Rabba: yes, it is forged, but I had a proper bill of sale and lost it, so I thought I would hold on to this one at least. The ruling is not given in this part of the text.",
-   "why": "",
+   "note": "A man challenged another's hold on a field: what do you want with this land? The holder said he had bought it from him and showed a bill of sale. The first man said the bill was forged. The holder leaned over and whispered to Rabba: yes, it is forged, but I had a real bill that was lost, so I kept this one in hand for whatever it was worth. Rabba reasoned that the man had no reason to lie, since he could simply have claimed the bill was genuine. Rav Yosef objected: what are you relying on, this bill? An admitted forgery is just a worthless shard.",
+   "why": "Rav Idi bar Avin rules right after this that in land cases the law follows Rabba, so the land stays with the man holding it. A matching case about a forged loan note follows, where the law goes the other way.",
    "people": [
     {
      "name": "Rabba",
-     "about": "The judge to whom the occupant whispered his confession about the forged bill."
+     "about": "Judge who believed the holder, since he could have lied more easily."
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "Sage who objected that a forged bill proves nothing."
     }
    ],
    "terms": [
     {
      "term": "bill of sale",
-     "meaning": "A written document recording that land was sold, used as proof of ownership."
+     "meaning": "A written deed, signed by witnesses, recording the purchase of land."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_batra-32b-2-2": {
-   "note": "A man demanded a hundred dinars from another and showed a promissory note. The other said the note was forged. The first man leaned over and whispered to Rava: yes, it is forged, but I had a proper note and lost it, so I thought I would hold on to this one at least. The ruling is not given in this part of the text.",
-   "why": "The Gemara has just told the same situation with a forged bill of sale for land; it brings this parallel case about money and then gives the final ruling, which treats land and money differently.",
+   "note": "A man demanded a hundred dinars from another and showed a promissory note. The other said the note was forged. The lender leaned over and whispered to Rava: yes, it is forged, but I had a real note that was lost, so I kept this one in hand for whatever it was worth. Rabba reasoned that the man had no reason to lie, since he could simply have claimed the note was genuine. Rav Yosef objected that an admitted forgery is just a worthless shard and cannot be relied on.",
+   "why": "It mirrors the forged bill of sale case just before. Rav Idi bar Avin then rules that with money the law follows Rav Yosef, so the money stays with the alleged borrower, unlike the land case.",
    "people": [
     {
      "name": "Rava",
-     "about": "The judge to whom the lender whispered his confession about the forged note."
+     "about": "The judge to whom the lender whispered his admission."
+    },
+    {
+     "name": "Rabba",
+     "about": "Sage who reasoned the lender had no reason to lie."
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "Sage who objected that a forged note proves nothing."
     }
    ],
    "terms": [
     {
      "term": "promissory note",
-     "meaning": "A written document recording a loan, which a lender can use to collect the debt."
+     "meaning": "A written document recording a loan, which the lender can use to collect the debt in court."
     },
     {
      "term": "dinar",
-     "meaning": "A coin; one hundred dinars was a sizable sum."
+     "meaning": "A silver coin."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "bava_batra-32b-8-8": {
@@ -1182,34 +1207,30 @@
    "approved": true
   },
   "bava_batra-46a-7-8": {
-   "note": "Abaye told Rava to come and see what the swindlers of Pumbedita do. A man asks a craftsman for his cloak back, and the craftsman says it never happened. The man says he has witnesses who saw it with him; the craftsman says that was a different cloak, and when asked to bring it out, he refuses. Rava answered that the craftsman's claim holds, since the owner must have seen his own cloak there. Rav Ashi said a clever owner can get him to bring it out by asking it to be valued against any debt, and Rav Aha son of Rav Avya replied that a clever craftsman can say it was already valued.",
-   "why": "The Gemara has been teaching laws about items left with a craftsman, including a teaching that an owner has a claim only if he saw his item there. Rava uses that teaching to back the craftsman.",
+   "note": "Abaye offered to show Rava how the swindlers of Pumbedita operate. An owner asks a craftsman for his cloak back, and the craftsman says it never happened. The owner says he has witnesses who saw it with him; the craftsman says that was a different cloak. The owner says: bring it out and let us look. The craftsman says: I will not bring it out. Rava answered that the craftsman's claim holds, because the teaching on this speaks of an owner who saw his own cloak there.",
+   "why": "The Gemara is discussing items left with craftsmen and when an owner can reclaim them. Rava reads the earlier teaching as requiring that the owner actually saw his item; Rav Ashi then shows how a clever owner can meet that test.",
    "people": [
     {
      "name": "Abaye",
-     "about": "Sage who points out the trick of the Pumbedita craftsmen"
+     "about": "Sage who describes the trick of the swindlers of Pumbedita."
     },
     {
      "name": "Rava",
-     "about": "Sage who holds that the craftsman's claim is accepted"
-    },
-    {
-     "name": "Rav Ashi",
-     "about": "Sage who suggests how a clever owner can get the cloak brought out"
-    },
-    {
-     "name": "Rav Aha, son of Rav Avya",
-     "about": "Sage who answers Rav Ashi with the craftsman's counter-move"
+     "about": "Sage who holds that the craftsman's claim is valid."
     }
    ],
    "terms": [
     {
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages that was not included in the Mishna, the first written collection of Jewish law."
+    },
+    {
      "term": "Pumbedita",
-     "meaning": "A town in Babylonia known for its Torah academy."
+     "meaning": "A town in Babylonia."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_batra-48b-6-6": {
    "note": "A man named Tavi hung another man, Pafi, on a kinara and forced him to sell his field. Rabba bar bar Hana signed both Pafi's declaration that the sale was forced and the bill of sale. Rav Huna said that whoever signed the declaration did well, and whoever signed the bill of sale also did well.",
@@ -1479,18 +1500,34 @@
    "approved": true
   },
   "bava_batra-60b-10-12": {
-   "note": "After the Second Temple was destroyed, many Jews became ascetics who refused to eat meat or drink wine, because meat had been offered on the altar and wine poured on it, and the altar was gone. Rabbi Yehoshua joined them and argued: then we should not eat bread, since the meal-offerings have ceased; they answered they could live on produce. Then not fruit, since the first fruits have ceased; they said other produce would do. Then not water, since the water libation has ceased. They fell silent. He told them that not mourning at all is impossible, but mourning too much is also impossible, since the Sages impose no decree that most of the public cannot keep.",
-   "why": "The Gemara has been discussing a ruling that people may not plaster their houses as a sign of mourning for the Temple. Rabbi Yehoshua's answer to the ascetics leads into the measured rule that follows: plaster the house, but leave a small patch bare in remembrance.",
+   "note": "After the Second Temple was destroyed, many Jews stopped eating meat and drinking wine, because both had been offered on the altar, which was gone. Rabbi Yehoshua asked: then should we not eat bread, since the meal-offerings have ceased? They said they could live on other produce. Nor fruit, since the first fruits have ceased? Other fruit, they said. Nor water, since the water libation has ceased? They fell silent. He told them: not to mourn at all is impossible, but to mourn too much is also impossible, since the Sages impose only what most people can bear. Instead, plaster your house but leave a small patch bare; prepare a meal but leave out a small item; a woman may adorn herself but leave out one small thing.",
+   "why": "The discussion has just taught that one may not fully plaster a house, as mourning for the Temple. This teaching shows where that limited practice comes from: Rabbi Yehoshua's answer to people who wanted to mourn far more.",
    "people": [
     {
      "name": "Rabbi Yehoshua",
-     "about": "A Sage who reasons with the ascetics and teaches them how to mourn."
+     "about": "Sage who argued with the ascetics and set limits on mourning."
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "Sage who said the bare patch should be one cubit by one cubit."
+    },
+    {
+     "name": "Rav Ḥisda",
+     "about": "Sage who said the bare patch should face the entrance."
+    },
+    {
+     "name": "Rav Pappa",
+     "about": "Sage who said the item left out of a meal is like small fried fish."
+    },
+    {
+     "name": "Rav",
+     "about": "Sage who said a woman leaves some hair at her temple unremoved."
     }
    ],
    "terms": [
     {
      "term": "ascetics",
-     "meaning": "People who deny themselves ordinary pleasures; here, Jews who gave up meat and wine in mourning."
+     "meaning": "People who deny themselves ordinary pleasures; here, those who gave up meat and wine in mourning."
     },
     {
      "term": "meal-offerings",
@@ -1498,15 +1535,15 @@
     },
     {
      "term": "first fruits",
-     "meaning": "The first produce of the harvest, which farmers once brought to the Temple."
+     "meaning": "The first ripe produce, which farmers brought to the Temple."
     },
     {
      "term": "water libation",
-     "meaning": "A ceremony in the Temple in which water was poured on the altar."
+     "meaning": "Water poured on the Temple altar as an offering."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_batra-73a-7-7": {
    "note": "Rabba reports what seafarers told him: when a wave that is about to sink a ship comes with a ray of white fire at its head, they strike it with clubs inscribed with names of God, and the wave calms down.",
@@ -1806,7 +1843,7 @@
     }
    ],
    "drafted": "shas1",
-   "approved": false
+   "approved": true
   },
   "bava_batra-74a-7-7": {
    "note": "Rabbi Yohanan tells of a voyage on which they saw a crate set with precious stones and pearls, circled by sharks. A diver went down to bring it up, and the sharks, enraged, tried to tear off his thigh, but he threw a flask of vinegar at them and they sank away. Then a Divine Voice told them: what business do you have with the crate of the wife of Rabbi Hanina ben Dosa? She is destined to put sky-blue wool in it for the fringes of the righteous in the World-to-Come.",
@@ -1956,33 +1993,33 @@
    "approved": true
   },
   "bava_batra-82b-14-15": {
-   "note": "Rabbi Yehuda reports that in Tzalmon a man planted his vineyard with sixteen cubits between rows. Each year he bent the branches of two facing rows to one side and sowed grain in the cleared strip, then switched sides the next year. The case came before the Sages and they permitted it. Separately, Rav Yosef recalls a case of trees sold in a village of shepherds that came before Rav Yehuda, who told the seller to give the buyer land \"sufficient for an ox and its vessels\"; Rav Yosef did not know how much that was until he heard a mishna about keeping trees four cubits from a neighbor's field.",
-   "why": "The Gemara is asking how far apart three trees may be and still count as one unit. Abaye points to the Tzalmon ruling to support a sixteen-cubit limit, and Rav Yosef answers with Rav Yehuda's ruling, which he takes to mean four cubits.",
+   "note": "Rabbi Yehuda told of a man in Tzalmon who planted his vineyard with rows sixteen cubits apart. He bent the branches of each pair of rows to one side and sowed the cleared ground, switching sides the next year. The case came before the Sages and they permitted it. Rav Yosef answered that he did not know about this, but recalled a case in a village of shepherds: Rav Yehuda told a man who had sold trees to give the buyer enough land for an ox and its gear. Rav Yosef did not know how much that was until he learned that a tree must be planted four cubits from a neighbor's field, to leave room for work, and concluded that it meant four cubits.",
+   "why": "The Gemara is asking how far apart trees may stand and still count as one unit, so the buyer gets the land under them. Abaye cites the Tzalmon case for the sixteen-cubit view; Rav Yosef answers with Rav Yehuda's ruling to back his smaller figure.",
    "people": [
     {
      "name": "Rabbi Yehuda",
-     "about": "The Sage who reports the Tzalmon vineyard case."
+     "about": "Sage who reports the Tzalmon vineyard case."
     },
     {
      "name": "Rav Yosef",
-     "about": "Answers Abaye by recalling a case he saw decided."
+     "about": "Sage who answers with a case he witnessed and works out its meaning."
     },
     {
      "name": "Rav Yehuda",
-     "about": "The judge who ruled in the shepherds' village case."
+     "about": "Judge who told the seller to give enough land for an ox and its gear."
     }
    ],
    "terms": [
     {
-     "term": "Diverse kinds",
-     "meaning": "The Torah's ban on sowing other crops in a vineyard; the Tzalmon case asks whether sowing between widely spaced rows breaks it."
+     "term": "cubit",
+     "meaning": "An ancient measure of length, roughly the length of a forearm."
     },
     {
-     "term": "Mishna",
-     "meaning": "The early collection of rabbinic teachings that the Gemara discusses and cites."
+     "term": "mishna",
+     "meaning": "A teaching from the Mishna, the first written collection of Jewish law."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "bava_batra-88a-5-7": {
@@ -2327,7 +2364,7 @@
     }
    ],
    "drafted": "shas1",
-   "approved": false
+   "approved": true
   },
   "bava_batra-137b-5-6": {
    "note": "A woman had a palm tree on Rav Beivai bar Abaye's land, and every time she came to harvest it he got angry with her. So she transferred the tree to him for all the years of his life. He then transferred it to his young son. Rav Huna, son of Rav Yehoshua, said to him: because you come from a cut-short family, do you say cut-short things? Even Rabban Shimon ben Gamliel allows such a sale only when the property was to pass to someone else afterward, not when it was to return to the giver.",
@@ -2442,38 +2479,42 @@
    "approved": true
   },
   "bava_batra-149a-2-4": {
-   "note": "Issur, a convert, had twelve thousand dinars on deposit with Rava. His son, Rav Mari, had been conceived before Issur converted and born after, and was away at a study hall when his father lay dying. Rava reasoned aloud that Rav Mari had no way to get the money: he could not inherit it, a deathbed gift counts like inheritance, the coins were not in his hands to pull, coins cannot be acquired by symbolic exchange, Issur owned no land to attach them to, and a transfer in the presence of all three parties needed Rava himself, who said he would not come if sent for. The text here stops before telling how it turned out.",
-   "why": "The Gemara asks whether a dying man's admission that he owes someone money works like a deathbed gift, and opens this case with 'come and hear' as the proof.",
+   "note": "Issur, a convert, had twelve thousand dinars deposited with Rava. His son Rav Mari was conceived before Issur converted but born after, and was away at a study hall when Issur lay dying. Rava reasoned that Rav Mari had no way to get the money: not by inheritance, since such a son does not inherit; not as a deathbed gift, which follows inheritance rules; and not by any formal act of acquisition, since the coins were not with Issur, he had no land, and Rava would not come if sent for. Rav Ika, son of Rav Ami, asked why Issur could not admit the money was Rav Mari's. Meanwhile a written admission came out of Issur's house. Rava was angry: they are teaching people claims and causing me a loss.",
+   "why": "The Sages have asked whether a dying man's admission that he owes money counts as valid. The Gemara brings this incident as proof that it does: Issur's written admission secured the money for his son.",
    "people": [
     {
      "name": "Issur the convert",
-     "about": "A convert who had deposited twelve thousand dinars with Rava and was on his deathbed."
-    },
-    {
-     "name": "Rava",
-     "about": "The Sage holding Issur's money, who reasons that Rav Mari cannot acquire it."
+     "about": "A convert who had money deposited with Rava and lay dying."
     },
     {
      "name": "Rav Mari",
-     "about": "Issur's son, conceived before his father converted and born after; away at a study hall."
+     "about": "Issur's son, conceived before his father converted and born after."
+    },
+    {
+     "name": "Rava",
+     "about": "Sage holding Issur's money, who expected to keep it."
+    },
+    {
+     "name": "Rav Ika, son of Rav Ami",
+     "about": "Sage who pointed out that Issur could simply admit the money was his son's."
     }
    ],
    "terms": [
     {
-     "term": "symbolic exchange",
-     "meaning": "A formal way of transferring ownership in which the buyer hands over an object, often a cloth, to seal the deal. The Sages held that coins cannot be transferred this way."
-    },
-    {
-     "term": "in the presence of all three",
-     "meaning": "A way of transferring money held by a third party: the owner tells the holder, in front of the recipient, to hold it for the recipient instead. It needs all three people there."
+     "term": "convert",
+     "meaning": "A person who has formally joined the Jewish people."
     },
     {
      "term": "gift of a person on his deathbed",
-     "meaning": "A gift made by someone who expects to die soon. The Sages let it take effect by words alone, without the usual formal acts of acquisition, and treated it like inheritance."
+     "meaning": "The Sages let a dying person give property away by word alone, but such a gift follows the rules of inheritance."
+    },
+    {
+     "term": "symbolic exchange",
+     "meaning": "A formal act, such as handing over an object, that transfers ownership; it does not work for coins."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_batra-151a-4-4": {
    "note": "The mother of Rav Zutra bar Toviyya wrote her property over to her son, saying she did it because she wanted to marry Rav Zevid. She married him, and he divorced her. She then came before Rav Beivai bar Abaye to get her property back. Rav Beivai ruled against her: she gave the property because she wanted to marry, and she did marry, so the gift stands.",
@@ -2720,38 +2761,30 @@
    "approved": true
   },
   "bava_batra-155a-3-3": {
-   "note": "In Bnei Brak a man sold some of the property he had inherited from his father and then died. His relatives challenged the sale, saying he had been a minor when he died, and asked Rabbi Akiva whether the body could be examined. He said they were not permitted to disgrace him, and that signs of puberty change after death. Rabbi Zeira uses the incident in a discussion of the age at which a young heir may sell, which leads on to Rabbi Hiyya's practice: when a man without signs of puberty came before him, he would tell them to fatten him if he was thin, or thin him if he was fat.",
-   "why": "The Gemara is asking whether an heir can sell his father's land from age eighteen or only from twenty. Rabbi Zeira argues that examining the body would only make sense under the age-eighteen view, and the Gemara answers him.",
+   "note": "In Bnei Brak a man sold part of the property he had inherited from his father, and then died. His relatives challenged the sale, saying he had still been a minor when he died. They asked Rabbi Akiva whether they might examine the body. He said they were not permitted to disgrace him, and besides, the signs of puberty tend to change after death.",
+   "why": "The Sages disagree whether an heir may sell his father's property at eighteen or only at twenty. Rabbi Zeira cites this case against the view of twenty: a twenty-year-old counts as an adult anyway, so examining the body would prove nothing.",
    "people": [
     {
      "name": "Rabbi Akiva",
-     "about": "The Sage the family asked; he forbade examining the body."
+     "about": "Sage who forbade examining the dead man's body."
     },
     {
      "name": "Rabbi Zeira",
-     "about": "The Sage who raises the incident as an objection."
-    },
-    {
-     "name": "Rabbi Hiyya",
-     "about": "A Sage who taught how long a man without signs of puberty counts as a minor, and advised changing his weight."
+     "about": "Sage who cites the case to challenge one view of the age of sale."
     }
    ],
    "terms": [
     {
+     "term": "minor",
+     "meaning": "Someone who has not reached legal adulthood; his sale of inherited land is not valid."
+    },
+    {
      "term": "signs of puberty",
-     "meaning": "Physical signs, such as two pubic hairs, that Jewish law uses to decide when a young person becomes a legal adult."
-    },
-    {
-     "term": "sexually underdeveloped man",
-     "meaning": "A man who never develops signs of puberty but shows other signs of this condition; at twenty he is treated as an adult."
-    },
-    {
-     "term": "halitza",
-     "meaning": "The ceremony that frees a childless widow from having to marry her late husband's brother. The underdeveloped man takes no part in it."
+     "meaning": "Physical signs, such as body hair, by which Jewish law marks a young man as an adult."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_batra-155b-7-8": {
    "note": "A young man under twenty sold his father's property and the case came before Rava. His relatives told him to eat dates and throw the pits into Rava's house; he did, and Rava ruled the sale invalid. While the ruling was being written, the buyers told him to ask Rava why the scroll of Esther costs a dinar and the Master's short document also costs a dinar. He asked, and Rava ruled the sale valid. When the relatives said the buyers had coached him, Rava replied that since he understands when things are explained to him, he knows what he is doing, and the date pits were just excessive impudence.",

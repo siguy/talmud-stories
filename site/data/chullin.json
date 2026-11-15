@@ -2777,7 +2777,13 @@
    "start_segment": 2,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 is the final-waters incident; segment 7 is only Ravin's alternative version and a mnemonic, not story.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "A failure to wash hands after a meal (final waters) leads to a host's wife being tricked by guests and subsequently killed by her husband.",
    "segments": [
@@ -2786,12 +2792,6 @@
      "i": 2,
      "he": "אַחֲרוֹנִים הוֹצִיאוּ אֶת הָאִשָּׁה מִבַּעְלָהּ.",
      "en": "And due to the failure to wash with <b>final</b> waters <b>a woman</b> was ultimately <b>divorced from her husband.</b> In this incident, a host who had stolen his guests’ money had lentils on his mustache from a previous meal because he had not washed his hands and mouth after eating. Realizing he had eaten lentils that day, his victims approached the man’s wife and said that her husband had instructed them to tell her to return their money. They then claimed that the man told them to tell her that he had eaten lentils that day as proof that they were telling the truth. They thereby fooled his wife into thinking he wanted her to give their money back. Out of anger, the host divorced his wife."
-    },
-    {
-     "ref": "Chullin 106a",
-     "i": 3,
-     "he": "כִּי אֲתָא רָבִין אָמַר: רִאשׁוֹנִים הֶאֱכִילוּ בְּשַׂר נְבֵלָה, אַחֲרוֹנִים הָרְגוּ אֶת הַנֶּפֶשׁ. אָמַר רַב נַחְמָן בַּר יִצְחָק: וְסִימָנָיךְ – אֲתָא רַב דִּימִי אַפְּקַהּ, אֲתָא רָבִין קַטְלַהּ.",
-     "en": "<b>When Ravin came</b> from Eretz Yisrael <b>he said</b> the statement slightly differently: Due to the failure to wash with <b>first</b> waters, they <b>fed</b> a Jew meat from <b>an animal carcass,</b> and the failure to wash with <b>final</b> waters <b>killed a person,</b> as in the second incident the host was so angry with his wife that he killed her. <b>Rav Naḥman bar Yitzḥak said: And your mnemonic</b> to remember which Sage said which version is: <b>Rav Dimi came</b> and <b>divorced her</b> from her husband, i.e., according to his version she was divorced, and <b>Ravin came</b> and <b>killed her,</b> since in his version the husband killed his wife."
     }
    ],
    "span": [
@@ -2801,8 +2801,8 @@
      "end": 3
     }
    ],
-   "words": 232,
-   "minutes": 2
+   "words": 126,
+   "minutes": 1
   },
   {
    "id": "chullin-107a-13-13",
@@ -3393,16 +3393,16 @@
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 is a baraita about local legal customs; the story of Levi at Yosef the bird hunter's house is segments 7-8.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Levi is served a peacock cooked in milk at the home of a bird hunter and remains silent, later explaining to Rabbi Yehuda HaNasi that he deferred to the local ruling of Rabbi Yehuda ben Beteira.",
    "segments": [
-    {
-     "ref": "Chullin 116a",
-     "i": 13,
-     "he": "תַּנְיָא נָמֵי הָכִי: בִּמְקוֹמוֹ שֶׁל רַבִּי אֱלִיעֶזֶר הָיוּ כּוֹרְתִין עֵצִים לַעֲשׂוֹת פֶּחָמִין לַעֲשׂוֹת בַּרְזֶל, בִּמְקוֹמוֹ שֶׁל רַבִּי יוֹסֵי הַגְּלִילִי הָיוּ אוֹכְלִין בְּשַׂר עוֹף בְּחָלָב.",
-     "en": "The Gemara notes: <b>That</b> distinction <b>is also taught</b> in a <i>baraita</i>: <b>In the locale of Rabbi Eliezer,</b> where his ruling was followed, <b>they would cut down trees</b> on Shabbat <b>to prepare charcoal</b> from them with which to light a fire <b>to fashion iron</b> tools with which to circumcise a child on Shabbat. In Rabbi Eliezer’s opinion, not only does the mitzva of circumcision override Shabbat, but also any action required for the preparation of the tools necessary for the circumcision likewise overrides Shabbat. The <i>baraita</i> adds: <b>In the locale of Rabbi Yosei HaGelili they would eat bird meat</b> cooked <b>in milk.</b> Evidently, Rabbi Yosei HaGelili maintains that the prohibition of meat cooked in milk does not include birds."
-    },
     {
      "ref": "Chullin 116a",
      "i": 14,
@@ -3423,8 +3423,8 @@
      "end": 15
     }
    ],
-   "words": 266,
-   "minutes": 2
+   "words": 147,
+   "minutes": 1
   },
   {
    "id": "chullin-124b-12-16",

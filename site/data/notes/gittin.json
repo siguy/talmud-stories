@@ -52,29 +52,34 @@
    "why": "This continues the question of how much of the writing an agent must witness to declare that a bill of divorce was written in his presence; the teaching cited next is brought as support for Rav Ashi."
   },
   "gittin-6a-18-18": {
-   "note": "Rav Hanin recalls that Rav Kahana brought a divorce document between Sura and Neharde'a, two Babylonian cities, but does not remember which direction. Rav Kahana asked Rav whether he must declare that it was written and signed in his presence. Rav answered that he does not have to.",
+   "note": "Rav Ḥanin related that Rav Kahana once brought a bill of divorce between Sura and Neharde'a, though he did not know in which direction. Rav Kahana asked Rav whether he had to declare: It was written in my presence and it was signed in my presence. Rav said he did not have to, but that if he did, it would help. The Gemara explains: if the husband later came to contest the document, no attention would be paid to him.",
+   "why": "The Gemara is discussing when an agent carrying a bill of divorce must make this declaration, and how Sages required it even for very short distances; this case gives Rav's ruling for travel between two towns in Babylonia.",
    "people": [
     {
+     "name": "Rav Ḥanin",
+     "about": "The Sage who reports the incident"
+    },
+    {
      "name": "Rav Kahana",
-     "about": "the agent carrying the document"
+     "about": "The agent who carried the bill of divorce"
     },
     {
      "name": "Rav",
-     "about": ""
-    },
-    {
-     "name": "Rav Hanin",
-     "about": "tells the story"
+     "about": "The Sage who answers Rav Kahana's question"
     }
    ],
    "terms": [
     {
-     "term": "declaration 'written and signed in my presence'",
-     "meaning": "A statement an agent bringing a divorce document from abroad makes to confirm it was properly written and signed."
+     "term": "bill of divorce",
+     "meaning": "The get, the document a husband must give his wife to end a Jewish marriage, often delivered by an agent."
+    },
+    {
+     "term": "It was written in my presence and it was signed in my presence",
+     "meaning": "A declaration an agent bringing a bill of divorce from another place makes, so the document's validity does not need to be proved by witnesses."
     }
    ],
-   "approved": true,
-   "why": "The Gemara has been asking how far a bill of divorce must travel before the agent has to make this declaration; in the lines that follow, Rav's answer goes on to say that making it anyway protects the divorce if the husband contests it."
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "gittin-6b-1-3": {
    "note": "A man bringing a divorce document asks Rabbi Yishmael whether he must say it was written and signed in his presence. Learning he is from the village of Sisai, Rabbi Yishmael tells him he must say it, so the woman will not need witnesses if her husband disputes it. Rabbi Elai objects that Sisai is inside the Land of Israel, where the declaration is not required. Rabbi Yishmael tells him to be quiet: once the divorce was given on the basis of the declaration, it is valid, showing the declaration protects the divorce from later challenge.",
@@ -876,37 +881,38 @@
    "approved": true
   },
   "gittin-37a-10-12": {
-   "note": "Rabbi Asi's relative held a loan document with a property guarantee and asked Rabbi Asi whether the Sabbatical Year cancels the debt. Rabbi Asi said no, but Rabbi Yohanan told the relative that it does. When Rabbi Asi asked him, Rabbi Yohanan again said it does. Rabbi Asi pointed out that Yohanan himself had taught the opposite. Yohanan replied that a view held in theory need not be acted on. When Asi cited a baraita supporting that view, Yohanan suggested it might follow Beit Shammai, whose view on this is not the law.",
+   "note": "A relative of Rabbi Asi held a promissory note with a property guarantee written in it, and asked Rabbi Asi whether the Sabbatical Year cancels it. Rabbi Asi said it does not. The man then went to Rabbi Yoḥanan, who said it does. Rabbi Asi came to Rabbi Yoḥanan and pointed out that Rabbi Yoḥanan himself had said it does not, and that a baraita agreed. Rabbi Yoḥanan answered: because we think so, should we act on it? Perhaps that baraita follows Beit Shammai.",
+   "why": "The Gemara has just reported that Rabbi Yoḥanan and Rabbi Shimon ben Lakish hold the Sabbatical Year does not cancel a note with a property guarantee, with baraitot in support; here Rabbi Yoḥanan refuses to rule that way in practice.",
    "people": [
     {
      "name": "Rabbi Asi",
-     "about": ""
+     "about": "A Sage whose relative asks about a debt; he challenges Rabbi Yoḥanan"
     },
     {
      "name": "Rabbi Yoḥanan",
-     "about": ""
-    },
-    {
-     "name": "Beit Shammai",
-     "about": "a school of scholars whose views usually lose to Beit Hillel"
+     "about": "Rabbi Asi's teacher, who rules that the debt is cancelled"
     }
    ],
    "terms": [
     {
      "term": "Sabbatical Year",
-     "meaning": "Every seventh year, when private debts are cancelled."
+     "meaning": "Every seventh year, when by Torah law outstanding debts are cancelled."
     },
     {
-     "term": "promissory note",
-     "meaning": "A written document recording a loan."
+     "term": "property guarantee",
+     "meaning": "A clause in a loan document pledging the borrower's land as security for the debt."
     },
     {
      "term": "baraita",
-     "meaning": "A teaching from the time of the Mishna that is not in the Mishna itself."
+     "meaning": "A teaching of the early Sages that was not included in the Mishna."
+    },
+    {
+     "term": "Beit Shammai",
+     "meaning": "The school of the early Sage Shammai, whose rulings are usually not followed in practice."
     }
    ],
-   "approved": true,
-   "why": "The Gemara has set out a dispute over whether the Sabbatical Year cancels loans backed by a property guarantee, with Rabbi Yohanan and Reish Lakish saying it does not. This case shows Rabbi Yohanan refusing to rule by his own view in practice."
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "gittin-37b-2-3": {
    "note": "Abba bar Marta brought money to repay Rabba during the Sabbatical Year, when debts are cancelled. Rabba said he cancelled the debt, and Abba took him literally and left with the money. Abaye told him to go back and say he wanted to repay anyway, and then Rabba accepted it. Rabba remarked that this Torah scholar had not known how to respond and had to be taught.",
@@ -1013,34 +1019,38 @@
    "why": "The Gemara is discussing when a slave may be freed. It goes on to challenge Abaye from a case where a court forced a master to free a half-slave woman, then distinguishes the two."
   },
   "gittin-38a-16-17": {
-   "note": "In Pumbedita men were committing forbidden sexual acts with a certain maidservant. Abaye said that, were it not for Shmuel's teaching that freeing a slave violates a commandment, he would force her master to free her; Ravina said that in such a case even Rav Yehuda agrees she may be freed. The Gemara then recalls an incident told by Rabbi Yitzhak: a woman who was half maidservant and half free, whose master the court forced to set her fully free. Rav Nahman bar Yitzhak explained that men had been treating her as if she belonged to no one.",
-   "why": "The Gemara uses the half-free woman's case to ask whether Abaye really rejects freeing a slave to prevent sin. It answers that the cases differ: she could marry neither a slave nor a free man, while a full maidservant can be given to a slave who will guard her.",
+   "note": "In Pumbedita there was a maidservant with whom people were committing forbidden sexual acts. Abaye said that were it not for Shmuel's ruling, reported by Rav Yehuda, that anyone who frees his slave violates a positive commandment, he would force her master to write her a bill of manumission. Ravina said that in a case like this, Rav Yehuda would agree she may be freed, because of the prohibition being violated.",
+   "why": "The Gemara has been discussing when a master sends his maidservant a bill of manumission; after this case it asks whether Abaye truly rejects freeing a slave to stop a sin, citing a half-free woman whose master was forced to free her.",
    "people": [
     {
      "name": "Abaye",
-     "about": "A Sage who would force the Pumbedita master to free his maidservant, if not for the teaching against freeing slaves."
+     "about": "A Sage who would force the master to free her if not for Shmuel's ruling"
     },
     {
      "name": "Ravina",
-     "about": "A Sage who holds that freeing her is allowed because of the forbidden acts."
+     "about": "A Sage who says Rav Yehuda would agree to free her here"
     },
     {
-     "name": "Rav Nahman bar Yitzhak",
-     "about": "A Sage who explains why the court forced the half-free woman's master to free her."
+     "name": "Rav Yehuda",
+     "about": "The Sage who reports Shmuel's ruling against freeing slaves"
+    },
+    {
+     "name": "Shmuel",
+     "about": "The Sage who ruled that freeing one's slave violates a positive commandment"
     }
    ],
    "terms": [
     {
-     "term": "half-maidservant half-free woman",
-     "meaning": "A woman owned by two masters, one of whom had freed his share of her, leaving her half free."
+     "term": "bill of manumission",
+     "meaning": "A document by which a master frees a slave."
     },
     {
-     "term": "positive mitzva",
-     "meaning": "A commandment to do something. Shmuel reads the verse about keeping slaves forever as such a commandment."
+     "term": "positive commandment",
+     "meaning": "A Torah command to do something, as opposed to a prohibition."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "gittin-38b-3-3": {
    "note": "Rabbi Eliezer went into a synagogue to pray and found only nine men, so he freed his slave to complete the group of ten needed for communal prayer. This is raised as an objection to the idea that freeing a slave is forbidden. The Gemara answers that freeing a slave for a mitzva, like completing a quorum, is a special case, and does not show it is allowed in general.",
@@ -1703,37 +1713,41 @@
    "why": "The zealots have just burned the city's food stores and brought famine; this story shows what that famine did, even to the richest of Jerusalem."
   },
   "gittin-56a-14-17": {
-   "note": "Abba Sikkara, head of the zealots of Jerusalem, was the son of Rabban Yohanan ben Zakkai's sister. Rabban Yohanan called him in secret and asked how long they would go on killing everyone by starvation. Abba Sikkara said if he spoke up the zealots would kill him, so Rabban Yohanan asked for a way out of the city. Abba Sikkara told him to pretend to be sick, lay something rotting beside him so people would think he had died, and be carried out by his students alone. Rabbi Eliezer and Rabbi Yehoshua carried him; when the guards wanted to pierce or push the body, Abba Sikkara stopped them, and the gate was opened. Reaching the Roman camp, Rabban Yohanan greeted Vespasian as king; Vespasian said he deserved death twice over. The text here stops as Rabban Yohanan begins his answer.",
-   "why": "It follows the famine the zealots caused in besieged Jerusalem; Rabban Yohanan sees no way to change their course inside the city and hopes that leaving it may bring some small salvation.",
+   "note": "Abba Sikkara, leader of Jerusalem's zealots and nephew of Rabban Yoḥanan ben Zakkai, came to him in secret. Rabban Yoḥanan asked how long they would kill everyone by starvation; Abba Sikkara said the zealots would kill him if he spoke out, and told him to fake illness and death and be carried out. Rabbi Eliezer and Rabbi Yehoshua carried him, and at the gate Abba Sikkara stopped the guards from piercing or pushing him. In the Roman camp he hailed Vespasian as king, citing verses, but fell silent at Vespasian's parable of a snake around a barrel of honey. When a messenger announced Vespasian would be emperor and his shoe would not go on, Rabban Yoḥanan explained why and how to fix it.",
+   "why": "The Gemara is telling the story of the siege and fall of Jerusalem; just before this, the wealthy Marta bat Baitos dies in the same famine Rabban Yoḥanan blames on the zealots.",
    "people": [
     {
      "name": "Abba Sikkara",
-     "about": "Leader of the zealots of Jerusalem and nephew of Rabban Yohanan ben Zakkai."
+     "about": "Leader of the zealots of Jerusalem and nephew of Rabban Yoḥanan ben Zakkai"
     },
     {
-     "name": "Rabban Yohanan ben Zakkai",
-     "about": "A Sage who escapes the besieged city in a coffin to meet the Roman commander."
+     "name": "Rabban Yoḥanan ben Zakkai",
+     "about": "A leading Sage who escapes the besieged city to meet the Roman commander"
     },
     {
      "name": "Rabbi Eliezer",
-     "about": "One of the students who carries Rabban Yohanan out."
+     "about": "One of the students who carry him out of the city"
     },
     {
      "name": "Rabbi Yehoshua",
-     "about": "One of the students who carries Rabban Yohanan out."
+     "about": "The other student who carries him out"
     },
     {
      "name": "Vespasian",
-     "about": "The Roman commander besieging Jerusalem, to whom Rabban Yohanan comes."
+     "about": "The Roman commander besieging Jerusalem, who is named emperor"
     }
    ],
    "terms": [
     {
      "term": "zealots",
-     "meaning": "Militant rebels inside besieged Jerusalem who would not let anyone make peace with Rome."
+     "meaning": "Armed rebels inside besieged Jerusalem who refused any peace with Rome."
+    },
+    {
+     "term": "the Temple",
+     "meaning": "The holy sanctuary in Jerusalem, center of Jewish worship, which the Romans destroyed."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "gittin-56b-7-16": {
@@ -1766,47 +1780,64 @@
    "why": "It continues the Gemara's account of the destruction: after Vespasian leaves for Rome, Titus completes the conquest, and the Gemara tells how he desecrated the Temple and how he was punished."
   },
   "gittin-56b-17-17": {
-   "note": "Onkelos bar Kalonikos, the son of Titus's sister, wanted to convert. He raised Titus from the dead by sorcery and asked who is most important in that world. Titus said: the Jewish people. Should I join them? Titus answered that their commandments are many and he would not be able to keep them; better to fight them, since anyone who distresses Israel becomes a chief. Onkelos asked about Titus's own punishment. Titus answered that it is what he decreed against himself: every day his ashes are gathered, he is judged, burned and scattered over the seven seas.",
-   "why": "It follows directly on Titus's death, when he ordered his ashes scattered so that God could not judge him; this tells what his punishment turned out to be.",
+   "note": "Onkelos bar Kalonikos, Titus's nephew, wanted to convert. He raised Titus from the dead by necromancy and asked who matters most in that world. Titus said the Jewish people, but told him their commandments were too many to keep and he should fight them instead; asked his own punishment, Titus said his ashes are gathered, judged, burned and scattered over the seven seas every day. Onkelos raised Balaam, who told him not to seek their peace, and is punished in boiling semen. Then he raised Jesus the Nazarene, who told him to seek their welfare, and is punished in boiling excrement. The Gemara draws the contrast between the sinners of Israel and the prophets of the nations. The text here does not say what Onkelos then did.",
+   "why": "The Gemara has just told of Titus's death and his order that his ashes be scattered so the God of the Jews could not judge him; here that very sentence is carried out on him every day.",
    "people": [
     {
      "name": "Onkelos bar Kalonikos",
-     "about": "The son of Titus's sister, who wants to convert and raises the dead to ask their advice."
+     "about": "Titus's sister's son, who wants to convert to Judaism"
     },
     {
      "name": "Titus",
-     "about": "Onkelos's uncle, the Roman who destroyed the Temple, raised from the dead here."
+     "about": "The Roman who destroyed the Temple, raised from the dead by Onkelos"
+    },
+    {
+     "name": "Balaam",
+     "about": "The gentile prophet of the Bible who wished Israel harm, raised by Onkelos"
+    },
+    {
+     "name": "Jesus the Nazarene",
+     "about": "Raised by Onkelos; the Gemara calls him a sinner of Israel who sought their welfare"
     }
    ],
    "terms": [
     {
      "term": "necromancy",
-     "meaning": "Raising or summoning the dead to speak with them, a practice the Torah forbids."
-    }
-   ],
-   "drafted": "shas1",
-   "approved": false
-  },
-  "gittin-57a-4-8": {
-   "note": "Rabbi Elazar says the story of bar Kamtza shows the power of shame. Then the Gemara tells how King's Mountain fell. Roman soldiers took the rooster and hen carried before a wedding procession, the townspeople beat them, and the emperor came to war. A local man, bar Deroma, who could leap a mil, killed many Romans. But he spoke a verse against God as a statement of fact, and he died when a snake tore him open in an outhouse. The emperor spared the rest. The Jews then celebrated with so many candles that a seal's image could be seen a mil away, and the emperor, thinking they were rejoicing over him, came back against them.",
-   "people": [
-    {
-     "name": "Rabbi Elazar",
-     "about": ""
+     "meaning": "Calling up the spirit of a dead person to speak with them."
     },
     {
-     "name": "Bar Deroma",
-     "about": "A man who could leap a mil and killed many Romans."
+     "term": "convert",
+     "meaning": "To become Jewish by formally accepting the Torah and its commandments."
+    }
+   ],
+   "drafted": "bfix1notes",
+   "approved": true
+  },
+  "gittin-57a-4-8": {
+   "note": "At the King's Mountain it was the custom to carry a rooster and a hen before a bride and groom. One day Roman soldiers took them, the people beat the soldiers, and the soldiers told the emperor the Jews had rebelled. He attacked. Bar Deroma, who could leap a mil, killed many Romans, until he quoted a psalm as a complaint against God; then a snake eviscerated him in an outhouse and he died. The emperor withdrew, but when the Jews celebrated with lamps, he said they were rejoicing over him and returned. Rav Asi says three hundred thousand swordsmen massacred the people for three days and nights while weddings went on at the other side, neither knowing of the other.",
+   "why": "The Gemara is recounting disasters of the war with Rome; it said earlier that the King's Mountain was destroyed over a rooster and a hen, and after the story of Kamtza and bar Kamtza it now gives the details.",
+   "people": [
+    {
+     "name": "bar Deroma",
+     "about": "A man of the King's Mountain who could leap a mil and killed many Romans"
+    },
+    {
+     "name": "Rav Asi",
+     "about": "The Sage who reports the size of the massacre"
     }
    ],
    "terms": [
     {
+     "term": "King's Mountain",
+     "meaning": "Tur Malka, a large, heavily populated region of the Land of Israel."
+    },
+    {
      "term": "mil",
-     "meaning": "A measure of distance, roughly two-thirds of a mile or about a kilometer."
+     "meaning": "A unit of distance, roughly a kilometer."
     }
    ],
-   "approved": true,
-   "why": "Earlier Rabbi Yohanan named three places destroyed through small causes; having told of Jerusalem and Kamtza, the Gemara now gives the account of the second, the King's Mountain."
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "gittin-57a-14-15": {
    "note": "Three Sages were sitting together and asked whether anyone had heard anything about the town of Kefar Sekhanya. One of them told of a betrothed man and woman who were taken captive, and their captors married them to each other. She said to him: Please do not touch me, as I have no marriage contract from you. He did not touch her until the day he died. When he died, she told the Sages to eulogize him as a man who conquered his passion more than Joseph: Joseph was tested for a short time, not in one bed, and not with his own wife, while this man was tested every day, in one bed, with his own wife.",

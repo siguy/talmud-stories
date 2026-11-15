@@ -1014,33 +1014,25 @@
    "approved": true
   },
   "niddah-64b-18-18": {
-   "note": "A baraita tells that Rabbi Yehuda HaNasi once gave a newly married virgin four nights, spread over twelve months, during which blood after intercourse would be counted as blood from her hymen rather than menstrual blood. The Gemara then works through how those four nights could have been divided among the stages of her growing up. It settles on one night while she was a minor and three while she was a young woman, counting one night for every two months.",
-   "why": "Rav has just said that a grown woman who has not yet menstruated gets the whole first night. The Gemara raises this case as an objection and works it out until it no longer contradicts Rav.",
+   "note": "A teaching of the Sages records an incident in which Rabbi Yehuda HaNasi gave a newly married virgin four nights, within the first twelve months of her marriage, during which blood after intercourse would be treated as blood of her torn hymen rather than menstrual blood. The text does not describe the case further.",
+   "why": "Rav has just ruled that a grown woman is given only the first night; the Gemara raises this incident as an objection and begins asking at what age the bride was.",
    "people": [
     {
      "name": "Rabbi",
-     "about": "Rabbi Yehuda HaNasi, who gives the bride four nights."
-    },
-    {
-     "name": "Rav Hinnana bar Shelamya",
-     "about": "Asked Rav a question that the Gemara quotes while working out the case."
-    },
-    {
-     "name": "Rav",
-     "about": "Answers that question; his answer rules out one way of dividing the nights."
+     "about": "Rabbi Yehuda HaNasi, who grants the bride the four nights."
     }
    ],
    "terms": [
     {
-     "term": "minor, young woman, grown woman",
-     "meaning": "Legal stages of a girl's life: a minor until about twelve, a young woman for the six months after puberty, then a grown woman."
+     "term": "Blood of the hymen",
+     "meaning": "Bleeding from first intercourse, which does not make a woman ritually impure, unlike menstrual blood."
     },
     {
-     "term": "baraita",
-     "meaning": "A teaching of the early Sages that was not included in the Mishna but is quoted in the Talmud."
+     "term": "Ritually impure",
+     "meaning": "A status that, for a menstruating woman, forbids marital relations until she purifies herself."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "niddah-65a-7-8": {
@@ -1146,26 +1138,34 @@
    "approved": true
   },
   "niddah-66a-22-22": {
-   "note": "Ravina arranged for his son to marry the daughter of Rav Hanina. Rav Hanina asked whether the marriage contract should set the wedding for Wednesday, and Ravina agreed. But when Wednesday came, Ravina put the wedding off until the following Wednesday, a full week later.",
-   "why": "Rava has just ruled that a woman who accepts a marriage proposal must wait seven clean days before the wedding, in case the excitement brought on menstrual bleeding. Ravina's delay applies that rule, and the conversation that follows asks whether it covers a young girl too.",
+   "note": "Ravina arranged for his son to marry the daughter of Rav Hanina. Rav Hanina asked whether the marriage contract should set the wedding for Wednesday, and Ravina agreed. When Wednesday came, Ravina waited another week. Asked why, he cited Rava: a woman who accepts a marriage proposal must count seven clean days. Rav Hanina answered that Rava meant an adult woman who has seen blood, not a young girl who has not. Ravina replied that Rava had said so explicitly: the reason is that she desires her husband, and a young girl desires him too.",
+   "why": "The Gemara has just cited Rava's ruling that a woman who accepts a proposal must count seven clean days; this incident shows the ruling put into practice and extends it to a girl who has not yet menstruated.",
    "people": [
     {
      "name": "Ravina",
-     "about": "A Babylonian Sage, the father of the groom."
+     "about": "The father of the groom, who delays the wedding a week."
     },
     {
      "name": "Rav Hanina",
-     "about": "A Sage whose daughter was to marry Ravina's son."
+     "about": "The father of the bride, who questions the delay."
+    },
+    {
+     "name": "Rava",
+     "about": "The Sage whose ruling Ravina follows."
     }
    ],
    "terms": [
     {
-     "term": "marriage contract",
-     "meaning": "The ketuba, the document a husband gives his bride setting out his obligations to her; here it also fixed the wedding date."
+     "term": "Marriage contract",
+     "meaning": "The ketuba, the document a groom gives his bride setting out his obligations, here also fixing the wedding date."
+    },
+    {
+     "term": "Seven clean days",
+     "meaning": "Seven days without any flow of blood, after which a woman immerses in a ritual bath and may resume marital relations."
     }
    ],
-   "drafted": "pilot2",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "niddah-66b-4-4": {
    "note": "A maidservant of Rabbi Yehuda HaNasi immersed herself in a ritual bath. When she came up, a bone was found stuck between her teeth. Rabbi Yehuda HaNasi required her to immerse again.",

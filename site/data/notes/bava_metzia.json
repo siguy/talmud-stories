@@ -672,76 +672,74 @@
    "approved": true
   },
   "bava_metzia-42a-11-11": {
-   "note": "A man left money with another for safekeeping. The keeper gave it to his mother, who put it in a chest, and it was stolen. Rava asked how judges should rule in such a case. His answer is not given here.",
-   "why": "It is one of a run of cases on guarding deposited money; this one asks whether a keeper may hand a deposit to a family member.",
+   "note": "A man left money in another's care. The guardian gave it to his mother, who put it in a chest, and it was stolen. Rava asked how judges should rule. The guardian cannot simply be ordered to pay, because anyone who leaves something in another's care knows that his family may look after it. The mother cannot be ordered to pay, because her son never told her the money was not his, or she would have buried it. And the son can say that letting her think it was his made her even more careful. Rava ruled that the son swears he gave it to his mother, she swears she put it in the chest and it was stolen, and the son is exempt.",
+   "why": "The Gemara is gathering rulings on when a guardian of money is negligent, such as hiding it in a willow hut or forgetting where it is; this case asks whether handing it to a family member counts.",
    "people": [
     {
      "name": "Rava",
-     "about": "Asks how the case should be judged."
+     "about": "He works through each party's defense and rules on the case."
     }
    ],
    "terms": [
     {
      "term": "bailee",
-     "meaning": "Someone who holds another person's property for safekeeping. Jewish law sets different levels of responsibility for a paid and an unpaid bailee if the item is lost or stolen."
-    }
-   ],
-   "drafted": "shas1",
-   "approved": false
-  },
-  "bava_metzia-42b-0-2": {
-   "note": "A keeper gave deposited money to his mother, who put it in a chest, and it was stolen. Rava weighs each side. The son can say that anyone who deposits something expects the keeper's wife and children to help guard it. The mother can say her son never told her the money was not his, or she would have buried it. And the son can say he kept quiet because she would be more careful with money she thought was his. Rava's ruling follows after this.",
-   "why": "Rava is working out who, if anyone, must pay; these arguments clear both son and mother of negligence, leading to his ruling that both swear an oath and the son is exempt.",
-   "people": [
+     "meaning": "Someone who agrees to look after another person's property and may have to pay if it is lost through negligence."
+    },
     {
-     "name": "Rava",
-     "about": "Weighs the claims of the keeper and his mother."
+     "term": "oath",
+     "meaning": "A solemn sworn statement in court, used to settle claims that cannot otherwise be proven."
     }
    ],
-   "terms": [
-    {
-     "term": "bailee",
-     "meaning": "Someone who holds another person's property for safekeeping. Jewish law sets different levels of responsibility for a paid and an unpaid bailee if the item is lost or stolen."
-    }
-   ],
-   "drafted": "shas1",
+   "drafted": "bfix1notes",
    "approved": false
   },
   "bava_metzia-42b-4-4": {
-   "note": "A steward who managed the affairs of some orphans bought them an ox and handed it to a cowherd. The ox had no molars or other teeth to eat with, and it died. Rami bar Hama asked how judges should rule in such a case. His answer is not given here.",
-   "why": "It follows a case where a keeper passed money to his mother; here too a loss passed through several hands, and the Gemara asks which of them, if any, must pay.",
+   "note": "A guardian handling the affairs of orphans bought them an ox and handed it to a cowherd. The ox had no molars or teeth to eat with, and it died. Rami bar Hama asked how judges should rule. The guardian can say he gave it to the cowherd, and the cowherd can say he put it with the other oxen and threw it food, not knowing it did not eat. Since the orphans got their money back from the seller, the Gemara reasons, the claim comes from the seller, a trader who did not know of the defect: he swears he did not know, and the cowherd pays him the value of the meat at the cheapest price.",
+   "why": "The Gemara is working through a run of cases in which property in someone's care passes through several hands and is lost, each asking how judges should rule; this one follows Rava's case of the guardian who gave money to his mother.",
    "people": [
     {
-     "name": "Rami bar Ḥama",
-     "about": "Asks how the case should be judged."
+     "name": "Rami bar Hama",
+     "about": "The Sage who poses the question of how judges should rule."
     }
    ],
    "terms": [
     {
-     "term": "steward",
-     "meaning": "A guardian appointed to manage property for someone who cannot, here for orphans."
+     "term": "paid bailee",
+     "meaning": "Someone paid to look after another's property; he must pay for losses caused by his lack of care."
+    },
+    {
+     "term": "mistaken transaction",
+     "meaning": "A sale of an item with a hidden defect, which can be undone so the buyer gets his money back."
+    },
+    {
+     "term": "orphans' guardian",
+     "meaning": "A person appointed to manage the property of orphans who are too young to manage it themselves."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-42b-9-9": {
-   "note": "A man left hops, used in brewing beer, with another man who had a pile of hops of his own. The keeper told his brewer to use hops from this pile, but the brewer went and used the other pile, the deposited hops. Rav Amram asked how judges should rule in such a case. His answer is not given here.",
-   "why": "It is the next in a run of cases where a deposit is lost through someone the keeper relied on, and the Gemara asks who must pay.",
+   "note": "A man left hops, used in making beer, in another's care. The guardian also had his own pile of hops, and he told his brewer to use hops from this pile, but the brewer went and used the other pile, the one left in his care. Rav Amram asked how judges should rule. The guardian can say he told the brewer which pile to use, and the brewer can say he was never told not to use the other one. The story itself does not give a ruling.",
+   "why": "One of a run of cases in which property left in someone's care is lost through another person's hands; the discussion that follows asks whether the guardian is still to blame and what loss there really was.",
    "people": [
     {
      "name": "Rav Amram",
-     "about": "Asks how the case should be judged."
+     "about": "The Sage who poses the question of how judges should rule."
     }
    ],
    "terms": [
     {
+     "term": "hops",
+     "meaning": "A plant used in brewing beer."
+    },
+    {
      "term": "bailee",
-     "meaning": "Someone who holds another person's property for safekeeping. Jewish law sets different levels of responsibility for a paid and an unpaid bailee if the item is lost or stolen."
+     "meaning": "Someone who agrees to look after another person's property and may have to pay if it is lost."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-44b-4-4": {
    "note": "Rav borrowed gold dinars from the daughter of Rabbi Hiyya. By the time he came to repay, gold dinars had risen in value, and Rav worried that returning them would mean paying her interest. He went to Rabbi Hiyya, who told him: go and pay her back in good, full-weight dinars.",
@@ -1026,50 +1024,50 @@
    "approved": true
   },
   "bava_metzia-59b-1-10": {
-   "note": "Arguing that a certain oven could not become ritually impure, Rabbi Eliezer called on miracles: a carob tree uprooted itself, a stream flowed backward, the study hall's walls began to fall, and a Divine Voice sided with him. Rabbi Yehoshua replied, 'It is not in heaven,' and Elijah later told Rabbi Natan that God smiled and said, 'My children have triumphed over Me.' The Sages burned what Rabbi Eliezer had ruled pure and ostracized him; Rabbi Akiva, dressed in black, broke the news gently. Rabbi Eliezer wept, crops were struck, and Rabban Gamliel nearly drowned at sea. His sister Imma Shalom, Rabbi Eliezer's wife, kept her husband from prayers of supplication, but one day found him praying and said he had killed her brother; just then a shofar announced Rabban Gamliel's death.",
-   "why": "The Gemara brings this story while discussing verbal mistreatment. Imma Shalom's last words, that the gates of Heaven stay open to the prayers of the mistreated, tie it to that theme, and the discussion then turns to mistreating converts.",
+   "note": "Rabbi Eliezer and the Rabbis disputed whether a certain oven could become impure. Losing the argument, he called on a carob tree, a stream and the study hall walls to prove him right; each did, and the Rabbis rejected each. A Divine Voice declared that the law follows him, yet Rabbi Yehoshua answered, \"It is not in heaven.\" Elijah later told Rabbi Natan that God smiled and said, \"My children have triumphed over Me.\" The Sages burned what Rabbi Eliezer had declared pure and ostracized him. Rabbi Akiva, dressed in black, told him. He wept, crops were struck, and what he looked at burned. Rabban Gamliel nearly drowned until he prayed. Later his wife Imma Shalom, Rabban Gamliel's sister, found him praying face down and said, \"You killed my brother\"; just then a shofar announced his death.",
+   "why": "The Gemara brings the story apropos of verbal mistreatment: it ends with Imma Shalom's teaching that the gates of prayer stay open for those who are wronged by words, and the discussion goes on to the verbal mistreatment of converts.",
    "people": [
     {
      "name": "Rabbi Eliezer",
-     "about": "Also called Rabbi Eliezer ben Hyrcanus; he ruled the oven pure, was outvoted and ostracized."
+     "about": "The Sage who stands alone against the Rabbis on the oven and is ostracized."
     },
     {
      "name": "Rabbi Yehoshua",
-     "about": "Scolded the leaning walls and answered the Divine Voice: 'It is not in heaven.'"
+     "about": "He rebukes the walls and rejects the Divine Voice, saying the Torah is not in heaven."
     },
     {
      "name": "Rabbi Akiva",
-     "about": "Rabbi Eliezer's beloved disciple, who went to tell him of his ostracism."
+     "about": "Rabbi Eliezer's disciple, who volunteers to tell him of his ostracism."
     },
     {
      "name": "Rabban Gamliel",
-     "about": "The Nasi, head of the Sages who ostracized Rabbi Eliezer; brother of Imma Shalom."
+     "about": "The head of the Sages who ostracized Rabbi Eliezer; Imma Shalom's brother."
     },
     {
      "name": "Imma Shalom",
-     "about": "Rabbi Eliezer's wife and Rabban Gamliel's sister."
+     "about": "Rabbi Eliezer's wife and Rabban Gamliel's sister, who guards her husband's prayers."
     }
    ],
    "terms": [
     {
-     "term": "halakha",
-     "meaning": "Jewish law; here, which side's ruling is binding."
-    },
-    {
      "term": "Divine Voice",
-     "meaning": "A voice from Heaven that announces a message to people on earth."
+     "meaning": "A voice from Heaven that announces God's view; here the Sages refuse to decide law by it."
     },
     {
      "term": "ostracized",
-     "meaning": "Formally shunned by the community; others had to keep four cubits (about two meters) away from him."
+     "meaning": "Placed under a ban: others must keep their distance, and the person behaves like a mourner."
     },
     {
-     "term": "lower his head",
-     "meaning": "The tahanun prayer of supplication and pleading, said with the head lowered."
+     "term": "falling on one's face",
+     "meaning": "The posture of a personal supplication prayer said after the main prayer; it is skipped on the New Moon."
+    },
+    {
+     "term": "shofar",
+     "meaning": "A ram's horn; here it is sounded to announce a death."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-60a-10-10": {
    "note": "Wine was brought to Rava from a store. He diluted it with water, tasted it, found it not tasty, and sent it back to the store. Abaye challenged him: the mishna says one may not sell such wine to a merchant even if he is told. Rava answered that his dilution was obvious to anyone, and that if one worried the storekeeper might add wine to sweeten it and resell it, there would be no end to the matter.",
@@ -1145,25 +1143,42 @@
    "approved": true
   },
   "bava_metzia-64b-6-6": {
-   "note": "Rav Yosef bar Hama used to seize the slaves of people who owed him money and make them work for him. His son Rava asked him why he did this. He answered that he followed Rav Nahman, who said a slave is not worth even the bread in his stomach. The story breaks off here, before Rava's reply.",
-   "why": "Rav Nahman has just ruled that a lender who lives in his borrower's courtyard must pay rent, so it will not look like interest. This case applies the same worry to a lender who puts his debtors' slaves to work.",
+   "note": "Rav Yosef bar Ḥama used to seize the slaves of people who owed him money and put them to work. His son Rava asked why. He cited Rav Naḥman: a slave is not worth even the bread he eats, so the owners lost nothing. Rava said Rav Naḥman meant idle slaves like his own slave Dari, who only dances among the wine barrels. His father then cited Rav: one who seizes another's slave and works him owes nothing, since the owner is glad the slave keeps working. Rava replied that this holds only when no money is owed; for a creditor it looks like interest. His father said: I retract.",
+   "why": "The Gemara has just cited Rav Naḥman's ruling that a lender living in his borrower's courtyard must pay rent, so the stay does not look like interest. Rava uses that same ruling to show his father that working a debtor's slaves is the same problem.",
    "people": [
     {
-     "name": "Rav Yosef bar Hama",
-     "about": "Rava's father, who seized his debtors' slaves and made them work."
+     "name": "Rav Yosef bar Ḥama",
+     "about": "Rava's father, who seized the slaves of his debtors and made them work for him."
     },
     {
      "name": "Rava",
-     "about": "Rav Yosef bar Hama's son, who questioned the practice."
+     "about": "Rav Yosef bar Ḥama's son, who questions his father's practice and persuades him to stop."
     },
     {
-     "name": "Rav Nahman",
-     "about": "The Sage whose saying the father relied on."
+     "name": "Rav Naḥman",
+     "about": "Sage whose rulings both father and son cite."
+    },
+    {
+     "name": "Rav",
+     "about": "Sage who ruled that one who seizes another's slave and works him is exempt."
+    },
+    {
+     "name": "Dari",
+     "about": "Rav Naḥman's slave, who only dances among the wine barrels."
     }
    ],
-   "terms": [],
-   "drafted": "shas1",
-   "approved": false
+   "terms": [
+    {
+     "term": "interest",
+     "meaning": "Jewish law forbids a lender to take any benefit from a borrower beyond the loan itself; even a benefit that only looks like payment for the loan is forbidden."
+    },
+    {
+     "term": "halakha",
+     "meaning": "Jewish law; the binding ruling on a question."
+    }
+   ],
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-66a-7-8": {
    "note": "Rav Nahman decided a case in the Exilarch's court according to his own view, and Rav Yehuda tore up the resulting deed. The Exilarch told Rav Nahman, 'Rav Yehuda tore up your document.' Rav Nahman replied, 'Did a child tear it up? A great man tore it up; he must have seen a reason.' In another version he said, 'A child tore it up, for everyone is a child compared to me in monetary law.'",
@@ -1196,17 +1211,34 @@
    "approved": true
   },
   "bava_metzia-66b-11-11": {
-   "note": "A man sold land with a guarantee: if his creditors seized it from the buyer, he would repay the buyer. The buyer asked to be repaid from the seller's very best land; the seller refused, wanting to keep that, but agreed to repay from his other good land. In the end creditors did seize the field, and meanwhile a flood swept away the seller's best land. The story does not say how the case was decided.",
-   "why": "The Gemara has been discussing promises that do not bind. Here it asks whether the seller's promise of his 'other good land' still holds now that the flood has made it his best; Rav Pappa says yes and Rav Aha of Difti objects.",
-   "people": [],
-   "terms": [
+   "note": "A man sold land with a guarantee to compensate the buyer if the seller's creditors ever took it. The buyer asked to be repaid, in that case, from the seller's very best land; the seller refused, wanting to keep it, but promised his other good land. In the end creditors seized the field, and a flood swept away the seller's very best land, leaving the other good land as his best. Rav Pappa thought the seller must still pay from the good land he had promised. Rav Aḥa of Difti asked Ravina why the seller could not say his promise assumed his best land would still exist, and that his good land had now taken its place. The text gives no final ruling.",
+   "why": "Just before this, Rav Pappa ruled on land set aside to repay a debt. Here he again judges what a specific promise of land for repayment obligates, and his view is challenged.",
+   "people": [
     {
-     "term": "guarantee",
-     "meaning": "The seller's promise to pay the buyer back if the seller's own creditors take the land to cover his debts."
+     "name": "Rav Pappa",
+     "about": "Sage who thought the seller must keep his promise and pay from his good land."
+    },
+    {
+     "name": "Rav Aḥa of Difti",
+     "about": "Sage who argued to Ravina that the seller could refuse."
+    },
+    {
+     "name": "Ravina",
+     "about": "Sage to whom Rav Aḥa of Difti put his argument."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "terms": [
+    {
+     "term": "superior-quality land",
+     "meaning": "Jewish law grades land as best, middle and poorest. Normally a buyer whose land is seized is compensated from the seller's middle-quality land, so a promise of better land matters."
+    },
+    {
+     "term": "property guarantee",
+     "meaning": "A seller's commitment to repay the buyer if the seller's creditors later seize the land he sold."
+    }
+   ],
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-67a-4-5": {
    "note": "A woman asked a man to buy land for her from her relatives, and he did. The relative who sold it asked the agent, 'If I have money later, will you give it back to me?' The agent answered, 'You and she are relatives.' Rabba bar Rav Huna said that whenever the reply is 'you and she are relatives,' the seller is relying on working it out within the family, so he never fully resolved to transfer the land.",
@@ -1489,22 +1521,26 @@
    "approved": true
   },
   "bava_metzia-81b-0-0": {
-   "note": "This is the Gemara's second telling of the stolen cloak. Here the baker took on a turn that was not his, and asked the others to guard his cloak as his payment. Before he came back it was stolen. Rav Pappa made them pay. The Sages said this was guarding while the owner was with them, and Rav Pappa was embarrassed. In the end it came out that at that time the cloak's owner had been drinking beer.",
-   "why": "The Gemara asked why Rav Pappa would be embarrassed if a careless guardian must pay even while the owner works for him. It retells the case so the dealers were paid guardians, and the Sages' objection is about the owner's presence rather than negligence.",
+   "note": "A group of ice plant dealers took turns baking for one another. One day the others asked one of them to bake when it was not his turn, and he said: in payment for my baking, guard my cloak. Before he came back, the cloak was stolen. Rav Pappa ruled that they must pay for it. The Sages objected that this was guarding while the owner was working for them, which would excuse them, and Rav Pappa was embarrassed. Then it came out that at that time the cloak's owner had been drinking beer, not baking.",
+   "why": "The discussion is about when guardians are excused because the owner was working for them. The Gemara retells this case to explain Rav Pappa's embarrassment even under the view that carelessness is never excused: baking out of turn made the dealers paid guardians.",
    "people": [
     {
      "name": "Rav Pappa",
-     "about": "The Sage who made the guardians pay for the stolen cloak."
+     "about": "Judge who ruled the dealers liable for the stolen cloak."
     }
    ],
    "terms": [
     {
      "term": "safeguarding with the owners",
-     "meaning": "When the owner of an item is working for the guardian at the time, the guardian is not liable for what happens to it."
+     "meaning": "A rule that a guardian is not liable for loss if the owner of the item was working for him at the time."
+    },
+    {
+     "term": "paid bailee",
+     "meaning": "Someone paid, in money or in kind, to guard another's property. A paid guardian must pay for theft or loss, unlike an unpaid one."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-81b-1-2": {
    "note": "Two men were travelling, one tall and one short. The tall one rode a donkey and had a sheet; the short one walked, wrapped in a woolen cloak. At a river, the short man put his cloak on the donkey to keep it dry, took the tall man's sheet and covered himself with it, and the water washed the sheet away. The tall man came before Rava, who made the short man pay. The Rabbis objected that this was borrowing with the owner present, and Rava was embarrassed. In the end it came out that the short man had taken the sheet without the tall man knowing and put it back without his knowing.",
@@ -1710,38 +1746,46 @@
    "approved": false
   },
   "bava_metzia-84b-13-18": {
-   "note": "When Rabban Shimon ben Gamliel and Rabbi Yehoshua ben Korha sat on benches, the young Rabbi Elazar, son of Rabbi Shimon, and Rabbi (Yehuda HaNasi) sat before them on the ground. They asked and answered so well that the elders gave them benches. Rabban Shimon ben Gamliel asked that his son be taken down, fearing for him, and Rabbi Yehoshua ben Korha asked whether the fatherless one should be left to die, so both were taken down. Rabbi Elazar was offended that he had been treated as Rabbi's equal, and from then on cut down Rabbi's arguments before he could make them. Rabbi was hurt and told his father, who said: he is a lion son of a lion, and you are a lion son of a fox.",
-   "why": "Rabbi Elazar's widow told Rabbi he was not greater than her husband in Torah or deeds; the Gemara asks what showed his greater Torah, and this story is the answer. It also explains Rabbi's later saying about three modest people.",
+   "note": "As young men, Rabbi Elazar, son of Rabbi Shimon, and Rabbi Yehuda HaNasi sat on the ground before the leading Sages, Rabban Shimon ben Gamliel and Rabbi Yehoshua ben Korḥa. Their sharp questions and answers led the Sages to give them benches. Rabban Shimon ben Gamliel, Rabbi's father, protested that they were taking his only fledgling from him, so Rabbi was sent back to the floor; Rabbi Yehoshua ben Korḥa had Rabbi Elazar, who had no father to speak for him, sent back too. Rabbi Elazar was offended at being made Rabbi's equal, and from then on he knocked down Rabbi's arguments before he could make them. Rabbi complained to his father, who said: he is a lion son of a lion, and you are a lion son of a fox.",
+   "why": "Rabbi Elazar's widow has just told Rabbi she did not know whether her husband was greater than him in Torah; the Gemara tells this to show that he was. It also explains why Rabbi named his father among three truly modest people.",
    "people": [
     {
      "name": "Rabbi Elazar, son of Rabbi Shimon",
-     "about": "A brilliant young scholar, son of Rabbi Shimon, whose father had died."
+     "about": "Brilliant young scholar, raised to a bench and then sent back to the floor."
     },
     {
-     "name": "Rabbi",
-     "about": "Rabbi Yehuda HaNasi, son of Rabban Shimon ben Gamliel, Rabbi Elazar's young study companion."
+     "name": "Rabbi Yehuda HaNasi",
+     "about": "Called Rabbi; son of Rabban Shimon ben Gamliel, seated with Rabbi Elazar as a young man."
     },
     {
      "name": "Rabban Shimon ben Gamliel",
-     "about": "Rabbi's father, a leading Sage, who asked that his son not be raised up."
+     "about": "Leading Sage and Rabbi's father, who called himself a fox."
     },
     {
-     "name": "Rabbi Yehoshua ben Korha",
-     "about": "A leading Sage who argued that Rabbi Elazar should be protected too."
+     "name": "Rabbi Yehoshua ben Korḥa",
+     "about": "Leading Sage who argued that Rabbi Elazar should be sent back to the floor too."
+    },
+    {
+     "name": "Jonathan, son of Saul",
+     "about": "Named by Rabbi as modest, for telling David he would be second to him."
     }
    ],
    "terms": [
     {
-     "term": "a single fledgling",
-     "meaning": "Rabban Shimon ben Gamliel's name for his only son, whom he feared would be harmed by too much honor too young."
+     "term": "Rabbi",
+     "meaning": "Used alone, this title means Rabbi Yehuda HaNasi."
     },
     {
-     "term": "a lion son of a fox",
-     "meaning": "A great man whose father was lesser; Rabban Shimon ben Gamliel humbly says this of himself."
+     "term": "sons of Beteira",
+     "meaning": "A family who led the Sages and, as the Gemara says, seated Hillel at their head and appointed him Nasi over themselves."
+    },
+    {
+     "term": "Nasi",
+     "meaning": "The title of the head of the Sages."
     }
    ],
-   "drafted": "shas1",
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-85a-2-2": {
    "note": "When Rabbi (Yehuda HaNasi) heard what Rabbi Elazar, son of Rabbi Shimon, had gained through suffering, he said: afflictions are precious. He took thirteen years of afflictions upon himself: six years of kidney stones and seven of scurvy, or, some say, seven of kidney stones and six of scurvy.",
@@ -1902,21 +1946,30 @@
    "approved": true
   },
   "bava_metzia-85b-4-4": {
-   "note": "Whenever Rabbi Hanina and Rabbi Hiyya argued, Rabbi Hanina would say: are you arguing with me? If the Torah were forgotten from Israel, I could restore it by my reasoning. Rabbi Hiyya answered: are you arguing with me? I act so that the Torah will not be forgotten from Israel.",
-   "why": "It follows the Divine Voice telling Reish Lakish that Rabbi Hiyya spread Torah more than others. Rabbi Hiyya goes on to describe how he did it.",
+   "note": "Rabbi Ḥanina and Rabbi Ḥiyya used to argue over Torah. Rabbi Ḥanina told Rabbi Ḥiyya he was no match for him: if the Torah were ever forgotten, he could restore it by his reasoning alone. Rabbi Ḥiyya answered that he was the one making sure it would never be forgotten. He sows flax, twines nets, hunts deer and feeds their meat to orphans, makes parchment from the hides and writes the five books of the Torah on it. Then he goes to a town, teaches five children one book each and six children one order of the Mishna each, and tells them to teach one another until he comes back.",
+   "why": "Just before this, a Divine Voice told Reish Lakish that he had studied Torah like Rabbi Ḥiyya but had not spread it as he did. This exchange shows what that spreading looked like, and the discussion goes on praising Rabbi Ḥiyya.",
    "people": [
     {
-     "name": "Rabbi Hanina",
-     "about": "A Sage who boasted he could restore the Torah by his reasoning."
+     "name": "Rabbi Ḥanina",
+     "about": "Sage who boasted he could restore the Torah by his reasoning if it were forgotten."
     },
     {
-     "name": "Rabbi Hiyya",
-     "about": "A Sage who said he worked to keep the Torah from being forgotten."
+     "name": "Rabbi Ḥiyya",
+     "about": "Sage who made sure the Torah would not be forgotten by teaching children himself."
     }
    ],
-   "terms": [],
-   "drafted": "shas1",
-   "approved": false
+   "terms": [
+    {
+     "term": "five books",
+     "meaning": "The five books of Moses: Genesis, Exodus, Leviticus, Numbers and Deuteronomy."
+    },
+    {
+     "term": "six orders",
+     "meaning": "The Mishna, the first written collection of Jewish law, is divided into six sections called orders."
+    }
+   ],
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "bava_metzia-85b-7-7": {
    "note": "Rabbi Zeira says that last night Rabbi Yosei, son of Rabbi Ḥanina, appeared to him in a dream. Rabbi Zeira asked whom he was placed near in the upper realms. Rabbi Yosei said near Rabbi Yoḥanan, who is near Rabbi Yannai, who is near Rabbi Ḥanina, who is near Rabbi Ḥiyya. When Rabbi Zeira asked why Rabbi Yoḥanan was not placed near Rabbi Ḥiyya, Rabbi Yosei answered: in a place of fiery sparks and burning fires, who could bring Rabbi Yoḥanan, son of Nappaḥa, there?",
@@ -2552,6 +2605,24 @@
    "terms": [],
    "drafted": "shas1",
    "approved": true
+  },
+  "bava_metzia-42b-0-2": {
+   "note": "A keeper gave deposited money to his mother, who put it in a chest, and it was stolen. Rava weighs each side. The son can say that anyone who deposits something expects the keeper's wife and children to help guard it. The mother can say her son never told her the money was not his, or she would have buried it. And the son can say he kept quiet because she would be more careful with money she thought was his. Rava's ruling follows after this.",
+   "why": "Rava is working out who, if anyone, must pay; these arguments clear both son and mother of negligence, leading to his ruling that both swear an oath and the son is exempt.",
+   "people": [
+    {
+     "name": "Rava",
+     "about": "Weighs the claims of the keeper and his mother."
+    }
+   ],
+   "terms": [
+    {
+     "term": "bailee",
+     "meaning": "Someone who holds another person's property for safekeeping. Jewish law sets different levels of responsibility for a paid and an unpaid bailee if the item is lost or stolen."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": false
   }
  }
 }
