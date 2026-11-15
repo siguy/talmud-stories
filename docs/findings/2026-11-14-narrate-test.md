@@ -113,8 +113,7 @@ and showed an unmarked window is the untried variant, and the only way to test t
 Asked for: remove the confounds. Same 300 classification spans, narrator = **Opus** (`claude-opus-5-5`, the grader's model),
 **+-1 segment window**, passage marked (the grader's exact view), still **without** `STORY_RULES.md`. Two passes, 300 valid
 answers each. Run with `python3 scripts/narrate_test.py --variant opus_ctx1 ...`; data in `results/shas_run/narrate_test/opus_ctx1/`.
-Boundaries were not re-run (the grader never judged them, and a marked window can only echo the card; the unmarked-window variant is
-still untried).
+Boundaries were not re-run in this arm (the grader never judged them); the unmarked-window border test is the next addendum.
 
 | arm | precision (known) | Wilson 95% | recall of Jeff yes |
 |---|---|---|---|
@@ -135,3 +134,75 @@ missed). What is left is **the prompt**: the rule register makes the grader stri
 it says yes to anything with a sequence of events, including the ~20% of those that Jeff calls borderline or no. That attribution is
 now supported by an arm that holds model and view equal, which the first run could not say. It is still one prompt on one set; whether a
 *narrate-then-apply-rules* prompt would keep recall and recover precision is untested.
+
+
+## Addendum 2: narrate-then-rules, and the unmarked-window border test (measured)
+
+Both asked for after the addendum above. Opus throughout, two passes each, every answer valid. Variants `hybrid` and `unmarked` of
+`scripts/narrate_test.py`; prompts `src/prompts/narrate_rules_v1.md`, `src/prompts/narrate_unmarked_v1.md`; data in
+`results/shas_run/narrate_test/{hybrid,unmarked}/`.
+
+### A. Narrate first, then apply the rules (the hybrid) -- classification, same 300 spans, the grader's +-1 view
+
+The narrator now sees `STORY_RULES.md` (the grader's own rules prompt, with a "narrate, then apply the rules to what you narrated" step
+and the grader's verdict vocabulary). Class = the rule verdict (`story` = yes, `borderline` = partial).
+
+| arm | precision (known) | Wilson 95% | recall of Jeff yes |
+|---|---|---|---|
+| grader story (both passes) | 32/33 = 0.97 | .85-.995 | 32/141 = 0.23 |
+| hybrid `story`, pass 1 | 41/43 = 0.953 | .85-.99 | 41/141 = 0.29 |
+| hybrid `story`, pass 2 | 42/45 = 0.933 | .82-.98 | 42/141 = 0.30 |
+| hybrid `story`, both passes | 37/39 = 0.949 | .83-.99 | 37/141 = 0.26 |
+| COMBINED (grader story OR hybrid story & grader borderline), pass 1 / 2 / both | 42/44 = 0.955 / 42/45 = 0.933 / 38/40 = 0.950 | LB .85 / .82 / .84 | 0.30 / 0.30 / 0.27 |
+| hybrid `story` or `borderline`, pass 1 / 2 | 100/120 = 0.83 / 101/124 = 0.815 | .76-.89 / .74-.87 | 0.71 / 0.72 |
+
+BLIND (C2): hybrid `story` 7/7 and 8/8 (n too small to say more than "no false positives among 15"). Pass-to-pass: same class 258/300,
+same story-or-not 289/300 (96%; the rules steady the model, unrules'd narrate was 89%).
+
+**Read:** adding the rules fixes the precision problem (0.95 vs 0.80) and it **meets the second-judge bar** (precision >= 0.90, Wilson LB
+>= 0.80: LB 0.82-0.85 in each pass, 0.84 both). But it does so by becoming the grader: `story` recall is 0.26-0.30 against the grader's 0.23.
+The combined rule recovers **10 Jeff-yes stories** the grader called borderline (10 of 12 spans each pass; the other 1-2 are Jeff
+borderline), so the rule adds about 10 of Jeff's 141 yes (7 recall points) at no precision cost. That is a small, safe gain, not a different
+tool. The recall in the first run came from the narrator not having the rules, and the precision loss came with it; one prompt gives
+one or the other.
+
+The hybrid's `borderline` bucket carries the review-queue value: of the spans the grader called borderline and the hybrid called
+borderline (91 / 94), Jeff said yes on 56 and 56, borderline 14-15, no 2-3; known-truth yes-rate 56/72 = 0.78 and 56/74 = 0.76
+(same as the unrules'd list, 0.77-0.78). The ranking is no better than before; it is now spread over the rules' own classes.
+
+### B. The unmarked-window border test (the only fair test of border finding)
+
+Same 193 detector stories (121 Ketubot, 72 Kiddushin) and the same blind 2005 targets as the first boundary table, but the narrator is
+shown the detector span +-3 with **no PASSAGE/CONTEXT marking and told nothing about a proposed unit**; it lists every story it finds with
+its needed segments. The detector's span is used only afterwards, to choose which of the narrator's listed stories answers the target
+(the one overlapping it most; none -> N/A). It moves no boundary.
+
+The narrator names a story in 119-120 of 121 Ketubot and 71 of 72 Kiddushin windows (most windows list several stories, 129-131 of 193).
+Its chosen story **equals the detector's span in 154/179 (pass 1) and 152/183 (pass 2) = 86% / 83%**, extends the end beyond it in 9 / 10,
+trims it in 9 / 13, starts earlier in 4 / 5 and later in 5 / 5. So the agreement in the first boundary test was not an echo of the marker: an
+independent reading of the unmarked text finds the same story extent the detector chose.
+
+Scores against the blind targets, hit counts (narrator vs detector, same targets; flips from the movement tables in `score.json`):
+
+| tractate | direction | pass 1 flips | pass 2 flips | narrator hit rate (p1 / p2) |
+|---|---|---|---|---|
+| Ketubot | start | MISS->HIT 1 (+1 MISS->NEAR), HIT->N/A 2 | MISS->HIT 2, HIT->N/A 2 | .780 / .786 |
+| Ketubot | **end** | MISS->HIT 2, HIT->MISS 1, MISS->N/A 2 | MISS->HIT 1, HIT->N/A 3 | .783 / .769 |
+| Kiddushin | start | MISS->HIT 1 | MISS->HIT 2, HIT->N/A 1 | .754 / .773 |
+| Kiddushin | end | HIT->MISS 1, MISS->NEAR 1 | HIT->MISS 2, MISS->NEAR 1 | .821 / .807 |
+
+Detector baselines on all covered targets: Ketubot start .758, end .743; Kiddushin start .754, end .787. **Net: 1-2 targets per direction either way,
+inside the pass-to-pass difference. Ketubot's end deficit is not recovered (its end MISSes stay MISS: 10 of 21 in pass 1, 12 in pass 2); Kiddushin
+ends get slightly worse.** The border claim ("needed segments beat the detector on ends without losing starts") is **not supported,
+marked or unmarked, on Sonnet or Opus.**
+
+What this says about the Ketubot ends: the narrator and the detector agree on where the *story* ends, and both disagree with Jeff's
+2005 list on those ~21 targets. Either his extent is a convention (R-B1/B4-type rules; see `docs/STORY_RULES.md`) that a narrator cannot
+see in the text, or both are wrong the same way. Narrating does not tell these apart; asking Jeff about the Ketubot end misses would.
+
+### What is decided, what is open
+
+- Do not ship on the unrules'd narrator. The hybrid meets the bar but adds ~10 of 141 yes over the grader; if that is worth a
+  second 300-span-style run on the Septimus pool (~1,100 spans, ~2x the cost of this test), it is Simon's call.
+- The borders question for Ketubot ends is not a narration problem; it points at Jeff's rules, not at a better model or prompt.
+- Cost note for whoever repeats this: Opus runs of this size hit the 5-hour and weekly limits (twice); batches whose answer file was already written were kept, the rest were re-run.

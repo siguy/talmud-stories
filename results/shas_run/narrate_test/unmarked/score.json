@@ -1,0 +1,849 @@
+{
+ "passes": [
+  "pass1",
+  "pass2"
+ ],
+ "classification": {
+  "pass1 yes": {
+   "all known": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C2 BLIND": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   }
+  },
+  "pass1 yes|partial": {
+   "all known": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C2 BLIND": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   }
+  },
+  "pass2 yes": {
+   "all known": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C2 BLIND": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   }
+  },
+  "pass2 yes|partial": {
+   "all known": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C2 BLIND": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   }
+  },
+  "GRADER story (both passes)": {
+   "all known": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C2 BLIND": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   }
+  },
+  "COMBINED pass1": {
+   "all known": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C2 BLIND": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   }
+  },
+  "COMBINED pass2": {
+   "all known": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   },
+   "C2 BLIND": {
+    "story_called_known": 0,
+    "jeff_yes": 0,
+    "precision": null,
+    "wilson95": null,
+    "recall_of_jeff_yes": "0/0",
+    "recall_wilson95": null,
+    "called_story_unknown_truth": 0
+   }
+  }
+ },
+ "crosstab": {
+  "pass1": {},
+  "pass2": {}
+ },
+ "invalid": {
+  "pass1": {},
+  "pass2": {}
+ },
+ "stability_cls": {
+  "n": 0,
+  "same_can_narrate": 0,
+  "same_yes_or_not": 0
+ },
+ "boundaries": {
+  "ketubot": {
+   "detector, all covered targets": {
+    "start": {
+     "scored": 124,
+     "HIT": 94,
+     "NEAR": 12,
+     "MISS": 18,
+     "N/A": 0,
+     "hit_rate": 0.758,
+     "hit_near_rate": 0.855,
+     "hit_wilson95": [
+      0.676,
+      0.825
+     ]
+    },
+    "end": {
+     "scored": 105,
+     "HIT": 78,
+     "NEAR": 6,
+     "MISS": 21,
+     "N/A": 0,
+     "hit_rate": 0.743,
+     "hit_near_rate": 0.8,
+     "hit_wilson95": [
+      0.652,
+      0.817
+     ]
+    }
+   },
+   "pass1 narrator": {
+    "start": {
+     "scored": 109,
+     "HIT": 85,
+     "NEAR": 12,
+     "MISS": 12,
+     "N/A": 3,
+     "hit_rate": 0.78,
+     "hit_near_rate": 0.89,
+     "hit_wilson95": [
+      0.693,
+      0.847
+     ]
+    },
+    "end": {
+     "scored": 92,
+     "HIT": 72,
+     "NEAR": 6,
+     "MISS": 14,
+     "N/A": 2,
+     "hit_rate": 0.783,
+     "hit_near_rate": 0.848,
+     "hit_wilson95": [
+      0.688,
+      0.855
+     ]
+    }
+   },
+   "pass1 detector, same targets": {
+    "start": {
+     "scored": 112,
+     "HIT": 86,
+     "NEAR": 11,
+     "MISS": 15,
+     "N/A": 0,
+     "hit_rate": 0.768,
+     "hit_near_rate": 0.866,
+     "hit_wilson95": [
+      0.682,
+      0.836
+     ]
+    },
+    "end": {
+     "scored": 94,
+     "HIT": 71,
+     "NEAR": 6,
+     "MISS": 17,
+     "N/A": 0,
+     "hit_rate": 0.755,
+     "hit_near_rate": 0.819,
+     "hit_wilson95": [
+      0.66,
+      0.831
+     ]
+    }
+   },
+   "pass1 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 109,
+     "HIT": 85,
+     "NEAR": 12,
+     "MISS": 12,
+     "N/A": 15,
+     "hit_rate": 0.78,
+     "hit_near_rate": 0.89,
+     "hit_wilson95": [
+      0.693,
+      0.847
+     ]
+    },
+    "end": {
+     "scored": 92,
+     "HIT": 72,
+     "NEAR": 6,
+     "MISS": 14,
+     "N/A": 13,
+     "hit_rate": 0.783,
+     "hit_near_rate": 0.848,
+     "hit_wilson95": [
+      0.688,
+      0.855
+     ]
+    }
+   },
+   "pass2 narrator": {
+    "start": {
+     "scored": 112,
+     "HIT": 88,
+     "NEAR": 11,
+     "MISS": 13,
+     "N/A": 3,
+     "hit_rate": 0.786,
+     "hit_near_rate": 0.884,
+     "hit_wilson95": [
+      0.701,
+      0.852
+     ]
+    },
+    "end": {
+     "scored": 91,
+     "HIT": 70,
+     "NEAR": 6,
+     "MISS": 15,
+     "N/A": 6,
+     "hit_rate": 0.769,
+     "hit_near_rate": 0.835,
+     "hit_wilson95": [
+      0.673,
+      0.844
+     ]
+    }
+   },
+   "pass2 detector, same targets": {
+    "start": {
+     "scored": 115,
+     "HIT": 88,
+     "NEAR": 11,
+     "MISS": 16,
+     "N/A": 0,
+     "hit_rate": 0.765,
+     "hit_near_rate": 0.861,
+     "hit_wilson95": [
+      0.68,
+      0.833
+     ]
+    },
+    "end": {
+     "scored": 97,
+     "HIT": 72,
+     "NEAR": 6,
+     "MISS": 19,
+     "N/A": 0,
+     "hit_rate": 0.742,
+     "hit_near_rate": 0.804,
+     "hit_wilson95": [
+      0.647,
+      0.819
+     ]
+    }
+   },
+   "pass2 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 112,
+     "HIT": 88,
+     "NEAR": 11,
+     "MISS": 13,
+     "N/A": 12,
+     "hit_rate": 0.786,
+     "hit_near_rate": 0.884,
+     "hit_wilson95": [
+      0.701,
+      0.852
+     ]
+    },
+    "end": {
+     "scored": 91,
+     "HIT": 70,
+     "NEAR": 6,
+     "MISS": 15,
+     "N/A": 14,
+     "hit_rate": 0.769,
+     "hit_near_rate": 0.835,
+     "hit_wilson95": [
+      0.673,
+      0.844
+     ]
+    }
+   },
+   "movement": {
+    "pass1": {
+     "start": {
+      "HIT->HIT": 81,
+      "HIT->N/A": 2,
+      "MISS->HIT": 1,
+      "MISS->MISS": 12,
+      "MISS->N/A": 1,
+      "MISS->NEAR": 1,
+      "NEAR->NEAR": 11
+     },
+     "end": {
+      "HIT->HIT": 70,
+      "HIT->MISS": 1,
+      "MISS->HIT": 2,
+      "MISS->MISS": 10,
+      "MISS->N/A": 2,
+      "NEAR->NEAR": 6
+     }
+    },
+    "pass2": {
+     "start": {
+      "HIT->HIT": 82,
+      "HIT->N/A": 2,
+      "MISS->HIT": 2,
+      "MISS->MISS": 13,
+      "MISS->N/A": 1,
+      "NEAR->NEAR": 11
+     },
+     "end": {
+      "HIT->HIT": 69,
+      "HIT->N/A": 3,
+      "MISS->HIT": 1,
+      "MISS->MISS": 12,
+      "MISS->N/A": 3,
+      "NEAR->NEAR": 6
+     }
+    }
+   },
+   "target_inside_window": {
+    "end|True": 105,
+    "start|True": 124
+   },
+   "narration_outcomes": {
+    "pass1": {
+     "yes": 119,
+     "no": 2
+    },
+    "pass2": {
+     "yes": 120,
+     "no": 1
+    }
+   }
+  },
+  "kiddushin": {
+   "detector, all covered targets": {
+    "start": {
+     "scored": 69,
+     "HIT": 52,
+     "NEAR": 6,
+     "MISS": 11,
+     "N/A": 0,
+     "hit_rate": 0.754,
+     "hit_near_rate": 0.841,
+     "hit_wilson95": [
+      0.64,
+      0.84
+     ]
+    },
+    "end": {
+     "scored": 61,
+     "HIT": 48,
+     "NEAR": 4,
+     "MISS": 9,
+     "N/A": 0,
+     "hit_rate": 0.787,
+     "hit_near_rate": 0.852,
+     "hit_wilson95": [
+      0.669,
+      0.871
+     ]
+    }
+   },
+   "pass1 narrator": {
+    "start": {
+     "scored": 65,
+     "HIT": 49,
+     "NEAR": 6,
+     "MISS": 10,
+     "N/A": 0,
+     "hit_rate": 0.754,
+     "hit_near_rate": 0.846,
+     "hit_wilson95": [
+      0.637,
+      0.842
+     ]
+    },
+    "end": {
+     "scored": 56,
+     "HIT": 46,
+     "NEAR": 5,
+     "MISS": 5,
+     "N/A": 0,
+     "hit_rate": 0.821,
+     "hit_near_rate": 0.911,
+     "hit_wilson95": [
+      0.702,
+      0.9
+     ]
+    }
+   },
+   "pass1 detector, same targets": {
+    "start": {
+     "scored": 65,
+     "HIT": 48,
+     "NEAR": 6,
+     "MISS": 11,
+     "N/A": 0,
+     "hit_rate": 0.738,
+     "hit_near_rate": 0.831,
+     "hit_wilson95": [
+      0.62,
+      0.83
+     ]
+    },
+    "end": {
+     "scored": 56,
+     "HIT": 47,
+     "NEAR": 4,
+     "MISS": 5,
+     "N/A": 0,
+     "hit_rate": 0.839,
+     "hit_near_rate": 0.911,
+     "hit_wilson95": [
+      0.722,
+      0.913
+     ]
+    }
+   },
+   "pass1 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 65,
+     "HIT": 49,
+     "NEAR": 6,
+     "MISS": 10,
+     "N/A": 4,
+     "hit_rate": 0.754,
+     "hit_near_rate": 0.846,
+     "hit_wilson95": [
+      0.637,
+      0.842
+     ]
+    },
+    "end": {
+     "scored": 56,
+     "HIT": 46,
+     "NEAR": 5,
+     "MISS": 5,
+     "N/A": 5,
+     "hit_rate": 0.821,
+     "hit_near_rate": 0.911,
+     "hit_wilson95": [
+      0.702,
+      0.9
+     ]
+    }
+   },
+   "pass2 narrator": {
+    "start": {
+     "scored": 66,
+     "HIT": 51,
+     "NEAR": 6,
+     "MISS": 9,
+     "N/A": 1,
+     "hit_rate": 0.773,
+     "hit_near_rate": 0.864,
+     "hit_wilson95": [
+      0.658,
+      0.857
+     ]
+    },
+    "end": {
+     "scored": 57,
+     "HIT": 46,
+     "NEAR": 5,
+     "MISS": 6,
+     "N/A": 1,
+     "hit_rate": 0.807,
+     "hit_near_rate": 0.895,
+     "hit_wilson95": [
+      0.687,
+      0.889
+     ]
+    }
+   },
+   "pass2 detector, same targets": {
+    "start": {
+     "scored": 67,
+     "HIT": 50,
+     "NEAR": 6,
+     "MISS": 11,
+     "N/A": 0,
+     "hit_rate": 0.746,
+     "hit_near_rate": 0.836,
+     "hit_wilson95": [
+      0.631,
+      0.835
+     ]
+    },
+    "end": {
+     "scored": 58,
+     "HIT": 48,
+     "NEAR": 4,
+     "MISS": 6,
+     "N/A": 0,
+     "hit_rate": 0.828,
+     "hit_near_rate": 0.897,
+     "hit_wilson95": [
+      0.711,
+      0.904
+     ]
+    }
+   },
+   "pass2 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 66,
+     "HIT": 51,
+     "NEAR": 6,
+     "MISS": 9,
+     "N/A": 3,
+     "hit_rate": 0.773,
+     "hit_near_rate": 0.864,
+     "hit_wilson95": [
+      0.658,
+      0.857
+     ]
+    },
+    "end": {
+     "scored": 57,
+     "HIT": 46,
+     "NEAR": 5,
+     "MISS": 6,
+     "N/A": 4,
+     "hit_rate": 0.807,
+     "hit_near_rate": 0.895,
+     "hit_wilson95": [
+      0.687,
+      0.889
+     ]
+    }
+   },
+   "movement": {
+    "pass1": {
+     "start": {
+      "HIT->HIT": 48,
+      "MISS->HIT": 1,
+      "MISS->MISS": 10,
+      "NEAR->NEAR": 6
+     },
+     "end": {
+      "HIT->HIT": 46,
+      "HIT->MISS": 1,
+      "MISS->MISS": 4,
+      "MISS->NEAR": 1,
+      "NEAR->NEAR": 4
+     }
+    },
+    "pass2": {
+     "start": {
+      "HIT->HIT": 49,
+      "HIT->N/A": 1,
+      "MISS->HIT": 2,
+      "MISS->MISS": 9,
+      "NEAR->NEAR": 6
+     },
+     "end": {
+      "HIT->HIT": 46,
+      "HIT->MISS": 2,
+      "MISS->MISS": 4,
+      "MISS->N/A": 1,
+      "MISS->NEAR": 1,
+      "NEAR->NEAR": 4
+     }
+    }
+   },
+   "target_inside_window": {
+    "end|True": 61,
+    "start|True": 69
+   },
+   "narration_outcomes": {
+    "pass1": {
+     "yes": 71,
+     "no": 1
+    },
+    "pass2": {
+     "yes": 71,
+     "no": 1
+    }
+   }
+  }
+ }
+}

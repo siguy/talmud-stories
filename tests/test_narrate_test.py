@@ -80,3 +80,46 @@ def test_boundary_set_is_blind_2005_only():
     for slug, rel in nt.TARGETS.items():
         d = json.loads((ROOT / rel).read_text())
         assert all(str(t.get('source_round', '')).startswith('jeff_2005_') for t in d['targets'])
+
+
+def test_pick_story_takes_the_most_overlapping_story_and_none_if_disjoint():
+    stories = [{'needed_segments': [1, 2]}, {'needed_segments': [4, 5, 6]}]
+    assert nt.pick_story(stories, {5, 6, 7}) == [4, 5, 6]
+    assert nt.pick_story(stories, {2, 3}) == [1, 2]
+    assert nt.pick_story(stories, {8}) is None
+    assert nt.pick_story([], {1}) is None
+
+
+def test_needed_for_marked_and_unmarked_answers():
+    ok = lambda a: {'outcome': 'ok', 'answer': a}
+    assert nt.needed_for(({}, {2}), ok({'can_narrate': 'yes', 'needed_segments': [2, 3]})) == [2, 3]
+    assert nt.needed_for(({}, {2}), ok({'can_narrate': 'no', 'needed_segments': []})) is None
+    assert nt.needed_for(({}, {2}), ok({'stories': [{'needed_segments': [1, 2]}]})) == [1, 2]
+    assert nt.needed_for(({}, {2}), {'outcome': 'invalid', 'answer': None}) is None
+
+
+def test_hybrid_class_is_the_rule_verdict_not_can_narrate():
+    ok = lambda v: {'outcome': 'ok', 'answer': {'can_narrate': 'yes', 'verdict': v}}
+    assert [nt.verdict_class(ok(v)) for v in ('story', 'borderline', 'not', 'out_of_scope', 'unsure')] == \
+        ['yes', 'partial', 'no', 'no', 'no']
+
+
+def test_unmarked_validate_demands_integer_segments_inside_the_window(monkeypatch):
+    monkeypatch.setattr(nt, 'KIND', 'unmarked')
+    assert nt.validate({'stories': []}, [1, 2, 3])[1] is None
+    assert nt.validate({'stories': [{'needed_segments': [3, 1]}]}, [1, 2, 3])[0]['stories'][0]['needed_segments'] == [1, 3]
+    assert nt.validate({'stories': [{'needed_segments': [9]}]}, [1, 2, 3])[0] is None
+    assert nt.validate({'stories': [{'needed_segments': []}]}, [1, 2, 3])[0] is None
+    assert nt.validate({'stories': 'x'}, [1, 2, 3])[0] is None
+
+
+def test_unmarked_prompt_reveals_no_passage():
+    import pytest
+    pytest.importorskip('json')
+    old = nt.KIND
+    nt.KIND = 'unmarked'
+    try:
+        prompt, passage, shown = nt.user_prompt(FakeText(), [('Ketubot 2a', 4)])
+    finally:
+        nt.KIND = old
+    assert 'PASSAGE' not in prompt and 'CONTEXT' not in prompt and passage == {4} and shown == list(range(1, 8))

@@ -48,7 +48,13 @@ CONTEXT = 3
 # grader: Opus, the grader's +-1 window, passage marked, classification set only (the grader never saw the
 # boundary set). Outputs go to <OUT>/<variant>/; the manifest and units stay shared.
 VARIANTS = {'default': dict(context=3, sets=('CLS', 'BND'), sub=''),
-            'opus_ctx1': dict(context=1, sets=('CLS',), sub='opus_ctx1')}
+            'opus_ctx1': dict(context=1, sets=('CLS',), sub='opus_ctx1'),
+            # narrate first, then apply STORY_RULES.md (the hybrid): the grader's view and rules + the narration step
+            'hybrid': dict(context=1, sets=('CLS',), sub='hybrid', prompt='src/prompts/narrate_rules_v1.md', kind='hybrid'),
+            # the border test: the same detector spans' windows (+-3), NOTHING marked, narrator lists the stories it finds
+            'unmarked': dict(context=3, sets=('BND',), sub='unmarked', prompt='src/prompts/narrate_unmarked_v1.md',
+                             kind='unmarked')}
+KIND = 'marked'
 RUN = OUT
 SETS = ('CLS', 'BND')
 CAN = ('yes', 'partial', 'no')
@@ -61,7 +67,8 @@ TARGETS = {'ketubot': 'tests/expert_boundary_targets_2005.json',
 
 
 def system_prompt():
-    return PROMPT_PATH.read_text()
+    text = PROMPT_PATH.read_text()
+    return text.replace('{RULES}', j.rules_text()) if KIND == 'hybrid' else text
 
 
 def prompt_sha():
@@ -87,9 +94,13 @@ def user_prompt(text, cells):
     parts = []
     for n, cell in numbered.items():
         seg = text.seg[cell]
-        role = 'PASSAGE' if n in passage else 'CONTEXT'
-        parts.append(f'[{n}] {role} -- {cell[0]}\nHebrew/Aramaic: {seg.get("hebrew", "").strip()}\n'
+        # unmarked: no role at all -- the detector's span is not revealed to the narrator
+        role = '' if KIND == 'unmarked' else (' PASSAGE' if n in passage else ' CONTEXT')
+        parts.append(f'[{n}]{role} -- {cell[0]}\nHebrew/Aramaic: {seg.get("hebrew", "").strip()}\n'
                      f'English: {seg.get("english", "").strip()}')
+    if KIND == 'unmarked':
+        return (f'The window is segments [1] to [{len(numbered)}] below, in order. Answer `needed_segments` with these '
+                f'bracketed numbers.\n\n' + '\n\n'.join(parts)), passage, sorted(numbered)
     head = (f'The PASSAGE is segments [{min(passage)}] to [{max(passage)}] below; the rest is CONTEXT. '
             f'Answer `needed_segments` with these bracketed numbers.')
     return head + '\n\n' + '\n\n'.join(parts), passage, sorted(numbered)
@@ -99,6 +110,20 @@ def validate(ans, shown_numbers):
     """Answer dict -> (clean dict | None, error | None). A malformed answer is COUNTED, never scored (Lesson 21)."""
     if not isinstance(ans, dict):
         return None, f'not an object: {type(ans).__name__}'
+    if KIND == 'unmarked':
+        st = ans.get('stories')
+        if not isinstance(st, list):
+            return None, 'stories not a list'
+        for x in st:
+            need = x.get('needed_segments') if isinstance(x, dict) else None
+            if not isinstance(need, list) or not need or not all(isinstance(n, int) and not isinstance(n, bool) for n in need):
+                return None, 'a story without integer needed_segments'
+            if any(n not in shown_numbers for n in need):
+                return None, f'needed_segments {need} outside the window'
+        return {**ans, 'stories': [{**x, 'needed_segments': sorted(set(x['needed_segments']))} for x in st]}, None
+    if KIND == 'hybrid':
+        if ans.get('verdict') not in j.VERDICTS or not isinstance(ans.get('rules'), list):
+            return None, f'verdict/rules {ans.get("verdict")!r}'
     can = ans.get('can_narrate')
     if can not in CAN:
         return None, f'can_narrate {can!r}'
@@ -115,14 +140,46 @@ def validate(ans, shown_numbers):
     return {**ans, 'needed_segments': sorted(set(need))}, None
 
 
+def pick_story(stories, passage):
+    """Unmarked answer: the narrated story that overlaps the detector's span most (None if none touches it).
+    Ties go to the story starting earlier. This is the only place the detector's span is used on the unmarked arm,
+    and only to say WHICH of the narrator's stories answers the target -- it never moves a boundary."""
+    best = max(stories, key=lambda x: (len(set(range(min(x['needed_segments']), max(x['needed_segments']) + 1)) & passage),
+                                       -min(x['needed_segments'])), default=None)
+    if best is None or not (set(range(min(best['needed_segments']), max(best['needed_segments']) + 1)) & passage):
+        return None
+    return best['needed_segments']
+
+
+def needed_for(unit_window, r):
+    """needed_segments of the answer that stands for a boundary unit, or None. unit_window = (numbered, passage)."""
+    if not r or r['outcome'] != 'ok':
+        return None
+    a = r['answer']
+    if 'stories' in a:
+        return pick_story(a['stories'], unit_window[1])
+    return None if a['can_narrate'] == 'no' else a['needed_segments']
+
+
 def predicted_span(numbered, need):
     """(first cell, last cell) of the narrator's needed segments -- min and max, as the work item says."""
     return numbered[min(need)], numbered[max(need)]
 
 
+HYBRID_CLASS = {'story': 'yes', 'borderline': 'partial'}   # not / out_of_scope / unsure -> 'no' (out_of_scope's truth is `no`)
+
+
 def verdict_class(narr):
-    """Narrator answer -> 'yes' | 'partial' | 'no' | None (invalid)."""
-    return narr['answer']['can_narrate'] if narr and narr['outcome'] == 'ok' else None
+    """Narrator answer -> 'yes' | 'partial' | 'no' | None (invalid). The hybrid's class is its rule VERDICT, not its
+    can_narrate; the unmarked answer is 'yes' if it listed any story."""
+    if not narr or narr['outcome'] != 'ok':
+        return None
+    a = narr['answer']
+    if 'stories' in a:
+        return 'yes' if a['stories'] else 'no'
+    if 'verdict' in a:
+        return HYBRID_CLASS.get(a['verdict'], 'no')
+    return a['can_narrate']
 
 
 def combined_rule(grader, narrate_yes):
@@ -239,7 +296,7 @@ def export(pass_name, seed, batch):
             sizes[f'{n:03d}/{k:02d}'] = len(it['prompt'].encode())
         n += 1
     (d / 'export_manifest.json').write_text(json.dumps({
-        'pass': pass_name, 'seed': seed, 'batch': batch, 'batches': n, 'units': len(order),
+        'pass': pass_name, 'seed': seed, 'batch': batch, 'batches': n, 'units': len(order), 'kind': KIND,
         'prompt_sha': prompt_sha(), 'largest_file_bytes': max(sizes.values()),
         'files_over_30kb': {k: v for k, v in sizes.items() if v > 30_000},
         'exported': time.strftime('%Y-%m-%dT%H:%M:%S')}, indent=1))
@@ -368,11 +425,11 @@ def narrator_run(slug, pages, units, nar):
     last_seg = {p['ref']: max(s['index'] for s in p['segments']) for p in pages}
     stories = {p['ref']: [] for p in pages}
     for u in units:
-        r = nar.get(u['id'])
-        if verdict_class(r) in (None, 'no'):
+        _, numbered, passage = window(text_for(text_name(slug)), u['cells'])
+        need = needed_for((numbered, passage), nar.get(u['id']))
+        if not need:
             continue
-        _, numbered, _ = window(text_for(text_name(slug)), u['cells'])
-        a, b = predicted_span(numbered, r['answer']['needed_segments'])
+        a, b = predicted_span(numbered, need)
         # Mirrors how the detector's cross-page stories are stored: the first page carries the story and the
         # second page's end is not a covering story, so a target there is N/A for both runs, not scored.
         end = b[1] if a[0] == b[0] else last_seg[a[0]]
@@ -393,7 +450,7 @@ def score_boundaries(passes, units, res, lines):
             scored_sets = {'detector, all covered targets': (det_path, all_idx)}
             for p in passes:
                 nar = narrations(p)
-                usable = sorted({i for u in bu if verdict_class(nar.get(u['id'])) not in (None, 'no')
+                usable = sorted({i for u in bu if needed_for(window(text_for(text_name(slug)), u['cells'])[1:], nar.get(u['id']))
                                  for i in u['targets']})
                 npath = str(Path(tmp) / f'{p}.json')
                 Path(npath).write_text(json.dumps(narrator_run(slug, pages, bu, nar), ensure_ascii=False))
@@ -471,9 +528,12 @@ def main():
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s [narrate-test] %(message)s',
                         handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'), logging.StreamHandler(sys.stdout)])
-    global CONTEXT, RUN, SETS
+    global CONTEXT, RUN, SETS, KIND, PROMPT_PATH
     v = VARIANTS[args.variant]
     CONTEXT, SETS, RUN = v['context'], v['sets'], OUT / v['sub']
+    KIND = v.get('kind', 'marked')
+    if 'prompt' in v:
+        PROMPT_PATH = PROJECT_ROOT / v['prompt']
     RUN.mkdir(parents=True, exist_ok=True)
     if args.cmd == 'build':
         build()
