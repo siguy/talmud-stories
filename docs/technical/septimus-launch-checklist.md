@@ -9,6 +9,8 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
 
 ## 1. Decisions from Simon
 
+- [ ] Should someone who learned once and then stopped reading also be paused? Today only people who have
+      never learned anything are (found by the multi-week test, `septimus-staging.md`).
 - [ ] Look at the built screens on staging, especially those that had no mockup: stop / delete / cancel deletion,
       paused / resume, "You're in", "How the stories were chosen", "Your data", the in-app-browser notice.
 - [ ] Confirm the seven builder's choices in [`signup-c-review-2026-11-15.md`](signup-c-review-2026-11-15.md).
@@ -51,10 +53,10 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
 - [ ] **A real iPhone and a real Android phone:** sign in, Join, mark a story learned.
 - [ ] **A link opened inside WhatsApp, Gmail and Instagram:** the "open in your browser" notice appears and
       "Copy link" works.
-- [ ] **Several weeks, several people:** four or five test accounts, the script run for pretend weeks 1 to 8
+- [x] **Several weeks, several people:** four or five test accounts, the script run for pretend weeks 1 to 8
       (`--date`), checking that an unread story is handed back at week 4 and goes to someone else, a non-reader is
       paused at week 7, Resume works, and Stop works.
-- [ ] **Delete my data, for real:** the account, the record and the name on the rows are all gone after the run.
+- [x] **Delete my data, for real:** the account, the record and the name on the rows are all gone after the run.
       This has only ever run against the local test database.
 - [ ] **A second person** (not Simon) signs up from their own phone with a community link (`?src=`).
 - [ ] **The scheduled workflow on GitHub**, run by hand against staging, before it is trusted with the real one.

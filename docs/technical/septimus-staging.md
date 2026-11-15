@@ -38,6 +38,36 @@ FIREBASE_SERVICE_ACCOUNT="$(cat $HOME/keys/septimus-stories-staging-firebase-adm
 
 Drop `--dry-run` to write. `--config` lets a test run use a launch date without editing `site/config.js`.
 
+## Multi-week test, 2026-11-15
+
+`scripts/staging_multiweek_test.py`: five test accounts plus Simon's own, the weekly script run for pretend weeks 2
+to 11 (launch Sunday 2026-11-08), the script playing the people between runs. 171 hand-outs, 149 different stories,
+the first 149 of the list (Berakhot 3a into Shabbat 33a).
+
+| Checked | Result |
+|---|---|
+| A second run of the same week changes nothing | Pass |
+| New weeks continue from where the last hand-out ended; no gaps in list order | Pass |
+| Nobody over their minutes; no story held by two people in one round | Pass |
+| Readers (10 and 30 min) got stories every week and were never paused | Pass |
+| A 10-minute person holding nothing was given a 29-minute story ("longer than usual") | Seen |
+| Unread stories handed back after three weeks and given to someone else | Pass |
+| Stop my stories: open stories handed back, nothing new | Pass |
+| Delete my data, for real: sign-in account gone, record gone, no row carries the id | Pass |
+| A person who never read: paused at week 8 (joined for week 2), nothing new after | Pass |
+| Resume: stories again the next week | Pass |
+| Public total equals stories really marked learned (135); per-tractate adds up | Pass |
+| Database reads per run | 11 rising to 173 |
+
+Three checks in the first version failed because the test assumed Simon's account had read nothing; he had marked
+both week-1 stories learned. The script was right. Those checks were replaced.
+
+**One thing the run showed that the rules allow but may not be wanted:** someone who learned one story in week 1
+and nothing since is never paused. Simon's account let stories lapse in weeks 2, 3, 5, 6 and 8 and kept being given
+more. The pause rule only catches people who have *never* learned anything. A decision for Simon.
+
+The test accounts (`test-a` to `test-d`@example.com) and their rows are still on staging.
+
 ## How it was set up (to repeat or audit)
 
 1. `PROJECT_ID=septimus-stories-staging APP_NAME=septimus-site-staging bash firebase/setup.sh`
