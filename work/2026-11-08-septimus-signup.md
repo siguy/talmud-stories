@@ -124,6 +124,34 @@ the builder's choices Simon has not yet confirmed: `docs/technical/signup-c-revi
 - **Step d must:** show "longer than usual" using `is_longer_than_usual`; not list released rows; add "Resume"
   (the person clears their own `pausedAt`), "Stop my stories" and "Delete my data".
 
+## Step d built (2026-11-15), except the story-page button
+
+Branch `septimus/signup-d` (stacked on c). In `site/signup.js`: My stories (`#/my`), mark as learned from that list,
+Progress (`#/progress`), stop / delete / cancel deletion on "Your data", paused and stopped notices with "Resume".
+Review and outcomes: `docs/technical/signup-d-review-2026-11-15.md`. Screenshots of the built screens (test data):
+`docs/technical/signup-screens/`.
+
+- **Verified** at phone width against the emulators with fake accounts and seeded rows.
+- **Left for after the Jeff-responses branch merges** (needs `site/app.js`): the "Mark as learned" button on the
+  story page, "Back to my stories", "Next story", and keeping the reader's per-device tick in step. One
+  `TODO(signup d…)` comment in `signup.js` marks it.
+- **Step s** should put the Shas order of tractates into `index.json`; until then `SHAS_ORDER` in `signup.js` is
+  checked against `scripts/tractates.py` by `tests/test_signup_shas_order.py`.
+- **Simon has not seen** the screens that had no mockup: stop / delete / cancel deletion, paused / stopped / resume,
+  "You're in", "How the stories were chosen", "Your data", About (placeholder), the in-app-browser notice.
+
+## What is left, in order (2026-11-15)
+
+1. Simon: look at the built screens; confirm the builder's choices in the b, c and d review files.
+2. Simon: deploy the rules (`firebase deploy --only firestore:rules --project septimus-stories`), then sign in once
+   with a real Google account on the site.
+3. When the Jeff-responses branch merges: step s (field test, `list_version`, `published_at`, Shas order in the
+   data), the story-page button, the two `#/` links and the `config.js?v=` bump.
+4. Step e (weekly email, counts email to Simon): needs the email service and sending domain chosen, and Daniel's
+   sender and wording.
+5. Before launch: the six-months-after deletion job; a service-account key in GitHub secrets; switch the workflow on.
+6. Daniel: launch date, yahrzeit date, communities, About text, "finishing".
+
 ## How you know it worked
 
 - At 390 px in a real browser: land, sign in, commit 10 min/week; the account is recorded with its `?src=`.

@@ -49,13 +49,14 @@
 .su-back{display:inline-block;padding:.7rem .2rem .7rem 0;min-height:44px}
 
 /* My stories and Progress. The story rows reuse the reader's .row; the tick is a real button beside the link, not inside it. */
-a.su-progress{display:block;color:inherit;text-decoration:none}
+a.su-progresslink{display:block;color:inherit;text-decoration:none}
 .su-progress-big{font:700 1.4rem Cardo,Georgia,serif;margin:0 0 .3rem}
 p.su-progress-title{margin:.2rem 0}
 .su-h2{display:inline-block}
 .su-myrow{align-items:flex-start}
 .su-tick{flex:none;width:44px;height:44px;margin:-.65rem 0 -.6rem -.8rem;padding:0;background:none;border:0;display:grid;place-items:center;cursor:pointer}
-.su-tick:disabled{cursor:default}
+.su-tick[aria-disabled=true]{cursor:default}
+.su-tick .check{border-color:var(--muted)}   /* the empty ring needs more contrast than the reader's tick; .row.read still wins for the filled one */
 .su-tick:focus-visible{outline:3px solid var(--gold);outline-offset:-3px;border-radius:50%}
 .su-tick .check{margin:0}
 .su-rowbody{flex:1;min-width:0}
@@ -63,3 +64,5 @@ p.su-progress-title{margin:.2rem 0}
 .su-rowtop{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;flex-wrap:wrap}
 .su-rowmin{color:var(--muted);font-size:.8rem;white-space:nowrap}
 .su-rowmsg{margin:.2rem 0 0;font-size:.85rem;color:var(--muted)}
+.su-rowmsg:empty{display:none}
+@media (prefers-color-scheme:dark){.su-myrow.read .check{color:#121316}}   /* dark tick on the light green fill, like the other dark overrides here */

@@ -36,7 +36,7 @@
     (kids || []).forEach(function (c) { n.appendChild(c); });
     return n;
   }
-  function show(nodes) { app.textContent = ""; nodes.forEach(function (n) { app.appendChild(n); }); }
+  function show(nodes) { app.textContent = ""; nodes.forEach(function (n) { if (n) app.appendChild(n); }); }
   function link(text, href, cls) { return el("a", { href: href, text: text, class: cls }); }
   function back() { return el("p", {}, [link("← Back", "#/", "su-keep su-back")]); }   // su-keep: this "#/" is the landing page
   // Automatic redirects replace the current history entry, so Back does not land on a page that bounces straight on again.
@@ -65,16 +65,61 @@
   function hasLaunched() { var d = parseISO(cfg().launchDate); return !!d && today() >= d; }
   function afterYahrzeit() { var d = parseISO(cfg().yahrzeit); return !!d && today() > d; }
   function nextMonday() { var d = today(); d.setDate(d.getDate() + (((1 - d.getDay() + 7) % 7) || 7)); return d; }
+  // The last Monday hand-out is over: the next Monday falls after the yahrzeit.
+  function ended() { var y = parseISO(cfg().yahrzeit); return hasLaunched() && !!y && nextMonday() > y; }
   function startLine() {
-    var y = parseISO(cfg().yahrzeit);
-    if (hasLaunched() && y && nextMonday() > y) return "The weekly stories have ended.";
+    if (ended()) return "The weekly stories have ended.";
     return hasLaunched() ? "Your first stories arrive Monday " + fmtDate(nextMonday()) + "."
       : "Everyone starts together on " + launchText() + ". Your first stories arrive by email that week.";
+  }
+  // Campaign weeks, counted the way campaign_week() in scripts/septimus_assign.py counts them:
+  // week 1 is the seven days starting on the launch date. Whole days via rounding, so a clock change does not shift a week.
+  function dayDiff(a, b) { return Math.round((b - a) / 864e5); }
+  function campaignWeek() {
+    var l = parseISO(cfg().launchDate);
+    return l && today() >= l ? Math.floor(dayDiff(l, today()) / 7) + 1 : null;   // null: not set, or not started
+  }
+  function lastWeek() {   // the campaign week that contains the yahrzeit
+    var l = parseISO(cfg().launchDate), y = parseISO(cfg().yahrzeit);
+    return l && y && y >= l ? Math.floor(dayDiff(l, y) / 7) + 1 : null;
+  }
+  function weeksToYahrzeit() {   // whole weeks from today, rounded up; null once it is today or past
+    var y = parseISO(cfg().yahrzeit), n = y ? Math.ceil(dayDiff(today(), y) / 7) : 0;
+    return n >= 1 ? n : null;
+  }
+  // A number from progress/summary is used only if it is a real number; anything else counts as absent.
+  function num(x) { return typeof x === "number" && isFinite(x) ? x : 0; }
+  function isNum(x) { return typeof x === "number" && isFinite(x); }
+  // Firestore write promises do not settle while offline (the write waits in its queue), so after 8 seconds say so.
+  // say(text) puts the text in that control's status line; the later success or failure message replaces it.
+  var SLOW_MSG = "Not saved yet. You seem to be offline; it will save when you reconnect.";
+  function watchSlow(p, t, say) {
+    var timer = setTimeout(function () { if (t === token) say(SLOW_MSG); }, 8000);
+    function stop() { clearTimeout(timer); }
+    p.then(stop, stop);
+    return p;
   }
   function commas(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
   function contactNode() {
     var c = cfg().contactEmail;
     return c ? link(c, "mailto:" + c) : document.createTextNode("[contact]");
+  }
+
+  // Same order as TABLE in scripts/tractates.py. TODO(step s): read the order from index.json instead.
+  var SHAS_ORDER = [
+    "berakhot", "shabbat", "eruvin", "pesachim", "rosh_hashanah", "yoma",
+    "sukkah", "beitzah", "taanit", "megillah", "moed_katan", "chagigah",
+    "yevamot", "ketubot", "nedarim", "nazir", "sotah", "gittin",
+    "kiddushin", "bava_kamma", "bava_metzia", "bava_batra", "sanhedrin", "makkot",
+    "shevuot", "avodah_zarah", "horayot", "zevachim", "menachot", "chullin",
+    "bekhorot", "arakhin", "temurah", "keritot", "meilah", "tamid",
+    "niddah"
+  ];
+  // Position in Shas; a tractate not in the list goes last (ties keep index.json order, see sortTractates).
+  function shasRank(slug) { var i = SHAS_ORDER.indexOf(slug); return i < 0 ? 1e9 : i; }
+  function sortTractates(list) {
+    return list.map(function (x, i) { return { x: x, i: i }; }).sort(function (a, b) { return (shasRank(a.x.tractate) - shasRank(b.x.tractate)) || (a.i - b.i); })
+      .map(function (o) { return o.x; });
   }
 
   function getIndex() {
@@ -159,8 +204,8 @@
       .then(function (snap) { return snap.exists() ? snap.data() : null; })
       .catch(function () { return null; });
   }
-  // The "N of about T stories learned" card, filled in when the summary arrives. tag "a" makes the whole card a link.
-  function progressCard(t, total, tag, attrs, withJoined) {
+  // The "N of about T stories learned" card, filled in when the summary arrives. withJoined adds the people-joined line (landing only).
+  function progressCard(t, total, withJoined) {
     var title = el("div", { "class": "su-progress-title" }), fill = el("div", { "class": "su-fill" });
     var joinedEl = el("div", { "class": "su-muted su-small", hidden: true });   // stays hidden until progress/summary exists
     function setProgress(learned) {
@@ -170,12 +215,12 @@
     setProgress(0);
     loadSummary().then(function (d) {
       if (t !== token || !d) return;
-      if (typeof d.learned === "number") setProgress(d.learned);
-      if (typeof d.joined === "number") { joinedEl.textContent = d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined"; joinedEl.hidden = false; }
+      if (isNum(d.learned)) setProgress(d.learned);
+      if (isNum(d.joined)) { joinedEl.textContent = d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined"; joinedEl.hidden = false; }
     });
     var kids = [title, el("div", { "class": "su-track" }, [fill])];
     if (withJoined) kids.push(joinedEl);
-    return el(tag, Object.assign({ "class": "su-progress" }, attrs), kids);
+    return el("div", { "class": "su-progress" }, kids);
   }
 
   // ---- in-app browsers (Google refuses sign-in inside them) -------------------------------------
@@ -217,26 +262,36 @@
   // ---- landing --------------------------------------------------------------------------------
   var GOOGLE_G = '<svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.5 5.4 2.6 13.2l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v9h12.7c-.6 3-2.3 5.500-4.800 7.200l7.600 5.900c4.400-4.100 7-10.100 7-17.600z"/><path fill="#FBBC05" d="M10.500 28.700c-.5-1.500-.8-3-.8-4.700s.3-3.200.8-4.700l-7.900-6.100C.9 16.500 0 20.100 0 24s.9 7.500 2.600 10.800l7.900-6.100z"/><path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.600-4.200-13.500-9.900l-7.900 6.100C6.500 42.600 14.600 48 24 48z"/></svg>';
 
+  // "Could not load your sign-up. Try again": used on the landing page and on Your data.
+  function recordFailedNode(redraw) {
+    var retry = el("button", { type: "button", "class": "su-linkbtn", text: "Try again" });
+    retry.onclick = function () { loadRecord(S.user); redraw(); };
+    return el("p", { "class": "su-error", role: "alert" }, ["Could not load your sign-up. ", retry]);
+  }
+
   function landing(t) {
     loadSdk();
     withIndex(t, function (idx, st) {
       var c = cfg(), total = Math.round(st.stories / 100) * 100;
-      var card = progressCard(t, total, "a", { href: "#/progress", "aria-label": "Overall progress. See details." }, true);
+      var card = el("a", { "class": "su-progresslink", href: "#/progress" }, [progressCard(t, total, true)]);
+      var dataLink = el("p", { "class": "su-center su-small" }, [link("Your data", "#/your-data")]);
 
       var area = el("div", { "class": "su-signin" });
       var errorLine = "";
       function drawArea() {
         var kids = [];
         if (afterYahrzeit()) { area.textContent = ""; return; }
-        if (S.user && S.record) {
+        dataLink.hidden = !!(S.user && S.record && S.record.deleteRequested);
+        if (S.user && S.record && S.record.deleteRequested) {
+          // Deletion is waiting for the weekly script: nothing else on offer until it is cancelled (on Your data).
+          kids.push(el("p", { "class": "su-signedin", text: "Your data is being deleted." }), el("p", { "class": "su-center su-small" }, [link("Your data", "#/your-data")]));
+        } else if (S.user && S.record) {
           var m = S.record.minutesPerWeek;
           kids.push(el("p", { "class": "su-signedin" }, [m === 0 ? "Signed in. Your stories are stopped." : "Signed in, " + m + " min a week", m === 0 ? null : " ", link("Change", "#/join")]));
           kids.push(link("My stories", "#/my", "su-btn"));
         } else if (S.user && S.recordFailed) {
           // Signed in but the record could not be read: never offer Google sign-in, and never the Join form.
-          var retry = el("button", { type: "button", "class": "su-linkbtn", text: "Try again" });
-          retry.onclick = function () { loadRecord(S.user); drawArea(); };
-          kids.push(el("p", { "class": "su-error", role: "alert" }, ["Could not load your sign-up. ", retry]));
+          kids.push(recordFailedNode(drawArea));
         } else if (inAppBrowser()) {
           kids.push(inAppNotice());
         } else {
@@ -276,7 +331,7 @@
           : "A few minutes a week, from " + launchText() + " until his yahrzeit, " + (c.yahrzeitLabel || "8 Elul") + "." }),
         card,
         area,
-        el("p", { "class": "su-center su-small" }, [link("Your data", "#/your-data")]),
+        dataLink,
         el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("Browse the stories", "#/browse"), " · ", link("How the stories were chosen", "#/how")])
       ]);
       S.listener();
@@ -285,6 +340,7 @@
 
   // ---- minutes question -----------------------------------------------------------------------
   var PRESETS = [5, 10, 15, 30];
+  var savedChange = false;   // set when a person who already had a sign-up saves new minutes; "You're in" reads it once
   function join(t) {
     if (afterYahrzeit()) { redirect("#/"); return; }
     show([el("p", { "class": "su-muted", text: "Loading…" })]);
@@ -295,7 +351,7 @@
       // The screen was built for one person; if the account changes under it, do not leave their form up.
       if (built && (!S.user || S.user.uid !== uid)) { redirect("#/"); return; }
       if (!S.settled) return;
-      if (!S.user || S.recordFailed) { redirect("#/"); return; }   // a failed read must never reach the Join form
+      if (!S.user || S.recordFailed || (S.record && S.record.deleteRequested)) { redirect("#/"); return; }   // a failed read must never reach the Join form; a pending deletion has no form
       if (built) return;
       built = true; uid = S.user.uid;
       withIndex(t, function (idx, st) { drawJoin(t, st); });
@@ -341,14 +397,15 @@
       if (!m) { refresh(true); otherBox.focus(); return; }
       var f = S.sdk.f, ref = f.doc(S.sdk.db, "users", S.user.uid);
       joinBtn.disabled = true; joinBtn.textContent = "Saving…"; errLine.hidden = true;
+      var say = function (text) { errLine.textContent = text; errLine.hidden = false; };
       // The only place a users record is ever written. Join creates it; Save changes the minutes and nothing else.
       var write = has ? f.updateDoc(ref, { minutesPerWeek: m })
         : f.setDoc(ref, { createdAt: f.serverTimestamp(), minutesPerWeek: m, src: savedSrc(), deleteRequested: false });
-      write.then(function () {
+      watchSlow(write, t, say).then(function () {
         S.record = Object.assign({}, S.record || {}, { minutesPerWeek: m });
-        if (t === token) location.hash = "#/joined";   // only if they are still on this screen
+        if (t === token) { savedChange = has; location.hash = "#/joined"; }   // only if they are still on this screen
       }).catch(function () {
-        errLine.textContent = "Could not save. Check your connection and try again."; errLine.hidden = false;
+        say(SAVE_ERR);
         joinBtn.disabled = false; joinBtn.textContent = has ? "Save" : "Join";
       });
     };
@@ -373,12 +430,14 @@
     var drawn = false;
     S.listener = function () {
       if (t !== token || !S.settled || drawn) return;
-      if (!S.user || !S.record) { redirect("#/"); return; }
+      if (!S.user || !S.record || S.record.deleteRequested) { redirect("#/"); return; }
       drawn = true;
-      var m = S.record.minutesPerWeek;
+      var m = S.record.minutesPerWeek, changed = savedChange;
+      savedChange = false;
       show([
         el("h1", { text: "You're in" }),
         el("p", { text: m + (m === 1 ? " minute" : " minutes") + " a week." }),
+        changed && hasLaunched() && !ended() ? el("p", { text: "The change applies from Monday " + fmtDate(nextMonday()) + "." }) : null,
         el("p", { "class": "su-muted", text: startLine() }),
         el("div", { "class": "su-actions" }, [link("My stories", "#/my", "su-btn"), link("Browse the stories", "#/browse", "su-btn su-btn-outline")]),
         el("p", { "class": "su-center su-small" }, [link("Change", "#/join")])
@@ -389,12 +448,6 @@
 
   // ---- My stories -----------------------------------------------------------------------------
   var SAVE_ERR = "Could not save. Check your connection and try again.";
-  // The reader's own per-device tick (app.js keeps the same array under the same key).
-  function setDeviceRead(id, on) {
-    var a = load("septimus-read", []).filter(function (x) { return x !== id; });
-    if (on) a.push(id);
-    save("septimus-read", a);
-  }
   function myStories(t) {
     show([el("p", { "class": "su-muted", text: "Loading…" })]);
     loadSdk().catch(function () { sdkFailed(t); });
@@ -403,117 +456,124 @@
       if (t !== token || !S.settled) return;
       if (drawn && (!S.user || S.user.uid !== uid)) { redirect("#/"); return; }   // the account changed under the page
       if (drawn) return;
-      if (!S.user || !S.record) { redirect("#/"); return; }   // signed out, no sign-up yet, or the record could not be read
+      if (!S.user || !S.record || S.record.deleteRequested) { redirect("#/"); return; }   // signed out, no sign-up yet, record unreadable, or deletion pending
       drawn = true; uid = S.user.uid;
       loadMine(t, S.user);
     };
     S.listener();
   }
-  function isOpen(d) { return d.doneAt == null && d.releasedAt == null; }
   function loadMine(t, user) {
     var f = S.sdk.f;
-    // The rules only allow a list filtered on the person's own uid.
-    Promise.all([getIndex(), f.getDocs(f.query(f.collection(S.sdk.db, "assignments"), f.where("uid", "==", user.uid)))]).then(function (res) {
-      var idx = res[0], rows = [], slugs = [];
+    // The rules only allow a list filtered on the person's own uid. Only open rows are read: not learned, not handed back.
+    var q = f.query(f.collection(S.sdk.db, "assignments"), f.where("uid", "==", user.uid), f.where("doneAt", "==", null), f.where("releasedAt", "==", null));
+    Promise.all([getIndex(), f.getDocs(q)]).then(function (res) {
+      var idx = res[0], rows = [], slugs = [], failed = {};
       res[1].forEach(function (d) { rows.push({ id: d.id, ref: d.ref, d: d.data() }); });
       rows.forEach(function (r) {
         r.slug = String(r.d.storyId || "").split("-")[0];
-        if (isOpen(r.d) && slugs.indexOf(r.slug) === -1) slugs.push(r.slug);
+        if (slugs.indexOf(r.slug) === -1) slugs.push(r.slug);
       });
-      return Promise.all(slugs.map(function (s) { return getTractate(s, idx); })).then(function (files) {
+      // Each tractate file on its own: one that fails to load must not blank the page.
+      return Promise.all(slugs.map(function (s) { return getTractate(s, idx).catch(function () { failed[s] = true; return null; }); })).then(function (files) {
         var found = {};   // storyId -> { story, pos } where pos is the story's place in its tractate file
         files.forEach(function (d) { if (d) d.stories.forEach(function (s, i) { found[s.id] = { story: s, pos: i }; }); });
-        if (t === token) drawMine(t, idx, stats(idx), rows, found);
+        if (t === token) drawMine(t, idx, stats(idx), rows, found, failed);
       });
     }).catch(function () {
       if (t === token) show([el("p", { "class": "notice", text: "Could not load your stories. Please check your connection and reload." })]);
     });
   }
-  function drawMine(t, idx, st, rows, found) {
+  function drawMine(t, idx, st, rows, found, failed) {
     var wpm = cfg().wpm || 75, touched = {};   // touched: rows ticked during this visit stay on the page
-    var order = {};
-    idx.tractates.forEach(function (x, i) { order[x.tractate] = i; });
     rows.forEach(function (r) {
       var hit = found[r.d.storyId];
       r.hit = hit || null;
-      r.ti = order[r.slug] == null ? 1e9 : order[r.slug];
+      r.ti = shasRank(r.slug);
       r.pos = hit ? hit.pos : 1e9;
     });
-    var learnedEl = el("p", { "class": "su-muted", hidden: true });
-    function countLearned() {
-      var n = rows.filter(function (r) { return r.d.doneAt != null; }).length;
-      learnedEl.hidden = !n;
-      learnedEl.textContent = "You have learned " + n + (n === 1 ? " story." : " stories.");
-    }
+    // Always on the page, empty until there is something to say, so a screen reader announces the text when it arrives.
+    var topStatus = el("p", { "class": "su-rowmsg", role: "status" });
 
     function rowNode(r, latest, m) {
-      var s = r.hit && r.hit.story, learned = r.d.doneAt != null;
-      var tick = el("button", { type: "button", "class": "su-tick", "aria-pressed": String(learned), "aria-label": s ? "Mark " + refLabel(s) + " as learned" : "Mark this story as learned" });
+      var s = r.hit && r.hit.story, learned = r.d.doneAt != null, busy = false, sumId = "su-sum-" + r.id;
+      var name = s ? "Learned: " + refLabel(s) : failed[r.slug] ? "Learned: story that did not load" : "Learned: story no longer on the list";
+      var tick = el("button", { type: "button", "class": "su-tick", "aria-pressed": String(learned), "aria-label": name, "aria-describedby": sumId });
       var ring = el("span", { "class": "check", "aria-hidden": "true", text: learned ? "✓" : "" });
       tick.appendChild(ring);
-      var msg = el("p", { "class": "su-rowmsg", role: "status", hidden: true });
+      var msg = el("p", { "class": "su-rowmsg", role: "status" });
       var body = [];
       if (s) {
         var mins = Math.ceil(s.words / wpm), top = [el("span", {}, [el("span", { "class": "row-ref", text: refLabel(s) })])];
-        if (r.d.week !== latest) top[0].appendChild(el("span", { "class": "chip", text: "from week " + r.d.week }));
+        if (r.d.week < latest) top[0].appendChild(el("span", { "class": "chip", text: "from week " + r.d.week }));
         if (m > 0 && s.words / wpm > m) top[0].appendChild(el("span", { "class": "chip", text: "longer than usual" }));
         top.push(el("span", { "class": "su-rowmin", text: "about " + mins + " min" }));
-        body.push(el("a", { "class": "su-rowlink", href: "#/s/" + s.id }, [el("div", { "class": "su-rowtop" }, top), el("div", { "class": "row-sum", text: s.summary })]));
+        body.push(el("a", { "class": "su-rowlink", href: "#/s/" + s.id }, [el("div", { "class": "su-rowtop" }, top), el("div", { "class": "row-sum", id: sumId, text: s.summary })]));
       } else {
-        body.push(el("div", { "class": "row-sum", text: "No longer on the list" }));   // the story left the list; nothing to link to
+        // No link: either the story left the list, or its tractate file did not load.
+        body.push(el("div", { "class": "row-sum", id: sumId, text: failed[r.slug] ? "Could not load this story." : "No longer on the list" }));
       }
       body.push(msg);
       var row = el("div", { "class": "row su-myrow" + (learned ? " read" : "") }, [tick, el("div", { "class": "su-rowbody" }, body)]);
       tick.onclick = function () {
+        if (busy) return;   // not the disabled attribute: that would drop keyboard focus
         var f = S.sdk.f, want = r.d.doneAt == null;
-        tick.disabled = true; msg.hidden = false; msg.textContent = "Saving…";
+        busy = true; tick.setAttribute("aria-disabled", "true"); msg.textContent = "Saving…";
         // The tick changes only after the write is confirmed.
-        f.updateDoc(r.ref, { doneAt: want ? f.serverTimestamp() : null }).then(function () {
+        watchSlow(f.updateDoc(r.ref, { doneAt: want ? f.serverTimestamp() : null }), t, function (x) { msg.textContent = x; }).then(function () {
           r.d.doneAt = want ? new Date() : null; touched[r.id] = true;
-          if (s) setDeviceRead(s.id, want);
           row.className = "row su-myrow" + (want ? " read" : "");
           ring.textContent = want ? "✓" : "";
           tick.setAttribute("aria-pressed", String(want));
-          msg.textContent = "Saved"; tick.disabled = false;
-          countLearned();
-        }).catch(function () { msg.textContent = SAVE_ERR; tick.disabled = false; });
+          msg.textContent = "Saved"; busy = false; tick.removeAttribute("aria-disabled");
+        }).catch(function () { msg.textContent = SAVE_ERR; busy = false; tick.removeAttribute("aria-disabled"); });
       };
       return row;
     }
 
     function render() {
-      var m = S.record.minutesPerWeek, latest = 0;
-      rows.forEach(function (r) { if (typeof r.d.week === "number" && r.d.week > latest) latest = r.d.week; });
-      var shown = rows.filter(function (r) { return isOpen(r.d) || touched[r.id]; })
+      var m = S.record.minutesPerWeek, wk = campaignWeek(), last = lastWeek(), latest = wk;
+      if (latest == null) { latest = 0; rows.forEach(function (r) { if (isNum(r.d.week) && r.d.week > latest) latest = r.d.week; }); }   // week unknown: the newest week on the page
+      var shown = rows.filter(function (r) { return r.d.doneAt == null || touched[r.id]; })
         .sort(function (a, b) { return (a.d.week - b.d.week) || (a.ti - b.ti) || (a.pos - b.pos); });
-      var now = shown.filter(function (r) { return r.d.week === latest; }), earlier = shown.filter(function (r) { return r.d.week !== latest; });
+      var now = shown.filter(function (r) { return r.d.week >= latest; }), earlier = shown.filter(function (r) { return r.d.week < latest; });
+      var paused = m > 0 && S.record.pausedAt != null;   // stopped wins over paused
       var nodes = [el("h1", { text: "My stories" })];
-      if (m > 0) nodes.push(el("p", { "class": "su-muted", text: m + (m === 1 ? " minute" : " minutes") + " a week" }));
-      if (S.record.pausedAt != null) {
-        var resume = el("button", { type: "button", "class": "su-btn", text: "Resume" }), err = el("p", { "class": "su-error", role: "alert", hidden: true, text: SAVE_ERR });
+      if (m > 0) {
+        var mt = m + (m === 1 ? " minute" : " minutes") + " a week";
+        nodes.push(el("p", { "class": "su-muted", text: wk != null && last != null && wk >= 1 && wk <= last ? "Week " + wk + " of " + last + " · " + mt : mt }));
+      }
+      nodes.push(topStatus);
+      if (paused) {
+        var resume = el("button", { type: "button", "class": "su-btn", text: "Resume" }), rmsg = el("p", { "class": "su-rowmsg", role: "status" }), rbusy = false;
         resume.onclick = function () {
-          resume.disabled = true; resume.textContent = "Saving…"; err.hidden = true;
-          S.sdk.f.updateDoc(S.sdk.f.doc(S.sdk.db, "users", S.user.uid), { pausedAt: null }).then(function () {
-            S.record = Object.assign({}, S.record, { pausedAt: null }); if (t === token) render();
-          }).catch(function () { err.hidden = false; resume.disabled = false; resume.textContent = "Resume"; });
+          if (rbusy) return;
+          rbusy = true; resume.textContent = "Saving…"; resume.setAttribute("aria-disabled", "true"); rmsg.textContent = "";
+          watchSlow(S.sdk.f.updateDoc(S.sdk.f.doc(S.sdk.db, "users", S.user.uid), { pausedAt: null }), t, function (x) { rmsg.textContent = x; }).then(function () {
+            S.record = Object.assign({}, S.record, { pausedAt: null });
+            if (t !== token) return;
+            render();
+            var said = ended() ? "Resumed." : hasLaunched() ? "Resumed. New stories arrive Monday " + fmtDate(nextMonday()) + "."
+              : "Resumed. Your first stories arrive the week of " + launchText() + ".";
+            setTimeout(function () { if (t === token) topStatus.textContent = said; }, 100);   // after the redraw, so it is announced
+          }).catch(function () { rmsg.textContent = SAVE_ERR; rbusy = false; resume.textContent = "Resume"; resume.removeAttribute("aria-disabled"); });
         };
-        nodes.push(el("p", { "class": "notice", text: "Your stories are paused because none were marked learned." }), resume, err);
+        nodes.push(el("p", { "class": "notice", text: "Your stories are paused because none were marked learned." }), resume, rmsg);
       }
       if (m === 0) nodes.push(el("p", { "class": "notice", text: "Your stories are stopped." }), link("Start again", "#/join", "su-btn"));
-      if (!shown.length && m > 0) {
-        nodes.push(el("p", { text: hasLaunched() ? "Nothing open right now. New stories arrive each Monday." : "Your first stories arrive the week of " + launchText() + "." }));
+      if (!shown.length && m > 0 && !paused) {
+        nodes.push(el("p", { text: wk != null && last != null && wk > last ? "The weekly stories have ended."
+          : !hasLaunched() ? "Your first stories arrive the week of " + launchText() + "." : "Nothing open right now. New stories arrive each Monday." }));
       }
       [["This week", now], ["Still open from earlier weeks", earlier]].forEach(function (sec) {
         if (!sec[1].length) return;
         nodes.push(el("h2", { "class": "su-h2", text: sec[0] }));
         sec[1].forEach(function (r) { nodes.push(rowNode(r, latest, m)); });
       });
-      if (earlier.length) nodes.push(el("p", { "class": "notice", text: "Stories you do not get to stay on your list for about two weeks, then go to someone else. Nothing is lost." }));
-      countLearned();
-      nodes.push(learnedEl);
+      if (earlier.length) nodes.push(el("p", { "class": "notice", text: "Stories you do not get to stay on your list for about two weeks, then go back to the group. Nothing is lost." }));
       nodes.push(el("h2", { "class": "su-h2", text: "Everyone together" }));
-      nodes.push(progressCard(t, Math.round(st.stories / 100) * 100, "div", {}, false));
-      nodes[nodes.length - 1].appendChild(link("See overall progress", "#/progress", "su-btn su-btn-outline"));
+      var card = progressCard(t, Math.round(st.stories / 100) * 100, false);
+      card.appendChild(link("See overall progress", "#/progress", "su-btn su-btn-outline"));
+      nodes.push(card);
       nodes.push(el("p", { "class": "su-links" }, [link("Change my minutes", "#/join"), " · ", link("Your data", "#/your-data")]));
       show(nodes);
     }
@@ -528,17 +588,19 @@
       loadSummary().then(function (d) {
         if (t !== token) return;
         d = d || {};
-        function num(x) { return typeof x === "number" ? x : 0; }
-        var learned = num(d.learned), round = d.round || 1, done = num(d.roundsCompleted), by = d.byTractate || {};
+        var learned = num(d.learned), round = Number.isInteger(d.round) && d.round >= 1 ? d.round : 1, done = num(d.roundsCompleted), by = d.byTractate || {};
         var head = done === 0 ? "First time through Shas" : "Shas completed " + done + (done === 1 ? " time" : " times");
         var cardKids = [el("div", { "class": "su-progress-big", text: head }),
           el("p", { "class": "su-progress-title", text: "Round " + round + ": " + learned + " of " + commas(st.stories) + " stories learned" }),
           el("div", { "class": "su-track" }, [el("div", { "class": "su-fill", style: "width:" + Math.min(100, 100 * learned / Math.max(1, st.stories)) + "%" })])];
         if (num(d.openInRound) > 0 && learned > 0.9 * st.stories) cardKids.push(el("p", { "class": "su-muted", text: d.openInRound + " stories still open in round " + round }));
-        if (typeof d.joined === "number") cardKids.push(el("p", { "class": "su-muted su-small", text: d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined" }));
+        var small = [], w = weeksToYahrzeit();
+        if (isNum(d.joined)) small.push(d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined");
+        if (w) small.push(w + (w === 1 ? " week" : " weeks") + " until " + (cfg().yahrzeitLabel || "8 Elul"));
+        if (small.length) cardKids.push(el("p", { "class": "su-muted su-small", text: small.join(" · ") }));
         var nodes = [el("h1", { text: "Progress" }), el("p", { "class": "dedication", text: "In memory of Joe Septimus." }), el("div", { "class": "su-progress" }, cardKids),
           el("h2", { text: "By tractate (this round)" })];
-        idx.tractates.forEach(function (x) {
+        sortTractates(idx.tractates).forEach(function (x) {
           var n = num(by[x.tractate]);
           nodes.push(el("div", { "class": "card" }, [
             el("span", { "class": "card-he", text: x.he }), el("div", { "class": "card-name", text: x.name }),
@@ -547,7 +609,17 @@
         });
         var at = d.updatedAt && typeof d.updatedAt.toDate === "function" ? d.updatedAt.toDate() : null;
         if (at) nodes.push(el("p", { "class": "su-muted su-small", text: "Updated " + dateTime(at) }));
-        nodes.push(el("p", { "class": "su-muted su-small", text: listLine(idx, st) }), back());
+        nodes.push(el("p", { "class": "su-muted su-small", text: listLine(idx, st) }));
+        // Signed-out visitors only, and only once we know that: sign-in has settled with nobody, or the SDK would not load.
+        var invite = el("div"), sdkBad = false;
+        function drawInvite() {
+          if (t !== token) return;
+          invite.textContent = "";
+          if (!S.user && (S.settled || sdkBad)) invite.appendChild(link("Sign in with Google to join", "#/", "su-btn su-btn-outline su-keep"));
+        }
+        S.listener = drawInvite;
+        loadSdk().then(drawInvite, function () { sdkBad = true; drawInvite(); });
+        nodes.push(invite, back());
         show(nodes);
       });
     });
@@ -568,7 +640,7 @@
     });
   }
   function yourData(t) {
-    var holder = el("div");
+    var holder = el("div"), status = el("p", { "class": "su-rowmsg", role: "status", tabindex: "-1" });   // status line: exists from the start, text goes in later
     show([
       el("h1", { text: "Your data" }),
       el("ul", { "class": "su-list" }, [
@@ -579,46 +651,63 @@
         el("li", { text: "Everyone's personal data is deleted six months after the yahrzeit." }),
         el("li", { text: "You must be 13 or older to join." })
       ]),
-      holder,
+      holder, status,
       back()
     ]);
     // Signed-in people with a sign-up get the stop / delete controls; everyone else sees the page as above.
-    var deleted = false, mode = "idle", failed = false, busy = false;
-    function draw() {
+    var deleted = false, mode = "idle", busy = false;
+    function setStatus(text) { status.textContent = text; }
+    // After a redraw the button that had focus is gone: put focus on the first button of the new state, or on the status line.
+    function focusFirst() { var b = holder.querySelector("button"); (b || status).focus(); }
+    function draw(refocus) {
       if (t !== token || deleted) return;
       holder.textContent = "";
+      if (S.settled && S.user && S.recordFailed) { holder.appendChild(recordFailedNode(draw)); return; }
       if (!S.settled || !S.user || !S.record) return;
       var stopped = S.record.minutesPerWeek === 0, kids = [el("h2", { text: "Your sign-up" })];
-      function ask(text, doText, doIt) {
-        var yes = el("button", { type: "button", "class": "su-btn", text: doText, disabled: busy }), no = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Cancel", disabled: busy });
-        yes.onclick = function () {
-          busy = true; failed = false; draw();
-          doIt().then(function () { busy = false; }, function () { busy = false; failed = true; draw(); });
-        };
-        no.onclick = function () { mode = "idle"; failed = false; draw(); };
+      var ref = S.sdk.f.doc(S.sdk.db, "users", S.user.uid);
+      // Run a write for a button; busy stops a second tap without the disabled attribute (which would drop focus).
+      function run(btn, label, write, after) {
+        if (busy) return;
+        busy = true; btn.setAttribute("aria-disabled", "true"); btn.textContent = "Saving…"; setStatus("");
+        watchSlow(write(), t, setStatus).then(function () { busy = false; setStatus(""); after(); },
+          function () { busy = false; draw(true); setStatus(SAVE_ERR); });
+      }
+      function ask(text, doText, write, after) {
+        var yes = el("button", { type: "button", "class": "su-btn", text: doText }), no = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Cancel" });
+        yes.onclick = function () { run(yes, doText, write, after); };
+        no.onclick = function () { if (busy) return; mode = "idle"; setStatus(""); draw(true); };
         kids.push(el("p", { "class": "notice", text: text }), yes, no);
       }
-      var ref = S.sdk.f.doc(S.sdk.db, "users", S.user.uid);
-      if (stopped) kids.push(el("p", { text: "Your stories are stopped. You can start again any time." }));
-      if (mode === "stop" && !stopped) {
-        ask("You will get no new stories. Stories you have not read go back to the group.", busy ? "Saving…" : "Stop", function () {
-          return S.sdk.f.updateDoc(ref, { minutesPerWeek: 0 }).then(function () { S.record = Object.assign({}, S.record, { minutesPerWeek: 0 }); mode = "idle"; draw(); });
-        });
+      if (stopped && !S.record.deleteRequested) kids.push(el("p", { text: "Your stories are stopped. You can start again any time." }));
+      if (S.record.deleteRequested) {
+        // Waiting for the weekly script. Nothing else is offered until it is cancelled.
+        var cancel = el("button", { type: "button", "class": "su-linkbtn", text: "Cancel deletion" });
+        cancel.onclick = function () {
+          run(cancel, "Cancel deletion", function () { return S.sdk.f.updateDoc(ref, { deleteRequested: false }); },
+            function () { S.record = Object.assign({}, S.record, { deleteRequested: false }); draw(true); });
+        };
+        kids.push(el("p", { text: "Your data is being deleted." }), cancel);
+      } else if (mode === "stop" && !stopped) {
+        ask("You will get no new stories. Stories you have not read go back to the group.", "Stop",
+          function () { return S.sdk.f.updateDoc(ref, { minutesPerWeek: 0 }); },
+          function () { S.record = Object.assign({}, S.record, { minutesPerWeek: 0 }); mode = "idle"; draw(true); });
       } else if (mode === "delete") {
-        ask("This removes your account and your name and email from our records. It cannot be undone.", busy ? "Saving…" : "Delete my data", function () {
-          return S.sdk.f.updateDoc(ref, { deleteRequested: true }).then(function () {
+        ask("This removes your account and your name and email from our records. A record of which stories were read, with no name attached, is kept so the group totals stay right. It cannot be undone.", "Delete my data",
+          function () { return S.sdk.f.updateDoc(ref, { deleteRequested: true }); },
+          function () {
             deleted = true;
             holder.textContent = "";
-            holder.appendChild(el("p", { role: "status", text: "Your data will be deleted within a day." }));
-            return S.sdk.a.signOut(S.sdk.auth).catch(function () {});
+            setStatus("Your data will be deleted, usually within a day.");
+            status.focus();
+            S.sdk.a.signOut(S.sdk.auth).catch(function () {});
           });
-        });
       } else {
-        if (!stopped) { var b1 = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Stop my stories" }); b1.onclick = function () { mode = "stop"; draw(); }; kids.push(b1); }
-        var b2 = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Delete my data" }); b2.onclick = function () { mode = "delete"; draw(); }; kids.push(b2);
+        if (!stopped) { var b1 = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Stop my stories" }); b1.onclick = function () { mode = "stop"; setStatus(""); draw(true); }; kids.push(b1); }
+        var b2 = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Delete my data" }); b2.onclick = function () { mode = "delete"; setStatus(""); draw(true); }; kids.push(b2);
       }
-      if (failed) kids.push(el("p", { "class": "su-error", role: "alert", text: SAVE_ERR }));
       kids.forEach(function (k) { holder.appendChild(k); });
+      if (refocus === true) focusFirst();
     }
     S.listener = draw;
     loadSdk().then(draw, function () {});   // no SDK: the page stays as it is for a signed-out visitor
@@ -650,7 +739,8 @@
     if (a && app.contains(a) && !a.classList.contains("su-keep")) { e.preventDefault(); location.hash = "#/browse"; }
   });
 
-  // TODO(signup d, after the Jeff-responses branch merges): story page gets one "Mark as learned" button for a story that is yours, plus "Back to my stories" and "Next story" (plan §9 row d).
+  // TODO(signup d, after the Jeff-responses branch merges): story page gets one "Mark as learned" button for a story that is yours, plus "Back to my stories" and "Next story" (plan §9 row d);
+  // also keep the reader's per-device tick (`septimus-read`) in step; app.js holds it in memory, so it must be done there.
 
   window.SeptimusSignup = { route: route };
 })();
