@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "An incident only cited as precedent: a stain found and a rabbi attributing it is one event plus a ruling, with nothing changing afterwards."},
+"02": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Part of a larger story: the rabbis come to a house named Bala and refuse to enter, inferring wickedness from the name; a real action but only a fragment of the narrative."},
+"03": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "A ruling, an objection, and a report of Rava's own practice; no narrated incident or change."},
+"04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of what R. Yishmael ben Pabi did with his tunic, cited to illustrate the halakha; nothing follows from it."},
+"05": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An intention to teach and Rava's rebuke; speech only, ordinary scholarly rebuke, and no outcome narrated."},
+"06": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Someone spoke ill of Mar Shmuel after his death and a reed fell and fractured his skull: two events, causality and change."},
+"07": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A sale dispute brought before Rav Yosef followed by legal discussion and a ruling; coming before the rabbi is the only event and nothing changes."},
+"08": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "Rav Mordekhai goes from sage to sage and retorts that they all spew the same spittle; mainly speech with some conflict, then legal argument."},
+"09": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Ashi goes to cut his forest on the festival, is challenged, the ax nearly cuts his leg, and he stops and returns after the festival: actions, causality and change."},
+"10": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A habitual practice of R. Yehoshua ben Levi followed by legal discussion; the custom leads nowhere."},
+"11": {"verdict": "borderline", "rules": ["R-C4", "R-C7"], "segments": [2], "reason": "Mainly a dialogue listing virtues, but it embeds a real event: his mother sold her kerchief to buy him kiddush wine."},
+"12": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question put to R. Yohanan and his answer; a transmitted ruling with no event."},
+"13": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Damage from flax chaff brought before Ravina and his ruling, followed by discussion; one event plus a ruling with nothing changing."},
+"14": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Yohanan is told something, wonders, and explains it; speech without conflict or event."},
+"15": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Nahman's silence before an objection and his later remark are ordinary scholarly exchange, not a story."},
+"16": {"verdict": "borderline", "rules": ["R-C7", "R-C0"], "segments": [2], "reason": "Within a legal argument, an incident: a tied document comes before Rabbi, he declares it undated, his son suggests otherwise, he opens it and sees; real events but cited as evidence with little development."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Abbahu states a ruling and R. Yohanan is silent; the Gemara explains the silence. Speech and interpretation, no event."},
+"18": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3], "reason": "Abaye finds Rav Yosef sleeping under a bridal canopy in the sukka and challenges him; one real situation then mainly halakhic dialogue."},
+"19": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav decrees a fast without rain; the prayer leader prays and wind and rain come; Rav asks his merit: events, causality and change."},
+"20": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A dilemma and scholarly exchange in which Rabbi Elazar reminds Rabbi Asi of a forgotten teaching; speech without conflict beyond ordinary discourse."}
+}

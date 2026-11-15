@@ -1,0 +1,2793 @@
+{
+ "stages": {
+  "eruvin": {
+   "grade": "BLIND, held out: no Eruvin label in any prompt; site from two v14 runs",
+   "site_from": "two v14 runs",
+   "denominator": 55,
+   "site": {
+    "on the site": 43,
+    "proposed, NOT_A_STORY": 2,
+    "site filter: definite in one run only": 2,
+    "site filter: LOW (or BORDERLINE) wherever proposed": 8
+   },
+   "detector": {
+    "proposed (either run)": 55
+   },
+   "on_site": 43,
+   "proposed": 55,
+   "misses": [
+    {
+     "id": "eruvin_002",
+     "ref": "Eruvin 11b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 11b",
+       4
+      ]
+     ],
+     "text": "הלך רבי יהושע אצל רבי יוחנן בן נורי ללמוד תורה, אף על פי שבקי בהלכות כלאים, ומצא"
+    },
+    {
+     "id": "eruvin_028",
+     "ref": "Eruvin 43b",
+     "site": "site filter: definite in one run only",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 43b",
+       15
+      ],
+      [
+       "Eruvin 43b",
+       16
+      ],
+      [
+       "Eruvin 43b",
+       17
+      ]
+     ],
+     "text": "נחמיה בריה דרב חנילאי משכתיה שמעתא ונפק חוץ לתחום. אמר ליה רב חסדא לרב נחמן: נחמ"
+    },
+    {
+     "id": "eruvin_033",
+     "ref": "Eruvin 46a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 46a",
+       10
+      ],
+      [
+       "Eruvin 46a",
+       11
+      ]
+     ],
+     "text": "רבי אלעזר אומר: כל אשה שעברו עליה שלש עונות - דייה שעתה. ותניא: מעשה ועשה רבי כר"
+    },
+    {
+     "id": "eruvin_038",
+     "ref": "Eruvin 53b",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 53b",
+       5
+      ]
+     ],
+     "text": "בני גליל דלא דייקי לישנא מאי היא? (דתניא) דההוא בר גלילא [דהוה קאזיל] ואמר להו: "
+    },
+    {
+     "id": "eruvin_048",
+     "ref": "Eruvin 54b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 54b",
+       3
+      ]
+     ],
+     "text": "אמרו עליו על רבי אלעזר שהיה יושב ועוסק בתורה בשוק התחתון של ציפורי, וסדינו מוטל "
+    },
+    {
+     "id": "eruvin_053",
+     "ref": "Eruvin 61b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 61b",
+       7
+      ],
+      [
+       "Eruvin 61b",
+       8
+      ]
+     ],
+     "text": "מר יהודה אשכחינהו לבני מברכתא דקא מותבי עירובייהו בבי כנישתא דבי אגובר. אמר להו:"
+    },
+    {
+     "id": "eruvin_055",
+     "ref": "Eruvin 63a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 63a",
+       4
+      ],
+      [
+       "Eruvin 63a",
+       5
+      ]
+     ],
+     "text": "אמר רבא: צורבא מרבנן חזי לנפשיה. רבינא איקלע למחוזא, אייתי אושפיזכניה סכינא וקא "
+    },
+    {
+     "id": "eruvin_057",
+     "ref": "Eruvin 63a",
+     "site": "site filter: definite in one run only",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 63a",
+       11
+      ],
+      [
+       "Eruvin 63a",
+       12
+      ]
+     ],
+     "text": "רבינא הוה יתיב קמיה דרב אשי, חזייה לההוא גברא דקא אסר ליה לחמריה בצינתא בשבתא, ר"
+    },
+    {
+     "id": "eruvin_066",
+     "ref": "Eruvin 74a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 74a",
+       5
+      ],
+      [
+       "Eruvin 74a",
+       6
+      ]
+     ],
+     "text": "יתיב רב ברונא וקאמר להא שמעתא, אמר ליה רבי אלעזר בר בי רב: אמר שמואל הכי? - אמר "
+    },
+    {
+     "id": "eruvin_069",
+     "ref": "Eruvin 80a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 80a",
+       17
+      ],
+      [
+       "Eruvin 80a",
+       18
+      ]
+     ],
+     "text": "ההוא טורזינא דהוה בשיבבותיה דרבי זירא, אמרו ליה: אוגיר לן רשותך. לא אוגיר להו. א"
+    },
+    {
+     "id": "eruvin_070",
+     "ref": "Eruvin 80a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 80a",
+       19
+      ]
+     ],
+     "text": "ההוא טורזינא דהוה בשיבבותיה דרב יהודה בר אושעיא, אמרי ליה: אוגר לן רשותך. לא אוג"
+    },
+    {
+     "id": "eruvin_071",
+     "ref": "Eruvin 85b",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Eruvin 85b",
+       1
+      ],
+      [
+       "Eruvin 85b",
+       2
+      ],
+      [
+       "Eruvin 85b",
+       3
+      ]
+     ],
+     "text": "יתיב רב ברונא וקאמר להא שמעתא. אמר ליה רבי אליעזר בר בי רב: אמר רב הכי? אמר ליה:"
+    }
+   ]
+  },
+  "yevamot": {
+   "grade": "BLIND list, partly CIRCULAR detector: development tractate for v13/v14 (rules and 3 few-shot passages from Yevamot); site from two v14 runs",
+   "site_from": "two v14 runs",
+   "denominator": 99,
+   "site": {
+    "on the site": 64,
+    "withheld as a Mishnah story": 2,
+    "never proposed": 2,
+    "proposed, NOT_A_STORY": 5,
+    "site filter: definite in one run only": 5,
+    "site filter: LOW (or BORDERLINE) wherever proposed": 21
+   },
+   "detector": {
+    "proposed (either run)": 94,
+    "withheld as a Mishnah story": 2,
+    "never proposed": 3
+   },
+   "on_site": 64,
+   "proposed": 94,
+   "misses": [
+    {
+     "id": "yevamot_001",
+     "ref": "Yevamot 14b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Yevamot 14b",
+       15
+      ],
+      [
+       "Yevamot 15a",
+       0
+      ],
+      [
+       "Yevamot 15a",
+       1
+      ]
+     ],
+     "text": "רבי יוחנן בן נורי: היאך הלכה זו רווחת בישראל? נעשה כדברי ב\"ש, הולד ממזר לדברי ב\""
+    },
+    {
+     "id": "yevamot_003",
+     "ref": "Yevamot 15b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 15b",
+       5
+      ],
+      [
+       "Yevamot 15b",
+       6
+      ]
+     ],
+     "text": "שאלו את ר' יהושע: צרת הבת, מהו? אמר להם: מחלוקת ב\"ש וב\"ה; והלכה כדברי מי? אמר לה"
+    },
+    {
+     "id": "yevamot_006",
+     "ref": "Yevamot 17a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 17a",
+       5
+      ]
+     ],
+     "text": "יתיב רב המנונא קמיה דעולא וקא הוי בשמעתא, אמר: מה גברא ומה גברא אי לאו דהרפניא מ"
+    },
+    {
+     "id": "yevamot_008",
+     "ref": "Yevamot 31a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 31a",
+       11
+      ],
+      [
+       "Yevamot 31b",
+       0
+      ]
+     ],
+     "text": "בר שטיא זבין נכסי, אתו בי תרי ואמרי כשהוא חלים זבין, ואתו בי תרי ואמרו כשהוא שוט"
+    },
+    {
+     "id": "yevamot_011",
+     "ref": "Yevamot 36b",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 36b",
+       13
+      ],
+      [
+       "Yevamot 36b",
+       14
+      ],
+      [
+       "Yevamot 36b",
+       15
+      ],
+      [
+       "Yevamot 37a",
+       0
+      ]
+     ],
+     "text": "רבינא משמיה דרבא אמר: אם אשת ישראל היא - חולצת, ואם אשת כהן היא - אינה חולצת, רב"
+    },
+    {
+     "id": "yevamot_015",
+     "ref": "Yevamot 45b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 45b",
+       9
+      ],
+      [
+       "Yevamot 45b",
+       10
+      ],
+      [
+       "Yevamot 45b",
+       11
+      ],
+      [
+       "Yevamot 45b",
+       12
+      ]
+     ],
+     "text": "עבדיה דרבי חייא בר אמי אטבלה לההיא עובדת כוכבים לשם אנתתא, אמר רב יוסף: יכילנא ל"
+    },
+    {
+     "id": "yevamot_016",
+     "ref": "Yevamot 45b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 45b",
+       10
+      ],
+      [
+       "Yevamot 45b",
+       11
+      ],
+      [
+       "Yevamot 45b",
+       12
+      ]
+     ],
+     "text": "ההוא דהוו קרו ליה בר ארמייתא, אמר רב אסי: מי לא טבלה לנדותה?"
+    },
+    {
+     "id": "yevamot_017",
+     "ref": "Yevamot 45b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 45b",
+       12
+      ]
+     ],
+     "text": "ההוא דהוו קרו ליה בר ארמאה, אמר ריב\"ל: מי לא טבל לקריו?"
+    },
+    {
+     "id": "yevamot_022",
+     "ref": "Yevamot 57a",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 57a",
+       6
+      ]
+     ],
+     "text": "בעא מיניה רבי יוחנן מרבי אושעיא: פצוע דכא כהן שנשא בת גרים, מהו שיאכילנה בתרומה?"
+    },
+    {
+     "id": "yevamot_027",
+     "ref": "Yevamot 61b",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 61b",
+       2
+      ]
+     ],
+     "text": "רבי אליעזר אומר: כהן לא ישא את הקטנה. אמר ליה רב חסדא לרבה: פוק עיין בה, דלאורתא"
+    },
+    {
+     "id": "yevamot_028",
+     "ref": "Yevamot 62b",
+     "site": "site filter: definite in one run only",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 62b",
+       3
+      ],
+      [
+       "Yevamot 62b",
+       4
+      ]
+     ],
+     "text": "אמרי ליה רבנן לרב ששת: נסיב איתתא ואוליד בני, ואמר להו: בני ברתי בני נינהו! התם "
+    },
+    {
+     "id": "yevamot_031",
+     "ref": "Yevamot 63a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 63a",
+       7
+      ]
+     ],
+     "text": "רב על לביני שיבלי, חזנהו דקא נייפן, אמר להו: אי נייפת איתנופי, הפוכי בעיסקא טב מ"
+    },
+    {
+     "id": "yevamot_036",
+     "ref": "Yevamot 63b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Yevamot 63b",
+       8
+      ]
+     ],
+     "text": "אמרו ליה לר' יוחנן: אתו חברי לבבל! שגא נפל. אמרו ליה: מקבלי שוחדא, תריץ יתיב."
+    },
+    {
+     "id": "yevamot_037",
+     "ref": "Yevamot 63b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 63b",
+       15
+      ],
+      [
+       "Yevamot 63b",
+       16
+      ],
+      [
+       "Yevamot 63b",
+       17
+      ]
+     ],
+     "text": "רבי אליעזר אומר: כל מי שאין עוסק בפריה ורביה - כאילו שופך דמים, שנאמר: שופך דם ה"
+    },
+    {
+     "id": "yevamot_038",
+     "ref": "Yevamot 64b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 64b",
+       5
+      ]
+     ],
+     "text": "אמרו ליה רבנן לר' אבא בר זבדא: נסיב איתתא ואוליד בני, ואמר להו: אי זכאי הוו לי מ"
+    },
+    {
+     "id": "yevamot_039",
+     "ref": "Yevamot 64b",
+     "site": "site filter: definite in one run only",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 64b",
+       6
+      ]
+     ],
+     "text": "רב גידל איעקר מפרקיה דרב הונא. רבי חלבו איעקר מפרקיה דרב הונא. רב ששת איעקר מפרק"
+    },
+    {
+     "id": "yevamot_040",
+     "ref": "Yevamot 64b",
+     "site": "site filter: definite in one run only",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 64b",
+       6
+      ]
+     ],
+     "text": "רב אחא בר יעקב אחדתיה סוסכינתא, תליוה בארזא דבי רב, ונפק מיניה כהוצא ירקא. אמר ר"
+    },
+    {
+     "id": "yevamot_043",
+     "ref": "Yevamot 65b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 65b",
+       14
+      ]
+     ],
+     "text": "ההיא דאתאי לקמיה דר' אמי, אמרה ליה: הב לי כתובה, אמר לה: זיל, לא מיפקדת, אמרה לי"
+    },
+    {
+     "id": "yevamot_047",
+     "ref": "Yevamot 72b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 72b",
+       4
+      ],
+      [
+       "Yevamot 72b",
+       5
+      ],
+      [
+       "Yevamot 72b",
+       6
+      ]
+     ],
+     "text": "איתיביה רבי אלעזר לרבי יוחנן: אין לי אלא נימול לשמיני שאין נימול אלא ביום, מנין "
+    },
+    {
+     "id": "yevamot_050",
+     "ref": "Yevamot 78a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 78a",
+       13
+      ],
+      [
+       "Yevamot 78a",
+       14
+      ],
+      [
+       "Yevamot 78a",
+       15
+      ],
+      [
+       "Yevamot 78a",
+       16
+      ],
+      [
+       "Yevamot 78a",
+       17
+      ]
+     ],
+     "text": "כי אתא רב דימי אמר רבי יוחנן: מצרי שני שנשא מצרית ראשונה - בנה שני הואי; אלמא, ב"
+    },
+    {
+     "id": "yevamot_052",
+     "ref": "Yevamot 78b",
+     "site": "site filter: definite in one run only",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 78b",
+       11
+      ]
+     ],
+     "text": "ההוא דהוי בשבבותיה דר' אמי, אכריז עליה דממזרא, הוה בכי ואזיל, אמר ליה: חיים נתתי"
+    },
+    {
+     "id": "yevamot_053",
+     "ref": "Yevamot 79b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 79b",
+       0
+      ]
+     ],
+     "text": "בימי רבי בקשו להתיר נתינים, אמר להם רבי: חלקנו נתיר, חלק מזבח מי יתיר?"
+    },
+    {
+     "id": "yevamot_054",
+     "ref": "Yevamot 83b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 83b",
+       5
+      ]
+     ],
+     "text": "עביד ליה רבי יהודה לטומטום דבירי, דאותבוה אבי כורסיה ואיקרע ואוליד שבע בנין. ור'"
+    },
+    {
+     "id": "yevamot_055",
+     "ref": "Yevamot 84a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 84a",
+       2
+      ]
+     ],
+     "text": "א\"ר: כשהלכתי ללמוד תורה אצל ר' אלעזר בן שמוע, חברו עלי תלמידיו כתרנגולים של בית "
+    },
+    {
+     "id": "yevamot_056",
+     "ref": "Yevamot 85a",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 85a",
+       3
+      ],
+      [
+       "Yevamot 85a",
+       4
+      ],
+      [
+       "Yevamot 85a",
+       5
+      ]
+     ],
+     "text": "רב פפא ורב הונא בריה דרב יהושע איקלעו להינצבו לאתריה דרב אידי בר אבין, בעו מיניי"
+    },
+    {
+     "id": "yevamot_059",
+     "ref": "Yevamot 91b",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 91b",
+       10
+      ],
+      [
+       "Yevamot 91b",
+       11
+      ]
+     ],
+     "text": "רב פפא סבר למיעבד עובדא במאי הוה לה למיעבד, אמר ליה רב הונא בריה דרב יהושע לרב פ"
+    },
+    {
+     "id": "yevamot_062",
+     "ref": "Yevamot 97b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 97b",
+       8
+      ]
+     ],
+     "text": "בני יודן אמתא אשתחרור, שרא להו רב אחא בר יעקב למינסב נשי דהדדי. אמר ליה רבא: והא"
+    },
+    {
+     "id": "yevamot_073",
+     "ref": "Yevamot 108a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 108a",
+       7
+      ],
+      [
+       "Yevamot 108a",
+       8
+      ]
+     ],
+     "text": "כלתיה דאבדן אימרוד, שדר רבי זוגי דרבנן למיבדקינהו, אמרי להו נשי: חזו גברייכו דקא"
+    },
+    {
+     "id": "yevamot_075",
+     "ref": "Yevamot 113a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 113a",
+       9
+      ]
+     ],
+     "text": "ההוא חרש דהוה בשבבותיה דרב מלכיו, אנסביה איתתא וכתב לה ארבע מאה זוזי מנכסיה; אמר"
+    },
+    {
+     "id": "yevamot_077",
+     "ref": "Yevamot 114b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 114b",
+       14
+      ],
+      [
+       "Yevamot 114b",
+       15
+      ]
+     ],
+     "text": "סבר רבא למימר: רעבון אינו כמלחמה, דלא אמרה בדדמי; הדר אמר רבא: רעבון - הרי הוא כ"
+    },
+    {
+     "id": "yevamot_080",
+     "ref": "Yevamot 115b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 115b",
+       1
+      ],
+      [
+       "Yevamot 115b",
+       2
+      ],
+      [
+       "Yevamot 115b",
+       3
+      ]
+     ],
+     "text": "ההוא גברא דאפקיד שומשמי גבי חבריה, אמר ליה: הב לי שומשמי, אמר ליה: שקילתינהו. וה"
+    },
+    {
+     "id": "yevamot_082",
+     "ref": "Yevamot 116a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 116a",
+       2
+      ]
+     ],
+     "text": "ההוא גיטא דאשתכח בסורא, וכתיב ביה הכי: בסורא מתא אנא ענן בר חייא נהרדעא פטרית ות"
+    },
+    {
+     "id": "yevamot_086",
+     "ref": "Yevamot 120b",
+     "site": "site filter: definite in one run only",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Yevamot 120b",
+       9
+      ]
+     ],
+     "text": "אמר רבה בר בר חנה: לדידי חזי לי ההוא טייעא, דשקיל ספסירא וגיידיה לגמליה, ולא אפס"
+    },
+    {
+     "id": "yevamot_099",
+     "ref": "Yevamot 122b",
+     "site": "withheld as a Mishnah story",
+     "detector": "withheld as a Mishnah story",
+     "cells": [
+      [
+       "Yevamot 122a",
+       15
+      ]
+     ],
+     "text": "[משנה]. מעשה בבני לוי  שהלכו לצוער עיר התמרים וחלה אחד מהם, והביאוהו בפונדק, ובח"
+    },
+    {
+     "id": "yevamot_100",
+     "ref": "Yevamot 122b",
+     "site": "withheld as a Mishnah story",
+     "detector": "withheld as a Mishnah story",
+     "cells": [
+      [
+       "Yevamot 122b",
+       0
+      ],
+      [
+       "Yevamot 122b",
+       1
+      ]
+     ],
+     "text": "גמ'. מאי גריעותא דפונדקית? אמר רב כהנא: פונדקית עובדת כוכבים היתה, ומסיחה לפי תו"
+    }
+   ]
+  },
+  "gittin": {
+   "grade": "BLIND list, CIRCULAR site: the golden (and so the site) is built from this list",
+   "site_from": "golden",
+   "denominator": 110,
+   "site": {
+    "on the site": 108,
+    "never proposed": 2
+   },
+   "detector": {
+    "proposed (either run)": 107,
+    "never proposed": 3
+   },
+   "on_site": 108,
+   "proposed": 107,
+   "misses": [
+    {
+     "id": "gittin_043",
+     "ref": "Gittin 38b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Gittin 38b",
+       6
+      ]
+     ],
+     "text": "אמר רבה, בהני תלת מילי נחתי בעלי בתים מנכסיהון: דמפקי עבדייהו לחירותא, ודסיירי נ"
+    },
+    {
+     "id": "gittin_078",
+     "ref": "Gittin 57a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Gittin 57a",
+       20
+      ],
+      [
+       "Gittin 57a",
+       21
+      ],
+      [
+       "Gittin 57a",
+       22
+      ]
+     ],
+     "text": "אשקא דריספק חריב ביתר, דהוו נהיגי כי הוה מתיליד ינוקא שתלי ארזא, ינוקתא - שתלי ת"
+    }
+   ]
+  },
+  "kiddushin": {
+   "grade": "CIRCULAR: Kiddushin few-shots in the detector; site from a golden built with the list",
+   "site_from": "golden",
+   "denominator": 90,
+   "site": {
+    "on the site": 52,
+    "triage discarded the page": 4,
+    "never proposed": 9,
+    "proposed, NOT_A_STORY": 3,
+    "site filter: LOW (or BORDERLINE) wherever proposed": 22
+   },
+   "detector": {
+    "proposed (either run)": 76,
+    "triage discarded the page": 4,
+    "never proposed": 10
+   },
+   "on_site": 52,
+   "proposed": 76,
+   "misses": [
+    {
+     "id": "kiddushin_005",
+     "ref": "Kiddushin 10b",
+     "site": "triage discarded the page",
+     "detector": "triage discarded the page",
+     "cells": [
+      [
+       "Kiddushin 10b",
+       3
+      ],
+      [
+       "Kiddushin 10b",
+       4
+      ]
+     ],
+     "text": "וכבר שלח יוחנן בן בג בג אצל רבי יהודה בן בתירה לנציבין: שמעתי עליך, שאתה אומר אר"
+    },
+    {
+     "id": "kiddushin_006",
+     "ref": "Kiddushin 12a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 12a",
+       13
+      ]
+     ],
+     "text": "ההוא גברא דאקדיש בזוודא דאורדי, יתיב רב שימי בר חייא קמיה דרב וקא מעיין בה, אי א"
+    },
+    {
+     "id": "kiddushin_008",
+     "ref": "Kiddushin 12a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 12b",
+       5
+      ]
+     ],
+     "text": "ההוא גברא דאקדיש בשוטיתא דאסא בשוקא, שלחה רב אחא בר הונא לקמיה דרב יוסף: כה\"ג מא"
+    },
+    {
+     "id": "kiddushin_011",
+     "ref": "Kiddushin 14a",
+     "site": "triage discarded the page",
+     "detector": "triage discarded the page",
+     "cells": [
+      [
+       "Kiddushin 14a",
+       4
+      ]
+     ],
+     "text": "אמר רבי יהודה: פעם אחת היינו יושבים לפני ר' טרפון, ובאתה יבמה לחלוץ, ואמר לנו: ע"
+    },
+    {
+     "id": "kiddushin_012",
+     "ref": "Kiddushin 21b",
+     "site": "triage discarded the page",
+     "detector": "triage discarded the page",
+     "cells": [
+      [
+       "Kiddushin 21b",
+       12
+      ],
+      [
+       "Kiddushin 21b",
+       13
+      ],
+      [
+       "Kiddushin 21b",
+       14
+      ]
+     ],
+     "text": "איבעיא להו: עבד עברי כהן, מהו שימסור לו רבו שפחה כנענית? חידוש הוא, לא שנא כהנים"
+    },
+    {
+     "id": "kiddushin_015",
+     "ref": "Kiddushin 25a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 25a",
+       17
+      ]
+     ],
+     "text": "מעשה בשפחה של בית רבי, שטבלה ועלתה ונמצא עצם בין שיניה, והצריכה רבי טבילה אחרת."
+    },
+    {
+     "id": "kiddushin_016",
+     "ref": "Kiddushin 26a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 26a",
+       13
+      ],
+      [
+       "Kiddushin 26b",
+       0
+      ],
+      [
+       "Kiddushin 26b",
+       1
+      ]
+     ],
+     "text": "איבעיא להו: בעינן צבורים או לא? אמר רב יוסף: תא שמע, ר' עקיבא אומר: קרקע כל שהוא"
+    },
+    {
+     "id": "kiddushin_022",
+     "ref": "Kiddushin 30a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 30a",
+       10
+      ],
+      [
+       "Kiddushin 30a",
+       11
+      ]
+     ],
+     "text": "לפיכך נקראו ראשונים סופרים - שהיו סופרים כל האותיות שבתורה, שהיו אומרים: וא\"ו דג"
+    },
+    {
+     "id": "kiddushin_023",
+     "ref": "Kiddushin 31a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 31a",
+       3
+      ],
+      [
+       "Kiddushin 31a",
+       4
+      ]
+     ],
+     "text": "שאל בן אלמנה אחת את ר' אליעזר: אבא אומר השקיני מים ואימא אומרת השקיני מים, איזה "
+    },
+    {
+     "id": "kiddushin_028",
+     "ref": "Kiddushin 31b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 31b",
+       3
+      ]
+     ],
+     "text": "אמר ליה רב יעקב בר אבוה לאביי: כגון אנא דעד דאתינא מבי רב, אבא מדלי לי כסא ואמא "
+    },
+    {
+     "id": "kiddushin_031",
+     "ref": "Kiddushin 32a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 32a",
+       6
+      ],
+      [
+       "Kiddushin 32a",
+       7
+      ]
+     ],
+     "text": "רב הונא קרע שיראי באנפי רבה בריה, אמר: איזול איחזי אי רתח אי לא רתח. ודלמא רתח, "
+    },
+    {
+     "id": "kiddushin_039",
+     "ref": "Kiddushin 33b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 33b",
+       12
+      ]
+     ],
+     "text": "ר' אלעי ור' יעקב בר זבדי הוו יתבי, חליף ואזיל ר' שמעון בר אבא וקמו מקמיה, אמר לה"
+    },
+    {
+     "id": "kiddushin_041",
+     "ref": "Kiddushin 39b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 39b",
+       7
+      ],
+      [
+       "Kiddushin 39b",
+       8
+      ]
+     ],
+     "text": "הרי שאמר לו אביו עלה לבירה והבא לי גוזלות, ועלה לבירה ושלח את האם ונטל את הבנים,"
+    },
+    {
+     "id": "kiddushin_046",
+     "ref": "Kiddushin 40b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 40b",
+       7
+      ]
+     ],
+     "text": "וכבר היה רבי טרפון וזקנים מסובין בעלית בית נתזה בלוד, נשאלה שאילה זו בפניהם: תלמ"
+    },
+    {
+     "id": "kiddushin_047",
+     "ref": "Kiddushin 44a",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 44a",
+       14
+      ]
+     ],
+     "text": "ר' אסי לא על לבי מדרשא, אשכחיה לרבי זירא, אמר ליה: מאי אמור האידנא בי מדרשא? אמר"
+    },
+    {
+     "id": "kiddushin_048",
+     "ref": "Kiddushin 44b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 44b",
+       5
+      ],
+      [
+       "Kiddushin 44b",
+       6
+      ]
+     ],
+     "text": "איתמר: קטנה שנתקדשה שלא לדעת אביה, אמר שמואל: צריכה גט וצריכה מיאון. אמר קרנא: ד"
+    },
+    {
+     "id": "kiddushin_051",
+     "ref": "Kiddushin 45b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 45b",
+       1
+      ]
+     ],
+     "text": "ההוא גברא דקדיש בכישא דירקא בשוקא, אמר רבינא: אפילו למאן דאמר חוששין שמא נתרצה ה"
+    },
+    {
+     "id": "kiddushin_053",
+     "ref": "Kiddushin 49b",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 49b",
+       12
+      ]
+     ],
+     "text": "ההוא גברא דזבין לנכסיה אדעתא למיסק לארץ ישראל, ובעידנא דזבין לא אמר ולא מידי; אמ"
+    },
+    {
+     "id": "kiddushin_056",
+     "ref": "Kiddushin 52b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 52b",
+       1
+      ]
+     ],
+     "text": "ההיא איתתא דהוה קא משיא כרעא במשיכלא דמיא, אתא ההוא גברא חטף זוזי מחבריה ושדא לה"
+    },
+    {
+     "id": "kiddushin_057",
+     "ref": "Kiddushin 52b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 52b",
+       2
+      ]
+     ],
+     "text": "ההוא אריסא דקדיש במוזא דשמכי, אתא לקמיה דרבא, אמר ליה: מאן אחלך?"
+    },
+    {
+     "id": "kiddushin_058",
+     "ref": "Kiddushin 52b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 52b",
+       3
+      ]
+     ],
+     "text": "ההוא סרסיא דקדיש בפרומא דשיכרא, אתא מריה דשיכרא אשכחיה, אמר ליה: אמאי לא תיתיב מ"
+    },
+    {
+     "id": "kiddushin_062",
+     "ref": "Kiddushin 58a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 58a",
+       2
+      ],
+      [
+       "Kiddushin 58a",
+       3
+      ],
+      [
+       "Kiddushin 58a",
+       4
+      ]
+     ],
+     "text": "אשכחינהו מר יהודה לרב יוסף ולרב שמואל בריה דרבה בר בר חנה דהוו קיימי אפיתחא דבי "
+    },
+    {
+     "id": "kiddushin_063",
+     "ref": "Kiddushin 58a",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 58a",
+       15
+      ],
+      [
+       "Kiddushin 58b",
+       0
+      ]
+     ],
+     "text": "בעא מיניה ר' חייא בר אבין מרב הונא: טובת הנאה, ממון או אינה ממון? אמר ליה, תניתו"
+    },
+    {
+     "id": "kiddushin_064",
+     "ref": "Kiddushin 59a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 59a",
+       3
+      ]
+     ],
+     "text": "רבין חסידא אזיל לקדושי ליה איתתא לבריה, קידשה לנפשיה. והתניא: מה שעשה עשוי, אלא "
+    },
+    {
+     "id": "kiddushin_065",
+     "ref": "Kiddushin 59a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 59a",
+       4
+      ]
+     ],
+     "text": "רבה בר בר חנה יהיב ליה זוזי לרב, אמר: זבנה ניהלי להאי ארעא, אזל זבנה לנפשיה. והת"
+    },
+    {
+     "id": "kiddushin_069",
+     "ref": "Kiddushin 66b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 66b",
+       0
+      ],
+      [
+       "Kiddushin 66b",
+       1
+      ],
+      [
+       "Kiddushin 66b",
+       2
+      ],
+      [
+       "Kiddushin 66b",
+       3
+      ],
+      [
+       "Kiddushin 66b",
+       4
+      ],
+      [
+       "Kiddushin 66b",
+       5
+      ]
+     ],
+     "text": "מעשה במגורה של דסקים ביבנה שהיתה עומדת בחזקת שלימה, ומדדו ונמצאת חסירה, כל טהרות"
+    },
+    {
+     "id": "kiddushin_070",
+     "ref": "Kiddushin 69a",
+     "site": "triage discarded the page",
+     "detector": "triage discarded the page",
+     "cells": [
+      [
+       "Kiddushin 69a",
+       5
+      ]
+     ],
+     "text": "אושפזיכניה דרבי שמלאי ממזר הוה, ואמר ליה: אי אקדמתך טהרתינהו לבנך."
+    },
+    {
+     "id": "kiddushin_074",
+     "ref": "Kiddushin 71a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 71a",
+       9
+      ]
+     ],
+     "text": "אמר רבה בר בר חנה אמר ר' יוחנן: שם בן ארבע אותיות, חכמים מוסרין אותו לתלמידיהן פ"
+    },
+    {
+     "id": "kiddushin_075",
+     "ref": "Kiddushin 71a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 71a",
+       11
+      ]
+     ],
+     "text": "בראשונה שם בן שתים עשרה אותיות היו מוסרין אותו לכל אדם, משרבו הפריצים היו מוסרים"
+    },
+    {
+     "id": "kiddushin_078",
+     "ref": "Kiddushin 72a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 72a",
+       3
+      ]
+     ],
+     "text": "ההוא גברא דאמר להו: אנא מן שוט מישוט, עמד רבי יצחק נפחא על רגליו ואמר: שוט מישוט"
+    },
+    {
+     "id": "kiddushin_079",
+     "ref": "Kiddushin 72a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 72a",
+       4
+      ]
+     ],
+     "text": "אמר רב איקא בר אבין אמר רב חננאל אמר רב: חלזון ניהוונד - הרי היא כגולה ליוחסין. "
+    },
+    {
+     "id": "kiddushin_080",
+     "ref": "Kiddushin 72a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 72a",
+       10
+      ]
+     ],
+     "text": "כי הוה ניחא נפשיה דרבי, אמר: הומניא איכא בבבל, כולה עמונאי היא; מסגריא איכא בבבל"
+    },
+    {
+     "id": "kiddushin_083",
+     "ref": "Kiddushin 79b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 79b",
+       6
+      ]
+     ],
+     "text": "רב יוסף בריה דרב מנשיא מדוויל עבד עובדא כוותיה דרב, ואיקפיד שמואל ואמר: כ\"ע כייל"
+    },
+    {
+     "id": "kiddushin_085",
+     "ref": "Kiddushin 80b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 80b",
+       8
+      ],
+      [
+       "Kiddushin 80b",
+       9
+      ],
+      [
+       "Kiddushin 80b",
+       10
+      ],
+      [
+       "Kiddushin 80b",
+       11
+      ]
+     ],
+     "text": "תניא: כל שלשים יום - יוצא בחיק, ונקבר באשה אחת ושני אנשים, אבל לא באיש אחד ושתי "
+    },
+    {
+     "id": "kiddushin_086",
+     "ref": "Kiddushin 81a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Kiddushin 81a",
+       2
+      ]
+     ],
+     "text": "רב ורב יהודה הוו קאזלי באורחא, הוה קאזלא ההיא אתתא קמייהו, א\"ל רב לרב יהודה: דל "
+    },
+    {
+     "id": "kiddushin_087",
+     "ref": "Kiddushin 81a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 81a",
+       6
+      ]
+     ],
+     "text": "רב ביבי איקלע לבי רב יוסף, בתר דכרך ריפתא, אמר להו: שקולי דרגא מתותי ביבי."
+    },
+    {
+     "id": "kiddushin_093",
+     "ref": "Kiddushin 81b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 81b",
+       9
+      ]
+     ],
+     "text": "אמר רבי מאיר: הזהרו בי מפני בתי. אמר רבי טרפון: הזהרו בי מפני כלתי; ליגלג עליו א"
+    },
+    {
+     "id": "kiddushin_094",
+     "ref": "Kiddushin 81b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Kiddushin 81b",
+       10
+      ]
+     ],
+     "text": "רב חנן מנהרדעא איקלע לרב כהנא לפום נהרא, חזייה דיתיב וקא גרס וקיימא בהמה קמיה, א"
+    }
+   ]
+  },
+  "ketubot": {
+   "grade": "CIRCULAR: Ketubot is the few-shot source; site from a golden built with the list",
+   "site_from": "golden",
+   "denominator": 145,
+   "site": {
+    "on the site": 86,
+    "triage discarded the page": 1,
+    "never proposed": 9,
+    "proposed, NOT_A_STORY": 1,
+    "site filter: LOW (or BORDERLINE) wherever proposed": 48
+   },
+   "detector": {
+    "proposed (either run)": 128,
+    "triage discarded the page": 4,
+    "withheld as a Mishnah story": 1,
+    "never proposed": 12
+   },
+   "on_site": 86,
+   "proposed": 128,
+   "misses": [
+    {
+     "id": null,
+     "ref": "Ketubot 8b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 8b",
+       13
+      ]
+     ],
+     "text": "בראשונה היתה הוצאת המת קשה לקרוביו יותר ממיתתו, עד שהיו מניחים אותו ובורחין, עד "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 10a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 10a",
+       7
+      ]
+     ],
+     "text": "הוא דאתא לקמיה דרב נחמן, אמר ליה: פתח פתוח מצאתי, אמר ליה רב נחמן: אסבוהו כופרי,"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 10a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 10a",
+       9
+      ],
+      [
+       "Ketubot 10a",
+       10
+      ]
+     ],
+     "text": "ההוא דאתא לקמיה דרבן גמליאל, אמר ליה: פתח פתוח מצאתי, אמר ליה: שמא הטיתה? אמשול "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 17b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 17b",
+       2
+      ]
+     ],
+     "text": "אמר ליה רב פפא לאביי: משחא דחפיפותא קאמר מר? אמר ליה: יתמא, לא עבדא לך אמך דרדוג"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 20b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 20b",
+       0
+      ]
+     ],
+     "text": "רב אשי הוה ידיע ליה בסהדותא לרב כהנא, אמר ליה: מי דכיר מר האי סהדותא? אמר ליה: ל"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 25b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 25b",
+       2
+      ]
+     ],
+     "text": "ההוא דאתא לקמיה דרבי אמי, א\"ל: מוחזקני בזה שהוא כהן, א\"ל: מה ראית? אמר ליה: שקרא"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 25b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 25b",
+       3
+      ]
+     ],
+     "text": "ההוא דאתא לקמיה דרבי יהושע בן לוי, אמר ליה: מוחזקני בזה שהוא לוי, אמר ליה: מה רא"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 25b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 25b",
+       4
+      ],
+      [
+       "Ketubot 25b",
+       5
+      ]
+     ],
+     "text": "ההוא דאתא לקמיה דריש לקיש, אמר ליה: מוחזקני בזה שהוא כהן, א\"ל: מה ראית? [א\"ל:] ש"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 27a",
+     "site": "triage discarded the page",
+     "detector": "triage discarded the page",
+     "cells": [
+      [
+       "Ketubot 27a",
+       1
+      ]
+     ],
+     "text": "העיד רבי יוסי הכהן ורבי זכריה בן הקצב, על בת ישראל שהורהנה באשקלון וריחקוה בני מ"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 27b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 27b",
+       15
+      ]
+     ],
+     "text": "רב חנן קרטיגנאה משתעי: מעשה בא לפני רבי יהושע בן לוי, ואמרי לה רבי יהושע בן לוי "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 49b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 50a",
+       1
+      ]
+     ],
+     "text": "א\"ר אילעא: באושא התקינו, המבזבז - אל יבזבז יותר מחומש. תניא נמי הכי: המבזבז - אל"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 52b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 52b",
+       4
+      ],
+      [
+       "Ketubot 52b",
+       5
+      ]
+     ],
+     "text": "קריביה דרבי יוחנן הוה להו איתת אבא דהות צריכה רפואה כל יומא, אתו לקמיה דר' יוחנן"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 52b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 52b",
+       17
+      ],
+      [
+       "Ketubot 53a",
+       0
+      ],
+      [
+       "Ketubot 53a",
+       1
+      ],
+      [
+       "Ketubot 53a",
+       2
+      ],
+      [
+       "Ketubot 53a",
+       3
+      ]
+     ],
+     "text": "רב פפא איעסק ליה לבריה בי אבא סוראה, אזיל למיכתב לה כתובתה, שמע יהודה בר מרימר, "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 53a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 53a",
+       14
+      ],
+      [
+       "Ketubot 53b",
+       0
+      ]
+     ],
+     "text": "כי אתא רבין אמר ריש לקיש: ארוסה שמתה - אין לה כתובה. אמר להו אביי, זילו אמרי ליה"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 54a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 54a",
+       13
+      ],
+      [
+       "Ketubot 54a",
+       14
+      ]
+     ],
+     "text": "ההיא בת מחוזא דהות נסיבא לנהרדעא, אתו לקמיה דרב נחמן, שמעה לקלה דבת מחוזא היא, א"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 54a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 54a",
+       20
+      ]
+     ],
+     "text": "כלתא דבי בר אלישיב הוה קא תבעה כתובתה מיתמי, הוה קא ממטי להו לבי דינא, אמרי: זיל"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 54a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 54a",
+       21
+      ],
+      [
+       "Ketubot 54a",
+       22
+      ],
+      [
+       "Ketubot 54b",
+       0
+      ]
+     ],
+     "text": "ההוא דאמר להו נדוניא לברת, זל נדוניא, א\"ר אידי בר אבין: פורנא ליתמי. ההוא דאמר ל"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 56b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 56b",
+       11
+      ],
+      [
+       "Ketubot 57a",
+       0
+      ],
+      [
+       "Ketubot 57a",
+       1
+      ]
+     ],
+     "text": "אחתיה דרמי בר חמא הות נסיבא לרב אויא, אירכס כתובתה, אתו לקמיה דרב יוסף, אמר להו,"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 60b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 60b",
+       5
+      ],
+      [
+       "Ketubot 60b",
+       6
+      ]
+     ],
+     "text": "ת\"ר: נתנה בנה למינקת, או גמלתו, או מת - מותרת לינשא מיד. רב פפא ורב הונא בריה דר"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 60b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 60b",
+       9
+      ]
+     ],
+     "text": "לאו אדעתין. והלכתא: מת - מותר, גמלתו - אסור. מר בר רב אשי אמר: אפילו מת נמי אסור"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 61a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 61a",
+       0
+      ]
+     ],
+     "text": "ברתיה דשבור מלכא אכלה בה אמה אתרוגא, והוו מסקי לה לקמיה אבוה בריש ריחני."
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 61a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 61a",
+       12
+      ]
+     ],
+     "text": "אמר רב ענן בר תחליפא: הוה קאימנא קמיה דמר שמואל, ואייתו ליה תבשילא דארדי, ואי לא"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 61a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 61a",
+       12
+      ]
+     ],
+     "text": "אמר רב אשי: הוה קאימנא קמיה דרב כהנא, ואייתו ליה גרגלידי דליפתא בחלא, ואי לאו די"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 61a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 61a",
+       12
+      ]
+     ],
+     "text": "רב פפא אמר: אפילו תמרתא דהנוניתא; כללא דמילתא, כל דאית ליה ריחא ואית ליה קיוהא."
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 61a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 61a",
+       13
+      ]
+     ],
+     "text": "אבוה בר איהי ומנימין בר איהי, חד ספי מכל מינא ומינא וחד ספי מחד מינא, מר משתעי א"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 65b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 65a",
+       10
+      ]
+     ],
+     "text": "דביתהו דרב יוסף בריה דרבא אתאי לקמיה דרב נחמיה בריה דרב יוסף, אמרה ליה: פסוק לי "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 65b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 65a",
+       11
+      ]
+     ],
+     "text": "דביתהו דרב יוסף בריה דרב מנשיא מדויל אתאי לקמיה דרב יוסף, א\"ל: פסוק לי מזוני, פס"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 66b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 66b",
+       9
+      ]
+     ],
+     "text": "מעשה בבתו של נקדימון בן גוריון, שפסקו לה חכמים ארבע מאות זהובים לקופה של בשמים ל"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 67b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 67b",
+       3
+      ]
+     ],
+     "text": "תנו רבנן: מעשה באנשי גליל העליון, שלקחו לעני בן טובים אחד מציפורי ליטרא בשר בכל "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 67b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 67b",
+       16
+      ]
+     ],
+     "text": "רבי אבא הוה צייר זוזי בסודריה ושדי ליה לאחוריה וממצי נפשיה לבי עניי, ומצלי עיניה"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 67b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 67b",
+       17
+      ],
+      [
+       "Ketubot 68a",
+       0
+      ]
+     ],
+     "text": "רבי חנינא, הוה ההוא עניא דהוה רגיל לשדורי ליה ארבעה זוזי כל מעלי שבתא. יומא חד ש"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 69a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 69a",
+       10
+      ]
+     ],
+     "text": "אמר רב מניומי בריה דרב ניחומי: הוה קאימנא קמיה דאמימר, ואתאי האי איתתא לקמיה דהו"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 77a",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 77a",
+       13
+      ],
+      [
+       "Ketubot 77a",
+       14
+      ]
+     ],
+     "text": "אמר רב: האומר איני זן ואיני מפרנס - יוציא ויתן כתובה. אזל ר' אלעזר אמרה לשמעתא ק"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 82a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 82a",
+       3
+      ]
+     ],
+     "text": "ההוא גברא דנפלה ליה יבמה במתא מחסיא, בעא אחוה למיפסלה בגיטא מיניה, אמר ליה: מאי "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 84b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 84b",
+       8
+      ]
+     ],
+     "text": "ההוא בקרא דיתמי דתפסי תורא מיניה, בע\"ח אמר: מחיים תפיסנא ליה, ובקרא אמר: לאחר מי"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 85a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 85a",
+       7
+      ]
+     ],
+     "text": "ההיא איתתא דהוו מיפקדי גבה מלוגא דשטרי, אתו יורשים קא תבעי ליה מינה, אמרה להו: מ"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 85a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 85a",
+       13
+      ]
+     ],
+     "text": "ההיא איתתא דאיחייבא שבועה בי דינא דרב ביבי בר אביי, אמר להו ההוא בע\"ד: תיתי ותיש"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 85b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 85b",
+       1
+      ],
+      [
+       "Ketubot 85b",
+       2
+      ]
+     ],
+     "text": "הוא גברא דאפקיד שב מרגניתא דציירי בסדינא בי רבי מיאשא בר בריה דר' יהושע בן לוי, "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 85b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 85b",
+       3
+      ]
+     ],
+     "text": "ההוא גברא דאפקיד כסא דכספא בי חסא, שכיב חסא ולא פקיד, אתו לקמיה דרב נחמן, אמר לה"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 85b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 85b",
+       4
+      ]
+     ],
+     "text": "ההוא דאפקיד מטכסא בי רב דימי אחוה דרב ספרא, שכיב רב דימי ולא פקיד, אתא לקמיה דרב"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 85b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 85b",
+       5
+      ]
+     ],
+     "text": "ההוא דאמר להו: נכסיי לטוביה, שכיב, אתא טוביה, א\"ר יוחנן: הרי בא טוביה."
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 97a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 97a",
+       10
+      ]
+     ],
+     "text": "ההוא גברא דזבין ארעא לרב פפא, דאצטריכו ליה זוזי למיזבן תורי, לסוף לא איצטריכו לי"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 97a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 97a",
+       11
+      ]
+     ],
+     "text": "ההוא בצורתא דהוה בנהרדעא, זבנינהו כולי עלמא לאפדנייהו, לסוף אתו חיטי, אמר להו רב"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 100b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 100b",
+       16
+      ]
+     ],
+     "text": "רב כהנא הוה בידיה שכרא דרב משרשיא בר חילקאי יתמא, שהייה עד ריגלא, אמר: אע\"ג דנפל"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 100b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 100b",
+       17
+      ],
+      [
+       "Ketubot 100b",
+       18
+      ]
+     ],
+     "text": "רבינא הוה בידיה חמרא דרבינא זוטי יתמא בר אחתיה, הוה לדידיה נמי חמרא, הוה קמסיק ל"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 105b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 105b",
+       8
+      ]
+     ],
+     "text": "שמואל הוה עבר במברא, אתא ההוא גברא יהיב ליה ידיה, אמר ליה: מאי עבידתיך? אמר ליה:"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 105b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 105b",
+       9
+      ]
+     ],
+     "text": "אמימר הוה יתיב וקא דאין דינא, פרח גדפא ארישיה, אתא ההוא גברא שקליה, א\"ל: מאי עבי"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 105b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 105b",
+       9
+      ]
+     ],
+     "text": "מר עוקבא הוה שדי רוקא קמיה, אתא ההוא גברא כסייה, א\"ל: מאי עבידתיך? א\"ל: דינא אית"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 109b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 109b",
+       10
+      ],
+      [
+       "Ketubot 109b",
+       11
+      ]
+     ],
+     "text": "ההוא דאמר להו דיקלא לברת, אזול יתמי פלוג לנכסי, לא יהבו לה דיקלא: סבר רב יוסף למ"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 109b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 109b",
+       12
+      ],
+      [
+       "Ketubot 109b",
+       13
+      ]
+     ],
+     "text": "ההוא דאמר להו דיקלא לברת, שכיב ושביק תרי פלגי דדיקלא, יתיב רב אשי וקא קשיא ליה: "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 111b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 111a",
+       9
+      ]
+     ],
+     "text": "עולא הוה רגיל דהוה סליק לארץ ישראל, נח נפשיה בחוץ לארץ, אתו אמרו ליה לרבי אלעזר,"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 111b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 111a",
+       10
+      ],
+      [
+       "Ketubot 111a",
+       11
+      ]
+     ],
+     "text": "ההוא גברא דנפלה ליה יבמה בי חוזאה, אתא לקמיה דר' חנינא, א\"ל: מהו למיחת וליבמה? א"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 111b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 111a",
+       12
+      ]
+     ],
+     "text": "ההוא דנפק מפומבדיתא לבי כובי, שמתיה רב יוסף. ההוא דנפק מפומבדיתא לאסתוניא, שכיב,"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 111b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 111a",
+       23
+      ]
+     ],
+     "text": "מעשה באחד שהיה מצטער על אשה אחת וביקש לירד, כיון ששמע כזאת גלגל בעצמו עד יום מות"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 111b",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 111b",
+       12
+      ]
+     ],
+     "text": "עתידה חטה שתהא כשתי כליות של שור הגדול; ואל תתמה, שהרי שועל קינן בלפת, ושקלוהו ו"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 111b",
+     "site": "proposed, NOT_A_STORY",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 112a",
+       1
+      ],
+      [
+       "Ketubot 112a",
+       2
+      ]
+     ],
+     "text": "רבי חלבו ור' עוירא ור' יוסי בר חנינא איקלעו לההוא אתרא, אייתו קמייהו אפרסקא דהוה"
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 111b",
+     "site": "never proposed",
+     "detector": "never proposed",
+     "cells": [
+      [
+       "Ketubot 112a",
+       10
+      ]
+     ],
+     "text": "א\"ל ההוא צדוקי לר' חנינא: יאה משבחיתו בה בארעכון, בית סאה אחת הניח לי אבא, ממנה "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 112a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 112a",
+       11
+      ]
+     ],
+     "text": "א\"ל ההוא בר אמוראה לבר ארעא דישראל: האי [תאלתא] דקיימא אגודא דירדנא, כמה גדריתו "
+    },
+    {
+     "id": null,
+     "ref": "Ketubot 112a",
+     "site": "site filter: LOW (or BORDERLINE) wherever proposed",
+     "detector": "proposed (either run)",
+     "cells": [
+      [
+       "Ketubot 112a",
+       14
+      ]
+     ],
+     "text": "רבי אלעזר כי הוה סליק לארץ ישראל, אמר: פלטי לי מחדא; כי סמכוהו, אמר: פלטי לי מתר"
+    }
+   ]
+  }
+ },
+ "estimate": {
+  "unreviewed_tractates": 34,
+  "unreviewed_shipped": 1535,
+  "site_recall_eruvin_yevamot": {
+   "on_site": 107,
+   "denominator": 154,
+   "share": 0.695,
+   "wilson95": [
+    0.618,
+    0.762
+   ]
+  },
+  "detector_recall_eruvin_yevamot": {
+   "proposed": 149,
+   "denominator": 154,
+   "share": 0.968,
+   "wilson95": [
+    0.926,
+    0.986
+   ]
+  },
+  "precision_sample": {
+   "definite": 54,
+   "n": 60,
+   "source": "docs/findings/2026-11-13-jeff-verdicts-eruvin-and-septimus-sample.md §2",
+   "share": 0.9,
+   "wilson95": [
+    0.799,
+    0.953
+   ]
+  },
+  "unreviewed_missing_point": 607,
+  "unreviewed_missing_bootstrap95": [
+   420,
+   842
+  ],
+  "unreviewed_missing_by_list": {
+   "eruvin": 386,
+   "yevamot": 756
+  },
+  "unreviewed_missing_by_stage": {
+   "site filter: LOW (or BORDERLINE) wherever proposed": 374,
+   "proposed, NOT_A_STORY": 90,
+   "site filter: definite in one run only": 90,
+   "withheld as a Mishnah story": 26,
+   "never proposed": 26
+  },
+  "reviewed": {
+   "ketubot": {
+    "denominator": 145,
+    "on_site": 86,
+    "listed_missing": 59
+   },
+   "kiddushin": {
+    "denominator": 90,
+    "on_site": 52,
+    "listed_missing": 38
+   },
+   "gittin": {
+    "denominator": 110,
+    "on_site": 108,
+    "listed_missing": 2
+   }
+  },
+  "reviewed_listed_missing": 99,
+  "total_point": 706,
+  "total_range": [
+   519,
+   941
+  ],
+  "method": "missing = S * p * (1 - r) / r, S = shipped on unreviewed tractates, p = precision sample, r = site recall on Eruvin+Yevamot list stories; bootstrap resamples the list stories (per list) and the 60-story sample, 10000 draws, seed 20261113. Reviewed tractates: listed stories not on the site, counted directly (their unlisted misses are not estimated)."
+ },
+ "pool": {
+  "by_tractate": {
+   "arakhin": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 2,
+    "LOW in both runs": 8,
+    "LOW in one run, NOT/absent/withheld in the other": 2
+   },
+   "avodah_zarah": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 2,
+    "definite in one run, LOW in the other": 1,
+    "LOW in both runs": 55,
+    "LOW in one run, NOT/absent/withheld in the other": 1
+   },
+   "bava_batra": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 4,
+    "definite in one run, LOW in the other": 3,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 75,
+    "LOW in one run, NOT/absent/withheld in the other": 6
+   },
+   "bava_kamma": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 1,
+    "definite in one run, LOW in the other": 7,
+    "LOW in both runs": 35,
+    "LOW in one run, NOT/absent/withheld in the other": 4
+   },
+   "bava_metzia": {
+    "definite in one run, LOW in the other": 4,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 60,
+    "LOW in one run, NOT/absent/withheld in the other": 6
+   },
+   "beitzah": {
+    "definite in one run, LOW in the other": 2,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 22
+   },
+   "bekhorot": {
+    "LOW in both runs": 20,
+    "LOW in one run, NOT/absent/withheld in the other": 1
+   },
+   "berakhot": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 5,
+    "definite in one run, LOW in the other": 9,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 59,
+    "LOW in one run, NOT/absent/withheld in the other": 5
+   },
+   "chagigah": {
+    "definite in one run, LOW in the other": 2,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 10,
+    "LOW in one run, NOT/absent/withheld in the other": 3
+   },
+   "chullin": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 3,
+    "definite in one run, LOW in the other": 4,
+    "definite in one run, NOT/absent/withheld in the other": 2,
+    "LOW in both runs": 81,
+    "LOW in one run, NOT/absent/withheld in the other": 5
+   },
+   "eruvin": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 6,
+    "definite in one run, LOW in the other": 7,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 59,
+    "LOW in one run, NOT/absent/withheld in the other": 7
+   },
+   "horayot": {
+    "definite in one run, LOW in the other": 3,
+    "LOW in both runs": 2
+   },
+   "keritot": {
+    "LOW in both runs": 1
+   },
+   "makkot": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 1,
+    "definite in one run, LOW in the other": 1,
+    "LOW in both runs": 10
+   },
+   "megillah": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 7,
+    "definite in one run, LOW in the other": 1,
+    "definite in one run, NOT/absent/withheld in the other": 4,
+    "LOW in both runs": 20,
+    "LOW in one run, NOT/absent/withheld in the other": 5
+   },
+   "meilah": {
+    "LOW in both runs": 1
+   },
+   "menachot": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 1,
+    "definite in one run, LOW in the other": 1,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 30,
+    "LOW in one run, NOT/absent/withheld in the other": 8
+   },
+   "moed_katan": {
+    "definite in one run, LOW in the other": 4,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 27,
+    "LOW in one run, NOT/absent/withheld in the other": 2
+   },
+   "nazir": {
+    "LOW in both runs": 6
+   },
+   "nedarim": {
+    "definite in one run, LOW in the other": 1,
+    "definite in one run, NOT/absent/withheld in the other": 2,
+    "LOW in both runs": 26,
+    "LOW in one run, NOT/absent/withheld in the other": 2
+   },
+   "niddah": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 1,
+    "LOW in both runs": 37,
+    "LOW in one run, NOT/absent/withheld in the other": 5
+   },
+   "pesachim": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 8,
+    "definite in one run, LOW in the other": 5,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 56,
+    "LOW in one run, NOT/absent/withheld in the other": 2
+   },
+   "rosh_hashanah": {
+    "LOW in both runs": 16
+   },
+   "sanhedrin": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 33,
+    "definite in one run, LOW in the other": 8,
+    "LOW in both runs": 80,
+    "LOW in one run, NOT/absent/withheld in the other": 6
+   },
+   "shabbat": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 6,
+    "definite in one run, LOW in the other": 5,
+    "definite in one run, NOT/absent/withheld in the other": 1,
+    "LOW in both runs": 79,
+    "LOW in one run, NOT/absent/withheld in the other": 8
+   },
+   "shevuot": {
+    "definite in one run, LOW in the other": 2,
+    "LOW in both runs": 12
+   },
+   "sotah": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 7,
+    "definite in one run, LOW in the other": 1,
+    "definite in one run, NOT/absent/withheld in the other": 6,
+    "LOW in both runs": 14,
+    "LOW in one run, NOT/absent/withheld in the other": 1
+   },
+   "sukkah": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 1,
+    "definite in one run, LOW in the other": 6,
+    "LOW in both runs": 17
+   },
+   "taanit": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 1,
+    "definite in one run, LOW in the other": 10,
+    "definite in one run, NOT/absent/withheld in the other": 2,
+    "LOW in both runs": 16,
+    "LOW in one run, NOT/absent/withheld in the other": 1
+   },
+   "tamid": {
+    "LOW in both runs": 3
+   },
+   "temurah": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 2,
+    "definite in one run, LOW in the other": 1,
+    "LOW in both runs": 3
+   },
+   "yevamot": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 2,
+    "definite in one run, LOW in the other": 7,
+    "LOW in both runs": 57,
+    "LOW in one run, NOT/absent/withheld in the other": 4
+   },
+   "yoma": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 2,
+    "LOW in both runs": 37,
+    "LOW in one run, NOT/absent/withheld in the other": 3
+   },
+   "zevachim": {
+    "definite in both, not shipped (biblical/removed/judge drop)": 2,
+    "LOW in both runs": 15,
+    "LOW in one run, NOT/absent/withheld in the other": 2
+   }
+  },
+  "total": {
+   "definite in both, not shipped (biblical/removed/judge drop)": 97,
+   "definite in one run, LOW in the other": 95,
+   "definite in one run, NOT/absent/withheld in the other": 26,
+   "LOW in both runs": 1049,
+   "LOW in one run, NOT/absent/withheld in the other": 89
+  },
+  "gemini_judge_by_kind": {
+   "definite in both, not shipped (biblical/removed/judge drop)": {
+    "out_of_scope": 82,
+    "not": 3,
+    "story": 9,
+    "unjudged": 2,
+    "borderline": 1
+   },
+   "definite in one run, LOW in the other": {
+    "story": 68,
+    "borderline": 16,
+    "not": 6,
+    "out_of_scope": 5
+   },
+   "definite in one run, NOT/absent/withheld in the other": {
+    "story": 7,
+    "borderline": 5,
+    "not": 5,
+    "out_of_scope": 9
+   },
+   "LOW in both runs": {
+    "borderline": 336,
+    "out_of_scope": 29,
+    "story": 446,
+    "not": 237,
+    "unjudged": 1
+   },
+   "LOW in one run, NOT/absent/withheld in the other": {
+    "borderline": 26,
+    "not": 39,
+    "story": 16,
+    "out_of_scope": 8
+   }
+  },
+  "blind_eruvin_yevamot_by_kind": {
+   "definite in both, not shipped (biblical/removed/judge drop)": {
+    "units": 8,
+    "on_list_yes": 0,
+    "jeff_no": 6
+   },
+   "definite in one run, LOW in the other": {
+    "units": 14,
+    "on_list_yes": 7,
+    "jeff_no": 0
+   },
+   "definite in one run, NOT/absent/withheld in the other": {
+    "units": 1,
+    "on_list_yes": 0,
+    "jeff_no": 1
+   },
+   "LOW in both runs": {
+    "units": 116,
+    "on_list_yes": 29,
+    "jeff_no": 6
+   },
+   "LOW in one run, NOT/absent/withheld in the other": {
+    "units": 11,
+    "on_list_yes": 2,
+    "jeff_no": 2
+   }
+  },
+  "jeff_on_low_calls_circular": {
+   "ketubot": {
+    "yes": 56,
+    "borderline": 20,
+    "unknown": 3,
+    "no": 9
+   },
+   "kiddushin": {
+    "yes": 38,
+    "no": 7
+   },
+   "gittin": {
+    "no": 16,
+    "yes": 3,
+    "borderline": 1
+   },
+   "total": {
+    "yes": 97,
+    "borderline": 21,
+    "unknown": 3,
+    "no": 32
+   },
+   "yes_share": 0.647,
+   "wilson95": [
+    0.567,
+    0.719
+   ]
+  }
+ },
+ "rules": {
+  "A: definite in one run + at least LOW in the other": {
+   "spans_added": 95,
+   "real_stories_added_est_low_mid_high": [
+    37,
+    57,
+    74
+   ],
+   "non_stories_added_est_low_mid_high": [
+    21,
+    38,
+    58
+   ],
+   "site_precision_est_low_mid_high": [
+    0.87,
+    0.883,
+    0.893
+   ],
+   "q": {
+    "P1": [
+     0.387,
+     0.6,
+     0.781
+    ]
+   },
+   "eruvin_yevamot_list_recovered": 7,
+   "eruvin_yevamot_site_recall_after": "114/154 = 74.0%"
+  },
+  "B: definite in either run": {
+   "spans_added": 121,
+   "real_stories_added_est_low_mid_high": [
+    47,
+    73,
+    95
+   ],
+   "non_stories_added_est_low_mid_high": [
+    26,
+    48,
+    74
+   ],
+   "site_precision_est_low_mid_high": [
+    0.863,
+    0.878,
+    0.891
+   ],
+   "q": {
+    "P1": [
+     0.387,
+     0.6,
+     0.781
+    ],
+    "P2": [
+     0.387,
+     0.6,
+     0.781
+    ]
+   },
+   "eruvin_yevamot_list_recovered": 7,
+   "eruvin_yevamot_site_recall_after": "114/154 = 74.0%"
+  },
+  "C: B + LOW in both runs": {
+   "spans_added": 1170,
+   "real_stories_added_est_low_mid_high": [
+    309,
+    543,
+    773
+   ],
+   "non_stories_added_est_low_mid_high": [
+    397,
+    627,
+    861
+   ],
+   "site_precision_est_low_mid_high": [
+    0.625,
+    0.711,
+    0.797
+   ],
+   "q": {
+    "P1": [
+     0.387,
+     0.6,
+     0.781
+    ],
+    "P2": [
+     0.387,
+     0.6,
+     0.781
+    ],
+    "P3": [
+     0.25,
+     0.4485,
+     0.647
+    ]
+   },
+   "eruvin_yevamot_list_recovered": 35,
+   "eruvin_yevamot_site_recall_after": "142/154 = 92.2%"
+  }
+ }
+}

@@ -1,0 +1,22 @@
+{
+ "01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A setting (missed the study hall, met R. Asi) framing a question and answer about a ruling; like Shabbat 147a, not enough for a story."},
+ "02": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "The superintendent refuses to rent, the neighbours come before R. Zeira and he cites a ruling; one event then a ruling, with nothing changing afterwards."},
+ "03": {"verdict": "not", "rules": ["R-C0", "R-C7"], "segments": [], "reason": "A man whose betrothed died comes before the rabbis, who rule, and the passage turns to legal discussion; one event followed by a ruling."},
+ "04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "R. Elazar b. Tzadok's family practice on one Ninth of Av is cited as evidence for a halakhic point; a report of what was done, with no response or development."},
+ "05": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "Rav's ruling at Damharya is only alluded to as precedent within a scholarly dispute; a report of a ruling cited as evidence, inside ordinary debate."},
+ "06": {"verdict": "not", "rules": ["R-B4"], "segments": [], "reason": "The Mishnah's incident is only referenced ('etc.'); the passage is the Gemara's discussion of why it counts as miraculous, commentary on a story told elsewhere."},
+ "07": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A man betroths with a myrtle branch, the question is sent to Rav Yosef, who rules; one event then a ruling, with no outcome narrated."},
+ "08": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "They came before R. Ami and he ruled; coming before a rabbi is the only event."},
+ "09": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "The rabbis press Rav Sheshet to marry and he deflects, with the Gemara supplying that he had become impotent from Rav Huna's long discourses; mainly speech with some tension and an event mentioned."},
+ "10": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A man deposits pearls with R. Meyasha, who dies without instructions, and the parties come before R. Ami who awards them; narrated events plus a resolving ruling, like the cow case."},
+ "11": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Ben Azzai's finding a genealogy scroll is a single act reported to introduce its contents; nothing follows from it."},
+ "12": {"verdict": "story", "rules": ["R-C0", "R-B4"], "segments": [2], "reason": "Rabba bar bar Hana gives Rav money to buy land and Rav buys it for himself; two actions with conflict and change, though the Gemara's justifications are commentary."},
+ "13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Abaye's boast and a sage's challenge followed by a baraita; ordinary scholarly back-and-forth with no event."},
+ "14": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "A widow's son asks R. Eliezer, then goes to R. Yehoshua, who answers him sarcastically; mainly speech with some movement and a barbed exchange."},
+ "15": {"verdict": "borderline", "rules": ["R-C6", "R-C7"], "segments": [2], "reason": "R. Shabbtai's daughter-in-law seized a saddlebag of coins and the Sages could not take it from her; a real incident, but only briefly reported as evidence for the ruling."},
+ "16": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Two deeds come before Rav Yosef, he rules and the losing party argues; a case before a rabbi with ruling and discussion, no other narrated event or change."},
+ "17": {"verdict": "borderline", "rules": ["R-C7", "R-B4"], "segments": [2], "reason": "Rav Huna tears silk before his son to test whether he will get angry; a real act with intent, but the outcome is not narrated and the Gemara turns to commentary."},
+ "18": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav Pappa and Rav Huna b. R. Yehoshua conducted halitza before five; a bare report of a practice cited to explain the law."},
+ "19": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "The judges report that Rav Yehuda ruled in a case of branches; an incident only alluded to as a precedent, with no narrated development."},
+ "20": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A man sells land to Rav Pappa for oxen, no longer needs the money, and Rav Pappa returns the land; several actions and a change."}
+}

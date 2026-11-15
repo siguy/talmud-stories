@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "borderline", "rules": ["R-C6"], "segments": [2], "reason": "The Rav Safra sale incident is only alluded to by name ('such as Rav Safra'); the narrative must be supplied by the commentary."},
+"02": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "An anatomical observation about a girl in the neighborhood cited as evidence for a physiological claim; no narrated action, response or change."},
+"03": {"verdict": "borderline", "rules": ["R-C7", "R-C5"], "segments": [2], "reason": "Reish Lakish eulogizing a scholar is a real event but is mainly his spoken lament, cited as a precedent; little development."},
+"04": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rav Kahana accompanies Rav Shimi bar Ashi (a real event), but the passage then turns to a scholarly question; mainly speech, no conflict or change."},
+"05": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A case (man sold property, divorced) sent to Rav Pappa for a ruling; the only event besides the case is the legal question and answer."},
+"06": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Two short incidents (Rava seeing Rav Hamnuna pray long; R. Zeira rebuking R. Yirmeya for hurrying) with some action but mainly verbal critique."},
+"07": {"verdict": "story", "rules": ["R-C2", "R-C0"], "segments": [2], "reason": "Rabbi proposes marriage to R. Elazar b. R. Shimon's widow and she rebuffs him in an exchange of messages; a conflict-laden episode within a larger narrative."},
+"08": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Zeira hears a ruling and approves it, followed by Gemara analysis; ordinary transmission of law with no conflict or change."},
+"09": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3], "reason": "Rabbi and R. Hiyya walking, R. Yehuda ben Kanosa striding ahead, Rabbi's suspicion, R. Hiyya's defense, and the confrontation: multiple events, conflict and resolution."},
+"10": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4], "reason": "Rav Huna's contrary ruling angers Rav Yehuda (emotional reaction) and Rav Huna considers retracting while Rav Hisda counsels him; conflict but mostly legal speech."},
+"11": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "Shmuel's instruction to deface Rav Yehuda's seal is cited inside the legal give-and-take as a difficulty; a single alluded act with no development."},
+"12": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "An incident where Rav Yosef ruled thirteen animals tereifot, followed only by analysis of his ruling; one event then a ruling."},
+"13": {"verdict": "not", "rules": ["R-C2", "R-B4"], "segments": [], "reason": "R. Yohanan's silence is followed by a hypothetical discussion of what he might have answered; scholarly back-and-forth, not an event."},
+"14": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Rava's ruling to the residents of Mehoza with its rationale; a legal instruction, no narrated incident."},
+"15": {"verdict": "borderline", "rules": ["R-C7", "R-C0"], "segments": [2], "reason": "R. Yehuda Nesia's actions and R. Ami's dismay are real events with an emotional reaction, but the passage then becomes legal analysis with no further change."},
+"16": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Tanhum arrives and teaches, is challenged for ruling near his teacher, and excuses himself; some event and conflict but mainly speech."},
+"17": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A disputed deathbed gift deed and Rabba's ruling with Abaye's objection; a case and a legal discussion, nothing further happens."},
+"18": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "The incident cited is King Hezekiah intercalating the year, a biblical episode."},
+"19": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Binyamin the shepherd's blessing followed by Rav's ruling and Gemara discussion; one act then a ruling."},
+"20": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "Rabba bar Rav Huna visiting the Exilarch's house and permitting a practice is a bare ruling report with no further action or change."}
+}

@@ -1,0 +1,146 @@
+{
+ "what": "Jeff Rubenstein's verdicts on the 8 passages of the 2026-11-12 email: the 6 non-yes of Simon's pre-read of the 60-story Shas precision sample, plus 2 stories the site lacks.",
+ "source": "jeff comms/11-12-2026/reply.md",
+ "original": "jeff comms/11-12-2026/Brief Project. Eight Questions.docx",
+ "date": "2026-11-12",
+ "reviewer": "Jeff Rubenstein",
+ "evidence_grade": "measured (expert verdict)",
+ "cover_note": "The interface did not work for me",
+ "sample": "results/shas_run/precision_sample/sample.json",
+ "simon_pre_read": "validation/feedback/2026-11-simon-precision-sample.json",
+ "added_by": "apply_jeff_2026-11-12_verdicts.py",
+ "verdicts": [
+  {
+   "key": "Arakhin 23b_0-1",
+   "item": 1,
+   "ref": "Arakhin 23b",
+   "start_segment": 0,
+   "end_segment": 1,
+   "in_sample": true,
+   "stratum": "kodashim",
+   "simon_pre_read": "no",
+   "jeff": "not",
+   "rule": "R-C0",
+   "his_words": "Not a story. The narrative elements appear within the give and take of the legal discussion to work out the law. They are hypothetical or possible answers, not events."
+  },
+  {
+   "key": "Pesachim 66b_4-4",
+   "item": 2,
+   "ref": "Pesachim 66b",
+   "start_segment": 4,
+   "end_segment": 4,
+   "in_sample": true,
+   "stratum": "halakhic",
+   "simon_pre_read": "no",
+   "jeff": "not",
+   "rule": "R-B4",
+   "his_words": "Not a story. Similar to the last case. This is the Talmud discussing a story that appeared previously and trying to make sense of it. But it is a legal discussion."
+  },
+  {
+   "key": "Chullin 46a_8-8",
+   "item": 3,
+   "ref": "Chullin 46a",
+   "start_segment": 8,
+   "end_segment": 8,
+   "in_sample": true,
+   "stratum": "kodashim",
+   "simon_pre_read": "borderline",
+   "jeff": "borderline",
+   "rule": "R-C7",
+   "his_words": "Borderline. Agreed. There are two events the dialogue is not really connected to the events. So a borderline case."
+  },
+  {
+   "key": "Chullin 57b_6-7",
+   "item": 4,
+   "ref": "Chullin 57b",
+   "start_segment": 6,
+   "end_segment": 7,
+   "in_sample": true,
+   "stratum": "kodashim",
+   "simon_pre_read": "borderline",
+   "jeff": "borderline",
+   "rule": "R-C7",
+   "his_words": "Borderline. There is some change, the hen lives, but there is hardly drama or development or real change. Some would count it a minimal story: you have a protagonist, two events (the splinting, the hen living) and change. If the choice were story or not, I would say story. But if we have the option for borderline story, I think it is borderline"
+  },
+  {
+   "key": "Niddah 7b_4-5",
+   "item": 5,
+   "ref": "Niddah 7b",
+   "start_segment": 4,
+   "end_segment": 5,
+   "in_sample": true,
+   "stratum": "kodashim",
+   "simon_pre_read": "borderline",
+   "jeff": "borderline",
+   "rule": "R-C7",
+   "his_words": "Borderline. I agree with your classification. The return of the practice could be a literary ruling, not a real event. Even if it is, there is not much drama or development."
+  },
+  {
+   "key": "Shabbat 147a_6-6",
+   "item": 6,
+   "ref": "Shabbat 147a",
+   "start_segment": 6,
+   "end_segment": 6,
+   "in_sample": true,
+   "stratum": "halakhic",
+   "simon_pre_read": "borderline",
+   "jeff": "not",
+   "rule": "R-C2",
+   "his_words": "Not a story. This is a legal ruling, a question and answer. It start with the setting, that Ulla visited Asi bar Hini. But that is not enough for a story."
+  },
+  {
+   "key": "Berakhot 54a_15-None",
+   "item": 7,
+   "ref": "Berakhot 54a",
+   "start_segment": 15,
+   "end_segment": null,
+   "in_sample": false,
+   "stratum": null,
+   "simon_pre_read": null,
+   "jeff": "out_of_scope",
+   "rule": "R-S1",
+   "his_words": "Not a story for our database. This is a story based on the biblical events, an exegetical narrative. We are collecting sage-stories of post biblical times.",
+   "note": "the two lepers Et and Hev (\"Vahev in Sufa\"); starts at the bottom of 54a, the site has only the 54b part (berakhot-54b-0-0, a sample story Simon graded yes). End segment not stated by him"
+  },
+  {
+   "key": "Sanhedrin 52b_4-4",
+   "item": 8,
+   "ref": "Sanhedrin 52b",
+   "start_segment": 4,
+   "end_segment": 4,
+   "in_sample": false,
+   "stratum": null,
+   "simon_pre_read": null,
+   "jeff": "story",
+   "rule": "R-C1",
+   "his_words": "Story. But this story basically appears in the Mishnah (Sanhedrin 7:2) in slightly different form. Here it is indeed presented as a baraita. I think it could be included. (The Talmud follows by saying it was a separate incident (than the Mishnah) but scholars would consider them two versions of one source. In any case, I would include it.",
+   "note": "v14 run 1 found it at LOW_CONFIDENCE, so the definite-only site filter held it back"
+  }
+ ],
+ "sample_precision": {
+  "n": 60,
+  "story": 53,
+  "out_of_scope": 1,
+  "borderline": 3,
+  "not": 3,
+  "story_for_the_site": 54,
+  "graded_by_jeff": 7,
+  "graded_by_simon_only": 53,
+  "by_stratum": {
+   "aggadic": {
+    "story": 19,
+    "out_of_scope": 1
+   },
+   "halakhic": {
+    "story": 18,
+    "not": 2
+   },
+   "kodashim": {
+    "story": 16,
+    "not": 1,
+    "borderline": 3
+   }
+  },
+  "evidence": "MIXED: 7 of the 60 carry Jeff's verdict (measured: the 6 non-yes he was sent, and Berakhot 54b:0, covered by his ruling on the lepers passage); the other 53 are Simon's pre-read yes (the project owner, indicated), never shown to Jeff. So the not-a-story count is a measured lower bound, and the story count an indicated upper bound."
+ }
+}

@@ -10,3 +10,4 @@ olefile>=0.47          # scripts/parse_kiddushin_list.py reads the .doc OLE stre
 # extra_body because 0.75.0 predates the typed parameter; a newer SDK should be checked.
 anthropic==0.75.0
 python-dotenv>=1.0.0
+jsonschema>=4.18.0     # tests/test_site_data.py validates site/data against site/data/schema/story.schema.json (draft 2020-12, `referencing`)

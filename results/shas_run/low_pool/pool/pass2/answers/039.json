@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Abaye's boast is followed by a sage's halakhic question and his answer; ordinary scholarly question and answer with no event beyond speech."},
+"02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A setting (R. Elazar's arrival) framing a question and answer about who taught Rav; no conflict and no event beyond the exchange."},
+"03": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report that the tanna'im were asked and taught two versions; no narrated incident."},
+"04": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Shmuel HaKatan decrees a fast, rain falls after sunset, the people misread it and he corrects them: events with a change and a response."},
+"05": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of two elders' practices and their reasons; nothing happens and nothing follows."},
+"06": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Ulla's lodging only frames Rava's challenge and Ulla's answer; standard scholarly question and answer."},
+"07": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3, 4, 5], "reason": "Mainly a legal debate between students, but Rav Idi bar Avin wakes from dozing and intervenes, calling them children; a small real event within speech."},
+"08": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "An exegetical narrative of David and Hushai built on the biblical text; biblical characters, not post-biblical sages."},
+"09": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Sages rebuke Rabbi Akiva's exegesis; ordinary scholarly back-and-forth without events."},
+"10": {"verdict": "borderline", "rules": ["R-C6"], "segments": [2], "reason": "Within a list of testimonies, an incident (a rooster stoned in Jerusalem for killing a person) is only alluded to as evidence."},
+"11": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A bare eyewitness report of Rabbi hanging his phylacteries, cited as evidence and then discussed."},
+"12": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav Hiyya bar Ashi's habitual practice cited as halakhic evidence; nothing follows."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An elder's statement about how R. Yohanan introduced a topic; teaching only."},
+"14": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4], "reason": "A dialogue between Rabbi and R. Natan with conflict, followed by Rabbi's admission of youthful insolence and retraction; mainly speech with implied change."},
+"15": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question asked in a cemetery and the halakhic answer; setting plus question and answer."},
+"16": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A planter's claim brought before a rabbi and the ensuing ruling and debate; coming before the rabbi is the only event, with no further narrated change."},
+"17": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "Rava, confronted with Ravin's letter, appoints an amora and publicly retracts his teaching; mainly speech but with an action and change."},
+"18": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Alexa dies in Lod, all Israel gathers to eulogize him, and R. Tarfon prevents them: several events with a response, though cited as a legal difficulty."},
+"19": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question put to R. Yohanan in Sidon and his answer; question and answer only."},
+"20": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rabbi reports a word usage he heard while travelling, cited for exegesis; no incident."}
+}

@@ -3,30 +3,30 @@
   "eruvin": {
    "held_out": true,
    "counts": {
-    "listed": 74,
-    "survived_triage": 72,
-    "proposed_run1": 67,
-    "proposed_run2": 67,
-    "proposed_either": 68,
-    "story_run1": 64,
-    "story_run2": 64,
-    "definite_run1": 50,
-    "definite_run2": 51,
-    "definite_both": 49,
-    "on_site": 49
+    "listed": 55,
+    "survived_triage": 55,
+    "proposed_run1": 55,
+    "proposed_run2": 54,
+    "proposed_either": 55,
+    "story_run1": 53,
+    "story_run2": 52,
+    "definite_run1": 44,
+    "definite_run2": 44,
+    "definite_both": 43,
+    "on_site": 43
    },
    "harness": [
     [
-     "RECALL vs expert list: 67/74 = 90.5%  (unlocated in text: 0)",
-     "TRIAGE recall: 72/74 = 97.3%  while examining 109/207 pages (53%); 2 lost outright",
-     "DETECTION recall given the page survived triage: 67/72 = 93.1%",
-     "CAUSE of the 7 misses: 2 triage discarded the page, 5 page examined and nothing proposed in range"
+     "RECALL vs expert list: 55/55 = 100.0%  (unlocated in text: 0)",
+     "TRIAGE recall: 55/55 = 100.0%  while examining 109/207 pages (53%); 0 lost outright",
+     "DETECTION recall given the page survived triage: 55/55 = 100.0%",
+     "CAUSE of the 0 misses: 0 triage discarded the page, 0 page examined and nothing proposed in range"
     ],
     [
-     "RECALL vs expert list: 67/74 = 90.5%  (unlocated in text: 0)",
-     "TRIAGE recall: 72/74 = 97.3%  while examining 109/207 pages (53%); 2 lost outright",
-     "DETECTION recall given the page survived triage: 67/72 = 93.1%",
-     "CAUSE of the 7 misses: 2 triage discarded the page, 5 page examined and nothing proposed in range"
+     "RECALL vs expert list: 54/55 = 98.2%  (unlocated in text: 0)",
+     "TRIAGE recall: 55/55 = 100.0%  while examining 109/207 pages (53%); 0 lost outright",
+     "DETECTION recall given the page survived triage: 54/55 = 98.2%",
+     "CAUSE of the 1 misses: 0 triage discarded the page, 1 page examined and nothing proposed in range"
     ]
    ],
    "not_on_site": [
@@ -34,36 +34,6 @@
      "ref": "Eruvin 11b",
      "why": "proposed as a story, below YES/HIGH in at least one run",
      "text": "הלך רבי יהושע אצל רבי יוחנן בן נורי ללמוד תורה, אף על פי שבקי בהלכות כלאים, ומצאו שיושב בי"
-    },
-    {
-     "ref": "Eruvin 13b",
-     "why": "not proposed in either run",
-     "text": "מעשה שהלכו זקני בית שמאי וזקני בית הלל לבקר את רבי יוחנן בן החורנית, ומצאוהו יושב ראשו ורו"
-    },
-    {
-     "ref": "Eruvin 14b",
-     "why": "triage discarded the page",
-     "text": "אמר רב יהודה בריה דרב שמואל [בר שילת] משמיה דרב: אין הלכה כרבי יוסי לא בהילמי ולא בלחיין. "
-    },
-    {
-     "ref": "Eruvin 24a",
-     "why": "proposed as a story, below YES/HIGH in at least one run",
-     "text": "מר יהודה אקלע לבי רב הונא בר יהודה: חזנהו להנהו דלא עבידי אצטבלאות, וקא מטלטלי בגוייהו. אמ"
-    },
-    {
-     "ref": "Eruvin 24a",
-     "why": "proposed, but NOT_A_STORY in both runs",
-     "text": "בעי חזקיה: ניקב כמוציא זית וסתמו, וחזר וניקב כמוציא זית וסתמו עד שהשלימו למוציא רמון מהו? "
-    },
-    {
-     "ref": "Eruvin 32b",
-     "why": "triage discarded the page",
-     "text": "יתיב רבי חייא בר אבא ורבי אסי ורבא בר נתן, ויתיב רב נחמן גבייהו, ויתבי וקאמרי: האי אילן דק"
-    },
-    {
-     "ref": "Eruvin 37b",
-     "why": "proposed as a story, below YES/HIGH in at least one run",
-     "text": "אמר ליה רבא לרב נחמן: מאן האי תנא דאפילו בדרבנן לית ליה ברירה? דתניא, אמר לחמשה: הריני מער"
     },
     {
      "ref": "Eruvin 43b",
@@ -76,29 +46,9 @@
      "text": "רבי אלעזר אומר: כל אשה שעברו עליה שלש עונות - דייה שעתה. ותניא: מעשה ועשה רבי כרבי אלעזר. "
     },
     {
-     "ref": "Eruvin 47a",
-     "why": "proposed as a story, below YES/HIGH in at least one run",
-     "text": "ר' אלעזר לא על לבי מדרשא, אשכחיה לרבי אסי דהוה קאים. אמר ליה: מאי אמור בבי מדרשא? אמר ליה,"
-    },
-    {
-     "ref": "Eruvin 53b",
-     "why": "proposed, but NOT_A_STORY in both runs",
-     "text": "בני יהודה דייקי לישנא מאי היא? דההוא בר יהודה דאמר להו: טלית יש לי למכור. אמרו ליה: מאי גו"
-    },
-    {
      "ref": "Eruvin 53b",
      "why": "proposed, but NOT_A_STORY in both runs",
      "text": "בני גליל דלא דייקי לישנא מאי היא? (דתניא) דההוא בר גלילא [דהוה קאזיל] ואמר להו: אמר למאן, "
-    },
-    {
-     "ref": "Eruvin 53b",
-     "why": "not proposed in either run",
-     "text": "רבי יוסי בר אסיין, כי הוה משתעי בלשון חכמה אמר: עשו לי שור במשפט בטור מסכן. וכד הוה שאיל ב"
-    },
-    {
-     "ref": "Eruvin 53b",
-     "why": "proposed as a story, below YES/HIGH in at least one run",
-     "text": "רבי אבהו כי הוה משתעי בלשון חכמה הוה אמר הכי: אתריגו לפחמין, ארקיעו לזהבין, ועשו לי שני מג"
     },
     {
      "ref": "Eruvin 54b",
@@ -106,19 +56,9 @@
      "text": "אמרו עליו על רבי אלעזר שהיה יושב ועוסק בתורה בשוק התחתון של ציפורי, וסדינו מוטל בשוק העליו"
     },
     {
-     "ref": "Eruvin 60a",
-     "why": "not proposed in either run",
-     "text": "רבי יצחק אמר: אפילו בית אחד וחצר אחת. חצר אחת סלקא דעתך? - אלא אימא: בית אחד בחצר אחת. אמר"
-    },
-    {
      "ref": "Eruvin 61b",
      "why": "proposed as a story, below YES/HIGH in at least one run",
      "text": "מר יהודה אשכחינהו לבני מברכתא דקא מותבי עירובייהו בבי כנישתא דבי אגובר. אמר להו: גוו ביה ט"
-    },
-    {
-     "ref": "Eruvin 63a",
-     "why": "not proposed in either run",
-     "text": "רבינא סר סכינא בבבל. אמר ליה רב אשי: מאי טעמא עבד מר הכי? - אמר ליה: והא רב המנונא אורי בח"
     },
     {
      "ref": "Eruvin 63a",
@@ -149,29 +89,22 @@
      "ref": "Eruvin 85b",
      "why": "proposed, but NOT_A_STORY in both runs",
      "text": "יתיב רב ברונא וקאמר להא שמעתא. אמר ליה רבי אליעזר בר בי רב: אמר רב הכי? אמר ליה: אין. אחוי"
-    },
-    {
-     "ref": "Eruvin 103a",
-     "why": "proposed as a story, below YES/HIGH in at least one run",
-     "text": "יתיב אביי וקאמר להא שמעתא. איתיביה רב ספרא לאביי: היה קורא בספר על האסקופה, ונתגלגל הספר מ"
     }
    ],
    "why_not_on_site": {
-    "proposed as a story, below YES/HIGH in at least one run": 15,
-    "not proposed in either run": 4,
-    "triage discarded the page": 2,
-    "proposed, but NOT_A_STORY in both runs": 4
+    "proposed as a story, below YES/HIGH in at least one run": 10,
+    "proposed, but NOT_A_STORY in both runs": 2
    }
   },
   "yevamot": {
    "held_out": false,
    "counts": {
-    "listed": 100,
-    "survived_triage": 100,
-    "proposed_run1": 95,
+    "listed": 99,
+    "survived_triage": 99,
+    "proposed_run1": 94,
     "proposed_run2": 93,
-    "proposed_either": 95,
-    "story_run1": 91,
+    "proposed_either": 94,
+    "story_run1": 90,
     "story_run2": 90,
     "definite_run1": 67,
     "definite_run2": 66,
@@ -180,16 +113,16 @@
    },
    "harness": [
     [
-     "RECALL vs expert list: 95/100 = 95.0%  (unlocated in text: 0)",
-     "TRIAGE recall: 100/100 = 100.0%  while examining 106/242 pages (44%); 0 lost outright",
-     "DETECTION recall given the page survived triage: 95/100 = 95.0%",
+     "RECALL vs expert list: 94/99 = 94.9%  (unlocated in text: 0)",
+     "TRIAGE recall: 99/99 = 100.0%  while examining 106/242 pages (44%); 0 lost outright",
+     "DETECTION recall given the page survived triage: 94/99 = 94.9%",
      "CAUSE of the 5 misses: 0 triage discarded the page, 5 page examined and nothing proposed in range"
     ],
     [
-     "RECALL vs expert list: 93/100 = 93.0%  (unlocated in text: 0)",
-     "TRIAGE recall: 100/100 = 100.0%  while examining 106/242 pages (44%); 0 lost outright",
-     "DETECTION recall given the page survived triage: 93/100 = 93.0%",
-     "CAUSE of the 7 misses: 0 triage discarded the page, 7 page examined and nothing proposed in range"
+     "RECALL vs expert list: 93/99 = 93.9%  (unlocated in text: 0)",
+     "TRIAGE recall: 99/99 = 100.0%  while examining 106/242 pages (44%); 0 lost outright",
+     "DETECTION recall given the page survived triage: 93/99 = 93.9%",
+     "CAUSE of the 6 misses: 0 triage discarded the page, 6 page examined and nothing proposed in range"
     ]
    ],
    "not_on_site": [
@@ -296,11 +229,6 @@
     {
      "ref": "Yevamot 78b",
      "why": "proposed as a story, below YES/HIGH in at least one run",
-     "text": "שאלו את רבי אליעזר: ממזרת לאחר עשרה דרי, מהו? אמר להם: מי יתן לי דור שלישי ואטהרנו."
-    },
-    {
-     "ref": "Yevamot 78b",
-     "why": "proposed as a story, below YES/HIGH in at least one run",
      "text": "ההוא דהוי בשבבותיה דר' אמי, אכריז עליה דממזרא, הוה בכי ואזיל, אמר ליה: חיים נתתי לך."
     },
     {
@@ -376,7 +304,7 @@
    ],
    "why_not_on_site": {
     "not proposed in either run": 4,
-    "proposed as a story, below YES/HIGH in at least one run": 27,
+    "proposed as a story, below YES/HIGH in at least one run": 26,
     "proposed, but NOT_A_STORY in both runs": 5
    }
   }
@@ -423,9 +351,9 @@
  },
  "precision_blind_lower_bound": {
   "eruvin": {
-   "shipped": 73,
-   "on_list": 50,
-   "lower_bound": 0.685,
+   "shipped": 67,
+   "on_list": 44,
+   "lower_bound": 0.657,
    "unlisted_ids": [
     "eruvin-7a-9-9",
     "eruvin-8a-5-5",
@@ -456,13 +384,13 @@
     "yes": 9,
     "no": 7
    },
-   "estimate_yes": 0.808,
-   "estimate_yes_or_borderline": 0.904
+   "estimate_yes": 0.791,
+   "estimate_yes_or_borderline": 0.896
   },
   "yevamot": {
-   "shipped": 85,
+   "shipped": 82,
    "on_list": 60,
-   "lower_bound": 0.706,
+   "lower_bound": 0.732,
    "unlisted_ids": [
     "yevamot-15a-15-15",
     "yevamot-15a-16-16",
@@ -471,12 +399,9 @@
     "yevamot-42b-8-8",
     "yevamot-46b-13-13",
     "yevamot-47a-7-7",
-    "yevamot-49b-6-7",
     "yevamot-66a-1-1",
-    "yevamot-76b-10-16",
     "yevamot-77b-8-9",
     "yevamot-78a-12-12",
-    "yevamot-78b-13-20",
     "yevamot-95a-7-7",
     "yevamot-98a-3-3",
     "yevamot-99b-9-10",
@@ -491,11 +416,11 @@
     "yevamot-120b-7-7"
    ],
    "unlisted_graded": {
-    "yes": 15,
-    "borderline": 9,
+    "yes": 13,
+    "borderline": 8,
     "no": 1
    },
-   "estimate_yes": 0.882,
+   "estimate_yes": 0.89,
    "estimate_yes_or_borderline": 0.988
   }
  },

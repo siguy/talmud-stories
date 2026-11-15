@@ -1,7 +1,7 @@
 # The Septimus story filter — what reaches the family site
 
 **Owner:** Simon. **Code:** `scripts/build_site_data.py` (the only place it is applied).
-**Guards:** `tests/test_site_data.py`. **Lesson:** L-045.
+**Decisions:** `results/shas_run/septimus_site_decisions.json`. **Guards:** `tests/test_site_data.py`. **Lesson:** L-045.
 
 ## The rule in one line
 
@@ -38,15 +38,79 @@ kept there; it is just not shown to families.
 - it is **not** a passage the Gemini judge calls `out_of_scope` and the Claude judge calls `not` — not a story
   at all (Simon, 2026-11-10).
 
-**Biblical stories ship** (Simon, 2026-11-10: fine for the site "as long as they are classified as stories outside
-of the fact they have biblical figure"; flag them and exclude them for Jeff's scholarly project). A story is
-flagged `biblical: true` when both judges call it `out_of_scope` (or Claude alone, under
-`results/shas_run/decisions.json`), when it is hand-flagged there, or when Stage 4j demoted it for biblical-only
-actors. For a 4j demotion the site reads the grade **from before** that filter
-(`classification_pre_biblical_filter`). This removes a filter rather than letting a gate promote: the both-runs
-rule still applies to that grade. Jeff's catalogue excludes every flagged story.
-
 Shown with `reviewed: false` and the page's "not yet checked by a scholar" notice.
+
+**Biblical stories are out of scope** (Simon, 2026-11-13: *"I think it makes sense to remove biblical stories so
+we keep it consistent. I want to find them, but we now exclude from septimus stories and jeff's scholarly work
+(unless someone filters for them)."*). This reverses his 2026-11-10 choice to ship them. Why: on 2026-11-12 Jeff
+ruled the Berakhot 54a-b lepers (Et and Hev) out of scope, *"an exegetical narrative. We are collecting
+sage-stories of post biblical times"* (R-S1). Shipping on the site what the catalogue excludes would make the two
+disagree about what a story is; one scope for both is simpler to explain and to keep.
+
+They are still **found and flagged**. A story is `biblical: true` when both judges call it `out_of_scope` (or Claude
+alone, under `results/shas_run/decisions.json`), when it is hand-flagged there, or when Stage 4j demoted it for
+biblical-only actors (the site reads its grade from before that filter, `classification_pre_biblical_filter`, so a
+flagged story is one that would otherwise have shipped). A flagged story goes to the tractate file's
+**`out_of_scope`** list with `out_of_scope_reason`, never to `stories`. The page reads only `stories`; a later
+filter can surface the rest. The policy is data: `biblical.ships` in `results/shas_run/septimus_site_decisions.json`.
+
+## Per-passage decisions
+
+`results/shas_run/septimus_site_decisions.json`, each entry with `decided_by`, `source` and the expert verdict.
+Matched by span **overlap** against the build's own cells (Lesson 36); the build names every decision and the story
+it matched on stderr, and names one that matched nothing.
+
+- **`remove`** — Jeff ruled `not` or `borderline` on a passage the filter shipped (2026-11-12; Simon 2026-11-13:
+  definite only). Twelve: Arakhin 23b:0-1, Pesachim 66b:4, Shabbat 147a:6 (not); Chullin 46a:8, Chullin 57b:6-7,
+  Niddah 7b:4-5 (borderline); Eruvin 41a:1, 51a:2-3, 53b:8, 59b:9-11, 67b:15-18, 68a:10-11 (not, from his
+  review of the 2005 list).
+- **`include`** — an expert `story` verdict plus Simon's yes on a passage the filter held back. **The only way past
+  the definite-only rule, one named passage at a time, never a rule.** One: Sanhedrin 52b:4 (R. Elazar son of
+  R. Tzadok on his father's shoulders), LOW in both runs; Jeff 2026-11-12 *"I would include it"*, Simon 2026-11-13
+  *"Include this"*. On the site it reads as a regular story of its tractate (Simon 2026-11-13, *"just count it as a
+  regular story"*): no badge, no `reviewed`, no provenance field. Who decided lives in the decisions file only.
+
+## Promoted by rule: the low-pool grader (Simon, 2026-11-14)
+
+**The first sanctioned promotion path, and an owner decision, not a quiet rule change.** Simon, 2026-11-14: *"Im
+looking through these stories and they seem to mostly be stories so far. I didnt review all of them, but I suggest we
+add them at this point."*
+
+- **What ships:** every passage in `results/shas_run/low_pool/pool/promotions.json`, the 1,259-unit pool of detector
+  proposals below the definite bar (LOW in at least one run), graded twice by Claude Code subagents on the judge prompt
+  `src/prompts/judge_register_v2.md` (sha `88e8fff62716`), where **both passes said `story`**. 80 passages, 80 shipped.
+- **Evidence:** calibrated against Jeff on 300 spans he ruled, both-passes-story is 32/33 = 0.97 precision (Wilson 95%
+  0.85–1.00), recall 32/141 (`docs/findings/2026-11-13-low-pool-grader-calibration.md`). Most of that set is
+  CIRCULAR; the BLIND slice is 6/6, too small to stand alone.
+- **The review bar was not met:** the plan was that Simon reads a seeded random 60 and nothing ships under 54 yes. He
+  read part of the sample informally and approved; his per-passage verdicts were not exported, so there is no count
+  against the bar. The decisions file records it as `review_bar.completed: false`.
+- **Recorded as a rule over a file**, `promote` in `septimus_site_decisions.json`: who, when, his words, the rule, the
+  prompt sha, the source file, the count and the 80 ids. The build **refuses** if the file's ids, count or prompt sha
+  stop matching the record, so a regraded pool cannot ship without a new decision.
+- **Provenance on the card:** each carries `included_by: "low-pool-grader-2026-11-13"` (unlike the Sanhedrin 52b:4
+  `include`, which reads as a regular story). Filtering or removing the batch is one step: drop the rule.
+- **Bounds:** the pool unit's cells, which is the detector span the grade refers to (identical in both runs for 76 of
+  80; for the other 4, the span of the run that proposed the wider or the only one). Not the grader's chosen segments:
+  every other site story is bounded by a detector span, and the grader's picks are numbered within a context window and
+  sometimes skip a segment.
+- **Summary:** the detector's reader-facing summary of the same passage (identical cells), run 1 then run 2, else none.
+  Never the grader's `reason`. All 80 have one.
+- **Classification shown:** the detector's best grade across the two runs (the pool is LOW in at least one).
+- **Still narrowed by everything else:** a promotion is dropped, and named on stderr, when it overlaps a story already
+  built (shipped or `out_of_scope`), a `remove` decision, a biblical or judge-drop cell, a Stage 4j biblical span or a
+  withheld Mishnah story. None was on 2026-11-14. A promotion naming a reviewed tractate stops the build.
+- **Model-graded, not expert-labelled.** These never enter a golden, ruler, expert list or recall/precision ruler.
+  Site-reading measurements (`measure_site_misses.py`, `measure_shas_accuracy.py`) read `site/data/`, so they now count
+  the promoted stories as on the site; filter on `included_by` to compare with earlier figures.
+
+## The card's summary
+
+A card shows the story's `one_sentence_summary` only when it is written for a reader. Two kinds are pipeline text and
+never shown: `[Restored from ... merge]` placeholders, and every **twin-pass** addition's, which v14 fills with the twin
+judge's `reason` (*"Passage B describes a distinct historical incident ..."*). For those the card takes the summary of
+the **same passage** (identical cells) in the other run; failing that it shows no summary line. Never invented.
+`tests/test_site_data.py::test_no_card_summary_is_pipeline_reasoning` guards it.
 
 **Why the detector's own grade, and not the judges** (Simon, 2026-11-09). Where Jeff reviewed
 the detector's YES/HIGH calls, 141 of 155 were his yes (91%), 8 borderline, 6 no — the rules
@@ -59,21 +123,26 @@ the scholarly work, where a disagreement is a question worth asking.
 ## What never ships
 
 - `BORDERLINE` — Jeff's own maybes (Simon, 2026-10-15)
-- `LOW_CONFIDENCE` — the detector's maybes (Simon, 2026-10-12)
+- `LOW_CONFIDENCE` — the detector's maybes (Simon, 2026-10-12) — unless the `promote` rule names it (Simon, 2026-11-14)
 - `NOT_A_STORY`
 - `mishnah_stories[]` — withheld by Stage 4g, never shown to Jeff
 - a golden story Jeff never answered
-- an unreviewed story the detector grades below YES/HIGH in any run
+- an unreviewed story the detector grades below YES/HIGH in any run, unless the `promote` rule names it
 - a passage Gemini calls `out_of_scope` and Claude calls `not` (not a story at all)
+- a story flagged `biblical` (kept in `out_of_scope`, Simon 2026-11-13)
+- a passage in `remove` of the site decisions file
 - the same span proposed twice ships once (counted and named on stderr)
 
 ## The one principle behind every line
 
-**A later gate may narrow what ships, never promote what an earlier one held back** (L-045).
+**A later gate may narrow what ships, never promote what an earlier one held back** (L-045) — **except by an owner
+decision recorded in the decisions file.** There are two: the per-passage `include` (Sanhedrin 52b:4) and, since
+2026-11-14, the `promote` rule above. Neither is a code change; each names who, when and the evidence.
 Each check is an AND. The judges cannot rescue a LOW; a golden YES cannot rescue a passage Jeff
 never answered; one run cannot outvote another. Combining signals for the
 site means taking their intersection. Anything that would *widen* what ships is a decision
-for Simon, not a code change.
+for Simon, not a code change — and when he makes one, it is an `include` entry naming the passage, or a `promote`
+rule naming the graded file, its prompt sha and its ids, with who and when.
 
 ## Adding a tractate
 
@@ -104,3 +173,27 @@ definite answer.
   including those Stage 4j demoted. The one judge narrowing becomes Gemini-biblical plus
   Claude-not-a-story (5 passages across Shas, per `docs/findings/2026-11-10-shas-accuracy.md`). The site
   went from 1,803 to 1,897 stories, 102 of them flagged.
+- 2026-11-13 — Simon: biblical stories out of scope for the site too, reversing 2026-11-10, after Jeff ruled the
+  Berakhot lepers out of scope (R-S1). All 102 flagged stories move to each file's `out_of_scope` list. Jeff's
+  2026-11-12 verdicts applied as data (`septimus_site_decisions.json`): 12 passages removed (6 from the precision
+  sample, 6 Eruvin), Sanhedrin 52b:4 included. The site went from 1,897 to 1,784 stories.
+- 2026-11-13, later — Simon: card text leak fixed. 76 shipped twin-pass cards showed the twin judge's reasoning as their
+  summary; none had a reader-facing summary of the same passage in the other run, so all 76 now show none (85 cards
+  with no summary in all, the other 9 Ketubot golden placeholders as before). Sanhedrin 52b:4 now reads as a regular story (`reviewed` and
+  `included_by` gone from the site data). Story count unchanged at 1,784.
+- 2026-11-14 — Simon: the 80 low-pool passages both Claude grader passes call `story` ship, as the `promote` rule, each
+  with `included_by: "low-pool-grader-2026-11-13"` (the first sanctioned promotion path; the 54/60 review bar was waived,
+  read in part). 0 dropped. The site went from 1,784 to 1,864 stories across 25 tractates; `out_of_scope` unchanged at 102.
+- 2026-11-14, later — Simon: "just remove them if you are sure." 17 twin-pass cards from unreviewed tractates, marked
+  SURE_REMOVE by a rules triage against `STORY_RULES.md` (no Jeff verdict), added to `remove` with rule and reason per
+  card. The site went from 1,864 to 1,847; `out_of_scope` unchanged at 102. Run agreement is weak evidence for a twin
+  card; the other twin-pass cards are unreviewed (`docs/findings/2026-11-14-twin-pass-site-cards.md`).
+- 2026-11-14, second twin-pass pass — Simon: "just remove them if you are sure"; "if they're stories, which they seem
+  to be, keep them." 33 more cards in `remove` (32 SURE_REMOVE, plus chagigah-13a-10-10, a one-line allusion whose full
+  story ships as chagigah-13a-12-12); their ids are `retired`, except bava_batra-30b-5-5, which lies inside the
+  shipped bava_batra-30b-5-7 and so `redirect`s to it (its entry is `exact: true`: it removes only the card with exactly
+  its span). Two new decision lists: `merge` (three cards absorbed into their neighbours: megillah-29a-4-4 into
+  megillah-29a-5-5, sanhedrin-11a-8-8 into sanhedrin-11a-7-7, sanhedrin-104a-7-7 into sanhedrin-104a-8-8; the absorbed
+  ids redirect) and `keep` (four cards Simon kept; a `remove` overlapping one is refused). rosh_hashanah-25a-11-11 shown
+  extended to 25a:11-13 (`boundary_extensions.json`). The site went from 1,847 to 1,811 (−33 removed, −3 absorbed);
+  `out_of_scope` unchanged at 102.
