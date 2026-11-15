@@ -140,9 +140,8 @@ counts use Jeff's lists *after* his later `not` rulings are taken out of the den
 
 ## 4. Measured but not shipped
 
-- **The narrate test** is on the **unmerged branch `claude/narrate-test-a16cdf`**. Its
-  finding is `docs/findings/2026-11-14-narrate-test.md` on that branch; the work item is
-  still open on main. The question: does asking a model to *narrate* a passage tell a story
+- **The narrate test** is recorded on main (closed 2026-11-15):
+  [finding](docs/findings/2026-11-14-narrate-test.md). The question: does asking a model to *narrate* a passage tell a story
   from a non-story, and find where it ends? Measured, two passes each:
   - **A narrator without the rules** finds more of Jeff's stories but is too loose:
     precision 0.80–0.81, recall 0.57–0.65 of his 141 yes. The model was not the cause (Opus
@@ -267,14 +266,10 @@ counts use Jeff's lists *after* his later `not` rulings are taken out of the den
 - A "why it matters" enrichment pilot. No work item exists yet.
 
 **Decisions for Simon:** Option 0 and Rule A (§4); whether to run the narrate hybrid on the
-pool and merge `claude/narrate-test-a16cdf`; whether to build the v15 biblical filter.
+pool; whether to build the v15 biblical filter.
 
 **Work items** ([`work/`](work/); check `python3 scripts/board.py lanes` before running two
 at once):
-- **Done but not closed (bookkeeping):** `2026-11-08-shas-finder-run`,
-  `2026-11-13-low-pool-grader-calibration`, `2026-11-07-pre-eruvin-run-fixes` (fixed by PRs
-  #69–#71) and `2026-11-14-narrate-test` (finished on its branch). Each needs an
-  `## Outcome` and `board.py finish`.
 - **Open, Septimus:** `2026-11-08-septimus-signup`, `2026-10-12-septimus-story-viewer`.
 - **Open, catalogue:** `2026-09-28-consensus-2-yevamot-round`,
   `2026-10-02-jeff-feature-questions`, `2026-10-09-judge-answer-categories`,
