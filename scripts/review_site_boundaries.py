@@ -8,7 +8,7 @@
     python3 scripts/build_site_data.py
 
 Simon's rules: the site does not need the legal argument around a story, so a story may be TRIMMED to the narrative;
-a story cut off may be EXTENDED (at most 2 segments back, 4 forward, as before); two site cards that are really one
+a story cut off may be EXTENDED (at most 2 segments back, 6 forward); two site cards that are really one
 story are MERGED (septimus_site_decisions.json `merge`); two different stories that share a background are fine.
 
 Every change is display only: boundary_extensions.json and the merge list. Goldens, runs and story ids are untouched;
@@ -33,8 +33,8 @@ DECISIONS = ROOT / "results" / "shas_run" / "septimus_site_decisions.json"
 FLAGS = ROOT / "results" / "site_notes" / "passage_flags.json"
 WORK = ROOT / "results" / "site_notes" / "boundaries"
 CONTEXT = 5
-MAX_BACK, MAX_FWD = 2, 4
-MAX_GAP = 2   # segments a merge may bridge between two halves
+MAX_BACK, MAX_FWD = 2, 6
+MAX_GAP = 4   # segments a merge may bridge between two halves
 log = logging.getLogger("review-site-boundaries")
 
 PROMPT = """You are fixing where stories start and end on a family website for reading the stories of the Babylonian
@@ -50,7 +50,7 @@ Decide ONE of:
 - "keep": the STORY segments are right as they are (or two different stories sharing one background, which is fine).
 - "adjust": give new first and last segment numbers. You may DROP segments of legal argument at either end, and you
   may ADD segments to finish a story that is cut off -- at most 2 segments before the current first STORY segment and
-  at most 4 after the current last one. Never include a segment that belongs to another site story.
+  at most 6 after the current last one. Never include a segment that belongs to another site story.
 - "merge": this story and the adjacent site story <id> are really ONE story split in two. Only when that other story
   is directly next to this one (no segment between them), and only if they are the same events, not two stories.
 
@@ -167,15 +167,18 @@ def import_(run):
 
 
 def apply(run):
-    """Write the decisions as display extensions / trims and merge groups. Re-running replaces this run's entries."""
+    """Write the decisions as display extensions / trims and merge groups. Safe to re-run: merges already recorded
+    are kept, and a story a merge already absorbed (no longer on the site) is skipped."""
     d = WORK / run
     decisions = json.loads((d / "decisions.json").read_text())
     site = load_site()
     ext = json.loads(EXT.read_text())
     dec = json.loads(DECISIONS.read_text())
-    groups = [g for g in dec["merge"]["groups"] if g.get("source") != f"boundary review {run}"]
+    groups = dec["merge"]["groups"]
     flats, changed, refused = {}, [], []
     for sid, v in sorted(decisions.items()):
+        if sid not in site or (v["action"] == "merge" and v["merge_with"] not in site):
+            continue   # absorbed by a merge already applied
         s = site[sid]
         t = s["tractate"]
         if t not in flats:

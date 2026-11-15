@@ -10,11 +10,9 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Bava Batra 151b** (`bava_batra-151b-7-7`): The incident itself is a two-line report quoted as an objection; the rest is legal back-and-forth.
 - **Bava Batra 30b** (`bava_batra-30b-5-7`): The STORY combines two separate land cases (segment 4 and segments 5-6) that are not one narrative.
 - **Bava Batra 32b** (`bava_batra-32b-2-2`): The man whispers to Rava but Rabba answers; in the matching case just before it is Rabba throughout, so the name may be a scribal variant.
-- **Bava Batra 58a** (`bava_batra-58a-11-13`): Starts in the middle: the reason Rabbi Bena'a is in prison is told just before, in the preceding story.
-- **Bava Batra 58a** (`bava_batra-58a-8-10`): The story stops at Rabbi Bena'a's imprisonment; how he got out (his wife's riddle) follows straight on and may belong to the same story.
+- **Bava Batra 58a** (`bava_batra-58a-8-10`): Joins two separate Rabbi Bena'a incidents: the barrel riddle and the case of the one true son.
 - **Bava Batra 7b** (`bava_batra-7b-13-15`): Two separate incidents (the wall tax under Rabbi Yehuda Nesia, the poll tax under Rav Nahman bar Rav Hisda) are combined, and Rabbi Yohanan's explanation in the first breaks off mid-sentence.
 - **Bava Batra 82b** (`bava_batra-82b-14-15`): Two separate incidents are joined: the Tzalmon vineyard (cited by Abaye) and Rav Yehuda's ruling in the village of shepherds (cited by Rav Yosef against him).
-- **Bava Kamma 51a** (`bava_kamma-51a-0-0`): The story segment is only a legal exchange between Rav Naḥman and Rava continuing the ox case told just before it; it has no events of its own.
 - **Bava Kamma 91a** (`bava_kamma-91a-20-22`): The story segments name the mishna's incident only by its opening words with 'etc.' and are mostly the Gemara's questions about it; the events are filled in by the translation.
 - **Bava Metzia 42a** (`bava_metzia-42a-11-11`): The STORY segments stop before Rava's ruling (oaths, guardian exempt), which falls in AFTER segment 9; the boundary probably should include it.
 - **Bava Metzia 84a** (`bava_metzia-84a-11-17`): Combines two stories: Rabbi Yohanan and Reish Lakish, then the return to Rabbi Elazar, son of Rabbi Shimon, from his afflictions to his burial; each could stand alone.
@@ -34,21 +32,17 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Eruvin 43b** (`eruvin-43b-10-10`): The STORY segment is only the Gemara quoting the opening words of a mishna ('On one occasion they did not enter the port, etc.'); the events come from the translator's expansion, not from the segment's own text.
 - **Eruvin 47b** (`eruvin-47b-0-0`): Very short: only the bare report that Yosef the priest went to Tzeidan, with no further events.
 - **Eruvin 68b** (`eruvin-68b-0-3`): The STORY segments are a legal exchange with no events of their own; the incident they rest on (the spilled water and Rava's plan) is in the BEFORE segments.
-- **Gittin 14a** (`gittin-14a-18-18`): The STORY segments end with Rabbi Dostai's defense; Rabbi Aḥai's verdict ('you acted well') is in the next segment, outside the span.
 - **Gittin 56a** (`gittin-56a-14-17`): The STORY segments stop mid-scene: Vespasian's offer and Rabban Yoḥanan's request for Yavne, the outcome of the meeting, sit in the AFTER segments.
 - **Ketubot 8a** (`ketubot-8a-12-12`): Two unrelated short reports (Ravina's son's match, and Rav Tahlifa's six blessings) are joined in one story.
 - **Makkot 16b** (`makkot-16b-6-6`): The STORY is mostly a legal ruling; the incident itself is one sentence, a man who ate the creature and was flogged.
 - **Menachot 15b** (`menachot-15b-5-5`): Same vineyard incident as Menachot 15a-b (A920BB), cited again in shortened form, with "etc.", in the Gemara's alternate version of the discussion.
 - **Menachot 38a** (`menachot-38a-0-1`): The story is the second version of an incident whose first version, and the tear itself, come before the story begins, so it opens mid-scene.
-- **Moed Katan 9a** (`moed_katan-9a-19-22`): Cut mid-episode: the students' answer to their question and the son's encounter with them (the blessing) continue in AFTER and the next story.
-- **Moed Katan 9b** (`moed_katan-9b-3-4`): Starts mid-episode (the son's errand is set up in the previous story) and stops partway through the father's explanation; the last three blessings are explained in AFTER segments 6-7.
-- **Nazir 20a** (`nazir-20a-1-2`): The STORY segments are the Gemara's analysis of Rabbi Yehuda's view; the narrative of Queen Helene itself is in the mishna in segment 1 and is only quoted in part here.
+- **Moed Katan 9a** (`moed_katan-9a-19-22`): The story stops partway through Rabbi Shimon ben Yohai's explanation: the decoding of the last three blessings (house and lodging, the table, the new year) falls in the segments after it.
 - **Nedarim 66b** (`nedarim-66b-3-5`): Two separate incidents (spitting on Rabban Shimon ben Gamliel, and the search for something beautiful in Likhlukhit) are joined as one story.
 - **Nedarim 91b** (`nedarim-91b-2-4`): The STORY span joins two separate incidents (the palm-wall escape and the cress), each told as its own case.
 - **Niddah 64b** (`niddah-64b-18-18`): The story is a one-line precedent and stops mid-sentence as the Gemara starts analyzing it.
 - **Pesachim 49a** (`pesachim-49a-15-15`): Not much of a story: two brief reports of marriages and their results, with no events beyond that.
 - **Sanhedrin 52b** (`sanhedrin-52b-3-3`): The STORY segment only quotes the opening of the mishna's report, cut short with "etc.", plus Rav Yosef's one-line comment; the events themselves appear only in the translator's gloss.
-- **Sanhedrin 68a** (`sanhedrin-68a-6-6`): A remembered episode told inside the larger deathbed story of Rabbi Eliezer (code B4C826); it may duplicate part of that story.
 - **Sanhedrin 82a** (`sanhedrin-82a-4-5`): The translation identifies Rabbi Perida's grandfather as Rabbi Hiyya bar Avuya himself; worth checking.
 - **Sanhedrin 93b** (`sanhedrin-93b-7-7`): The Hebrew says 'they killed him' (the Sages); the English supplies 'the gentiles' killed him.
 - **Shabbat 104a** (`shabbat-104a-3-3`): The children's letter interpretations continue past the last STORY segment (shin and tav follow in the AFTER segments), so the story stops mid-list.
@@ -80,11 +74,9 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Bava Batra 151b** (`bava_batra-151b-7-7`): The incident itself is a two-line report quoted as an objection; the rest is legal back-and-forth.
 - **Bava Batra 30b** (`bava_batra-30b-5-7`): The STORY combines two separate land cases (segment 4 and segments 5-6) that are not one narrative.
 - **Bava Batra 32b** (`bava_batra-32b-2-2`): The man whispers to Rava but Rabba answers; in the matching case just before it is Rabba throughout, so the name may be a scribal variant.
-- **Bava Batra 58a** (`bava_batra-58a-11-13`): Starts in the middle: the reason Rabbi Bena'a is in prison is told just before, in the preceding story.
-- **Bava Batra 58a** (`bava_batra-58a-8-10`): The story stops at Rabbi Bena'a's imprisonment; how he got out (his wife's riddle) follows straight on and may belong to the same story.
+- **Bava Batra 58a** (`bava_batra-58a-8-10`): Joins two separate Rabbi Bena'a incidents: the barrel riddle and the case of the one true son.
 - **Bava Batra 7b** (`bava_batra-7b-13-15`): Two separate incidents (the wall tax under Rabbi Yehuda Nesia, the poll tax under Rav Nahman bar Rav Hisda) are combined, and Rabbi Yohanan's explanation in the first breaks off mid-sentence.
 - **Bava Batra 82b** (`bava_batra-82b-14-15`): Two separate incidents are joined: the Tzalmon vineyard (cited by Abaye) and Rav Yehuda's ruling in the village of shepherds (cited by Rav Yosef against him).
-- **Bava Kamma 51a** (`bava_kamma-51a-0-0`): The story segment is only a legal exchange between Rav Naḥman and Rava continuing the ox case told just before it; it has no events of its own.
 - **Bava Kamma 91a** (`bava_kamma-91a-20-22`): The story segments name the mishna's incident only by its opening words with 'etc.' and are mostly the Gemara's questions about it; the events are filled in by the translation.
 - **Bava Metzia 42a** (`bava_metzia-42a-11-11`): The STORY segments stop before Rava's ruling (oaths, guardian exempt), which falls in AFTER segment 9; the boundary probably should include it.
 - **Bava Metzia 84a** (`bava_metzia-84a-11-17`): Combines two stories: Rabbi Yohanan and Reish Lakish, then the return to Rabbi Elazar, son of Rabbi Shimon, from his afflictions to his burial; each could stand alone.
@@ -104,21 +96,17 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Eruvin 43b** (`eruvin-43b-10-10`): The STORY segment is only the Gemara quoting the opening words of a mishna ('On one occasion they did not enter the port, etc.'); the events come from the translator's expansion, not from the segment's own text.
 - **Eruvin 47b** (`eruvin-47b-0-0`): Very short: only the bare report that Yosef the priest went to Tzeidan, with no further events.
 - **Eruvin 68b** (`eruvin-68b-0-3`): The STORY segments are a legal exchange with no events of their own; the incident they rest on (the spilled water and Rava's plan) is in the BEFORE segments.
-- **Gittin 14a** (`gittin-14a-18-18`): The STORY segments end with Rabbi Dostai's defense; Rabbi Aḥai's verdict ('you acted well') is in the next segment, outside the span.
 - **Gittin 56a** (`gittin-56a-14-17`): The STORY segments stop mid-scene: Vespasian's offer and Rabban Yoḥanan's request for Yavne, the outcome of the meeting, sit in the AFTER segments.
 - **Ketubot 8a** (`ketubot-8a-12-12`): Two unrelated short reports (Ravina's son's match, and Rav Tahlifa's six blessings) are joined in one story.
 - **Makkot 16b** (`makkot-16b-6-6`): The STORY is mostly a legal ruling; the incident itself is one sentence, a man who ate the creature and was flogged.
 - **Menachot 15b** (`menachot-15b-5-5`): Same vineyard incident as Menachot 15a-b (A920BB), cited again in shortened form, with "etc.", in the Gemara's alternate version of the discussion.
 - **Menachot 38a** (`menachot-38a-0-1`): The story is the second version of an incident whose first version, and the tear itself, come before the story begins, so it opens mid-scene.
-- **Moed Katan 9a** (`moed_katan-9a-19-22`): Cut mid-episode: the students' answer to their question and the son's encounter with them (the blessing) continue in AFTER and the next story.
-- **Moed Katan 9b** (`moed_katan-9b-3-4`): Starts mid-episode (the son's errand is set up in the previous story) and stops partway through the father's explanation; the last three blessings are explained in AFTER segments 6-7.
-- **Nazir 20a** (`nazir-20a-1-2`): The STORY segments are the Gemara's analysis of Rabbi Yehuda's view; the narrative of Queen Helene itself is in the mishna in segment 1 and is only quoted in part here.
+- **Moed Katan 9a** (`moed_katan-9a-19-22`): The story stops partway through Rabbi Shimon ben Yohai's explanation: the decoding of the last three blessings (house and lodging, the table, the new year) falls in the segments after it.
 - **Nedarim 66b** (`nedarim-66b-3-5`): Two separate incidents (spitting on Rabban Shimon ben Gamliel, and the search for something beautiful in Likhlukhit) are joined as one story.
 - **Nedarim 91b** (`nedarim-91b-2-4`): The STORY span joins two separate incidents (the palm-wall escape and the cress), each told as its own case.
 - **Niddah 64b** (`niddah-64b-18-18`): The story is a one-line precedent and stops mid-sentence as the Gemara starts analyzing it.
 - **Pesachim 49a** (`pesachim-49a-15-15`): Not much of a story: two brief reports of marriages and their results, with no events beyond that.
 - **Sanhedrin 52b** (`sanhedrin-52b-3-3`): The STORY segment only quotes the opening of the mishna's report, cut short with "etc.", plus Rav Yosef's one-line comment; the events themselves appear only in the translator's gloss.
-- **Sanhedrin 68a** (`sanhedrin-68a-6-6`): A remembered episode told inside the larger deathbed story of Rabbi Eliezer (code B4C826); it may duplicate part of that story.
 - **Sanhedrin 82a** (`sanhedrin-82a-4-5`): The translation identifies Rabbi Perida's grandfather as Rabbi Hiyya bar Avuya himself; worth checking.
 - **Sanhedrin 93b** (`sanhedrin-93b-7-7`): The Hebrew says 'they killed him' (the Sages); the English supplies 'the gentiles' killed him.
 - **Shabbat 104a** (`shabbat-104a-3-3`): The children's letter interpretations continue past the last STORY segment (shin and tav follow in the AFTER segments), so the story stops mid-list.

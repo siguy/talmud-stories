@@ -737,6 +737,126 @@
     "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
     "simon": "just remove them if you are sure.",
     "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "bava_batra",
+    "ref": "Bava Batra 11a",
+    "start_segment": 1,
+    "end_segment": 1,
+    "exact": true,
+    "reason": "Shown twice: wholly inside bava_batra-11a-1-3, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "bava_batra-11a-1-1"
+   },
+   {
+    "tractate": "bava_batra",
+    "ref": "Bava Batra 58a",
+    "start_segment": 8,
+    "end_segment": 8,
+    "exact": true,
+    "reason": "Shown twice: wholly inside bava_batra-58a-8-10, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "bava_batra-58a-8-8"
+   },
+   {
+    "tractate": "gittin",
+    "ref": "Gittin 35a",
+    "start_segment": 10,
+    "end_segment": 10,
+    "exact": true,
+    "reason": "Shown twice: wholly inside gittin-35a-10-13, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "gittin-35a-10-10"
+   },
+   {
+    "tractate": "gittin",
+    "ref": "Gittin 38a",
+    "start_segment": 16,
+    "end_segment": 16,
+    "exact": true,
+    "reason": "Shown twice: wholly inside gittin-38a-16-17, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "gittin-38a-16-16"
+   },
+   {
+    "tractate": "nedarim",
+    "ref": "Nedarim 66b",
+    "start_segment": 3,
+    "end_segment": 3,
+    "exact": true,
+    "reason": "Shown twice: wholly inside nedarim-66b-3-5, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "nedarim-66b-3-3"
+   },
+   {
+    "tractate": "nedarim",
+    "ref": "Nedarim 91b",
+    "start_segment": 2,
+    "end_segment": 2,
+    "exact": true,
+    "reason": "Shown twice: wholly inside nedarim-91b-2-4, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "nedarim-91b-2-2"
+   },
+   {
+    "tractate": "niddah",
+    "ref": "Niddah 66a",
+    "start_segment": 11,
+    "end_segment": 11,
+    "exact": true,
+    "reason": "Shown twice: wholly inside niddah-66a-11-14, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "niddah-66a-11-11"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 68a",
+    "start_segment": 6,
+    "end_segment": 6,
+    "exact": true,
+    "reason": "Shown twice: wholly inside sanhedrin-68a-0-9, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "sanhedrin-68a-6-6"
+   },
+   {
+    "tractate": "bava_kamma",
+    "ref": "Bava Kamma 51a",
+    "start_segment": 0,
+    "end_segment": 0,
+    "exact": true,
+    "reason": "Only a legal exchange continuing bava_kamma-50b-16-17; no events of its own (boundary review 2026-11-15).",
+    "decided_by": "Simon 2026-11-15 ('remove them')",
+    "source": "boundary review bfix1",
+    "rule": "no-events",
+    "card": "bava_kamma-51a-0-0"
+   },
+   {
+    "tractate": "nazir",
+    "ref": "Nazir 20a",
+    "start_segment": 1,
+    "end_segment": 2,
+    "exact": true,
+    "reason": "Legal analysis only; Queen Helene's story is in the mishna outside the passage (boundary review 2026-11-15).",
+    "decided_by": "Simon 2026-11-15 ('remove them')",
+    "source": "boundary review bfix1",
+    "rule": "no-events",
+    "card": "nazir-20a-1-2"
    }
   ]
  },
@@ -1239,6 +1359,50 @@
     ],
     "rule": "boundary",
     "reason": "The adjacent site story opens with the women's reply about the golden bread and Alexander's lesson, the end of this same campaign narrative.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "bava_batra",
+    "keep": "bava_batra-58a-8-10",
+    "members": [
+     {
+      "ref": "Bava Batra 58a",
+      "start_segment": 8,
+      "end_segment": 10,
+      "card": "bava_batra-58a-8-10"
+     },
+     {
+      "ref": "Bava Batra 58a",
+      "start_segment": 11,
+      "end_segment": 13,
+      "card": "bava_batra-58a-11-13"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "The directly preceding site story tells how Rabbi Bena'a was imprisoned, which this story's release and judgeship continue as one narrative.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "moed_katan",
+    "keep": "moed_katan-9a-19-22",
+    "members": [
+     {
+      "ref": "Moed Katan 9a",
+      "start_segment": 19,
+      "end_segment": 22,
+      "card": "moed_katan-9a-19-22"
+     },
+     {
+      "ref": "Moed Katan 9b",
+      "start_segment": 3,
+      "end_segment": 4,
+      "card": "moed_katan-9b-3-4"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "The father's blessings and the son's encounter are one story, 4 segments apart; the reviewer asked for the halves to be joined.",
     "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
     "source": "boundary review bfix1"
    }

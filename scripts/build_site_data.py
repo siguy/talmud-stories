@@ -532,8 +532,8 @@ def build(tractate, matched=None, registry=None):
 
 
 EXT = DATA_EXT = ROOT / "site" / "data" / "boundary_extensions.json"
-MERGE_MAX_GAP = 2
-MAX_BACK, MAX_FWD = 2, 4
+MERGE_MAX_GAP = 4   # Moed Katan 9a/9b: one story 4 segments apart (Simon 2026-11-15)
+MAX_BACK, MAX_FWD = 2, 6   # forward was 4; 6 since 2026-11-15 (Gittin 14a needed 5; Simon: "make the changes you see fit")
 
 
 def apply_extensions(tractate, stories, pages, moved=()):

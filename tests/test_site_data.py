@@ -22,7 +22,10 @@ def test_site_data_counts_match_the_goldens():
         # A display merge (septimus_site_decisions.json `merge`) shows N golden stories as one card: N-1 fewer.
         merged = sum(len(grp["members"]) - 1 for grp in json.loads(
             (ROOT / "results/shas_run/septimus_site_decisions.json").read_text())["merge"]["groups"] if grp["tractate"] == t)
-        assert n - len(d["stories"]) == {"ketubot": 1}.get(t, 0) + merged, t
+        # and a card removed as a duplicate of a longer one (2026-11-15) is one fewer
+        dups = sum(1 for e in json.loads((ROOT / "results/shas_run/septimus_site_decisions.json").read_text())["remove"]["passages"]
+                   if e["tractate"] == t and e.get("rule") == "duplicate")
+        assert n - len(d["stories"]) == {"ketubot": 1}.get(t, 0) + merged + dups, t
         assert all(s["reviewed"] and not s["in_mishnah"] for s in d["stories"]), t
         assert all(g["he"] and g["en"] for s in d["stories"] for g in s["segments"])
     y = json.loads((ROOT / "site/data/yevamot.json").read_text())
@@ -72,8 +75,8 @@ def test_boundary_extensions_are_display_only_and_bounded():
     assert ext
     # an extension whose story the filter does not ship is inert, and kept
     for i, e in ((i, e) for i, e in ext.items() if i in by_id):
-        assert 0 <= e["start_back"] <= 2 and 0 <= e["end_forward"] <= 4, i
-        assert by_id[i]["extended"] and by_id[i]["extended"]["end_forward"] <= 4, i
+        assert 0 <= e["start_back"] <= 2 and 0 <= e["end_forward"] <= 6, i
+        assert by_id[i]["extended"] and by_id[i]["extended"]["end_forward"] <= 6, i
     # the golden itself is never rewritten: `span` is the source range, and every shown passage contains it
     # (ids are permanent since 2026-11-14 and no longer encode the range -- scripts/story_ids.py)
     for s in by_id.values():
@@ -95,7 +98,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 21778, "kiddushin": 11456, "gittin": 25811, "yevamot": 18627, "berakhot": 24851}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept; second twin-pass pass: yevamot -1, berakhot -2; 2026-11-15 boundary review (legal argument trimmed, cut-off stories finished, split stories merged; work/done/2026-11-15-shas-background-notes.md): ketubot -1902, kiddushin -405, gittin +662, yevamot +572, berakhot -68
+SITE_WORDS = {"ketubot": 21778, "kiddushin": 11456, "gittin": 25604, "yevamot": 18627, "berakhot": 24851}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept; second twin-pass pass: yevamot -1, berakhot -2; 2026-11-15 boundary review (legal argument trimmed, cut-off stories finished, split stories merged; work/done/2026-11-15-shas-background-notes.md): ketubot -1902, kiddushin -405, gittin +662, yevamot +572, berakhot -68; then gittin -207 (two nested duplicates removed, 14a finished)
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -228,7 +231,8 @@ def test_jeffs_not_and_borderline_passages_do_not_ship():
     _, removals, _ = b.site_decisions()
     # 12 from Jeff's 2026-11-12 verdicts; 17 + 33 twin-pass cards Simon removed 2026-11-14 on a rules triage (no Jeff
     # verdict): the second pass's 32 SURE_REMOVE and one duplicate allusion (chagigah-13a-10-10)
-    assert sum(len(v) for v in removals.values()) == 62
+    # + 10 Simon removed 2026-11-15: 8 cards shown twice (wholly inside a longer card) and 2 with no events
+    assert sum(len(v) for v in removals.values()) == 72
     site = _site()
     for t, entries in removals.items():
         for e in entries:
@@ -236,7 +240,8 @@ def test_jeffs_not_and_borderline_passages_do_not_ship():
             if "jeff" in e:
                 assert e["jeff"] in ("not", "borderline"), e
             else:
-                assert "Simon 2026-11-14" in e["decided_by"] and e["reason"] and e["card"], e
+                assert ("Simon 2026-11-14" in e["decided_by"] or "Simon 2026-11-15" in e["decided_by"]) \
+                    and e["reason"] and e["card"], e
             for s in site[t]["stories"] + site[t]["out_of_scope"]:
                 if e.get("exact"):   # only the card with exactly this span; an overlapping card may stay
                     assert {(p["ref"], i) for p in s["span"] for i in range(p["start"], p["end"] + 1)} != \
