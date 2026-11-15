@@ -4,7 +4,7 @@ capability: [publication]
 tractate: []
 blocked_by: []
 awaiting: []
-writes: [site/data/notes/, site/app.js, site/style.css, scripts/build_site_notes.py, scripts/approve_notes.py, scripts/draft_site_notes.py, src/prompts/site_note_v2.md, tests/test_site_notes.py, docs/findings/2026-10-12-septimus-note-flags.md]
+writes: [results/site_notes/, site/index.html, .gitignore, site/data/notes/, site/app.js, site/style.css, scripts/build_site_notes.py, scripts/approve_notes.py, scripts/draft_site_notes.py, src/prompts/site_note_v2.md, tests/test_site_notes.py, docs/findings/2026-10-12-septimus-note-flags.md]
 finding:
 superseded_by:
 ---
