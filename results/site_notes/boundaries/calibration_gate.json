@@ -1,0 +1,88 @@
+{
+ "circular": {
+  "measurable": 190,
+  "lost": 0,
+  "pct": 0.0,
+  "limit_pct": 2
+ },
+ "blind_yevamot": {
+  "measurable": 54,
+  "lost": 0,
+  "limit_pct": 5
+ },
+ "max_tractate_lost_pct": 0.0,
+ "C_left_alone": "207/208 = 99.5% (limit 90%)",
+ "E_merge_of_two_jeff_stories": 0,
+ "E_past_his_end": [
+  "kiddushin-12a-14-15 (+1 segment: the Sages reply to Rav Hisda in the same incident; not legal argument)"
+ ],
+ "invalid_after_retry": 0,
+ "cut_ends_sorted": "6, all fine (Sonnet sorter; reviewers Opus); lost pile empty",
+ "verdict": "GO",
+ "report": {
+  "ketubot": {
+   "measurable": 73,
+   "A_starts_kept": 73,
+   "B_ends_kept": 72,
+   "C_exact": 63,
+   "C_left_alone": 62,
+   "D_extra": 23,
+   "D_removed": 3,
+   "E_stories": 5,
+   "E_jeff_segments_before": 8,
+   "E_jeff_segments_after": 10,
+   "B_cut_fine": 1,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 98.4
+  },
+  "kiddushin": {
+   "measurable": 41,
+   "A_starts_kept": 41,
+   "B_ends_kept": 40,
+   "C_exact": 39,
+   "C_left_alone": 39,
+   "D_extra": 3,
+   "D_removed": 0,
+   "B_cut_fine": 1,
+   "E_stories": 6,
+   "E_jeff_segments_before": 10,
+   "E_jeff_segments_after": 12,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 100.0
+  },
+  "gittin": {
+   "measurable": 76,
+   "A_starts_kept": 76,
+   "B_ends_kept": 75,
+   "C_exact": 63,
+   "C_left_alone": 63,
+   "D_extra": 20,
+   "D_removed": 6,
+   "B_cut_fine": 1,
+   "E_stories": 19,
+   "E_jeff_segments_before": 48,
+   "E_jeff_segments_after": 48,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 100.0
+  },
+  "yevamot": {
+   "measurable": 54,
+   "A_starts_kept": 54,
+   "B_ends_kept": 51,
+   "B_cut_fine": 3,
+   "C_exact": 43,
+   "C_left_alone": 43,
+   "D_extra": 23,
+   "D_removed": 4,
+   "E_stories": 6,
+   "E_jeff_segments_before": 10,
+   "E_jeff_segments_after": 10,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 100.0
+  }
+ }
+}

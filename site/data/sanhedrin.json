@@ -1393,7 +1393,13 @@
    "start_segment": 25,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Drop Rava's objection from a baraita and the Gemara's conclusion that it refutes Rav Nachman (11-12), which are legal argument after the case and its alternate version.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "A woman holding a promissory note claims it has already been repaid, leading Rav Naḥman to rule on her credibility based on the fact that she could have destroyed the document.",
    "segments": [
@@ -1432,18 +1438,6 @@
      "i": 1,
      "he": "כֵּיוָן דְּאִיתַּחְזַק בְּבֵי דִינָא, ״אִיבַּעְיָא קְלָתֵיהּ״ לָא אָמְרִינַן.",
      "en": "Rav Naḥman answered him: <b>Since</b> the promissory note <b>was ratified in court, we do not say</b> that she is deemed credible to nullify its validity because <b>if she had wanted</b> to, <b>she</b> could have <b>burned it.</b> The validity of a ratified document is not nullified without evidence."
-    },
-    {
-     "ref": "Sanhedrin 31b",
-     "i": 2,
-     "he": "אֵיתִיבֵיהּ רָבָא לְרַב נַחְמָן: סִימְפּוֹן שֶׁיֵּשׁ עָלָיו עֵדִים – יִתְקַיֵּים בְּחוֹתְמָיו. אֵין עָלָיו עֵדִים, וְיָצָא מִתַּחַת יְדֵי שָׁלִישׁ, אוֹ שֶׁיָּצָא אַחַר חִיתּוּם שְׁטָרוֹת – כָּשֵׁר. אַלְמָא שָׁלִישׁ מְהֵימַן!",
-     "en": "<b>Rava raised an objection to</b> the ruling of <b>Rav Naḥman</b> from a <i>baraita</i>: <b>A receipt [<i>simfon</i>]</b> of repayment of a debt <b>upon which witnesses</b> are signed <b>is ratified by</b> means of <b>its signatories.</b> The witnesses testify that these are their signatures, and it is thereby ratified. If <b>there are no witnesses</b> signed <b>on it, but</b> the receipt <b>emerged from the possession of a third party</b> serving as a trustee, <b>or</b> if <b>it emerged after the signing of the documents,</b> i.e., the receipt was written on the promissory note beneath the content of the note and the witnesses’ signatures, it is <b>valid.</b> Rava states his objection: <b>Apparently,</b> the testimony of <b>a third party</b> serving as a trustee <b>is deemed credible,</b> as he can testify that the receipt is valid even if it was not signed by witnesses."
-    },
-    {
-     "ref": "Sanhedrin 31b",
-     "i": 3,
-     "he": "תְּיוּבְתָּא דְּרַב נַחְמָן, תְּיוּבְתָּא.",
-     "en": "The Gemara concludes: <b>The refutation of</b> the opinion of <b>Rav Naḥman is</b> indeed <b>a conclusive refutation.</b>"
     }
    ],
    "span": [
@@ -1458,8 +1452,8 @@
      "end": 3
     }
    ],
-   "words": 463,
-   "minutes": 4
+   "words": 308,
+   "minutes": 3
   },
   {
    "id": "sanhedrin-33a-7-8",
@@ -1892,7 +1886,13 @@
    "start_segment": 1,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 is Rav Yosef's legal critique of Rav Hama bar Toviyya's ruling, not part of the events; the story is the burning in segment 5.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Rav Ḥama bar Toviyya executes Imrata bat Talei, a priest's daughter, by burning her with bundles of branches after she committed adultery.",
    "segments": [
@@ -1901,12 +1901,6 @@
      "i": 1,
      "he": "אִימַּרְתָּא בַּת טָלֵי, בַּת כֹּהֵן שֶׁזִּינְּתָה הֲוַאי. אַקְּפַהּ (רַב) חָמָא בַּר טוֹבִיָּה חֲבִילֵי זְמוֹרוֹת וְשַׂרְפַהּ.",
      "en": "The Gemara relates: <b>Imrata bat Talei was a priest’s daughter who committed adultery. Rav Ḥama bar Toviyya surrounded her</b> with <b>bundles of branches and burned her.</b>"
-    },
-    {
-     "ref": "Sanhedrin 52b",
-     "i": 2,
-     "he": "אָמַר רַב יוֹסֵף: טְעָה בְּתַרְתֵּי, טְעָה בִּדְרַב מַתְנָה, וּטְעָה בִּדְתַנְיָא. ״וּבָאתָ אֶל הַכֹּהֲנִים הַלְוִיִּם וְאֶל הַשֹּׁפֵט אֲשֶׁר יִהְיֶה בַּיָּמִים הָהֵם״ – בִּזְמַן שֶׁיֵּשׁ כֹּהֵן יֵשׁ מִשְׁפָּט, בִּזְמַן שֶׁאֵין כֹּהֵן אֵין מִשְׁפָּט.",
-     "en": "<b>Rav Yosef says:</b> Rav Ḥama bar Toviyya <b>erred with regard to two</b> <i>halakhot</i>. <b>He erred with regard to</b> the ruling <b>of Rav Mattana,</b> i.e., that burning is performed using a wick of lead, <b>and he erred with regard to that which is taught</b> in a <i>baraita</i>: It is derived from the verse: <b>“And you shall come to the priests, the Levites, and to the judge that will be in those days”</b> (Deuteronomy 17:9), that <b>at a time when there is a priest</b> serving in the Temple, i.e., when the Temple is built, <b>there is judgment</b> of capital cases. By inference, <b>at a time when there is no priest, there is no judgment</b> of capital cases."
     }
    ],
    "span": [
@@ -1916,7 +1910,7 @@
      "end": 2
     }
    ],
-   "words": 143,
+   "words": 26,
    "minutes": 1
   },
   {

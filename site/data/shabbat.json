@@ -179,10 +179,20 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Shammai's threat in segment 5 answers Hillel's challenge in segment 4, so the exchange that starts the confrontation must be added."
+   },
    "reviewed": false,
    "summary": "During a heated debate between Hillel and Shammai, a sword was stuck in the study hall to force a vote, resulting in Hillel's physical submission to Shammai.",
    "segments": [
+    {
+     "ref": "Shabbat 17a",
+     "i": 4,
+     "he": "וְאִידַּךְ — הַבּוֹצֵר לַגַּת, שַׁמַּאי אוֹמֵר: הוּכְשַׁר, הִלֵּל אוֹמֵר: לֹא הוּכְשַׁר. אָמַר לוֹ הִלֵּל לְשַׁמַּאי: מִפְּנֵי מַה בּוֹצְרִין בְּטָהֳרָה וְאֵין מוֹסְקִין בְּטָהֳרָה?",
+     "en": "<b>And another</b> of those decrees is the matter of <b>one who harvests</b> grapes in order to take them <b>to the press. Shammai says: It has become susceptible, and Hillel says: It has not become susceptible. Hillel said to Shammai:</b> If so, <b>for what</b> purpose <b>do they harvest</b> grapes <b>in purity,</b> i.e., utilizing pure vessels, as in your opinion, since the grapes are susceptible to impurity by means of the juice that seeps from them, care must be taken to avoid impurity while gathering; <b>and,</b> however, <b>they do not harvest</b> olives <b>in purity?</b> According to your opinion that liquid that seeps out renders the fruit susceptible to impurity, why is there not a similar concern with regard to the liquid that seeps out of olives?"
+    },
     {
      "ref": "Shabbat 17a",
      "i": 5,
@@ -197,8 +207,8 @@
      "end": 5
     }
    ],
-   "words": 185,
-   "minutes": 2
+   "words": 309,
+   "minutes": 3
   },
   {
    "id": "shabbat-19a-10-10",
@@ -952,7 +962,13 @@
    "start_segment": 4,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 is the Gemara's analysis of Rav Yehuda's words and the baraita on eating and bathing, not part of the events.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Rabbi Zeira avoids his teacher Rav Yehuda to move to Israel, but follows him to a bathhouse where he overhears Rav Yehuda's mundane requests and derives halakhic permissions from them.",
    "segments": [
@@ -961,12 +977,6 @@
      "i": 4,
      "he": "רַבִּי זֵירָא הֲוָה קָא מִשְׁתְּמִיט מִדְּרַב יְהוּדָה, דְּבָעֵי לְמִיסַּק לְאַרְעָא דְיִשְׂרָאֵל. דְּאָמַר רַב יְהוּדָה: כׇּל הָעוֹלֶה מִבָּבֶל לְאֶרֶץ יִשְׂרָאֵל עוֹבֵר בַּעֲשֵׂה, שֶׁנֶּאֱמַר: ״בָּבֶלָה יוּבָאוּ וְשָׁמָּה יִהְיוּ״. אֲמַר: אֵיזִיל וְאֶשְׁמַע מִינֵּיהּ מִילְּתָא וְאֵיתֵי וְאֶיסַּק. אֲזַל, אַשְׁכְּחֵיהּ דְּקָאֵי בֵּי בָאנֵי וְקָאָמַר לֵיהּ לְשַׁמָּעֵיהּ: הָבִיאוּ לִי נֶתֶר, הָבִיאוּ לִי מַסְרֵק, פִּתְחוּ פּוּמַּיְיכוּ וְאַפִּיקוּ הַבְלָא, וְאִשְׁתוּ מִמַּיָּא דְּבֵי בָאנֵי. אֲמַר: אִילְמָלֵא לֹא בָּאתִי אֶלָּא לִשְׁמוֹעַ דָּבָר זֶה דַּיִּי.",
      "en": "Speaking of bathing and its <i>halakhot</i>, the Gemara relates: <b>Rabbi Zeira was avoiding</b> being seen <b>by</b> his teacher, <b>Rav Yehuda,</b> as Rabbi Zeira <b>sought to ascend to Eretz Yisrael</b> and his teacher disapproved. <b>As Rav Yehuda said: Anyone who ascends from Babylonia to Eretz Yisrael transgresses a positive commandment, as it is stated: “They shall be taken to Babylonia and there they shall remain</b> until the day that I recall them, said the Lord” (Jeremiah 27:22). Based on that verse, Rav Yehuda held that since the Babylonian exile was by divine decree, permission to leave Babylonia for Eretz Yisrael could only be granted by God. Rabbi Zeira did not want to discuss his desire to emigrate with Rav Yehuda, so that he would not be forced to explicitly disobey him. Nevertheless, <b>he said: I will go and hear something from him and then I will leave. He went and found</b> Rav Yehuda <b>standing in the bathhouse and telling his servant: Bring me natron [<i>neter</i>]</b> with which to wash, <b>bring me a comb, open your mouths and let out air, and drink from the water of the bathhouse.</b> Rabbi Zeira <b>said: If I had come only to hear this matter</b> from Rav Yehuda, <b>it would suffice for me.</b>"
-    },
-    {
-     "ref": "Shabbat 41a",
-     "i": 5,
-     "he": "בִּשְׁלָמָא ״הָבִיאוּ נֶתֶר, הָבִיאוּ מַסְרֵק״ — קָמַשְׁמַע לַן דְּבָרִים שֶׁל חוֹל מוּתָּר לְאוֹמְרָם בִּלְשׁוֹן קֹדֶשׁ. ״פִּתְחוּ פּוּמַּיְיכוּ וְאַפִּיקוּ הַבְלָא״ — נָמֵי כְּדִשְׁמוּאֵל, דְּאָמַר שְׁמוּאֵל: הַבְלָא מַפֵּיק הַבְלָא. אֶלָּא ״אִשְׁתוּ מַיָּא דְּבֵי בָאנֵי״ מַאי מְעַלְּיוּתָא? דְּתַנְיָא אָכַל וְלֹא שָׁתָה — אֲכִילָתוֹ דָּם, וְזֶהוּ תְּחִילַּת חוֹלִי מֵעַיִים. אָכַל וְלֹא הָלַךְ אַרְבַּע אַמּוֹת — אֲכִילָתוֹ מַרְקֶבֶת, וְזֶהוּ תְּחִילַּת רֵיחַ רַע. הַנִּצְרָךְ לִנְקָבָיו וְאָכַל — דּוֹמֶה לְתַנּוּר שֶׁהִסִּיקוּהוּ עַל גַּבֵּי אֶפְרוֹ, וְזֶהוּ תְּחִילַּת רֵיחַ זוּהֲמָא. רָחַץ בְּחַמִּין וְלֹא שָׁתָה מֵהֶן — דּוֹמֶה לְתַנּוּר שֶׁהִסִּיקוּהוּ מִבְּחוּץ וְלֹא הִסִּיקוּהוּ מִבִּפְנִים. רָחַץ בְּחַמִּין וְלֹא נִשְׁתַּטֵּף בְּצוֹנֵן — דּוֹמֶה לְבַרְזֶל שֶׁהִכְנִיסוּהוּ לָאוּר וְלֹא הִכְנִיסוּהוּ לְצוֹנֵן. רָחַץ וְלֹא סָךְ — דּוֹמֶה לְמַיִם עַל גַּבֵּי חָבִית.",
-     "en": "The Gemara analyzes the lessons learned from this story. <b>Granted,</b> when Rav Yehuda said: <b>Bring me natron, bring me a comb, he was teaching us</b> that <b>mundane matters are permitted to be spoken</b> in the bathhouse, even <b>in the sacred language.</b> When he said: <b>Open your mouths and let out air,</b> that <b>too</b> is <b>in accordance with that</b> which <b>Shmuel</b> said, <b>as Shmuel said: Heat produces heat.</b> The hot air that one inhales causes him to sweat more quickly. <b>However, drink the water of the bathhouse, what benefit</b> is there in doing that? The Gemara answers: <b>As it was taught</b> in a <i>baraita</i>: One who <b>ate and did not drink</b> at all, <b>what he ate</b> becomes <b>blood and that</b> causes <b>the onset of intestinal disease. One who ate and did not walk four cubits</b> after eating, <b>what he ate rots and that</b> causes <b>the onset of bad breath. One who needs to defecate and ate is similar to an oven that was lit on top of its ashes.</b> When ashes from a previous fire are not swept out, and new logs are placed on top of the old ones, it inhibits the burning and dirties the oven, and <b>that</b> causes <b>the onset of odor of</b> the <b>filth</b> of perspiration in a person. As far as our matter is concerned, the <i>baraita</i> teaches: <b>One who bathed in hot water and did not drink from it is like an oven that was lit from the outside and not lit from the inside.</b> The lighting is ineffective and the oven does not heat properly. Rav Yehuda told his servants to drink the hot water while bathing so that they would be heated from the inside and the outside. The <i>baraita</i> continues: <b>One who bathed in hot water and did not rinse</b> afterward <b>with cold water is like iron that was placed in the fire and not placed</b> afterward <b>in cold water,</b> which leaves the iron soft. And one who <b>bathed and did not smear</b> himself with oil afterward <b>is like water</b> that was poured <b>on top of a barrel,</b> and not into it. The water spills outside the barrel."
     }
    ],
    "span": [
@@ -976,8 +986,8 @@
      "end": 5
     }
    ],
-   "words": 567,
-   "minutes": 4
+   "words": 210,
+   "minutes": 2
   },
   {
    "id": "shabbat-46a-7-7",
@@ -2687,7 +2697,11 @@
    "start_segment": 10,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Abaye's challenge to Rabba about breaking the bench and Rabba's reply finish the incident."
+   },
    "reviewed": false,
    "summary": "After undergoing bloodletting, various Sages had their expensive furniture broken to provide firewood for warmth, leading to a dialogue between Abaye and Rabba about the prohibition of wasteful destruction.",
    "segments": [
@@ -2696,6 +2710,12 @@
      "i": 10,
      "he": "שְׁמוּאֵל צַלַּחוּ לֵיהּ תַּכְתָּקָא דְשָׁאגָא, רַב יְהוּדָה צַלַּחוּ לֵיהּ פָּתוּרָא דְיוֹנָה, לְרַבָּה צַלַּחוּ לֵיהּ שַׁרְשִׁיפָא.",
      "en": "The Gemara relates that after <b>Shmuel</b> underwent bloodletting, <b>they broke for him a</b> wooden <b>armchair</b> made <b>of teak [<i>shaga</i>]</b> to build a fire. Similarly, for the sake of <b>Rav Yehuda they broke</b> a wooden <b>table</b> made <b>of ebony [<i>yavna</i>], and for Rabba they broke a bench.</b> They needed to build a fire due to the potential danger to Rabba. Since they could not find firewood, they kindled the fire with the furniture."
+    },
+    {
+     "ref": "Shabbat 129a",
+     "i": 11,
+     "he": "וַאֲמַר לֵיהּ אַבָּיֵי לְרַבָּה: וְהָא קָעָבַר מָר מִשּׁוּם ״בַּל תַּשְׁחִית״! אֲמַר לֵיהּ: ״בַּל תַּשְׁחִית״ דְּגוּפַאי עֲדִיף לִי.",
+     "en": "<b>And Abaye said to Rabba:</b> In breaking the bench, <b>didn’t the Master violate</b> the prohibition, <b>“Do not destroy”</b> (Deuteronomy 20:19)? It is prohibited to destroy objects of value. Rabba <b>said to him: Do not destroy</b> also with regard to destruction <b>of my body.</b> Preventing illness and danger <b>is preferable to me.</b>"
     }
    ],
    "span": [
@@ -2705,7 +2725,7 @@
      "end": 10
     }
    ],
-   "words": 76,
+   "words": 127,
    "minutes": 1
   },
   {
@@ -2718,7 +2738,11 @@
    "start_segment": 18,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 6 reveals what really happened and Shmuel's hidden thought, the punchline of the Ablat encounter."
+   },
    "reviewed": false,
    "summary": "Ablat the scholar finds Shmuel lying in the sun and questions him, leading Shmuel to hide the medical secret of the Tammuz solstice by claiming it was merely for bloodletting recovery.",
    "segments": [
@@ -2727,6 +2751,12 @@
      "i": 18,
      "he": "אַבְלֵט אַשְׁכְּחֵיהּ לִשְׁמוּאֵל דְּגָנֵי בְּשִׁמְשָׁא. אֲמַר לֵיהּ: חַכִּימָא דִיהוּדָאֵי, בִּישָׁא מִי הָוֵי טָבָא?! אֲמַר לֵיהּ: יוֹמָא דְהַקָּזָה הוּא.",
      "en": "The Gemara relates: The gentile scholar, <b>Ablat, found Shmuel lying in the sun.</b> Ablat <b>said to</b> Shmuel: <b>Wise man of the Jews,</b> a matter that is <b>evil, can it become good?</b> Are there any circumstances in which the heat of the sun, which is harmful, can be beneficial? Shmuel <b>said to him: It</b> happens on <b>a day of bloodletting,</b> for which the heat of the sun is beneficial."
+    },
+    {
+     "ref": "Shabbat 129a",
+     "i": 19,
+     "he": "וְלָא הִיא, אֶלָּא אִיכָּא יוֹמָא דִּמְעַלֵּי בֵּהּ שִׁמְשָׁא בְּכוּלַּהּ שַׁתָּא — יוֹמָא דְּנָפְלָה בֵּיהּ תְּקוּפַת תַּמּוּז. וְסָבַר: לָא אֱיגַלֵּי לֵיהּ.",
+     "en": "The Gemara comments: <b>And</b> actually, <b>that is not</b> what occurred. <b>Rather, there is a day on which the sun is beneficial</b> more than <b>the entire year,</b> and that is <b>the day on which the Tammuz solstice,</b> the longest day of the year, occurs. <b>And Shmuel thought: I will not reveal</b> this remedy <b>to him.</b>"
     }
    ],
    "span": [
@@ -2736,7 +2766,7 @@
      "end": 18
     }
    ],
-   "words": 68,
+   "words": 122,
    "minutes": 1
   },
   {
@@ -3721,13 +3751,18 @@
    "tractate": "shabbat",
    "ref": "Shabbat 151b",
    "refs": [
-    "Shabbat 151b",
-    "Shabbat 152a"
+    "Shabbat 151b"
    ],
    "start_segment": 16,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Rabbi Hanina's refusal to cry over his daughter is complete in [5]; [6] only finishes the list of good and bad tears, which is explanation.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "When Rabbi Hanina's daughter dies, he refuses to weep, explaining to his critical wife that crying would cause him to go blind.",
    "segments": [
@@ -3736,12 +3771,6 @@
      "i": 16,
      "he": "רַבִּי חֲנִינָא שְׁכִיבָא לֵיהּ בַּרְתֵּיהּ, לָא הֲוָה קָא בָכֵי עֲלַהּ. אֲמַרָה לֵיהּ דְּבֵיתְהוּ: תַּרְנְגוֹלְתָּא אַפֵּיקְתְּ מִבֵּיתָךְ?! אֲמַר לַהּ: תַּרְתֵּי — תְּכָלָא וְעִיוְרָא. סָבַר לַהּ כִּי הָא דַּאֲמַר רַבִּי יוֹחָנָן מִשּׁוּם רַבִּי יוֹסֵי בֶּן קַצַּרְתָּה: שֵׁשׁ דְּמָעוֹת הֵן — שָׁלֹשׁ יָפוֹת, וְשָׁלֹשׁ רָעוֹת. שֶׁל עָשָׁן וְשֶׁל בְּכִי",
      "en": "The Gemara relates a story: When <b>Rabbi Ḥanina’s daughter died, he did not cry over her. His wife said to him: Have you</b> merely <b>let a chicken out of your house,</b> that you do not show any signs of sorrow? <b>He said to her:</b> If I cry, I will suffer <b>twice,</b> from <b>bereavement and</b> from <b>blindness.</b> The Gemara explains: <b>He held in accordance with the</b> statement that <b>Rabbi Yoḥanan said in the name of Rabbi Yosei ben Ketzarta: There are six</b> types of <b>tears, three</b> of which <b>are good</b> for the eyes <b>and three</b> of which <b>are bad.</b> Tears that come <b>from smoke, and from crying</b> out of sorrow,"
-    },
-    {
-     "ref": "Shabbat 152a",
-     "i": 0,
-     "he": "וְשֶׁל בֵּית הַכִּסֵּא — רָעוֹת. שֶׁל סַם וְשֶׁל שְׂחוֹק וְשֶׁל פֵּירוֹת — יָפוֹת.",
-     "en": "<b>and from</b> pain in <b>the bathroom are bad</b> for the eyes. Tears that come <b>from</b> medicinal <b>drugs, and from laughter, and from</b> sharp <b>produce are good</b> for the eyes."
     }
    ],
    "span": [
@@ -3756,7 +3785,7 @@
      "end": 0
     }
    ],
-   "words": 138,
+   "words": 109,
    "minutes": 1
   },
   {

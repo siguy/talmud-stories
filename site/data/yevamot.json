@@ -43,7 +43,13 @@
    "start_segment": 1,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The story ends with the father's instruction about the perforated barrel; segments 7-8 are the mishna on olive barrels and the Gemara's inference.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "Rabbi Elazar bar Tzadok observes his teacher, a disciple of Beit Shammai, eating a meager meal during a drought and brings a message from his father that allows the teacher to eat olives according to a specific halakhic leniency.",
    "segments": [
@@ -58,18 +64,6 @@
      "i": 2,
      "he": "בָּאתִי וְהוֹדַעְתִּי אֶת אַבָּא. אָמַר לִי: לֵךְ וֶאֱמוֹר לוֹ, חָבִית נְקוּבָה הָיְתָה אֶלָּא שֶׁסְּתָמוּהָ שְׁמָרִים. וּתְנַן: חָבִית שֶׁל זֵיתִים מְגוּלְגָּלִים, בֵּית שַׁמַּאי אוֹמְרִים: אֵין צְרִיכָה לִנָּקֵב.",
      "en": "Rabbi Elazar bar Tzadok continued his account. <b>I went and informed</b> my <b>father. He said to me: Go and say to him</b> that the <b>barrel</b> containing the olives <b>was perforated, but it was clogged by sediments</b> in the oil and therefore some moisture remained inside. However, due to the presence of the hole, the olives were not rendered susceptible to ritual impurity. <b>And we learned</b> this in a mishna: With regard to <b>a barrel of preserved olives, Beit Shammai say it does not need to be perforated,</b> as the juice issuing from the olives does not render them susceptible to ritual impurity."
-    },
-    {
-     "ref": "Yevamot 15b",
-     "i": 3,
-     "he": "וּבֵית הִלֵּל אוֹמְרִים: צְרִיכָה לִנָּקֵב. וּמוֹדִים שֶׁאִם נִיקְּבָה וּסְתָמוּהָ שְׁמָרִים — שֶׁהִיא טְהוֹרָה.",
-     "en": "<b>And Beit Hillel say</b> that <b>it does need to be perforated,</b> as they maintain that the juice of olives is considered oil and it therefore renders the olives susceptible to ritual impurity. <b>And</b> Beit Hillel <b>concede that if</b> the barrel <b>was perforated and</b> subsequently <b>clogged by sediments it is ritually pure,</b> despite the moisture on the olives. Since liquids render food susceptible to ritual impurity only if they were placed on them intentionally, the hole in the barrel clearly shows that one did not intend for the juice to be there. By boring a hole in the barrel he has rendered it obvious that he did not desire the presence of the olive juices, and therefore it does not matter that the hole became blocked."
-    },
-    {
-     "ref": "Yevamot 15b",
-     "i": 4,
-     "he": "וְאַף עַל פִּי שֶׁתַּלְמִיד שַׁמַּאי הָיָה, כׇּל מַעֲשָׂיו לֹא עָשָׂה אֶלָּא כְּדִבְרֵי בֵּית הִלֵּל. אִי אָמְרַתְּ בִּשְׁלָמָא עָשׂוּ — הַיְינוּ רְבוּתֵיהּ. אֶלָּא אִי אָמְרַתְּ לֹא עָשׂוּ — מַאי רְבוּתֵיהּ?!",
-     "en": "The <i>baraita</i> adds: <b>And although</b> Rabbi Yoḥanan the Ḥorani <b>was a disciple of Shammai, he always acted only in accordance with the statements of Beit Hillel.</b> The Gemara infers: <b>Granted, if you say</b> that Beit Shammai <b>acted</b> in accordance with their opinions, <b>this is</b> Rabbi Yoḥanan the Ḥorani’s <b>greatness,</b> i.e., he is praised for acting in accordance with the opinion of Beit Hillel. <b>However, if you say</b> that Beit Shammai <b>did not act</b> in accordance with their own rulings, <b>what is the greatness</b> and uniqueness <b>of</b> Rabbi Yoḥanan the Ḥorani? From here it can be inferred that Beit Shammai generally did act in accordance with their opinions."
     }
    ],
    "span": [
@@ -79,8 +73,8 @@
      "end": 4
     }
    ],
-   "words": 474,
-   "minutes": 4
+   "words": 242,
+   "minutes": 2
   },
   {
    "id": "yevamot-16a-2-11",
@@ -307,7 +301,13 @@
    "start_segment": 5,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The events (Rav and Rav Nahman announcing for a wife for the day) are in segment 5; segments 6-8 are the Gemara's rejection, Rava's objection and its resolution.",
+    "start_trim": 0,
+    "end_trim": 3
+   },
    "reviewed": false,
    "summary": "Rav and Rav Nachman would travel to different cities and publicly announce their desire for a temporary wife, utilizing messengers to ensure the women were ritually prepared.",
    "segments": [
@@ -316,24 +316,6 @@
      "i": 5,
      "he": "אִינִי? וְהָא רַב כִּי אִיקְּלַע לְדַרְדְּשִׁיר, [מַכְרֵיז] וְאָמַר: מַאן הָוְיָא לְיוֹמָא. וְרַב נַחְמָן כִּי אִיקְּלַע לְשַׁכְנְצִיב, [מַכְרֵיז] וְאָמַר: מַאן הָוְיָא לְיוֹמָא!",
      "en": "The Gemara asks: <b>Is that so;</b> is there really such a prohibition? <b>But didn’t Rav, when he happened</b> to come <b>to Dardeshir, make a public announcement saying: Which</b> woman <b>will be</b> my wife <b>for the day,</b> i.e., for the duration of his visit? Since his wife did not accompany him to Dardeshir, he wished to be married to another woman while he was there, in order to avoid a situation that could lead him to having forbidden thoughts. <b>And</b> also <b>Rav Naḥman, when he happened</b> to come <b>to Shakhnetziv, made a public announcement saying: Which</b> woman <b>will be</b> my wife <b>for the day?</b> It would appear, from the fact that both Sages married wives in two different places, that there is no prohibition in doing so."
-    },
-    {
-     "ref": "Yevamot 37b",
-     "i": 6,
-     "he": "שָׁאנֵי רַבָּנַן, דִּפְקִיעַ שְׁמַיְיהוּ.",
-     "en": "The Gemara rejects the proof: <b>Sages are different, as their names are renowned,</b> and therefore their children are always identified by their connection to their father. Therefore, Rabbi Eliezer ben Ya’akov’s concern does not apply to them."
-    },
-    {
-     "ref": "Yevamot 37b",
-     "i": 7,
-     "he": "וְהָאָמַר רָבָא: תְּבָעוּהָ לִינָּשֵׂא וְנִתְפַּיְּיסָה — צְרִיכָה לֵישֵׁב שִׁבְעָה נְקִיִּים?",
-     "en": "The Gemara examines Rav and Rav Naḥman’s actions: <b>But didn’t Rava say:</b> With regard to a woman <b>who had an offer of marriage and accepted,</b> the emotional excitement may have caused her to have a flow of menstrual blood, which would make her ritually impure and prohibit her from engaging in intercourse. Even if she was unaware of any flow, she must consider the possibility that it occurred. To purify herself, <b>she needs to wait seven</b> consecutive days that are <b>clean</b> from any flow of menstrual blood and then immerse in a ritual bath. Only then may she marry. If so, how could Rav and Rav Naḥman marry women on the day they arrived?"
-    },
-    {
-     "ref": "Yevamot 37b",
-     "i": 8,
-     "he": "רַבָּנַן שְׁלוּחַיְיהוּ הֲווֹ מְשַׁדְּרִי וּמוֹדְעִי לְהוּ. וְאִיבָּעֵית אֵימָא: לְרַבָּנַן, יַחוֹדֵי בְּעָלְמָא הוּא דִּמְיַיחֲדִי לְהוּ, דְּאָמַר מָר: אֵינוֹ דּוֹמֶה מִי שֶׁיֵּשׁ לוֹ פַּת בְּסַלּוֹ לְמִי שֶׁאֵין לוֹ פַּת בְּסַלּוֹ.",
-     "en": "The Gemara explains: These <b>Sages would send messengers</b> seven days ahead of their arrival and <b>they</b> would <b>inform</b> the women of the Sage’s arrival. In this way, the woman who agreed to marry the Sage would have time to count the seven clean days. <b>And if you wish, say</b> that <b>the Sages’</b> intentions <b>were merely to be in seclusion [<i>meyaḥadi</i>] with</b> the woman but not to engage in intercourse with her. Therefore, it was permitted to marry her even if she became ritually impure. Being in seclusion with a woman was sufficient to help the Sages avoid any forbidden thoughts, <b>as the Master said: One who has bread in his basket is incomparable to one who does not have bread in his basket,</b> i.e., just as the knowledge that food is readily available is sufficient to psychologically alleviate one’s feelings of hunger, so too, the knowledge that one’s sexual desires could be met lessens the strength of the desire itself."
     }
    ],
    "span": [
@@ -343,8 +325,8 @@
      "end": 8
     }
    ],
-   "words": 439,
-   "minutes": 3
+   "words": 126,
+   "minutes": 1
   },
   {
    "id": "yevamot-45a-3-3",
@@ -1628,13 +1610,18 @@
    "tractate": "yevamot",
    "ref": "Yevamot 96b",
    "refs": [
-    "Yevamot 96b",
-    "Yevamot 97a"
+    "Yevamot 96b"
    ],
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The story ends when Rabbi Yohanan is appeased and praises ben Idi in [9]; the rest of [9] through [11] is the Gemara's exegetical explanation of why he was angry, not events.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "After Rabbi Elazar fails to attribute a teaching to Rabbi Yoḥanan, the latter becomes angry and is only appeased by the clever intervention of Rabbi Ya’akov bar Idi after other colleagues failed.",
    "segments": [
@@ -1667,18 +1654,6 @@
      "i": 17,
      "he": "אָמַר לָהֶם: מִפְּנֵי מָה אִי אַתֶּם יוֹדְעִין לְפַיֵּיס כְּבֶן אִידִי חֲבֵרֵינוּ. וְרַבִּי יוֹחָנָן מַאי טַעְמָא קָפֵיד כּוּלֵּי הַאי? דְּאָמַר רַב יְהוּדָה אָמַר רַב: מַאי דִּכְתִיב: ״אָגוּרָה בְּאׇהׇלְךָ עוֹלָמִים״, וְכִי אֶפְשָׁר לוֹ לְאָדָם לָגוּר בִּשְׁנֵי עוֹלָמִים? אֶלָּא אָמַר דָּוִד לִפְנֵי הַקָּדוֹשׁ בָּרוּךְ הוּא: רִבּוֹנוֹ שֶׁל עוֹלָם, יְהִי רָצוֹן",
      "en": "Later, after calming down, <b>he said to</b> Rabbi Ami and Rabbi Asi: <b>Why don’t you know how to appease me like our colleague ben Idi?</b> The Gemara asks: <b>And Rabbi Yoḥanan, what is the reason</b> that <b>he was so angry</b> about this matter? The Gemara answers that this is <b>as Rav Yehuda said</b> that <b>Rav said: What is</b> the meaning of that <b>which is written: “I will dwell in Your tent in worlds”</b> (Psalms 61:5), literally, forever? <b>And is it possible for a person to live in two worlds</b> simultaneously? <b>Rather, David said before the Holy One, Blessed be He: Master of the Universe, let it be Your will</b>"
-    },
-    {
-     "ref": "Yevamot 97a",
-     "i": 0,
-     "he": "שֶׁיֹּאמְרוּ דְּבַר שְׁמוּעָה מִפִּי בָּעוֹלָם הַזֶּה. דְּאָמַר רַבִּי יוֹחָנָן מִשּׁוּם רַבִּי שִׁמְעוֹן בֶּן יוֹחַי: כׇּל תַּלְמִיד חָכָם שֶׁאוֹמְרִים דְּבַר שְׁמוּעָה מִפִּיו בָּעוֹלָם הַזֶּה, שִׂפְתוֹתָיו דּוֹבְבוֹת בַּקֶּבֶר. אָמַר רַבִּי יִצְחָק בֶּן זְעֵירָא, וְאִיתֵּימָא שִׁמְעוֹן נְזִירָא: מַאי קְרָאָה — ״וְחִכֵּךְ כְּיֵין הַטּוֹב הוֹלֵךְ לְדוֹדִי לְמֵישָׁרִים דּוֹבֵב שִׂפְתֵי יְשֵׁנִים״.",
-     "en": "<b>that they will say a matter of <i>halakha</i> in my name in this world</b> when I have passed on to another world. <b>As Rabbi Yoḥanan said in the name of Rabbi Shimon ben Yoḥai:</b> With regard to <b>any Torah scholar in whose name a matter of <i>halakha</i> is said in this world, his lips mouth</b> the words <b>in the grave,</b> as though he is talking. <b>Rabbi Yitzḥak ben Ze’eira said, and some say</b> this was stated by <b>Shimon the Nazirite: What is the verse</b> from which it is derived? <b>“And the roof of your mouth is like the best wine that glides down smoothly for my beloved, moving gently the lips of those who are asleep”</b> (Song of Songs 7:10)."
-    },
-    {
-     "ref": "Yevamot 97a",
-     "i": 1,
-     "he": "כְּכוֹמֶר שֶׁל עֲנָבִים: מָה כּוֹמֶר שֶׁל עֲנָבִים, כֵּיוָן שֶׁמַּנִּיחַ אָדָם אֶצְבָּעוֹ עָלָיו — מִיָּד דּוֹבֵב; אַף תַּלְמִידֵי חֲכָמִים, כֵּיוָן שֶׁאוֹמְרִים דְּבַר שְׁמוּעָה מִפִּיהֶם בָּעוֹלָם הַזֶּה — שִׂפְתוֹתֵיהֶם דּוֹבְבוֹת בַּקֶּבֶר.",
-     "en": "He explains: This is <b>like a pile [<i>komer</i>] of grapes</b> left to warm before they are pressed: <b>Just as</b> in the case of <b>a pile of grapes, when a person places his finger on it, immediately it moves,</b> as the wine bursts through and the whole pile shakes, <b>so too</b> with <b>Torah scholars: When a teaching is said in their name in this world their lips mouth</b> the words <b>in the grave.</b> For this reason Rabbi Yoḥanan wanted his Torah statements to be attributed to him, so that he would earn eternal life."
     }
    ],
    "span": [
@@ -1693,8 +1668,8 @@
      "end": 1
     }
    ],
-   "words": 742,
-   "minutes": 5
+   "words": 527,
+   "minutes": 4
   },
   {
    "id": "yevamot-98a-3-3",
@@ -2478,7 +2453,13 @@
    "start_segment": 4,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The Neresh incident and its outcome are in segment 5; segments 6-7 are the Gemara's explanations, Ravina's question and halakhic rulings.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "In the city of Neresh, a woman betrothed as a minor was snatched by another man just as she reached adulthood, leading the Sages to retroactively annul the second man's betrothal.",
    "segments": [
@@ -2487,18 +2468,6 @@
      "i": 4,
      "he": "וּמִי אָמַר רַב כִּי בְּעַל — אִין, אִי לָא בְּעַל — לָא? הָא הָהִיא עוֹבָדָא דַּהֲוָה בְּנַרֶשׁ, וְאִיקַּדִּישָׁה כְּשֶׁהִיא קְטַנָּה, וְגָדְלָה, וְאוֹתְבַיהּ אַבֵּי כוּרְסְיָיא, וַאֲתָא אַחֲרִינָא וְחַטְפַהּ מִינֵּיהּ. וְרַב בְּרוֹנָא וְרַב חֲנַנְאֵל תַּלְמִידֵי דְרַב הֲווֹ הָתָם, וְלָא אַצְרְיכוּהָ גִּיטָּא מִבָּתְרָא!",
      "en": "The Gemara asks: <b>And did Rav</b> actually <b>say</b> that <b>when he engaged in sexual intercourse with her, yes,</b> the original marriage is valid, <b>and if he did not have intercourse with her, no,</b> it is not valid? <b>Wasn’t there an incident in</b> the city of <b>Neresh where</b> a woman <b>was betrothed when she was a minor, and she reached majority, and</b> the husband <b>seated her in a bridal chair</b> under the marriage canopy and had not yet had intercourse with her, <b>and another</b> man <b>came and seized her from him</b> and married her? <b>And Rav Bruna and Rav Ḥananel, the students of Rav, were there and they did not require her</b> to receive <b>a bill of divorce from the latter</b> husband. Presumably, they regarded her as fully married to the first husband, so the marriage to the second marriage never took effect, despite the fact that the first marriage had not yet been consummated."
-    },
-    {
-     "ref": "Yevamot 110a",
-     "i": 5,
-     "he": "אָמַר רַב פָּפָּא: בְּנַרֶשׁ מִינְסַב נָסְיבִי, וַהֲדַר מוֹתְבִי אַבֵּי כוּרְסְיָיא. רַב אָשֵׁי אָמַר: הוּא עָשָׂה שֶׁלֹּא כַּהוֹגֶן, לְפִיכָךְ עָשׂוּ בּוֹ שֶׁלֹּא כַּהוֹגֶן, וְאַפְקְעִינְהוּ רַבָּנַן לְקִידּוּשֵׁי מִינֵּיהּ.",
-     "en": "<b>Rav Pappa said:</b> There is a difference, because <b>in Neresh their</b> practice is to first <b>marry</b> a woman and have intercourse with her, <b>and afterward they seat her in the bridal chair.</b> In this incident, the husband had already had intercourse with her once she was an adult, and that is why Rav’s students did not require a bill of divorce from the second man. <b>Rav Ashi says:</b> There was a different reason, even if the practice was not as Rav Pappa describes. <b>This</b> bride snatcher <b>acted improperly. Consequently, they treated him improperly</b> by annulling the legal validity of his actions, <b>and the Sages abrogated his betrothal.</b>"
-    },
-    {
-     "ref": "Yevamot 110a",
-     "i": 6,
-     "he": "אֲמַר לֵיהּ רָבִינָא לְרַב אָשֵׁי: תִּינַח דְּקַדֵּישׁ בְּכַסְפָּא, קַדֵּישׁ בְּבִיאָה מַאי? שַׁוְּיוּהָ רַבָּנַן לִבְעִילָתוֹ בְּעִילַת זְנוּת. אָמַר רַב יְהוּדָה אָמַר שְׁמוּאֵל: הֲלָכָה כְּרַבִּי אֱלִיעֶזֶר. וְכֵן אָמַר רַבִּי אֶלְעָזָר: הֲלָכָה כְּרַבִּי אֱלִיעֶזֶר.",
-     "en": "<b>Ravina said to Rav Ashi:</b> This <b>works out well if</b> the second man <b>betrothed her with money,</b> as then the Sages could declare that money to be ownerless property and void the betrothal. <b>If he betrothed her by means of intercourse, what</b> is the <i>halakha</i>? How can the Sages dissolve the betrothal when the sexual act took place? The Gemara answers: <b>The Sages rendered his sexual act a licentious sexual act,</b> which does not create a bond of betrothal. With regard to the dispute in the mishna, <b>Rav Yehuda said</b> that <b>Shmuel said: The <i>halakha</i> is in accordance with</b> the opinion of <b>Rabbi Eliezer,</b> and the minor is instructed to make a declaration of refusal. <b>Likewise, Rabbi Elazar said: The <i>halakha</i> is in accordance with</b> the opinion of <b>Rabbi Eliezer.</b>"
     }
    ],
    "span": [
@@ -2508,8 +2477,8 @@
      "end": 6
     }
    ],
-   "words": 392,
-   "minutes": 3
+   "words": 154,
+   "minutes": 2
   },
   {
    "id": "yevamot-113b-15-15",
@@ -2522,11 +2491,7 @@
    "start_segment": 15,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 0,
-    "end_forward": 1,
-    "reason": "Ends 'Rabbi Pedat said to him: Go' - answer 'and lead boys and girls' is next segment."
-   },
+   "extended": null,
    "reviewed": false,
    "summary": "Rav Yitzḥak bar Bisna loses the keys to the study hall on Shabbat and seeks guidance from Rabbi Pedat on how to retrieve them.",
    "segments": [
@@ -2541,12 +2506,6 @@
      "i": 0,
      "he": "דְּבַר טְלֵי וְטַלְיָא וְלִיטַיְּילוּ הָתָם, דְּאִי מַשְׁכְּחִי לְהוּ, מַיְיתֵי לְהוּ. אַלְמָא קָסָבַר: קָטָן אוֹכֵל נְבֵלוֹת — אֵין בֵּית דִּין מְצֻוִּוין לְהַפְרִישׁוֹ. לֵימָא מְסַיַּיע לֵיהּ: לֹא יֹאמַר אָדָם לְתִינוֹק ״הָבֵא לִי מַפְתֵּחַ״, ״הָבֵא לִי חוֹתָם״, אֶלָּא מַנִּיחוֹ תּוֹלֵשׁ, מַנִּיחוֹ זוֹרֵק.",
      "en": "<b>and lead boys and girls and let them walk there</b> where the keys were lost, <b>and if they find the keys they will bring them</b> to you of their own accord, without you saying anything to them. The Gemara comments: <b>Apparently,</b> Rabbi Pedat <b>maintains</b> that with regard to <b>a minor</b> who <b>eats</b> meat from <b>unslaughtered animals</b> or violates other prohibitions, <b>the court is not commanded to prevent him</b> from doing so. The Gemara comments: <b>Let us say that</b> the following source <b>supports his</b> opinion: <b>A person may not tell a child</b> on Shabbat: <b>Bring me a key, or: Bring me</b> my <b>seal</b> from the public domain. <b>However, he may allow</b> the child to <b>detach</b> plants and <b>allow him</b> to <b>throw</b> in the public domain. This shows that one need not be strict with a child who transgresses a prohibition, but one may not tell a child to transgress a prohibition."
-    },
-    {
-     "ref": "Yevamot 114a",
-     "i": 1,
-     "he": "אָמַר אַבָּיֵי: ״תּוֹלֵשׁ״ — בְּעָצִיץ שֶׁאֵינוֹ נָקוּב, ״זוֹרֵק״ — בְּכַרְמְלִית דְּרַבָּנַן.",
-     "en": "The Gemara rejects this suggestion: <b>Abaye said</b> that this is no proof, as it is possible that <b>detaching</b> plants is referring <b>to an unperforated flowerpot,</b> as the prohibition against detaching plants from a vessel of this kind applies by rabbinic law. Similar, when it states: <b>Throw,</b> this can be referring to throwing <b>in a <i>karmelit</i></b> rather than the public domain. A <i>karmelit</i> is an intermediate domain between public and private domains, which has the status of a public domain <b>by rabbinic</b> law. However, perhaps one is obligated to stop the child if he is transgressing a Torah prohibition."
     }
    ],
    "span": [
@@ -2561,8 +2520,8 @@
      "end": 0
     }
    ],
-   "words": 320,
-   "minutes": 3
+   "words": 222,
+   "minutes": 2
   },
   {
    "id": "yevamot-115a-3-3",

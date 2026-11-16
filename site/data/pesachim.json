@@ -229,7 +229,13 @@
    "start_segment": 10,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The incident of the leaven deposited with Yohanan Hakuka'a ends with Rabbi's ruling in segment 5; segments 6-9 are the Gemara's debate over what that ruling meant.",
+    "start_trim": 0,
+    "end_trim": 4
+   },
    "reviewed": false,
    "summary": "A man deposits leaven with Yoḥanan Ḥakuka’a, which is then damaged by mice, leading Rabbi Yehuda HaNasi to rule on when and how it should be sold before Passover.",
    "segments": [
@@ -238,30 +244,6 @@
      "i": 10,
      "he": "וְאַף רַבִּי סָבַר לְהָא דְּרַב נַחְמָן. דְּאָמַר רָבִין בַּר רַב אַדָּא: מַעֲשֶׂה בְּאָדָם אֶחָד שֶׁהִפְקִיד דִּיסַקַּיָּא מְלֵאָה חָמֵץ אֵצֶל יוֹחָנָן חָקוֹקָאָה, וּנְקָבוּהָ עַכְבָּרִים, וְהָיָה חָמֵץ מְבַצְבֵּץ וְיוֹצֵא. וּבָא לִפְנֵי רַבִּי, שָׁעָה רִאשׁוֹנָה אָמַר לוֹ: הַמְתֵּן. שְׁנִיָּה, אָמַר לוֹ: הַמְתֵּן. שְׁלִישִׁית, אָמַר לוֹ: הַמְתֵּן. רְבִיעִית, אָמַר לוֹ: הַמְתֵּן. חֲמִישִׁית, אָמַר לוֹ: צֵא וּמוֹכְרֶהָ בַּשּׁוּק.",
      "en": "The Gemara notes: <b>And even Rabbi</b> Yehuda HaNasi <b>holds in accordance with this</b> statement <b>of Rav Naḥman,</b> and rules that the <i>halakha</i> is in accordance with the opinion of Rabbi Yehuda. <b>As Ravin bar Rav Adda said:</b> There was <b>an incident</b> that occurred involving <b>a certain person who deposited a saddlebag [<i>disakkayya</i>] filled with leavened bread with Yoḥanan Ḥakuka’a, and mice bore</b> a hole <b>in</b> the bag, <b>and leavened bread was spilling out</b> of the sack. <b>And he came before Rabbi</b> Yehuda HaNasi on Passover eve to ask what he should do. In <b>the first hour</b> of the day Rabbi Yehuda HaNasi <b>said to him: Wait,</b> as the owner of the bag might yet return to take it from you and eat the leaven. In <b>the second</b> hour <b>he said to him: Wait.</b> In <b>the third</b> hour <b>he said to him: Wait.</b> In <b>the fourth</b> hour <b>he said to him: Wait. In the fifth</b> hour, concluding that the person was not coming, <b>he said to him: Go and sell it in the market.</b>"
-    },
-    {
-     "ref": "Pesachim 13a",
-     "i": 11,
-     "he": "מַאי לָאו, לְגוֹיִם — כְּרַבִּי יְהוּדָה? אָמַר רַב יוֹסֵף: לָא, לְיִשְׂרָאֵל — כְּרַבִּי מֵאִיר. אֲמַר לֵיהּ אַבָּיֵי: אִי לְיִשְׂרָאֵל — נִישְׁקְלֵיהּ לְנַפְשֵׁיהּ?",
-     "en": "<b>What, did</b> Rabbi Yehuda HaNasi <b>not</b> mean that Yoḥanan Ḥakuka’a should sell this leaven <b>to gentiles, in accordance with</b> the opinion of <b>Rabbi Yehuda,</b> who says that it is prohibited for a Jew to eat leaven during the fifth hour? <b>Rav Yosef said: No,</b> it could be that he meant to sell it <b>to a Jew, in accordance with</b> the opinion of <b>Rabbi Meir</b> that one may eat leaven during the fifth hour. Rabbi Yehuda HaNasi was simply advising him to sell the leaven quickly before the sixth hour begins, at which point it would be prohibited for Jews to eat it. <b>Abaye said to him: If</b> it is permitted <b>for a Jew</b> to eat leaven, <b>let him take it for himself</b> and pay the owner back later. Why trouble him to sell it to someone else?"
-    },
-    {
-     "ref": "Pesachim 13a",
-     "i": 12,
-     "he": "מִשּׁוּם חֲשָׁדָא, דְּתַנְיָא: גַּבָּאֵי צְדָקָה שֶׁאֵין לָהֶם עֲנִיִּים לְחַלֵּק — פּוֹרְטִין לַאֲחֵרִים, וְאֵין פּוֹרְטִין לְעַצְמָן.",
-     "en": "The Gemara responds: Eating it himself is not an option <b>due to</b> the potential of <b>suspicion. As it was taught</b> in a <i>baraita</i> with regard to a similar situation: <b>Collectors of charity who have no poor people to</b> whom they can <b>distribute</b> the money, <b>change</b> the money <b>with other</b> people <b>and do not change it themselves,</b> i.e., with their own coins."
-    },
-    {
-     "ref": "Pesachim 13a",
-     "i": 13,
-     "he": "גַּבָּאֵי תַמְחוּי, שֶׁאֵין לָהֶם עֲנִיִּים לְחַלֵּק — מוֹכְרִין לַאֲחֵרִים וְאֵין מוֹכְרִין לְעַצְמָן, מִשּׁוּם שֶׁנֶּאֱמַר: ״וִהְיִיתֶם נְקִיִּים מֵה׳ וּמִיִּשְׂרָאֵל״.",
-     "en": "Likewise, <b>collectors of</b> food for <b>the charity plate,</b> who would collect food in large vessels for the poor to eat, <b>who do not have poor people</b> to whom <b>to distribute</b> the food, <b>sell</b> the food <b>to others and do not sell it to themselves, as it is stated: “And you shall be clear before God and before Israel”</b> (Numbers 32:22). It is not sufficient that a person is without sin in the eyes of God. He must also appear upright in the eyes of other people so that they will not suspect him of wrongdoing."
-    },
-    {
-     "ref": "Pesachim 13a",
-     "i": 14,
-     "he": "אֲמַר לֵיהּ רַב אַדָּא בַּר מַתְנָה לְרַב יוֹסֵף: בְּפֵירוּשׁ אֲמַרְתְּ לַן, צֵא וּמוֹכְרֵן לַגּוֹיִם, כְּרַבִּי יְהוּדָה.",
-     "en": "<b>Rav Adda bar Mattana said to Rav Yosef: You told us explicitly</b> that Rabbi Yehuda HaNasi meant: <b>Go and sell it to gentiles, in accordance with</b> the opinion of <b>Rabbi Yehuda.</b> Rav Yosef took ill late in life and forgot his studies, and therefore his student would remind him that he also agreed with that version of the incident."
     }
    ],
    "span": [
@@ -271,8 +253,8 @@
      "end": 14
     }
    ],
-   "words": 527,
-   "minutes": 4
+   "words": 175,
+   "minutes": 2
   },
   {
    "id": "pesachim-22b-10-10",
@@ -1676,15 +1658,32 @@
    "tractate": "pesachim",
    "ref": "Pesachim 103b",
    "refs": [
+    "Pesachim 103a",
     "Pesachim 103b"
    ],
    "start_segment": 0,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 2,
+    "end_forward": 0,
+    "reason": "The story of Rav Beruna and Rav Hananel begins mid-sentence in segment 4, inside Rava's exchange with Rav Ya'akov bar Abba that starts in segment 3, so the card must take in that exchange to be complete."
+   },
    "reviewed": false,
    "summary": "Rav Yeiva the Elder serves a group who first ask for a cup to recite Grace but then change their minds to drink more, only to be told by Rav Yeiva that their first statement legally concluded their meal.",
    "segments": [
+    {
+     "ref": "Pesachim 103a",
+     "i": 8,
+     "he": "רַב יַעֲקֹב בַּר אַבָּא אִיקְּלַע לְבֵי רָבָא, חַזְיֵהּ דְּבָרֵיךְ ״בּוֹרֵא פְּרִי הַגֶּפֶן״ אַכָּסָא קַמָּא, וַהֲדַר בָּרֵיךְ אַכָּסָא דְבִרְכְּתָא, וְאִישְׁתִּי. אֲמַר לֵיהּ: לְמָה לָךְ כּוּלֵּי הַאי? הָא בָּרֵיךְ לַן מָר חֲדָא זִימְנָא! אֲמַר לֵיהּ: כִּי הֲוֵינַן בֵּי רֵישׁ גָּלוּתָא הָכִי עָבְדִינַן.",
+     "en": "The Gemara relates another incident with regard to establishing meals and reciting blessings. <b>Rav Ya’akov bar Abba happened to</b> come to <b>Rava’s house</b> for a Shabbat meal. <b>He saw that</b> Rava <b>recited</b> the blessing: <b>Who creates the fruit of the vine, over the first cup</b> of wine he drank at the meal, <b>and then he recited</b> the same <b>blessing upon the cup of</b> wine he used for the <b>blessing</b> of Grace after Meals <b>and drank</b> it. <b>He said to him: Why do you</b> have to say <b>all this,</b> i.e., why is it necessary to recite a second blessing? <b>The Master has recited a blessing for us once</b> already, at the beginning of the meal, and thereby exempted us from a blessing on all the wine drunk during the meal. Rava <b>said to him: When we were in the house of the Exilarch, this was our practice.</b> It was the custom among the Sages to recite two blessings."
+    },
+    {
+     "ref": "Pesachim 103a",
+     "i": 9,
+     "he": "אֲמַר לֵיהּ: תִּינַח בֵּי רֵישׁ גָּלוּתָא דְּהָכִי עָבֵיד, דְּסָפֵק מַיְיתֵי לַן סָפֵק לָא מַיְיתֵי לַן. הָכָא, הָא מַנַּח כָּסָא קַמַּן וְדַעְתַּן עִילָּוֵיהּ? אֲמַר לֵיהּ: אֲנָא עֲבַדִי כְּתַלְמִידֵי דְרַב, דְּרַב בְּרוֹנָא וְרַב חֲנַנְאֵל תַּלְמִידֵי דְרַב הֲווֹ יָתְבִי בִּסְעוֹדְתָּא",
+     "en": "<b>He said to him:</b> It works out <b>well to act this way</b> in <b>the house of the Exilarch, as there is uncertainty</b> as to whether <b>he will bring us</b> another cup of wine to drink, <b>or whether he will not bring us</b> another cup. Since we are dependent upon the host and cannot anticipate in advance whether we will drink more wine, each cup requires its own blessing. <b>Here,</b> however, <b>the cup is resting before us and our attention is on it,</b> i.e., we intend to drink this wine after Grace after Meals. What need is there to recite another blessing? <b>He said to him: I acted in accordance with the</b> opinion of the <b>students of Rav, as Rav Beruna and Rav Ḥananel, the students of Rav, were sitting</b> together <b>at a meal,</b>"
+    },
     {
      "ref": "Pesachim 103b",
      "i": 0,
@@ -1699,8 +1698,8 @@
      "end": 0
     }
    ],
-   "words": 120,
-   "minutes": 1
+   "words": 410,
+   "minutes": 3
   },
   {
    "id": "pesachim-103b-1-2",
@@ -1712,7 +1711,11 @@
    "start_segment": 1,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rav Ashi's answer to Rav Aha's question is in segment 7 and completes the exchange; the Gemara's rejection in segment 8 is dropped."
+   },
    "reviewed": false,
    "summary": "While being served by Rav Aha, Ameimar, Mar Zutra, and Rav Ashi demonstrate three different ways of reciting blessings over wine during a meal, leading to a discussion of their reasons.",
    "segments": [
@@ -1727,6 +1730,12 @@
      "i": 2,
      "he": "אֲמַר לְהוּ רַב אַחָא בַּר רָבָא: אֲנַן כְּמַאן נַעֲבֵיד? אַמֵּימָר אָמַר: נִמְלָךְ אֲנָא. מָר זוּטְרָא אָמַר: אֲנָא דַּעֲבַדִי כְּתַלְמִידֵי דְרַב.",
      "en": "<b>Rav Aḥa bar Rava said to them: In accordance with whose</b> opinion should <b>we act</b> in this matter? We have witnessed three different courses of action. <b>Ameimar said: I</b> repeatedly <b>changed my mind.</b> In other words, the reason Ameimar recited a blessing over each cup was not because he maintains that it is always necessary to do so. Rather, he drank each cup with the intention that it should be his last. Consequently, he diverted his attention from drinking each time, and therefore he was required to recite a new blessing before he could drink again. <b>Mar Zutra said: I acted in accordance with the</b> opinion of the <b>students of Rav.</b> They maintain that one who prepares to recite Grace after Meals has completely diverted his attention from drinking, and therefore the blessing on wine that one recites during the meal does not include the wine he drinks after Grace after Meals."
+    },
+    {
+     "ref": "Pesachim 103b",
+     "i": 3,
+     "he": "וְרַב אָשֵׁי אָמַר: לֵית הִילְכְתָא כְּתַלְמִידֵי דְרַב, דְּהָא יוֹם טוֹב שֶׁחָל לִהְיוֹת אַחַר הַשַּׁבָּת, וְאָמַר רַב: יַקְנֶ״ה.",
+     "en": "<b>And Rav Ashi said:</b> The <b><i>halakha</i></b> is <b>not in accordance with</b> the opinion of <b>the students of Rav.</b> This can be proven from a ruling of Rav himself, <b>as</b> with regard to <b>a Festival that occurs after Shabbat, Rav said</b> that the order of blessings is <b><i>yod</i>, <i>kuf</i>, <i>nun</i>, <i>heh</i>:</b> Wine [<i>yayin</i>], <i>kiddush</i>, candle [<i>ner</i>], and <i>havdala</i>. This shows that although one recites <i>kiddush</i> between the blessing over wine and <i>havdala</i>, it is unnecessary to recite the blessing over wine again before <i>havdala</i>. The same should hold true in our case: Just as <i>kiddush</i> is not considered an interruption between the blessing over wine and its consumption, Grace after Meals should not be considered an interruption either."
     }
    ],
    "span": [
@@ -1736,8 +1745,8 @@
      "end": 2
     }
    ],
-   "words": 241,
-   "minutes": 2
+   "words": 370,
+   "minutes": 3
   },
   {
    "id": "pesachim-103b-5-7",
