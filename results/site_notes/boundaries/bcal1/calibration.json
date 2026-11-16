@@ -1,0 +1,40 @@
+{
+ "report": {
+  "ketubot": {
+   "measurable": 73,
+   "A_starts_kept": 73,
+   "B_ends_kept": 72,
+   "C_exact": 63,
+   "C_left_alone": 62,
+   "D_extra": 23,
+   "D_removed": 3,
+   "E_stories": 5,
+   "E_jeff_segments_before": 8,
+   "E_jeff_segments_after": 10,
+   "B_cut_unsorted": 1,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 98.4
+  }
+ },
+ "cases": {
+  "C_changed": [
+   {
+    "tractate": "ketubot",
+    "key": "2005#121",
+    "card": "ketubot-104b-7-15",
+    "jeff": [
+     2766,
+     2774
+    ],
+    "after": [
+     2766,
+     2775
+    ]
+   }
+  ]
+ },
+ "unsorted_cut_ends": [
+  "ketubot:2005#108"
+ ]
+}
