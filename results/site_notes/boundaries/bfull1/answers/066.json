@@ -1,0 +1,19 @@
+{
+"01": {"code": "0663D1", "action": "keep", "reason": "Segments 5-8 tell the Kidor innkeeper story from arrival to the recovery of the purses; what follows is a baraita comment and a separate epilogue."},
+"02": {"code": "F4A2BC", "action": "keep", "reason": "The single segment holds Rabbi Yohanan's bulmos incident, mixed with the remedies around it, and cannot be cut; the next story is a different episode."},
+"03": {"code": "85770D", "action": "adjust", "first": 5, "last": 5, "reason": "Segment 5 completes the matron story; segment 6 is the Gemara's question and answer about whether he broke his oath."},
+"04": {"code": "72F6DD", "action": "keep", "reason": "Segments 5-8 are the episode on the road with each sage's answer to the question asked before them, ending with the last answer."},
+"05": {"code": "8C96B0", "action": "keep", "reason": "The Rabbi Yirmeya and Rabbi Abba story is complete in segment 5."},
+"06": {"code": "8A064E", "action": "keep", "reason": "The story of Rav and the butcher is complete in segment 5, ending with the butcher's death."},
+"07": {"code": "E115FB", "action": "merge", "merge_with": "yoma-87b-2-2", "reason": "The adjacent site story gives Rabbi Hanina's dream as the reason he refused to be appeased, so it finishes these same events."},
+"08": {"code": "FFAFFC", "action": "keep", "reason": "Segment 5 is the whole Jordan River exchange; what follows is the Gemara's discussion of the incident."},
+"09": {"code": "E7771C", "action": "keep", "reason": "The incident of Yosef the priest sits inside a baraita segment that cannot be split; what follows is legal argument."},
+"10": {"code": "BA7082", "action": "keep", "reason": "Segments 5-17 are the full exchange between the two priests, ending when the one who immersed that day leaves; Rav Ahai's critique after it is discussion."},
+"11": {"code": "34747E", "action": "keep", "reason": "Segment 5 holds the incident of the bones and Rabbi Yehoshua's protest; what follows is the Gemara's inference."},
+"12": {"code": "845B47", "action": "keep", "reason": "Segment 5 is the full Ifra Hurmiz incident with Rava's instructions; Abaye's question after it is discussion."},
+"13": {"code": "1AC6B1", "action": "adjust", "first": 6, "last": 8, "reason": "Segment 5 is only Rabbi Akiva's derivation from a verse; the exchange between Rabbi Tarfon and Rabbi Akiva runs from 6 to 8."},
+"14": {"code": "95D476", "action": "keep", "reason": "Segment 5 holds the complete story of the king lowering the belt, with Ameimar's response."},
+"15": {"code": "E1C74E", "action": "keep", "reason": "Segments 5-13 are the Yavne debate from the question to Rabbi Yishmael's message; what follows is Gemara analysis."},
+"16": {"code": "A7B1E9", "action": "keep", "reason": "The incident of the damaged altar corner is a single baraita segment that cannot be cut."},
+"17": {"code": "C34451", "action": "keep", "reason": "Segment 5 is the case of the oven and Rabba bar Ahilai's ruling, which is its outcome; the objection after it is discussion."}
+}

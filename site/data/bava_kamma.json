@@ -174,10 +174,26 @@
    "start_segment": 11,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 2,
+    "end_forward": 0,
+    "reason": "The story is Rav Hisda's question to Rav Nahman and Rav Nahman's demand to hear the facts, which leads to the cistern incident and the verdict, so it starts at [3]; the dispute after [6] is dropped."
+   },
    "reviewed": false,
    "summary": "A man caught his partner drawing water from their shared cistern out of turn and struck him with a hoe, an act Rav Naḥman later justified.",
    "segments": [
+    {
+     "ref": "Bava Kamma 27b",
+     "i": 9,
+     "he": "שְׁלַח לֵיהּ רַב חִסְדָּא לְרַב נַחְמָן, הֲרֵי אָמְרוּ: לִרְכוּבָּה – שָׁלֹשׁ, וְלִבְעִיטָה – חָמֵשׁ, וְלִסְנוֹקֶרֶת – שְׁלֹשׁ עֶשְׂרֵה. לְפַנְדָּא דְמָרָא וּלְקוֹפִינָא דְּמָרָא, מַאי?",
+     "en": "§ <b>Rav Ḥisda sent</b> the following question <b>to Rav Naḥman:</b> The Sages <b>said</b> that when one strikes another, humiliating him, the judges determine liability according to the following formula: <b>For kneeing [<i>rekhuva</i>]</b> him, he must pay <b>three</b> <i>sela</i>; <b>for kicking, five; and for punching [<i>velisnokeret</i>]</b> him, <b>thirteen.</b> The Gemara asks: If so <b>for</b> hitting him with <b>the handle of a hoe [<i>demara</i>] and for</b> hitting him with <b>the top [<i>ulkofina</i>] of a hoe, what</b> amount is one liable to pay him?"
+    },
+    {
+     "ref": "Bava Kamma 27b",
+     "i": 10,
+     "he": "שְׁלַח לֵיהּ: חִסְדָּא חִסְדָּא, קְנָסָא קָא מַגְבֵּית בְּבָבֶל? אֵימָא לִי גּוּפָא דְעוֹבָדָא הֵיכִי הֲוָה.",
+     "en": "Rav Naḥman <b>sent him</b> the following response: <b>Ḥisda, Ḥisda, are you collecting a fine</b> for humiliation <b>in Babylonia,</b> where judges are not authorized to collect fines? <b>Tell me how the incident itself</b> transpired."
+    },
     {
      "ref": "Bava Kamma 27b",
      "i": 11,
@@ -198,7 +214,7 @@
      "end": 12
     }
    ],
-   "words": 177,
+   "words": 300,
    "minutes": 2
   },
   {
@@ -595,7 +611,13 @@
    "start_segment": 14,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The date-palm case ends with Rav Nahman's ruling in [5]; Rava's question in [6] opens the legal debate that Abaye continues.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "A man who cut down another's date palm was brought before the Exilarch, who ordered him to pay one hundred zuz based on his own valuation of the property.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -605,12 +627,6 @@
      "i": 14,
      "he": "הָהוּא גַּבְרָא דְּקַץ קַשְׁבָּא מֵחַבְרֵיהּ. אֲתָא לְקַמֵּיהּ דְּרֵישׁ גָּלוּתָא, אֲמַר לֵיהּ: לְדִידִי חֲזֵי לִי, וּתְלָתָא תָּאלָתָא בְּקִינָּא הֲווֹ קָיְימִי, וַהֲווֹ שָׁווּ מְאָה זוּזֵי. זִיל הַב לֵיהּ תְּלָתִין וּתְלָתָא וְתִילְתָּא. אָמַר: גַּבֵּי רֵישׁ גָּלוּתָא דְּדָאֵין דִּינָא דְּפָרְסָאָה, לְמָה לִי? אֲתָא לְקַמֵּיהּ דְּרַב נַחְמָן, אֲמַר לֵיהּ: בְּשִׁשִּׁים.",
      "en": "§ The Gemara relates: There was <b>a certain man who cut down a date palm [<i>kashba</i>]</b> belonging <b>to another.</b> The latter <b>came</b> with the perpetrator for arbitration <b>before the Exilarch.</b> The Exilarch <b>said to</b> the perpetrator: <b>I personally saw</b> that place where the date palm was planted, and it actually contained <b>three date palms [<i>talata</i>] standing</b> together <b>in a cluster,</b> growing out of a single root, <b>and they were worth</b> altogether <b>one hundred dinars.</b> Consequently, since you, the perpetrator, cut down one of the three, <b>go</b> and <b>give him thirty-three and one-third</b> dinars, one third of the total value. The perpetrator rejected this ruling and <b>said: Why do I</b> need to be judged by <b>the Exilarch, who rules according to Persian law? He came before Rav Naḥman</b> for judgment in the same case, who <b>said to him:</b> The court appraises the damage <b>in</b> relation to an area <b>sixty</b> times greater than the damage caused. This amount is much less than thirty-three and one-third dinars."
-    },
-    {
-     "ref": "Bava Kamma 58b",
-     "i": 15,
-     "he": "אֲמַר לֵיהּ רָבָא: אִם אָמְרוּ בְּנִזְקֵי מָמוֹנוֹ, יֹאמְרוּ בְּנִזְקֵי גוּפוֹ?!",
-     "en": "<b>Rava said to</b> Rav Naḥman: <b>If</b> the Sages <b>said</b> that the court appraises <b>damage</b> caused <b>by one’s property,</b> such as his animal, relative to an area sixty times greater, <b>would</b> they also <b>say</b> that the court appraises damage relative to an area sixty times greater even <b>for</b> direct <b>damage</b> caused by <b>one’s body?</b>"
     }
    ],
    "span": [
@@ -620,7 +636,7 @@
      "end": 15
     }
    ],
-   "words": 221,
+   "words": 168,
    "minutes": 2
   },
   {

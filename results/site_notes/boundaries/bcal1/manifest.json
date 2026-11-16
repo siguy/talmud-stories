@@ -1,0 +1,22 @@
+{
+ "run": "bcal1",
+ "stories": 83,
+ "batches": 5,
+ "after": [
+  "bfix1"
+ ],
+ "only": [
+  "ketubot"
+ ],
+ "flags": null,
+ "limits": {
+  "back": 2,
+  "forward": 6,
+  "merge_gap": 4
+ },
+ "skipped": {
+  "decided in bfix1": 3,
+  "part of a merge (no display change is possible on it)": 0
+ },
+ "exported": "2026-11-15T20:48:06"
+}

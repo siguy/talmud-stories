@@ -1,0 +1,22 @@
+{
+ "run": "bfull1",
+ "stories": 1337,
+ "batches": 67,
+ "after": [
+  "bfix1",
+  "bcal1",
+  "bcal2"
+ ],
+ "only": null,
+ "flags": null,
+ "limits": {
+  "back": 2,
+  "forward": 6,
+  "merge_gap": 4
+ },
+ "skipped": {
+  "decided in bfix1+bcal1+bcal2": 452,
+  "part of a merge (no display change is possible on it)": 3
+ },
+ "exported": "2026-11-16T06:15:27"
+}

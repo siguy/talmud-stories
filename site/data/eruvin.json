@@ -74,7 +74,13 @@
    "start_segment": 12,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The incident and the Sages' ruling are in segment 5; segment 6 is the Reish Lakish/Rabbi Yohanan dispute about the ruling, which is legal discussion.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "A man from Beit Ḥortan constructed a partition for his vineyard using poles and vines, leading to a dispute between Rabbi Yoḥanan and Reish Lakish over its validity for Shabbat and diverse kinds.",
    "segments": [
@@ -83,12 +89,6 @@
      "i": 12,
      "he": "וְאַף רַבִּי יוֹחָנָן סָבַר לַהּ לְהָא דְּרַב. דְּאָמַר רָבִין בַּר רַב אַדָּא אָמַר רַבִּי יִצְחָק: מַעֲשֶׂה בְּאָדָם אֶחָד מִבִּקְעַת בֵּית חוֹרְתָן שֶׁנָּעַץ אַרְבָּעָה קוּנְדֵּיסִין בְּאַרְבַּע פִּינּוֹת הַשָּׂדֶה, וּמָתַח זְמוֹרָה עֲלֵיהֶם. וּבָא מַעֲשֶׂה לִפְנֵי חֲכָמִים, וְהִתִּירוּ לוֹ לְעִנְיַן כִּלְאַיִם.",
      "en": "The Gemara comments: <b>And even Rabbi Yoḥanan holds that</b> opinion <b>of Rav,</b> that an opening in the form of a doorway does not permit carrying if the opening is more than ten cubits wide. <b>As Ravin bar Rav Adda said</b> that <b>Rabbi Yitzḥak said:</b> There was <b>an incident involving a person from the valley of Beit Ḥortan who stuck four poles</b> [<b><i>kunddeisin</i></b>] into the ground <b>in the four corners of</b> his <b>field, and stretched a vine over them,</b> creating the form of a doorway on each side. He intended to seal the area so that he would be permitted to plant a vineyard in close proximity without creating a forbidden mixture of diverse kinds in a vineyard. <b>And the case came before the Sages, and they permitted him</b> to consider it sealed <b>with regard to diverse kinds.</b>"
-    },
-    {
-     "ref": "Eruvin 11a",
-     "i": 13,
-     "he": "וְאָמַר רֵישׁ לָקִישׁ: כְּדֶרֶךְ שֶׁהִתִּירוּ לוֹ לְעִנְיַן כִּלְאַיִם כָּךְ הִתִּירוּ לוֹ לְעִנְיַן שַׁבָּת. רַבִּי יוֹחָנָן אָמַר: לְכִלְאַיִם הִתִּירוּ לוֹ, לְעִנְיַן שַׁבָּת לֹא הִתִּירוּ לוֹ.",
-     "en": "<b>And Reish Lakish said: Just as they permitted him</b> to consider it sealed <b>with regard to diverse kinds, so</b> too <b>they permitted him</b> to consider it sealed <b>with regard to Shabbat,</b> i.e., they permitted carrying within this area. <b>Rabbi Yoḥanan said: With regard to diverse kinds, they permitted him</b> to consider it sealed, however, <b>with regard to Shabbat, they did not permit him</b> to do so."
     }
    ],
    "span": [
@@ -98,8 +98,8 @@
      "end": 13
     }
    ],
-   "words": 205,
-   "minutes": 2
+   "words": 139,
+   "minutes": 1
   },
   {
    "id": "eruvin-11b-12-12",
@@ -291,13 +291,18 @@
    "tractate": "eruvin",
    "ref": "Eruvin 16b",
    "refs": [
-    "Eruvin 16b",
-    "Eruvin 17a"
+    "Eruvin 16b"
    ],
    "start_segment": 26,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The story is Rav Nahman's teaching, the challenge and his public retraction; segments 8-9 are the Gemara's question and answer about his ruling.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "Rav Nahman teaches a ruling, is challenged for following a minority opinion, and subsequently appoints a speaker to publicly retract his statement as an error.",
    "segments": [
@@ -318,18 +323,6 @@
      "i": 28,
      "he": "הֲדַר אוֹקֵים רַב נַחְמָן אָמוֹרָא עֲלֵיהּ וּדְרַשׁ: דְּבָרִים שֶׁאָמַרְתִּי לִפְנֵיכֶם טָעוּת הֵן בְּיָדִי. בְּרַם כָּךְ אָמְרוּ: יָחִיד — נוֹתְנִין לוֹ בֵּית סָאתַיִם, שְׁנַיִם — נוֹתְנִין לָהֶן בֵּית סָאתַיִם, שְׁלֹשָׁה — נַעֲשׂוּ שְׁיָירָא וְנוֹתְנִין לָהֶן כָּל צָרְכָּן.",
      "en": "<b>Rav Naḥman then placed a speaker</b> standing <b>over him, and taught: The matters that I stated before you are an error on my part. Indeed, this</b> is what the Rabbis <b>said:</b> With regard to an <b>individual,</b> the <i>halakha</i> <b>provides him</b> with an area of <b>two <i>beit se’a</i>.</b> With regard to <b>two</b> individuals, the <i>halakha</i> <b>provides them</b> with an area of <b>two <i>beit se’a</i></b> as well. <b>Three</b> individuals <b>assume the</b> legal <b>status of a caravan, and</b> the <i>halakha</i> <b>provides them</b> with space to satisfy <b>all their needs.</b>"
-    },
-    {
-     "ref": "Eruvin 17a",
-     "i": 0,
-     "he": "רֵישָׁא רַבִּי יוֹסֵי בְּרַבִּי יְהוּדָה וְסֵיפָא רַבָּנַן?!",
-     "en": "The Gemara asks: Is that to say that <b>the first clause</b> of Rav Naḥman’s ruling <b>is</b> in accordance with the opinion of <b>Rabbi Yosei, son of Rabbi Yehuda, and the latter clause is</b> in accordance with the opinion of <b>the Rabbis?</b>"
-    },
-    {
-     "ref": "Eruvin 17a",
-     "i": 1,
-     "he": "אִין, מִשּׁוּם דְּקָאֵי אֲבוּהּ בְּשִׁיטְתֵיהּ.",
-     "en": "The Gemara answers: <b>Yes, because his father,</b> Rabbi Yehuda, <b>holds in accordance with his opinion</b> with regard to areas enclosed for the sake of an individual. This being the case, their opinion on this matter is that of the many."
     }
    ],
    "span": [
@@ -344,7 +337,7 @@
      "end": 1
     }
    ],
-   "words": 272,
+   "words": 191,
    "minutes": 2
   },
   {
@@ -1324,13 +1317,18 @@
    "tractate": "eruvin",
    "ref": "Eruvin 52a",
    "refs": [
-    "Eruvin 52a",
-    "Eruvin 52b"
+    "Eruvin 52a"
    ],
    "start_segment": 16,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The story of Rav Yehuda bar Ishtata and Rav Natan bar Oshaya ends in segment 5; segments 6-7 are the Gemara asking whose opinion he followed.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "Rav Yehuda bar Ishtata brought fruit to Rav Natan, who waited for him to begin his departure before telling him to stay the night, thereby establishing his Shabbat residence for the next day's journey.",
    "segments": [
@@ -1339,18 +1337,6 @@
      "i": 16,
      "he": "רַב יְהוּדָה בַּר אִישְׁתָּתָא אַיְיתִי לֵיהּ כַּלְכַּלָּה דְפֵירֵי לְרַב נָתָן בַּר אוֹשַׁעְיָא. כִּי הֲוָה אָזֵיל, שַׁבְקֵיהּ עַד דִּנְחֵית דַּרְגָּא, אֲמַר לֵיהּ: בִּית הָכָא. לִמְחַר קַדֵּים וֶאֱזִיל,",
      "en": "The Gemara relates that <b>Rav Yehuda bar Ishtata</b> once <b>brought a basket of fruit to Rav Natan bar Oshaya</b> in a nearby town, four thousand cubits away, on Shabbat eve. <b>When he was going,</b> Rav Natan <b>left him until he descended one step, and</b> then <b>said to him: Lodge here</b> tonight. He allowed him start his journey so that he would be considered as having set out on his way. <b>On the following day</b> Rav Yehuda bar Ishtata <b>rose early and went</b> home."
-    },
-    {
-     "ref": "Eruvin 52b",
-     "i": 0,
-     "he": "כְּמַאן — כְּרַב יוֹסֵף, וְאַלִּיבָּא דְּרַבִּי יוֹסֵי בַּר יְהוּדָה?",
-     "en": "The Gemara comments: <b>In accordance with whose</b> opinion did Rav Natan bar Oshaya act? Apparently, it was <b>in accordance with</b> the opinion of <b>Rav Yosef</b> that everyone agrees that he must set out on his way, <b>and in accordance with</b> the opinion of <b>Rabbi Yosei bar Yehuda</b> that he need not declare that he is establishing his residence at the end of his Shabbat limit."
-    },
-    {
-     "ref": "Eruvin 52b",
-     "i": 1,
-     "he": "לָא, כְּרַבָּה, וְאַלִּיבָּא דְּרַבִּי יְהוּדָה.",
-     "en": "The Gemara rejects this suggestion: <b>No,</b> that is not necessarily so, as it is possible to say that he acted <b>according to</b> the opinion of <b>Rabba, and in accordance with</b> the opinion of <b>Rabbi Yehuda,</b> and Rav Yehuda bar Ishtata declared that he establishes his residence at the end of his Shabbat limit."
     }
    ],
    "span": [
@@ -1365,8 +1351,8 @@
      "end": 1
     }
    ],
-   "words": 201,
-   "minutes": 2
+   "words": 83,
+   "minutes": 1
   },
   {
    "id": "eruvin-53b-7-7",
@@ -1883,7 +1869,11 @@
    "start_segment": 15,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Imma Shalom's question and Rabbi Eliezer's answer in segment 6 finish the story; the discussion of distance that follows is argument."
+   },
    "reviewed": false,
    "summary": "Rabbi Eliezer predicts the death of a disciple who issued a ruling in his presence, and the prediction comes true.",
    "segments": [
@@ -1892,6 +1882,12 @@
      "i": 15,
      "he": "וְתַלְמִיד אֶחָד הָיָה לוֹ לְרַבִּי אֱלִיעֶזֶר, שֶׁהוֹרָה הֲלָכָה בְּפָנָיו. אָמַר רַבִּי אֱלִיעֶזֶר לְאִימָּא שָׁלוֹם אִשְׁתּוֹ: תָּמֵיהַּ אֲנִי אִם יוֹצִיא זֶה שְׁנָתוֹ. וְלֹא הוֹצִיא שְׁנָתוֹ.",
      "en": "It was further related that <b>Rabbi Eliezer had a certain disciple who issued a</b> halakhic <b>ruling in his presence. Rabbi Eliezer said to his wife, Imma Shalom: I will be surprised if this one completes his year,</b> i.e., if he lives until the end of the year. <b>And</b> so it was, <b>he did not complete his year.</b>"
+    },
+    {
+     "ref": "Eruvin 63a",
+     "i": 16,
+     "he": "אָמְרָה לוֹ: נָבִיא אַתָּה? אָמַר לָהּ: לֹא נָבִיא אָנֹכִי וְלֹא בֶּן נָבִיא אָנֹכִי, אֶלָּא כָּךְ מְקּוּבְּלַנִי: כׇּל הַמּוֹרֶה הֲלָכָה בִּפְנֵי רַבּוֹ חַיָּיב מִיתָה.",
+     "en": "His wife <b>said to him: Are you a prophet?</b> He <b>said to her: I am not a prophet, nor the son of a prophet, but I have received the following</b> tradition: <b>Anyone who issues a halakhic ruling in his teacher’s presence is liable</b> to receive the <b>death</b> penalty."
     }
    ],
    "span": [
@@ -1901,7 +1897,7 @@
      "end": 15
     }
    ],
-   "words": 57,
+   "words": 105,
    "minutes": 1
   },
   {
@@ -2177,51 +2173,22 @@
    "tractate": "eruvin",
    "ref": "Eruvin 68a",
    "refs": [
-    "Eruvin 68a"
+    "Eruvin 68a",
+    "Eruvin 68b"
    ],
    "start_segment": 12,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "In another case of spilled water, Rava physically moves his belongings and himself to a different part of the house to legally renounce his courtyard rights and allow the water to be moved.",
+   "summary": "When the warm water prepared for a baby's Shabbat circumcision spilled, Rava offered to give up his rights to his courtyard so water could be carried across from his side, and his student Ravina challenged how he went about it.",
    "segments": [
     {
      "ref": "Eruvin 68a",
      "i": 12,
      "he": "הָהוּא יָנוֹקָא דְּאִישְׁתְּפוּךְ חַמִּימֵיהּ, אֲמַר לְהוּ רָבָא: פַּנּוּ לִי מָאנֵי מִבֵּי גַבְרֵי לְבֵי נְשֵׁי, וְאֵיזִיל וְאִיתֵּיב הָתָם וְאֶיבַטֵּיל לְהוּ הָא חָצֵר.",
      "en": "The Gemara relates yet another similar incident: There was once <b>a certain baby whose warm water,</b> which had been prepared for his Shabbat circumcision, <b>spilled. Rava,</b> who had water in his courtyard but had not established a joint <i>eiruv</i> with the adjacent courtyard where the baby was located, <b>said to</b> those who asked him about the matter: <b>Clear away my belongings from the men’s chamber,</b> which opens directly into my courtyard, <b>to the</b> inner <b>women’s chamber,</b> which does not. Rava was concerned that he would come to carry his belongings into the courtyard, which would be prohibited once he had renounced his rights to it. <b>And I will go and sit there,</b> in the women’s chamber, <b>and I will renounce</b> my rights to <b>this courtyard in favor of</b> the residents of the baby’s courtyard, so that they will be able to transfer the warm water from one courtyard to the other."
-    }
-   ],
-   "span": [
-    {
-     "ref": "Eruvin 68a",
-     "start": 12,
-     "end": 12
-    }
-   ],
-   "words": 151,
-   "minutes": 2
-  },
-  {
-   "id": "eruvin-68b-0-3",
-   "tractate": "eruvin",
-   "ref": "Eruvin 68b",
-   "refs": [
-    "Eruvin 68a",
-    "Eruvin 68b"
-   ],
-   "start_segment": 0,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": {
-    "start_back": 2,
-    "end_forward": 0,
-    "reason": "Starts at Ravina's question so the exchange is not cut mid-sentence; the site story it continues is not directly adjacent, so merge is not possible."
-   },
-   "reviewed": false,
-   "summary": "Rava attempts to find a legal loophole to provide warm water for a baby's circumcision on Shabbat after it spilled, but is challenged by Ravina.",
-   "segments": [
+    },
     {
      "ref": "Eruvin 68a",
      "i": 13,
@@ -2261,13 +2228,18 @@
    ],
    "span": [
     {
+     "ref": "Eruvin 68a",
+     "start": 12,
+     "end": 14
+    },
+    {
      "ref": "Eruvin 68b",
      "start": 0,
      "end": 3
     }
    ],
-   "words": 448,
-   "minutes": 3
+   "words": 599,
+   "minutes": 4
   },
   {
    "id": "eruvin-68b-13-16",
@@ -2279,16 +2251,16 @@
    "start_segment": 13,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 is the Gemara's question about the mishna; the Sadducee incident and its versions are told in 6-8.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Rabban Gamliel recounts an incident where a Sadducee neighbor renounced his rights, and Gamliel urged the residents to finish their work before the neighbor could prohibit them.",
    "segments": [
-    {
-     "ref": "Eruvin 68b",
-     "i": 13,
-     "he": "אָמַר רַבָּן גַּמְלִיאֵל: מַעֲשֶׂה בְּצַדּוּקִי אֶחָד שֶׁהָיָה דָּר עִמָּנוּ. צַדּוּקִי מַאן דְּכַר שְׁמֵיהּ?",
-     "en": "It was stated in the mishna that <b>Rabban Gamliel said:</b> There was <b>an incident involving a certain Sadducee who lived with us</b> in the same alleyway in Jerusalem, who renounced his rights in the alleyway before Shabbat. The mishna then continues with a discussion about how and whether the alleyway may be used on Shabbat. The Gemara first poses a question: <b>A Sadducee; who mentioned his name?</b> The mishna had thus far spoken only of a gentile, so why does Rabban Gamliel invoke an incident involving a Sadducee?"
-    },
     {
      "ref": "Eruvin 68b",
      "i": 14,
@@ -2315,7 +2287,7 @@
      "end": 16
     }
    ],
-   "words": 399,
+   "words": 311,
    "minutes": 3
   },
   {
@@ -2402,7 +2374,13 @@
    "start_segment": 6,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The incident and Rabbi Hiyya's ruling with Rabbi Yishmael's reply end at 6; 7-11 are the later dilemma about why he ruled that way.",
+    "start_trim": 0,
+    "end_trim": 5
+   },
    "reviewed": false,
    "summary": "After Rabbi Hiyya prohibited Rabbi Oshaya's daughter-in-law from returning from a bathhouse despite an eiruv made by her mother-in-law, Rabbi Ya'akov traveled to the Ladder of Tyre to confirm the exact legal grounds for the ruling.",
    "segments": [
@@ -2417,36 +2395,6 @@
      "i": 7,
      "he": "וּבָא מַעֲשֶׂה לִפְנֵי רַבִּי חִיָּיא — וְאָסַר. אָמַר לוֹ רַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי: בַּבְלַאי, כׇּל כָּךְ אַתָּה מַחְמִיר בְּעֵירוּבִין?! כָּךְ אָמַר אַבָּא: כֹּל שֶׁיֵּשׁ לְךָ לְהָקֵל בְּעֵירוּבִין — הָקֵל.",
      "en": "<b>And the incident came before Rabbi Ḥiyya</b> for a ruling as to whether the <i>eiruv</i> is valid, <b>and he</b> ruled that it was not valid and <b>prohibited</b> her return. <b>Rabbi Yishmael, son of Rabbi Yosei, said to him: Babylonian, are you so stringent with regard to an <i>eiruv</i>? This</b> is what my <b>father said: Any</b> case <b>where you have</b> the ability <b>to be lenient with regard to an <i>eiruv</i>, be lenient.</b>"
-    },
-    {
-     "ref": "Eruvin 80a",
-     "i": 8,
-     "he": "וְאִבַּעְיָא לְהוּ: מִשֶּׁל חֲמוֹתָהּ עֵירְבָה לָהּ, וּמִשּׁוּם דְּלֹא זִיכְּתָה לָהּ. אוֹ דִילְמָא: מִשֶּׁלָּהּ עֵירְבָה לָהּ, וּמִשּׁוּם דְּשֶׁלֹּא מִדַּעְתָּהּ?",
-     "en": "<b>And a dilemma was raised</b> before the Sages: Did the mother-in-law <b>establish the <i>eiruv</i> for</b> her daughter-in-law <b>with the mother-in-law’s</b> food, and Rabbi Ḥiyya prohibited it <b>because she did not confer possession to her,</b> i.e., she merely prepared the <i>eiruv</i> but did not confer possession of the food, and an <i>eiruv</i> of this kind is not effective? <b>Or perhaps she established the <i>eiruv</i> for her with the</b> daughter-in-law’s <b>own</b> food, but the <i>eiruv</i> was invalid <b>because</b> it was prepared <b>without her knowledge?</b>"
-    },
-    {
-     "ref": "Eruvin 80a",
-     "i": 9,
-     "he": "אָמַר לָהֶן הַהוּא מֵרַבָּנַן, וְרַבִּי יַעֲקֹב שְׁמֵיהּ: לְדִידִי מִיפָּרְשָׁא לַהּ מִינֵּיהּ דְּרַבִּי יוֹחָנָן — מִשֶּׁל חֲמוֹתָהּ עֵירְבָה, וּמִשּׁוּם דְּלֹא זִיכְּתָה לָהּ.",
-     "en": "<b>One of the Sages, named Rabbi Ya’akov, said to them: It was</b> personally <b>explained to me by Rabbi Yoḥanan</b> that the mother-in-law <b>established the <i>eiruv</i> for her with the mother-in-law’s</b> food, <b>and</b> Rabbi Ḥiyya prohibited it <b>because she did not confer possession</b> of the food <b>to her.</b>"
-    },
-    {
-     "ref": "Eruvin 80a",
-     "i": 10,
-     "he": "אֲמַר לֵיהּ רַבִּי זֵירָא לְרַבִּי יַעֲקֹב (בְּרֵיהּ) דְּבַת יַעֲקֹב: כִּי מָטֵית הָתָם, אַקֵּיף וְזִיל לְסוּלָּמָא דְצוֹר, וּבַעְיָא מִינֵּיהּ מֵרַב יַעֲקֹב בַּר אִידִי.",
-     "en": "<b>Rabbi Zeira said to Rabbi Ya’akov, son of the daughter of Ya’akov: When you go there,</b> to Eretz Yisrael, <b>take a roundabout</b> route, i.e., do not travel by the shortest path, <b>and go to the Ladder of Tyre and raise</b> this <b>dilemma before Rav Ya’akov bar Idi.</b>"
-    },
-    {
-     "ref": "Eruvin 80a",
-     "i": 11,
-     "he": "בְּעָא מִינֵּיהּ: מִשֶּׁל חֲמוֹתָהּ עֵירְבָה, וּמִשּׁוּם דְּלֹא זִיכְּתָה לָהּ, אוֹ דִּלְמָא: מִשֶּׁלָּהּ עֵירְבָה, וּמִשּׁוּם דְּשֶׁלֹּא מִדַּעְתָּהּ?",
-     "en": "Rabbi Ya’akov did so and <b>raised a dilemma before him:</b> With regard to that incident, did the mother-in-law <b>establish the <i>eiruv</i> for</b> her daughter-in-law <b>from the mother-in-law’s</b> food, <b>and</b> Rabbi Ḥiyya prohibited it <b>because she did not confer possession</b> of the food <b>to her? Or perhaps she established the <i>eiruv</i> for her with</b> the daughter-in-law’s <b>own</b> food, but the <i>eiruv</i> was invalidated <b>because</b> it was prepared <b>without her knowledge?</b>"
-    },
-    {
-     "ref": "Eruvin 80a",
-     "i": 12,
-     "he": "אֲמַר לֵיהּ: מִשֶּׁל חֲמוֹתָהּ עֵירְבָה לָהּ, וּמִשּׁוּם דְּלֹא זִיכְּתָה לָהּ.",
-     "en": "Rav Ya’akov bar Idi <b>said to him:</b> The mother-in-law <b>established the <i>eiruv</i> for her with the mother-in-law’s</b> food, and Rabbi Ḥiyya prohibited it <b>because she did not confer possession</b> of the food <b>to her.</b> Like his master and uncle, Rabbi Ḥiyya, Rav also maintains that possession of the food must be conferred upon those who wish to be included in a joining of Shabbat boundaries."
     }
    ],
    "span": [
@@ -2456,8 +2404,8 @@
      "end": 12
     }
    ],
-   "words": 455,
-   "minutes": 4
+   "words": 145,
+   "minutes": 1
   },
   {
    "id": "eruvin-85b-18-18",
@@ -2470,7 +2418,13 @@
    "start_segment": 18,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Ben Bonyas before Rabbi ends at 6; segment 7 is the Gemara's explanation with a verse.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "The son of Bonyas visits Rabbi Yehuda HaNasi, who, recognizing his wealth by his attire, instructs his attendants to accord him great honor. Rabbi Yehuda HaNasi honors the son of Bonyas for his wealth, increasing the honor after Rabbi Yishmael describes the family's vast maritime and land holdings.",
    "segments": [
@@ -2485,12 +2439,6 @@
      "i": 0,
      "he": "פַּנּוּ מָקוֹם לְבֶן מָאתַיִם מָנֶה. אָמַר לְפָנָיו רַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי: רַבִּי, אָבִיו שֶׁל זֶה יֵשׁ לוֹ אֶלֶף סְפִינוֹת בַּיָּם, וּכְנֶגְדָּן אֶלֶף עֲיָירוֹת בַּיַּבָּשָׁה. אָמַר לוֹ: לִכְשֶׁתַּגִּיעַ אֵצֶל אָבִיו אֱמוֹר לוֹ: אַל תְּשַׁגְּרֵהוּ בַּכֵּלִים הַלָּלוּ לְפָנַי.",
      "en": "<b>Make way</b> even more <b>for one</b> who possesses <b>two hundred <i>maneh</i>. Rabbi Yishmael, son of Rabbi Yosei, said before him: My teacher,</b> Bonyas, <b>father of this</b> one, <b>has a thousand ships out at sea and, corresponding to them, a thousand towns on land.</b> He should be granted pride of place due to his exorbitant wealth. Rabbi Yehuda HaNasi <b>said to him: When you reach</b> his <b>father, tell him: Do not send him to me in these garments.</b> Dress him in accordance with his wealth and status, so that he will be honored accordingly."
-    },
-    {
-     "ref": "Eruvin 86a",
-     "i": 1,
-     "he": "רַבִּי מְכַבֵּד עֲשִׁירִים. רַבִּי עֲקִיבָא מְכַבֵּד עֲשִׁירִים. כִּדְדָרֵשׁ רָבָא בַּר מָרִי: ״יֵשֵׁב עוֹלָם לִפְנֵי אֱלֹהִים חֶסֶד וֶאֱמֶת מַן יִנְצְרֻהוּ״ — אֵימָתַי יֵשֵׁב עוֹלָם לִפְנֵי אֱלֹהִים? בִּזְמַן שֶׁחֶסֶד וֶאֱמֶת מַן יִנְצְרֻהוּ.",
-     "en": "In explanation of this story, the Gemara comments: <b>Rabbi</b> Yehuda HaNasi would <b>honor the wealthy,</b> and <b>Rabbi Akiva would</b> likewise <b>honor the wealthy, in accordance with Rava bar Mari’s interpretation</b> of the verse: <b>“May he be enthroned before God forever; appoint mercy and truth, that they may preserve him”</b> (Psalms 61:8). <b>When may he be enthroned before God forever? When he appoints</b> [<b><i>man</i></b>] <b>mercy and truth that they may preserve him.</b> Rava bar Mari explains the word <i>man</i> as referring to portions of food and interprets the verse as follows: If one provides food to others, he deserves to be enthroned before God, to be shown honor and respect. Consequently, it is proper to honor the wealthy who bestow such kindnesses."
     }
    ],
    "span": [
@@ -2505,8 +2453,8 @@
      "end": 1
     }
    ],
-   "words": 308,
-   "minutes": 3
+   "words": 185,
+   "minutes": 2
   },
   {
    "id": "eruvin-86b-9-11",
@@ -2518,7 +2466,11 @@
    "start_segment": 9,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "The Gemara's challenge in 7 leads to the corrected telling in 8 (they found sheets already spread and brought the scroll), which completes the incident."
+   },
    "reviewed": false,
    "summary": "The people of Tzippori forgot to bring a Torah scroll to the synagogue before Shabbat, but were able to bring it on Shabbat by relying on sheets already spread over pillars as partitions.",
    "segments": [
@@ -2539,6 +2491,12 @@
      "i": 11,
      "he": "פָּרְסוּ?! לְכַתְּחִילָּה מִי שְׁרֵי? וְהָא הַכֹּל מוֹדִים שֶׁאֵין עוֹשִׂין אֹהֶל עֲרַאי בְּשַׁבָּת.",
      "en": "The Gemara expresses surprise at the wording of this account: Did they actually <b>spread</b> sheets on Shabbat? <b>Is it permitted</b> to do so <b><i>ab initio</i>? But doesn’t everyone agree that one may not erect a temporary tent on Shabbat</b> <i>ab initio</i>? Spreading sheets over pillars is considered constructing a temporary tent."
+    },
+    {
+     "ref": "Eruvin 86b",
+     "i": 12,
+     "he": "אֶלָּא: מָצְאוּ סְדִינִין פְּרוּסִין עַל הָעַמּוּדִים, וְהֵבִיאוּ סֵפֶר תּוֹרָה וְקָרְאוּ בּוֹ.",
+     "en": "<b>Rather,</b> what happened was that <b>they found sheets spread over the pillars,</b> which they used as partitions, <b>and</b> in this manner <b>they brought the Torah scroll</b> to the synagogue <b>and read from it.</b>"
     }
    ],
    "span": [
@@ -2548,7 +2506,7 @@
      "end": 11
     }
    ],
-   "words": 232,
+   "words": 265,
    "minutes": 2
   },
   {
@@ -2561,16 +2519,16 @@
    "start_segment": 1,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 5 is a legal baraita with no events; the story is Rabbi's recollection and Rabbi Yehuda's incident, ending with the Sages' reply that a time of danger is no proof.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda HaNasi and Rabbi Yehuda recount specific historical practices of carrying items between domains in Tekoa and during times of religious persecution.",
    "segments": [
-    {
-     "ref": "Eruvin 91a",
-     "i": 1,
-     "he": "תַּנְיָא כְּווֹתֵיהּ דְּרַב, תַּנְיָא כְּווֹתֵיהּ דְּרַב יְהוּדָה. תַּנְיָא כְּווֹתֵיהּ דְּרַב: כׇּל גַּגּוֹת הָעִיר רְשׁוּת אַחַת הֵן, וְאָסוּר לְהַעֲלוֹת וּלְהוֹרִיד מִן הַגַּגִּין לֶחָצֵר וּמִן הֶחָצֵר לְגַגִּין. וְכֵלִים שֶׁשָּׁבְתוּ בֶּחָצֵר — מוּתָּר לְטַלְטְלָן בֶּחָצֵר, בַּגַּגִּין — מוּתָּר לְטַלְטְלָן בַּגַּגִּין, וּבִלְבַד שֶׁלֹּא יְהֵא גַּג גָּבוֹהַּ עֲשָׂרָה אוֹ נָמוּךְ עֲשָׂרָה, דִּבְרֵי רַבִּי מֵאִיר. וַחֲכָמִים אוֹמְרִים: כׇּל אֶחָד וְאֶחָד רְשׁוּת לְעַצְמוֹ, וְאֵין מְטַלְטְלִין בּוֹ אֶלָּא בְּאַרְבַּע.",
-     "en": "The Gemara comments: A <i>baraita</i> <b>was taught in accordance with</b> the opinion of <b>Rav,</b> and a <i>baraita</i> <b>was taught in accordance with</b> the opinion of <b>Rav Yehuda.</b> The Gemara elaborates. A <i>baraita</i> <b>was taught in accordance with</b> the opinion of <b>Rav,</b> that according to the Rabbis one may carry only four cubits on each roof: <b>All the roofs of a city are one domain, and it is prohibited to carry</b> objects <b>up or carry</b> them <b>down, from the roofs to the courtyard or from the courtyard to the roofs. And</b> with regard to <b>vessels that were inside a courtyard</b> when <b>Shabbat</b> began, <b>it is permitted to carry them in the courtyard</b> even if an <i>eiruv</i> was not established, and it is likewise permitted to carry them from that courtyard to other courtyards. With regard to vessels that were <b>on the roofs</b> when <b>Shabbat</b> began, <b>it is permitted to carry them on the roofs, provided that one roof is neither ten</b> handbreadths <b>higher nor ten</b> handbreadths <b>lower</b> than the other. This is <b>the statement of Rabbi Meir. And the Rabbis say: Each and every one of</b> the roofs <b>is a domain in and of itself, and one may move</b> objects <b>on</b> each roof <b>only within four</b> cubits."
-    },
     {
      "ref": "Eruvin 91a",
      "i": 2,
@@ -2582,6 +2540,12 @@
      "i": 3,
      "he": "אָמַר רַבִּי יְהוּדָה: מַעֲשֶׂה בִּשְׁעַת הַסַּכָּנָה וְהָיִינוּ מַעֲלִין תּוֹרָה מֵחָצֵר לְגַג, וּמִגַּג לְחָצֵר, וּמֵחָצֵר לְקַרְפֵּף לִקְרוֹת בּוֹ.",
      "en": "And similarly, <b>Rabbi Yehuda said:</b> There was <b>an incident during a time of danger,</b> when decrees were issued that banned religious observance, <b>and we would carry a Torah scroll from courtyard to roof, and from roof to courtyard, and from courtyard to enclosure, to read from it.</b>"
+    },
+    {
+     "ref": "Eruvin 91a",
+     "i": 4,
+     "he": "אָמְרוּ לוֹ: אֵין שְׁעַת הַסַּכָּנָה רְאָיָה.",
+     "en": "The Sages <b>said to him:</b> The <i>halakha</i> cannot be determined from that incident, as an incident occurring during <b>a time of danger is no proof.</b> At a time of danger it is permitted to carry even in places where carrying is ordinarily prohibited by rabbinic law."
     }
    ],
    "span": [
@@ -2591,8 +2555,8 @@
      "end": 3
     }
    ],
-   "words": 337,
-   "minutes": 3
+   "words": 177,
+   "minutes": 2
   },
   {
    "id": "eruvin-94a-1-2",
