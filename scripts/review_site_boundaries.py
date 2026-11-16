@@ -164,6 +164,14 @@ def merged_cards():
     return {m["card"]: g["keep"] for g in merge_groups() for m in g["members"]}
 
 
+def removed_cells():
+    """{tractate: {(ref, segment)}} of every `remove` decision: passages taken off the site on purpose."""
+    out = defaultdict(set)
+    for e in json.loads(DECISIONS.read_text()).get("remove", {}).get("passages", []):
+        out[e["tractate"]] |= {(e["ref"], i) for i in range(int(e["start_segment"]), int(e["end_segment"]) + 1)}
+    return out
+
+
 def decided_in(runs):
     out = {}
     for r in runs:
@@ -422,6 +430,22 @@ def plan(run, hold=(), confirmed=()):
             continue    # what the site shows already
         changes.append({"kind": "adjust" if new else "delete", "ids": [sid], "tractate": s["tractate"],
                         "range": [v["first_pos"], v["last_pos"]], "before": old, "after": new, "reason": v["reason"]})
+
+    # A segment Simon or Jeff REMOVED from the site (septimus_site_decisions.json `remove`) may not come back as part of
+    # a widened card: Taanit 23b:9, 2026-11-16, was extended over 23b:8, removed with "drop 8-8, do not widen 9-9".
+    removed = removed_cells()
+    for c in list(changes):
+        flat, pos = flat_of(c["tractate"])
+        shown = set()
+        for i in c["ids"]:
+            a, z = shown_bounds(site[i], pos)
+            shown |= set(range(a, z + 1))
+        added = {(flat[k][0], flat[k][1]) for k in range(c["range"][0], c["range"][1] + 1) if k not in shown}
+        hit = added & removed.get(c["tractate"], set())
+        if hit:
+            changes.remove(c)
+            refused.append((c["ids"][0], f"would show {sorted(hit)[0][0]}:{sorted(hit)[0][1]}, which a `remove` "
+                                         "decision took off the site"))
 
     # No segment may be shown in two cards: checked against EVERY card of the tractate, not only this run's.
     while True:

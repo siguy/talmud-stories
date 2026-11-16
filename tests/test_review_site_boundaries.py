@@ -257,3 +257,13 @@ def test_second_reader_reads_every_merge_and_big_trim_and_its_rejections_become_
     assert (d / "hold.txt").read_text().split() == ["tt-f"] and (d / "confirmed.txt").read_text().split() == ["tt-a"]
     changes, _ = R.plan("r1", hold={"tt-f"}, confirmed={"tt-a"})
     assert [(c["kind"], c["ids"]) for c in changes] == [("merge", ["tt-a", "tt-b"])]
+
+
+def test_an_extension_onto_a_removed_passage_is_refused(site):
+    """Taanit 23b:9 (2026-11-16) was widened over 23b:8, which a `remove` decision had taken off the site."""
+    dec = json.loads((site / "decisions.json").read_text())
+    dec["remove"] = {"passages": [{"tractate": "tt", "ref": REF, "start_segment": 25, "end_segment": 25}]}
+    (site / "decisions.json").write_text(json.dumps(dec))
+    decide(site, "r1", {"tt-f": {"action": "adjust", "first_pos": 25, "last_pos": 27}})
+    changes, refused = R.plan("r1")
+    assert not changes and "`remove` decision" in dict(refused)["tt-f"]

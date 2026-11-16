@@ -1201,5 +1201,8 @@
    "id": "pesachim-112b-16-16",
    "why": "held by the second reader"
   }
- ]
+ ],
+ "reverted": {
+  "taanit-23b-9-9": "2026-11-16: undone by hand from `before` (null): it widened the card over Taanit 23b:8, which a `remove` decision took off the site ('drop 8-8, do not widen 9-9'). plan() now refuses this by name."
+ }
 }
