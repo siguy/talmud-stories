@@ -38,3 +38,7 @@ results/v11/triage_rules/
 
 # Firebase service-account keys are secrets: never commit one (docs/technical/septimus-staging.md)
 *firebase-adminsdk*.json
+# Note-drafting inputs: one text file per story, regenerated from site/data by
+# `scripts/draft_site_notes.py export`. keys/, answers/ and parts/ ARE committed: answers cost agent time.
+results/site_notes/*/batches/
+results/site_notes/boundaries/*/batches/

@@ -18,7 +18,7 @@
   "ref": {"type": "string", "pattern": "^[A-Z][A-Za-z ]+ [0-9]+[ab]$", "description": "Sefaria page ref, e.g. 'Bava Batra 21a'."},
   "story_id": {"type": "string", "pattern": "^[a-z]+(_[a-z]+)*-[0-9]+[ab]-[0-9]+-[0-9]+(-v[0-9]+)?$",
                "description": "Permanent id from site/data/story_ids.json. Reads as the span it was MINTED with (<tractate>-<daf>-<start>-<end>, -vN if that string was taken), never re-derived: after a boundary change the digits are history. Never parse a span from it; read `span`."},
-  "span": {"type": "array", "minItems": 1, "maxItems": 2, "description": "The story's current SOURCE span, one piece per page (never the display extension). The registry records the same.",
+  "span": {"type": "array", "minItems": 1, "maxItems": 3, "description": "The story's current SOURCE span, one piece per page (never the display extension). The registry records the same.",
            "items": {"type": "object", "required": ["ref", "start", "end"], "additionalProperties": false,
                      "properties": {"ref": {"$ref": "#/$defs/ref"}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 0}}}},
   "segment": {
@@ -31,12 +31,14 @@
    }
   },
   "extended": {
-   "description": "null, or a display-only widening by whole segments (site/data/boundary_extensions.json).",
+   "description": "null, or a display-only widening (start_back/end_forward) or trim of legal argument (start_trim/end_trim) by whole segments (site/data/boundary_extensions.json).",
    "oneOf": [
     {"type": "null"},
     {"type": "object", "required": ["start_back", "end_forward", "reason"], "additionalProperties": false,
      "properties": {"start_back": {"type": "integer", "minimum": 0, "maximum": 2},
-                    "end_forward": {"type": "integer", "minimum": 0, "maximum": 4},
+                    "end_forward": {"type": "integer", "minimum": 0, "maximum": 6},
+                    "start_trim": {"type": "integer", "minimum": 0},
+                    "end_trim": {"type": "integer", "minimum": 0},
                     "reason": {"type": "string", "maxLength": 300}}}
    ]
   },

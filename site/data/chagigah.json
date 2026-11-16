@@ -44,12 +44,17 @@
    "tractate": "chagigah",
    "ref": "Chagigah 3a",
    "refs": [
-    "Chagigah 3a"
+    "Chagigah 3a",
+    "Chagigah 3b"
    ],
    "start_segment": 14,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Segments 10-11 finish Rabbi Elazar ben Azarya's second teaching, which segment 9 begins; the closing praise is beyond reach."
+   },
    "reviewed": false,
    "summary": "Rabbi Yoḥanan ben Beroka and Rabbi Elazar ben Ḥisma visit Rabbi Yehoshua in Peki'in and recount the inspiring lecture given by Rabbi Elazar ben Azarya.",
    "segments": [
@@ -76,6 +81,18 @@
      "i": 17,
      "he": "וְעוֹד דָּרַשׁ: ״אֶת ה׳ הֶאֱמַרְתָּ הַיּוֹם״, ״וַה׳ הֶאֱמִירְךָ הַיּוֹם״,",
      "en": "Upon seeing that Rabbi Yehoshua was pleased to hear this idea, Rabbi Yoḥanan ben Beroka and Rabbi Elazar ben Ḥisma said to him: <b>Additionally,</b> Rabbi Elazar <b>interpreted</b> the following verses <b>homiletically: “You have affirmed, this day,</b> that <b>the Lord</b> is your God, and that you will walk in His ways and keep His statutes, His mitzvot, and His ordinances, and listen to His voice. <b>And the Lord has affirmed you, this day,</b> to be His treasure, as He promised you, and that you should keep all His mitzvot” (Deuteronomy 26:17–18)."
+    },
+    {
+     "ref": "Chagigah 3a",
+     "i": 18,
+     "he": "אָמַר לָהֶם הַקָּדוֹשׁ בָּרוּךְ הוּא לְיִשְׂרָאֵל: אַתֶּם עֲשִׂיתוּנִי חֲטִיבָה אַחַת בָּעוֹלָם, וַאֲנִי אֶעֱשֶׂה אֶתְכֶם חֲטִיבָה אַחַת בָּעוֹלָם. אַתֶּם עֲשִׂיתוּנִי חֲטִיבָה אַחַת בָּעוֹלָם, דִּכְתִיב: ״שְׁמַע יִשְׂרָאֵל ה׳ אֱלֹהֵינוּ ה׳ אֶחָד״, וַאֲנִי אֶעֱשֶׂה אֶתְכֶם חֲטִיבָה אַחַת בָּעוֹלָם, שֶׁנֶּאֱמַר:",
+     "en": "Rabbi Elazar explained: <b>The Holy One, Blessed be He, said to the Jewish people: You have made Me a single entity in the world,</b> as you singled Me out as separate and unique. <b>And</b> therefore <b>I will make you a single entity in the world,</b> as you will be a treasured nation, chosen by God. <b>You have made Me a single entity in the world, as it is written: “Hear, O Israel, the Lord our God, the Lord is One”</b> (Deuteronomy 6:4). <b>And</b> therefore <b>I will make you a single entity in the world, as it is stated:</b>"
+    },
+    {
+     "ref": "Chagigah 3b",
+     "i": 0,
+     "he": "״וּמִי כְּעַמְּךָ יִשְׂרָאֵל גּוֹי אֶחָד בָּאָרֶץ״.",
+     "en": "<b>“And who is like Your people, Israel, one nation in the land?”</b> (I Chronicles 17:21)."
     }
    ],
    "span": [
@@ -85,8 +102,8 @@
      "end": 17
     }
    ],
-   "words": 348,
-   "minutes": 3
+   "words": 461,
+   "minutes": 4
   },
   {
    "id": "chagigah-3b-5-10",
