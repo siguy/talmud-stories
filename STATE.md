@@ -126,6 +126,7 @@ gate       not yet defined
 history    docs/capabilities/6_publication.md
 open       2026-10-12-septimus-story-viewer
 open       2026-11-08-septimus-signup
+open       2026-11-16-reader-feedback-loop
 closed     10 item(s) in work/done/
 ```
 
@@ -177,4 +178,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 29c494ddca6c15e5 -->
+<!-- board-checksum: 353e8c3b97189bc8 -->

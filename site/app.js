@@ -133,13 +133,13 @@
       function label() { btn.textContent = read.has(id) ? "✓ Marked as read" : "Mark as read"; btn.setAttribute("aria-pressed", read.has(id)); }
       label();
       btn.addEventListener("click", function () { toggleRead(id); label(); });
-      wireFeedback(s);
+      wireFeedback(s, note);
     });
   }
 
   // ---- feedback: inline per story; fills in the story's details itself ------------------------
   var CATS = [["hebrew", "The Hebrew text looks wrong"], ["translation", "The English is wrong or unclear"], ["not_story", "This isn't really a story"],
-              ["boundary", "The story starts or ends in the wrong place"], ["other", "Something else"]];
+              ["boundary", "The story starts or ends in the wrong place"], ["note", "The background note is wrong"], ["other", "Something else"]];
   var CFG = window.SEPTIMUS_CONFIG || {};
   function plain(h) { var d = document.createElement("div"); d.innerHTML = h; return (d.textContent || "").trim(); }
   function noteMarkup(n) {
@@ -161,7 +161,7 @@
       '<div class="hp" aria-hidden="true"><label>Leave empty <input type="text" id="fb-website" tabindex="-1" autocomplete="off"></label></div>' +
       '<button class="btn" id="fb-send" type="submit">Send</button><div id="fb-msg" role="status"></div></form></details>';
   }
-  function wireFeedback(s) {
+  function wireFeedback(s, note) {
     var seg = null; // null = about the whole story
     function about() {
       var el = document.getElementById("fb-about");
@@ -186,34 +186,30 @@
         story_id: s.id, tractate: s.tractate, ref: s.ref, refs: s.refs,
         reviewed: s.reviewed, in_mishnah: s.in_mishnah, summary: s.summary, category: cat, comment: comment,
         segment: g ? { ref: g.ref, index: g.i, he: plain(g.he), en: plain(g.en) } : null,
+        // What the reader was looking at, so triage can tell "already fixed" from "still wrong".
+        span: s.span || [], extended: !!(s.extended && (s.extended.start_back || s.extended.end_forward)),
+        note_drafted: note && note.drafted ? String(note.drafted) : "", note_approved: !!(note && note.approved),
+        site: /staging/.test(location.hostname) ? "staging" : "prod", test: /^\s*TEST\b/i.test(comment),
         name: document.getElementById("fb-name").value.trim(), website: document.getElementById("fb-website").value,
         page_url: location.href.slice(0, 300)
       };
       var send = document.getElementById("fb-send"); send.disabled = true; msg.className = "msg"; msg.textContent = "Sending…";
       function done(ok, text) { send.disabled = false; msg.className = "msg"; msg.innerHTML = text; if (ok) document.getElementById("fb-comment").value = ""; }
+      // The endpoint did not answer. The feedback repo is private, so a GitHub link would be a 404 for readers:
+      // offer the report as text to copy, and an email link (D11, Simon 2026-11-15).
       function fallback() {
         var label = CATS.filter(function (c) { return c[0] === cat; })[0][1];
-        var title = "[Feedback] " + (g ? g.ref + " segment " + g.i : s.ref) + ": " + label;
-        // GitHub refuses a new-issue URL much past 8 KB, and Hebrew triples when encoded: a long passage's text
-        // alone could exceed it. Shorten the passage text (id + segment index locate it) until the URL fits.
-        var base = "https://github.com/" + (CFG.repo || "") + "/issues/new?labels=" + encodeURIComponent("story-feedback") + "&title=" + encodeURIComponent(title) + "&body=";
-        var url, keep = 2000;
-        do {
-          var p = JSON.parse(JSON.stringify(payload));
-          if (p.segment) { p.segment.he = p.segment.he.slice(0, keep); p.segment.en = p.segment.en.slice(0, keep); }
-          if (keep < 2000) p.summary = (p.summary || "").slice(0, keep);
-          var body = (comment ? "> " + comment + "\n\n" : "") + "```json\n" + JSON.stringify(p, null, 1) + "\n```";
-          url = base + encodeURIComponent(body);
-          keep = Math.floor(keep / 2);
-        } while (url.length > 8000 && keep > 0);
-        if (url.length > 8000) url = url.slice(0, 8000).replace(/%[0-9A-F]?$/i, "");
-        window.open(url, "_blank", "noopener");
-        done(true, "Opened GitHub with your note filled in — press “Submit new issue” there to send it.");
+        var text = "Problem: " + label + "\nStory: " + s.id + (g ? "\nPassage: " + g.ref + " segment " + g.i : "") +
+          (comment ? "\nDetails: " + comment : "") + (payload.name ? "\nFrom: " + payload.name : "");
+        var mail = "mailto:" + (CFG.feedbackEmail || "") + "?subject=" + encodeURIComponent("Story problem: " + s.id) + "&body=" + encodeURIComponent(text);
+        done(false, 'Sorry, that did not send. Please email it instead: <a href="' + mail + '">send by email</a>, or copy this and send it to us:' +
+          '<textarea readonly rows="5" id="fb-copy">' + esc(text) + '</textarea>');
+        var box = document.getElementById("fb-copy"); if (box) box.addEventListener("focus", function () { box.select(); });
       }
       if (!CFG.feedbackEndpoint) { fallback(); return; }
       fetch(CFG.feedbackEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
         .then(function (r) { if (!r.ok) throw new Error(r.status); done(true, "Thank you — your note was sent."); })
-        .catch(function () { done(false, 'Sorry, that did not send. <button type="button" class="linkbtn" id="fb-alt">Send via GitHub instead</button>'); document.getElementById("fb-alt").addEventListener("click", fallback); });
+        .catch(fallback);
     });
   }
 
