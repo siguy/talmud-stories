@@ -130,12 +130,17 @@
    "tractate": "nedarim",
    "ref": "Nedarim 22a",
    "refs": [
-    "Nedarim 22a"
+    "Nedarim 22a",
+    "Nedarim 22b"
    ],
    "start_segment": 10,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Rabbi Yohanan's wonder and Ulla's answer that they had not yet crossed the Jordan continue the same conversation and finish the story."
+   },
    "reviewed": false,
    "summary": "While traveling to Israel, Ulla witnesses one of his companions murder the other and, fearing for his life, encourages the murderer, later explaining the incident to Rabbi Yohanan.",
    "segments": [
@@ -144,6 +149,18 @@
      "i": 10,
      "he": "עוּלָּא בְּמִיסְּקֵיהּ לְאַרְעָא דְּיִשְׂרָאֵל אִיתְלְווֹ לֵיהּ תְּרֵין בְּנֵי חוֹזָאֵי בַּהֲדֵיהּ. קָם חַד שַׁחְטֵיהּ לְחַבְרֵיהּ. אֲמַר לֵיהּ לְעוּלָּא: יָאוּת עֲבַדִי? אֲמַר לֵיהּ: אִין, וּפְרַע לֵיהּ בֵּית הַשְּׁחִיטָה. כִּי אֲתָא לְקַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲמַר לֵיהּ: דִּלְמָא חַס וְשָׁלוֹם אַחְזִיקִי יְדֵי עוֹבְרֵי עֲבֵירָה? אֲמַר לֵיהּ: נַפְשְׁךָ הִצַּלְתָּ.",
      "en": "The Gemara relates: <b>Ulla, on his ascent to Eretz Yisrael, had two residents of Ḥozai join him.</b> Because of a brawl between them, <b>one arose</b> and <b>slaughtered the other.</b> The assailant <b>said to Ulla: Did I act properly? He said to him: Yes, and open the place of the slaughter,</b> i.e., cut it more so that he will die faster. <b>When</b> Ulla <b>came before Rabbi Yoḥanan,</b> Ulla <b>said to him: Perhaps, Heaven forbid, I strengthened the hands of sinners</b> by commending him, although I did so merely because I was afraid that he would kill me. <b>He said to him: You saved yourself</b> by doing so, as it is permitted for one to say words like this in order to save his own life."
+    },
+    {
+     "ref": "Nedarim 22a",
+     "i": 11,
+     "he": "קָא תָמַהּ רַבִּי יוֹחָנָן, מִכְּדִי כְּתִיב: ״וְנָתַן ה׳ לְךָ שָׁם לֵב רַגָּז״ בְּבָבֶל כְּתִיב? אֲמַר לֵיהּ: הָהוּא שַׁעְתָּא",
+     "en": "With regard to the narrative itself, <b>Rabbi Yoḥanan wondered: Now, it is written</b> in the passage of curses: <b>“But the Lord shall give you there a trembling heart”</b> (Deuteronomy 28:65) and this <b>is written with regard to Babylonia,</b> because in the exile an individual possesses a trembling and angry heart. How is it possible that in Eretz Yisrael a person can get so angry as to murder another? Ulla <b>said to him: At that moment</b> when the incident occurred"
+    },
+    {
+     "ref": "Nedarim 22b",
+     "i": 0,
+     "he": "לָא עָבְרִינַן יַרְדְּנָא.",
+     "en": "<b>we had not</b> yet <b>crossed the Jordan River,</b> and we were still outside of Eretz Yisrael. Therefore, the curse of a heart of anger was relevant."
     }
    ],
    "span": [
@@ -153,8 +170,8 @@
      "end": 10
     }
    ],
-   "words": 124,
-   "minutes": 1
+   "words": 229,
+   "minutes": 2
   },
   {
    "id": "nedarim-22b-7-9",

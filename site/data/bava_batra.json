@@ -578,51 +578,22 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 10b",
    "refs": [
-    "Bava Batra 10b"
+    "Bava Batra 10b",
+    "Bava Batra 11a"
    ],
    "start_segment": 12,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "The mother of King Shapur sends a large donation to the rabbis; Rabbi Ami refuses it, but Rava accepts it to maintain peace with the government, leading to a conflict between the two sages.",
+   "summary": "When the Persian queen mother Ifera Hurmiz sent four hundred dinars for charity, Rabbi Ami refused them but Rava accepted them for the sake of peace with the kingdom; Rabbi Ami was angry until it emerged that Rava had given the money to the gentile poor.",
    "segments": [
     {
      "ref": "Bava Batra 10b",
      "i": 12,
      "he": "אִיפְרָא הוֹרְמִיז אִימֵּיהּ דְּשַׁבּוּר מַלְכָּא, שַׁדַּרָה אַרְבַּע מְאָה דִּינָרֵי לְקַמֵּיהּ דְּרַבִּי אַמֵּי, וְלָא קַבְּלִינְהוּ. שַׁדַּרְ[תִּ]ינְהוּ קַמֵּיהּ דְּרָבָא, וְקַבְּלִינְהוּ מִשּׁוּם שְׁלוֹם מַלְכוּת. שְׁמַע רַבִּי אַמֵּי, אִיקְּפַד, אֲמַר: לֵית לֵיהּ: ״בִּיבֹשׁ קְצִירָהּ תִּשָּׁבַרְנָה, נָשִׁים בָּאוֹת מְאִירוֹת אוֹתָהּ״?! וְרָבָא – מִשּׁוּם שְׁלוֹם מַלְכוּת.",
      "en": "It is related that <b>Ifera Hurmiz, the mother of King Shapur,</b> king of Persia, <b>sent four hundred dinars to Rabbi Ami, but he did not accept them. She</b> then <b>sent them to Rava, and he accepted them for the sake of peace with the kingdom. Rabbi Ami heard</b> what Rava had done <b>and was angry. He said: Does</b> Rava <b>not accept</b> the lesson of the verse: <b>“When the boughs are withered, they shall be broken off; the women shall come and set them on fire”</b> (Isaiah 27:11), meaning that when righteousness has ceased from a particular nation, it is time for its citizens to be punished, and therefore we should not help them perform any meritorious deeds, which would delay their punishment? The Gemara asks: <b>And</b> why did <b>Rava</b> accept the money? The Gemara answers: He did so <b>for the sake of peace with the kingdom.</b>"
-    }
-   ],
-   "span": [
-    {
-     "ref": "Bava Batra 10b",
-     "start": 12,
-     "end": 12
-    }
-   ],
-   "words": 146,
-   "minutes": 1
-  },
-  {
-   "id": "bava_batra-11a-0-0",
-   "tractate": "bava_batra",
-   "ref": "Bava Batra 11a",
-   "refs": [
-    "Bava Batra 10b",
-    "Bava Batra 11a"
-   ],
-   "start_segment": 0,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": {
-    "start_back": 1,
-    "end_forward": 0,
-    "reason": "Segment 6 is the end of a sentence begun in segment 5 (Rava gave the money to gentile poor and Rabbi Ami was angry because...), so segment 5 is added to make it readable."
-   },
-   "reviewed": false,
-   "summary": "A queen mother sends money to Rabbi Ami who refuses it, but Rava accepts it for political peace, leading to a conflict between the two rabbis.",
-   "segments": [
+    },
     {
      "ref": "Bava Batra 10b",
      "i": 13,
@@ -638,13 +609,18 @@
    ],
    "span": [
     {
+     "ref": "Bava Batra 10b",
+     "start": 12,
+     "end": 13
+    },
+    {
      "ref": "Bava Batra 11a",
      "start": 0,
      "end": 0
     }
    ],
-   "words": 127,
-   "minutes": 1
+   "words": 273,
+   "minutes": 2
   },
   {
    "id": "bava_batra-11a-1-3",
@@ -1518,13 +1494,18 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 33a",
    "refs": [
-    "Bava Batra 33a",
-    "Bava Batra 33b"
+    "Bava Batra 33a"
    ],
    "start_segment": 3,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The date-tree case ends with Rav Hisda's ruling on the produce; segment 7 only completes the Gemara's note that Abaye and Rava disagree, which is discussion of the ruling.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Rav Idi bar Avin and a relative dispute an inheritance; after the relative admits Rav Idi is the rightful heir, a new conflict arises over the produce consumed in the interim. A relative of Rav Idi bar Avin admits he is not the closest heir after seizing a tree, leading to a ruling on the produce he consumed.",
    "segments": [
@@ -1539,12 +1520,6 @@
      "i": 4,
      "he": "אֲמַר לֵיהּ: לַיהְדַּר לִי פֵּירֵי דַּאֲכַל מֵהָהוּא יוֹמָא עַד הַשְׁתָּא! אָמַר: זֶה הוּא שֶׁאוֹמְרִים עָלָיו אָדָם גָּדוֹל הוּא? אַמַּאן קָא סְמִיךְ מָר – אַהַאי; הָא קָאָמַר דַּאֲנָא מְקָרַבְנָא טְפֵי! אַבָּיֵי וְרָבָא לָא סְבִירָא לְהוּ הָא דְּרַב חִסְדָּא,",
      "en": "Rav Idi bar Avin <b>said to</b> Rav Ḥisda: The value of the <b>produce that he consumed</b> unlawfully <b>from that day</b> when he took possession of the tree <b>until now should be returned to me.</b> Rav Ḥisda <b>said:</b> Is <b>this he about</b> whom people <b>say: He is a great man? On whom is the Master basing</b> his claim to receive the value of the produce? <b>On this</b> other relative. <b>But he was saying</b> until this point: <b>I am closer</b> in relation to the deceased than he. Therefore, you have ownership of the tree only from the time of his admission, and not from when he took possession of the tree. The Gemara comments: <b>Abaye and Rava do not hold</b> in accordance with <b>this</b> opinion <b>of Rav Ḥisda,</b>"
-    },
-    {
-     "ref": "Bava Batra 33b",
-     "i": 0,
-     "he": "כֵּיוָן דְּאוֹדִי – אוֹדִי.",
-     "en": "as they hold that <b>once</b> it is so <b>that</b> the other relative <b>admitted</b> that he is not a closer relative, <b>he admitted</b> that he never had any right to the produce of the tree. Therefore, by his own admission, he is liable to reimburse Rav Idi bar Avin."
     }
    ],
    "span": [
@@ -1559,7 +1534,7 @@
      "end": 0
     }
    ],
-   "words": 279,
+   "words": 231,
    "minutes": 2
   },
   {
@@ -3470,13 +3445,18 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 126a",
    "refs": [
-    "Bava Batra 126a",
-    "Bava Batra 126b"
+    "Bava Batra 126a"
    ],
    "start_segment": 9,
    "classification": "LOW_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The firstborn's sale, the beating and Rava's verdict are all in 5; segment 6 is Rav Pappi and Rav Pappa's analysis of Rava's ruling.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "A firstborn sold his deceased brother's portion of an estate, leading the brother's orphans to physically reclaim the produce from the buyers until Rava ruled on the sale's validity.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -3486,12 +3466,6 @@
      "i": 9,
      "he": "וְהָא דְּרַב פַּפֵּי וְרַב פָּפָּא – לָאו בְּפֵירוּשׁ אִיתְּמַר, אֶלָּא מִכְּלָלָא אִיתְּמַר – דְּהָהוּא בְּכוֹר דַּאֲזַל זַבֵּין נִכְסֵי דִּידֵיהּ וּדְפָשׁוּט. אֲזוּל יַתְמֵי בְּנֵי פָּשׁוּט לְמֵיכַל תַּמְרֵי מֵהָנְהוּ לָקוֹחוֹת, מְחוֹנְהוּ. אָמְרִי לְהוּ קְרוֹבִים: לָא מִיסָּתְיָיא דִּזְבַנְתִּינְהוּ לְנִכְסַיְיהוּ, אֶלָּא מִימְחֵא נָמֵי מָחִיתוּ לְהוּ? אֲתוֹ לְקַמֵּיהּ דְּרָבָא, אֲמַר לְהוּ: לֹא עָשָׂה וְלֹא כְלוּם.",
      "en": "The Gemara notes: <b>And this</b> dispute <b>of Rav Pappi and Rav Pappa was not stated explicitly; rather, it was stated by inference. As</b> there was <b>a certain firstborn who went</b> and <b>sold his property and</b> the property <b>of</b> his deceased <b>ordinary</b> brother, i.e., their respective portions of their father’s property, before the property was divided. The <b>orphan sons of</b> the <b>ordinary</b> brother <b>went to eat dates from</b> the field that was now in the possession of <b>those purchasers,</b> due to their father’s share in the field. The purchasers <b>hit them,</b> as though they were thieves. The <b>relatives</b> of the orphans <b>said to</b> the purchasers: <b>Not only did you purchase their property</b> illegally, <b>but you now hit them as well? They came before Rava,</b> who <b>said to them:</b> The firstborn <b>has done nothing.</b> His sale was not valid."
-    },
-    {
-     "ref": "Bava Batra 126b",
-     "i": 0,
-     "he": "מָר סָבַר: לֹא עָשָׂה כְּלוּם – בְּפַלְגָא. וּמָר סָבַר: בְּכוּלְּהוּ.",
-     "en": "Rav Pappi and Rav Pappa disagree with regard to Rava’s intention. One <b>Sage,</b> Rav Pappi, <b>holds</b> that <b>he has done nothing with regard to</b> his brother’s <b>portion,</b> as he had no right to sell it; with regard to his own additional portion, the sale was valid, as it was in his possession even before the division of the property. <b>And</b> one <b>Sage,</b> Rav Pappa, <b>holds</b> that he has done nothing <b>with regard to all</b> of the property, as he does not possess the additional portion before the property is divided between the brothers."
     }
    ],
    "span": [
@@ -3506,8 +3480,8 @@
      "end": 0
     }
    ],
-   "words": 230,
-   "minutes": 2
+   "words": 137,
+   "minutes": 1
   },
   {
    "id": "bava_batra-132a-3-3",
@@ -3917,7 +3891,11 @@
    "start_segment": 4,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "The case of Rav Zutra's mother ends with Rav Huna son of Rav Yehoshua overturning Rav Beivai's ruling in 6, which is the verdict in the case."
+   },
    "reviewed": false,
    "summary": "The mother of Rav Zutra bar Toviyya transferred her property to her son to keep it from a future husband, but after being divorced, she sued to get it back.",
    "segments": [
@@ -3926,6 +3904,12 @@
      "i": 4,
      "he": "אִימֵּיהּ דְּרַב זוּטְרָא בַּר טוֹבִיָּא כַּתְבִינְהוּ לְנִכְסַהּ לְרַב זוּטְרָא בַּר טוֹבִיָּא, דְּבָעֲיָא לְאִנְּסוֹבֵי לֵיהּ לְרַב זְבִיד. אִינְּסִיבָא וְגָרְשַׁהּ. אָתְיָא לְקַמֵּיהּ דְּרַב בִּיבִי בַּר אַבָּיֵי, אֲמַר: מִשּׁוּם אִנְּסוֹבֵי – וְהָא אִינְּסִיבָא.",
      "en": "<b>The mother of Rav Zutra bar Toviyya wrote</b> a deed granting <b>her property to Rav Zutra bar Toviyya,</b> explaining that she was doing so <b>because she wanted to get married to Rav Zevid,</b> and she did not want him to acquire her property. <b>She married</b> Rav Zevid, <b>and he divorced her. She came before Rav Beivai bar Abaye</b> to claim her property from her son. Rav Beivai <b>said:</b> She transferred her property <b>because</b> she wanted <b>to get married, and she married.</b> Since her intentions were fulfilled, even though she subsequently was divorced, the gift is a valid gift."
+    },
+    {
+     "ref": "Bava Batra 151a",
+     "i": 5,
+     "he": "אֲמַר לֵיהּ רַב הוּנָא בְּרֵיהּ דְּרַב יְהוֹשֻׁעַ: מִשּׁוּם דְּאַתּוּ מִמּוּלָאֵי, אָמְרִיתוּ מִילֵּי מוּלְיָיתָא? אֲפִילּוּ לְמַאן דְּאָמַר מַבְרַחַת קָנֵי, הָנֵי מִילֵּי הֵיכָא דְּלָא גַלְּיָא דַּעְתַּהּ, אֲבָל הָכָא – גַלְּיָא דַּעְתַּהּ דְּמִשּׁוּם אִינְּסוֹבֵי הוּא, וְהָא אִינְּסִיבָא וְאִיגָּרְשָׁה.",
+     "en": "<b>Rav Huna, son of Rav Yehoshua, said to</b> Rav Beivai: Is it <b>because you come from</b> a line of <b>truncated [<i>mula’ei</i>] people,</b> from the house of the High Priest Eli, whose descendants were condemned to premature death (see I Samuel 2:31), that <b>you say truncated [<i>mulyata</i>]</b> and unsound <b>matters? Even according to the one who says</b> that the deed of <b>a woman who shelters</b> her property from her intended husband <b>effects acquisition,</b> and the woman cannot reclaim the property, <b>this matter</b> applies <b>where she did not reveal her intentions</b> in transferring ownership of her property. <b>But here, she revealed her intentions that</b> she transferred the property <b>because</b> she wanted <b>to marry; and she married, but was divorced.</b> Therefore, since she is no longer married, she can reclaim the property."
     }
    ],
    "span": [
@@ -3935,8 +3919,8 @@
      "end": 4
     }
    ],
-   "words": 98,
-   "minutes": 1
+   "words": 231,
+   "minutes": 2
   },
   {
    "id": "bava_batra-151a-6-7",
@@ -4171,13 +4155,18 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 154a",
    "refs": [
-    "Bava Batra 154a",
-    "Bava Batra 154b"
+    "Bava Batra 154a"
    ],
    "start_segment": 10,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The Bnei Brak incident with Rabbi Akiva's ruling is complete in segment 5; segments 6-9 are Rabbi Yohanan and Reish Lakish arguing over what it proves.",
+    "start_trim": 0,
+    "end_trim": 4
+   },
    "reviewed": false,
    "summary": "An incident in Bnei Brak where a man sold his father's property and died, leading his family to contest the sale on the grounds that he was a minor.",
    "segments": [
@@ -4186,30 +4175,6 @@
      "i": 10,
      "he": "אֵיתִיבֵיהּ רַבִּי יוֹחָנָן לְרַבִּי שִׁמְעוֹן בֶּן לָקִישׁ: מַעֲשֶׂה בִּבְנֵי בְרַק בְּאֶחָד שֶׁמָּכַר בְּנִכְסֵי אָבִיו, וּמֵת, וּבָאוּ בְּנֵי מִשְׁפָּחָה וְעִרְעֲרוּ לוֹמַר: קָטָן הָיָה בִּשְׁעַת מִיתָה, וּבָאוּ וְשָׁאֲלוּ אֶת רַבִּי עֲקִיבָא: מַהוּ לְבוֹדְקוֹ? אָמַר לָהֶם: אִי אַתֶּם רַשָּׁאִים לְנַוְּולוֹ. וְעוֹד, סִימָנִין עֲשׂוּיִין לְהִשְׁתַּנּוֹת לְאַחַר מִיתָה.",
      "en": "<b>Rabbi Yoḥanan raised an objection to Rabbi Shimon ben Lakish</b> from a <i>baraita</i>: There was <b>an incident in Bnei Brak involving one who sold</b> some <b>of his father’s property</b> that he had inherited, <b>and he died, and</b> the <b>members of</b> his <b>family came and contested</b> the sale, <b>saying: He was a minor at the time of</b> his <b>death,</b> and therefore the sale was not valid. <b>And they came and asked Rabbi Akiva: What is</b> the <i>halakha</i>? Is it permitted to exhume the corpse in order <b>to examine it</b> and ascertain whether or not the heir was a minor at the time of his death? Rabbi Akiva <b>said to them:</b> It is <b>not permitted</b> for <b>you to disgrace him</b> for the sake of a monetary claim. <b>And furthermore, signs</b> indicating puberty <b>are likely to change after death,</b> and therefore nothing can be proved by exhuming the body."
-    },
-    {
-     "ref": "Bava Batra 154b",
-     "i": 0,
-     "he": "בִּשְׁלָמָא לְדִידִי – דְּאָמֵינָא רְאָיָה בְּעֵדִים; כֵּיוָן דְּאָמַר לְלָקוֹחוֹת: ״אַיְיתוֹ עֵדִים״, וְלָא אַשְׁכַּחוּ, הַיְינוּ דְּקָא אֲתוֹ וַאֲמַרוּ לֵיהּ: מַהוּ לְבוֹדְקוֹ. אֶלָּא לְדִידָךְ דְּאָמְרַתְּ: רְאָיָה בְּקִיּוּם הַשְּׁטָר, לְמָה לְהוּ לְבוֹדְקוֹ? לְקַיְּימוּ שְׁטָרַיְיהוּ, וְלוֹקְמוּ בְּנִכְסֵי!",
-     "en": "Rabbi Yoḥanan explains: <b>Granted, according to my</b> explanation of the mishna, <b>that I say</b> that the <b>proof</b> must be presented <b>by</b> bringing <b>witnesses,</b> I can explain the <i>baraita</i>. <b>Since</b> Rabbi Akiva <b>said to the buyers: Bring witnesses, and they did not find</b> witnesses, <b>this is</b> the reason <b>that they came and said to him: What is</b> the <i>halakha</i>? Is it permitted <b>to examine him? But according to you, that you say</b> that the <b>proof</b> is presented <b>by ratification of the deed, why do they</b> need <b>to examine him? Let them ratify their deed and they shall be established</b> as owners <b>of the property.</b>"
-    },
-    {
-     "ref": "Bava Batra 154b",
-     "i": 1,
-     "he": "מִי סָבְרַתְּ נִכְסֵי בְּחֶזְקַת בְּנֵי מִשְׁפָּחָה קָיְימִי – וְקָא אָתוּ לָקוֹחוֹת וּמְעַרְעֲרִי? נִכְסֵי בְּחֶזְקַת לָקוֹחוֹת קָיְימִי – וְקָא אָתוּ בְּנֵי מִשְׁפָּחָה וְקָא מְעַרְעֲרִי!",
-     "en": "Rabbi Shimon ben Lakish replies: <b>Do you maintain</b> that <b>the property stood in the possession of</b> the <b>members of</b> his <b>family and the buyers came and contested</b> their possession of the property? Rather, <b>the property stood in the possession of</b> the <b>buyers, and</b> the <b>members of</b> his <b>family came and contested</b> the sale. Since they claimed that the deed was invalid, they could not prove their claim by ratifying the deed, but only by bringing witnesses or examining the body."
-    },
-    {
-     "ref": "Bava Batra 154b",
-     "i": 2,
-     "he": "הָכִי נָמֵי מִסְתַּבְּרָא, מִדְּקָאָמַר לְהוּ: אִי אַתֶּם רַשָּׁאִים לְנַוְּולוֹ, וְאִישְׁתִּיקוּ. אִי אָמְרַתְּ בִּשְׁלָמָא בְּנֵי מִשְׁפָּחָה קָא מְעַרְעֲרִי, מִשּׁוּם הָכִי אִישְׁתִּיקוּ. אֶלָּא אִי אָמְרַתְּ לָקוֹחוֹת קָא מְעַרְעֲרִי, אַמַּאי שָׁתְקִי? לֵימְרוּ לֵיהּ: אֲנַן זוּזֵי יָהֲבִינַן לֵיהּ, לִינַּוַול וְלִינַּוַּול!",
-     "en": "<b>This, too, stands to reason, as</b> Rabbi Akiva <b>said to</b> the claimants: <b>You are not permitted to disgrace him, and they were silent. Granted, if you say</b> that the <b>members of</b> his <b>family were contesting</b> the sale, <b>due to that</b> reason <b>they were silent,</b> as they accepted that they should not disgrace their relative. <b>But if you say</b> that the <b>buyers were contesting</b> the claim of the relatives, <b>why were they silent? They should have said to</b> Rabbi Akiva: <b>We gave him money,</b> and if our right to the property cannot be proven without disgracing him, <b>let him be disgraced.</b>"
-    },
-    {
-     "ref": "Bava Batra 154b",
-     "i": 3,
-     "he": "אִי מִשּׁוּם הָא – לָא אִירְיָא; הָכִי קָאָמַר לְהוּ: חֲדָא, דְּאִי אַתֶּם רַשָּׁאִים לְנַוְּולוֹ. וְעוֹד, וְכִי תֵּימְרוּ זוּזֵי שְׁקַל – לִינַּוַול וְלִינַּוַּול; סִימָנִים עֲשׂוּיִין לְהִשְׁתַּנּוֹת לְאַחַר מִיתָה.",
-     "en": "The Gemara rejects this argument: <b>If it is due to that</b> reason, i.e., this claim they could have said, <b>there is no</b> conclusive <b>argument. This is what</b> Rabbi Akiva <b>said to them: One</b> reason to prohibit exhuming the body is <b>that you are not permitted to disgrace him. And furthermore, if you should say: He took</b> the <b>money; let him be disgraced,</b> in any event nothing can be proved by exhuming the body, as <b>signs</b> indicating puberty <b>are likely to change after death.</b>"
     }
    ],
    "span": [
@@ -4224,8 +4189,8 @@
      "end": 3
     }
    ],
-   "words": 516,
-   "minutes": 4
+   "words": 148,
+   "minutes": 1
   },
   {
    "id": "bava_batra-155a-3-3",
@@ -4892,13 +4857,18 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 174a",
    "refs": [
-    "Bava Batra 174a",
-    "Bava Batra 174b"
+    "Bava Batra 174a"
    ],
    "start_segment": 12,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The guarantor case ends with the rulings of Rav Pappa and Rav Huna; segments 8-9 are the Gemara asking and answering what differs between their opinions.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "A guarantor for a deceased man's debt paid the creditor without notifying the minor orphans and was subsequently denied reimbursement by the rabbis until the orphans reached majority.",
    "segments": [
@@ -4919,18 +4889,6 @@
      "i": 14,
      "he": "וְרַב הוּנָא בְּרֵיהּ דְּרַב יְהוֹשֻׁעַ אָמַר: אֵימַר צְרָרֵי אַתְפְּסֵיהּ.",
      "en": "<b>And Rav Huna, son of Rav Yehoshua,</b> also <b>said</b> that the orphans do not have to repay the guarantor until reaching majority, but for a different reason: <b>Say</b> that perhaps the deceased <b>gave bundles</b> of money <b>to</b> his creditor before his death, and therefore some or all of the debt has been paid. As long as they are minors, the heirs would not be aware of this payment, but upon reaching majority there is a chance that they may examine their father’s papers and discover that their father had done this. Therefore, payment is deferred until they reach majority."
-    },
-    {
-     "ref": "Bava Batra 174b",
-     "i": 0,
-     "he": "מַאי בֵּינַיְיהוּ?",
-     "en": "The Gemara asks: <b>What is</b> the difference <b>between</b> the opinion of Rav Pappa and that of Rav Huna, son of Yehoshua, as both agree that the orphans are exempt from repaying the debt until they reach majority?"
-    },
-    {
-     "ref": "Bava Batra 174b",
-     "i": 1,
-     "he": "אִיכָּא בֵּינַיְיהוּ כְּשֶׁחַיָּיב מוֹדֶה. אִי נָמֵי, דְּשַׁמְּתוּהוּ וּמִת בְּשַׁמְתֵּיהּ.",
-     "en": "The Gemara answers: The difference <b>between them</b> is in a case <b>where the one who owed</b> the money, i.e., the deceased, <b>admits</b> explicitly just before his death that he did not yet repay any of his loan. <b>Alternatively,</b> there is a difference between them in a case <b>where</b> the court <b>excommunicated</b> the deceased for not cooperating with the court in repaying his debt, <b>and he died</b> while still <b>in</b> a state of <b>excommunication,</b> which demonstrates that the debt had not been repaid prior to his death. In both of these cases Rav Pappa would exempt the minor orphans from payment, as minors are not obligated to perform mitzvot, while Rav Huna, son of Yehoshua, would require them to repay the debt immediately, as there is no possibility that their father had repaid the debt."
     }
    ],
    "span": [
@@ -4945,8 +4903,8 @@
      "end": 1
     }
    ],
-   "words": 364,
-   "minutes": 3
+   "words": 193,
+   "minutes": 2
   },
   {
    "id": "bava_batra-174b-8-10",

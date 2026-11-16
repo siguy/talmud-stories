@@ -127,7 +127,11 @@
    "start_segment": 1,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "The boy's closing retort to Rabbi Yohanan ('I would not have needed you or Hoshaya your teacher') is in segment 7, so the story must reach it."
+   },
    "reviewed": false,
    "summary": "Rabbi Yoḥanan encounters the young son of Reish Lakish and engages in a homiletical and legal discussion about tithing and testing God.",
    "segments": [
@@ -142,6 +146,12 @@
      "i": 2,
      "he": "אֲמַר לֵיהּ: וּמִי שְׁרֵי לְנַסּוֹיֵיהּ לְהַקָּדוֹשׁ בָּרוּךְ הוּא? וְהָכְתִיב: ״לֹא תְנַסּוּ אֶת ה׳״! אֲמַר לֵיהּ, הָכִי אָמַר רַבִּי הוֹשַׁעְיָא: חוּץ מִזּוֹ, שֶׁנֶּאֱמַר: ״הָבִיאוּ אֶת כׇּל הַמַּעֲשֵׂר אֶל בֵּית הָאוֹצָר וִיהִי טֶרֶף בְּבֵיתִי וּבְחָנוּנִי נָא בָּזֹאת אָמַר ה׳ צְבָאוֹת אִם לֹא אֶפְתַּח לָכֶם אֵת אֲרֻבּוֹת הַשָּׁמַיִם וַהֲרִיקֹתִי לָכֶם בְּרָכָה עַד בְּלִי דָי״.",
      "en": "The boy <b>said to him: And is it permitted to test the Holy One, Blessed be He? But isn’t it written: “You shall not test the Lord your God”</b> (Deuteronomy 6:16)? Rabbi Yoḥanan <b>said to</b> the boy that <b>Rabbi Hoshaya said as follows:</b> It is prohibited to test God in any way, <b>except in this</b> case of tithes, <b>as it is stated: “Bring the whole tithe into the storeroom, that there may be food in My house, and test Me now by this, said the Lord of hosts, if I will not open for you the windows of heaven, and pour out for you a blessing that there shall be more than sufficiency”</b> (Malachi 3:10)."
+    },
+    {
+     "ref": "Taanit 9a",
+     "i": 3,
+     "he": "מַאי ״עַד בְּלִי דָי״? אָמַר רָמֵי בַּר חָמָא אָמַר רַב: עַד שֶׁיִּבְלוּ שִׂפְתוֹתֵיכֶם מִלּוֹמַר ״דַּי״. אֲמַר לֵיהּ: אִי הֲוָת מָטֵי הָתָם לְהַאי פְּסוּקָא, לָא הֲוֵית צְרִיכְנָא לָךְ וּלְהוֹשַׁעְיָא רַבָּךְ.",
+     "en": "In relation to the above verse, the Gemara asks: <b>What</b> is the meaning of the phrase: <b>“That there shall be more than sufficiency [<i>ad beli dai</i>]”? Rami bar Ḥama said</b> that <b>Rav said:</b> It means that the abundance will be so great <b>that your lips will be worn out [<i>yivlu</i>],</b> similar to the word <i>beli</i>, <b>from saying enough [<i>dai</i>].</b> Returning to the above incident, the Gemara adds that the boy <b>said to</b> Rabbi Yoḥanan: Your claim appears explicitly in a verse. <b>If I had arrived there,</b> at this verse, <b>I would not have needed you or Hoshaya your teacher,</b> as I could have understood it on my own."
     }
    ],
    "span": [
@@ -151,8 +161,8 @@
      "end": 2
     }
    ],
-   "words": 213,
-   "minutes": 2
+   "words": 328,
+   "minutes": 3
   },
   {
    "id": "taanit-9a-4-6",
@@ -1096,7 +1106,11 @@
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 10 closes the heavenly-greetings frame opened in segment 5 (Rava's distress and the reply), so it finishes the story before the Beroka story begins."
+   },
    "reviewed": false,
    "summary": "Abaye, curious about the superior heavenly merit of Abba the Bloodletter, sends two sages to test him by staying at his home and 'stealing' his rugs. The Sages test Abba the Bloodletter's piety by stealing his rugs and asking him to appraise them, only to find he held no suspicion and had already mentally renounced ownership for charity.",
    "segments": [
@@ -1129,6 +1143,12 @@
      "i": 1,
      "he": "אֲמַרוּ לֵיהּ: בְּמָטוּתָא מִינָּךְ בְּמַאי חֲשַׁדְתִּינַּן? אֲמַר לְהוּ: אָמֵינָא, פִּדְיוֹן שְׁבוּיִים אִיקְּלַע לְהוּ לְרַבָּנַן, וְאִכְּסִיפוּ לְמֵימַר לִי. אֲמַרוּ לֵיהּ: הַשְׁתָּא נִשְׁקְלִינְהוּ מָר! אֲמַר לְהוּ: מֵהָהוּא שַׁעְתָּא אַסַּחְתִּינְהוּ מִדַּעְתַּאי לִצְדָקָה.",
      "en": "After explaining the reason for their actions, the Sages <b>said to him: Please</b> tell us, <b>what did you suspect of us?</b> You knew that we had taken your rugs, and yet you did not say anything. <b>He said to them: I said</b> to myself, certainly an unexpected opportunity for <b>a ransom of prisoners became available for the Sages,</b> and they required immediate funds, <b>but they were</b> too <b>embarrassed to say</b> so to <b>me</b> or to ask for money. Instead, they took the rugs. The Sages <b>said to him: Now</b> that we have explained the situation, <b>let the Master take</b> back the rugs. <b>He said to them: From that moment</b> when I realized they were missing, <b>I put them out of my mind</b> and consigned them <b>for charity.</b> As far as I am concerned, they are already designated for that purpose, and I cannot take them back."
+    },
+    {
+     "ref": "Taanit 22a",
+     "i": 2,
+     "he": "הֲוָה קָא חָלְשָׁא דַּעְתֵּיהּ דְּרָבָא מִשּׁוּם דְּאַבָּיֵי, אֲמַרוּ לֵיהּ: מִסָּתְיָיךְ דְּקָא מַגְּנַיתְּ אַכּוּלֵּהּ כַּרְכָא.",
+     "en": "<b>Rava was distressed due to</b> the fact <b>that Abaye</b> received greetings from Heaven every Shabbat eve, while Rava received such greetings only once a year, on Yom Kippur eve, as stated above. <b>They said to him: Be content that</b> through your merit <b>you protect</b> your <b>entire city.</b>"
     }
    ],
    "span": [
@@ -1143,8 +1163,8 @@
      "end": 1
     }
    ],
-   "words": 559,
-   "minutes": 4
+   "words": 606,
+   "minutes": 5
   },
   {
    "id": "taanit-22a-3-6",
@@ -1497,11 +1517,21 @@
    "start_segment": 9,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "The story opens 'By contrast', so it needs Rabbi Zerika's comparison with the pious men of Babylonia in segment 4 to be complete."
+   },
    "reviewed": false,
    "summary": "Rabbi Yona would secretly pray for rain in a secluded spot while pretending to his family that he was going to buy grain.",
    "included_by": "low-pool-grader-2026-11-13",
    "segments": [
+    {
+     "ref": "Taanit 23b",
+     "i": 8,
+     "he": "אֲמַר לֵיהּ רַבִּי זְרִיקָא לְרַב סָפְרָא: תָּא חֲזִי מָה בֵּין תַּקִּיפֵי דְּאַרְעָא דְיִשְׂרָאֵל לַחֲסִידֵי דְבָבֶל. חֲסִידֵי דְבָבֶל רַב הוּנָא וְרַב חִסְדָּא, כִּי הֲוָה מִצְטְרִיךְ עָלְמָא לְמִיטְרָא אָמְרִי: נִיכַּנֵּיף הֲדָדֵי וְנִיבְעֵי רַחֲמֵי, אֶפְשָׁר דְּמִירַצֵּי הַקָּדוֹשׁ בָּרוּךְ הוּא דְּיֵיתֵי מִיטְרָא.",
+     "en": "The Gemara relates another story about righteous individuals praying for rain. <b>Rabbi Zerika said to Rav Safra: Come</b> and <b>see what the difference</b> is between <b>the powerful men of Eretz Yisrael and the pious men of Babylonia.</b> This comparison serves to highlight the righteousness of the great men of Eretz Yisrael. By <b>the pious men of Babylonia,</b> I mean <b>Rav Huna and Rav Ḥisda. When the world is in need of rain,</b> these Sages say: <b>Let us assemble together and pray for mercy,</b> and <b>perhaps the Holy One, Blessed be He, will be appeased and bring rain.</b> In this manner, the pious men of Babylonia publicized their prayers for rain."
+    },
     {
      "ref": "Taanit 23b",
      "i": 9,
@@ -1516,7 +1546,7 @@
      "end": 9
     }
    ],
-   "words": 156,
+   "words": 266,
    "minutes": 2
   },
   {
@@ -2299,10 +2329,20 @@
    "start_segment": 9,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "The chicken story begins in segment 4 (the man leaving chickens at the door); that segment mixes the Gemara's question with the start of the events, so it stays in."
+   },
    "reviewed": false,
    "summary": "Rabbi Ḥanina meticulously preserves chickens left at his door, eventually trading them for goats, all of which he gives to the original owner when he returns years later.",
    "segments": [
+    {
+     "ref": "Taanit 25a",
+     "i": 8,
+     "he": "וְרַבִּי חֲנִינָא בֶּן דּוֹסָא מֵהֵיכָן הֲווֹ לֵיהּ עִזִּים? וְהָא עָנִי הֲוֵי! וְעוֹד, אָמְרוּ חֲכָמִים: אֵין מְגַדְּלִין בְּהֵמָה דַּקָּה בְּאֶרֶץ יִשְׂרָאֵל? אָמַר רַב פִּנְחָס: מַעֲשֶׂה וְעָבַר אָדָם אֶחָד עַל פֶּתַח בֵּיתוֹ וְהִנִּיחַ שָׁם תַּרְנְגוֹלִין, וּמְצָאָתַן אִשְׁתּוֹ שֶׁל רַבִּי חֲנִינָא בֶּן דּוֹסָא,",
+     "en": "The Gemara asks a question about one of the details of this story. <b>And Rabbi Ḥanina ben Dosa, from where did he have goats? Wasn’t he poor,</b> as stated above? <b>And furthermore, the Sages</b> have <b>said: One may not raise small, domesticated animals in Eretz Yisrael,</b> as they destroy the fields and property of others. How, then, could Rabbi Ḥanina ben Dosa raise goats? <b>Rav Pineḥas</b> said that this is how it came to pass: <b>An incident</b> occurred in which <b>a certain man passed by the entrance of</b> Rabbi Ḥanina’s <b>house and left chickens there. And Rabbi Ḥanina ben Dosa’s wife found them</b> and cared for them."
+    },
     {
      "ref": "Taanit 25a",
      "i": 9,
@@ -2317,8 +2357,8 @@
      "end": 9
     }
    ],
-   "words": 119,
-   "minutes": 1
+   "words": 226,
+   "minutes": 2
   },
   {
    "id": "taanit-25a-10-13",
@@ -2540,11 +2580,27 @@
    "start_segment": 13,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 2,
+    "end_forward": 0,
+    "reason": "The 'again, on another occasion' fast only makes sense with Shmuel HaKatan's first fast and parable in segments 3-4, which no other site story holds."
+   },
    "reviewed": false,
    "summary": "On another occasion, rain falls after sunset following a fast, and Shmuel HaKatan again rebukes the people's assumption that this indicates their merit.",
    "included_by": "low-pool-grader-2026-11-13",
    "segments": [
+    {
+     "ref": "Taanit 25b",
+     "i": 11,
+     "he": "רַבִּי יְהוּדָה נְשִׂיאָה גְּזַר תַּעֲנִיתָא וְיָרְדוּ לָהֶם גְּשָׁמִים לְאַחַר הָנֵץ הַחַמָּה. סָבַר לְאַשְׁלוֹמִינְהוּ, אֲמַר לֵיהּ רַבִּי אַמֵּי: קוֹדֶם חֲצוֹת וְאַחַר חֲצוֹת שָׁנִינוּ. שְׁמוּאֵל הַקָּטָן גְּזַר תַּעֲנִיתָא וְיָרְדוּ לָהֶם גְּשָׁמִים קוֹדֶם הָנֵץ הַחַמָּה. כִּסְבוּרִין הָעָם לוֹמַר: שִׁבְחוֹ שֶׁל צִבּוּר הוּא.",
+     "en": "<b>Rabbi Yehuda Nesia decreed a fast, and rain fell for them after sunrise. He thought to complete</b> the fast, but <b>Rabbi Ami said to him</b> that <b>we learned: Before noon and after noon,</b> i.e., the <i>halakha</i> is in accordance with the opinion of Rabbi Yehuda. <b>Shmuel HaKatan decreed a fast, and rain fell for them before sunrise. The people thought to say:</b> This <b>is</b> a sign of <b>the praiseworthiness of the community,</b> as we merited rainfall even before we prayed."
+    },
+    {
+     "ref": "Taanit 25b",
+     "i": 12,
+     "he": "אָמַר לָהֶם: אֶמְשׁוֹל לָכֶם מָשָׁל, לְמָה הַדָּבָר דּוֹמֶה — לְעֶבֶד שֶׁמְבַקֵּשׁ פְּרָס מֵרַבּוֹ, אָמַר לָהֶם: תְּנוּ לוֹ וְאַל אֶשְׁמַע קוֹלוֹ.",
+     "en": "<b>He said to them: I will tell you a parable. To what is this matter comparable? To</b> a situation where there is <b>a slave who requests a reward from his master,</b> either food or livelihood, <b>and</b> the master <b>says to</b> his ministers: <b>Give him</b> what he asks for <b>and let me not hear his voice,</b> as I would rather not have to listen to him. Here, too, evidently God has no desire to hear our prayers."
+    },
     {
      "ref": "Taanit 25b",
      "i": 13,
@@ -2559,8 +2615,8 @@
      "end": 13
     }
    ],
-   "words": 118,
-   "minutes": 1
+   "words": 274,
+   "minutes": 2
   },
   {
    "id": "taanit-27b-0-0",
