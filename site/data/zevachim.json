@@ -12,16 +12,16 @@
    "start_segment": 11,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 is only Rabbi Akiva's derivation from a verse; the exchange between Rabbi Tarfon and Rabbi Akiva runs from 6 to 8.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Rabbi Tarfon admits he forgot the reasoning for a law and swears an oath of its truth, only for Rabbi Akiva to reconstruct the logic, leading Tarfon to praise him for matching the original tradition.",
    "segments": [
-    {
-     "ref": "Zevachim 13a",
-     "i": 11,
-     "he": "אָמַר רַבִּי עֲקִיבָא: מִנַּיִן לְקַבָּלָה שֶׁלֹּא תְּהֵא אֶלָּא בְּכֹהֵן כָּשֵׁר וּבִכְלִי שָׁרֵת? נֶאֱמַר כָּאן: ״בְּנֵי אַהֲרֹן״, וְנֶאֱמַר לְהַלָּן: ״אֵלֶּה שְׁמוֹת בְּנֵי אַהֲרֹן הַכֹּהֲנִים הַמְּשֻׁחִים״; מָה לְהַלָּן – בְּכֹהֵן כָּשֵׁר וּבִכְלִי שָׁרֵת, אַף כָּאן – בְּכֹהֵן כָּשֵׁר וּבִכְלִי שָׁרֵת.",
-     "en": "The <i>baraita</i> continues: <b>Rabbi Akiva said: From where</b> is it derived <b>that collection</b> of the blood <b>may be</b> performed <b>only by a fit priest and</b> while he is wearing <b>service vestments?</b> The expression <b>“the sons of Aaron” is stated here</b> in the verse in Leviticus, <b>and it is stated there: “These are the names of the sons of Aaron, the priests that were anointed,</b> whom he consecrated to minister in the priest’s office” (Numbers 3:3). <b>Just as there,</b> in the verse in Numbers, it mentions the word “priests” <b>with regard to fit priests,</b> i.e., Aaron’s sons, <b>and with regard to</b> priests who were consecrated to serve by being dressed with <b>service vestments</b> (see Exodus 29:30), <b>so too here,</b> the reference is <b>to a fit priest and with regard to</b> one who is wearing <b>service vestments.</b>"
-    },
     {
      "ref": "Zevachim 13a",
      "i": 12,
@@ -48,8 +48,8 @@
      "end": 14
     }
    ],
-   "words": 411,
-   "minutes": 3
+   "words": 276,
+   "minutes": 2
   },
   {
    "id": "zevachim-19a-1-1",

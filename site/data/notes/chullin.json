@@ -66,29 +66,33 @@
    "approved": true
   },
   "chullin-6a-11-13": {
-   "note": "Rabbi Zeira and Rav Asi stopped at the inn of Ya'ei and were served eggs shriveled in wine. Rabbi Zeira did not eat; Rav Asi did. Rabbi Zeira asked whether he was not worried that the dish contained demai wine, and Rav Asi said it had not crossed his mind. Rabbi Zeira reasoned that God does not let even the animals of the righteous cause a mishap, so surely Rav Asi would not have been led to eat forbidden food. He went out, looked into it, and found a teaching showing that no mishap had happened.",
-   "why": "The Gemara has used the principle that God keeps the righteous from mishaps to argue that Rabbi Yoḥanan and Rabbi Asi ate Samaritan meat knowingly. It returns to that principle here, and then tests whether the Sages ever forbade mixtures containing demai.",
+   "note": "Rabbi Zeira and Rav Asi stopped at an inn in the town of Ya'ei and were served eggs cooked in wine. Rabbi Zeira did not eat; Rav Asi did. Rabbi Zeira asked whether he was not worried that the wine might be untithed produce, and Rav Asi said it had not occurred to him. Rabbi Zeira reasoned that God would not let a righteous man stumble into eating forbidden food, looked into it, and found a teaching that a mixture containing such doubtful produce is permitted.",
+   "why": "The Gemara is returning to its earlier claim that the righteous do not come to mishaps; this story shows it at work, and the Gemara then questions whether the Sages really exempted such mixtures.",
    "people": [
     {
      "name": "Rabbi Zeira",
-     "about": "Refuses the eggs, then reasons that Rav Asi could not have eaten forbidden food."
+     "about": "A Sage who refused the eggs and then found a ruling that showed his companion did nothing wrong."
     },
     {
      "name": "Rav Asi",
-     "about": "Eats the eggs without thinking about the wine."
+     "about": "A Sage who ate the eggs without thinking about whether the wine was tithed."
     }
    ],
    "terms": [
     {
-     "term": "demai",
-     "meaning": "Produce bought from someone not trusted to have separated the required tithes, which must be tithed again in case it was not."
+     "term": "Demai",
+     "meaning": "Produce bought from someone not trusted to have set aside the required tithes, so it must be tithed again out of doubt."
     },
     {
-     "term": "tithe",
-     "meaning": "Portions of produce that must be set aside for priests, Levites and others before the rest may be eaten."
+     "term": "Tithes",
+     "meaning": "Portions of produce the Torah requires to be given to priests, Levites or the poor, or eaten in Jerusalem."
+    },
+    {
+     "term": "Baraita",
+     "meaning": "A teaching of the early Sages that was not included in the mishna."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-6b-4-6": {
@@ -361,30 +365,34 @@
    "approved": true
   },
   "chullin-30b-15-15": {
-   "note": "Rava would check an arrow for Rabbi Yona bar Tahlifa to make sure it had no nicks, and Rabbi Yona shot a bird in flight with it, cutting its neck as a slaughter. The Gemara raises doubts: perhaps the arrow cut the wrong way, from inside the neck? No, it answers: the feathers at the front of the neck were torn, showing the cut came from the front. And how could the blood be covered with earth below and above, as the law requires? The Gemara answers that he set aside the earth of the whole valley beforehand to serve as the earth beneath.",
-   "why": "The Gemara has just learned from a verse about a drawn arrow that slaughter means drawing the blade across the neck, not pressing or striking. This case shows slaughter done with an actual arrow.",
+   "note": "Rava would check an arrow for Rabbi Yona bar Tahlifa to make sure it had no notches, and the arrow was shot and slaughtered a bird in flight. The Gemara asks whether the arrow might have cut the neck from the back, and answers that the feathers at the front of the neck were seen to be undone, showing the cut came from the front.",
+   "why": "The Gemara has just derived from \"a sharpened arrow\" that slaughter must be a drawing motion, like an arrow's flight; this incident shows a bird actually slaughtered by an arrow.",
    "people": [
     {
      "name": "Rava",
-     "about": "The Sage who examined the arrow."
+     "about": "A Sage who checked the arrow for nicks before it was shot."
     },
     {
      "name": "Rabbi Yona bar Tahlifa",
-     "about": "The man who shot and slaughtered the flying bird."
+     "about": "The Sage for whom the arrow was checked and the bird slaughtered."
     }
    ],
    "terms": [
     {
-     "term": "covering the blood",
-     "meaning": "A commandment that when a wild animal or bird is slaughtered, its blood is covered with earth. The Sages read the verse to require earth both under and over the blood."
+     "term": "Slaughter",
+     "meaning": "Kosher slaughter, which must cut the windpipe and gullet with a smooth drawing cut from the front of the neck."
     },
     {
-     "term": "simanim",
-     "meaning": "The windpipe and gullet, which must be cut for a slaughter to be valid."
+     "term": "Simanim",
+     "meaning": "The windpipe and gullet, the two passages that must be cut in kosher slaughter."
+    },
+    {
+     "term": "Inverted slaughter",
+     "meaning": "Cutting the neck from the back toward the front, which is not valid."
     }
    ],
-   "drafted": "shas1",
-   "approved": true
+   "drafted": "bfull1notes",
+   "approved": false
   },
   "chullin-39b-7-7": {
    "note": "A healthy man said, \"Write a bill of divorce for my wife.\" He then went up to the roof, fell and died. Rabban Shimon ben Gamliel ruled that if he fell on purpose, the bill of divorce is valid; if the wind pushed him, it is not.",
@@ -1321,41 +1329,25 @@
    "approved": true
   },
   "chullin-85b-11-13": {
-   "note": "Moths got into Rabbi Hiyya's flax, and he came to Rabbi Yehuda HaNasi for advice. Rabbi Yehuda HaNasi told him to slaughter a bird over the tub of water where the flax was soaking: the moths would smell the blood and leave. The Gemara asks how this was allowed, since a baraita says that one who slaughters because he needs the blood must still cover it. Two traditions answer: Rav Dimi reported that Rabbi Yehuda HaNasi told him first to make the bird a tereifa and then slaughter it, and Ravin reported that he told him to tear loose its windpipe and gullet instead of slaughtering it.",
-   "why": "The mishna says one who stabs an animal or tears loose its windpipe and gullet need not cover the blood; this case shows that rule put to practical use, and the Gemara goes on to ask why Rav Dimi's version did not simply say to tear the organs loose.",
+   "note": "Moths got into Rabbi Hiyya's flax, and he went to Rabbi Yehuda HaNasi to ask how to get rid of them. Rabbi Yehuda HaNasi told him to take a bird and slaughter it over the tub of water where the flax was soaking, because the moths would smell the blood and leave.",
+   "why": "The mishna exempts from covering the blood one who kills a bird by stabbing or tearing; the Gemara asks how Rabbi Hiyya could keep the blood of a slaughtered bird, which must be covered, and answers that he was told to kill it in a way that brings no such duty.",
    "people": [
     {
      "name": "Rabbi Hiyya",
-     "about": "A Sage whose flax was infested with moths; he asked Rabbi Yehuda HaNasi what to do."
+     "about": "A Sage whose flax was infested with moths."
     },
     {
      "name": "Rabbi Yehuda HaNasi",
-     "about": "Called simply Rabbi; he advised using a bird's blood to drive the moths away."
-    },
-    {
-     "name": "Rav Dimi",
-     "about": "A Sage who came from Eretz Yisrael and reported one version of Rabbi Yehuda HaNasi's instruction."
-    },
-    {
-     "name": "Ravin",
-     "about": "A Sage who came from Eretz Yisrael and reported a second version of the instruction."
+     "about": "The leading Sage Rabbi Hiyya asked for advice."
     }
    ],
    "terms": [
     {
-     "term": "covering the blood",
-     "meaning": "A Torah commandment: when a wild animal or bird is slaughtered, its blood must be covered with earth rather than left exposed or used."
-    },
-    {
-     "term": "tereifa",
-     "meaning": "An animal or bird with a fatal injury or defect; it is forbidden to eat even if properly slaughtered, and slaughtering it does not require covering the blood."
-    },
-    {
-     "term": "baraita",
-     "meaning": "A teaching of the early Sages that was not included in the Mishna but is quoted in the Gemara as an authority."
+     "term": "Flax",
+     "meaning": "A plant soaked in water to make linen fibers."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-86b-3-4": {
@@ -1397,33 +1389,33 @@
    "approved": true
   },
   "chullin-86b-12-12": {
-   "note": "Rav Beruna and Rav Hananel, students of Rav, were sitting at a meal while Rav Yeiva the Elder stood over them serving. They asked him for a cup of wine over which to recite Grace after Meals, then changed their minds and asked for a cup to drink. Rav Yeiva the Elder told them that Rav had said: once a person says 'Give me a cup to say the blessing,' he is forbidden to drink more wine, because he has declared his meal over.",
-   "why": "Rabbi Hanina says even Rabbi Yehuda, who requires covering a wild animal's blood before slaughtering a bird, allows one blessing for both. This incident is raised to argue the pause needs a new blessing; the Gemara rejects it, since one can slaughter with one hand and cover with the other.",
+   "note": "Rav Beruna and Rav Hananel, students of Rav, were eating together while Rav Yeiva the Elder served them. They asked him for a cup of wine to say Grace after Meals over, then changed their minds and asked for a cup to drink. Rav Yeiva told them that Rav taught: once someone asks for the cup for Grace after Meals, he may not drink more wine without first saying a new blessing.",
+   "why": "Rabbi Hanina said one blessing covers slaughtering an animal and a bird even with covering blood in between; Ravina cites this meal as a case where a pause requires a new blessing, and the Gemara rejects the comparison.",
    "people": [
     {
      "name": "Rav Beruna",
-     "about": "A student of Rav, dining with Rav Hananel."
+     "about": "A student of Rav, eating with Rav Hananel."
     },
     {
      "name": "Rav Hananel",
-     "about": "A student of Rav, dining with Rav Beruna."
+     "about": "A student of Rav, eating with Rav Beruna."
     },
     {
      "name": "Rav Yeiva the Elder",
-     "about": "Served the two students at their meal and told them Rav's rule about the cup of blessing."
+     "about": "The man serving them, who reported Rav's rule."
     },
     {
      "name": "Rav",
-     "about": "The teacher of the two students, whose ruling Rav Yeiva quotes."
+     "about": "The teacher of the two students, whose rule Rav Yeiva quotes."
     }
    ],
    "terms": [
     {
      "term": "Grace after Meals",
-     "meaning": "The blessings said at the end of a meal with bread, often recited over a cup of wine."
+     "meaning": "The blessings said after eating bread, often recited over a cup of wine."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-87a-5-8": {
@@ -1457,37 +1449,45 @@
    "approved": true
   },
   "chullin-93a-10-10": {
-   "note": "Rav Yehuda bar Oshaya was peeling the membranes off a spleen for Levi, son of Rav Huna bar Hiyya, cutting them only from the upper surface. Levi told him to go down further. Levi's father, Rav Huna bar Hiyya, came in, found him saying this, and told him that his own mother's father, Rav Yirmeya bar Abba, had said in the name of Rav that the Torah forbids only the membranes on the thick, upper surface of the spleen.",
-   "why": "The Gemara has just listed the membranes forbidden for eating, including the spleen's because it contains forbidden fat; this incident asks how much of that membrane is forbidden, and Levi goes on to challenge his father with a baraita.",
+   "note": "Rav Yehuda bar Oshaya was peeling the membranes off a spleen for Levi, son of Rav Huna bar Hiyya, cutting only from the upper surface. Levi told him to go further down. Levi's father arrived and said that Levi's maternal grandfather, Rav Yirmeya bar Abba, taught in Rav's name that the Torah forbids only the membranes on the thick upper surface. Levi cited a baraita implying that membranes on all sides are forbidden, and his father answered: if that baraita is taught, it is taught.",
+   "why": "The Gemara has just listed the spleen's membrane among those forbidden for their fat; the incident raises how much of it is forbidden, and the Gemara then reconciles two baraitot by the upper and lower parts of the spleen.",
    "people": [
     {
      "name": "Rav Yehuda bar Oshaya",
-     "about": "Was preparing a spleen for Levi by peeling off its membranes."
+     "about": "The man peeling the membranes from the spleen."
     },
     {
      "name": "Levi",
-     "about": "Son of Rav Huna bar Hiyya; he told Rav Yehuda bar Oshaya to cut deeper."
+     "about": "Son of Rav Huna bar Hiyya, who wanted more of the membrane removed."
     },
     {
      "name": "Rav Huna bar Hiyya",
-     "about": "Levi's father, who corrected him by quoting Levi's maternal grandfather."
+     "about": "Levi's father, who quoted a ruling from Levi's grandfather."
     },
     {
      "name": "Rav Yirmeya bar Abba",
-     "about": "Levi's mother's father, who transmitted a ruling in the name of Rav."
+     "about": "Levi's mother's father, who taught a ruling in Rav's name."
     },
     {
-     "name": "Rav",
-     "about": "The Sage in whose name the ruling about the spleen's membranes was given."
+     "name": "Rav Hamnuna",
+     "about": "A Sage who reported the baraita Levi cited."
     }
    ],
    "terms": [
     {
-     "term": "membranes of the spleen",
-     "meaning": "Thin layers of tissue on the spleen that the Sages considered forbidden fat, so they had to be removed before the meat could be eaten."
+     "term": "Baraita",
+     "meaning": "A teaching of the early Sages that was not included in the mishna."
+    },
+    {
+     "term": "Karet",
+     "meaning": "Literally \"cutting off\": a punishment from Heaven for certain serious sins, such as eating forbidden fat."
+    },
+    {
+     "term": "Forbidden fat",
+     "meaning": "Certain fats of cattle, sheep and goats that the Torah forbids eating."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-94a-5-5": {
@@ -1522,21 +1522,16 @@
    "approved": true
   },
   "chullin-94a-16-17": {
-   "note": "In years of famine a man invited three guests but had only three eggs to set before them. His son came in, and each guest in turn gave the boy his portion. The father came and found the boy with one egg in his mouth and two in his hand, and struck him to the ground, and the boy died. When the mother saw, she went up to the roof, fell and died, and the father too went up to the roof, fell and died. Rabbi Eliezer ben Yaakov said that three Jewish souls were killed over this matter.",
-   "why": "A baraita rules that guests may not give their host's son or daughter food from their plates without the host's permission; this incident is its warning. The Gemara notes that Rabbi Eliezer ben Yaakov's comment shows the whole baraita is his.",
-   "people": [
-    {
-     "name": "Rabbi Eliezer ben Yaakov",
-     "about": "A Sage who said three Jewish souls were killed over guests giving food to a host's child."
-    }
-   ],
+   "note": "In a year of famine, a man invited three guests and had only three eggs to set before them. His son came in, and each guest in turn gave the boy his egg. The father came and found the boy with one egg in his mouth and two in his hand, and in anger struck him to the ground, and the boy died. The mother, seeing this, went up to the roof, fell and died, and then the father did the same and died.",
+   "why": "The baraita has just ruled that guests may not give the host's children food from the table without his permission; this incident is its warning, and Rabbi Eliezer ben Yaakov notes that three lives were lost over it.",
+   "people": [],
    "terms": [
     {
-     "term": "baraita",
-     "meaning": "A teaching of the early Sages that was not included in the Mishna but is quoted in the Gemara as an authority."
+     "term": "Baraita",
+     "meaning": "A teaching of the early Sages that was not included in the mishna."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-94b-12-13": {
@@ -1561,25 +1556,25 @@
    "approved": true
   },
   "chullin-94b-14-14": {
-   "note": "A Jewish butcher told another man that if he had made peace with him, he would have given him a cut from the fattened bull he prepared the day before. The man replied that he had eaten the finest of it anyway, since a certain gentile had bought some and fed it to him. The butcher said he had prepared two bulls, and the one the man ate was a tereifa. Rabbi Yehuda HaNasi asked whether, because of this imbecile who acted improperly, they should forbid all the meat in the butcher shops. Others report that he said the butcher only meant to cause his fellow distress.",
-   "why": "The Gemara has been discussing selling non-kosher meat to gentiles. Rabbi Yehuda HaNasi's reaction fits his ruling that meat found with a gentile is permitted where the butchers are Jewish, and the Gemara goes on to ask why, in the second version, his ruling rests on the butcher's spite.",
+   "note": "A Jewish butcher said to a man he had quarrelled with: had you made peace with me yesterday, I would have given you a cut of the fattened bull I prepared. The man answered that he had eaten the finest of that bull anyway; a certain gentile had bought it and fed it to him. The butcher said he had prepared two bulls, and the one the man ate was a tereifa, which is why he sold it to a gentile. Rabbi Yehuda HaNasi, hearing of it, said: because of this imbecile, should we forbid all the meat in the gentile butcher shops of the city?",
+   "why": "The Gemara is discussing selling non-kosher meat to gentiles, and whether meat found with a gentile can be trusted where Jewish butchers work; Rabbi Yehuda HaNasi's reaction fits his own ruling that such meat is permitted.",
    "people": [
     {
      "name": "Rabbi Yehuda HaNasi",
-     "about": "Called simply Rabbi; he refused to forbid all the butcher shops because of this one butcher."
+     "about": "The leading Sage, who refused to forbid all gentile butcher meat because of this case."
     }
    ],
    "terms": [
     {
-     "term": "tereifa",
-     "meaning": "An animal with a fatal injury or defect; its meat is not kosher even if it was properly slaughtered."
+     "term": "Tereifa",
+     "meaning": "An animal with a fatal defect, which may not be eaten by Jews even if properly slaughtered."
     },
     {
-     "term": "fattened bull",
-     "meaning": "An ox specially fed to be fat, prized for its meat."
+     "term": "Gentile",
+     "meaning": "A non-Jew."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-95a-11-11": {
@@ -1631,33 +1626,33 @@
    "approved": true
   },
   "chullin-95b-9-10": {
-   "note": "As long as Rav lived, Rabbi Yohanan in Eretz Yisrael addressed his letters 'To our Master who is in Babylonia.' After Rav died, he wrote to Shmuel as 'our colleague in Babylonia.' Shmuel, stung, sent him the calculation of leap years for the next sixty years, but Rabbi Yohanan said this only showed he knew arithmetic. Then Shmuel sent him rulings on doubtful cases of tereifot that filled thirteen camel loads, and Rabbi Yohanan said: I have a Master in Babylonia; I will go and see him. Before setting out he asked a child to recite his verse, and the child said, 'Now Samuel was dead.' Rabbi Yohanan concluded that Shmuel had died, and did not go.",
-   "why": "The Gemara has just said that Rabbi Yohanan would seek a sign by asking a child for his verse; this is an example. The Gemara then adds that Shmuel had not died; the sign came so Rabbi Yohanan would be spared the hard journey.",
+   "note": "While Rav lived in Babylonia, Rabbi Yohanan in the Land of Israel addressed letters to him as \"our Master.\" After Rav died, he wrote to Shmuel as \"our colleague.\" Stung, Shmuel sent him calculations of leap years for sixty years, which did not impress him, then explanations of doubtful cases of tereifot that filled thirteen camel-loads. Rabbi Yohanan said, \"I have a Master in Babylonia,\" and planned to visit, but first asked a child for his verse; the child recited \"Now Samuel was dead.\" Rabbi Yohanan concluded Shmuel had died and did not go. The Gemara comments that Shmuel was alive; the sign came so Rabbi Yohanan would be spared the hard journey.",
+   "why": "The Gemara has just said that Rav, Shmuel and Rabbi Yohanan each looked for signs, Rabbi Yohanan by asking a child for his verse; this story shows him doing it.",
    "people": [
     {
      "name": "Rabbi Yohanan",
-     "about": "A Sage in Eretz Yisrael who wrote letters to the leading Sages of Babylonia."
+     "about": "A Sage in the Land of Israel who corresponded with the Sages of Babylonia."
     },
     {
      "name": "Rav",
-     "about": "A Sage in Babylonia whom Rabbi Yohanan addressed as 'our Master' while he lived."
+     "about": "A Sage in Babylonia whom Rabbi Yohanan addressed as \"our Master.\""
     },
     {
      "name": "Shmuel",
-     "about": "A Sage in Babylonia who set out to prove to Rabbi Yohanan that he was his master."
+     "about": "A Sage in Babylonia who set out to show Rabbi Yohanan he was his master."
     }
    ],
    "terms": [
     {
-     "term": "leap years",
-     "meaning": "Years in which an extra month is added to the Jewish calendar so the lunar months stay in step with the seasons; working them out required expert calculation."
+     "term": "Leap years",
+     "meaning": "Years to which a month is added so the Jewish calendar keeps in step with the seasons."
     },
     {
-     "term": "tereifot",
-     "meaning": "Plural of tereifa: animals with a fatal injury or defect, whose meat is not kosher; deciding doubtful cases takes great expertise."
+     "term": "Tereifot",
+     "meaning": "Animals with defects that make them forbidden to eat; deciding doubtful cases takes great expertise."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-96a-6-7": {
@@ -1992,33 +1987,37 @@
    "approved": true
   },
   "chullin-107b-1-2": {
-   "note": "When Rabbi Zeira moved from Babylonia to the Land of Israel, he found Rabbi Ami and Rabbi Asi eating with worn pieces of wineskin over their hands instead of washing. He asked how two great men could misread the case of Rav and Shmuel, since Rav had said he used a cloth only because he was delicate. The Gemara notes that Rabbi Zeira had forgotten Shmuel's ruling that the cloth is allowed for priests eating teruma, and Rabbi Ami and Rabbi Asi were priests.",
-   "why": "Continuing the question of eating with a cloth instead of washing, this story shows a limited permission: the Gemara explains it applies to priests, who are careful not to touch their food.",
+   "note": "When Rabbi Zeira moved from Babylonia to the Land of Israel, he found Rabbi Ami and Rabbi Asi eating bread with their hands covered by worn pieces of wineskin instead of washing them. He asked how two great men could misread the incident of Rav and Shmuel, since Rav had told Shmuel he did wash his hands and only used a cloth because he was delicate.",
+   "why": "The Gemara is asking whether covering the hands can replace washing before bread; it then explains that Rabbi Zeira had forgotten a ruling allowing this for priests, which Rabbi Ami and Rabbi Asi were.",
    "people": [
     {
      "name": "Rabbi Zeira",
-     "about": "A Sage newly arrived from Babylonia who challenges the two rabbis."
+     "about": "A Sage who moved from Babylonia to the Land of Israel and questioned his colleagues' practice."
     },
     {
      "name": "Rabbi Ami",
-     "about": "A Sage, a priest, found eating with his hands covered."
+     "about": "A Sage in the Land of Israel eating with covered hands."
     },
     {
      "name": "Rabbi Asi",
-     "about": "A Sage, a priest, eating with Rabbi Ami."
+     "about": "A Sage eating with Rabbi Ami in the same way."
+    },
+    {
+     "name": "Rav",
+     "about": "A Sage who, in an earlier incident, ate with a cloth after washing."
+    },
+    {
+     "name": "Shmuel",
+     "about": "A Sage who had questioned Rav about eating with a cloth."
     }
    ],
    "terms": [
     {
-     "term": "teruma",
-     "meaning": "The portion of produce given to priests, which must be eaten in a state of ritual purity."
-    },
-    {
-     "term": "priests",
-     "meaning": "Descendants of Aaron, the kohanim, who were especially careful about purity when eating."
+     "term": "Washing hands",
+     "meaning": "The ritual rinsing of hands required before eating bread."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-107b-12-13": {
@@ -2310,29 +2309,33 @@
    "approved": true
   },
   "chullin-112b-4-5": {
-   "note": "Some kosher meat belonging to Rav Mari bar Raḥel was salted together with tereifa meat. He came to Rava, who ruled from the verse calling them the unclean: the definite article forbids not only their flesh but also their juices, gravy and spices. The Gemara asks why Rava did not cite Shmuel's rule that salted food acts like boiling food, and answers that Shmuel's rule might cover only blood, not juices and gravy.",
-   "why": "Rav Naḥman has just ruled that fish salted together with birds absorb their blood; this case extends the question to kosher and non-kosher meat salted together, and Rava's answer forbids it.",
+   "note": "Meat from a properly slaughtered animal was salted for Rav Mari bar Rahel together with tereifa meat, in a perforated vessel. He came to Rava to ask whether the kosher meat was now forbidden. Rava ruled from the verse \"These are the unclean to you\" that not only the forbidden flesh is prohibited but also its juices, gravy and spices, so even while the kosher meat was giving off its blood it absorbed the juices of the forbidden meat.",
+   "why": "Rav Nahman has just ruled that fish salted with birds absorb their blood even in a perforated vessel; this case asks whether kosher meat absorbs from forbidden meat salted beside it, and the Gemara then tests Rava's answer against Shmuel's rule and a baraita about fish.",
    "people": [
     {
-     "name": "Rav Mari bar Raḥel",
-     "about": "His kosher meat was salted with non-kosher meat; he asks Rava what to do."
+     "name": "Rav Mari bar Rahel",
+     "about": "The man whose meat was salted together with tereifa meat."
     },
     {
      "name": "Rava",
-     "about": "The Sage who rules the meat forbidden."
+     "about": "The Sage who ruled on the case."
     }
    ],
    "terms": [
     {
-     "term": "tereifa",
-     "meaning": "An animal with a defect or wound that would have killed it within a year; its meat is forbidden even if slaughtered properly."
+     "term": "Tereifa",
+     "meaning": "An animal with a fatal defect, which may not be eaten by Jews even if properly slaughtered."
     },
     {
-     "term": "salted",
-     "meaning": "Kosher meat is salted to draw out its blood. Shmuel's rule treats salted food as passing on its flavor as if it were boiling hot."
+     "term": "Salting",
+     "meaning": "Meat is salted to draw out its blood, which Jews may not eat."
+    },
+    {
+     "term": "Perforated vessel",
+     "meaning": "A container with holes, so the blood and juices drain away instead of pooling."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-116a-13-15": {
@@ -2494,67 +2497,55 @@
    "approved": true
   },
   "chullin-133a-9-11": {
-   "note": "Rava and Rav Safra visited the house of Mar Yohana, who served them a choice calf. Rava asked Mar Yohana's attendant, a priest who normally received the priestly gifts, to grant them the gifts because he wanted to eat tongue with mustard. The attendant did; Rava ate and Rav Safra did not. Afterwards a verse from Proverbs was read to Rav Safra in a dream as a rebuke. He asked Rav Yosef whether it was because he had gone against Rav Yosef's ruling; Rav Yosef said no: his ruling covered only a priest giving freely to a needy scholar, not an attendant pressured into giving to a host's guest who could afford his own meat.",
-   "why": "Rav Yosef has just ruled that a priest may assign his gifts to a poor Torah scholar; this incident marks the limits of that ruling, and the Gemara goes on to say the dream's rebuke was really meant for Rava.",
+   "note": "Rava and Rav Safra visited Mar Yohana, who prepared a calf for them. Rava asked Mar Yohana's attendant, a priest, to grant them the priestly portions so he could eat tongue with mustard. Rava ate; Rav Safra did not. Afterward a verse of rebuke was read to Rav Safra in a dream, and he asked Rav Yosef whether he had broken his ruling. Rav Yosef said no: his ruling applied only to a priest giving freely to a needy scholar, not an attendant pressured before a host's guest, and Rava was not poor. The rebuke was meant for Rava, the Gemara explains, who was not granted such a dream himself.",
+   "why": "Rav Yosef has just ruled that a priest may assign his gifts to a poor Torah scholar; this incident sets the limits of that ruling.",
    "people": [
     {
      "name": "Rava",
-     "about": "A Sage who asks for the priestly gifts and eats them"
+     "about": "A Sage who ate the priestly portions given by the attendant."
     },
     {
      "name": "Rav Safra",
-     "about": "Rava's companion, who does not eat and receives a rebuking verse in a dream"
+     "about": "A Sage who refused to eat them and later had a dream of rebuke."
     },
     {
      "name": "Mar Yohana",
-     "about": "Their host, son of Rav Hana bar Adda (or, some say, of Rav Hana bar Bizna)"
+     "about": "The host who prepared a calf for his guests."
     },
     {
      "name": "Rav Yosef",
-     "about": "The Sage whose ruling is in question and who explains its limits to Rav Safra"
+     "about": "The Sage whose ruling was at issue and who explained the dream."
     }
    ],
    "terms": [
     {
-     "term": "gifts of the priesthood",
-     "meaning": "The foreleg, jaw (with the tongue) and maw of a slaughtered animal, which must be given to a priest."
-    },
-    {
-     "term": "third-born calf",
-     "meaning": "A calf considered especially choice and tender, served to honored guests."
+     "term": "Gifts of the priesthood",
+     "meaning": "Parts of a slaughtered animal (the foreleg, jaw with tongue, and stomach) that are given to a priest."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-139b-13-14": {
-   "note": "Rav Kahana said he had seen the pigeons named for King Herod standing in sixteen rows, each a mil wide, calling out \"My master, my master.\" One of them did not say it. Another said to it, \"Blind one, say 'My master, my master.'\" It answered, \"Blind one, say 'My master, my slave'\" - since Herod was not a king but a slave. They took that pigeon and slaughtered it. Rav Ashi reported that Rabbi Hanina said of this \"words\"; the Gemara will not have him dismissing Rav Kahana's report and reads it as \"through words\" of witchcraft.",
-   "why": "The mishna mentions domesticated pigeons, and the Gemara has just recorded that one reading of their name ties them to King Herod, who bred them; Rav Kahana's tale follows from that name.",
+   "note": "Rav Kahana said he saw the pigeons of Herod's breed standing in sixteen rows, each a mil wide, calling \"My master, my master.\" One pigeon was silent, and another told it, \"Blind one, say: My master, my master.\" It answered, \"Blind one, you should say: My master, my slave,\" since Herod was a slave and not a true king. That pigeon was taken to the slaughterhouse and slaughtered.",
+   "why": "The mishna's domesticated pigeons may be named for King Herod, who bred them; Rav Kahana's account follows that explanation, and the Gemara then says the scene was produced by witchcraft rather than being mere talk.",
    "people": [
     {
      "name": "Rav Kahana",
-     "about": "The Sage who says he saw the pigeons himself"
+     "about": "A Sage who reported seeing the pigeons himself."
     },
     {
-     "name": "Rav Ashi",
-     "about": "Sage who reports Rabbi Hanina's comment on the story"
-    },
-    {
-     "name": "Rabbi Hanina",
-     "about": "Sage whose one-word comment the Gemara interprets"
+     "name": "Herod",
+     "about": "The king whose pigeons these were; the pigeon calls him a slave rather than a king."
     }
    ],
    "terms": [
     {
-     "term": "mil",
-     "meaning": "A measure of distance used in the Talmud, roughly a kilometer."
-    },
-    {
-     "term": "Herod",
-     "meaning": "King of Judea; the text says one name for these pigeons comes from him, as he bred them, and the pigeon calls him a slave rather than a king."
+     "term": "Mil",
+     "meaning": "A distance of roughly a kilometer."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-141b-9-9": {
@@ -2606,37 +2597,33 @@
    "approved": true
   },
   "chullin-141b-20-21": {
-   "note": "Levi bar Simon transferred to Rav Yehuda the produce of his dovecote, its chicks and eggs. Rav Yehuda came to Shmuel, who told him: go bang on the nest so the birds rise up, and acquire them. The Gemara asks why this was needed and answers that this was a new brood Levi bar Simon himself did not yet own; banging on the nest would make the mothers fly up so that Levi bar Simon acquired the young, and he could then transfer them to Rav Yehuda by the formal handing over of a cloth.",
-   "why": "The Gemara has just ruled that a courtyard cannot acquire eggs for its owner while the mother sits on them; this case of dovecote pigeons applies that ruling.",
+   "note": "Levi bar Simon gave Rav Yehuda the yield of his dovecote, the fledglings and eggs in it. Rav Yehuda came to Shmuel and told him of it. Shmuel told him to go and bang on the dovecote so the birds would rise up, and then he could acquire them. The story does not say what happened next.",
+   "why": "The Gemara has been asking when the owner of a courtyard or dovecote acquires the eggs in it; it then asks why banging was needed and explains that Levi bar Simon himself had not yet acquired the new young.",
    "people": [
     {
      "name": "Levi bar Simon",
-     "about": "Owner of a dovecote who gave its produce to Rav Yehuda"
+     "about": "The owner of the dovecote, who gave its yield to Rav Yehuda."
     },
     {
      "name": "Rav Yehuda",
-     "about": "The recipient, who asks Shmuel how to take possession"
+     "about": "The man who received the dovecote's yield and asked Shmuel how to take it."
     },
     {
      "name": "Shmuel",
-     "about": "The Sage who tells Rav Yehuda to bang on the nest"
+     "about": "The Sage who told Rav Yehuda to bang on the dovecote."
     }
    ],
    "terms": [
     {
-     "term": "dovecote",
+     "term": "Dovecote",
      "meaning": "A structure where pigeons nest."
     },
     {
-     "term": "acquisition by means of a cloth",
-     "meaning": "A formal way of transferring ownership: one party hands the other a cloth, and with it the deal becomes binding."
-    },
-    {
-     "term": "Festival",
-     "meaning": "A Jewish holiday on which, as on the Sabbath, much work is forbidden; the Gemara considers whether the question was about preparing birds to slaughter on it."
+     "term": "Acquire",
+     "meaning": "Take legal ownership, which in Jewish law requires a recognized act, not only words."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "chullin-142a-3-3": {
