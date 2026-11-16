@@ -104,6 +104,7 @@ history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
 open       2026-09-03-boundary-testset-rebuild
 open       2026-09-03-rerun-all-tractates   ← blocked: 2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment
+open       2026-11-15-full-boundary-review   ← awaiting: jeff:boundary-end-rule
 closed     14 item(s) in work/done/
 ```
 
@@ -126,6 +127,7 @@ gate       not yet defined
 history    docs/capabilities/6_publication.md
 open       2026-10-12-septimus-story-viewer
 open       2026-11-08-septimus-signup
+open       2026-11-15-full-boundary-review   ← awaiting: jeff:boundary-end-rule
 closed     10 item(s) in work/done/
 ```
 
@@ -173,8 +175,9 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
+- `2026-11-15-full-boundary-review` — jeff:boundary-end-rule
 
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 29c494ddca6c15e5 -->
+<!-- board-checksum: 29dabbdb7c8d8f71 -->
