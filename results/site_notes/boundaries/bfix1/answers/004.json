@@ -1,0 +1,22 @@
+{
+"01": {"code": "D9EDFD", "action": "adjust", "first": 6, "last": 6, "reason": "The Rav Hamnuna incident is segment 6 alone; segment 10 is the tail of Rav Hisda's boast plus Rava's advice on marrying off a son, not part of this story."},
+"02": {"code": "A28FDC", "action": "adjust", "first": 6, "last": 6, "reason": "Rav Dimi's account of Dama ben Netina and his mother is segment 6; segment 8 is the end of Avimi's separate teaching about sons."},
+"03": {"code": "958A9C", "action": "merge", "merge_with": "kiddushin-70b-1-8", "reason": "The Neharde'a man's insult, the summons and the dinner exchange run straight into Rav Nahman's hearing in the next segment; one continuous incident split in two."},
+"04": {"code": "04A517", "action": "merge", "merge_with": "kiddushin-70a-11-16", "reason": "The hearing before Rav Nahman continues directly from the insult, summons and dinner exchange in the adjacent story; same events."},
+"05": {"code": "A5A8C0", "action": "keep", "reason": "The one-sentence incident of the man Rav Yehuda flogged shares its only segment with the ruling, and segments cannot be cut."},
+"06": {"code": "7561F0", "action": "adjust", "first": 6, "last": 8, "reason": "Adds segment 8, which gives the two prophecies and the Sages' reply 'Akiva, you have comforted us', the end of the story."},
+"07": {"code": "A9987C", "action": "adjust", "first": 6, "last": 7, "reason": "Adds segment 7, where the Rabbis object and Rava admits there is no remedy, closing the Roman synagogue incident."},
+"08": {"code": "485921", "action": "adjust", "first": 7, "last": 9, "reason": "Drops segment 6, the baraita stating the general rule; the Rav Huna incident runs from segment 7 to 9."},
+"09": {"code": "4C2318", "action": "adjust", "first": 6, "last": 8, "reason": "Adds segment 8, Rabbi Nehunya's answer to Akiva's question about longevity, the point of the episode."},
+"10": {"code": "F1E772", "action": "adjust", "first": 6, "last": 9, "reason": "Adds segments 8-9, which finish Rabbi Akiva's reply to Rabbi Shimon; the later Reish Lakish discussion is analysis and stays out."},
+"11": {"code": "D83486", "action": "adjust", "first": 6, "last": 9, "reason": "Adds segment 9 to finish Rabbi Beivai's reply; the next segment belongs to site story menachot-104a-0-1, which should then be merged into this one as its conclusion."},
+"12": {"code": "9851C4", "action": "adjust", "first": 6, "last": 6, "reason": "Keeps only Rabbi Beivai's closing line and drops Rav Yosef's halakhic resolution; this fragment is really the end of the 103b story, and once that story takes in segment 5 the two should be merged."},
+"13": {"code": "085FF2", "action": "keep", "reason": "A single mixed segment re-citing the vineyard incident inside the legal argument; nothing can be trimmed, though it duplicates the earlier citation (menachot-15a-15-15), which is not adjacent."},
+"14": {"code": "5B8898", "action": "adjust", "first": 7, "last": 7, "reason": "Drops segment 6, the tail of the Gemara's answer about the earlier version; segment 7 is the alternative version of the Ravina and Mar bar Rav Ashi incident."},
+"15": {"code": "14855E", "action": "adjust", "first": 6, "last": 7, "reason": "Adds segment 7, where Abaye challenges Rava's permission and Rava replies, completing the Bedita river incident."},
+"16": {"code": "FB6FDF", "action": "adjust", "first": 6, "last": 8, "reason": "Adds segments 7-8, which finish Rabba Tosefa'a's sentence and record his retraction, ending the exchange."},
+"17": {"code": "7D8752", "action": "adjust", "first": 6, "last": 13, "reason": "Adds segments 10-13, the students' discussion that the son overhears, bringing the story up to the son's encounter in site story moed_katan-9b-3-4, which should then be merged with it."},
+"18": {"code": "99E6E7", "action": "adjust", "first": 6, "last": 9, "reason": "Adds segments 8-9, where the father explains the last three blessings; the start of the errand sits in the preceding story, which should be merged with this one once it reaches this one."},
+"19": {"code": "5BB6DA", "action": "keep", "reason": "The Queen Helene narrative is in mishna segment 3, beyond the two-segment reach, and the STORY segments are pure analysis; this needs manual re-anchoring or removal rather than a boundary fix."},
+"20": {"code": "2D6183", "action": "adjust", "first": 7, "last": 9, "reason": "Drops segment 6, the separate fig-compote lawsuit; the bar Kappara wedding and laughter stories run from segment 7 to 9."}
+}

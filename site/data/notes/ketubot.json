@@ -15,7 +15,8 @@
      "meaning": "The document a husband gives to end a marriage."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is testing Rava's view that a condition counts as unmet even when circumstances beyond the man's control caused it. It cites Shmuel's ruling as proof, then answers that a ferry delay is common enough that he should have stipulated for it."
   },
   "ketubot-3a-9-9": {
    "note": "The Gemara repeats the case of a man who tells agents holding his divorce document that it takes effect if he does not return within thirty days. He reaches the river in time but the ferry on the other side keeps him from crossing. Shmuel rules that this is not a return, so the divorce takes effect. This is brought as further proof that a condition counts as met even when it failed through circumstances beyond his control.",
@@ -31,66 +32,37 @@
      "meaning": "The document a husband gives to end a marriage."
     }
    ],
-   "approved": true
-  },
-  "ketubot-7a-1-1": {
-   "note": "Rav Ami permitted a groom to consummate the marriage on Shabbat even though the marriage contract was not yet written. The Sages objected, since living with a wife without a contract is improper. Rav Ami answered that the bride should take property equal to the contract's value from her husband as a deposit, and then the couple may proceed.",
-   "people": [
-    {
-     "name": "Rav Ami",
-     "about": "a sage who gave the ruling"
-    }
-   ],
-   "terms": [
-    {
-     "term": "ketubah (marriage contract)",
-     "meaning": "A written contract that obligates the husband to pay his wife a set sum if the marriage ends."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-8a-9-9": {
-   "note": "Rav Ashi attended a wedding at Rav Kahana's house and recited all seven wedding blessings on the first day. On later days he recited all of them again only if new guests were present. Otherwise he called the gathering an extension of the original celebration and added only a short phrase, 'in Whose dwelling is joy', in the group invitation to Grace after Meals, plus the sixth blessing.",
-   "people": [
-    {
-     "name": "Rav Ashi",
-     "about": ""
-    },
-    {
-     "name": "Rav Kahana",
-     "about": "host of the wedding"
-    }
-   ],
-   "terms": [
-    {
-     "term": "seven blessings (sheva berakhot)",
-     "meaning": "Blessings recited at a Jewish wedding and at celebratory meals during the following week."
-    },
-    {
-     "term": "zimmun",
-     "meaning": "The invitation that opens group Grace after Meals."
-    }
-   ],
-   "approved": false
+   "approved": true,
+   "why": "The Gemara is asking whether a condition counts as unmet when the failure was beyond the man's control, such as illness. It cites Shmuel's ruling as evidence, then answers that a ferry being on the far bank is a common problem he should have stipulated for."
   },
   "ketubot-8a-12-12": {
-   "note": "Ravina arranged his son's match with a woman from Rav Haviva's family and recited the wedding blessing at the betrothal, sure the wedding would happen. The family backed out and the wedding was canceled. Separately, Rav Tahlifa came from Israel and recited six long blessings of his own. The Gemara rules that the law does not follow him and one must use the formula the Sages set.",
+   "note": "Ravina arranged for his son to marry into the family of Rav Haviva and began reciting the wedding blessing from the time of the betrothal, saying he was certain the family would not back out. The match fell through and they did back out. In a second short report, Rav Tahlifa from the Land of Israel came to Babylonia and recited six long wedding blessings; the Gemara says the law does not follow him.",
+   "why": "The Gemara is asking from when the wedding-celebration blessing may be recited before the wedding. Rav Pappa began at betrothal because the wedding was already prepared; Ravina's case shows the risk of doing so.",
    "people": [
     {
      "name": "Ravina",
-     "about": "arranged his son's marriage"
+     "about": "A father who began the wedding blessing at his son's betrothal, sure the match would hold."
     },
     {
-     "name": "Rav Taḥlifa",
-     "about": "came from the West, i.e. Eretz Yisrael, to Babylonia"
+     "name": "Rav Haviva",
+     "about": "Head of the family Ravina's son was to marry into; that family later retracted."
+    },
+    {
+     "name": "Rav Tahlifa",
+     "about": "A Sage from the West, meaning the Land of Israel, who came to Babylonia and recited six long blessings."
     }
    ],
    "terms": [
     {
      "term": "betrothal",
-     "meaning": "The first stage of marriage, a binding commitment made before the wedding itself."
+     "meaning": "The first stage of Jewish marriage, which legally binds the couple before the wedding itself; in this period it could still be called off by divorce."
+    },
+    {
+     "term": "the West",
+     "meaning": "The Babylonian Talmud's name for the Land of Israel, which lay west of Babylonia."
     }
    ],
+   "drafted": "shas1",
    "approved": false
   },
   "ketubot-8b-3-10": {
@@ -115,7 +87,8 @@
      "meaning": "A speaker who repeats a sage's words aloud so the crowd can hear them."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is asking how a mourners' blessing could be recited throughout the seven days of mourning; it answers that this happens when new visitors arrive, and cites this visit on the second day, with its series of blessings."
   },
   "ketubot-10a-11-11": {
    "note": "A groom tells Rabban Gamliel that he found no blood on the wedding night, which suggested his bride had not been a virgin, while the bride insists she was a virgin. Rabban Gamliel asks for the cloth, soaks it in water and launders it, and finds several drops of blood. He tells the groom to go take possession of his acquisition, since she was a virgin and there is no cause for concern.",
@@ -126,7 +99,8 @@
     }
    ],
    "terms": [],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is collecting cases where a groom claims his bride was not a virgin. Right after, Rav Ashi explains why Babylonian judges could not copy this washing test."
   },
   "ketubot-10b-1-1": {
    "note": "A groom came before Rabban Gamliel bar Rabbi Yehuda HaNasi and said he found no blood, and the bride said she was still a virgin. Rabban Gamliel bar Rabbi brought two maidservants, one a virgin and one not, and seated them on the opening of a wine barrel. The wine's scent came through the mouth of the non-virgin but not the virgin. The bride was then seated on the barrel and the scent did not come through, so he told the groom to take his acquisition, for she is a virgin.",
@@ -137,7 +111,8 @@
     }
    ],
    "terms": [],
-   "approved": true
+   "approved": true,
+   "why": "It is one of a run of cases about a groom's claim that his bride was not a virgin. The Gemara then asks why he tested the maidservants first, and answers he had only heard of the method and would not shame a Jewish woman for nothing."
   },
   "ketubot-10b-3-3": {
    "note": "A groom tells Rabban Gamliel the Elder he found no blood. The bride says she is from the Dorketi family, whose women have neither menstrual blood nor blood from the loss of virginity. Rabban Gamliel checks with her relatives and finds this is true. He tells the groom to take his wife and says he is fortunate, since blood will never raise a problem for him.",
@@ -148,7 +123,8 @@
     }
    ],
    "terms": [],
-   "approved": true
+   "approved": true,
+   "why": "It continues a series of cases of grooms claiming their brides were not virgins. Afterward Rabbi Hanina says Rabban Gamliel's comfort was empty, since a woman without blood will have few children, and the Sages dispute what he actually said."
   },
   "ketubot-10b-6-6": {
    "note": "A groom tells Rabbi Yehuda HaNasi he found no blood, and the bride says she was a virgin. It was a drought year and their faces were dark from hunger. Rabbi Yehuda HaNasi had them bathed and fed, and afterward the groom found blood, showing hunger had been the cause. He tells the groom to take his wife and quotes a verse about skin withered on the bones.",
@@ -159,7 +135,1896 @@
     }
    ],
    "terms": [],
+   "approved": true,
+   "why": "It is the last of a run of cases where a groom says his bride showed no sign of virginity, each showing a different reason the blood may be missing: here, famine. The chapter ends right after it."
+  },
+  "ketubot-17a-4-4": {
+   "note": "On the duty to bring joy to a bride and groom, Rabbi Yehuda bar Elai danced before the bride with a myrtle branch, calling her fair and attractive. Rav Shmuel bar Rav Yitzhak juggled three myrtle branches while dancing, and Rabbi Zeira complained that this demeaned Torah scholars. The passage ends by saying that when Rav Shmuel died a pillar of fire separated him from everyone else, a sign given to only one or two people in a generation.",
+   "people": [
+    {
+     "name": "Rabbi Yehuda bar Elai",
+     "about": "danced before brides with a myrtle branch"
+    },
+    {
+     "name": "Rav Shmuel bar Rav Yitzḥak",
+     "about": "juggled three myrtle branches while dancing"
+    },
+    {
+     "name": "Rabbi Zeira",
+     "about": "objected to the juggling"
+    }
+   ],
+   "terms": [
+    {
+     "term": "myrtle",
+     "meaning": "A fragrant branch traditionally used at weddings."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is collecting the songs and praises the Sages offered at weddings and ordinations. This account of dancing before brides belongs to that set, and right afterward Rabbi Zeira concedes that the old man's branch is what earned him his reward."
+  },
+  "ketubot-17a-6-6": {
+   "note": "Rav Aha would put the bride on his shoulders and dance. The Sages asked him whether they were also allowed to do this. He answered that if brides seem to them like a beam of wood, they may, but if not, they may not.",
+   "people": [
+    {
+     "name": "Rav Aḥa",
+     "about": "danced with the bride on his shoulders"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara is gathering accounts of Sages who danced to bring joy to a bride, such as Rabbi Yehuda bar Elai with a myrtle branch and Rav Shmuel bar Rav Yitzhak juggling three branches."
+  },
+  "ketubot-17a-8-8": {
+   "note": "A teaching says a funeral procession must give way to a bride's wedding procession, and both give way to a king of Israel. It then tells how King Agrippa, though he did not have to, rerouted his own entourage to make way for a bride's procession. The Sages praised him for it.",
+   "people": [
+    {
+     "name": "King Agrippa",
+     "about": "a king who gave way to a bride's wedding procession"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "Right after, the Gemara asks how the Sages could praise Agrippa when a king may not give up the honor due to him, and answers that it happened at a crossroads, where no one could tell he had yielded."
+  },
+  "ketubot-20a-2-3": {
+   "note": "A man known as bar Shatya suffered from bouts of insanity, and he sold some of his property. Two witnesses came and said he had sold it while insane, which would cancel the sale; two others said he had sold it while sane. Rav Ashi ruled that the two pairs cancel each other out, so the property stays with bar Shatya. The Gemara adds that this applies only to land he inherited from his fathers; property he had bought himself goes to the buyer, since he may have bought it while insane too.",
+   "why": "The Gemara is asking what happens when witnesses who signed a document are contradicted by others when they are not present. Rav Nahman says to set two against two and leave money with its owner, and cites bar Shatya's sale as his precedent.",
+   "people": [
+    {
+     "name": "Rav Nahman",
+     "about": "A leading Babylonian Sage and judge, who cites this case to support his ruling."
+    },
+    {
+     "name": "bar Shatya",
+     "about": "A man with periodic bouts of insanity; his name means roughly 'son of a madman'."
+    },
+    {
+     "name": "Rav Ashi",
+     "about": "A leading Babylonian Sage, remembered as a chief editor of the Talmud, who ruled on the sale."
+    }
+   ],
+   "terms": [
+    {
+     "term": "two against two",
+     "meaning": "When two witnesses say one thing and two say the opposite, neither pair is believed over the other, so the court acts as if no testimony was given."
+    },
+    {
+     "term": "possession of his fathers",
+     "meaning": "Property inherited from one's family. The court presumes it still belongs to the heir unless someone proves otherwise."
+    }
+   ],
+   "drafted": "pilot2",
    "approved": true
+  },
+  "ketubot-22a-9-9": {
+   "note": "A strikingly beautiful woman told her many suitors she was already engaged. Later she got engaged to a man, and the Sages asked why. She said she had said it to put off unscrupulous men, and now respectable ones had come. When the question was raised in Usha, the Sages ruled that if she gives a reason for her statement, she is believed.",
+   "people": [
+    {
+     "name": "Rav Aḥa Sar HaBira",
+     "about": "raised the question before the Sages in Usha"
+    }
+   ],
+   "terms": [
+    {
+     "term": "betrothal (kiddushin)",
+     "meaning": "The first stage of marriage, binding the couple before the wedding itself."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has taught that a woman who said she was married and then said she was not is believed if she gives a reason for her first claim. This incident is cited in support."
+  },
+  "ketubot-23a-13-16": {
+   "note": "Captive women were brought to Neharde'a to be ransomed, and Shmuel's father posted guards so they would not be alone with gentiles. Shmuel asked who had guarded them until now, and his father answered: would you treat them with such contempt if they were your daughters? His words came true: Shmuel's own daughters were taken captive and brought to Eretz Yisrael. Leaving their captors outside, they entered Rabbi Hanina's study hall, each said \"I was taken captive and I am pure\", and the court permitted them to marry priests. Rabbi Hanina told Rav Shemen bar Abba, a priest, to marry one of them. He objected that there were witnesses overseas, and Rabbi Hanina answered that they are not here. The Gemara infers that if the witnesses came, the daughters would be forbidden to priests.",
+   "people": [
+    {
+     "name": "Shmuel",
+     "about": "a Babylonian sage, whose daughters were captured"
+    },
+    {
+     "name": "Rabbi Ḥanina",
+     "about": "the sage in Eretz Yisrael whose court permitted the daughters"
+    },
+    {
+     "name": "Rav Shemen bar Abba",
+     "about": "a priest whom Rabbi Ḥanina told to marry one of them"
+    }
+   ],
+   "terms": [
+    {
+     "term": "kohen (priest)",
+     "meaning": "A descendant of Aaron, who has stricter marriage rules, including limits on marrying a woman who may have been defiled in captivity."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has taught that a captive woman who says she stayed pure is believed and may marry a priest, unless witnesses later testify she was violated. Rav Ashi reads Rabbi Hanina's reply about the overseas witnesses in that light."
+  },
+  "ketubot-26a-0-1": {
+   "note": "Shmuel told of a man who, chatting about something else, recalled being carried as a small child on his father's shoulder: they took him out of school, took off his shirt and immersed him so he could eat teruma that evening. Rabbi Hiyya added that the man said his friends kept away from him and called him 'Yohanan who eats hallot'. On the strength of this, Rabbi Yehuda HaNasi raised him to the priesthood.",
+   "why": "The Gemara asks how Rabbi Hiyya could accept a brother's word that a man is a Levite when relatives may not testify. It answers that he meant a remark made in passing, and cites this case to show such remarks are trusted.",
+   "people": [
+    {
+     "name": "Shmuel",
+     "about": "The Sage who reported this incident, as Rav Yehuda relates in his name."
+    },
+    {
+     "name": "Rabbi Hiyya",
+     "about": "Gives the end of the story, with the friends' nickname and the ruling."
+    },
+    {
+     "name": "Rabbi",
+     "about": "Rabbi Yehuda HaNasi, who accepted the man as a priest on the basis of his remark."
+    },
+    {
+     "name": "Yohanan",
+     "about": "The man in the story, whose friends nicknamed him 'Yohanan who eats hallot'."
+    }
+   ],
+   "terms": [
+    {
+     "term": "teruma",
+     "meaning": "A portion of produce given to priests, which only priests and their households may eat, and only in a state of ritual purity."
+    },
+    {
+     "term": "hallot",
+     "meaning": "Plural of halla, the portion of dough given to priests; like teruma, only priests may eat it."
+    },
+    {
+     "term": "immersed",
+     "meaning": "Dipped in a ritual bath to become ritually pure."
+    },
+    {
+     "term": "speaking offhandedly",
+     "meaning": "Saying something in passing, in conversation about another matter, without any intent to testify. Such a remark is trusted more than a deliberate claim."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-26b-7-7": {
+   "note": "Rabbi Yosei the priest and Rabbi Zekharya ben HaKatzav reported a case. A Jewish woman had been held as security for a debt in Ashkelon, and her family kept away from her, but her witnesses testified that she had not been alone with anyone or violated. The Sages told the family: if you believe the witnesses that she was held at all, believe them that she was not violated; if not, do not believe she was held.",
+   "why": "Rav had said that when gentiles rule, even a woman jailed over money is forbidden to her husband. Rava objects with this case from gentile Ashkelon; the Gemara answers it is cited this way only because that is how it happened.",
+   "people": [
+    {
+     "name": "Rabbi Yosei the priest",
+     "about": "One of the two Sages who testified about this case."
+    },
+    {
+     "name": "Rabbi Zekharya ben HaKatzav",
+     "about": "The other Sage who testified about it."
+    }
+   ],
+   "terms": [
+    {
+     "term": "taken as collateral",
+     "meaning": "Held by gentiles as security for a debt. This raised the concern that she had been violated, which would forbid her to her husband."
+    },
+    {
+     "term": "mishna",
+     "meaning": "The early code of Jewish law that the Gemara discusses. Rava quotes this case from the mishna's tractate Eduyyot."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-27b-1-2": {
+   "note": "A man rented a donkey on condition that it not be taken along the Pekod River path, where it might drown, and the donkey died. The renter told Rava he used that path but there was no water, so something else killed it. Rava accepted his claim because he could have lied and said he took the other path. Abaye objected that the 'why would I lie' argument fails when it contradicts known facts, since everyone knows the river has water there. The passage concludes that his claim is not accepted.",
+   "people": [
+    {
+     "name": "Rava",
+     "about": "the judge who accepts the claim"
+    },
+    {
+     "name": "Abaye",
+     "about": "objects to Rava"
+    }
+   ],
+   "terms": [
+    {
+     "term": "miggo (\"why would I lie\")",
+     "meaning": "A principle that a person is believed if he could have told a more convincing lie but chose to tell a less helpful version."
+    }
+   ],
+   "approved": true,
+   "why": "Rav Ashi asks whether a woman who says she neither hid nor was violated is believed because she could have told a better lie. The Gemara compares this case, then notes that here water on the road was known for certain."
+  },
+  "ketubot-27b-10-11": {
+   "note": "A man from a distant district told Mari bar Isak he was his brother and asked for a share of their father's property, but Mari said he did not know him. Rav Hisda said Mari was right to not recognize him and cited Joseph, whose brothers did not recognize him once he had a beard. Rav Hisda asked the claimant for witnesses, but he said they were afraid of Mari. Rav Hisda then ordered Mari, a known violent man, to bring witnesses that this was not his brother. The Gemara concludes that a person is not suspected of both hiding the truth and lying.",
+   "people": [
+    {
+     "name": "Mari bar Isak",
+     "about": "the man who denied knowing the claimant"
+    },
+    {
+     "name": "Rav Ḥisda",
+     "about": "the judge who decided the case"
+    }
+   ],
+   "terms": [
+    {
+     "term": "burden of proof",
+     "meaning": "The responsibility of the person making a claim to bring evidence, which Rav Hisda reverses here for violent men."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has said that a maidservant may keep silent but would not also lie, since one does not commit two dishonest acts. It cites this case as proof: the frightened witnesses would hide the truth but would not testify falsely."
+  },
+  "ketubot-28a-5-6": {
+   "note": "A man who had divorced his betrothed brought a case before Rava, and Rava had an intermediary placed between the two. Rav Adda bar Mattana objected, citing Rav Nahman's teaching that a woman divorced from betrothal is paid directly. Rava replied that this applies only to people who are not familiar with each other, and here the two are, so they must be kept apart. A second version has the roles reversed, with Rav Adda urging the intermediary and Rava citing the objection, but the same conclusion follows.",
+   "people": [
+    {
+     "name": "Rava",
+     "about": "the judge"
+    },
+    {
+     "name": "Rav Adda bar Mattana",
+     "about": "sat before Rava and raised the objection"
+    },
+    {
+     "name": "Rav Naḥman",
+     "about": "his teaching is cited"
+    }
+   ],
+   "terms": [
+    {
+     "term": "betrothed (erusa)",
+     "meaning": "A woman in the first stage of marriage, committed to a man but not yet fully married."
+    }
+   ],
+   "approved": true,
+   "why": "A teaching says a priest who owes his divorced wife money must repay her through someone else, so they do not mix. Rav Nahman exempts a divorce from betrothal, since they are not used to each other; this case shows the exception failing."
+  },
+  "ketubot-28b-3-4": {
+   "note": "A teaching quotes Rabbi Elazar, son of Rabbi Yosei, saying he testified only once, and the court raised a slave to priesthood on his word. The Gemara says this cannot be right, because God would not cause such a mistake through a righteous person. It corrects the statement: they wanted to do so, but in the end did not. He had seen a priest's slave given teruma in Rabbi Yosei's town, where this is not proof of priesthood, and he then testified about it in Rabbi Yehuda's town, where it is.",
+   "people": [
+    {
+     "name": "Rabbi Elazar, son of Rabbi Yosei",
+     "about": "the witness who testified"
+    }
+   ],
+   "terms": [
+    {
+     "term": "teruma",
+     "meaning": "A portion of produce given to priests, which only priests and their household may eat."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has explained that Rabbi Yehuda's and Rabbi Yosei's towns differed on whether eating teruma proves a man is a priest; this account shows that difference nearly making a slave a priest."
+  },
+  "ketubot-49b-12-12": {
+   "note": "Scholars ask whether the law follows Rabbi Ile'a's view about a father being supported by his children. As evidence, the Gemara tells of a man who kissed Rabbi Yonatan's foot, because the man had given his property to his sons and Rabbi Yonatan forced them to feed him. The Gemara reasons that if the sons were legally required to support him, the court could simply have taken the money from the property, so forcing them suggests they were not required. It concludes the law does not follow Rabbi Ile'a.",
+   "people": [
+    {
+     "name": "Rabbi Ile'a",
+     "about": ""
+    },
+    {
+     "name": "Rabbi Yonatan",
+     "about": ""
+    },
+    {
+     "name": "Rabbi Hanina",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "halakha",
+     "meaning": "Jewish law; the accepted ruling."
+    }
+   ],
+   "approved": true,
+   "why": "The Sages at Usha ruled that a man who gave his property to his son is still supported from it, and the Gemara asks if the law follows Rabbi Ile'a on this. The forcing implies the sons owed nothing by law, so it does not."
+  },
+  "ketubot-54b-1-2": {
+   "note": "Rabbi Yohanan's relatives had a stepmother who was using up their father's money on her food. Rabbi Yohanan told them to have their father set aside land for her support. After the father died they went to Reish Lakish, who said that this only added to her support, and threatened that if they did not give her what she needed he would drive Rabbi Yohanan's ruling out of their ears. When they complained to Rabbi Yohanan, he said: what can I do? A man equal to me disagrees with me.",
+   "why": "Right after, Rabbi Abbahu reports Rabbi Yohanan's own explanation: everything turns on the wording; land given 'for' her support adds to it, while land given 'as' her support fixes it.",
+   "people": [
+    {
+     "name": "Rabbi Yohanan",
+     "about": "Advised his relatives to have their father set aside land for his wife's support."
+    },
+    {
+     "name": "Reish Lakish",
+     "about": "Ruled that the land only added to the widow's support, and pressed the sons hard to pay."
+    }
+   ],
+   "terms": [
+    {
+     "term": "sustenance",
+     "meaning": "The food and support a husband's estate owes his widow under her marriage contract."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-60a-2-2": {
+   "note": "A divorced woman did not want to nurse her son and came before Shmuel. Shmuel sent Rav Dimi bar Yosef to check whether the child knew her. Rav Dimi placed her in a row of women and carried the child past them. The baby looked at her face with joy while she looked away, so he told her to look up and take her son, because the baby clearly knew her. The Gemara then asks how a blind baby recognizes his mother, and Rav Ashi answers: by smell and the taste of her milk.",
+   "people": [
+    {
+     "name": "Shmuel",
+     "about": "the sage before whom the woman came"
+    },
+    {
+     "name": "Rav Dimi bar Yosef",
+     "about": "carried out the test"
+    },
+    {
+     "name": "Rav Ashi",
+     "about": "answers the question about a blind baby"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara has ruled that a divorced mother can be made to keep nursing a baby who already recognizes her, and is asking at what age that happens. Shmuel held there is no fixed age, so each baby must be checked; this case shows such a check."
+  },
+  "ketubot-60b-2-3": {
+   "note": "Abaye's tenant farmer asked whether he could betroth a nursing woman fifteen months after the birth. Abaye allowed it, citing rulings that follow Rabbi Yehuda and Beit Hillel, plus Ulla's and Mar Ukva's statements. Rav Yosef then told Abaye that Rav and Shmuel require a wait of twenty-four months even before betrothal. Abaye ran after the farmer to warn him, but could not catch him.",
+   "people": [
+    {
+     "name": "Abaye",
+     "about": "the sage who gave the ruling and then ran after the farmer"
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "corrected Abaye"
+    },
+    {
+     "name": "Rav and Shmuel",
+     "about": "require waiting twenty-four months"
+    }
+   ],
+   "terms": [
+    {
+     "term": "betrothal (kiddushin)",
+     "meaning": "The first stage of marriage, a binding commitment made before the wedding itself."
+    },
+    {
+     "term": "parasang (parsa)",
+     "meaning": "An ancient Persian measure of distance, a few miles."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is discussing how long a nursing widow must wait before remarrying: twenty-four months or eighteen, with Rabban Shimon ben Gamliel shortening each by three. Afterward Abaye draws the lesson that a student should not rule on even a simple matter near his teacher."
+  },
+  "ketubot-61a-14-14": {
+   "note": "The Gemara tells of two pious men, said by some to be Rav Mari and Rav Pinehas, sons of Rav Hisda. One fed his waiter before the meal and the other fed him after the guests had eaten. Elijah the prophet spoke with the one who fed the waiter first, but not with the other. The text does not state the reason, but it follows a discussion about meal etiquette.",
+   "people": [
+    {
+     "name": "Rav Mari and Rav Pineḥas",
+     "about": "sons of Rav Ḥisda, according to some"
+    },
+    {
+     "name": "Elijah",
+     "about": "the prophet, who spoke to one of them"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara has ruled that a waiter should be given a share of foods with a strong aroma or taste, so he does not suffer watching others eat. Like the story of Avuh and Minyamin bar Ihi just before it, this one shows that even timing counts."
+  },
+  "ketubot-61a-15-15": {
+   "note": "Rav Ashi, Ameimar and Mar Zutra sat at King Izgur's gate while the king's food was carried past. Rav Ashi saw Mar Zutra go pale from craving and put a bit of the food into his mouth. The royal staff said he had spoiled the king's meal, but he said the cook had, because he saw a leprous mark in the meat. They found nothing until he pointed to the exact spot, where it then appeared. Asked how he knew, he said he saw a leprous spirit hovering over the food.",
+   "people": [
+    {
+     "name": "Rav Ashi",
+     "about": "fed Mar Zutra a bit of the food"
+    },
+    {
+     "name": "Mar Zutra",
+     "about": "craved the king's food"
+    },
+    {
+     "name": "Ameimar",
+     "about": ""
+    },
+    {
+     "name": "King Izgur",
+     "about": ""
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara has ruled that someone who smells or sees a tempting food should be given some, since the craving can endanger him; this is one of several incidents showing that rule in action."
+  },
+  "ketubot-61b-1-1": {
+   "note": "A Roman asked a woman to marry him and she refused. He brought pomegranates, peeled them and ate them in front of her without offering her any. She swallowed the saliva that tormented her until she became ill. At last he asked: If I cure you, will you marry me? She said yes. He brought pomegranates again, peeled and ate them in front of her, and told her to spit out all the saliva that troubled her. She did, until something like a green leaf came out of her, and she was cured.",
+   "why": "The Gemara has ruled that anyone present when a food with a strong aroma or taste is served should be given some; this story, after the one about Rav Ashi and Mar Zutra, shows how much harm an unsatisfied craving can do.",
+   "people": [],
+   "terms": [],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-62a-4-4": {
+   "note": "A Jew and a gentile were walking together, and the gentile could not keep up with the faster Jew. He reminded him of the destruction of the Temple so that he would sigh and slow down. The Jew groaned but still walked faster, and the gentile asked why the groaning had not weakened him. The Jew replied that this only applies to a new grief; people grow used to old tragedies, like a mother used to losing children.",
+   "people": [],
+   "terms": [],
+   "approved": true,
+   "why": "Rav and Rabbi Yohanan have just disagreed over how much of the body groaning breaks, and the Gemara has said the news of the Temple's destruction is especially crushing. The Jew's answer qualifies that: a long-familiar grief no longer breaks the body."
+  },
+  "ketubot-62a-7-7": {
+   "note": "To show the strength of people in Eretz Yisrael, the Gemara tells two stories. When a bathhouse collapsed under Rabbi Abbahu, he climbed onto a pillar and pulled up the two slaves supporting him. Rabbi Yohanan did the same when a staircase collapsed under him and his two supporters. Asked why he needs support if he is so strong, Rabbi Yohanan said he was saving his strength for old age.",
+   "people": [
+    {
+     "name": "Rabbi Abbahu",
+     "about": "survived the bathhouse collapse"
+    },
+    {
+     "name": "Rabbi Yoḥanan",
+     "about": "survived the staircase collapse"
+    },
+    {
+     "name": "Rav Ami and Rav Asi",
+     "about": "were supporting Rabbi Yoḥanan"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara is defining the 'men of leisure' who, by the mishna, owe their wives marital relations every day. Ravin has just said these are the pampered men of the Land of Israel, and these two incidents are told to show how strong they were."
+  },
+  "ketubot-62b-3-3": {
+   "note": "Rav Rehumi studied under Rava and usually came home each year on the eve of Yom Kippur. One year he was absorbed in his learning and stayed behind, while his wife kept waiting for him and finally wept. At that moment the roof he was sitting on collapsed and he died. The Gemara learns from this how careful a person must be not to cause his wife anguish, even by accident.",
+   "people": [
+    {
+     "name": "Rav Reḥumi",
+     "about": "a student of Rava in Meḥoza"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Yom Kippur",
+     "meaning": "The Day of Atonement, the holiest day of the Jewish year."
+    }
+   ],
+   "approved": true,
+   "why": "Rav Adda bar Ahava has reported, in Rav's name, that the Rabbis let students leave home for two or three years of Torah study without their wives' permission. Rava says Sages acted on this and it sometimes ended in death; this story is his example."
+  },
+  "ketubot-62b-5-5": {
+   "note": "Yehuda, son of Rabbi Hiyya and son-in-law of Rabbi Yannai, usually came home every Shabbat eve, preceded by a pillar of fire that Rabbi Yannai saw. One day he stayed behind absorbed in study, and without the sign Rabbi Yannai told the family to turn his bed over as in mourning, assuming he had died. The text says that his words came true like a ruler's mistake, and Yehuda died.",
+   "people": [
+    {
+     "name": "Yehuda, son of Rabbi Ḥiyya",
+     "about": "a student who stayed in the study hall"
+    },
+    {
+     "name": "Rabbi Yannai",
+     "about": "his father-in-law, who assumed he had died"
+    }
+   ],
+   "terms": [
+    {
+     "term": "turning over the bed",
+     "meaning": "A mourning custom in which beds are turned over."
+    }
+   ],
+   "approved": true,
+   "why": "Shmuel has just said that the proper time for Torah scholars to be with their wives is Friday night; Yehuda keeps exactly that schedule, and the story follows Rav Rehumi's as another death tied to a scholar who failed to come home."
+  },
+  "ketubot-62b-6-9": {
+   "note": "Rabbi Yehuda HaNasi tried to marry his son into Rabbi Hiyya's family, but the girl died; a check of family descent found a possible reason. He then arranged a match with Rabbi Yosei ben Zimra's household, where the son was to study for twelve years. On seeing the bride the son married first and then went to study, and his father said this was like God's own conduct. After twelve years of study the son returned to find his wife unable to have children, and he prayed and she was cured.",
+   "people": [
+    {
+     "name": "Rabbi Yehuda HaNasi",
+     "about": "arranged his son's marriage"
+    },
+    {
+     "name": "Rabbi Ḥiyya",
+     "about": "the family of the first bride"
+    },
+    {
+     "name": "Rabbi Yosei ben Zimra",
+     "about": "the family of the second bride"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara is discussing how often Torah scholars owe their wives marital relations, through a run of stories about scholars away at study. This one weighs years of study against a wife's needs, and the price she pays."
+  },
+  "ketubot-62b-10-11": {
+   "note": "Rabbi Hananya ben Hakhinai left a wedding feast to study Torah, though Rabbi Shimon asked him to wait for him. He stayed in the study hall twelve years, and when he returned the roads had changed and he could not find his house. He heard a girl called 'daughter of Hakhinai' and followed her home. His wife saw him and died from the shock, but he prayed to God and she came back to life.",
+   "people": [
+    {
+     "name": "Rabbi Ḥananya ben Ḥakhinai",
+     "about": "the scholar who studied for twelve years"
+    },
+    {
+     "name": "Rabbi Shimon ben Yoḥai",
+     "about": "asked him to wait"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "This is one of a string of stories about scholars who leave their wives for years of study, told while the Gemara discusses how often scholars owe their wives marital relations."
+  },
+  "ketubot-62b-12-13": {
+   "note": "Rabbi Hama bar Bisa studied twelve years away, and on his return, determined not to shock his wife as Ben Hakhinai had, he sat in the town's study hall and sent word he had arrived. A young man he did not recognize asked sharp legal questions, and Rabbi Hama sadly wished he had taught his own son like that. At home he stood up to honor the young man, and his wife asked if a father stands for his son. The young man was his son Rabbi Oshaya, described as the third generation of scholars in the family.",
+   "people": [
+    {
+     "name": "Rabbi Ḥama bar Bisa",
+     "about": "returned after twelve years of study"
+    },
+    {
+     "name": "Rabbi Oshaya",
+     "about": "his son, whom he did not recognize"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "Rabbi Hama explicitly avoids what ben Hakhinai did in the story just before, whose sudden return stopped his wife's heart. It belongs to the Gemara's run of stories about scholars away from home for years."
+  },
+  "ketubot-62b-14-14": {
+   "note": "Ben Kalba Savua, a wealthy man of Jerusalem, had a shepherd named Akiva. His daughter saw that Akiva was humble and refined, and betrothed herself to him in secret on condition that he go to study Torah. Her angry father threw her out and vowed that she could not benefit from his property. After twelve years Akiva came back with twelve thousand students. He overheard his wife say she would gladly have him study another twelve years, so he went back, and returned with twenty-four thousand. When his attendants pushed her away, he told them that his learning and theirs was hers. Her father, hoping to have his vow annulled, learned that Akiva was the man, kissed his feet and gave him half his money.",
+   "people": [
+    {
+     "name": "Rabbi Akiva",
+     "about": "the shepherd who became a great sage"
+    },
+    {
+     "name": "Akiva's wife",
+     "about": "daughter of ben Kalba Savua, who sent him to study"
+    },
+    {
+     "name": "Ben Kalba Savua",
+     "about": "her wealthy father in Jerusalem"
+    },
+    {
+     "name": "Ben Azzai",
+     "about": "Rabbi Akiva's daughter betrothed herself to him and sent him to study"
+    }
+   ],
+   "terms": [
+    {
+     "term": "vow (neder)",
+     "meaning": "A solemn promise that can be annulled only by a sage if the person regrets it."
+    }
+   ],
+   "approved": true,
+   "why": "It closes the Gemara's run of stories about scholars who spend twelve years away studying. In the others the wife pays for the absence; here she sends him and asks for more."
+  },
+  "ketubot-63a-2-2": {
+   "note": "Rava sent his son, Rav Yosef, to study with the Sage Rav Yosef, and they set the term at six years. After three years, on the eve of Yom Kippur, the son said he would go and see his family. His father heard, took up a weapon and went out to meet him. He said: Did you remember your mistress? Some say he said: Did you remember your dove? The two were so caught up that neither of them ate the last meal before the fast.",
+   "why": "It ends the Gemara's string of stories about students who leave home for years to study, part of its discussion of what a scholar owes his wife. Here it is the father who will not let the son break off his studies.",
+   "people": [
+    {
+     "name": "Rav Yosef, son of Rava",
+     "about": "Sent to study for six years; wants to visit home after three."
+    },
+    {
+     "name": "Rava",
+     "about": "Rav Yosef's father, who goes out armed to stop his son coming home."
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "The Sage the son was sent to study with."
+    }
+   ],
+   "terms": [
+    {
+     "term": "cessation meal",
+     "meaning": "The last meal eaten on the eve of Yom Kippur before the fast begins."
+    },
+    {
+     "term": "Yom Kippur",
+     "meaning": "The Day of Atonement, the holiest day of the Jewish year, observed with a full day's fast."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-63b-8-8": {
+   "note": "When Rav Zevid's daughter-in-law rebelled against her husband, three Sages said she loses her right to her worn clothes. Rav Gamda objected that they were flattering Rav Zevid, since Rava had left this question unresolved. In another version they ruled the opposite, and he gave the same objection. The conclusion is that since the question is undecided, if she already holds the item it is not taken from her, but if she does not, it is not given to her.",
+   "people": [
+    {
+     "name": "Rav Zevid",
+     "about": ""
+    },
+    {
+     "name": "Rav Gamda",
+     "about": ""
+    },
+    {
+     "name": "Ameimar",
+     "about": ""
+    },
+    {
+     "name": "Mar Zutra",
+     "about": ""
+    },
+    {
+     "name": "Rav Ashi",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "rebelled",
+     "meaning": "Here, a wife who refuses to live with her husband as a wife."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is setting out the law of a 'rebellious' wife. Since the question was never settled, it concludes from this episode that what she has already seized is not taken from her, and what she has not seized is not given to her."
+  },
+  "ketubot-65a-8-9": {
+   "note": "After Abaye died, his widow Homa asked Rava, the local judge, for support and then for wine. Rava refused the wine because Abaye did not drink it, but she showed how large his cups were, and her bared arm shone with beauty. Rava went home and asked his wife, the daughter of Rav Hisda, for intimacy. When she learned that Homa had been in court, she chased Homa out of Mehoza with the lock of a chest. She said Homa had already killed three husbands and was now coming to kill Rava, who would want to marry her.",
+   "people": [
+    {
+     "name": "Ḥoma",
+     "about": "Abaye's widow, who came before Rava"
+    },
+    {
+     "name": "Rava",
+     "about": "the judge"
+    },
+    {
+     "name": "Rava's wife",
+     "about": "daughter of Rav Ḥisda"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara has been asking whether a widow's support includes wine. Rava assumes it depends on whether she drank in her husband's lifetime; the case after it gives wine by local custom in Mehoza."
+  },
+  "ketubot-66b-10-13": {
+   "note": "Rabban Yohanan ben Zakkai saw a young woman picking barley out of animal dung, covering herself with her hair. She was the daughter of Nakdimon ben Guryon, once so wealthy that her marriage contract listed a million gold dinars from her father's house. He wept and said that when Israel does God's will no nation rules them, and when it does not, they are handed to a lowly nation. The Gemara asks whether Nakdimon did not give charity, and offers two possible answers: he gave for his own honor, or he gave less than he should have. Rabbi Elazar son of Rabbi Tzadok swears that he saw her gathering barley among horses' hooves in Akko.",
+   "people": [
+    {
+     "name": "Rabban Yoḥanan ben Zakkai",
+     "about": "met the woman and wept"
+    },
+    {
+     "name": "Nakdimon ben Guryon",
+     "about": "her once-wealthy father"
+    },
+    {
+     "name": "Rabbi Elazar, son of Rabbi Tzadok",
+     "about": "said he saw her gathering barley in Akko"
+    }
+   ],
+   "terms": [
+    {
+     "term": "baraita",
+     "meaning": "A teaching from the early rabbis that was not included in the Mishna."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has just told how the Sages granted Nakdimon ben Guryon's daughter four hundred gold coins for perfume from her late husband's estate; this tells what later became of her."
+  },
+  "ketubot-67b-2-2": {
+   "note": "The Sages read a verse about helping a poor person as meaning you must cover what he lacks, but you need not make him rich. For someone used to a comfortable life, that lack can include a horse to ride and a servant to run in front of him. Hillel the Elder once got a poor man of good family exactly that. When no servant could be found one day, Hillel ran in front of him himself for three mil.",
+   "people": [
+    {
+     "name": "Hillel the Elder",
+     "about": "a famous Sage"
+    }
+   ],
+   "terms": [
+    {
+     "term": "mil",
+     "meaning": "An ancient measure of distance, roughly a kilometer."
+    },
+    {
+     "term": "Gemara",
+     "meaning": "The part of the Talmud that discusses and explains the earlier teachings."
+    }
+   ],
+   "approved": true,
+   "why": "The Sages read the verse 'sufficient for his deficiency in that which is deficient for him' as requiring charity to supply what a poor person lacks, even a horse and a servant for one who was used to them; Hillel's deed is told as an example."
+  },
+  "ketubot-67b-4-4": {
+   "note": "A man asked Rabbi Nehemya for charity and said he normally ate fatty meat and aged wine. Rabbi Nehemya invited him to share a simple meal of lentils, and the man died because his body was not used to that food. Rabbi Nehemya said, 'Woe to this one who was killed by Nehemya.' The Gemara first suggests he should have blamed himself, then explains he meant the man was at fault for pampering himself so much.",
+   "people": [
+    {
+     "name": "Rabbi Nehemya",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "Gemara",
+     "meaning": "The part of the Talmud that discusses and explains the earlier teachings."
+    }
+   ],
+   "approved": true,
+   "why": "After cases of charity giving a once-wealthy poor man what he was used to, this one shows the other side. The Gemara asks why Rabbi Nehemya did not say 'woe to Nehemya', and explains he meant the man was to blame for pampering himself so."
+  },
+  "ketubot-67b-5-6": {
+   "note": "A man asked Rava for charity and said he usually ate fattened hen and aged wine. When Rava asked if he worried about burdening the community, the man answered that he was eating from God's support, not theirs. Just then Rava's sister, who had not seen him in thirteen years, arrived with a fattened hen and aged wine as a gift. Rava took this as a sign that the man was right and told him to get up and eat.",
+   "people": [
+    {
+     "name": "Rava",
+     "about": "a Sage of the Talmud"
+    },
+    {
+     "name": "Rava's sister",
+     "about": "had not seen him for thirteen years"
+    }
+   ],
+   "terms": [
+    {
+     "term": "the Merciful One",
+     "meaning": "A name for God used in the Talmud."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is discussing how far charity must go to meet a poor person's accustomed standard. Coming after the man who died eating Rabbi Nehemya's lentils, this story supports giving such a man what he is used to."
+  },
+  "ketubot-67b-11-12": {
+   "note": "Mar Ukva secretly tossed four dinars to a poor neighbor every day. One day the neighbor tried to see who it was, and Mar Ukva and his wife ran off and hid in a furnace whose fire was low but still burning. His feet were burned, and his wife told him to rest them on hers, which were not burned. When he was upset, she explained that she gives food directly at home, so her help is more immediate than his money.",
+   "people": [
+    {
+     "name": "Mar Ukva",
+     "about": "gave charity in secret"
+    },
+    {
+     "name": "Mar Ukva's wife",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "dinar",
+     "meaning": "A silver coin used as money."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has been discussing how charity should treat a poor man who refuses help, and now tells stories of how the Sages gave. It explains their flight into the furnace with a teaching: better to throw oneself into a fiery furnace than to shame another person in public."
+  },
+  "ketubot-67b-14-14": {
+   "note": "Every year before Yom Kippur, Mar Ukva sent four hundred dinars to a poor man. His son brought the money and came back saying the man did not need it, since he had seen old wine being poured on the ground to make the room smell nice. Mar Ukva replied that someone this used to luxury needs even more money, and he doubled the gift.",
+   "people": [
+    {
+     "name": "Mar Ukva",
+     "about": ""
+    },
+    {
+     "name": "Mar Ukva's son",
+     "about": "carried the money to the poor man"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Yom Kippur",
+     "meaning": "The Day of Atonement, the holiest day of the Jewish year."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is collecting stories of how the Sages gave charity. In the very next story Rabbi Ḥanina's wife reports signs of wealth and he concludes the man is not needy; here the same kind of report leads Mar Ukva to give more."
+  },
+  "ketubot-67b-15-15": {
+   "note": "As Mar Ukva was dying, he checked his charity records and found he had given seven thousand gold dinars. He felt this was too little to take with him to the World-to-Come, so he gave away half of his remaining money. The Gemara asks how he could do this, since a rule from Usha limits giving to one-fifth. It answers that the limit applies only during life, to avoid becoming poor, and not after death.",
+   "people": [
+    {
+     "name": "Mar Ukva",
+     "about": ""
+    },
+    {
+     "name": "Rabbi Ilai",
+     "about": "quoted for the Usha rule"
+    }
+   ],
+   "terms": [
+    {
+     "term": "World-to-Come",
+     "meaning": "The afterlife, where a person's good deeds are rewarded."
+    },
+    {
+     "term": "Usha",
+     "meaning": "A place where the Sages gathered and made rulings."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara uses the story to raise a ruling made at Usha that no one should give away more than a fifth of his wealth, and answers that the limit protects a living person from becoming poor and does not apply at death."
+  },
+  "ketubot-69a-14-16": {
+   "note": "Rav Anan wrote to Rav Huna, addressing him as \"Huna, our friend\", and asked him to give a woman one-tenth of her father's estate. Rav Huna sent a sharp reply through Rav Sheshet, under threat of excommunication if the reply was not passed on word for word. The reply said: \"Anan, Anan\", should the tenth come from real estate or from movable property, and who sits at the head in the house of a marzeiha? Rav Anan, offended and not knowing the word, went to Mar Ukva. Mar Ukva said that a man who does not know what a marzeiha is has no business calling Rav Huna \"our friend\". The Gemara explains that a marzeiha is a mourner.",
+   "people": [
+    {
+     "name": "Rav Anan",
+     "about": ""
+    },
+    {
+     "name": "Rav Huna",
+     "about": ""
+    },
+    {
+     "name": "Rav Sheshet",
+     "about": "carried Rav Huna's reply"
+    },
+    {
+     "name": "Mar Ukva",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "marzeiha",
+     "meaning": "A mourner, a person in a house of mourning."
+    },
+    {
+     "term": "excommunication",
+     "meaning": "Being formally cut off from the community as a penalty."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is discussing a daughter's right to a tenth of her father's estate for her dowry, and from what it is paid. Rav Huna's barbed question raises exactly that point, which Rava settles after the story: from land, not movable property."
+  },
+  "ketubot-69b-10-12": {
+   "note": "When Rabbi Yoḥanan was chosen to head the yeshiva over Ilfa, who was away at the time, Ilfa hung himself from a ship's mast and declared that if anyone brought him a teaching from the school of Rabbi Ḥiyya and Rabbi Oshaya that he could not show was already in the Mishna, he would fall and drown. An older man came and recited a ruling about a dying man who says, give my sons a shekel each week. Ilfa answered that the ruling follows Rabbi Meir, who says it is a mitzva to carry out the instructions of the dead, and so he met the challenge.",
+   "why": "The Gemara has just been explaining a mishna, attributed to Rabbi Meir, in which a third party must carry out a dead father's instructions; Ilfa's answer rests on that same mishna and Rabbi Meir's principle. Afterward the Gemara gives the final ruling on the sons' allowance.",
+   "people": [
+    {
+     "name": "Ilfa",
+     "about": "A Sage passed over for head of the yeshiva, who stakes his life on tracing every outside teaching back to the Mishna"
+    },
+    {
+     "name": "Rabbi Yoḥanan",
+     "about": "The Sage appointed head of the yeshiva instead of Ilfa"
+    },
+    {
+     "name": "Rabbi Meir",
+     "about": "The Sage whose principle, that one must fulfill the instructions of the dead, Ilfa uses in his answer"
+    }
+   ],
+   "terms": [
+    {
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages that was not included in the Mishna, the core collection of Jewish law."
+    },
+    {
+     "term": "Mishna",
+     "meaning": "The foundational collection of Jewish law edited around 200 CE, which the Gemara discusses line by line."
+    },
+    {
+     "term": "shekel and sela",
+     "meaning": "Coins; a sela is worth two shekels."
+    },
+    {
+     "term": "mitzva",
+     "meaning": "A religious commandment or duty."
+    }
+   ],
+   "drafted": "bfix1notes",
+   "approved": true
+  },
+  "ketubot-72b-3-3": {
+   "note": "Rabba bar bar Hanna told of walking behind Rav Ukva and seeing an Arab woman sitting and spinning a red thread opposite her face. When she saw them, she tore the spindle from the thread, threw it down and said to him, \"Young man, give me the spindle.\" Rav Ukva remarked that she was an example of one of the kinds of improper behavior listed in the mishna. The passage ends with a disagreement about which kind: Ravina says spinning in the marketplace, and the Rabbis say speaking with every man.",
+   "people": [
+    {
+     "name": "Rabba bar bar Hanna",
+     "about": "tells the story"
+    },
+    {
+     "name": "Rav Ukva",
+     "about": ""
+    },
+    {
+     "name": "Ravina",
+     "about": "gives one view of what Rav Ukva meant"
+    }
+   ],
+   "terms": [
+    {
+     "term": "mishna",
+     "meaning": "The early collection of Jewish law that the Talmud discusses."
+    }
+   ],
+   "approved": true,
+   "why": "The mishna lists conduct that breaks the customs of Jewish women, including spinning in the marketplace and speaking with every man, and Avimi has just explained spinning as working red thread before one's face. This encounter is offered as such a scene."
+  },
+  "ketubot-77b-5-8": {
+   "note": "The passage opens with how Sages treated people with the disease ra'atan: some kept away, but Rabbi Yehoshua ben Levi studied Torah with them. When he was dying, he asked the Angel of Death to show him his place in paradise and to lend him his knife, then jumped into paradise and swore he would not come back. God ruled that he could stay because he had never asked to have an oath dissolved, and a Divine Voice told him to give the knife back. Elijah announced his arrival. Rabbi Shimon bar Yohai asked him whether a rainbow had appeared in his lifetime. He said yes, so Rabbi Shimon doubted he was truly righteous, but the Gemara says no rainbow had ever appeared and he answered yes only out of modesty.",
+   "people": [
+    {
+     "name": "Rabbi Yehoshua ben Levi",
+     "about": "a righteous Sage"
+    },
+    {
+     "name": "Angel of Death",
+     "about": ""
+    },
+    {
+     "name": "Rabbi Shimon ben Yohai",
+     "about": "found sitting in paradise"
+    },
+    {
+     "name": "Elijah the Prophet",
+     "about": "announced his arrival"
+    }
+   ],
+   "terms": [
+    {
+     "term": "ra'atan",
+     "meaning": "A contagious disease the Sages feared catching."
+    },
+    {
+     "term": "dissolution of an oath",
+     "meaning": "Asking a judge to cancel a vow one has made."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has been describing the disease ra'atan and its cure. This story sets the Sages who avoided its sufferers against Rabbi Yehoshua ben Levi, who stayed with them, and the next story names that devotion as the merit that set him apart."
+  },
+  "ketubot-77b-9-11": {
+   "note": "Rabbi Hanina bar Pappa, a friend of the Angel of Death, asked for thirty days to review his learning before dying. Later he tried the same knife trick as Rabbi Yehoshua ben Levi, but the angel noted he had not studied with people with ra'atan as Rabbi Yehoshua had. When he died, a pillar of fire kept everyone away until Rabbi Alexandri asked it to leave in the dead Sage's own honor. The passage closes with Abaye and Rav Adda bar Mattana debating what the fire meant.",
+   "people": [
+    {
+     "name": "Rabbi Hanina bar Pappa",
+     "about": "friend of the Angel of Death"
+    },
+    {
+     "name": "Rabbi Alexandri",
+     "about": "persuaded the fire to disappear"
+    },
+    {
+     "name": "Abaye",
+     "about": "offers an explanation of the fire"
+    },
+    {
+     "name": "Rav Adda bar Mattana",
+     "about": "answers Abaye"
+    }
+   ],
+   "terms": [
+    {
+     "term": "ra'atan",
+     "meaning": "A contagious disease the Sages feared catching."
+    }
+   ],
+   "approved": true,
+   "why": "It follows straight on Rabbi Yehoshua ben Levi's escape and measures Rabbi Ḥanina against him: without that devotion to the sick he cannot repeat the trick, yet still receives a rare honor. Abaye and Rav Adda bar Mattana then argue over what the pillar meant."
+  },
+  "ketubot-78b-11-11": {
+   "note": "A woman about to remarry gave her property to her daughter on paper, only to keep it from her future husband. After she divorced, she asked for it back and the daughter said it was a gift. Rav Nahman tore up the document, accepting that it was never meant as a real transfer. Rav Anan complained to Mar Ukva, who cited Shmuel's ruling that such a document of evasion should be torn up. When Rava asked his reason, Rav Nahman said the mother put her own interests before her daughter's.",
+   "people": [
+    {
+     "name": "Rav Nahman",
+     "about": "the judge who tore the document"
+    },
+    {
+     "name": "Rav Anan",
+     "about": "complained about the ruling"
+    },
+    {
+     "name": "Mar Ukva",
+     "about": "called the Exilarch in the text"
+    },
+    {
+     "name": "Rava",
+     "about": "asked Rav Nahman for his reason"
+    }
+   ],
+   "terms": [
+    {
+     "term": "document of evasion",
+     "meaning": "A deed written to hide property from someone, with no real intent to transfer it."
+    },
+    {
+     "term": "Exilarch",
+     "meaning": "The leader of the Jewish community in Babylonia."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is discussing a woman's power to sell or give away her property beyond her husband's reach. This case asks whether a deed made only to shield property from a husband is real, and the Gemara then challenges it from a baraita that seems to uphold such deeds."
+  },
+  "ketubot-80a-4-5": {
+   "note": "A woman was left 400 dinars in a faraway place. Her husband spent 600 of his own dinars to go and bring it back, and used one dinar of her money on the way. Rabbi Ami ruled that what he spent and what he ate are settled, so neither side can claim it from the other. When the Rabbis objected that he had eaten from the principal, Rabbi Ami said that for his expenses he could swear how much he paid and then take that amount.",
+   "people": [
+    {
+     "name": "Rabbi Ami",
+     "about": "the judge who ruled"
+    }
+   ],
+   "terms": [
+    {
+     "term": "dinar",
+     "meaning": "A silver coin used as money."
+    },
+    {
+     "term": "principal",
+     "meaning": "The original property itself, as opposed to the profit or produce it brings in."
+    }
+   ],
+   "approved": true,
+   "why": "The mishna lets a husband who spent on his wife's property recover the cost with an oath, unless he has eaten from it. This case tests whether using one dinar of her principal counts as eating."
+  },
+  "ketubot-80b-1-2": {
+   "note": "A woman brought two maidservants with her into her marriage. Her husband married a second wife and gave one of the maidservants to her. The first wife came before Rava and cried out, but Rava took no notice of her. Those who saw it thought Rava held that whatever a husband does with his wife's property stands. The Gemara says that is not so: his reason was that the maidservant was still serving the household.",
+   "why": "The Gemara asks whether a husband may sell the produce of his wife's land, and two opposite reports of Rava's view are given. Rav Pappa says the permissive report was only inferred from this case, which the Gemara then reads another way.",
+   "people": [
+    {
+     "name": "Rava",
+     "about": "The judge who ignored the first wife's protest."
+    },
+    {
+     "name": "Rav Pappa",
+     "about": "Explains that the permissive report of Rava's view was inferred from this case."
+    },
+    {
+     "name": "Yehuda Mar bar Mareimar",
+     "about": "Reported in Rava's name that what a husband does with the produce takes effect."
+    }
+   ],
+   "terms": [
+    {
+     "term": "gain of the house",
+     "meaning": "The Sages' reason for giving a husband the produce of his wife's property: it is meant to benefit their household."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-82b-9-12": {
+   "note": "Rav Yehuda tells, and an early teaching confirms, how the marriage contract took its form. At first a groom pledged two hundred dinars to a virgin bride and one hundred to a widow, to be set aside in cash, and men grew old without marrying. The Sages had the money kept in the bride's father's house, but an angry husband could easily say 'Go to your marriage contract.' Then they had it kept in the husband's house, where rich women made it into silver and gold baskets and poor women into a chamber pot, and husbands still said 'Take your marriage contract and leave.' Finally Shimon ben Shatah ruled that the husband writes that all his property guarantees the contract.",
+   "why": "The discussion has been about whether a husband may sell property while it is pledged for his wife's marriage contract; this history explains where that lien on all his property came from.",
+   "people": [
+    {
+     "name": "Rav Yehuda",
+     "about": "A leading Babylonian Sage, student of Rav and Shmuel, who reports this history."
+    },
+    {
+     "name": "Shimon ben Shatah",
+     "about": "A leader of the Sages in the first century BCE, credited with the final form of the marriage contract."
+    }
+   ],
+   "terms": [
+    {
+     "term": "marriage contract",
+     "meaning": "The ketuba: a document in which a husband promises his wife a sum of money if he divorces her or dies. It protects her and makes divorce costly."
+    },
+    {
+     "term": "baraita",
+     "meaning": "A teaching from the early Sages that was not included in the Mishna, the first written collection of Jewish law."
+    },
+    {
+     "term": "dinar",
+     "meaning": "A silver coin; two hundred dinars was a large sum."
+    }
+   ],
+   "drafted": "pilot2",
+   "approved": true
+  },
+  "ketubot-84b-7-7": {
+   "note": "Rabbi Yohanan's relatives took a cow belonging to orphans because the orphans' father had owed them money. Rabbi Yohanan said they could keep it, following Rabbi Tarfon. Reish Lakish told them to give it back. When they complained, Rabbi Yohanan said he could not dismiss the opinion of someone as great as himself.",
+   "people": [
+    {
+     "name": "Rabbi Yohanan",
+     "about": "allowed the seizure"
+    },
+    {
+     "name": "Reish Lakish",
+     "about": "ordered the cow returned"
+    },
+    {
+     "name": "Rabbi Tarfon",
+     "about": "his view was relied on by Rabbi Yohanan"
+    }
+   ],
+   "terms": [
+    {
+     "term": "orphans",
+     "meaning": "Here, the children of a man who died owing money."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is weighing why Reish Lakish would reverse judges who ruled like Rabbi Tarfon against Rabbi Akiva, while Rabbi Yoḥanan would not. Here the two Sages rule opposite ways on just such a seizure."
+  },
+  "ketubot-84b-10-10": {
+   "note": "Members of the prince's household seized a maidservant belonging to orphans in an alley. Rabbi Abbahu, Rabbi Ḥanina bar Pappi and Rabbi Yitzḥak Nappaḥa were sitting as judges, with Rabbi Abba beside them, and Rabbi Abbahu told the seizers they had taken her rightly. Rabbi Abba objected: because they are of the prince's house, will you flatter them? Judges once ruled like Rabbi Tarfon in such a case, and Reish Lakish reversed their decision. The text does not say how the case ended.",
+   "why": "It is one of a series of cases about seizing orphans' property for their father's debt. Rabbi Abba treats Reish Lakish's reversal, just told, as binding against the ruling that favored the seizers.",
+   "people": [
+    {
+     "name": "Rabbi Abbahu",
+     "about": "One of the judges; he upheld the seizure."
+    },
+    {
+     "name": "Rabbi Ḥanina bar Pappi",
+     "about": "Sat as a judge in the case."
+    },
+    {
+     "name": "Rabbi Yitzḥak Nappaḥa",
+     "about": "Sat as a judge in the case."
+    },
+    {
+     "name": "Rabbi Abba",
+     "about": "Sat with the judges and accused them of flattering the powerful."
+    },
+    {
+     "name": "Reish Lakish",
+     "about": "Cited for having reversed a ruling that followed Rabbi Tarfon."
+    }
+   ],
+   "terms": [
+    {
+     "term": "house of the prince",
+     "meaning": "The household of the leader of the Jewish community in the Land of Israel, as the translation puts it."
+    },
+    {
+     "term": "orphans",
+     "meaning": "Here, the heirs of a man who died owing money."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-84b-11-11": {
+   "note": "A man named Yeimar bar Hashu was owed money by a dead man who left a boat, and he sent an agent to seize it. Rav Pappa and Rav Huna, who were also owed money, said such a seizure harms the other creditors, and then each took the boat for himself. Rava called them unlawful grabbers, since the boat was taken after the debtor's death, when his heirs already held it. The rule that whoever seizes first acquires it applies only when seized from the debtor while he was alive.",
+   "people": [
+    {
+     "name": "Yeimar bar Hashu",
+     "about": "the creditor who sent an agent"
+    },
+    {
+     "name": "Rav Pappa",
+     "about": ""
+    },
+    {
+     "name": "Rav Huna, son of Rav Yehoshua",
+     "about": ""
+    },
+    {
+     "name": "Rava",
+     "about": "gave the ruling"
+    }
+   ],
+   "terms": [
+    {
+     "term": "creditor",
+     "meaning": "A person who is owed money."
+    },
+    {
+     "term": "halakha",
+     "meaning": "Jewish law."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is gathering cases about creditors who seize a dead debtor's property. This one adds the rule against an agent seizing at others' expense, and ends with Rava's ruling that seizing after the debtor's death acquires nothing."
+  },
+  "ketubot-85a-3-4": {
+   "note": "Avimi owed money to people from Bei Hozai and sent it with Hama, who paid it and asked for the debt document back. They refused, saying the payment covered a different, unwritten debt, so the written one was still unpaid. Rabbi Abbahu asked Hama if he had witnesses to the payment, and Hama had none. Rabbi Abbahu ruled that since they could have denied being paid at all, their claim of a side debt is believed, so Hama gets neither the money nor the document.",
+   "people": [
+    {
+     "name": "Avimi, son of Rabbi Abbahu",
+     "about": "the man who owed the money"
+    },
+    {
+     "name": "Hama, son of Rabba bar Abbahu",
+     "about": "paid on Avimi's behalf"
+    },
+    {
+     "name": "Rabbi Abbahu",
+     "about": "gave the ruling"
+    }
+   ],
+   "terms": [
+    {
+     "term": "miggo",
+     "meaning": "A legal principle: if a person could have made a stronger claim and did not, we believe the weaker claim he made."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has been collecting cases on debts and claims in court. Right after this one it asks whether the agent, who handed over the money without getting the document back, must repay the man who sent him."
+  },
+  "ketubot-85a-8-10": {
+   "note": "A woman had to swear an oath in Rava's court, but Rava's wife, the daughter of Rav Hisda, said she knew the woman lied under oath. Rava passed the oath to the other side, who could swear and collect. In a second case, Rav Pappa said he knew a document's debt had been paid, but Rava would not rely on one witness. Rava explained he trusted his wife because he knew she was always truthful, but did not know that of Rav Pappa.",
+   "people": [
+    {
+     "name": "Rava",
+     "about": "the judge"
+    },
+    {
+     "name": "Daughter of Rav Hisda",
+     "about": "Rava's wife"
+    },
+    {
+     "name": "Rav Pappa",
+     "about": "the single witness about the document"
+    },
+    {
+     "name": "Rav Adda bar Mattana",
+     "about": "asked why Rav Pappa was not trusted"
+    }
+   ],
+   "terms": [
+    {
+     "term": "oath",
+     "meaning": "A sworn statement in court that can settle who wins a money dispute."
+    }
+   ],
+   "approved": true,
+   "why": "The surrounding cases concern oaths and debt documents in court. Right after, Rav Pappa takes from Rava's answer that a judge's personal certainty about someone has legal weight, and the Gemara limits it: it may weaken a document, not tear it up."
+  },
+  "ketubot-85b-9-9": {
+   "note": "A relative of Rav Nahman sold her marriage contract, was later divorced, and died, leaving the right to her daughter. The buyers then claimed the money from the daughter. Rav Nahman said someone should advise the daughter to forgive her father's debt, so the buyers get nothing and she inherits from him later. She did so, and Rav Nahman then regretted acting like a lawyer for a litigant instead of a judge, though the Gemara says he first thought helping family was right.",
+   "people": [
+    {
+     "name": "Rav Nahman",
+     "about": "the judge who gave the advice"
+    },
+    {
+     "name": "Rav Nahman's relative",
+     "about": "sold her marriage contract"
+    },
+    {
+     "name": "Her daughter",
+     "about": "followed the advice"
+    }
+   ],
+   "terms": [
+    {
+     "term": "ketubah (marriage contract)",
+     "meaning": "A document in which a husband promises his wife a set sum if he divorces her or dies."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has just cited Shmuel: one who sells a debt document can still forgive the debt, and so can his heir. Rav Naḥman's advice uses exactly that rule to defeat the buyers."
+  },
+  "ketubot-86a-4-4": {
+   "note": "A case arose in which a creditor had sold a debt document and then forgiven the debt. Rafram pressed Rav Ashi to rule, and Rav Ashi made him pay as one who damages a beam meant for carving statues, which the translation explains as the full value of the debt in the document.",
+   "why": "Ameimar has just said that a judge who holds people liable for indirect damage makes such a seller pay the document's full value, while one who does not makes him pay only for the paper. Here Rav Ashi takes the first view.",
+   "people": [
+    {
+     "name": "Rafram",
+     "about": "Pressed Rav Ashi to give a ruling."
+    },
+    {
+     "name": "Rav Ashi",
+     "about": "Ruled that the full value must be paid."
+    }
+   ],
+   "terms": [
+    {
+     "term": "beam for statues",
+     "meaning": "Wood meant for carving is worth far more than plain wood; whoever damages it pays its full worth."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-91a-19-20": {
+   "note": "A man named bar Tzartzur left little property beyond what his wives' marriage contracts were worth, and it later rose in value. His sons from the two wives disputed it before Rav Amram, who told the sons of the wife with the bigger contract to give some to the others. They refused, so he threatened excommunication and sent them to Rav Nahman. Rav Nahman ruled that the heirs divide the whole estate equally, based on its value when the father died.",
+   "people": [
+    {
+     "name": "Rav Amram",
+     "about": "first judge, threatened excommunication"
+    },
+    {
+     "name": "Rav Nahman",
+     "about": "gave the final ruling"
+    },
+    {
+     "name": "Bar Tzartzur",
+     "about": "the man who died"
+    }
+   ],
+   "terms": [
+    {
+     "term": "excommunication",
+     "meaning": "Being formally cut off from the community as a penalty."
+    },
+    {
+     "term": "marriage contract",
+     "meaning": "A document in which a husband promises his wife a set sum if he divorces her or dies."
+    }
+   ],
+   "approved": true,
+   "why": "The mishna lets each wife's sons collect their own mother's marriage contract only if the estate exceeds both contracts by a dinar. The Gemara asks what happens when it fell short at the father's death but later grew, and brings this case as the answer."
+  },
+  "ketubot-91b-2-3": {
+   "note": "A man owed a creditor one thousand dinars and sold two mansions for five hundred each. The creditor took one mansion from a buyer, then came for the second. The buyer offered the creditor the full thousand dinars to give up both. Rami bar Hama compared this to a rule that orphans cannot inflate a property's value, but Rava said the cases differ: here the creditor loses nothing, so it would be cruel for him to refuse the money.",
+   "people": [
+    {
+     "name": "Rami bar Hama",
+     "about": ""
+    },
+    {
+     "name": "Rava",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "creditor",
+     "meaning": "Someone who is owed money."
+    },
+    {
+     "term": "orphans",
+     "meaning": "Here, the heirs of a man who has died."
+    }
+   ],
+   "approved": true,
+   "why": "It follows the mishna's rule that orphans cannot raise the value of their father's estate to gain their mother's marriage contract. Rava's answer shows that rule does not stop a buyer's offer that costs the creditor nothing."
+  },
+  "ketubot-91b-8-9": {
+   "note": "A man owed a creditor one hundred dinars and sold two small fields for fifty each. The creditor took one field from a buyer, then came for the other. The buyer offered the full hundred dinars so the creditor would give up both fields. Rav Yosef compared this to a rule that orphans cannot inflate a property's value, but Abaye said the creditor loses nothing here, so it would be cruel of him to refuse the money.",
+   "people": [
+    {
+     "name": "Rav Yosef",
+     "about": ""
+    },
+    {
+     "name": "Abaye",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "creditor",
+     "meaning": "Someone who is owed money."
+    },
+    {
+     "term": "orphans",
+     "meaning": "Here, the heirs of a man who has died."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has just told the same kind of case with two mansions and a thousand dinars. This smaller version repeats the comparison with the mishna, and the Gemara then asks what sum the buyer's claim against the seller is written for."
+  },
+  "ketubot-91b-12-13": {
+   "note": "A man died owing a creditor 100 dinars and left only a small field worth 50. The creditor took the field, and the orphans paid him 50 dinars to get it back, but he took it again to collect the rest of the debt. The orphans complained to Abaye, who ruled against them. Their payment fulfilled the mitzva of paying their father's debt, but it did not cancel the creditor's claim on the field, so he took it lawfully.",
+   "people": [
+    {
+     "name": "Abaye",
+     "about": "a rabbi of the Talmud who ruled on the case"
+    }
+   ],
+   "terms": [
+    {
+     "term": "mitzva",
+     "meaning": "a commandment or good deed required by Jewish law."
+    },
+    {
+     "term": "lien",
+     "meaning": "a creditor's legal claim on property to secure a debt."
+    }
+   ],
+   "approved": true,
+   "why": "This is one of a run of cases about creditors seizing sold or inherited land. Right after it the Gemara limits Abaye's ruling: had the orphans said the fifty dinars were payment for the land itself, the creditor would have had no further claim on it."
+  },
+  "ketubot-91b-15-15": {
+   "note": "A man sold his right to collect his mother's marriage contract payment (if he later inherited it), saying he would not repay the buyer if his mother objected. She died without objecting, but he himself then contested the sale. Rami bar Hama thought he could object in her place. Rava replied that although he did not guarantee against her objection, he did guarantee against his own, so the sale stands.",
+   "people": [
+    {
+     "name": "Rami bar Hama",
+     "about": ""
+    },
+    {
+     "name": "Rava",
+     "about": ""
+    }
+   ],
+   "terms": [
+    {
+     "term": "marriage contract",
+     "meaning": "The ketubah, a written sum a husband owes his wife on divorce or death."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara follows this with another ruling of Rami bar Hama about a sale guarantee, where Rava again objects, this time over whether a guarantee covers the buyer's own creditors."
+  },
+  "ketubot-94b-6-9": {
+   "note": "Rami bar Hama's mother wrote a deed giving her property to him in the morning, and another giving it to his brother Mar Ukva in the evening. Rav Sheshet awarded the property to Rami, and Rav Nahman awarded it to Mar Ukva. Rav Sheshet's reason was that Rami's deed came first. Rav Nahman answered that deeds in their place do not record the hour, so the order in a day does not matter. Rav Nahman said he ruled by the judges' discretion, judging what the mother wanted. He added that he is a judge and Rav Sheshet is not, so his ruling stands.",
+   "people": [
+    {
+     "name": "Rami bar Hama",
+     "about": "son who got the morning deed"
+    },
+    {
+     "name": "Mar Ukva bar Hama",
+     "about": "his brother, who got the evening deed"
+    },
+    {
+     "name": "Rav Sheshet",
+     "about": "ruled for Rami"
+    },
+    {
+     "name": "Rav Nahman",
+     "about": "ruled for Mar Ukva"
+    }
+   ],
+   "terms": [
+    {
+     "term": "discretion of the judges",
+     "meaning": "the judges' power to decide by what seems to be the person's real intention when the law gives no clear answer."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has been debating two deeds dated the same day, and a view that leaves such money to someone's discretion. This case shows two Sages split over the same-day deeds and the discretion of the judges."
+  },
+  "ketubot-94b-10-12": {
+   "note": "Two buyers brought deeds for the same field to Rav Yosef. One deed was dated the fifth of Nisan and the other said only Nisan. Rav Yosef awarded the field to the one with the exact date, since the other could have been written on the 29th. The loser asked for a document letting him take the seller's other property. Rav Yosef said someone could answer that his deed may actually be the earlier one, so he should take that field instead. The Gemara's solution is that the two deed holders write documents authorizing each other to collect.",
+   "people": [
+    {
+     "name": "Rav Yosef",
+     "about": "the rabbi who judged the case"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Nisan",
+     "meaning": "a month in the Jewish calendar, in spring."
+    },
+    {
+     "term": "document of authorization",
+     "meaning": "a court document allowing someone to collect a debt from property the debtor sold to others."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has just told of two deeds for the same property written on the same day, morning and evening; this is a second case of rival deeds, decided by how exactly each is dated."
+  },
+  "ketubot-98a-6-7": {
+   "note": "Someone was holding coral that belonged to orphans. He valued it for himself at 400 dinars and took it. The coral then rose in value to 600 dinars, and he asked Rabbi Ammi who gets the profit. Rabbi Ammi asked who had valued it for him. Since no court or orphans had sold it to him, he never acquired it, so it stayed the orphans' and the profit is theirs.",
+   "people": [
+    {
+     "name": "Rabbi Ammi",
+     "about": "the rabbi who ruled on the case"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "The Gemara has just explained a ruling that a widow who valued property for herself accomplished nothing, because no one valued it for her; this incident is brought as a parallel, with the same question."
+  },
+  "ketubot-103a-2-3": {
+   "note": "A man rented out his millstone to another, to be paid by the renter grinding for him. Later the owner became rich and bought another millstone and a donkey. He said to the renter: until now I had my grinding done by you; now give me money as rent. The renter answered: I will grind for you. The story itself does not say how the dispute ended.",
+   "why": "Ravina compares the case to the mishna's rule that two men who must feed a girl cannot both feed her, so one pays money instead; Rav Avira rejects the comparison, since the owner can keep using the grinding.",
+   "people": [],
+   "terms": [
+    {
+     "term": "millstone",
+     "meaning": "A heavy stone used to grind grain into flour."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-103a-24-32": {
+   "note": "As Rabbi Yehuda HaNasi was dying, he called in his sons. He told them to honor their mother (the Gemara explains she was their stepmother), to keep his lamp lit, his table set and his bed made, and said Yosef Ḥeifani and Shimon Efrati, who served him in life, would serve him in death. After his death he came home every Shabbat eve, until a neighbor knocked and his maidservant said, Quiet, Rabbi is sitting; then he never came again. His two attendants died before him. He also summoned the Sages, told them not to eulogize him in the small towns and to reopen the yeshiva after thirty days, and named his son Shimon the Sage, his son Gamliel the Nasi, and Ḥanina bar Ḥama head of the yeshiva.",
+   "why": "",
+   "people": [
+    {
+     "name": "Rabbi Yehuda HaNasi",
+     "about": "The dying leader who gives his last instructions to his sons and to the Sages"
+    },
+    {
+     "name": "Yosef Ḥeifani",
+     "about": "One of the two attendants who served Rabbi in life and died before him"
+    },
+    {
+     "name": "Shimon Efrati",
+     "about": "The other attendant who served Rabbi in life and died before him"
+    },
+    {
+     "name": "Gamliel",
+     "about": "Rabbi's son, whom he names as the next Nasi; his brother Shimon is named the Sage"
+    },
+    {
+     "name": "Ḥanina bar Ḥama",
+     "about": "The Sage Rabbi appoints to sit at the head of the yeshiva"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Nasi",
+     "meaning": "The president or patriarch, the official leader of the Jewish community and its Sages in the Land of Israel."
+    },
+    {
+     "term": "yeshiva",
+     "meaning": "The academy where the Sages studied and taught Torah."
+    },
+    {
+     "term": "eulogy",
+     "meaning": "A public speech of mourning and praise for the dead, given at funerals and memorials."
+    }
+   ],
+   "drafted": "bfix1notes",
+   "approved": true
+  },
+  "ketubot-103b-3-3": {
+   "note": "On the day Rabbi Yehuda HaNasi was buried, a heavenly voice announced that everyone at his funeral was destined for the World-to-Come. A launderer who visited him daily had not come that day and missed the funeral. When he heard Rabbi had died, he was so grief-stricken that he climbed to the roof, fell, and died. The heavenly voice then announced that this launderer, too, was destined for the World-to-Come.",
+   "people": [
+    {
+     "name": "Rabbi Yehuda HaNasi",
+     "about": "the leader whose funeral it was"
+    }
+   ],
+   "terms": [
+    {
+     "term": "World-to-Come",
+     "meaning": "the afterlife, where the righteous are rewarded."
+    },
+    {
+     "term": "Divine Voice",
+     "meaning": "a heavenly voice the Talmud describes as announcing a message."
+    }
+   ],
+   "approved": true,
+   "why": "It comes in the Gemara's account of Rabbi Yehuda HaNasi's death, right after its explanation of his instructions on how he was to be eulogized and mourned."
+  },
+  "ketubot-103b-8-9": {
+   "note": "Rabbi Yehuda HaNasi had said that Hanina bar Hama should head the yeshiva. Hanina refused, because Rabbi Afes was older by two and a half years and he would not go ahead of him. So Afes headed the yeshiva, Hanina sat outside, and Levi studied with him there. When Afes died, Hanina took the post, and Levi, left with no study partner, went to Babylonia. When Rav heard of a great limping teacher newly arrived in Neharde'a, he concluded from this that Afes had died.",
+   "people": [
+    {
+     "name": "Hanina bar Hama",
+     "about": "named by Rabbi Yehuda HaNasi to head the yeshiva"
+    },
+    {
+     "name": "Rabbi Afes",
+     "about": "older than Hanina by two and a half years"
+    },
+    {
+     "name": "Levi",
+     "about": "studied with Hanina outside, later went to Babylonia"
+    },
+    {
+     "name": "Rav",
+     "about": "drew the conclusion from the news of Levi"
+    }
+   ],
+   "terms": [
+    {
+     "term": "yeshiva",
+     "meaning": "an academy for Torah study."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is explaining Rabbi Yehuda HaNasi's dying instructions one by one; this is how his instruction about Hanina bar Hama came true. The Gemara then asks how Rav knew it was Rabbi Afes, not Rabbi Hanina, who had died."
+  },
+  "ketubot-103b-24-25": {
+   "note": "Rabbi Yehuda HaNasi was moved from Beit She'arim to Tzippori, a higher place with better air, when he fell ill. On the day he died, the Sages fasted and prayed that he would live and threatened anyone who announced his death. His maidservant first prayed he would stay, but seeing his painful illness, she prayed he be allowed to go. She threw a jug from the roof, the sudden noise stopped the Sages' prayers, and he died. Bar Kappara told them with a hint rather than saying it. As Rabbi died, he said he had worked in the Torah with all ten fingers and had taken no benefit from the world. A heavenly voice answered that he enters in peace.",
+   "people": [
+    {
+     "name": "Rabbi Yehuda HaNasi",
+     "about": "the leader who is dying"
+    },
+    {
+     "name": "Bar Kappara",
+     "about": "sent by the Sages to check on him"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Divine Voice",
+     "meaning": "a heavenly voice the Talmud describes as announcing a message."
+    },
+    {
+     "term": "phylacteries (tefillin)",
+     "meaning": "small leather boxes with Torah verses, worn on the head and arm during prayer."
+    }
+   ],
+   "approved": true,
+   "why": "This closes the Gemara's long account of Rabbi Yehuda HaNasi's death. The verse the Divine Voice quotes then leads into teachings about how angels go out to greet the righteous and the wicked when they die."
+  },
+  "ketubot-104b-7-15": {
+   "note": "Rav Hiyya Arikha supported his brother's widow for 25 years from his brother's estate. When she then asked for support and then for her marriage contract money, he refused. Rabba bar Sheila ruled that she could still collect, since she had likely stayed silent out of embarrassment, and gave her authorization to seize his property when he did not pay. Rava agreed with the ruling but then rejected her claim to the crops grown since. The authorization lacked a needed clause saying the land came from the dead husband's estate, and Rava held it was not a scribal slip because Rabba bar Sheila himself had not thought the clause mattered.",
+   "people": [
+    {
+     "name": "Rav Hiyya Arikha",
+     "about": "called Arikha, meaning tall, because of his height"
+    },
+    {
+     "name": "Rabba bar Sheila",
+     "about": "the judge who first ruled for the widow"
+    },
+    {
+     "name": "Rava",
+     "about": "rabbi who reviewed the case"
+    }
+   ],
+   "terms": [
+    {
+     "term": "marriage contract (ketubah)",
+     "meaning": "a document promising a wife a sum of money when the marriage ends by divorce or the husband's death."
+    },
+    {
+     "term": "authorization to seize property",
+     "meaning": "a court document letting a creditor take a debtor's property to collect a debt."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has been discussing when a widow loses the right to her marriage payment by long delay. This case applies that to a widow supported for twenty-five years in her father's house, and ends with how an authorization to seize property must be written."
+  },
+  "ketubot-105b-10-11": {
+   "note": "Rabbi Yishmael's sharecropper normally brought him a basket of fruit every Shabbat eve, but one Thursday brought it early because he had a court case to bring before him. Rabbi Yishmael refused the fruit and said he could not judge the case. He had two scholars judge it instead. Even so, he found himself thinking of arguments to help the sharecropper win, and concluded that anyone who accepts a bribe must be even more biased.",
+   "people": [
+    {
+     "name": "Rabbi Yishmael, son of Rabbi Yosei",
+     "about": "the judge who refused the gift"
+    }
+   ],
+   "terms": [
+    {
+     "term": "sharecropper",
+     "meaning": "a farmer who works someone else's land and pays part of the crop."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara has taught that even a small favor counts as a bribe, with judges who stepped aside after someone helped them. This case shows that even a gift that is refused leaves the judge biased."
+  },
+  "ketubot-105b-12-13": {
+   "note": "A man brought Rabbi Yishmael bar Elisha, a priest, the first shearing of his sheep, a gift priests are due. Rabbi Yishmael asked why he came so far, and the man said he had a court case before him. Rabbi Yishmael refused the gift, said he could not judge the case, and had two scholars judge it. Still, he caught himself thinking of arguments for the man and concluded that anyone who takes a bribe is bound to be biased.",
+   "people": [
+    {
+     "name": "Rabbi Yishmael bar Elisha",
+     "about": "a priest"
+    }
+   ],
+   "terms": [
+    {
+     "term": "first shearing",
+     "meaning": "the first wool cut from a flock, which the Torah says is given to a priest."
+    },
+    {
+     "term": "priest (kohen)",
+     "meaning": "a descendant of Aaron, who is entitled to certain gifts from the people."
+    }
+   ],
+   "approved": true,
+   "why": "It follows an almost identical case about Rabbi Yishmael son of Rabbi Yosei and his sharecropper's fruit, in a series of judges who stepped aside after receiving even a small gift or favor."
+  },
+  "ketubot-105b-14-16": {
+   "note": "A man brought Rav Anan a basket of fish and said he had a case. Rav Anan declined the gift and said he could not judge the man. The man said he wanted to give it as honor to a Torah scholar, as with first fruits, so Rav Anan took it. He then sent the man to Rav Nahman with a letter saying he could not judge him. Rav Nahman assumed the man was a relative of Rav Anan, put aside an orphans' case, and honored him, so the other side lost heart and lost. Elijah the Prophet then stopped visiting Rav Anan, and when he returned he appeared in frightening forms. Rav Anan built a box to sit in until Elijah had taught him the rest of his Seder.",
+   "people": [
+    {
+     "name": "Rav Anan",
+     "about": "the scholar who accepted the gift"
+    },
+    {
+     "name": "Rav Nahman",
+     "about": "the judge who heard the man's case"
+    },
+    {
+     "name": "Elijah the Prophet",
+     "about": "used to teach Rav Anan"
+    }
+   ],
+   "terms": [
+    {
+     "term": "first fruits",
+     "meaning": "the first produce of the harvest, brought as a gift to the priests."
+    },
+    {
+     "term": "Seder Eliyahu",
+     "meaning": "a Jewish book of teachings that the text says Elijah taught Rav Anan."
+    }
+   ],
+   "approved": true,
+   "why": "It ends the Gemara's series of judges who refused cases after receiving a gift or favor; here the gift was taken for a good reason, yet it still led another judge to pervert a case."
+  },
+  "ketubot-106a-2-3": {
+   "note": "In Rav Yosef's years there was a time of divine anger, a famine. The Sages asked him to pray for mercy. He answered: if the prophet Elisha, who supported 2,200 Sages out of his own pocket, did not pray for mercy in a time of anger, should I?",
+   "why": "Rav Yosef's figure of 2,200 Sages comes from the verse about Elisha's servant setting loaves before a hundred men; the Gemara goes on to derive the number from it and to list how many students stayed on at later academies.",
+   "people": [
+    {
+     "name": "Rav Yosef",
+     "about": "A Sage asked to pray during a famine, who refused."
+    },
+    {
+     "name": "Elisha",
+     "about": "The prophet, who Rav Yosef says supported 2,200 Sages and did not pray in a time of anger."
+    }
+   ],
+   "terms": [
+    {
+     "term": "praying for mercy",
+     "meaning": "Asking God to cancel a harsh decree, such as a famine."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-109b-3-5": {
+   "note": "A man set up one field as a boundary marker for a neighbor's field, which treated it as belonging to someone else. He later claimed the field was his, then died, leaving a steward managing his orphans' property. Abaye said the father had lost his right to claim it. The steward answered that the father might have meant only one edge furrow, and Abaye agreed to give that furrow. The steward then said the father might have bought the field back, saving the palm trees there, and Abaye accepted this too. Abaye said that anyone appointing a steward should choose one who defends orphans like this.",
+   "people": [
+    {
+     "name": "Abaye",
+     "about": "the rabbi who judged the case"
+    },
+    {
+     "name": "Rabbi Yohanan",
+     "about": "his ruling is quoted as the basis"
+    }
+   ],
+   "terms": [
+    {
+     "term": "steward (apotropos)",
+     "meaning": "a person appointed to manage property for orphans."
+    }
+   ],
+   "approved": true,
+   "why": "The mishna taught that one who names a field as a marker for another loses his claim to it, and Abaye has just limited that rule. This case shows the rule applied, and the claims Rabbi Yohanan allows against it."
+  },
+  "ketubot-111b-13-13": {
+   "note": "Rav Yosef told of a man in Shihin whose father left him three branches of mustard. One broke, and on it alone they found nine kav of mustard, and with its wood they roofed a booth for craftsmen. Rabbi Shimon ben Tahlifa said his father left them a cabbage stalk so tall they went up and down it with a ladder.",
+   "why": "The Gemara is describing how fruitful the Land of Israel will be in the future, and tells these incidents, like the fox in the giant turnip before them, so the reader will not be surprised.",
+   "people": [
+    {
+     "name": "Rav Yosef",
+     "about": "The Sage who tells of the giant mustard plant."
+    },
+    {
+     "name": "Rabbi Shimon ben Taḥlifa",
+     "about": "A Sage who tells of a cabbage stalk his father left."
+    }
+   ],
+   "terms": [
+    {
+     "term": "kav",
+     "meaning": "A measure of dry volume, roughly a liter or two."
+    },
+    {
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages not included in the Mishna, quoted by the Gemara."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-111b-19-20": {
+   "note": "Rav Hiyya bar Adda, a children's teacher employed by Reish Lakish, missed three days of teaching. He explained that he had been harvesting one grapevine his father left him, which gave 300 clusters a day. On day one each cluster filled a jug with wine, on day two it took two clusters per jug, and on day three three; he declared more than half of it ownerless. Reish Lakish answered that had he not neglected the children's Torah study, each cluster would have yielded more.",
+   "people": [
+    {
+     "name": "Rav Hiyya bar Adda",
+     "about": "a children's teacher employed by Reish Lakish"
+    },
+    {
+     "name": "Reish Lakish",
+     "about": "a rabbi, here the one who questions him"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Eretz Yisrael",
+     "meaning": "the Land of Israel."
+    }
+   ],
+   "approved": true,
+   "why": "The Gemara is collecting stories about the great bounty of the Land of Israel, after expounding verses about its wine."
+  },
+  "ketubot-111b-21-21": {
+   "note": "Rami bar Yehezkel came to Benei Berak and saw goats grazing under a fig tree. Honey was oozing from the figs and milk dripping from the goats, and the two were mixing together. He said that this is what the verse means by a land flowing with milk and honey.",
+   "people": [
+    {
+     "name": "Rami bar Yehezkel",
+     "about": "the rabbi who saw this"
+    }
+   ],
+   "terms": [],
+   "approved": true,
+   "why": "It is one of a series of reports of the bounty of the Land of Israel; other Sages follow with their own sightings of land flowing with milk and honey."
+  },
+  "ketubot-111b-22-22": {
+   "note": "Three Sages each describe what they saw of the land's richness. Rabbi Ya'akov ben Dostai says that once, rising early on the three-mil road from Lud to Ono, he walked ankle-deep in honey oozing from fig trees. Reish Lakish says he saw the place near Tzippori 'flowing with milk and honey', sixteen mil by sixteen. Rabba bar bar Ḥana says he saw the milk-and-honey land of all Eretz Yisrael, and it was as large as the stretch from Bei Mikhsei to the fortress of Tulbanki: twenty-two parasangs long and six wide.",
+   "why": "The Gemara is collecting reports of the bounty of the Land of Israel. Just before, Rami bar Yeḥezkel saw goats' milk and fig honey mixing in Benei Berak and called it the meaning of the verse 'a land flowing with milk and honey'; these Sages add their own sightings of that verse come true.",
+   "people": [
+    {
+     "name": "Rabbi Ya'akov ben Dostai",
+     "about": "Tells of walking ankle-deep in fig honey between Lud and Ono."
+    },
+    {
+     "name": "Reish Lakish",
+     "about": "Says he saw the milk-and-honey region by Tzippori."
+    },
+    {
+     "name": "Rabba bar bar Ḥana",
+     "about": "Says he saw the milk-and-honey land of all Eretz Yisrael and gives its size."
+    }
+   ],
+   "terms": [
+    {
+     "term": "mil",
+     "meaning": "An ancient measure of distance, roughly a kilometer."
+    },
+    {
+     "term": "parasang",
+     "meaning": "A larger Persian measure of distance, equal to four mil."
+    },
+    {
+     "term": "Eretz Yisrael",
+     "meaning": "Hebrew for the Land of Israel."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "ketubot-112a-3-4": {
+   "note": "Rabbi Yehoshua ben Levi came to Gavla and saw grape clusters as big as calves. Sad that such bounty went to foreign rulers during Israel's troubled times, he said the earth might better not produce such fruit. The next year Rabbi Hiyya came and saw clusters only as big as goats, and the locals told him not to repeat what his colleague had done. The text says Rabbi Yehoshua ben Levi's curse had come true and the fruit had shrunk.",
+   "people": [
+    {
+     "name": "Rabbi Yehoshua ben Levi",
+     "about": "saw the huge clusters and spoke the words"
+    },
+    {
+     "name": "Rabbi Hiyya",
+     "about": "visited the next year"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Gavla",
+     "meaning": "a place in the Golan region."
+    }
+   ],
+   "approved": true,
+   "why": "It belongs to a run of stories about the fruit of the Land of Israel. Like the peach that Rabbi Elazar found shrunken a year after his colleagues saw it, the grapes here are smaller the following year, and the locals blame a Sage's words."
+  },
+  "ketubot-112a-16-16": {
+   "note": "Rabbi Zeira came to enter the Land of Israel but found no ferry over the Jordan, so he crossed holding a rope strung across the river. A Sadducee mocked him as hasty, like those who said we will do before we will hear at Sinai. Rabbi Zeira answered that Moses and Aaron did not merit entering the land, so he hurried across before anything could stop him.",
+   "people": [
+    {
+     "name": "Rabbi Zeira",
+     "about": "crossed the Jordan on a rope"
+    }
+   ],
+   "terms": [
+    {
+     "term": "Sadducee",
+     "meaning": "a member of a Jewish group of the time that rejected the oral tradition the rabbis taught."
+    },
+    {
+     "term": "we will do before we will hear",
+     "meaning": "the words of Israel at Sinai (Exodus 24:7), taken to mean they agreed to follow the Torah before hearing it."
+    }
+   ],
+   "approved": true,
+   "why": "Just before, Rabbi Elazar rejoiced at each stage of being accepted in the Land of Israel; this begins a run of stories about Sages' eagerness for and love of the Land, followed by Sages who kissed its rocks and rolled in its dust."
+  },
+  "ketubot-100b-17-18": {
+   "note": "Ravina held wine belonging to his orphaned nephew, Ravina the younger, and also had his own wine to take to Sikhra to sell. He asked Rav Ashi whether he could bring the nephew's wine along or should wait for a better time. Rav Ashi told him to take both: the orphan's wine is no worse off than his own, and if he is willing to sell his own that way, he may sell the orphan's the same way.",
+   "people": [
+    {
+     "name": "Ravina",
+     "about": "the man holding the orphan's wine"
+    },
+    {
+     "name": "Ravina the younger",
+     "about": "the orphan, his sister's son"
+    },
+    {
+     "name": "Rav Ashi",
+     "about": "the rabbi he asked"
+    }
+   ],
+   "terms": [
+    {
+     "term": "halakha",
+     "meaning": "the accepted Jewish law on a question."
+    }
+   ],
+   "approved": true
+  },
+  "ketubot-112a-11-11": {
+   "note": "An Amorite asked a resident of the Land of Israel how many dates he could pick from a palm tree on the Jordan bank. The man said sixty kor. The Amorite said he had harmed the land, since they used to pick 120 kor from that tree. The man replied he was speaking of only one side of the tree and had not yet picked the other. It is a boasting exchange about the land's fertility.",
+   "people": [],
+   "terms": [
+    {
+     "term": "Amorite",
+     "meaning": "a member of one of the peoples who lived in Canaan before Israel."
+    },
+    {
+     "term": "kor",
+     "meaning": "a large ancient measure of volume, about 30 se'ah."
+    }
+   ],
+   "approved": false
   },
   "ketubot-12b-0-0": {
    "note": "The court saw priests treating widows with disrespect, so it set a marriage contract of two hundred dinars for widows to raise their standing. Then men began avoiding widows from priestly families, preferring to marry virgin Israelite women for the same price. So the court restored the earlier arrangement. The Gemara concludes that the mishna and the baraita speak of different periods and different rules.",
@@ -207,244 +2072,6 @@
    "terms": [],
    "approved": true
   },
-  "ketubot-17a-4-4": {
-   "note": "On the duty to bring joy to a bride and groom, Rabbi Yehuda bar Elai danced before the bride with a myrtle branch, calling her fair and attractive. Rav Shmuel bar Rav Yitzhak juggled three myrtle branches while dancing, and Rabbi Zeira complained that this demeaned Torah scholars. The passage ends by saying that when Rav Shmuel died a pillar of fire separated him from everyone else, a sign given to only one or two people in a generation.",
-   "people": [
-    {
-     "name": "Rabbi Yehuda bar Elai",
-     "about": "danced before brides with a myrtle branch"
-    },
-    {
-     "name": "Rav Shmuel bar Rav Yitzḥak",
-     "about": "juggled three myrtle branches while dancing"
-    },
-    {
-     "name": "Rabbi Zeira",
-     "about": "objected to the juggling"
-    }
-   ],
-   "terms": [
-    {
-     "term": "myrtle",
-     "meaning": "A fragrant branch traditionally used at weddings."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-17a-6-6": {
-   "note": "Rav Aha would put the bride on his shoulders and dance. The Sages asked him whether they were also allowed to do this. He answered that if brides seem to them like a beam of wood, they may, but if not, they may not.",
-   "people": [
-    {
-     "name": "Rav Aḥa",
-     "about": "danced with the bride on his shoulders"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-17a-8-8": {
-   "note": "A teaching says a funeral procession must give way to a bride's wedding procession, and both give way to a king of Israel. It then tells how King Agrippa, though he did not have to, rerouted his own entourage to make way for a bride's procession. The Sages praised him for it.",
-   "people": [
-    {
-     "name": "King Agrippa",
-     "about": "a king who gave way to a bride's wedding procession"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-20a-2-3": {
-   "note": "Bar Shatya suffered bouts of insanity. After he sold his property, one pair of witnesses said he sold it while insane and another pair said he was sane. Rav Nahman and Rav Ashi say the two pairs cancel each other, so the property stays with its current holder. The Gemara adds that this keeps it with Bar Shatya only if he inherited it from his fathers. If he bought it himself, he may have bought it while insane, so it stays with the buyer.",
-   "people": [
-    {
-     "name": "Bar Shatya",
-     "about": "a man who suffered periodic bouts of insanity"
-    },
-    {
-     "name": "Rav Naḥman",
-     "about": ""
-    },
-    {
-     "name": "Rav Ashi",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "possession (ḥazaka)",
-     "meaning": "The legal assumption that whoever holds property is its rightful owner unless proven otherwise."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-22a-9-9": {
-   "note": "A strikingly beautiful woman told her many suitors she was already engaged. Later she got engaged to a man, and the Sages asked why. She said she had said it to put off unscrupulous men, and now respectable ones had come. When the question was raised in Usha, the Sages ruled that if she gives a reason for her statement, she is believed.",
-   "people": [
-    {
-     "name": "Rav Aḥa Sar HaBira",
-     "about": "raised the question before the Sages in Usha"
-    }
-   ],
-   "terms": [
-    {
-     "term": "betrothal (kiddushin)",
-     "meaning": "The first stage of marriage, binding the couple before the wedding itself."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-23a-13-16": {
-   "note": "Captive women were brought to Neharde'a to be ransomed, and Shmuel's father posted guards so they would not be alone with gentiles. Shmuel asked who had guarded them until now, and his father answered: would you treat them with such contempt if they were your daughters? His words came true: Shmuel's own daughters were taken captive and brought to Eretz Yisrael. Leaving their captors outside, they entered Rabbi Hanina's study hall, each said \"I was taken captive and I am pure\", and the court permitted them to marry priests. Rabbi Hanina told Rav Shemen bar Abba, a priest, to marry one of them. He objected that there were witnesses overseas, and Rabbi Hanina answered that they are not here. The Gemara infers that if the witnesses came, the daughters would be forbidden to priests.",
-   "people": [
-    {
-     "name": "Shmuel",
-     "about": "a Babylonian sage, whose daughters were captured"
-    },
-    {
-     "name": "Rabbi Ḥanina",
-     "about": "the sage in Eretz Yisrael whose court permitted the daughters"
-    },
-    {
-     "name": "Rav Shemen bar Abba",
-     "about": "a priest whom Rabbi Ḥanina told to marry one of them"
-    }
-   ],
-   "terms": [
-    {
-     "term": "kohen (priest)",
-     "meaning": "A descendant of Aaron, who has stricter marriage rules, including limits on marrying a woman who may have been defiled in captivity."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-26a-0-1": {
-   "note": "A man spoke casually about remembering, as a small child, being taken out of school and immersed so he could eat teruma, the food reserved for priests. His friends then kept their distance and called him 'Yohanan who eats ḥallot'. Rabbi Yehuda HaNasi accepted his offhand statement and treated him as a priest. The point is that a person's casual remark is reliable, and so is one about his brother.",
-   "people": [
-    {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "accepted the man's statement and elevated him to priesthood"
-    },
-    {
-     "name": "Rabbi Ḥiyya",
-     "about": "related the incident"
-    }
-   ],
-   "terms": [
-    {
-     "term": "teruma",
-     "meaning": "A portion of produce set aside for priests, which only priests may eat."
-    },
-    {
-     "term": "ḥalla",
-     "meaning": "A portion of dough given to priests, eaten only by them."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-26b-7-7": {
-   "note": "Rava quotes a mishna about a Jewish woman who witnesses say was held as collateral for a debt in Ashkelon. Her family suspected she had been violated and kept away from her, but other witnesses said she had neither been alone with a man nor assaulted. The Sages told the family to trust the witnesses on both points or neither, and in either case she is permitted to her husband.",
-   "people": [
-    {
-     "name": "Rava",
-     "about": "raises the mishna as an objection"
-    },
-    {
-     "name": "Rabbi Yosei the priest",
-     "about": "testified about the case"
-    },
-    {
-     "name": "Rabbi Zekharya ben HaKatzav",
-     "about": "testified about the case"
-    }
-   ],
-   "terms": [
-    {
-     "term": "seclusion (yiḥud)",
-     "meaning": "A man and woman being alone together in private, which the law treats as a possibility for forbidden relations."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-27b-1-2": {
-   "note": "A man rented a donkey on condition that it not be taken along the Pekod River path, where it might drown, and the donkey died. The renter told Rava he used that path but there was no water, so something else killed it. Rava accepted his claim because he could have lied and said he took the other path. Abaye objected that the 'why would I lie' argument fails when it contradicts known facts, since everyone knows the river has water there. The passage concludes that his claim is not accepted.",
-   "people": [
-    {
-     "name": "Rava",
-     "about": "the judge who accepts the claim"
-    },
-    {
-     "name": "Abaye",
-     "about": "objects to Rava"
-    }
-   ],
-   "terms": [
-    {
-     "term": "miggo (\"why would I lie\")",
-     "meaning": "A principle that a person is believed if he could have told a more convincing lie but chose to tell a less helpful version."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-27b-10-11": {
-   "note": "A man from a distant district told Mari bar Isak he was his brother and asked for a share of their father's property, but Mari said he did not know him. Rav Hisda said Mari was right to not recognize him and cited Joseph, whose brothers did not recognize him once he had a beard. Rav Hisda asked the claimant for witnesses, but he said they were afraid of Mari. Rav Hisda then ordered Mari, a known violent man, to bring witnesses that this was not his brother. The Gemara concludes that a person is not suspected of both hiding the truth and lying.",
-   "people": [
-    {
-     "name": "Mari bar Isak",
-     "about": "the man who denied knowing the claimant"
-    },
-    {
-     "name": "Rav Ḥisda",
-     "about": "the judge who decided the case"
-    }
-   ],
-   "terms": [
-    {
-     "term": "burden of proof",
-     "meaning": "The responsibility of the person making a claim to bring evidence, which Rav Hisda reverses here for violent men."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-28a-5-6": {
-   "note": "A man who had divorced his betrothed brought a case before Rava, and Rava had an intermediary placed between the two. Rav Adda bar Mattana objected, citing Rav Nahman's teaching that a woman divorced from betrothal is paid directly. Rava replied that this applies only to people who are not familiar with each other, and here the two are, so they must be kept apart. A second version has the roles reversed, with Rav Adda urging the intermediary and Rava citing the objection, but the same conclusion follows.",
-   "people": [
-    {
-     "name": "Rava",
-     "about": "the judge"
-    },
-    {
-     "name": "Rav Adda bar Mattana",
-     "about": "sat before Rava and raised the objection"
-    },
-    {
-     "name": "Rav Naḥman",
-     "about": "his teaching is cited"
-    }
-   ],
-   "terms": [
-    {
-     "term": "betrothed (erusa)",
-     "meaning": "A woman in the first stage of marriage, committed to a man but not yet fully married."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-28b-3-4": {
-   "note": "A teaching quotes Rabbi Elazar, son of Rabbi Yosei, saying he testified only once, and the court raised a slave to priesthood on his word. The Gemara says this cannot be right, because God would not cause such a mistake through a righteous person. It corrects the statement: they wanted to do so, but in the end did not. He had seen a priest's slave given teruma in Rabbi Yosei's town, where this is not proof of priesthood, and he then testified about it in Rabbi Yehuda's town, where it is.",
-   "people": [
-    {
-     "name": "Rabbi Elazar, son of Rabbi Yosei",
-     "about": "the witness who testified"
-    }
-   ],
-   "terms": [
-    {
-     "term": "teruma",
-     "meaning": "A portion of produce given to priests, which only priests and their household may eat."
-    }
-   ],
-   "approved": true
-  },
   "ketubot-49b-6-6": {
    "note": "The Gemara says a man is made to support his children only when he can afford it, while a wealthy man can be forced. It brings the case of Rava, who forced the wealthy Rav Natan bar Ami to give to charity and collected four hundred dinars from him. This shows the court can compel a person to give charity if he can afford it. By the same reasoning, it applies even more to supporting his own children.",
    "people": [
@@ -461,30 +2088,6 @@
     {
      "term": "tzedaka",
      "meaning": "Charity, meaning giving to those in need."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-49b-12-12": {
-   "note": "Scholars ask whether the law follows Rabbi Ile'a's view about a father being supported by his children. As evidence, the Gemara tells of a man who kissed Rabbi Yonatan's foot, because the man had given his property to his sons and Rabbi Yonatan forced them to feed him. The Gemara reasons that if the sons were legally required to support him, the court could simply have taken the money from the property, so forcing them suggests they were not required. It concludes the law does not follow Rabbi Ile'a.",
-   "people": [
-    {
-     "name": "Rabbi Ile'a",
-     "about": ""
-    },
-    {
-     "name": "Rabbi Yonatan",
-     "about": ""
-    },
-    {
-     "name": "Rabbi Hanina",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "halakha",
-     "meaning": "Jewish law; the accepted ruling."
     }
    ],
    "approved": false
@@ -527,7 +2130,7 @@
      "meaning": "A written contract that sets the sum a husband owes his wife if the marriage ends."
     }
    ],
-   "approved": false
+   "approved": true
   },
   "ketubot-54a-13-14": {
    "note": "A woman from Mehoza married to a man from Neharde'a came before Rav Nahman about her marriage contract. He heard from her accent that she was from Mehoza and began to apply Rav's ruling, which applies in Babylonia. When told she was marrying a man from Neharde'a, he said the ruling of Shmuel, followed in Neharde'a, applies. The Gemara adds that the area of Neharde'a extends as far as places using its measurement system.",
@@ -551,7 +2154,7 @@
      "meaning": "A written contract that sets the sum a husband owes his wife if the marriage ends."
     }
    ],
-   "approved": false
+   "approved": true
   },
   "ketubot-54a-22-22": {
    "note": "Two short cases follow. A man's will told his heirs to give his daughter four hundred dinars' worth of his wine; the wine rose in value, leaving extra money, and Rav Yosef ruled the extra goes to the sons. Then the sons of Rabbi Yohanan's relatives complained that their father's wife was wastefully draining his estate; Rabbi Yohanan advised having the father set aside land for her support, which, if she accepts it, ends her claim on the rest of the estate.",
@@ -569,68 +2172,6 @@
     {
      "term": "orphans",
      "meaning": "Here, the heirs of a man who has died."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-54b-1-2": {
-   "note": "Rabbi Yohanan's relatives were struggling because their father's wife was spending wastefully on her upkeep. Rabbi Yohanan advised setting aside a piece of land for her support, which she would then accept in place of her claim on the rest. After the father died, Reish Lakish ruled that they must still support her fully and she could also use the field. They objected that Rabbi Yohanan had said otherwise and Reish Lakish threatened them. Rabbi Yohanan told them he could not override a colleague of equal standing who disagrees.",
-   "people": [
-    {
-     "name": "Rabbi Yoḥanan",
-     "about": "gave the earlier advice"
-    },
-    {
-     "name": "Reish Lakish",
-     "about": "ruled after the father died"
-    }
-   ],
-   "terms": [],
-   "approved": false
-  },
-  "ketubot-60a-2-2": {
-   "note": "A divorced woman did not want to nurse her son and came before Shmuel. Shmuel sent Rav Dimi bar Yosef to check whether the child knew her. Rav Dimi placed her in a row of women and carried the child past them. The baby looked at her face with joy while she looked away, so he told her to look up and take her son, because the baby clearly knew her. The Gemara then asks how a blind baby recognizes his mother, and Rav Ashi answers: by smell and the taste of her milk.",
-   "people": [
-    {
-     "name": "Shmuel",
-     "about": "the sage before whom the woman came"
-    },
-    {
-     "name": "Rav Dimi bar Yosef",
-     "about": "carried out the test"
-    },
-    {
-     "name": "Rav Ashi",
-     "about": "answers the question about a blind baby"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-60b-2-3": {
-   "note": "Abaye's tenant farmer asked whether he could betroth a nursing woman fifteen months after the birth. Abaye allowed it, citing rulings that follow Rabbi Yehuda and Beit Hillel, plus Ulla's and Mar Ukva's statements. Rav Yosef then told Abaye that Rav and Shmuel require a wait of twenty-four months even before betrothal. Abaye ran after the farmer to warn him, but could not catch him.",
-   "people": [
-    {
-     "name": "Abaye",
-     "about": "the sage who gave the ruling and then ran after the farmer"
-    },
-    {
-     "name": "Rav Yosef",
-     "about": "corrected Abaye"
-    },
-    {
-     "name": "Rav and Shmuel",
-     "about": "require waiting twenty-four months"
-    }
-   ],
-   "terms": [
-    {
-     "term": "betrothal (kiddushin)",
-     "meaning": "The first stage of marriage, a binding commitment made before the wedding itself."
-    },
-    {
-     "term": "parasang (parsa)",
-     "meaning": "An ancient Persian measure of distance, a few miles."
     }
    ],
    "approved": true
@@ -667,779 +2208,38 @@
    ],
    "approved": false
   },
-  "ketubot-61a-14-14": {
-   "note": "The Gemara tells of two pious men, said by some to be Rav Mari and Rav Pinehas, sons of Rav Hisda. One fed his waiter before the meal and the other fed him after the guests had eaten. Elijah the prophet spoke with the one who fed the waiter first, but not with the other. The text does not state the reason, but it follows a discussion about meal etiquette.",
+  "ketubot-65a-10-10": {
+   "note": "The wife of Rav Yosef, son of Rava, comes to the judge Rav Neḥemya to have her husband's support fixed. He sets an amount for her food, and when she asks for wine he grants that too. He explains that in Meḥoza, where they live, people customarily drink wine, so she is entitled to it as well.",
    "people": [
     {
-     "name": "Rav Mari and Rav Pineḥas",
-     "about": "sons of Rav Ḥisda, according to some"
-    },
-    {
-     "name": "Elijah",
-     "about": "the prophet, who spoke to one of them"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-61a-15-15": {
-   "note": "Rav Ashi, Ameimar and Mar Zutra sat at King Izgur's gate while the king's food was carried past. Rav Ashi saw Mar Zutra go pale from craving and put a bit of the food into his mouth. The royal staff said he had spoiled the king's meal, but he said the cook had, because he saw a leprous mark in the meat. They found nothing until he pointed to the exact spot, where it then appeared. Asked how he knew, he said he saw a leprous spirit hovering over the food.",
-   "people": [
-    {
-     "name": "Rav Ashi",
-     "about": "fed Mar Zutra a bit of the food"
-    },
-    {
-     "name": "Mar Zutra",
-     "about": "craved the king's food"
-    },
-    {
-     "name": "Ameimar",
-     "about": ""
-    },
-    {
-     "name": "King Izgur",
-     "about": ""
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-61b-1-1": {
-   "note": "A Roman asked a woman to marry him and she refused. He peeled pomegranates and ate them in front of her without sharing, and the smell made her mouth water until she swallowed her saliva and grew ill and bloated. He offered to cure her if she would marry him, and she agreed. He ate pomegranates again and told her to spit out the saliva. She did, until something like a green leaf came out, and she was cured. The text does not say whether she married him.",
-   "people": [],
-   "terms": [],
-   "approved": false
-  },
-  "ketubot-62a-4-4": {
-   "note": "A Jew and a gentile were walking together, and the gentile could not keep up with the faster Jew. He reminded him of the destruction of the Temple so that he would sigh and slow down. The Jew groaned but still walked faster, and the gentile asked why the groaning had not weakened him. The Jew replied that this only applies to a new grief; people grow used to old tragedies, like a mother used to losing children.",
-   "people": [],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-62a-7-7": {
-   "note": "To show the strength of people in Eretz Yisrael, the Gemara tells two stories. When a bathhouse collapsed under Rabbi Abbahu, he climbed onto a pillar and pulled up the two slaves supporting him. Rabbi Yohanan did the same when a staircase collapsed under him and his two supporters. Asked why he needs support if he is so strong, Rabbi Yohanan said he was saving his strength for old age.",
-   "people": [
-    {
-     "name": "Rabbi Abbahu",
-     "about": "survived the bathhouse collapse"
-    },
-    {
-     "name": "Rabbi Yoḥanan",
-     "about": "survived the staircase collapse"
-    },
-    {
-     "name": "Rav Ami and Rav Asi",
-     "about": "were supporting Rabbi Yoḥanan"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-62b-3-3": {
-   "note": "Rav Rehumi studied under Rava and usually came home each year on the eve of Yom Kippur. One year he was absorbed in his learning and stayed behind, while his wife kept waiting for him and finally wept. At that moment the roof he was sitting on collapsed and he died. The Gemara learns from this how careful a person must be not to cause his wife anguish, even by accident.",
-   "people": [
-    {
-     "name": "Rav Reḥumi",
-     "about": "a student of Rava in Meḥoza"
+     "name": "Rav Neḥemya",
+     "about": "a Babylonian Sage, son of Rav Yosef, acting here as judge"
     }
    ],
    "terms": [
     {
-     "term": "Yom Kippur",
-     "meaning": "The Day of Atonement, the holiest day of the Jewish year."
+     "term": "sustenance",
+     "meaning": "The food and support a husband owes his wife, which a court can fix when they are apart."
+    },
+    {
+     "term": "Meḥoza",
+     "meaning": "A wealthy Babylonian trading town on the Tigris, where Rava's academy stood."
     }
    ],
    "approved": true
   },
-  "ketubot-62b-5-5": {
-   "note": "Yehuda, son of Rabbi Hiyya and son-in-law of Rabbi Yannai, usually came home every Shabbat eve, preceded by a pillar of fire that Rabbi Yannai saw. One day he stayed behind absorbed in study, and without the sign Rabbi Yannai told the family to turn his bed over as in mourning, assuming he had died. The text says that his words came true like a ruler's mistake, and Yehuda died.",
+  "ketubot-7a-1-1": {
+   "note": "Rav Ami permitted a groom to consummate the marriage on Shabbat even though the marriage contract was not yet written. The Sages objected, since living with a wife without a contract is improper. Rav Ami answered that the bride should take property equal to the contract's value from her husband as a deposit, and then the couple may proceed.",
    "people": [
     {
-     "name": "Yehuda, son of Rabbi Ḥiyya",
-     "about": "a student who stayed in the study hall"
-    },
-    {
-     "name": "Rabbi Yannai",
-     "about": "his father-in-law, who assumed he had died"
-    }
-   ],
-   "terms": [
-    {
-     "term": "turning over the bed",
-     "meaning": "A mourning custom in which beds are turned over."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-62b-6-9": {
-   "note": "Rabbi Yehuda HaNasi tried to marry his son into Rabbi Hiyya's family, but the girl died; a check of family descent found a possible reason. He then arranged a match with Rabbi Yosei ben Zimra's household, where the son was to study for twelve years. On seeing the bride the son married first and then went to study, and his father said this was like God's own conduct. After twelve years of study the son returned to find his wife unable to have children, and he prayed and she was cured.",
-   "people": [
-    {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "arranged his son's marriage"
-    },
-    {
-     "name": "Rabbi Ḥiyya",
-     "about": "the family of the first bride"
-    },
-    {
-     "name": "Rabbi Yosei ben Zimra",
-     "about": "the family of the second bride"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-62b-10-11": {
-   "note": "Rabbi Hananya ben Hakhinai left a wedding feast to study Torah, though Rabbi Shimon asked him to wait for him. He stayed in the study hall twelve years, and when he returned the roads had changed and he could not find his house. He heard a girl called 'daughter of Hakhinai' and followed her home. His wife saw him and died from the shock, but he prayed to God and she came back to life.",
-   "people": [
-    {
-     "name": "Rabbi Ḥananya ben Ḥakhinai",
-     "about": "the scholar who studied for twelve years"
-    },
-    {
-     "name": "Rabbi Shimon ben Yoḥai",
-     "about": "asked him to wait"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-62b-12-13": {
-   "note": "Rabbi Hama bar Bisa studied twelve years away, and on his return, determined not to shock his wife as Ben Hakhinai had, he sat in the town's study hall and sent word he had arrived. A young man he did not recognize asked sharp legal questions, and Rabbi Hama sadly wished he had taught his own son like that. At home he stood up to honor the young man, and his wife asked if a father stands for his son. The young man was his son Rabbi Oshaya, described as the third generation of scholars in the family.",
-   "people": [
-    {
-     "name": "Rabbi Ḥama bar Bisa",
-     "about": "returned after twelve years of study"
-    },
-    {
-     "name": "Rabbi Oshaya",
-     "about": "his son, whom he did not recognize"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-62b-14-14": {
-   "note": "Ben Kalba Savua, a wealthy man of Jerusalem, had a shepherd named Akiva. His daughter saw that Akiva was humble and refined, and betrothed herself to him in secret on condition that he go to study Torah. Her angry father threw her out and vowed that she could not benefit from his property. After twelve years Akiva came back with twelve thousand students. He overheard his wife say she would gladly have him study another twelve years, so he went back, and returned with twenty-four thousand. When his attendants pushed her away, he told them that his learning and theirs was hers. Her father, hoping to have his vow annulled, learned that Akiva was the man, kissed his feet and gave him half his money.",
-   "people": [
-    {
-     "name": "Rabbi Akiva",
-     "about": "the shepherd who became a great sage"
-    },
-    {
-     "name": "Akiva's wife",
-     "about": "daughter of ben Kalba Savua, who sent him to study"
-    },
-    {
-     "name": "Ben Kalba Savua",
-     "about": "her wealthy father in Jerusalem"
-    },
-    {
-     "name": "Ben Azzai",
-     "about": "Rabbi Akiva's daughter betrothed herself to him and sent him to study"
-    }
-   ],
-   "terms": [
-    {
-     "term": "vow (neder)",
-     "meaning": "A solemn promise that can be annulled only by a sage if the person regrets it."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-63a-2-2": {
-   "note": "Rav Yosef, son of Rava, was sent by his father to study with the great Rav Yosef, and they agreed on six years. After three years, on the eve of Yom Kippur, he said he would go see his wife. His father took a weapon, went to meet him, and rebuked him in sharp words for abandoning his studies for a woman. In their quarrel neither ate the meal before the Yom Kippur fast. The text does not say whether he went home.",
-   "people": [
-    {
-     "name": "Rav Yosef, son of Rava",
-     "about": "the student who wanted to see his wife"
-    },
-    {
-     "name": "Rava",
-     "about": "his father, who confronted him"
-    },
-    {
-     "name": "Rav Yosef",
-     "about": "the great Sage he was sent to study with"
-    }
-   ],
-   "terms": [
-    {
-     "term": "cessation meal",
-     "meaning": "The meal eaten before the fast of Yom Kippur begins."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-63b-8-8": {
-   "note": "When Rav Zevid's daughter-in-law rebelled against her husband, three Sages said she loses her right to her worn clothes. Rav Gamda objected that they were flattering Rav Zevid, since Rava had left this question unresolved. In another version they ruled the opposite, and he gave the same objection. The conclusion is that since the question is undecided, if she already holds the item it is not taken from her, but if she does not, it is not given to her.",
-   "people": [
-    {
-     "name": "Rav Zevid",
-     "about": ""
-    },
-    {
-     "name": "Rav Gamda",
-     "about": ""
-    },
-    {
-     "name": "Ameimar",
-     "about": ""
-    },
-    {
-     "name": "Mar Zutra",
-     "about": ""
-    },
-    {
-     "name": "Rav Ashi",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "rebelled",
-     "meaning": "Here, a wife who refuses to live with her husband as a wife."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-65a-8-9": {
-   "note": "After Abaye died, his widow Homa asked Rava, the local judge, for support and then for wine. Rava refused the wine because Abaye did not drink it, but she showed how large his cups were, and her bared arm shone with beauty. Rava went home and asked his wife, the daughter of Rav Hisda, for intimacy. When she learned that Homa had been in court, she chased Homa out of Mehoza with the lock of a chest. She said Homa had already killed three husbands and was now coming to kill Rava, who would want to marry her.",
-   "people": [
-    {
-     "name": "Ḥoma",
-     "about": "Abaye's widow, who came before Rava"
-    },
-    {
-     "name": "Rava",
-     "about": "the judge"
-    },
-    {
-     "name": "Rava's wife",
-     "about": "daughter of Rav Ḥisda"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-66b-10-13": {
-   "note": "Rabban Yohanan ben Zakkai saw a young woman picking barley out of animal dung, covering herself with her hair. She was the daughter of Nakdimon ben Guryon, once so wealthy that her marriage contract listed a million gold dinars from her father's house. He wept and said that when Israel does God's will no nation rules them, and when it does not, they are handed to a lowly nation. The Gemara asks whether Nakdimon did not give charity, and offers two possible answers: he gave for his own honor, or he gave less than he should have. Rabbi Elazar son of Rabbi Tzadok swears that he saw her gathering barley among horses' hooves in Akko.",
-   "people": [
-    {
-     "name": "Rabban Yoḥanan ben Zakkai",
-     "about": "met the woman and wept"
-    },
-    {
-     "name": "Nakdimon ben Guryon",
-     "about": "her once-wealthy father"
-    },
-    {
-     "name": "Rabbi Elazar, son of Rabbi Tzadok",
-     "about": "said he saw her gathering barley in Akko"
-    }
-   ],
-   "terms": [
-    {
-     "term": "baraita",
-     "meaning": "A teaching from the early rabbis that was not included in the Mishna."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-67b-2-2": {
-   "note": "The Sages read a verse about helping a poor person as meaning you must cover what he lacks, but you need not make him rich. For someone used to a comfortable life, that lack can include a horse to ride and a servant to run in front of him. Hillel the Elder once got a poor man of good family exactly that. When no servant could be found one day, Hillel ran in front of him himself for three mil.",
-   "people": [
-    {
-     "name": "Hillel the Elder",
-     "about": "a famous Sage"
-    }
-   ],
-   "terms": [
-    {
-     "term": "mil",
-     "meaning": "An ancient measure of distance, roughly a kilometer."
-    },
-    {
-     "term": "Gemara",
-     "meaning": "The part of the Talmud that discusses and explains the earlier teachings."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-67b-4-4": {
-   "note": "A man asked Rabbi Nehemya for charity and said he normally ate fatty meat and aged wine. Rabbi Nehemya invited him to share a simple meal of lentils, and the man died because his body was not used to that food. Rabbi Nehemya said, 'Woe to this one who was killed by Nehemya.' The Gemara first suggests he should have blamed himself, then explains he meant the man was at fault for pampering himself so much.",
-   "people": [
-    {
-     "name": "Rabbi Nehemya",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "Gemara",
-     "meaning": "The part of the Talmud that discusses and explains the earlier teachings."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-67b-5-6": {
-   "note": "A man asked Rava for charity and said he usually ate fattened hen and aged wine. When Rava asked if he worried about burdening the community, the man answered that he was eating from God's support, not theirs. Just then Rava's sister, who had not seen him in thirteen years, arrived with a fattened hen and aged wine as a gift. Rava took this as a sign that the man was right and told him to get up and eat.",
-   "people": [
-    {
-     "name": "Rava",
-     "about": "a Sage of the Talmud"
-    },
-    {
-     "name": "Rava's sister",
-     "about": "had not seen him for thirteen years"
-    }
-   ],
-   "terms": [
-    {
-     "term": "the Merciful One",
-     "meaning": "A name for God used in the Talmud."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-67b-11-12": {
-   "note": "Mar Ukva secretly tossed four dinars to a poor neighbor every day. One day the neighbor tried to see who it was, and Mar Ukva and his wife ran off and hid in a furnace whose fire was low but still burning. His feet were burned, and his wife told him to rest them on hers, which were not burned. When he was upset, she explained that she gives food directly at home, so her help is more immediate than his money.",
-   "people": [
-    {
-     "name": "Mar Ukva",
-     "about": "gave charity in secret"
-    },
-    {
-     "name": "Mar Ukva's wife",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "dinar",
-     "meaning": "A silver coin used as money."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-67b-14-14": {
-   "note": "Every year before Yom Kippur, Mar Ukva sent four hundred dinars to a poor man. His son brought the money and came back saying the man did not need it, since he had seen old wine being poured on the ground to make the room smell nice. Mar Ukva replied that someone this used to luxury needs even more money, and he doubled the gift.",
-   "people": [
-    {
-     "name": "Mar Ukva",
-     "about": ""
-    },
-    {
-     "name": "Mar Ukva's son",
-     "about": "carried the money to the poor man"
-    }
-   ],
-   "terms": [
-    {
-     "term": "Yom Kippur",
-     "meaning": "The Day of Atonement, the holiest day of the Jewish year."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-67b-15-15": {
-   "note": "As Mar Ukva was dying, he checked his charity records and found he had given seven thousand gold dinars. He felt this was too little to take with him to the World-to-Come, so he gave away half of his remaining money. The Gemara asks how he could do this, since a rule from Usha limits giving to one-fifth. It answers that the limit applies only during life, to avoid becoming poor, and not after death.",
-   "people": [
-    {
-     "name": "Mar Ukva",
-     "about": ""
-    },
-    {
-     "name": "Rabbi Ilai",
-     "about": "quoted for the Usha rule"
-    }
-   ],
-   "terms": [
-    {
-     "term": "World-to-Come",
-     "meaning": "The afterlife, where a person's good deeds are rewarded."
-    },
-    {
-     "term": "Usha",
-     "meaning": "A place where the Sages gathered and made rulings."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-69a-14-16": {
-   "note": "Rav Anan wrote to Rav Huna, addressing him as \"Huna, our friend\", and asked him to give a woman one-tenth of her father's estate. Rav Huna sent a sharp reply through Rav Sheshet, under threat of excommunication if the reply was not passed on word for word. The reply said: \"Anan, Anan\", should the tenth come from real estate or from movable property, and who sits at the head in the house of a marzeiha? Rav Anan, offended and not knowing the word, went to Mar Ukva. Mar Ukva said that a man who does not know what a marzeiha is has no business calling Rav Huna \"our friend\". The Gemara explains that a marzeiha is a mourner.",
-   "people": [
-    {
-     "name": "Rav Anan",
-     "about": ""
-    },
-    {
-     "name": "Rav Huna",
-     "about": ""
-    },
-    {
-     "name": "Rav Sheshet",
-     "about": "carried Rav Huna's reply"
-    },
-    {
-     "name": "Mar Ukva",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "marzeiha",
-     "meaning": "A mourner, a person in a house of mourning."
-    },
-    {
-     "term": "excommunication",
-     "meaning": "Being formally cut off from the community as a penalty."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-69b-10-12": {
-   "note": "Rabbi Yohanan was chosen as head of the yeshiva instead of Ilfa, who was away. Ilfa hung himself from a ship's mast and said he would drown if anyone could cite a teaching he could not trace to a mishna. An older man cited a ruling on a dying father who says to give his sons a shekel a week, and Ilfa answered that it follows Rabbi Meir, who says to carry out the wishes of the dead. The passage then continues with Mar Ukva's ruling and a new mishna, which are discussion rather than story.",
-   "people": [
-    {
-     "name": "Ilfa",
-     "about": "a Sage passed over as head of the yeshiva"
-    },
-    {
-     "name": "Rabbi Yohanan",
-     "about": "chosen as head of the yeshiva"
-    },
-    {
-     "name": "Rabbi Meir",
-     "about": "his view is used in Ilfa's answer"
-    },
-    {
-     "name": "Mar Ukva",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "baraita",
-     "meaning": "A teaching from the time of the Mishna that was not included in the Mishna."
-    },
-    {
-     "term": "yeshiva",
-     "meaning": "A school for studying Torah."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-72b-3-3": {
-   "note": "Rabba bar bar Hanna told of walking behind Rav Ukva and seeing an Arab woman sitting and spinning a red thread opposite her face. When she saw them, she tore the spindle from the thread, threw it down and said to him, \"Young man, give me the spindle.\" Rav Ukva remarked that she was an example of one of the kinds of improper behavior listed in the mishna. The passage ends with a disagreement about which kind: Ravina says spinning in the marketplace, and the Rabbis say speaking with every man.",
-   "people": [
-    {
-     "name": "Rabba bar bar Hanna",
-     "about": "tells the story"
-    },
-    {
-     "name": "Rav Ukva",
-     "about": ""
-    },
-    {
-     "name": "Ravina",
-     "about": "gives one view of what Rav Ukva meant"
-    }
-   ],
-   "terms": [
-    {
-     "term": "mishna",
-     "meaning": "The early collection of Jewish law that the Talmud discusses."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-77b-5-8": {
-   "note": "The passage opens with how Sages treated people with the disease ra'atan: some kept away, but Rabbi Yehoshua ben Levi studied Torah with them. When he was dying, he asked the Angel of Death to show him his place in paradise and to lend him his knife, then jumped into paradise and swore he would not come back. God ruled that he could stay because he had never asked to have an oath dissolved, and a Divine Voice told him to give the knife back. Elijah announced his arrival. Rabbi Shimon bar Yohai asked him whether a rainbow had appeared in his lifetime. He said yes, so Rabbi Shimon doubted he was truly righteous, but the Gemara says no rainbow had ever appeared and he answered yes only out of modesty.",
-   "people": [
-    {
-     "name": "Rabbi Yehoshua ben Levi",
-     "about": "a righteous Sage"
-    },
-    {
-     "name": "Angel of Death",
-     "about": ""
-    },
-    {
-     "name": "Rabbi Shimon ben Yohai",
-     "about": "found sitting in paradise"
-    },
-    {
-     "name": "Elijah the Prophet",
-     "about": "announced his arrival"
-    }
-   ],
-   "terms": [
-    {
-     "term": "ra'atan",
-     "meaning": "A contagious disease the Sages feared catching."
-    },
-    {
-     "term": "dissolution of an oath",
-     "meaning": "Asking a judge to cancel a vow one has made."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-77b-9-11": {
-   "note": "Rabbi Hanina bar Pappa, a friend of the Angel of Death, asked for thirty days to review his learning before dying. Later he tried the same knife trick as Rabbi Yehoshua ben Levi, but the angel noted he had not studied with people with ra'atan as Rabbi Yehoshua had. When he died, a pillar of fire kept everyone away until Rabbi Alexandri asked it to leave in the dead Sage's own honor. The passage closes with Abaye and Rav Adda bar Mattana debating what the fire meant.",
-   "people": [
-    {
-     "name": "Rabbi Hanina bar Pappa",
-     "about": "friend of the Angel of Death"
-    },
-    {
-     "name": "Rabbi Alexandri",
-     "about": "persuaded the fire to disappear"
-    },
-    {
-     "name": "Abaye",
-     "about": "offers an explanation of the fire"
-    },
-    {
-     "name": "Rav Adda bar Mattana",
-     "about": "answers Abaye"
-    }
-   ],
-   "terms": [
-    {
-     "term": "ra'atan",
-     "meaning": "A contagious disease the Sages feared catching."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-78b-11-11": {
-   "note": "A woman about to remarry gave her property to her daughter on paper, only to keep it from her future husband. After she divorced, she asked for it back and the daughter said it was a gift. Rav Nahman tore up the document, accepting that it was never meant as a real transfer. Rav Anan complained to Mar Ukva, who cited Shmuel's ruling that such a document of evasion should be torn up. When Rava asked his reason, Rav Nahman said the mother put her own interests before her daughter's.",
-   "people": [
-    {
-     "name": "Rav Nahman",
-     "about": "the judge who tore the document"
-    },
-    {
-     "name": "Rav Anan",
-     "about": "complained about the ruling"
-    },
-    {
-     "name": "Mar Ukva",
-     "about": "called the Exilarch in the text"
-    },
-    {
-     "name": "Rava",
-     "about": "asked Rav Nahman for his reason"
-    }
-   ],
-   "terms": [
-    {
-     "term": "document of evasion",
-     "meaning": "A deed written to hide property from someone, with no real intent to transfer it."
-    },
-    {
-     "term": "Exilarch",
-     "meaning": "The leader of the Jewish community in Babylonia."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-80a-4-5": {
-   "note": "A woman was left 400 dinars in a faraway place. Her husband spent 600 of his own dinars to go and bring it back, and used one dinar of her money on the way. Rabbi Ami ruled that what he spent and what he ate are settled, so neither side can claim it from the other. When the Rabbis objected that he had eaten from the principal, Rabbi Ami said that for his expenses he could swear how much he paid and then take that amount.",
-   "people": [
-    {
-     "name": "Rabbi Ami",
-     "about": "the judge who ruled"
-    }
-   ],
-   "terms": [
-    {
-     "term": "dinar",
-     "meaning": "A silver coin used as money."
-    },
-    {
-     "term": "principal",
-     "meaning": "The original property itself, as opposed to the profit or produce it brings in."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-80b-1-2": {
-   "note": "A woman brought two maidservants into the marriage as part of her dowry. Her husband then married a second wife and gave one of the maidservants to her. The first wife complained to Rava, but he paid no attention. The text says one might think Rava allowed it because a husband may do as he likes with his wife's property, but the real reason is that the Sages gave a husband the produce of her property for the household's benefit, and the maidservant still works for the house.",
-   "people": [
-    {
-     "name": "Rava",
-     "about": "the judge"
-    },
-    {
-     "name": "Rav Pappa",
-     "about": "explains the incident"
-    }
-   ],
-   "terms": [
-    {
-     "term": "usufruct",
-     "meaning": "The right to use something and enjoy its produce without owning it."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-82b-9-12": {
-   "note": "Rav Yehuda describes how the marriage contract developed. At first a large sum had to be set aside in cash, so many men could not afford to marry. The Sages then moved the money to the bride's father's house, then to the husband's house, but a husband in a rage could still say 'take your contract and go.' Finally Shimon ben Shatah ruled that all the husband's property guarantees the sum, which made divorce costlier and so harder to do on a whim.",
-   "people": [
-    {
-     "name": "Rav Yehuda",
-     "about": "tells the history"
-    },
-    {
-     "name": "Shimon ben Shatah",
-     "about": "made the final ordinance"
+     "name": "Rav Ami",
+     "about": "a sage who gave the ruling"
     }
    ],
    "terms": [
     {
      "term": "ketubah (marriage contract)",
-     "meaning": "A document in which a husband promises his wife a set sum if he divorces her or dies."
-    },
-    {
-     "term": "baraita",
-     "meaning": "A teaching from the time of the Mishna that was not included in the Mishna."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-84b-7-7": {
-   "note": "Rabbi Yohanan's relatives took a cow belonging to orphans because the orphans' father had owed them money. Rabbi Yohanan said they could keep it, following Rabbi Tarfon. Reish Lakish told them to give it back. When they complained, Rabbi Yohanan said he could not dismiss the opinion of someone as great as himself.",
-   "people": [
-    {
-     "name": "Rabbi Yohanan",
-     "about": "allowed the seizure"
-    },
-    {
-     "name": "Reish Lakish",
-     "about": "ordered the cow returned"
-    },
-    {
-     "name": "Rabbi Tarfon",
-     "about": "his view was relied on by Rabbi Yohanan"
-    }
-   ],
-   "terms": [
-    {
-     "term": "orphans",
-     "meaning": "Here, the children of a man who died owing money."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-84b-10-10": {
-   "note": "Members of the household of the prince of Eretz Yisrael took a maidservant belonging to orphans to cover a debt their father owed. Rabbi Abbahu, one of the judges, said it was fine that they took her. Rabbi Abba objected that the judges were flattering the prince's household. He pointed out that Reish Lakish had overturned a similar seizure, showing the law does not follow Rabbi Tarfon.",
-   "people": [
-    {
-     "name": "Rabbi Abbahu",
-     "about": "approved the seizure"
-    },
-    {
-     "name": "Rabbi Abba",
-     "about": "objected"
-    },
-    {
-     "name": "Reish Lakish",
-     "about": "mentioned for overturning a similar seizure"
-    }
-   ],
-   "terms": [
-    {
-     "term": "prince of Eretz Yisrael",
-     "meaning": "The leader of the Jewish community in the Land of Israel."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-84b-11-11": {
-   "note": "A man named Yeimar bar Hashu was owed money by a dead man who left a boat, and he sent an agent to seize it. Rav Pappa and Rav Huna, who were also owed money, said such a seizure harms the other creditors, and then each took the boat for himself. Rava called them unlawful grabbers, since the boat was taken after the debtor's death, when his heirs already held it. The rule that whoever seizes first acquires it applies only when seized from the debtor while he was alive.",
-   "people": [
-    {
-     "name": "Yeimar bar Hashu",
-     "about": "the creditor who sent an agent"
-    },
-    {
-     "name": "Rav Pappa",
-     "about": ""
-    },
-    {
-     "name": "Rav Huna, son of Rav Yehoshua",
-     "about": ""
-    },
-    {
-     "name": "Rava",
-     "about": "gave the ruling"
-    }
-   ],
-   "terms": [
-    {
-     "term": "creditor",
-     "meaning": "A person who is owed money."
-    },
-    {
-     "term": "halakha",
-     "meaning": "Jewish law."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-85a-3-4": {
-   "note": "Avimi owed money to people from Bei Hozai and sent it with Hama, who paid it and asked for the debt document back. They refused, saying the payment covered a different, unwritten debt, so the written one was still unpaid. Rabbi Abbahu asked Hama if he had witnesses to the payment, and Hama had none. Rabbi Abbahu ruled that since they could have denied being paid at all, their claim of a side debt is believed, so Hama gets neither the money nor the document.",
-   "people": [
-    {
-     "name": "Avimi, son of Rabbi Abbahu",
-     "about": "the man who owed the money"
-    },
-    {
-     "name": "Hama, son of Rabba bar Abbahu",
-     "about": "paid on Avimi's behalf"
-    },
-    {
-     "name": "Rabbi Abbahu",
-     "about": "gave the ruling"
-    }
-   ],
-   "terms": [
-    {
-     "term": "miggo",
-     "meaning": "A legal principle: if a person could have made a stronger claim and did not, we believe the weaker claim he made."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-85a-8-10": {
-   "note": "A woman had to swear an oath in Rava's court, but Rava's wife, the daughter of Rav Hisda, said she knew the woman lied under oath. Rava passed the oath to the other side, who could swear and collect. In a second case, Rav Pappa said he knew a document's debt had been paid, but Rava would not rely on one witness. Rava explained he trusted his wife because he knew she was always truthful, but did not know that of Rav Pappa.",
-   "people": [
-    {
-     "name": "Rava",
-     "about": "the judge"
-    },
-    {
-     "name": "Daughter of Rav Hisda",
-     "about": "Rava's wife"
-    },
-    {
-     "name": "Rav Pappa",
-     "about": "the single witness about the document"
-    },
-    {
-     "name": "Rav Adda bar Mattana",
-     "about": "asked why Rav Pappa was not trusted"
-    }
-   ],
-   "terms": [
-    {
-     "term": "oath",
-     "meaning": "A sworn statement in court that can settle who wins a money dispute."
+     "meaning": "A written contract that obligates the husband to pay his wife a set sum if the marriage ends."
     }
    ],
    "approved": true
@@ -1464,660 +2264,29 @@
    ],
    "approved": false
   },
-  "ketubot-85b-9-9": {
-   "note": "A relative of Rav Nahman sold her marriage contract, was later divorced, and died, leaving the right to her daughter. The buyers then claimed the money from the daughter. Rav Nahman said someone should advise the daughter to forgive her father's debt, so the buyers get nothing and she inherits from him later. She did so, and Rav Nahman then regretted acting like a lawyer for a litigant instead of a judge, though the Gemara says he first thought helping family was right.",
+  "ketubot-8a-9-9": {
+   "note": "Rav Ashi attended a wedding at Rav Kahana's house and recited all seven wedding blessings on the first day. On later days he recited all of them again only if new guests were present. Otherwise he called the gathering an extension of the original celebration and added only a short phrase, 'in Whose dwelling is joy', in the group invitation to Grace after Meals, plus the sixth blessing.",
    "people": [
-    {
-     "name": "Rav Nahman",
-     "about": "the judge who gave the advice"
-    },
-    {
-     "name": "Rav Nahman's relative",
-     "about": "sold her marriage contract"
-    },
-    {
-     "name": "Her daughter",
-     "about": "followed the advice"
-    }
-   ],
-   "terms": [
-    {
-     "term": "ketubah (marriage contract)",
-     "meaning": "A document in which a husband promises his wife a set sum if he divorces her or dies."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-86a-4-4": {
-   "note": "This passage briefly says there was a similar case in which Rafram pressured Rav Ashi to give a clear ruling. Rav Ashi then collected the full value of the debt listed in the promissory note. It does not say what the case was, so the situation and the reason are missing.",
-   "people": [
-    {
-     "name": "Rafram",
-     "about": "pressured Rav Ashi"
-    },
     {
      "name": "Rav Ashi",
-     "about": "collected the full value"
-    }
-   ],
-   "terms": [
-    {
-     "term": "promissory note",
-     "meaning": "A written promise to pay a debt."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-91a-19-20": {
-   "note": "A man named bar Tzartzur left little property beyond what his wives' marriage contracts were worth, and it later rose in value. His sons from the two wives disputed it before Rav Amram, who told the sons of the wife with the bigger contract to give some to the others. They refused, so he threatened excommunication and sent them to Rav Nahman. Rav Nahman ruled that the heirs divide the whole estate equally, based on its value when the father died.",
-   "people": [
-    {
-     "name": "Rav Amram",
-     "about": "first judge, threatened excommunication"
-    },
-    {
-     "name": "Rav Nahman",
-     "about": "gave the final ruling"
-    },
-    {
-     "name": "Bar Tzartzur",
-     "about": "the man who died"
-    }
-   ],
-   "terms": [
-    {
-     "term": "excommunication",
-     "meaning": "Being formally cut off from the community as a penalty."
-    },
-    {
-     "term": "marriage contract",
-     "meaning": "A document in which a husband promises his wife a set sum if he divorces her or dies."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-91b-2-3": {
-   "note": "A man owed a creditor one thousand dinars and sold two mansions for five hundred each. The creditor took one mansion from a buyer, then came for the second. The buyer offered the creditor the full thousand dinars to give up both. Rami bar Hama compared this to a rule that orphans cannot inflate a property's value, but Rava said the cases differ: here the creditor loses nothing, so it would be cruel for him to refuse the money.",
-   "people": [
-    {
-     "name": "Rami bar Hama",
      "about": ""
     },
     {
-     "name": "Rava",
-     "about": ""
+     "name": "Rav Kahana",
+     "about": "host of the wedding"
     }
    ],
    "terms": [
     {
-     "term": "creditor",
-     "meaning": "Someone who is owed money."
+     "term": "seven blessings (sheva berakhot)",
+     "meaning": "Blessings recited at a Jewish wedding and at celebratory meals during the following week."
     },
     {
-     "term": "orphans",
-     "meaning": "Here, the heirs of a man who has died."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-91b-8-9": {
-   "note": "A man owed a creditor one hundred dinars and sold two small fields for fifty each. The creditor took one field from a buyer, then came for the other. The buyer offered the full hundred dinars so the creditor would give up both fields. Rav Yosef compared this to a rule that orphans cannot inflate a property's value, but Abaye said the creditor loses nothing here, so it would be cruel of him to refuse the money.",
-   "people": [
-    {
-     "name": "Rav Yosef",
-     "about": ""
-    },
-    {
-     "name": "Abaye",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "creditor",
-     "meaning": "Someone who is owed money."
-    },
-    {
-     "term": "orphans",
-     "meaning": "Here, the heirs of a man who has died."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-91b-12-13": {
-   "note": "A man died owing a creditor 100 dinars and left only a small field worth 50. The creditor took the field, and the orphans paid him 50 dinars to get it back, but he took it again to collect the rest of the debt. The orphans complained to Abaye, who ruled against them. Their payment fulfilled the mitzva of paying their father's debt, but it did not cancel the creditor's claim on the field, so he took it lawfully.",
-   "people": [
-    {
-     "name": "Abaye",
-     "about": "a rabbi of the Talmud who ruled on the case"
-    }
-   ],
-   "terms": [
-    {
-     "term": "mitzva",
-     "meaning": "a commandment or good deed required by Jewish law."
-    },
-    {
-     "term": "lien",
-     "meaning": "a creditor's legal claim on property to secure a debt."
+     "term": "zimmun",
+     "meaning": "The invitation that opens group Grace after Meals."
     }
    ],
    "approved": true
-  },
-  "ketubot-91b-15-15": {
-   "note": "A man sold his right to collect his mother's marriage contract payment (if he later inherited it), saying he would not repay the buyer if his mother objected. She died without objecting, but he himself then contested the sale. Rami bar Hama thought he could object in her place. Rava replied that although he did not guarantee against her objection, he did guarantee against his own, so the sale stands.",
-   "people": [
-    {
-     "name": "Rami bar Hama",
-     "about": ""
-    },
-    {
-     "name": "Rava",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "marriage contract",
-     "meaning": "The ketubah, a written sum a husband owes his wife on divorce or death."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-94b-6-9": {
-   "note": "Rami bar Hama's mother wrote a deed giving her property to him in the morning, and another giving it to his brother Mar Ukva in the evening. Rav Sheshet awarded the property to Rami, and Rav Nahman awarded it to Mar Ukva. Rav Sheshet's reason was that Rami's deed came first. Rav Nahman answered that deeds in their place do not record the hour, so the order in a day does not matter. Rav Nahman said he ruled by the judges' discretion, judging what the mother wanted. He added that he is a judge and Rav Sheshet is not, so his ruling stands.",
-   "people": [
-    {
-     "name": "Rami bar Hama",
-     "about": "son who got the morning deed"
-    },
-    {
-     "name": "Mar Ukva bar Hama",
-     "about": "his brother, who got the evening deed"
-    },
-    {
-     "name": "Rav Sheshet",
-     "about": "ruled for Rami"
-    },
-    {
-     "name": "Rav Nahman",
-     "about": "ruled for Mar Ukva"
-    }
-   ],
-   "terms": [
-    {
-     "term": "discretion of the judges",
-     "meaning": "the judges' power to decide by what seems to be the person's real intention when the law gives no clear answer."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-94b-10-12": {
-   "note": "Two buyers brought deeds for the same field to Rav Yosef. One deed was dated the fifth of Nisan and the other said only Nisan. Rav Yosef awarded the field to the one with the exact date, since the other could have been written on the 29th. The loser asked for a document letting him take the seller's other property. Rav Yosef said someone could answer that his deed may actually be the earlier one, so he should take that field instead. The Gemara's solution is that the two deed holders write documents authorizing each other to collect.",
-   "people": [
-    {
-     "name": "Rav Yosef",
-     "about": "the rabbi who judged the case"
-    }
-   ],
-   "terms": [
-    {
-     "term": "Nisan",
-     "meaning": "a month in the Jewish calendar, in spring."
-    },
-    {
-     "term": "document of authorization",
-     "meaning": "a court document allowing someone to collect a debt from property the debtor sold to others."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-98a-6-7": {
-   "note": "Someone was holding coral that belonged to orphans. He valued it for himself at 400 dinars and took it. The coral then rose in value to 600 dinars, and he asked Rabbi Ammi who gets the profit. Rabbi Ammi asked who had valued it for him. Since no court or orphans had sold it to him, he never acquired it, so it stayed the orphans' and the profit is theirs.",
-   "people": [
-    {
-     "name": "Rabbi Ammi",
-     "about": "the rabbi who ruled on the case"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-100b-17-18": {
-   "note": "Ravina held wine belonging to his orphaned nephew, Ravina the younger, and also had his own wine to take to Sikhra to sell. He asked Rav Ashi whether he could bring the nephew's wine along or should wait for a better time. Rav Ashi told him to take both: the orphan's wine is no worse off than his own, and if he is willing to sell his own that way, he may sell the orphan's the same way.",
-   "people": [
-    {
-     "name": "Ravina",
-     "about": "the man holding the orphan's wine"
-    },
-    {
-     "name": "Ravina the younger",
-     "about": "the orphan, his sister's son"
-    },
-    {
-     "name": "Rav Ashi",
-     "about": "the rabbi he asked"
-    }
-   ],
-   "terms": [
-    {
-     "term": "halakha",
-     "meaning": "the accepted Jewish law on a question."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-103a-2-3": {
-   "note": "A man rented out his millstone and the renter paid by grinding grain for him. The owner became rich, bought another millstone and a donkey, and no longer needed the grinding. He demanded money for the rental instead. The renter replied that he had agreed to grind, not to pay money. The passage ends with the dispute and no ruling.",
-   "people": [],
-   "terms": [
-    {
-     "term": "millstone",
-     "meaning": "a heavy stone used to grind grain into flour."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-103a-24-32": {
-   "note": "This long passage covers the last days of Rabbi Yehuda HaNasi, editor of the Mishnah. On his deathbed he told his sons to honor their stepmother, kept his lamp, table and bed set as usual, and named Gamliel as Nasi, Shimon as a Sage and Hanina bar Hama to head the yeshiva. The Gemara explains these wishes and adds side stories, such as his Shabbat-eve visits home that stopped when a maidservant gave him away. It ends with him teaching his two sons.",
-   "people": [
-    {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "leader of the Jewish people in his time"
-    },
-    {
-     "name": "Rabban Gamliel",
-     "about": "his older son, named Nasi"
-    },
-    {
-     "name": "Rabbi Shimon",
-     "about": "his younger son, a Sage"
-    },
-    {
-     "name": "Hanina bar Hama",
-     "about": "named to head the yeshiva"
-    },
-    {
-     "name": "Rabbi Hiyya",
-     "about": "a scholar known for teaching Torah to children"
-    }
-   ],
-   "terms": [
-    {
-     "term": "Nasi",
-     "meaning": "the president or head of the Jewish community and its court."
-    },
-    {
-     "term": "yeshiva",
-     "meaning": "an academy for Torah study."
-    },
-    {
-     "term": "World-to-Come",
-     "meaning": "the afterlife, where the righteous are rewarded."
-    },
-    {
-     "term": "Divine Voice",
-     "meaning": "a heavenly voice the Talmud describes as announcing a message."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-103b-3-3": {
-   "note": "On the day Rabbi Yehuda HaNasi was buried, a heavenly voice announced that everyone at his funeral was destined for the World-to-Come. A launderer who visited him daily had not come that day and missed the funeral. When he heard Rabbi had died, he was so grief-stricken that he climbed to the roof, fell, and died. The heavenly voice then announced that this launderer, too, was destined for the World-to-Come.",
-   "people": [
-    {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "the leader whose funeral it was"
-    }
-   ],
-   "terms": [
-    {
-     "term": "World-to-Come",
-     "meaning": "the afterlife, where the righteous are rewarded."
-    },
-    {
-     "term": "Divine Voice",
-     "meaning": "a heavenly voice the Talmud describes as announcing a message."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-103b-8-9": {
-   "note": "Rabbi Yehuda HaNasi had said that Hanina bar Hama should head the yeshiva. Hanina refused, because Rabbi Afes was older by two and a half years and he would not go ahead of him. So Afes headed the yeshiva, Hanina sat outside, and Levi studied with him there. When Afes died, Hanina took the post, and Levi, left with no study partner, went to Babylonia. When Rav heard of a great limping teacher newly arrived in Neharde'a, he concluded from this that Afes had died.",
-   "people": [
-    {
-     "name": "Hanina bar Hama",
-     "about": "named by Rabbi Yehuda HaNasi to head the yeshiva"
-    },
-    {
-     "name": "Rabbi Afes",
-     "about": "older than Hanina by two and a half years"
-    },
-    {
-     "name": "Levi",
-     "about": "studied with Hanina outside, later went to Babylonia"
-    },
-    {
-     "name": "Rav",
-     "about": "drew the conclusion from the news of Levi"
-    }
-   ],
-   "terms": [
-    {
-     "term": "yeshiva",
-     "meaning": "an academy for Torah study."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-103b-24-25": {
-   "note": "Rabbi Yehuda HaNasi was moved from Beit She'arim to Tzippori, a higher place with better air, when he fell ill. On the day he died, the Sages fasted and prayed that he would live and threatened anyone who announced his death. His maidservant first prayed he would stay, but seeing his painful illness, she prayed he be allowed to go. She threw a jug from the roof, the sudden noise stopped the Sages' prayers, and he died. Bar Kappara told them with a hint rather than saying it. As Rabbi died, he said he had worked in the Torah with all ten fingers and had taken no benefit from the world. A heavenly voice answered that he enters in peace.",
-   "people": [
-    {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "the leader who is dying"
-    },
-    {
-     "name": "Bar Kappara",
-     "about": "sent by the Sages to check on him"
-    }
-   ],
-   "terms": [
-    {
-     "term": "Divine Voice",
-     "meaning": "a heavenly voice the Talmud describes as announcing a message."
-    },
-    {
-     "term": "phylacteries (tefillin)",
-     "meaning": "small leather boxes with Torah verses, worn on the head and arm during prayer."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-104b-7-15": {
-   "note": "Rav Hiyya Arikha supported his brother's widow for 25 years from his brother's estate. When she then asked for support and then for her marriage contract money, he refused. Rabba bar Sheila ruled that she could still collect, since she had likely stayed silent out of embarrassment, and gave her authorization to seize his property when he did not pay. Rava agreed with the ruling but then rejected her claim to the crops grown since. The authorization lacked a needed clause saying the land came from the dead husband's estate, and Rava held it was not a scribal slip because Rabba bar Sheila himself had not thought the clause mattered.",
-   "people": [
-    {
-     "name": "Rav Hiyya Arikha",
-     "about": "called Arikha, meaning tall, because of his height"
-    },
-    {
-     "name": "Rabba bar Sheila",
-     "about": "the judge who first ruled for the widow"
-    },
-    {
-     "name": "Rava",
-     "about": "rabbi who reviewed the case"
-    }
-   ],
-   "terms": [
-    {
-     "term": "marriage contract (ketubah)",
-     "meaning": "a document promising a wife a sum of money when the marriage ends by divorce or the husband's death."
-    },
-    {
-     "term": "authorization to seize property",
-     "meaning": "a court document letting a creditor take a debtor's property to collect a debt."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-105b-10-11": {
-   "note": "Rabbi Yishmael's sharecropper normally brought him a basket of fruit every Shabbat eve, but one Thursday brought it early because he had a court case to bring before him. Rabbi Yishmael refused the fruit and said he could not judge the case. He had two scholars judge it instead. Even so, he found himself thinking of arguments to help the sharecropper win, and concluded that anyone who accepts a bribe must be even more biased.",
-   "people": [
-    {
-     "name": "Rabbi Yishmael, son of Rabbi Yosei",
-     "about": "the judge who refused the gift"
-    }
-   ],
-   "terms": [
-    {
-     "term": "sharecropper",
-     "meaning": "a farmer who works someone else's land and pays part of the crop."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-105b-12-13": {
-   "note": "A man brought Rabbi Yishmael bar Elisha, a priest, the first shearing of his sheep, a gift priests are due. Rabbi Yishmael asked why he came so far, and the man said he had a court case before him. Rabbi Yishmael refused the gift, said he could not judge the case, and had two scholars judge it. Still, he caught himself thinking of arguments for the man and concluded that anyone who takes a bribe is bound to be biased.",
-   "people": [
-    {
-     "name": "Rabbi Yishmael bar Elisha",
-     "about": "a priest"
-    }
-   ],
-   "terms": [
-    {
-     "term": "first shearing",
-     "meaning": "the first wool cut from a flock, which the Torah says is given to a priest."
-    },
-    {
-     "term": "priest (kohen)",
-     "meaning": "a descendant of Aaron, who is entitled to certain gifts from the people."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-105b-14-16": {
-   "note": "A man brought Rav Anan a basket of fish and said he had a case. Rav Anan declined the gift and said he could not judge the man. The man said he wanted to give it as honor to a Torah scholar, as with first fruits, so Rav Anan took it. He then sent the man to Rav Nahman with a letter saying he could not judge him. Rav Nahman assumed the man was a relative of Rav Anan, put aside an orphans' case, and honored him, so the other side lost heart and lost. Elijah the Prophet then stopped visiting Rav Anan, and when he returned he appeared in frightening forms. Rav Anan built a box to sit in until Elijah had taught him the rest of his Seder.",
-   "people": [
-    {
-     "name": "Rav Anan",
-     "about": "the scholar who accepted the gift"
-    },
-    {
-     "name": "Rav Nahman",
-     "about": "the judge who heard the man's case"
-    },
-    {
-     "name": "Elijah the Prophet",
-     "about": "used to teach Rav Anan"
-    }
-   ],
-   "terms": [
-    {
-     "term": "first fruits",
-     "meaning": "the first produce of the harvest, brought as a gift to the priests."
-    },
-    {
-     "term": "Seder Eliyahu",
-     "meaning": "a Jewish book of teachings that the text says Elijah taught Rav Anan."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-106a-2-3": {
-   "note": "In Rav Yosef's time there was a famine, and the Sages asked him to pray for mercy. He replied that the prophet Elisha supported from his own pocket the 2,200 Sages who stayed behind with him, and still did not pray during a famine, so why should he. The passage ends there with no further outcome.",
-   "people": [
-    {
-     "name": "Rav Yosef",
-     "about": "asked by the Sages to pray during a famine"
-    },
-    {
-     "name": "Elisha",
-     "about": "the prophet, mentioned as a comparison"
-    }
-   ],
-   "terms": [],
-   "approved": false
-  },
-  "ketubot-109b-3-5": {
-   "note": "A man set up one field as a boundary marker for a neighbor's field, which treated it as belonging to someone else. He later claimed the field was his, then died, leaving a steward managing his orphans' property. Abaye said the father had lost his right to claim it. The steward answered that the father might have meant only one edge furrow, and Abaye agreed to give that furrow. The steward then said the father might have bought the field back, saving the palm trees there, and Abaye accepted this too. Abaye said that anyone appointing a steward should choose one who defends orphans like this.",
-   "people": [
-    {
-     "name": "Abaye",
-     "about": "the rabbi who judged the case"
-    },
-    {
-     "name": "Rabbi Yohanan",
-     "about": "his ruling is quoted as the basis"
-    }
-   ],
-   "terms": [
-    {
-     "term": "steward (apotropos)",
-     "meaning": "a person appointed to manage property for orphans."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-111b-13-13": {
-   "note": "This is one of several tall-tale-style reports praising how fertile the Land of Israel was. Rav Yosef tells of a man in the village of Shihin whose father left him three mustard branches. One broke, and that branch alone held nine kav of mustard, and its wood roofed a booth for craftsmen. Rabbi Shimon ben Tahlifa adds that his father left a cabbage stalk so tall they climbed it with a ladder.",
-   "people": [
-    {
-     "name": "Rav Yosef",
-     "about": "reports the incident"
-    },
-    {
-     "name": "Rabbi Shimon ben Tahlifa",
-     "about": "says his father left a cabbage stalk they climbed with a ladder"
-    }
-   ],
-   "terms": [
-    {
-     "term": "kav",
-     "meaning": "a small ancient measure of volume, used for grain and similar goods."
-    },
-    {
-     "term": "baraita",
-     "meaning": "a teaching from the time of the Mishnah that was not included in it."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-111b-19-20": {
-   "note": "Rav Hiyya bar Adda, a children's teacher employed by Reish Lakish, missed three days of teaching. He explained that he had been harvesting one grapevine his father left him, which gave 300 clusters a day. On day one each cluster filled a jug with wine, on day two it took two clusters per jug, and on day three three; he declared more than half of it ownerless. Reish Lakish answered that had he not neglected the children's Torah study, each cluster would have yielded more.",
-   "people": [
-    {
-     "name": "Rav Hiyya bar Adda",
-     "about": "a children's teacher employed by Reish Lakish"
-    },
-    {
-     "name": "Reish Lakish",
-     "about": "a rabbi, here the one who questions him"
-    }
-   ],
-   "terms": [
-    {
-     "term": "Eretz Yisrael",
-     "meaning": "the Land of Israel."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-111b-21-21": {
-   "note": "Rami bar Yehezkel came to Benei Berak and saw goats grazing under a fig tree. Honey was oozing from the figs and milk dripping from the goats, and the two were mixing together. He said that this is what the verse means by a land flowing with milk and honey.",
-   "people": [
-    {
-     "name": "Rami bar Yehezkel",
-     "about": "the rabbi who saw this"
-    }
-   ],
-   "terms": [],
-   "approved": true
-  },
-  "ketubot-111b-22-22": {
-   "note": "Three rabbis describe the milk-and-honey fertility of the Land of Israel. Rabbi Ya'akov ben Dostai says he walked ankle-deep in honey from fig trees between Lud and Ono. Reish Lakish says he saw a region near Tzippori of sixteen by sixteen mil. Rabba bar bar Hana says the whole milk-and-honey region was 22 by 6 parasangs. These are claims about size and plenty, with no plot.",
-   "people": [
-    {
-     "name": "Rabbi Ya'akov ben Dostai",
-     "about": "walked in honey from figs"
-    },
-    {
-     "name": "Reish Lakish",
-     "about": "described a region near Tzippori"
-    },
-    {
-     "name": "Rabba bar bar Hana",
-     "about": "described the whole region"
-    }
-   ],
-   "terms": [
-    {
-     "term": "mil",
-     "meaning": "an ancient measure of distance, roughly two-thirds of a mile."
-    },
-    {
-     "term": "parasang",
-     "meaning": "an ancient Persian measure of distance, equal to about eight mil."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-112a-3-4": {
-   "note": "Rabbi Yehoshua ben Levi came to Gavla and saw grape clusters as big as calves. Sad that such bounty went to foreign rulers during Israel's troubled times, he said the earth might better not produce such fruit. The next year Rabbi Hiyya came and saw clusters only as big as goats, and the locals told him not to repeat what his colleague had done. The text says Rabbi Yehoshua ben Levi's curse had come true and the fruit had shrunk.",
-   "people": [
-    {
-     "name": "Rabbi Yehoshua ben Levi",
-     "about": "saw the huge clusters and spoke the words"
-    },
-    {
-     "name": "Rabbi Hiyya",
-     "about": "visited the next year"
-    }
-   ],
-   "terms": [
-    {
-     "term": "Gavla",
-     "meaning": "a place in the Golan region."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-112a-11-11": {
-   "note": "An Amorite asked a resident of the Land of Israel how many dates he could pick from a palm tree on the Jordan bank. The man said sixty kor. The Amorite said he had harmed the land, since they used to pick 120 kor from that tree. The man replied he was speaking of only one side of the tree and had not yet picked the other. It is a boasting exchange about the land's fertility.",
-   "people": [],
-   "terms": [
-    {
-     "term": "Amorite",
-     "meaning": "a member of one of the peoples who lived in Canaan before Israel."
-    },
-    {
-     "term": "kor",
-     "meaning": "a large ancient measure of volume, about 30 se'ah."
-    }
-   ],
-   "approved": false
-  },
-  "ketubot-112a-16-16": {
-   "note": "Rabbi Zeira came to enter the Land of Israel but found no ferry over the Jordan, so he crossed holding a rope strung across the river. A Sadducee mocked him as hasty, like those who said we will do before we will hear at Sinai. Rabbi Zeira answered that Moses and Aaron did not merit entering the land, so he hurried across before anything could stop him.",
-   "people": [
-    {
-     "name": "Rabbi Zeira",
-     "about": "crossed the Jordan on a rope"
-    }
-   ],
-   "terms": [
-    {
-     "term": "Sadducee",
-     "meaning": "a member of a Jewish group of the time that rejected the oral tradition the rabbis taught."
-    },
-    {
-     "term": "we will do before we will hear",
-     "meaning": "the words of Israel at Sinai (Exodus 24:7), taken to mean they agreed to follow the Torah before hearing it."
-    }
-   ],
-   "approved": true
-  },
-  "ketubot-65a-10-10": {
-   "note": "The wife of Rav Yosef, son of Rava, comes to the judge Rav Neḥemya to have her husband's support fixed. He sets an amount for her food, and when she asks for wine he grants that too. He explains that in Meḥoza, where they live, people customarily drink wine, so she is entitled to it as well.",
-   "people": [
-    {
-     "name": "Rav Neḥemya",
-     "about": "a Babylonian Sage, son of Rav Yosef, acting here as judge"
-    }
-   ],
-   "terms": [
-    {
-     "term": "sustenance",
-     "meaning": "The food and support a husband owes his wife, which a court can fix when they are apart."
-    },
-    {
-     "term": "Meḥoza",
-     "meaning": "A wealthy Babylonian trading town on the Tigris, where Rava's academy stood."
-    }
-   ],
-   "approved": false
   }
  }
 }
