@@ -1718,7 +1718,11 @@
    "start_segment": 6,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 4,
+    "reason": "Adds Abaye's successive retractions, which are part of the Kakunya story (the 4-segment limit stops it just before his closing remark)."
+   },
    "reviewed": false,
    "summary": "The residents of Kakunya ask Rav Yosef for help with their eiruv, leading Abaye through a series of legal retractions until he realizes the depth of the warning Rav Yosef gave him.",
    "segments": [
@@ -1727,6 +1731,30 @@
      "i": 6,
      "he": "הָנְהוּ בְּנֵי קָקוּנָאֵי דְּאָתֵי לְקַמֵּיהּ דְּרַב יוֹסֵף, אֲמַרוּ לֵיהּ: הַב לַן גַּבְרָא דְּלִיעָרֵב לַן מָאתִין. אֲמַר לֵיהּ לְאַבָּיֵי: זִיל עָרֵב לְהוּ, וַחֲזִי דְּלָא מְצַוְוחַתְּ עֲלַהּ בְּבֵי מִדְרְשָׁא. אֲזַל, חֲזָא לְהָנְהוּ בָּתֵּי דִּפְתִיחִי לְנַהֲרָא. אָמַר: הָנֵי לֶהֱוֵי שִׁיּוּר לְמָתָא.",
      "en": "The Gemara relates that <b>certain residents of</b> the city of <b>Kakunya came before Rav Yosef</b> and <b>said to him: Provide us with someone who will establish an <i>eiruv</i> for our city.</b> The city had originally been a public city and had turned into a private one, requiring that part of the city be excluded from the <i>eiruv</i>. Rav Yosef <b>said to Abaye: Go, establish an <i>eiruv</i> for them, and see</b> to it <b>that there is no outcry against it in the study hall,</b> i.e., make sure the <i>eiruv</i> is valid beyond any doubt. <b>He went</b> and <b>saw</b> that <b>certain houses opened to the river</b> and not to the city. <b>He said: Let these</b> houses serve as <b>the section excluded</b> from the <i>eiruv</i> <b>for the city.</b>"
+    },
+    {
+     "ref": "Eruvin 60a",
+     "i": 7,
+     "he": "הֲדַר אָמַר: ״אֵין מְעָרְבִין אֶת כּוּלָּהּ״ תְּנַן, [מִכְּלָל] דְּאִי בָּעֵי לְעָירוֹבֵי, מָצֵי מְעָרְבִי. אֶלָּא אֶיעְבֵּיד לְהוּ כַּוֵּוי, דְּאִי בָּעוּ לְעָירוֹבֵי דֶּרֶךְ חַלּוֹנוֹת מָצוּ מְעָרְבִי.",
+     "en": "Abaye subsequently <b>retracted</b> and <b>said:</b> This cannot be done, as <b>we learned</b> in the mishna: <b>One may not establish an <i>eiruv</i> for all of it; by inference, if they wanted to establish an <i>eiruv</i></b> for the entire city, <b>they would have been able to establish</b> such <b>an <i>eiruv</i>,</b> if not for the requirement to exclude a section of the city from the <i>eiruv</i>. However, these houses, which do not open to the city, could not have joined in an <i>eiruv</i> with the rest of the city in any case, and therefore they cannot serve as the excluded section. <b>Rather, I will create windows for them</b> between the courtyards of their houses and the rest of the city, <b>so that if they want to establish an <i>eiruv</i></b> with the rest of the city <b>by way of the windows, they can establish</b> such <b>an <i>eiruv</i>,</b> and then these houses will be fit to serve as the excluded section."
+    },
+    {
+     "ref": "Eruvin 60a",
+     "i": 8,
+     "he": "הֲדַר אָמַר: לָא בָּעֵי, דְּהָא רַבָּה בַּר אֲבוּהּ מְעָרֵב לַהּ לְכוּלַּהּ מָחוֹזָא עַרְסְיָיתָא עַרְסְיָיתָא מִשּׁוּם פֵּירָא דְּבֵי תוֹרֵי, דְּכׇל חַד וְחַד הָוֵי שִׁיּוּר לְחַבְרֵיהּ. וְאַף עַל גַּב דְּאִי בָּעוּ לְעָרוֹבֵי בַּהֲדֵי הֲדָדֵי, לָא מָצוּ מְעָרְבִי.",
+     "en": "<b>He</b> subsequently <b>retracted</b> again and <b>said:</b> This <b>is not necessary, as Rabba bar Avuh established an <i>eiruv</i> for the entire</b> city of <b>Meḥoza,</b> which was a public city that had become a private one, <b>neighborhood by neighborhood, due to the</b> fact that the neighborhoods were separated by <b>ditches</b> from which <b>the cattle</b> would feed. In other words, Rabba bar Avuh established a separate <i>eiruv</i> for each neighborhood without excluding any of them, <b>as</b> he maintained that <b>each one was an excluded section for the other. And although</b> the neighborhoods <b>would not have been able to establish an <i>eiruv</i></b> together even <b>if they wanted</b> to, due to the ditches separating them, the neighborhoods were still able to serve as excluded areas for each other."
+    },
+    {
+     "ref": "Eruvin 60a",
+     "i": 9,
+     "he": "הֲדַר אָמַר: לָא דָּמֵי. הָתָם, אִי בָּעֵי — לְעָרוֹבֵי דֶּרֶךְ גַּגּוֹת, וְהָנֵי לָא מְעָרְבִי, הִילְכָּךְ נַעְבְּדַן כַּוֵּוי.",
+     "en": "<b>He</b> subsequently <b>retracted</b> once again and <b>said:</b> The two cases <b>are not</b> really <b>comparable. There,</b> in Meḥoza, <b>if they wanted,</b> they could have <b>established</b> a single <b><i>eiruv</i> by way of the roofs;</b> but <b>these</b> houses <b>cannot establish an <i>eiruv</i></b> with the other houses of the city, and <b>therefore we must create windows</b> for them."
+    },
+    {
+     "ref": "Eruvin 60a",
+     "i": 10,
+     "he": "הֲדַר אָמַר: כַּוֵּוי נָמֵי לָא בָּעֵי, דְּהָהוּא בֵּי תִיבְנָא דַּהֲוָה לֵיהּ לְמָר בַּר פּוֹפִידְתָּא מִפּוּמְבְּדִיתָא, וְשַׁוְּיַהּ שִׁיּוּר לְפוּמְבְּדִיתָא.",
+     "en": "<b>He</b> subsequently <b>retracted</b> yet again and <b>said: Windows are also not necessary. As, that storehouse of straw which belonged to Mar bar Pofidata from Pumbedita was designated as the section excluded from</b> the <i>eiruv</i> arranged for the city of <b>Pumbedita,</b> which proves that it is not necessary for the excluded section to be one that could have been included in an <i>eiruv</i> with the rest of the city."
     }
    ],
    "span": [
@@ -1736,8 +1764,8 @@
      "end": 6
     }
    ],
-   "words": 126,
-   "minutes": 1
+   "words": 530,
+   "minutes": 4
   },
   {
    "id": "eruvin-61a-12-12",
@@ -1930,15 +1958,26 @@
    "tractate": "eruvin",
    "ref": "Eruvin 64a",
    "refs": [
+    "Eruvin 63b",
     "Eruvin 64a"
    ],
    "start_segment": 0,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Adds the segment naming Rav Huna son of Rav Yehoshua reporting to Rava, so the exchange no longer starts mid-sentence."
+   },
    "reviewed": false,
    "summary": "Jewish neighbors unable to rent an alleyway from a gentile seek advice from Abaye and Rava, leading to a practical solution involving becoming the gentile's 'hired laborers.'",
    "segments": [
+    {
+     "ref": "Eruvin 63b",
+     "i": 14,
+     "he": "אֲזַל רַב הוּנָא בְּרֵיהּ דְּרַב יְהוֹשֻׁעַ אַמְרַהּ לִשְׁמַעְתָּא קַמֵּיהּ דְּרָבָא, אֲמַר לֵיהּ:",
+     "en": "<b>Rav Huna, son of Rav Yehoshua, went</b> and <b>reported this <i>halakha</i> before Rava,</b> who <b>said to him:</b>"
+    },
     {
      "ref": "Eruvin 64a",
      "i": 0,
@@ -1965,7 +2004,7 @@
      "end": 2
     }
    ],
-   "words": 245,
+   "words": 262,
    "minutes": 2
   },
   {
@@ -2169,15 +2208,32 @@
    "tractate": "eruvin",
    "ref": "Eruvin 68b",
    "refs": [
+    "Eruvin 68a",
     "Eruvin 68b"
    ],
    "start_segment": 0,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 2,
+    "end_forward": 0,
+    "reason": "Starts at Ravina's question so the exchange is not cut mid-sentence; the site story it continues is not directly adjacent, so merge is not possible."
+   },
    "reviewed": false,
    "summary": "Rava attempts to find a legal loophole to provide warm water for a baby's circumcision on Shabbat after it spilled, but is challenged by Ravina.",
    "segments": [
+    {
+     "ref": "Eruvin 68a",
+     "i": 13,
+     "he": "אֲמַר לֵיהּ רָבִינָא לְרָבָא, וְהָאָמַר שְׁמוּאֵל: אֵין בִּיטּוּל רְשׁוּת מֵחָצֵר לְחָצֵר?! אֲמַר לֵיהּ: אֲנָא כְּרַבִּי יוֹחָנָן סְבִירָא לִי, דְּאָמַר: יֵשׁ בִּיטּוּל מֵחָצֵר לְחָצֵר.",
+     "en": "<b>Ravina said to Rava: Didn’t Shmuel say: There is no renunciation of rights from one courtyard to another.</b> How, then, can you renounce your rights to your courtyard in this manner? Rava <b>said to him: I hold in accordance with</b> the opinion of <b>Rabbi Yoḥanan, who said: There is renouncing of rights from one courtyard to another.</b>"
+    },
+    {
+     "ref": "Eruvin 68a",
+     "i": 14,
+     "he": "וְאִי לָא סָבַר לַהּ מָר כִּשְׁמוּאֵל",
+     "en": "Ravina then asked Rava: <b>But if the Master does not hold in accordance with</b> the opinion of <b>Shmuel,</b>"
+    },
     {
      "ref": "Eruvin 68b",
      "i": 0,
@@ -2210,7 +2266,7 @@
      "end": 3
     }
    ],
-   "words": 373,
+   "words": 448,
    "minutes": 3
   },
   {
@@ -2690,7 +2746,11 @@
    "start_segment": 13,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Adds Rabba's reply to Ulla, which completes the exchange; the segment also opens Abaye's objection but cannot be split."
+   },
    "reviewed": false,
    "summary": "While visiting Rav Menashe, Ulla hears a man knocking on the door and curses him for desecrating Shabbat with the noise.",
    "segments": [
@@ -2699,6 +2759,12 @@
      "i": 13,
      "he": "מְמַלְּאִין מִבּוֹר הַגּוֹלָה. עוּלָּא אִיקְּלַע לְבֵי רַב מְנַשֶּׁה, אֲתָא הָהוּא גַּבְרָא טְרַף אַבָּבָא אֲמַר: מַאן הַאי? לִיתַּחַל גּוּפֵיהּ, דְּקָא מַחֵיל לֵיהּ לְשַׁבְּתָא.",
      "en": "We learned in the mishna: <b>One</b> may <b>draw water from the Cistern of the Exiles</b> by means of a wheel. The Gemara relates: <b>Ulla happened</b> to come <b>to the house of Rav Menashe</b> when <b>a certain man came and knocked at the door.</b> Ulla <b>said: Who is that? May his body be desecrated, as he desecrates Shabbat</b> by producing a sound."
+    },
+    {
+     "ref": "Eruvin 104a",
+     "i": 14,
+     "he": "אֲמַר לֵיהּ רַבָּה: לֹא אָסְרוּ אֶלָּא קוֹל שֶׁל שִׁיר. אֵיתִיבֵיהּ אַבָּיֵי: מַעֲלִין בִּדְיוֹפִי וּמַטִּיפִין מֵיאֶרֶק לַחוֹלֶה בַּשַּׁבָּת.",
+     "en": "<b>Rabba said to him:</b> The Sages <b>prohibited only a</b> pleasant <b>musical sound</b> on Shabbat, not the rasping sound of knocking on a door. <b>Abaye raised an objection to</b> Rabba from a <i>baraita</i>: <b>One</b> may <b>draw up</b> wine from a barrel <b>with a siphon [<i>diyofei</i>], and one</b> may <b>drip</b> water from a vessel that releases water in drops [<b><i>miarak</i></b>], <b>for an ill</b> person <b>on Shabbat.</b>"
     }
    ],
    "span": [
@@ -2708,7 +2774,7 @@
      "end": 13
     }
    ],
-   "words": 61,
+   "words": 130,
    "minutes": 1
   },
   {

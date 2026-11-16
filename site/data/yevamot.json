@@ -473,7 +473,11 @@
    "start_segment": 9,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Add the next segment, where the bucket of clay is placed on Minyamin's head after immersion, completing the incident."
+   },
    "reviewed": false,
    "summary": "Rav Ashi entrusted his slave Minyamin to Ravina and Rav Aha for immersion, instructing them to hold him in a way that prevented the slave from declaring himself free.",
    "segments": [
@@ -482,6 +486,12 @@
      "i": 9,
      "he": "כִּי הַאי דְּמִנְיָמִין עַבְדֵּיהּ דְּרַב אָשֵׁי בְּעָא (לאטבולי) [לְאַטְבּוֹלֵיהּ]. מַסְרֵיהּ נִיהֲלַיְיהוּ לְרָבִינָא וּלְרַב אַחָא בְּרֵיהּ דְּרָבָא. אָמַר לְהוּ: חֲזוֹ דְּמִינַּיְיכוּ קָבָעֵינָא לֵיהּ, רְמוֹ לֵיהּ אַרְוִיסָא בְּצַוְּארֵיהּ, אַרְפּוֹ לֵיהּ וְצַמְצִמוּ לֵיהּ.",
      "en": "That is <b>as</b> demonstrated <b>in this</b> incident <b>involving Minyamin, Rav Ashi’s slave:</b> When <b>he wished to immerse</b> him, <b>he passed him to Ravina and Rav Aḥa, son of Rava,</b> to perform the immersion on his behalf, and <b>he said to them: Be aware that I will claim</b> compensation <b>for him from you</b> if you do not prevent my slave from immersing for the sake of conversion. <b>They placed a bridle [<i>arvisa</i>] upon his neck,</b> and at the moment of immersion <b>they loosened it and</b> then immediately <b>tightened it</b> again while he was still immersed."
+    },
+    {
+     "ref": "Yevamot 46a",
+     "i": 10,
+     "he": "אַרְפּוֹ לֵיהּ — כִּי הֵיכִי דְּלָא לֶהֱוֵי חֲצִיצָה. צַמְצִמוּ לֵיהּ — כִּי הֵיכִי דְּלָא לַקְדֵּים וְלֵימָא לְהוּ: לְשֵׁם בֶּן חוֹרִין אֲנִי טוֹבֵל. בַּהֲדֵי דְּדַלִּי רֵישֵׁיהּ מִמַּיָּא, אַנְּחוּ לֵיהּ זוּלְטָא דְטִינָא אַרֵישֵׁיהּ וַאֲמַרוּ לֵיהּ: זִיל אַמְטִי לְבֵי מָרָךְ.",
+     "en": "The Gemara explains their actions: <b>They</b> initially <b>loosened it in order that there should not be any interposition</b> between the slave and the water during the immersion, which would invalidate it. <b>They</b> immediately <b>tightened it</b> again <b>in order that</b> the slave <b>should not preempt</b> them <b>and say to them: I am immersing for the sake of</b> becoming <b>a freeman. When he lifted his head from the water they placed a bucket of clay upon his head and said to him: Go</b> and <b>bring</b> this <b>to the house of your master.</b> They did this in order to demonstrate that the immersion had been successful and that he was still a slave."
     }
    ],
    "span": [
@@ -491,8 +501,8 @@
      "end": 9
     }
    ],
-   "words": 96,
-   "minutes": 1
+   "words": 206,
+   "minutes": 2
   },
   {
    "id": "yevamot-46a-13-14",
@@ -1296,7 +1306,11 @@
    "start_segment": 8,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Extend through Rabbi Yohanan's full reply, which ends with his repeated 'Go out and teach it outside'."
+   },
    "reviewed": false,
    "summary": "Rav Shmuel bar Yehuda arrives from Eretz Yisrael and recites a baraita before Rabbi Yoḥanan, who rejects it and orders him to teach it only outside the study hall.",
    "segments": [
@@ -1311,6 +1325,18 @@
      "i": 9,
      "he": "אֲמַר לֵיהּ: פּוֹק תְּנִי לְבָרָא. מַאי דַּאֲמַרְתְּ אִשָּׁה עַמּוֹנִית כְּשֵׁרָה — ״עַמּוֹנִי״ וְלֹא עַמּוֹנִית. בְּנָהּ מֵעַמּוֹנִי פָּסוּל — דְּהָא עַמּוֹנִי הוּא.",
      "en": "Rabbi Yoḥanan <b>said to him: Go out</b> and <b>teach</b> it <b>outside,</b> i.e., this <i>baraita</i> is not in accordance with the accepted <i>halakha</i>, and therefore it should not be made part of the regular learning in the study hall. <b>What you said,</b> that <b>an Ammonite woman is fit,</b> is well known and need not be taught because it is just another way of saying that <b>a male Ammonite</b> is barred from entering the congregation <b>but not a female Ammonite.</b> As for the teaching that <b>her son from an Ammonite is unfit,</b> this too is unnecessary, <b>as he is an Ammonite.</b>"
+    },
+    {
+     "ref": "Yevamot 77b",
+     "i": 10,
+     "he": "וּבִתָּהּ מֵעַמּוֹנִי כְּשֵׁרָה, לְמַאי? אִילֵימָא לָבֹא בַּקָּהָל — הַשְׁתָּא אִמָּהּ כְּשֵׁרָה, הִיא מִיבַּעְיָא? אֶלָּא לִכְהוּנָּה.",
+     "en": "But that which you said: <b>Her daughter from an Ammonite is fit, with regard to what</b> issue did you teach this? <b>If we say</b> that she is fit <b>to enter into the congregation,</b> this too is redundant: <b>Now</b> that it was taught that even <b>her mother is fit</b> to enter the congregation, is it <b>necessary</b> to say that <b>she</b> herself, the daughter, is fit to do so? <b>Rather,</b> you must mean to say that she is fit to marry <b>into the priesthood.</b>"
+    },
+    {
+     "ref": "Yevamot 77b",
+     "i": 11,
+     "he": "בַּמֶּה דְּבָרִים אֲמוּרִים: בְּעַמּוֹנִי וְעַמּוֹנִית שֶׁנִּתְגַּיְּירוּ, אֲבָל בִּתָּהּ מֵעַמּוֹנִי פְּסוּלָה. מַאי בִּתָּהּ מֵעַמּוֹנִי? אִילֵּימָא עַמּוֹנִי שֶׁנָּשָׂא עַמּוֹנִית — הַיְינוּ גִּיּוֹרֶת מִכַּנָּהּ! אֶלָּא עַמּוֹנִי שֶׁנָּשָׂא בַּת יִשְׂרָאֵל, אֲמַר לֵיהּ: פּוֹק תְּנִי לְבָרָא.",
+     "en": "The <i>baraita</i> continues: <b>In what</b> case <b>is this statement said?</b> It is said <b>with regard to an Ammonite</b> man <b>and an Ammonite woman who converted, but her daughter from an Ammonite</b> man <b>is unfit. What is</b> meant here by <b>her daughter from an Ammonite? If we say</b> it means <b>an Ammonite</b> man <b>who married an Ammonite woman,</b> and they converted prior to the birth of their daughter, <b>this is an established female convert,</b> who was previously declared fit to marry into the priesthood. <b>Rather,</b> it must mean <b>an Ammonite</b> convert <b>who</b> unlawfully <b>married the daughter of a Jew,</b> and according to what is stated here, their daughter is unfit to marry a priest. Rabbi Yoḥanan, however, ruled that such a woman is fit, and therefore <b>he said to</b> Rabbi Zakkai: <b>Go out</b> and <b>teach</b> it <b>outside,</b> as this <i>baraita</i> is unreliable."
     }
    ],
    "span": [
@@ -1320,8 +1346,8 @@
      "end": 9
     }
    ],
-   "words": 176,
-   "minutes": 2
+   "words": 399,
+   "minutes": 3
   },
   {
    "id": "yevamot-78a-12-12",
@@ -2332,7 +2358,11 @@
    "start_segment": 7,
    "classification": "LOW_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Add Rabbi's verdict 'There is no greater refusal than this', which ends the incident; that segment also holds the ruling but cannot be split."
+   },
    "reviewed": false,
    "summary": "The daughters-in-law of Abdan rebelled against their husbands, and after an investigation by Sages, Rabbi Yehuda HaNasi declared their behavior a valid act of refusal.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -2342,6 +2372,12 @@
      "i": 7,
      "he": "וְאַכַּתִּי תִּיבְּעֵי לָךְ: דַּהֲוָה נְסִיבָא מֵעִיקָּרָא, אוֹ דִלְמָא מִיקַּדְּשָׁא? תָּא שְׁמַע: דְּכַלָּתֵיהּ דְּאַבָּדָן, אִימְּרוּד, שַׁדַּר רַבִּי זוּגֵי דְּרַבָּנַן לְמִיבְדְּקִינְהוּ. אָמְרִי לְהוּ נְשֵׁי: חֲזוּ גַּבְרַיְיכוּ דְּקָאָתוּ. אָמְרִי לְהוּ: נִיהְווֹ גַּבְרַיְיכוּ דִּידְכוּ.",
      "en": "<b>But still, you should raise the dilemma:</b> Does Rabbi Yehuda ben Beteira say that her betrothal to another counts as refusal even <b>when she had initially been married or perhaps</b> only if she <b>was betrothed</b> but not married beforehand? <b>Come</b> and <b>hear: The daughters-in-law of Abdan rebelled</b> against their husbands. <b>Rabbi</b> Yehuda HaNasi <b>sent a pair of Sages to examine them</b> and determine what could be done to rectify the matter. Some <b>women said to</b> the daughters-in-law: <b>See, it is your husbands that are coming. They said back to them: Let them be your husbands.</b>"
+    },
+    {
+     "ref": "Yevamot 108a",
+     "i": 8,
+     "he": "אָמַר רַבִּי: אֵין לְךָ מֵיאוּן גָּדוֹל מִזֶּה. מַאי לָאו, דַּהֲוָה נְסִיבָא? לָא, דַּהֲוָה מִיקַּדְּשָׁא קִידּוּשֵׁי. וַהֲלָכָה כְּרַבִּי יְהוּדָה בֶּן בְּתִירָה, וַאֲפִילּוּ בְּנִישּׂוּאִין דְּקַמָּא.",
+     "en": "<b>Rabbi</b> Yehuda HaNasi <b>said: There is no greater refusal than this. What</b> is the case? <b>Is it not that they were</b> already <b>married?</b> The Gemara rejects this: <b>No, they were merely betrothed,</b> but not married. This story cannot establish unequivocally what the <i>halakha</i> is in the case when the girl is married. The Gemara nevertheless concludes: <b>The <i>halakha</i> is in accordance with</b> the opinion of <b>Rabbi Yehuda ben Beteira</b> in all of these matters, <b>even with regard to her marriage to the first</b> husband: Even if she had actually been married to the first man, the marriage is invalidated by her betrothal to another."
     }
    ],
    "span": [
@@ -2351,8 +2387,8 @@
      "end": 7
     }
    ],
-   "words": 95,
-   "minutes": 1
+   "words": 199,
+   "minutes": 2
   },
   {
    "id": "yevamot-108b-10-11",
@@ -2401,10 +2437,20 @@
    "start_segment": 14,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Add the question that the two hired messengers carried to Rabbi Akiva and Rabbi Yehuda ben Beteira, without which the one-line story has no content."
+   },
    "reviewed": false,
    "summary": "In a variation of the previous incident, two people were hired to ask Rabbi Akiva and Rabbi Yehuda ben Beteira about a minor's refusal in a complex levirate marriage case.",
    "segments": [
+    {
+     "ref": "Yevamot 108b",
+     "i": 13,
+     "he": "בְּרַם כָּךְ שָׁאֲלוּ: הֲרֵי הָיְתָה אֵשֶׁת אֲחִי אִמּוֹ, שֶׁהִיא שְׁנִיָּיה לוֹ, וּנְשָׂאָהּ אָחִיו מֵאָבִיו וּמֵת, מַהוּ שֶׁתְּמָאֵן הַשְׁתָּא וְתִעְקְרִינְהוּ לְנִישּׂוּאִין קַמָּאֵי, וְתִתְיַיבֵּם (צָרָתַהּ). יֵשׁ מֵיאוּן לְאַחַר מִיתָה בִּמְקוֹם מִצְוָה, אוֹ לָא?",
+     "en": "Rabbi Yishmael, son of Rabbi Yosei, continued: <b>Rather, this</b> is what <b>they asked: If</b> the minor <b>was the wife of someone’s mother’s brother, a secondary</b> forbidden relative, i.e., a relative forbidden <b>to him</b> by rabbinic law, <b>and</b> afterward <b>his paternal brother married her and died,</b> so that she became eligible to him for levirate marriage, <b>what is</b> the <i>halakha</i> with regard to the following: <b>May she refuse now and uproot the first marriage</b> to the mother’s brother, so that she will no longer be a forbidden relative, and likewise her rival wife will not be the rival wife of a forbidden relative, <b>so that her rival wife may enter into levirate marriage?</b> In other words, <b>in a case</b> where there is <b>a mitzva</b> of levirate marriage, <b>is refusal after</b> the husband’s <b>death valid or not?</b>"
+    },
     {
      "ref": "Yevamot 108b",
      "i": 14,
@@ -2419,8 +2465,8 @@
      "end": 14
     }
    ],
-   "words": 36,
-   "minutes": 1
+   "words": 171,
+   "minutes": 2
   },
   {
    "id": "yevamot-110a-4-6",

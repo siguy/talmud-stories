@@ -303,7 +303,13 @@
    "start_segment": 3,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The incident of Yirmatya's mother is told in full in segment 6; segments 7-12 are rulings on weight vows and the Gemara's reconciliation of the incident.",
+    "start_trim": 0,
+    "end_trim": 6
+   },
    "reviewed": false,
    "summary": "The mother of Yirmatya vowed to donate her daughter's weight and traveled to Jerusalem to pay that weight in gold to the Temple.",
    "segments": [
@@ -312,42 +318,6 @@
      "i": 3,
      "he": "מַתְנִי׳ <strong><big>הָאוֹמֵר: ״מְשַׁקְּלִי עָלַי״</big></strong> נוֹתֵן מִשְׁקָלוֹ, אִם כֶּסֶף כָּסֶף, וְאִם זָהָב זָהָב. מַעֲשֶׂה בְּאַמָּה שֶׁל יַרְמַטְיָא שֶׁאָמְרָה: ״מִשְׁקַל בִּתִּי עָלַי״, וְעָלְתָה לִירוּשָׁלַיִם וְשַׁקְלַהּ מִשְׁקָלָהּ זָהָב.",
      "en": "<strong>MISHNA:</strong> <b>One who says:</b> It is incumbent <b>upon me</b> to donate <b>my weight, gives his weight</b> to the Temple treasury; <b>if</b> he specified <b>silver</b> he donates <b>silver, and if</b> he specified <b>gold</b> he donates <b>gold.</b> There was <b>an incident involving the mother of Yirmatya, who said:</b> It is incumbent <b>upon me</b> to donate the <b>weight of my daughter, and she ascended to Jerusalem and paid her</b> daughter’s <b>weight</b> in <b>gold</b> to the Temple treasury."
-    },
-    {
-     "ref": "Arakhin 19a",
-     "i": 4,
-     "he": "״מִשְׁקַל יְדֵי עָלַי״, רַבִּי יְהוּדָה אוֹמֵר: מְמַלֵּא חָבִית מַיִם, וּמַכְנִיסָהּ עַד מַרְפֵּיקוֹ, וְשׁוֹקֵל מִבְּשַׂר חֲמוֹר וַעֲצָמוֹת וְגִידִים וְנוֹתֵן לְתוֹכָהּ עַד שֶׁתִּתְמַלֵּא. אָמַר רַבִּי יוֹסֵי: וְכִי הֵיאַךְ אֶפְשָׁר לְכַוֵּין בָּשָׂר כְּנֶגֶד בָּשָׂר וַעֲצָמוֹת כְּנֶגֶד עֲצָמוֹת? אֶלָּא שָׁמִין אֶת הַיָּד כַּמָּה הִיא רְאוּיָה לִשְׁקוֹל.",
-     "en": "In the case of one who says: It is incumbent <b>upon me</b> to donate the <b>weight of my forearm,</b> how does he ascertain the weight of his forearm? <b>Rabbi Yehuda says: He fills a barrel</b> with <b>water and inserts</b> his arm <b>up to his elbow</b> into the water. <b>And</b> in order to measure the displacement, <b>he weighs donkey flesh, and bones, and sinews and places</b> it <b>into</b> the barrel <b>until it fills,</b> and the water level reaches the top of the barrel. He then donates the weight of the meat and the bones to the Temple treasury. <b>Rabbi Yosei said:</b> Displacement is according to volume not according to weight, <b>and how then is it possible to match</b> the amount of the donkey <b>flesh with the flesh</b> of a person <b>and</b> the volume of the donkey’s <b>bones with</b> his <b>bones? Rather,</b> the court <b>appraises how much the forearm is likely to weigh.</b>"
-    },
-    {
-     "ref": "Arakhin 19a",
-     "i": 5,
-     "he": "<strong><big>גְּמָ׳</big></strong> מַאי ״אִם כֶּסֶף כֶּסֶף אִם זָהָב זָהָב״? אָמַר רַב יְהוּדָה: פֵּירַשׁ כֶּסֶף — כֶּסֶף, פֵּירַשׁ זָהָב — זָהָב. פְּשִׁיטָא! הָא קָא מַשְׁמַע לַן: טַעְמָא דְּפֵירַשׁ, הָא לֹא פֵּירֵשׁ — פָּטַר נַפְשֵׁיהּ בְּכֹל דְּהוּ.",
-     "en": "<strong>GEMARA:</strong> <b>What</b> is the meaning of the mishna’s statement: <b>If silver, silver,</b> and <b>if gold, gold? Rav Yehuda said:</b> If <b>one specified</b> that he vows to donate his weight in <b>silver</b> he donates <b>silver,</b> and if <b>he specified gold</b> he donates <b>gold.</b> The Gemara asks: Isn’t that <b>obvious?</b> The Gemara answers: <b>This</b> is what the mishna <b>is teaching us: The reason</b> he donates silver or gold is <b>that he specified</b> silver or gold, from which it may be inferred that if <b>he did not specify</b> the means of payment, he may <b>exempt himself with any</b> material."
-    },
-    {
-     "ref": "Arakhin 19a",
-     "i": 6,
-     "he": "כִּרְחָבָה, דְּאָמַר רַחֲבָה: בְּאַתְרָא דְּתִקְלֵי כּוֹפְרָא — פָּטַר נַפְשֵׁיהּ אֲפִילּוּ בַּכּוֹפְרָא. פְּשִׁיטָא! לָא צְרִיכָא, דְּאִיכָּא דִּתְקֵל וְאִיכָּא דְּכָיֵיל. מַהוּ דְּתֵימָא: כֵּיוָן דְּכוּלְּהוּ לָא תִּקְלֵי — לָא, קָא מַשְׁמַע לַן.",
-     "en": "The Gemara adds: And this is <b>in accordance with</b> a statement of <b>Raḥava, as Raḥava says: In a place where</b> merchants <b>weigh pitch</b> when selling it, one who vows his weight <b>may exempt himself</b> by donating his weight <b>even in pitch.</b> The Gemara asks: Isn’t that <b>obvious?</b> The Gemara answers: <b>No,</b> the statement of Raḥava is <b>necessary</b> in a place <b>where there are</b> merchants <b>who weigh</b> pitch <b>and there are</b> others who <b>measure</b> its volume. <b>Lest you say: Since not all</b> merchants <b>weigh</b> pitch one may <b>not</b> fulfill his vow by donating his weight in pitch, Raḥava <b>teaches us</b> that as there are merchants there who sell pitch by weight, one can fulfill his vow in that manner."
-    },
-    {
-     "ref": "Arakhin 19a",
-     "i": 7,
-     "he": "אָמַר רַב פָּפָּא: בְּאַתְרָא דְּתִקְלֵי שַׁמְכֵי, פָּטַר נַפְשֵׁיהּ אֲפִילּוּ בְּשַׁמְכֵי. פְּשִׁיטָא! לָא צְרִיכָא, דְּבָתַר דְּשָׁקְלִי שָׁדוּ תְּרֵי תְּלָתָא. מַהוּ דְּתֵימָא: בְּטִיל תּוֹרַת מִשְׁקַל, קָא מַשְׁמַע לַן.",
-     "en": "<b>Rav Pappa says: In a place where</b> merchants <b>weigh onions</b> when selling them, one who vowed his weight <b>may exempt himself</b> by donating his weight <b>even in onions.</b> The Gemara again asks: Isn’t that <b>obvious?</b> The Gemara answers: <b>No,</b> the statement of Rav Pappa is <b>necessary</b> in a place <b>where after they weigh</b> the onions the merchants <b>throw</b> in <b>two</b> or <b>three</b> extra onions to the buyer. <b>Lest you say</b> that its <b>status</b> as a place where onions are sold by <b>weight</b> is <b>void</b> due to the additional onions, Rav Pappa <b>teaches us</b> that it is still considered a place where onions are sold by weight."
-    },
-    {
-     "ref": "Arakhin 19a",
-     "i": 8,
-     "he": "מַעֲשֶׂה בְּאַמָּה שֶׁל יַרְמַטְיָא וְכוּ׳. מַעֲשֶׂה לִסְתּוֹר?!",
-     "en": "§ The mishna teaches: There was <b>an incident involving the mother of Yirmatya,</b> who said: It is incumbent upon me to donate the weight of my daughter, without specifying silver or gold, and she ascended to Jerusalem and paid her daughter’s weight in gold to the Temple treasury. The Gemara asks: Was <b>an incident</b> cited <b>to contradict</b> the previous ruling of the mishna? The mishna had stated: If silver, silver, and if gold, gold, which indicates that if one did not specify the means of payment he may exempt himself with any material that merchants sell by weight, whereas it can be inferred from the incident that one must pay the weight in gold."
-    },
-    {
-     "ref": "Arakhin 19a",
-     "i": 9,
-     "he": "חַסּוֹרֵי מְחַסְּרָא וְהָכִי קָתָנֵי, וְאִם אָדָם חָשׁוּב הוּא, אַף עַל גַּב דְּלָא פָּרֵישׁ — לְפִי כְּבוֹדוֹ אָמְרִינַן, וּמַעֲשֶׂה בְּאַמָּה שֶׁל יַרְמַטְיָא שֶׁאָמְרָה ״מִשְׁקַל בִּתִּי עָלַי״, וְעָלְתָה לִירוּשָׁלַיִם וְשַׁקְלוּהּ וְנָתְנָה מִשְׁקָלָהּ זָהָב.",
-     "en": "The Gemara answers: The mishna <b>is incomplete and this</b> is what <b>it is teaching: And if</b> the one who vowed <b>is a distinguished person, even though he did not specify</b> silver or gold <b>we say</b> he must fulfill his vow <b>in keeping with his</b> socioeconomic <b>status. And</b> likewise, there was <b>an incident involving the mother of Yirmatya,</b> a very wealthy woman, <b>who said:</b> It is incumbent <b>upon me</b> to donate <b>the weight of my daughter, and she ascended to Jerusalem and gave her</b> daughter’s <b>weight</b> in <b>gold</b> to the Temple treasury."
     }
    ],
    "span": [
@@ -357,8 +327,8 @@
      "end": 9
     }
    ],
-   "words": 750,
-   "minutes": 5
+   "words": 74,
+   "minutes": 1
   },
   {
    "id": "arakhin-23a-10-11",
