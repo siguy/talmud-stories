@@ -6,8 +6,11 @@
  },
  "gittin-14a-18-18": {
   "start_back": 0,
-  "end_forward": 4,
-  "reason": "Only the introduction 'had a silver vessel in Neharde'a'; incident continues through 'Had they killed Dostai, who would give Yannai another son like me?'."
+  "end_forward": 5,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds Rabbi Ahai's questions and verdict 'you acted well', which end the story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
  },
  "gittin-14b-17-17": {
   "start_back": 0,
@@ -26,8 +29,11 @@
  },
  "gittin-38a-16-17": {
   "start_back": 0,
-  "end_forward": 1,
-  "reason": "Segment ends mid-sentence 'was emancipated by one of them,'; next: 'and the court forced her master to emancipate her'."
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 1,
+  "reason": "The Pumbedita maidservant case is complete in segment 6; segments 7-8 are the Gemara's objection that only cites another precedent.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
  },
  "gittin-40a-12-12": {
   "start_back": 0,
@@ -61,8 +67,11 @@
  },
  "gittin-56b-17-17": {
   "start_back": 0,
-  "end_forward": 1,
-  "reason": "Ends mid-sentence \"Titus said to him:\"; the next segment gives his answer (his punishment). Later segments (Balaam, Jesus) are left out as a separate scene."
+  "end_forward": 4,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds Onkelos's consultations with Balaam and Jesus, which belong to the same story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
  },
  "gittin-58a-5-5": {
   "start_back": 1,
@@ -139,11 +148,6 @@
   "end_forward": 0,
   "reason": "Starts with bare 'Abaye said: From where do I say this claim of mine?'; previous segment gives the dilemma about one witness and the silent husband."
  },
- "kiddushin-70a-11-16": {
-  "start_back": 0,
-  "end_forward": 1,
-  "reason": "Ends \"This is what Shmuel says:\" and the quote completes in the next segment (\"One may not send greetings to a woman even with a messenger\")."
- },
  "kiddushin-71b-2-2": {
   "start_back": 0,
   "end_forward": 1,
@@ -198,5 +202,717 @@
   "start_back": 0,
   "end_forward": 1,
   "reason": "'Rather, say that this is what Rabbi Elazar bar Tzadok meant: They sought to promote a slave' gives the actual incident outcome."
+ },
+ "arakhin-19a-3-9": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 6,
+  "reason": "The incident of Yirmatya's mother is told in full in segment 6; segments 7-12 are rulings on weight vows and the Gemara's reconciliation of the incident.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "avodah_zarah-37a-2-3": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 8 answers the story's closing question (what else he permitted), so it is added to finish the exchange.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "avodah_zarah-43a-13-15": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Segment 6 is a pure legal baraita on replicas of Temple vessels; the Hasmonean candelabrum report is in segments 7-8.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-11a-0-0": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 6 is the end of a sentence begun in segment 5 (Rava gave the money to gentile poor and Rabbi Ami was angry because...), so segment 5 is added to make it readable.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-149a-2-4": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 9 holds the outcome (the document of admission and Rava's anger), so it is added to complete the story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-155a-3-3": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 3,
+  "reason": "The Bnei Brak incident is in segment 6; segments 7-9 are legal argument about age and puberty.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-31a-8-9": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Rav Nahman's reply to Rava ends mid-sentence and is completed in segment 8.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-32a-6-6": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 8 holds Rabba's ruling and Rav Yosef's reply, the outcome of the case.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-32b-2-2": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 7 holds Rabba's ruling and Rav Yosef's reply on this case; segment 8 is the general halakha for both cases.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-46a-7-8": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 1,
+  "reason": "Abaye's case and Rava's verdict are in segments 6-8; segment 9 is Rav Ashi's and Rav Aha's hypothetical legal tactics.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-60b-10-12": {
+  "start_back": 0,
+  "end_forward": 3,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Rabbi Yehoshua's speech breaks off at 8; 9-11 complete his practical conclusion (leave part unplastered, the meal, the woman, the verse), and the Gemara's exposition in 12-13 is left out.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_batra-82b-14-15": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Rav Yosef's account finishes in 9 with his conclusion that the measure is four cubits; the Gemara's proofs from 10 onward stay out.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_kamma-115a-24-25": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Rava's own ruling in 8 resolves the stolen-scroll case; the next mishna in 9 stays out.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_kamma-38a-12-12": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 7 completes the story with the officials' reasoning and their decision not to tell the kingdom; 8 begins a separate site story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_kamma-38a-14-15": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Ulla's application of the lesson to the dead daughter (10) completes the consolation; 11 onward is separate exposition.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_kamma-83a-0-2": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Segment 6 is pure argument over Greek language that starts mid-sentence; 7-8 hold the only narrative (Rabban Shimon ben Gamliel's report and the Avtolmos permission).",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-42b-4-4": {
+  "start_back": 0,
+  "end_forward": 4,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "The parties' claims (7-8) and the resolution in 10 (the trader's oath and the cowherd paying for the meat) finish the case; 11 is a separate site story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-42b-9-9": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "The bailee's and brewer's claims (7-8) finish the case as told. 9-10 are the Gemara's analysis, and the final payment line (11) is beyond the 4-segment limit.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-59b-1-10": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 holds the scene's opening ('On that day Rabbi Eliezer answered all possible answers...') alongside the akhnai explanation, so it comes in. The Kelim mishna in 4 is legal background and stays out.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-64b-6-6": {
+  "start_back": 0,
+  "end_forward": 3,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Rava's rebuttals and his father's retraction ('I retract') in 7-9 complete the exchange; Abaye's rulings in 10 onward stay out.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-66b-11-11": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "The seller's refusal, Rav Pappa's view (7) and Rav Aha's rebuttal (8) finish the dispute; 9 starts a separate case.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-81b-0-0": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 holds this version's setup (not his turn, guard my cloak as payment) after the Gemara's question, so it comes in to give a complete retelling.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-84b-13-18": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 12 finishes Rabbi's list of the three modest people, which segment 11 cuts off mid-sentence.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bava_metzia-85b-4-4": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 7 is Rabbi Hiyya's explanation of what he does to keep the Torah from being forgotten, the end of the exchange.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bekhorot-29b-14-14": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 8 is Rava's answer explaining that the butcher used nuts to lure children into bringing him forbidden fat, which completes the story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bekhorot-30b-17-17": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 3,
+  "reason": "Only segment 6 tells the incident of the woman; segments 7-9 are legal opinions on whether haverim who retract are taken back.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "bekhorot-31b-7-8": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 8 gives the answer to why Rav Sheshet cared, closing the story; segment 6 stays because segment 7 refers to the explanation he gave there.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "berakhot-18b-3-3": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segments 7-8 hold the brother's rebuttal and their conclusion, which end the dialogue.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "berakhot-28b-22-23": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 5,
+  "reason": "The events end when Shmuel HaKatan is not removed (segment 8); segments 9-12 are the Gemara's argument and segment 13 belongs to another site story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "berakhot-51b-5-6": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 is the opening of the incident: Ulla's visit and his refusal to send the cup to Yalta.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "chagigah-3a-14-17": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segments 10-11 finish Rabbi Elazar ben Azarya's second teaching, which segment 9 begins; the closing praise is beyond reach.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "chullin-106a-2-3": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 1,
+  "reason": "Segment 6 is the final-waters incident; segment 7 is only Ravin's alternative version and a mnemonic, not story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "chullin-116a-13-15": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Segment 6 is a baraita about local legal customs; the story of Levi at Yosef the bird hunter's house is segments 7-8.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "eruvin-104a-13-13": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds Rabba's reply to Ulla, which completes the exchange; the segment also opens Abaye's objection but cannot be split.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "eruvin-60a-6-6": {
+  "start_back": 0,
+  "end_forward": 4,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds Abaye's successive retractions, which are part of the Kakunya story (the 4-segment limit stops it just before his closing remark).",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "eruvin-64a-0-2": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds the segment naming Rav Huna son of Rav Yehoshua reporting to Rava, so the exchange no longer starts mid-sentence.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "eruvin-68b-0-3": {
+  "start_back": 2,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Starts at Ravina's question so the exchange is not cut mid-sentence; the site story it continues is not directly adjacent, so merge is not possible.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "gittin-37a-10-12": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Drops the opening baraita stating the law; the story of Rabbi Asi's relative starts at segment 7.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "gittin-56a-14-17": {
+  "start_back": 0,
+  "end_forward": 4,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Extends through Rabban Yohanan's reply to Vespasian, the barrel parable, the messenger and the shoe episode (the 4-segment limit stops before the Yavne request).",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "gittin-57a-4-8": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Drops Rabbi Elazar's coda to the Kamtza story and adds Rav Asi's massacre account, which ends the King's Mountain story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "gittin-6a-18-18": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds the end of Rav's answer ('but if you do, you provide benefit') so the story does not stop mid-sentence.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "ketubot-103a-24-32": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 19,
+  "reason": "Keeps the deathbed instructions and their immediate sequel; stops before the launderer story (a separate site story) and the long Gemara analysis that follows.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "ketubot-69b-10-12": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 2,
+  "reason": "Ilfa's story ends with his answer at segment 9; Rav Hisda's ruling and the mishna on children's sales are legal material.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "kiddushin-12b-10-10": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 5,
+  "reason": "The myrtle-mat case and Rava's ruling are complete in segment 6; segments 9-11 are the legal debate over his proof.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "kiddushin-29b-15-15": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 4,
+  "reason": "The Rav Hamnuna incident is segment 6 alone; segment 10 is the tail of Rav Hisda's boast plus Rava's advice on marrying off a son, not part of this story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "kiddushin-31a-12-12": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 2,
+  "reason": "Rav Dimi's account of Dama ben Netina and his mother is segment 6; segment 8 is the end of Avimi's separate teaching about sons.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "makkot-24b-1-2": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds segment 8, which gives the two prophecies and the Sages' reply 'Akiva, you have comforted us', the end of the story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "megillah-26b-12-12": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds segment 7, where the Rabbis object and Rava admits there is no remedy, closing the Roman synagogue incident.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "megillah-27a-23-25": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Drops segment 6, the baraita stating the general rule; the Rav Huna incident runs from segment 7 to 9.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "megillah-28a-9-10": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds segment 8, Rabbi Nehunya's answer to Akiva's question about longevity, the point of the episode.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "meilah-7a-10-11": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds segments 8-9, which finish Rabbi Akiva's reply to Rabbi Shimon; the later Reish Lakish discussion is analysis and stays out.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "menachot-38a-0-1": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Drops segment 6, the tail of the Gemara's answer about the earlier version; segment 7 is the alternative version of the Ravina and Mar bar Rav Ashi incident.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "moed_katan-11a-13-13": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds segment 7, where Abaye challenges Rava's permission and Rava replies, completing the Bedita river incident.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "moed_katan-4a-21-21": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Adds segments 7-8, which finish Rabba Tosefa'a's sentence and record his retraction, ending the exchange.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "nedarim-50b-8-10": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Drops segment 6, the separate fig-compote lawsuit; the bar Kappara wedding and laughter stories run from segment 7 to 9.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "nedarim-81a-5-5": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 7 holds Vardimus's answer to Isi's question, which completes the exchange.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "niddah-64b-18-18": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 7,
+  "reason": "The incident is the single report in segment 6; segments 7-13 are the Gemara's legal analysis of how the nights were divided.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "niddah-66a-22-22": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Rav Hanina's question and Ravina's explanation in segments 7-8 finish the episode.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "pesachim-112a-11-12": {
+  "start_back": 0,
+  "end_forward": 3,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "The remaining three of the five instructions (the pot, and the fruit and marriage teachings) are in segments 8-10.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "pesachim-57b-0-0": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 contains the king and queen's dispute and the summoning of Yissakhar that open the scene; it mixes in prior material but cannot be cut.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "pesachim-86b-6-7": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 8 holds his answers about the cup, the two sips and not turning his face, completing the conversation.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "rosh_hashanah-19a-5-5": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 contains the decree, Yehuda ben Shammua and the visit to the matron that open the story; its legal lead-in cannot be separated.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sanhedrin-100a-7-7": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 contains Rabbi Yohanan's teaching and the student's mockery that set up the story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sanhedrin-101a-10-16": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Akiva's proof from Manasseh and its conclusion 'afflictions are cherished' are in segments 13-14; the two visit accounts are kept together as a split is not available.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sanhedrin-28b-18-22": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 11 holds Abaye's final objection and Rav Yosef's 'go away, they won't let me give it to you', the story's ending.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sanhedrin-91a-13-14": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 8 holds Geviha's argument from Abraham's gifts, which resolves the case.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shabbat-104a-3-3": {
+  "start_back": 0,
+  "end_forward": 3,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "The children's interpretations continue through segment 9 (kuf and reish); segment 10 is a Gemara aside and shin/tav in segment 11 is beyond the allowed extension.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shabbat-115a-6-6": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 1,
+  "reason": "Segment 7 is the Gemara's analysis of which tanna'im disagree, not part of the incident.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shabbat-118b-13-13": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 7 finishes Abaye's sentence that is cut off mid-clause in segment 6.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shabbat-152a-3-5": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Segment 6 is a run of aphorisms on youth and age; the story is the eunuch's exchange with Rabbi Yehoshua ben Korha in 7-8.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shabbat-46a-7-7": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 7 completes the cited baraita and gives Rav Nahman bar Yitzhak's closing remark that Rava did not embarrass Rav Avya.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shabbat-53b-15-18": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Drop the brief Antioch goats incident (6), which belongs to the legal discussion, keeping the story of the father who nursed his son with the Sages' reactions.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shevuot-41b-8-11": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 0,
+  "reason": "Keep the one case with a narrative arc (repayment, money lost, hearing before Rav Nahman) and drop the separate Reuven-and-Shimon case in 6.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "shevuot-42a-6-9": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 1,
+  "end_trim": 1,
+  "reason": "Keep the two-versus-three witnesses case with Rav Huna's objection; drop the separate first case (6) and the repeated alternate version (9).",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sotah-20a-8-14": {
+  "start_back": 0,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 5,
+  "reason": "The exchange between Rabbi Meir and Rabbi Yishmael is 6-7; segments 8-12 are the Gemara's analysis and resolution of contradicting versions.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sotah-48a-3-4": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 names Yohanan the High Priest and tells of his investigation, which the story's speech in 6 responds to.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sukkah-20a-10-10": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 7 completes Rabbi Hiyya's statement on the mats of Usha that is cut off mid-sentence.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "sukkah-27a-0-1": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 contains the incident's opening (the dish and the dates brought) that segment 6 finishes.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "taanit-21a-1-5": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 11 gives Ilfa's answer to the old man, which ends the episode.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "taanit-23a-3-8": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 12 completes Shimon ben Shetah's message to Honi, cut off mid-sentence.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "taanit-25a-0-1": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 holds the story's opening, the wife heating the empty oven, which segment 6 continues mid-sentence.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "taanit-27b-0-0": {
+  "start_back": 1,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Segment 5 begins the account (four watches return, the prophets arise) and 7 finishes it with the prophets' stipulation.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "taanit-5b-7-10": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Extend through the end of the tree parable and Rabbi Yitzhak's blessing, which complete the leave-taking scene.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "yevamot-108a-7-7": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Add Rabbi's verdict 'There is no greater refusal than this', which ends the incident; that segment also holds the ruling but cannot be split.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "yevamot-108b-14-14": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Add the question that the two hired messengers carried to Rabbi Akiva and Rabbi Yehuda ben Beteira, without which the one-line story has no content.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "yevamot-46a-9-9": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Add the next segment, where the bucket of clay is placed on Minyamin's head after immersion, completing the incident.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "yevamot-77b-8-9": {
+  "start_back": 0,
+  "end_forward": 2,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Extend through Rabbi Yohanan's full reply, which ends with his repeated 'Go out and teach it outside'.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "yoma-87b-2-2": {
+  "start_back": 1,
+  "end_forward": 0,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Add the question that Rabbi Hanina's dream explanation answers; the incident itself is site story yoma-87a-16-16, not directly adjacent, so it cannot be merged.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
+ },
+ "zevachim-59a-9-9": {
+  "start_back": 0,
+  "end_forward": 1,
+  "start_trim": 0,
+  "end_trim": 0,
+  "reason": "Add the answering verse and Rav Kahana's remark that this was the verse Rav forgot, which close the story.",
+  "decided_by": "boundary review bfix1 (Simon 2026-11-15: no legal argument)"
  }
 }

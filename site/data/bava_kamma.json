@@ -303,7 +303,11 @@
    "start_segment": 12,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 7 completes the story with the officials' reasoning and their decision not to tell the kingdom; 8 begins a separate site story."
+   },
    "reviewed": false,
    "summary": "The Roman government sends two officials to study Torah with the Sages, and after thorough study, they praise the Torah's truth while noting a legal discrepancy regarding damages caused by gentiles' oxen.",
    "segments": [
@@ -312,6 +316,12 @@
      "i": 12,
      "he": "תָּנוּ רַבָּנַן, וּכְבָר שָׁלְחָה מַלְכוּת רוֹמִי שְׁנֵי סְרַדְיוֹטוֹת אֵצֶל חַכְמֵי יִשְׂרָאֵל: לַמְּדוּנוּ תּוֹרַתְכֶם. קָרְאוּ וְשָׁנוּ וְשִׁלֵּשׁוּ. בִּשְׁעַת פְּטִירָתָן אָמְרוּ לָהֶם: דִּקְדַּקְנוּ בְּכׇל תּוֹרַתְכֶם – וֶאֱמֶת הוּא; חוּץ מִדָּבָר זֶה שֶׁאַתֶּם אוֹמְרִים: שׁוֹר שֶׁל יִשְׂרָאֵל שֶׁנָּגַח שׁוֹר שֶׁל גּוֹי – פָּטוּר. שֶׁל גּוֹי שֶׁנָּגַח שׁוֹר שֶׁל יִשְׂרָאֵל – בֵּין תָּם בֵּין מוּעָד, מְשַׁלֵּם נֶזֶק שָׁלֵם.",
      "en": "<b>The Sages taught</b> the following story in the context of the aforementioned <i>halakha</i>: <b>And the Roman kingdom once sent two military officials [<i>sardeyotot</i>] to the Sages of Israel,</b> and ordered them in the name of the king: <b>Teach us your Torah.</b> The officials <b>read</b> the Torah, <b>and repeated</b> it, <b>and</b> repeated it again, reading it for the <b>third</b> time. <b>At the time of their departure, they said to</b> the Sages: <b>We have examined your entire Torah and it is true, except for this</b> one <b>matter that you state,</b> i.e., that with regard to <b>an ox of a Jew that gored the ox of a gentile,</b> the owner is <b>exempt</b> from liability, whereas with regard to the ox <b>of a gentile that gored the ox of a Jew, whether</b> it was <b>innocuous or forewarned,</b> the owner <b>pays the full</b> cost of the <b>damage.</b>"
+    },
+    {
+     "ref": "Bava Kamma 38a",
+     "i": 13,
+     "he": "מִמָּה נַפְשָׁךְ, אִי ״רֵעֵהוּ״ דַּוְקָא – אֲפִילּוּ דְּגוֹי כִּי נָגַח דְּיִשְׂרָאֵל לִיפְּטַר; וְאִי ״רֵעֵהוּ״ לָאו דַּוְקָא – אֲפִילּוּ דְיִשְׂרָאֵל כִּי נָגַח דְּגוֹי לִחַיַּיב! וְדָבָר זֶה אֵין אָנוּ מוֹדִיעִים אוֹתוֹ לַמַּלְכוּת.",
+     "en": "The officials’ reasoning was that this <i>halakha</i> is difficult <b>whichever way you</b> look at it. <b>If</b> the phrase <b>“of another”</b> is meant in <b>a precise</b> manner, that the owners of both oxen must both be Jewish, then <b>even when</b> the ox <b>of a gentile gores the ox of a Jew</b> the owner of the ox <b>should be exempt</b> from liability. <b>And if</b> the phrase <b>“of another”</b> is <b>not</b> meant in <b>a precise</b> manner, and the oxen of all are included, then <b>even when</b> the ox <b>of a Jew gores the ox of a gentile</b> the owner <b>should be liable.</b> They added: <b>But we will not inform this matter to the kingdom;</b> having acknowledged that the entire Torah is true, we will not reveal this ruling, as it will displease the kingdom."
     }
    ],
    "span": [
@@ -321,8 +331,8 @@
      "end": 12
     }
    ],
-   "words": 145,
-   "minutes": 1
+   "words": 276,
+   "minutes": 2
   },
   {
    "id": "bava_kamma-38a-14-15",
@@ -335,7 +345,11 @@
    "start_segment": 14,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ulla's application of the lesson to the dead daughter (10) completes the consolation; 11 onward is separate exposition."
+   },
    "reviewed": false,
    "summary": "After the death of Rav Shmuel bar Yehuda's daughter, Ulla refuses to join the Sages in their standard Babylonian consolation and instead visits alone to offer a teaching about God's foresight. Ulla visits the mourning Rav Shmuel bar Yehuda and consoles him by explaining that God spares nations only for the sake of future righteous descendants, implying his daughter lacked such potential.",
    "segments": [
@@ -362,6 +376,12 @@
      "i": 1,
      "he": "אָמַר לוֹ הַקָּדוֹשׁ בָּרוּךְ הוּא: לֹא כְּשֶׁעָלְתָה עַל דַּעְתְּךָ עָלְתָה עַל דַּעְתִּי, שְׁתֵּי פְּרִידוֹת טוֹבוֹת יֵשׁ לִי לְהוֹצִיא מֵהֶן – רוּת הַמּוֹאֲבִיָּה וְנַעֲמָה הָעַמּוֹנִית.",
      "en": "To counter this, <b>the Holy One, Blessed be He, said to him: That which has entered your mind has not entered Mine,</b> because <b>I have two virtuous fledglings [<i>feridot</i>],</b> i.e., girls, <b>to extract from them: Ruth the Moabite,</b> who will be the foremother of the dynasty of David, <b>and Naamah the Ammonite,</b> Solomon’s wife, from whom the continuation of that dynasty will emerge. For the sake of these women, the Moabites and Ammonites must not be destroyed."
+    },
+    {
+     "ref": "Bava Kamma 38b",
+     "i": 2,
+     "he": "וַהֲלֹא דְּבָרִים קַל וָחוֹמֶר, וּמָה בִּשְׁבִיל שְׁתֵּי פְּרִידוֹת טוֹבוֹת – חָס הַקָּדוֹשׁ בָּרוּךְ הוּא עַל שְׁתֵּי אוּמּוֹת גְּדוֹלוֹת וְלֹא הֶחֱרִיבָן; בִּתּוֹ שֶׁל רַבִּי – אִם כְּשֵׁרָה הִיא וּרְאוּיָה הִיא לָצֵאת מִמֶּנָּה דָּבָר טוֹב, עַל אַחַת כַּמָּה וְכַמָּה דַּהֲוָה חַיָּה.",
+     "en": "Ulla continued: <b>And are</b> these <b>matters not</b> inferred <b><i>a fortiori</i>? If for the sake of two virtuous fledglings the Holy One, Blessed be He, had pity on two large nations and did not destroy them,</b> then <b>if the daughter of my teacher,</b> Rav Shmuel bar Yehuda, <b>was righteous, and she had</b> the <b>potential for something good to emerge from her,</b> it is <b>all the more so</b> clear <b>that she would have lived.</b>"
     }
    ],
    "span": [
@@ -376,8 +396,8 @@
      "end": 1
     }
    ],
-   "words": 296,
-   "minutes": 2
+   "words": 369,
+   "minutes": 3
   },
   {
    "id": "bava_kamma-41b-6-7",
@@ -564,37 +584,6 @@
    ],
    "words": 214,
    "minutes": 2
-  },
-  {
-   "id": "bava_kamma-51a-0-0",
-   "tractate": "bava_kamma",
-   "ref": "Bava Kamma 51a",
-   "refs": [
-    "Bava Kamma 51a"
-   ],
-   "start_segment": 0,
-   "classification": "HIGH_CONFIDENCE",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Rav Nahman rules that an ox which fell into a shallow water channel and was immediately slaughtered is forbidden as a tereifa due to the impact of the fall.",
-   "segments": [
-    {
-     "ref": "Bava Kamma 51a",
-     "i": 0,
-     "he": "לָא, מִשּׁוּם דְּלֵית בֵּיהּ הַבְלָא. אִי הָכִי, הוּזַּק בּוֹ חַיָּיב? הָא לֵית בֵּיהּ הַבְלָא! אֲמַר לֵיהּ: אֵין הֶבֶל לְמִיתָה, וְיֵשׁ הֶבֶל לִנְזָקִין.",
-     "en": "Rav Naḥman responds: <b>No,</b> he is exempt here <b>because there are not</b> sufficient <b>fumes</b> to cause death, in accordance with the opinion of Rav. Nevertheless, the impact from hitting the ground is sufficient to cause death, and therefore an ox that fell into a water channel is suspected of being a <i>tereifa</i>. Rava again challenges him: <b>If so,</b> then how is the statement: If the animal <b>was injured by it,</b> he is <b>liable,</b> to be explained? <b>There are not</b> sufficient <b>fumes?</b> Rav Naḥman <b>said to him: There are not</b> sufficient <b>fumes to</b> cause <b>death, but there are</b> sufficient <b>fumes to</b> cause <b>injury.</b>"
-    }
-   ],
-   "span": [
-    {
-     "ref": "Bava Kamma 51a",
-     "start": 0,
-     "end": 0
-    }
-   ],
-   "words": 103,
-   "minutes": 1
   },
   {
    "id": "bava_kamma-58b-14-15",
@@ -990,16 +979,16 @@
    "start_segment": 0,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 is pure argument over Greek language that starts mid-sentence; 7-8 hold the only narrative (Rabban Shimon ben Gamliel's report and the Avtolmos permission).",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "During the Hasmonean civil war, a Greek-wise elder advises the besiegers to send a pig instead of a sheep, leading to a miraculous earthquake and a rabbinic curse on raising pigs.",
    "segments": [
-    {
-     "ref": "Bava Kamma 83a",
-     "i": 0,
-     "he": "לָשׁוֹן סוּרְסִי לָמָּה? אוֹ לְשׁוֹן הַקֹּדֶשׁ, אוֹ לָשׁוֹן יְוָנִית! וְאָמַר רַבִּי יוֹסֵי: [בְּ]בָבֶל – לְשׁוֹן אֲרַמִּי לָמָּה? אוֹ לְשׁוֹן הַקֹּדֶשׁ, אוֹ לָשׁוֹן פָּרְסִי! אָמְרִי: לָשׁוֹן יְוָנִי לְחוּד, חׇכְמַת יְוָנִית לְחוּד.",
-     "en": "<b>why</b> would one speak the <b>Syriac [<i>Sursi</i>] language?</b> One should speak <b>either the sacred tongue,</b> Hebrew, <b>or the Greek language. And Rabbi Yosei said</b> similarly: In <b>Babylonia, why</b> would one speak the <b>Aramaic language?</b> One should speak <b>either the sacred tongue or the Persian language.</b> At any rate, Rabbi Yehuda HaNasi’s statement indicates that there is nothing wrong with learning and speaking Greek. The Sages <b>say</b> in response: <b>The Greek language</b> is <b>discrete, and Greek wisdom</b> is <b>discrete.</b> In other words, these are two separate issues; only Greek wisdom is prohibited, not the Greek language."
-    },
     {
      "ref": "Bava Kamma 83a",
      "i": 1,
@@ -1020,8 +1009,8 @@
      "end": 2
     }
    ],
-   "words": 375,
-   "minutes": 3
+   "words": 278,
+   "minutes": 2
   },
   {
    "id": "bava_kamma-83a-7-7",
@@ -1625,14 +1614,15 @@
    "tractate": "bava_kamma",
    "ref": "Bava Kamma 112a",
    "refs": [
-    "Bava Kamma 112a"
+    "Bava Kamma 112a",
+    "Bava Kamma 112b"
    ],
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "Rabbi Yirmeya's young brother-in-law physically locks him out of a house to protect his inheritance, leading to a court case where Rabbi Avin rules in the minor's favor.",
+   "summary": "Rabbi Yirmeya's brother-in-law, a minor, shut the doors of his late father's house against Rabbi Yirmeya, who claimed part of it.",
    "segments": [
     {
      "ref": "Bava Kamma 112a",
@@ -1645,32 +1635,13 @@
      "i": 14,
      "he": "אָמַר: שֶׁלּוֹ הוּא תּוֹבֵעַ. אֲמַר לֵיהּ: וְהָא מַיְיתִינָא סָהֲדִי דְּאַחְזַקִי בֵּיהּ בְּחַיֵּי דַּאֲבוּהּ! אֲמַר לֵיהּ: וְכִי מְקַבְּלִין עֵדִים",
      "en": "Rabbi Avin <b>said</b> to Rabbi Yirmeya: Your brother-in-law is <b>claiming</b> ownership of that which is <b>his,</b> since he retains the presumptive ownership of his father’s house upon his father’s death. Rabbi Yirmeya <b>said to him: But I can bring witnesses who can testify that I took possession of it during his father’s lifetime.</b> Rabbi Avin <b>said to him: But does</b> the court <b>accept witnesses</b>"
-    }
-   ],
-   "span": [
+    },
     {
-     "ref": "Bava Kamma 112a",
-     "start": 13,
-     "end": 14
-    }
-   ],
-   "words": 130,
-   "minutes": 1
-  },
-  {
-   "id": "bava_kamma-112b-1-1",
-   "tractate": "bava_kamma",
-   "ref": "Bava Kamma 112b",
-   "refs": [
-    "Bava Kamma 112b"
-   ],
-   "start_segment": 1,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Rabbi Yirmeya's minor brother-in-law locks him out of a house, leading to a legal dispute that travels from Rabbi Avin to Rabbi Abbahu regarding testimony against minors.",
-   "segments": [
+     "ref": "Bava Kamma 112b",
+     "i": 0,
+     "he": "שֶׁלֹּא בִּפְנֵי בַּעַל דִּין?! וְלָא? וְהָא קָתָנֵי: בֵּין גְּדוֹלִים בֵּין קְטַנִּים, חַיָּיבִין! אֲמַר לֵיהּ: הֲרֵי מַחְלוֹקֶת סוֹמְכוֹס בְּצִידָּךְ. אֲמַר: אִיכְּפַל כּוּלֵּי עָלְמָא וְקָאֵי כְּסוֹמְכוֹס – לְאַפְקוֹעַן לְדִידִי?",
+     "en": "who testify <b>in the absence of a litigant?</b> Since the defendant is a minor his presence is not legally recognized, and the court does not accept testimony against him. Rabbi Yirmeya questioned this assertion: <b>And</b> is it so that the court does <b>not</b> accept such testimony? <b>But isn’t it taught</b> that if a robber leaves stolen goods to his children, <b>whether they are adults or minors, they are obligated</b> to pay the owner? If the court obligates minors to pay, it must accept testimony about them. Rabbi Avin <b>said to</b> Rabbi Yirmeya: <b>Sumakhos’s dispute is at your side,</b> i.e., Sumakhos disagrees with this ruling and holds that the minors are exempt from paying. Rabbi Yirmeya <b>said</b> to him: <b>Did the whole world go to the effort to hold in accordance with</b> the opinion of <b>Sumakhos</b> in order <b>to seize what is mine?</b>"
+    },
     {
      "ref": "Bava Kamma 112b",
      "i": 1,
@@ -1680,13 +1651,18 @@
    ],
    "span": [
     {
+     "ref": "Bava Kamma 112a",
+     "start": 13,
+     "end": 14
+    },
+    {
      "ref": "Bava Kamma 112b",
-     "start": 1,
+     "start": 0,
      "end": 1
     }
    ],
-   "words": 124,
-   "minutes": 1
+   "words": 396,
+   "minutes": 3
   },
   {
    "id": "bava_kamma-113a-5-6",
@@ -1871,7 +1847,11 @@
    "start_segment": 24,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rava's own ruling in 8 resolves the stolen-scroll case; the next mishna in 9 stays out."
+   },
    "reviewed": false,
    "summary": "A thief from Naresh sold a stolen scroll which was then resold at a profit; Abaye and Rava debated and ruled on how the original owner and the various purchasers should settle the costs.",
    "segments": [
@@ -1886,6 +1866,12 @@
      "i": 25,
      "he": "מַתְקֵיף לַהּ רָבָא: הַשְׁתָּא לוֹקֵחַ מִגַּנָּב – עָשׂוּ בּוֹ תַּקָּנַת הַשּׁוּק, לוֹקֵחַ מִלּוֹקֵחַ מִיבַּעְיָא?",
      "en": "<b>Rava objects to this: Now</b> that it has been established that with regard to one who <b>purchases from a thief,</b> the Sages <b>implemented the provision</b> ensuring <b>the integrity of the marketplace in this</b> case despite the fact that he dealt with the thief directly, <b>is</b> it <b>necessary</b> to teach that the same would apply to one who <b>purchased</b> a stolen item <b>from a purchaser?</b> Accordingly, the final purchaser is entitled to receive from the original owner the full amount that he paid for the item."
+    },
+    {
+     "ref": "Bava Kamma 115a",
+     "i": 26,
+     "he": "אֶלָּא אָמַר רָבָא: לֵיזִיל מָרֵיהּ דְּסִפְרָא וְיָהֵיב לֵיהּ לְבַר מָחוֹזָאָה מְאָה וְעֶשְׂרִין זוּזֵי וְשָׁקֵיל סִפְרֵיהּ, וְלֵיזִיל מָרֵי[הּ] דְסִפְרָא וְלִישְׁקוֹל אַרְבְּעִין מִפַּפּוּנָאָה, וּתְמָנַן מִנַּרְשָׁאָה.",
+     "en": "<b>Rather, Rava said</b> that <b>the</b> original <b>owner of the scroll should go and give the resident of Meḥoza one hundred and twenty dinars and take his scroll</b> in return. <b>And</b> afterward <b>the</b> original <b>owner of the scroll should go and collect forty</b> dinars <b>from the resident of Pappunya and eighty</b> dinars <b>from the resident of Naresh,</b> as each profited from the sale in these amounts, respectively."
     }
    ],
    "span": [
@@ -1895,7 +1881,7 @@
      "end": 25
     }
    ],
-   "words": 179,
+   "words": 245,
    "minutes": 2
   },
   {

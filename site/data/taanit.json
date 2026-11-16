@@ -7,12 +7,17 @@
    "tractate": "taanit",
    "ref": "Taanit 5b",
    "refs": [
-    "Taanit 5b"
+    "Taanit 5b",
+    "Taanit 6a"
    ],
    "start_segment": 7,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Extend through the end of the tree parable and Rabbi Yitzhak's blessing, which complete the leave-taking scene."
+   },
    "reviewed": false,
    "summary": "Rav Naḥman and Rabbi Yitzḥak share a meal where Rabbi Yitzḥak refuses to speak while eating for safety reasons, subsequently engaging in a series of teachings and a parting blessing once the meal concludes.",
    "segments": [
@@ -39,6 +44,18 @@
      "i": 10,
      "he": "כִּי הֲווֹ מִיפַּטְרִי מֵהֲדָדֵי, אֲמַר לֵיהּ: לִיבָרְכַן מָר! אֲמַר לֵיהּ: אֶמְשׁוֹל לְךָ מָשָׁל, לְמָה הַדָּבָר דּוֹמֶה? לְאָדָם שֶׁהָיָה הוֹלֵךְ בַּמִּדְבָּר וְהָיָה רָעֵב וְעָיֵף וְצָמֵא, וּמָצָא אִילָן שֶׁפֵּירוֹתָיו מְתוּקִין וְצִלּוֹ נָאֶה וְאַמַּת הַמַּיִם עוֹבֶרֶת תַּחְתָּיו. אָכַל מִפֵּירוֹתָיו, וְשָׁתָה מִמֵּימָיו, וְיָשַׁב בְּצִילּוֹ.",
      "en": "The Gemara relates: <b>When they were taking leave of one another,</b> Rav Naḥman <b>said to</b> Rabbi Yitzḥak: <b>Master, give me a blessing.</b> Rabbi Yitzḥak <b>said to him: I will tell you a parable. To what is this matter comparable?</b> It is comparable <b>to one who was walking through a desert and who was hungry, tired, and thirsty. And he found a tree whose fruits were sweet and whose shade was pleasant, and a stream of water flowed beneath it.</b> He <b>ate from the fruits of</b> the tree, <b>drank from the water in</b> the stream, <b>and sat in the shade of</b> the tree."
+    },
+    {
+     "ref": "Taanit 5b",
+     "i": 11,
+     "he": "וּכְשֶׁבִּיקֵּשׁ לֵילֵךְ, אָמַר: אִילָן אִילָן, בַּמָּה אֲבָרֶכְךָ? אִם אוֹמַר לְךָ שֶׁיְּהוּ פֵּירוֹתֶיךָ מְתוּקִין — הֲרֵי פֵּירוֹתֶיךָ מְתוּקִין, שֶׁיְּהֵא צִילְּךָ נָאֶה — הֲרֵי צִילְּךָ נָאֶה, שֶׁתְּהֵא אַמַּת הַמַּיִם עוֹבֶרֶת תַּחְתֶּיךָ — הֲרֵי אַמַּת הַמַּיִם עוֹבֶרֶת תַּחְתֶּיךָ, אֶלָּא: יְהִי רָצוֹן שֶׁכׇּל נְטִיעוֹת שֶׁנּוֹטְעִין מִמְּךָ",
+     "en": "<b>And when he wished to leave, he said: Tree, tree, with what shall I bless you? If I say to you that your fruits should be sweet, your fruits are</b> already <b>sweet;</b> if I say <b>that your shade should be pleasant, your shade is</b> already <b>pleasant;</b> if I say <b>that a stream of water should flow beneath you, a stream of water</b> already <b>flows beneath you. Rather,</b> I will bless you as follows: <b>May it be</b> God’s <b>will that all saplings which they plant from you</b>"
+    },
+    {
+     "ref": "Taanit 6a",
+     "i": 0,
+     "he": "יִהְיוּ כְּמוֹתְךָ. אַף אַתָּה, בַּמָּה אֲבָרֶכְךָ? אִם בְּתוֹרָה — הֲרֵי תּוֹרָה, אִם בְּעוֹשֶׁר — הֲרֵי עוֹשֶׁר, אִם בְּבָנִים — הֲרֵי בָּנִים, אֶלָּא: יְהִי רָצוֹן שֶׁיִּהְיוּ צֶאֱצָאֵי מֵעֶיךָ כְּמוֹתְךָ.",
+     "en": "<b>be like you. So</b> it is with <b>you. With what shall I bless you? If</b> I bless you <b>with Torah,</b> you already have <b>Torah; if</b> I bless you <b>with wealth,</b> you already have <b>wealth; if</b> I bless you <b>with children,</b> you already have <b>children. Rather, may it be</b> God’s <b>will that your offspring shall be like you.</b>"
     }
    ],
    "span": [
@@ -48,8 +65,8 @@
      "end": 10
     }
    ],
-   "words": 409,
-   "minutes": 3
+   "words": 552,
+   "minutes": 4
   },
   {
    "id": "taanit-7a-16-17",
@@ -826,7 +843,11 @@
    "start_segment": 1,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 11 gives Ilfa's answer to the old man, which ends the episode."
+   },
    "reviewed": false,
    "summary": "Ilfa and Rabbi Yoḥanan leave their studies due to poverty, but Rabbi Yoḥanan returns after overhearing angels, eventually becoming the head of the academy while Ilfa remains a businessman who must prove his scholarship.",
    "segments": [
@@ -859,6 +880,12 @@
      "i": 5,
      "he": "אֲתָא הָהוּא סָבָא, תְּנָא לֵיהּ: הָאוֹמֵר תְּנוּ שֶׁקֶל לְבָנַיי בְּשַׁבָּת, וְהֵן רְאוּיִין לָתֵת לָהֶם סֶלַע — נוֹתְנִין לָהֶם סֶלַע. וְאִם אָמַר: אַל תִּתְּנוּ לָהֶם אֶלָּא שֶׁקֶל — אֵין נוֹתְנִין לָהֶם אֶלָּא שֶׁקֶל.",
      "en": "<b>A certain old man came and taught</b> a <i>baraita</i> before <b>him:</b> If there is a man <b>who,</b> upon his deathbed, <b>says</b> in his will: <b>Give a shekel to my sons</b> every <b>week, but</b> this is a situation <b>where,</b> based on their needs, <b>they are fit</b> for the <b>court to give them a <i>sela</i>,</b> i.e., double the amount, <b>they give them a <i>sela</i>.</b> When the dying man mentioned a shekel, he presumably meant that they should be given a sum in accordance with their actual requirements, not that specific amount. <b>But if he said: Give them only a shekel,</b> the court <b>gives them only a shekel</b> and no more."
+    },
+    {
+     "ref": "Taanit 21a",
+     "i": 6,
+     "he": "אִם אָמַר: אִם מֵתוּ יִרְשׁוּ אֲחֵרִים תַּחְתֵּיהֶם — בֵּין שֶׁאָמַר ״תְּנוּ״ בֵּין שֶׁאָמַר ״אַל תִּתְּנוּ״ — אֵין נוֹתְנִין לָהֶם אֶלָּא שֶׁקֶל. אֲמַר לֵיהּ: הָא מַנִּי — רַבִּי מֵאִיר הִיא, דְּאָמַר: מִצְוָה לְקַיֵּים דִּבְרֵי הַמֵּת.",
+     "en": "The <i>baraita</i> further states that <b>if one said: If</b> my sons <b>die, others should inherit</b> their portion <b>in their stead,</b> regardless of <b>whether he said: Give them</b> a shekel, or <b>whether he said: Give them only</b> a shekel, then the court <b>gives</b> his sons <b>only a shekel</b> per week, as their father clearly stated that he wishes to give his sons only a specific stipend and that he intends to leave the bulk of his property to others. Ilfa <b>said to</b> the old man: In accordance with <b>whose</b> opinion <b>is this</b> ruling? <b>It is</b> in accordance with the opinion of <b>Rabbi Meir, who said: It is a mitzva to fulfill the statement of the dead.</b> This entire <i>baraita</i> can be explained based on a principle that appears in a mishna: In all cases, one should try to execute the wishes of the deceased."
     }
    ],
    "span": [
@@ -868,8 +895,8 @@
      "end": 5
     }
    ],
-   "words": 501,
-   "minutes": 4
+   "words": 644,
+   "minutes": 5
   },
   {
    "id": "taanit-21a-7-9",
@@ -1271,7 +1298,11 @@
    "start_segment": 3,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 12 completes Shimon ben Shetah's message to Honi, cut off mid-sentence."
+   },
    "reviewed": false,
    "summary": "Ḥoni HaMe’aggel draws a circle and refuses to move until God sends rain, successfully negotiating the intensity of the rainfall through successive prayers until the drought is broken.",
    "segments": [
@@ -1310,6 +1341,12 @@
      "i": 8,
      "he": "שָׁלַח לוֹ שִׁמְעוֹן בֶּן שָׁטַח: אִלְמָלֵא חוֹנִי אַתָּה, גּוֹזְרַנִי עָלֶיךָ נִידּוּי. שֶׁאִילּוּ שָׁנִים כִּשְׁנֵי אֵלִיָּהוּ שֶׁמַּפְתְּחוֹת גְּשָׁמִים בְּיָדוֹ שֶׁל אֵלִיָּהוּ, לֹא נִמְצָא שֵׁם שָׁמַיִם מִתְחַלֵּל עַל יָדְךָ,",
      "en": "<b>Shimon ben Shetaḥ relayed to</b> Ḥoni HaMe’aggel: <b>If you were not Ḥoni, I would have decreed ostracism upon you. For were</b> these <b>years like the years of Elijah, when the keys of rain</b> were entrusted <b>in Elijah’s hands,</b> and he swore it would not rain, <b>wouldn’t the name of Heaven have been desecrated by your</b> oath not to leave the circle until it rained? Once you have pronounced this oath, either yours or Elijah’s must be falsified."
+    },
+    {
+     "ref": "Taanit 23a",
+     "i": 9,
+     "he": "אֲבָל מָה אֶעֱשֶׂה לְךָ, שֶׁאַתָּה מִתְחַטֵּא לִפְנֵי הַמָּקוֹם וְעוֹשֶׂה לְךָ רְצוֹנְךָ, כְּבֵן שֶׁמִּתְחַטֵּא עַל אָבִיו וְעוֹשֶׂה לוֹ רְצוֹנוֹ, וְאוֹמֵר לוֹ: אַבָּא, הוֹלִיכַנִי לְרׇחְצֵנִי בְּחַמִּין. שׇׁטְפֵנִי בְּצוֹנֵן. תֵּן לִי אֱגוֹזִים, שְׁקֵדִים, אֲפַרְסְקִים וְרִמּוֹנִים — וְנוֹתֵן לוֹ. וְעָלֶיךָ הַכָּתוּב אוֹמֵר: ״יִשְׂמַח אָבִיךָ וְאִמֶּךָ וְתָגֵל יוֹלַדְתֶּךָ״.",
+     "en": "<b>However, what can I do to you, as you nag God and He does your bidding, like a son who nags his father and</b> his father <b>does his bidding. And</b> the son <b>says to</b> his father: <b>Father, take me to be bathed in hot water; wash me with cold water; give me nuts, almonds, peaches, and pomegranates. And</b> his father <b>gives him. About you, the verse states: “Your father and mother will be glad and she who bore you will rejoice”</b> (Proverbs 23:25)."
     }
    ],
    "span": [
@@ -1319,7 +1356,7 @@
      "end": 8
     }
    ],
-   "words": 667,
+   "words": 750,
    "minutes": 5
   },
   {
@@ -2073,15 +2110,26 @@
    "tractate": "taanit",
    "ref": "Taanit 25a",
    "refs": [
+    "Taanit 24b",
     "Taanit 25a"
    ],
    "start_segment": 0,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 5 holds the story's opening, the wife heating the empty oven, which segment 6 continues mid-sentence."
+   },
    "reviewed": false,
    "summary": "Rabbi Ḥanina ben Dosa's wife feigns baking to hide her poverty, but a miracle occurs when a suspicious neighbor investigates, filling her oven with real bread.",
    "segments": [
+    {
+     "ref": "Taanit 24b",
+     "i": 13,
+     "he": "אָמַר רַב יְהוּדָה אָמַר רַב: בְּכׇל יוֹם וְיוֹם בַּת קוֹל יוֹצֵאת וְאוֹמֶרֶת: כָּל הָעוֹלָם כּוּלּוֹ נִיזּוֹן בִּשְׁבִיל חֲנִינָא בְּנִי, וַחֲנִינָא בְּנִי דַּיּוֹ בְּקַב חָרוּבִים מֵעֶרֶב שַׁבָּת לְעֶרֶב שַׁבָּת. הֲוָה רְגִילָא דְּבֵיתְהוּ לְמֵיחֲמָא תַּנּוּרָא כׇּל מַעֲלֵי דְשַׁבְּתָא וְשָׁדְיָיא אַקְטַרְתָּא",
+     "en": "§ The Gemara continues to discuss the righteous Rabbi Ḥanina ben Dosa and the wonders he performed. <b>Rav Yehuda said</b> that <b>Rav said: Each and every day a Divine Voice emerges</b> from Mount Horeb <b>and says: The entire world is sustained by</b> the merit of <b>My son Ḥanina</b> ben Dosa, <b>and</b> yet for <b>Ḥanina, My son, a <i>kav</i> of carobs,</b> a very small amount of inferior food, <b>is sufficient</b> to sustain him for an entire week, <b>from</b> one <b>Shabbat eve to</b> the next <b>Shabbat eve.</b> The Gemara relates: Rabbi Ḥanina ben Dosa’s <b>wife would heat the oven every Shabbat eve and create</b> a great amount of <b>smoke,</b>"
+    },
     {
      "ref": "Taanit 25a",
      "i": 0,
@@ -2102,7 +2150,7 @@
      "end": 1
     }
    ],
-   "words": 166,
+   "words": 273,
    "minutes": 2
   },
   {
@@ -2519,20 +2567,37 @@
    "tractate": "taanit",
    "ref": "Taanit 27b",
    "refs": [
+    "Taanit 27a",
     "Taanit 27b"
    ],
    "start_segment": 0,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 1,
+    "reason": "Segment 5 begins the account (four watches return, the prophets arise) and 7 finishes it with the prophets' stipulation."
+   },
    "reviewed": false,
    "summary": "The returning exiles use a lottery system to expand four priestly watches into twenty-four, with the prophets ensuring the new order remains permanent.",
    "segments": [
+    {
+     "ref": "Taanit 27a",
+     "i": 11,
+     "he": "תָּנוּ רַבָּנַן: אַרְבָּעָה מִשְׁמָרוֹת עָלוּ מִן הַגּוֹלָה, וְאֵלּוּ הֵן: יְדַעְיָה, חָרִים, פַּשְׁחוּר, וְאִימֵּר. עָמְדוּ נְבִיאִים שֶׁבֵּינֵיהֶם,",
+     "en": "<b>The Sages taught:</b> Only four <b>priestly watches ascended from the</b> Babylonian <b>exile,</b> while the other twenty stayed in Babylonia. <b>And these are</b> the watches who returned: The descendants of <b>Jedaiah, Harim, Pashhur, and Immer. The prophets among</b> those who returned <b>arose</b>"
+    },
     {
      "ref": "Taanit 27b",
      "i": 0,
      "he": "וְחִלְּקוּם וְהֶעֱמִידוּם עַל עֶשְׂרִים וְאַרְבָּעָה, בְּלָלוּם וּנְתָנוּם בְּקַלְפִּי. בָּא יְדַעְיָה וְנָטַל חֶלְקוֹ וְחֵלֶק חֲבֵרָיו שֵׁשׁ, בָּא חָרִים וְנָטַל חֶלְקוֹ וְחֵלֶק חֲבֵרָיו שֵׁשׁ, וְכֵן פַּשְׁחוּר, וְכֵן אִימֵּר.",
      "en": "<b>and divided them and established them as twenty-four</b> watches. They achieved this by writing the names of these new twenty-four watches on pieces of paper, <b>mixing them up, and putting them in a receptacle [<i>kalfei</i>]</b> from which lots were drawn. A representative from the family of <b>Jedaiah came and drew his portion and the lot of</b> five <b>other</b> watches, for a total of <b>six. Harim came and</b> also <b>drew his portion and the lot of</b> five <b>other</b> watches, a total of <b>six. And likewise Pashhur, and likewise Immer.</b>"
+    },
+    {
+     "ref": "Taanit 27b",
+     "i": 1,
+     "he": "וְכֵן הִתְנוּ נְבִיאִים שֶׁבֵּינֵיהֶם: שֶׁאֲפִילּוּ יְהוֹיָרִיב רֹאשׁ מִשְׁמֶרֶת עוֹלֶה — לֹא יִדָּחֶה יְדַעְיָה מִמְּקוֹמוֹ. אֶלָּא יְדַעְיָה עִיקָּר, וִיהוֹיָרִיב טָפֵל לוֹ.",
+     "en": "<b>And likewise the prophets among them stipulated that even</b> if the descendants of <b>Jehoiarib, who</b> originally <b>headed the priestly watches, ascended</b> to Eretz Yisrael, <b>Jedaiah would not be demoted from its place</b> as the first of the watches. Rather, the watch of <b>Jedaiah</b> would retain <b>precedence, and Jehoiarib</b> would be <b>subordinate to it.</b>"
     }
    ],
    "span": [
@@ -2542,8 +2607,8 @@
      "end": 0
     }
    ],
-   "words": 90,
-   "minutes": 1
+   "words": 184,
+   "minutes": 2
   },
   {
    "id": "taanit-28a-4-5",

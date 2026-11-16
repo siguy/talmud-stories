@@ -124,7 +124,7 @@
         '<h1>' + esc(refLabel(s)) + '</h1>' +
         (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') +
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span> ') +
-        (s.extended ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
+        (s.extended && (s.extended.start_back || s.extended.end_forward) ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
         (s.summary ? '<p class="summary">' + esc(s.summary) + '</p>' : '') + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
         '<div class="actions"><button id="read-btn" class="btn primary" aria-pressed="' + read.has(id) + '"></button>' +
         '<a class="btn" href="' + sefariaUrl(s) + '" target="_blank" rel="noopener">Open on Sefaria</a></div>' +
@@ -148,7 +148,8 @@
       (n.approved ? '' : ' <span class="chip">DRAFT — not yet reviewed</span>') + '</summary><p>' + esc(n.note) + '</p>';
     if (n.people.length) h += '<h3>Who\'s who</h3><ul>' + n.people.map(function (p) { return '<li><b>' + esc(p.name) + '</b>' + (p.about ? ' — ' + esc(p.about) : '') + '</li>'; }).join("") + '</ul>';
     if (n.terms.length) h += '<h3>Words to know</h3><ul>' + n.terms.map(function (t) { return '<li><b>' + esc(t.term) + '</b> — ' + esc(t.meaning) + '</li>'; }).join("") + '</ul>';
-    return h + '<p class="fine">Written with the help of AI' + (n.approved ? ' and reviewed by a person' : '') + '. Spot a mistake? Use “Report a problem” below.</p></details>';
+    if (n.why) h += '<h3>Why is this story here?</h3><p>' + esc(n.why) + '</p>';   // last in the box (Simon 2026-11-15)
+    return h + '<p class="fine">Written by AI. Spot a mistake? Use “Report a problem” below.</p></details>';
   }
   function feedbackMarkup() {
     return '<details class="fb" id="fb"><summary>Report a problem or suggest a fix</summary><form id="fb-form" novalidate>' +

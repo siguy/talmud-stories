@@ -58,23 +58,19 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `remove-borderline` | `talmud-stories` | **2 FILES** |
-| `close-four-items` | `main2` | **4 FILES** |
 | `signup-flow` | `berakhot-shas-local-run-a26611` | clean |
-| `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
-| `v15-biblical-flag` | `kind-swartz-f73303` | clean |
+| `(detached)` | `jeff-comms-review-92c526` | clean |
 | `narrate-test-a16cdf` | `narrate-test-a16cdf` | clean |
-| `plan-shas-run-5e0644` | `recent-work-plans-d0818b` | clean |
-| `sessions-cleanup-consolidate-fc92b3` | `sessions-cleanup-consolidate-fc92b3` | clean |
-| `recall-without-lists` | `shas-accuracy-review-8fc321` | clean |
+| `(detached)` | `recent-work-plans-d0818b` | clean |
+| `(detached)` | `sessions-cleanup-consolidate-fc92b3` | clean |
 | `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | clean |
 | `post-shas-run-fixes` | `shas-run` | **1 FILES** |
 | `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
-| `simon-precision-pre-read` | `simon-sample-review-b314ea` | clean |
-| `stories-background-info-a2bcf3` | `stories-background-info-a2bcf3` | clean |
-| `yahrzeit-viewer-alternative-02fe46` | `yahrzeit-viewer-alternative-02fe46` | clean |
+| `signup-e-email` | `signup-e-email` | clean |
+| `stories-background-info-a2bcf3` | `stories-background-info-a2bcf3` | **44 FILES** |
 <!-- board-live:end -->
 
-## Done — 67 items, never deleted
+## Done — 68 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -145,4 +141,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Septimus site — biblical stories out of scope, Jeff's 2026-11-12 verdicts applied](work/done/2026-11-13-septimus-biblical-out-and-jeff-verdicts.md) | publication | — |
 | [Septimus site card text leak, Sanhedrin 52b:4 as a regular story, and the G6 judge-prompt re-pin](work/done/2026-11-13-site-card-text-and-g6-pin.md) | publication | — |
 | [The narrate test — can writing a summary tell a story from a non-story, and find its borders?](work/done/2026-11-14-narrate-test.md) | classification, boundaries | [2026-11-14-narrate-test.md](docs/findings/2026-11-14-narrate-test.md) |
-<!-- board-checksum: 21adb56ba8bbc2dd -->
+| [Background notes (and a "why it's here" line) for every story on the Septimus site](work/done/2026-11-15-shas-background-notes.md) | publication | — |
+<!-- board-checksum: fe11d1da785e9d09 -->
