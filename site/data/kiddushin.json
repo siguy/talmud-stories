@@ -143,12 +143,17 @@
    "tractate": "kiddushin",
    "ref": "Kiddushin 12a",
    "refs": [
-    "Kiddushin 12a"
+    "Kiddushin 12a",
+    "Kiddushin 12b"
    ],
    "start_segment": 14,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "The story continues past the mother's objection: Rav Hisda's reply citing Yehudit and the Sages' challenge about witnesses in Idit belong to the same incident, while 9-10 are legal argument."
+   },
    "reviewed": true,
    "summary": "After a man betroths a woman with a blue marble stone, Rav Hisda finds it lacks value, leading the man's mother to unsuccessfully argue that it was worth more at the time of the act.",
    "segments": [
@@ -163,6 +168,18 @@
      "i": 15,
      "he": "אֲמַרָה לֵיהּ אִימֵּיהּ: וְהָא הָהוּא יוֹמָא דְּקַדְּשַׁהּ הֲוָה בַּהּ שָׁוֶה פְּרוּטָה! אֲמַר לַהּ: לָאו כָּל כְּמִינָּךְ דְּאָסְרַתְּ לַהּ אַבָּתְרָא.",
      "en": "<b>The mother of</b> the man who offered the betrothal <b>said to</b> Rav Ḥisda: <b>But on that day that he betrothed her it was worth one <i>peruta</i>. He said to</b> the mother: <b>It is not in your</b> power <b>to render her forbidden to a later</b> man. If another comes and betroths her, his betrothal is not dismissed due to this earlier act. Since the marble stone is not worth one <i>peruta</i> now, the betrothal of the second man may be valid."
+    },
+    {
+     "ref": "Kiddushin 12b",
+     "i": 0,
+     "he": "לָאו הַיְינוּ דִּיהוּדִית דְּבֵיתְהוּ דְּרַבִּי חִיָּיא, (דַּהֲוֵית) [דַּהֲוָה] לַהּ צַעַר לֵידָה, אֲמַרָה לֵיהּ: אֲמַרָה לִי אֵם: קַבֵּיל בִּיךְ אֲבוּךְ קִידּוּשֵׁי כִּי זוּטְרַתְּ. אֲמַר לַהּ: לָאו כָּל כְּמִינַּהּ דְּאִימָּךְ דְּאָסְרָה לִיךְ עִילָּוַאי.",
+     "en": "Rav Ḥisda explained: <b>Is this not</b> similar to the case of <b>Yehudit, wife of Rabbi Ḥiyya, who would have painful childbirths</b> and therefore wished to leave Rabbi Ḥiyya? <b>She said to</b> Rabbi Ḥiyya: <b>My mother told me: When you were young your father accepted betrothal on your behalf</b> from another man, which would render Yehudit forbidden to Rabbi Ḥiyya. <b>He said to her: It is not in your mother’s</b> power <b>to render you forbidden to me,</b> as this testimony is insufficient."
+    },
+    {
+     "ref": "Kiddushin 12b",
+     "i": 1,
+     "he": "אָמְרִי לֵיהּ רַבָּנַן לְרַב חִסְדָּא: אַמַּאי? הָא אִיכָּא סָהֲדִי בְּאִידִית, דְּיָדְעִי דִּבְהָהוּא יוֹמָא הֲוָה בַּיהּ שָׁוֶה פְּרוּטָה! הַשְׁתָּא מִיהָא לָא לֵיתַנְהוּ קַמַּן.",
+     "en": "Returning to the incident with the blue marble stone, the Gemara relates that <b>the Sages said to Rav Ḥisda: Why</b> do you say that she is not betrothed because the item is not worth one <i>peruta</i> in the place where the betrothal occurred? After all, <b>there are witnesses in Idit who know that on that day it had the value of one <i>peruta</i>.</b> Rav Ḥisda said to them: <b>Now, in any event, they are not here,</b> and therefore their potential testimony is disregarded."
     }
    ],
    "span": [
@@ -172,8 +189,8 @@
      "end": 15
     }
    ],
-   "words": 205,
-   "minutes": 2
+   "words": 370,
+   "minutes": 3
   },
   {
    "id": "kiddushin-12b-10-10",
@@ -259,11 +276,7 @@
    "start_segment": 18,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 0,
-    "end_forward": 1,
-    "reason": "Segment ends mid-sentence 'this slave was an adult man,' and finishes in 'departed to life by receiving a slave'."
-   },
+   "extended": null,
    "reviewed": true,
    "summary": "Mar Zutra visits the dying convert Rabbi Yehuda and, realizing the man has no heirs, instructs Rabbi Yehuda's slave to perform an act of service for him so that he may legally acquire the slave before the property becomes ownerless. Following the death of Rabbi Yehuda from India, Mar Zutra acquires his slave through a specific act of possession performed just before the death.",
    "segments": [
@@ -278,12 +291,6 @@
      "i": 0,
      "he": "זֶה פֵּירַשׁ לְמִיתָה, וְזֶה פֵּירַשׁ לְחַיִּים.",
      "en": "and <b>this</b> person, Rabbi Yehuda from India, <b>departed to death, and that</b> individual, Mar Zutra, <b>departed to life</b> by receiving a slave."
-    },
-    {
-     "ref": "Kiddushin 23a",
-     "i": 1,
-     "he": "וְאִיכָּא דְּאָמְרִי קָטָן הֲוָה, וּדְלָא כְּאַבָּא שָׁאוּל, דְּתַנְיָא: גֵּר שֶׁמֵּת וּבִזְבְּזוּ יִשְׂרָאֵל נְכָסָיו, וְהָיוּ בָּהֶן עֲבָדִים, בֵּין גְּדוֹלִים בֵּין קְטַנִּים – קָנוּ עַצְמָן בְּנֵי חוֹרִין. אַבָּא שָׁאוּל אוֹמֵר: גְּדוֹלִים – קָנוּ עַצְמָן בְּנֵי חוֹרִין, קְטַנִּים – כׇּל הַמַּחְזִיק בָּהֶן זָכָה בָּהֶן.",
-     "en": "<b>And there are</b> those <b>who say</b> that this slave <b>was a minor, and</b> Mar Zutra did <b>not</b> act <b>in accordance with</b> the opinion of <b>Abba Shaul. As it is taught</b> in a <i>baraita</i>: With regard to <b>a convert who dies</b> without heirs <b>and Jews plundered his property,</b> as it is considered ownerless, <b>and among</b> his possessions <b>were slaves,</b> then, <b>whether</b> the slaves were <b>adults or minors, they acquire</b> ownership of <b>themselves</b> and become <b>freemen,</b> as they can acquire themselves from the ownerless property. <b>Abba Shaul says: Adult</b> slaves <b>acquire</b> ownership of <b>themselves</b> and become <b>freemen.</b> But with regard to <b>minor</b> slaves, <b>anyone who takes possession of them acquires them.</b> According to the opinion of Abba Shaul, Mar Zutra did not have to hasten to acquire the slave during Rabbi Yehuda’s lifetime before the slave would acquire himself. He could have waited until Rabbi Yehuda died before acquiring the slave."
     }
    ],
    "span": [
@@ -298,8 +305,8 @@
      "end": 0
     }
    ],
-   "words": 272,
-   "minutes": 2
+   "words": 122,
+   "minutes": 1
   },
   {
    "id": "kiddushin-25a-1-3",
@@ -969,10 +976,20 @@
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "The Hutzpit version only says 'he saw'; segment 4 supplies that this is what caused Aher (Elisha ben Avuya) to sin, without which the story has no subject."
+   },
    "reviewed": true,
    "summary": "Elisha ben Avuya witnesses the tongue of a martyred sage being dragged by a pig and, in despair over the lack of reward for the righteous, abandons his faith.",
    "segments": [
+    {
+     "ref": "Kiddushin 39b",
+     "i": 12,
+     "he": "אָמַר רַב יוֹסֵף: אִילְמָלֵי דַּרְשֵׁיהּ אַחֵר לְהַאי קְרָא כְּרַבִּי יַעֲקֹב בַּר בְּרַתֵּיה – לָא חֲטָא. וְאַחֵר מַאי הוּא? אִיכָּא דְּאָמְרִי: כִּי הַאי גַוְונָא חֲזָא.",
+     "en": "<b>Rav Yosef said: Had Aḥer,</b> literally Other, the appellation of the former Sage Elisha ben Avuya, <b>interpreted this</b> aforementioned <b>verse:</b> “That it may go well with you” (Deuteronomy 5:16), <b>homiletically,</b> as referring to the World-to-Come, <b>as</b> did <b>Rabbi Ya’akov, son of his daughter,</b> he would <b>not have sinned.</b> The Gemara asks: <b>And what</b> caused <b>Aḥer</b> to sin? <b>There are</b> those <b>who say he saw a case like this,</b> where a son went up to the roof on his father’s command, dispatched the mother bird, and then died. It was witnessing this episode that led Elisha ben Avuya astray."
+    },
     {
      "ref": "Kiddushin 39b",
      "i": 13,
@@ -987,8 +1004,8 @@
      "end": 13
     }
    ],
-   "words": 57,
-   "minutes": 1
+   "words": 155,
+   "minutes": 2
   },
   {
    "id": "kiddushin-39b-15-15",
@@ -1321,20 +1338,10 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 1,
-    "end_forward": 0,
-    "reason": "Starts with bare 'Abaye said: From where do I say this claim of mine?'; previous segment gives the dilemma about one witness and the silent husband."
-   },
+   "extended": null,
    "reviewed": true,
    "summary": "Mar Shmuel sends a messenger to find his late student, and the messenger returns claiming he saw the student's wife committing adultery.",
    "segments": [
-    {
-     "ref": "Kiddushin 66a",
-     "i": 4,
-     "he": "אִיבַּעְיָא לְהוּ: אִשְׁתּוֹ זִינְּתָה בְּעַד אֶחָד וְשׁוֹתֵק, מַהוּ? אָמַר אַבָּיֵי: נֶאֱמָן. רָבָא אָמַר: אֵינוֹ נֶאֱמָן. הָוֵי דָּבָר שֶׁבְּעֶרְוָה, וְאֵין דָּבָר שֶׁבְּעֶרְוָה פָּחוֹת מִשְּׁנַיִם.",
-     "en": "§ <b>A dilemma was raised before</b> the Sages: If a husband is told <b>by one witness</b> that <b>his wife committed adultery, and</b> the husband remains <b>silent, what is</b> the <i>halakha</i>? <b>Abaye said:</b> The witness is <b>deemed credible. Rava said: He is not deemed credible.</b> Why not? Because <b>it is a matter involving forbidden relations, and there is no matter</b> of testimony <b>for forbidden sexual relations</b> that can be attested to by <b>fewer than two</b> witnesses."
-    },
     {
      "ref": "Kiddushin 66a",
      "i": 5,
@@ -1349,8 +1356,8 @@
      "end": 5
     }
    ],
-   "words": 225,
-   "minutes": 2
+   "words": 149,
+   "minutes": 1
   },
   {
    "id": "kiddushin-66a-7-11",
