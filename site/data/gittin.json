@@ -1134,7 +1134,13 @@
    "start_segment": 2,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Giddul bar Re'ilai's story ends with his blessing in 5; 6 is a later dispute between Abaye and Rava over the ruling, not a verdict given in the case.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": true,
    "summary": "Giddul bar Re’ilai sends a divorce document, but when the agent is delayed by the wife's weaving, Giddul expresses relief, leading to a debate on whether his reaction voids the divorce.",
    "segments": [
@@ -1143,12 +1149,6 @@
      "i": 2,
      "he": "גִּידּוּל בַּר רְעִילַאי שַׁדַּר לַהּ גִּיטָּא לִדְבֵיתְהוּ; אֲזַל שְׁלִיחָא, אַשְׁכְּחַהּ דַּהֲוָה יָתְבָה וְנָוְולָה, אֲמַר לַהּ: הֵא גִּיטִּיךְ. אֲמַרָה לֵיהּ: זִיל הַשְׁתָּא מִיהָא, וְתָא לִמְחַר. אֲזַל לְגַבֵּיהּ וַאֲמַר לֵיהּ. פְּתַח וַאֲמַר: ״בָּרוּךְ הַטּוֹב וְהַמֵּטִיב״.",
      "en": "§ The Gemara relates: A man named <b>Giddul bar Re’ilai sent a bill of divorce to his wife. The agent went</b> and <b>found that she was sitting and weaving</b> [<b><i>navla</i></b>]. <b>He said to her: This is your bill of divorce. She said to him: At least go</b> away <b>from here now and come tomorrow</b> to give me the bill of divorce. The agent <b>went to</b> Giddul bar Re’ilai <b>and told him</b> what had occurred. Giddul bar Re’ilai <b>opened</b> his mouth <b>and said: Blessed is He Who is good and does good,</b> as he was happy that the bill of divorce was not delivered."
-    },
-    {
-     "ref": "Gittin 34a",
-     "i": 3,
-     "he": "אַבָּיֵי אָמַר: ״בָּרוּךְ הַטּוֹב וְהַמֵּטִיב״, וְלָא בָּטֵל גִּיטָּא. רָבָא אָמַר: ״בָּרוּךְ הַטּוֹב וְהַמֵּטִיב״, וּבָטֵל גִּיטָּא.",
-     "en": "The Sages disagreed with regard to the status of this bill of divorce. <b>Abaye said</b> that he said: <b>Blessed is He Who is good and does good,</b> as he was happy that it was not delivered, <b>but the bill of divorce is not rendered void</b> through this statement. <b>Rava said</b> that he said: <b>Blessed is He Who is good and does good, and the bill of divorce is rendered void.</b>"
     }
    ],
    "span": [
@@ -1158,8 +1158,8 @@
      "end": 3
     }
    ],
-   "words": 175,
-   "minutes": 2
+   "words": 105,
+   "minutes": 1
   },
   {
    "id": "gittin-34a-5-5",
@@ -2411,20 +2411,10 @@
    "start_segment": 6,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 1,
-    "end_forward": 0,
-    "reason": "Begins 'Rav Sheizevi said: This means that he is liable...' referring to Rava's objection about karet in the previous segment."
-   },
+   "extended": null,
    "reviewed": true,
    "summary": "When students laughed at Rav Sheizevi for a seemingly impossible legal claim, Rava rebuked them and explained the depth of the statement.",
    "segments": [
-    {
-     "ref": "Gittin 55b",
-     "i": 5,
-     "he": "מֵתִיב רָבָא: גָּנַב וְהִקְדִּישׁ, וְאַחַר כָּךְ טָבַח וּמָכַר – מְשַׁלֵּם תַּשְׁלוּמֵי כֶפֶל, וְאֵינוֹ מְשַׁלֵּם תַּשְׁלוּמֵי אַרְבָּעָה וַחֲמִשָּׁה. וְתָנֵי עֲלַהּ: בַּחוּץ כִּי הַאי גַוְונָא – עָנוּשׁ כָּרֵת. וְאִי אָמְרַתְּ יֵאוּשׁ כְּדִי לָא קָנֵי, כָּרֵת מַאי עֲבִידְתֵּיהּ?",
-     "en": "<b>Rava raises an objection</b> from what was learned in a mishna (<i>Bava Kamma</i> 74a): If <b>one stole</b> an animal <b>and consecrated</b> it, <b>and afterward he slaughtered or sold</b> it, <b>he pays double payment</b> like a thief (see Exodus 22:3), <b>but he does not pay fourfold or fivefold payment,</b> as one must ordinarily pay when he slaughters or sells an ox or a sheep that he stole from another person (Exodus 21:37). <b>And it is taught</b> in a <i>baraita</i> <b>with regard to</b> this mishna: If one slaughtered an animal <b>outside</b> the Temple <b>in a case like this,</b> he is <b>punishable by <i>karet</i></b> for having sacrificed an offering outside the Temple. <b>And if you say</b> that the owner’s <b>despair</b> of recovering an item that was stolen from him <b>does not by itself</b> enable the thief to <b>acquire</b> the stolen item, <b>what is the relevance of</b> mentioning <b><i>karet</i>?</b> The punishment of <i>karet</i> should not apply, as the thief cannot consecrate an animal that does not belong to him."
-    },
     {
      "ref": "Gittin 55b",
      "i": 6,
@@ -2439,8 +2429,8 @@
      "end": 6
     }
    ],
-   "words": 256,
-   "minutes": 2
+   "words": 89,
+   "minutes": 1
   },
   {
    "id": "gittin-55b-15-17",
@@ -3978,17 +3968,12 @@
    "tractate": "gittin",
    "ref": "Gittin 72a",
    "refs": [
-    "Gittin 72a",
-    "Gittin 72b"
+    "Gittin 72a"
    ],
    "start_segment": 17,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 0,
-    "end_forward": 1,
-    "reason": "'Rav Huna is uncertain' finishes with 'if Rabbi Yosei says that the date...' in the next segment."
-   },
+   "extended": null,
    "reviewed": true,
    "summary": "Rav Huna and Rav Naḥman visit the ailing Rabba bar Avuh to clarify whether the halakha follows Rabbi Yosei regarding the validity of dates in documents.",
    "segments": [
@@ -4003,12 +3988,6 @@
      "i": 18,
      "he": "בְּעָא מִינֵּיהּ. אֲמַר לֵיהּ, הָכִי אֲמַר רַב: הֲלָכָה כְּרַבִּי יוֹסֵי. לְבָתַר דִּנְפַק אֲמַר לֵיהּ: הַיְינוּ טַעְמָא דְּרַבִּי יוֹסֵי – דְּקָסָבַר: זְמַנּוֹ שֶׁל שְׁטָר מוֹכִיחַ עָלָיו! אֶלָּא מְסַפְּקָא לֵיהּ",
      "en": "Rav Naḥman <b>asked of</b> Rabba bar Avuh what the <i>halakha</i> is. Rabba bar Avuh <b>said to him: So said Rav:</b> The <b><i>halakha</i></b> is <b>in accordance with</b> the opinion of <b>Rabbi Yosei. After he left</b> Rav Huna <b>said to</b> Rav Naḥman: <b>This is the reason</b> for the opinion <b>of Rabbi Yosei, as he holds: The date</b> written <b>in a document proves</b> when <b>it</b> takes effect. From this incident it is clear that Rav Huna holds that the <i>halakha</i> is in accordance with Rabbi Yosei, as Rav Huna certainly accepted the opinion that Rabba bar Avuh said in the name of Rav. <b>Rather,</b> it is necessary to say that Rav Huna <b>is uncertain</b>"
-    },
-    {
-     "ref": "Gittin 72b",
-     "i": 0,
-     "he": "אִי אָמַר רַבִּי יוֹסֵי בְּעַל פֶּה, אִי לָא אָמַר.",
-     "en": "<b>if Rabbi Yosei says</b> that the date on which a document is written proves when it takes effect even when the husband stated <b>a verbal</b> condition as he handed it over, or <b>if</b> Rabbi Yosei <b>does not say</b> his principle in such a case."
     }
    ],
    "span": [
@@ -4018,7 +3997,7 @@
      "end": 18
     }
    ],
-   "words": 262,
+   "words": 218,
    "minutes": 2
   },
   {
@@ -4031,7 +4010,13 @@
    "start_segment": 9,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The land-sale case ends with Rava's ruling in segment 7 (which also opens Ravina's objection); segments 8-10 are the Gemara's debate over the baraita.",
+    "start_trim": 0,
+    "end_trim": 3
+   },
    "reviewed": true,
    "summary": "A man sells land with a guarantee against accidents, but when a river is diverted into it, the sages debate whether this qualifies as a foreseeable accident or an exempting 'uncommon' one.",
    "segments": [
@@ -4052,24 +4037,6 @@
      "i": 11,
      "he": "אִיגַּלְגַּל מִילְּתָא, וּמְטָא לְקַמֵּיהּ דְּרָבָא. אֲמַר לְהוּ: אוּנְסָא דְּלָא שְׁכִיחַ הוּא. אֵיתִיבֵיהּ רָבִינָא לְרָבָא: ״אִם לֹא אֶעֱמוֹד מֵחוֹלִי זֶה״, וְנָפַל עָלָיו בַּיִת אוֹ הִכִּישׁוֹ נָחָשׁ – הֲרֵי זֶה גֵּט!",
      "en": "<b>The matter was circulated,</b> as this ruling was never finalized, <b>and it came before Rava. He said to them: It is an uncommon, unavoidable accident,</b> and the seller should not have to pay. <b>Ravina raised an objection to Rava:</b> Isn’t it taught that if the husband said: This is your bill of divorce <b>if I am not healed from this illness, and the house collapsed on him or a snake bit him</b> then <b>it is</b> a valid <b>bill of divorce?</b> These cases are both uncommon, unavoidable accidents, yet the bill of divorce is valid."
-    },
-    {
-     "ref": "Gittin 73a",
-     "i": 12,
-     "he": "אֲמַר לֵיהּ רָבָא: וְאֵימָא מֵרֵישָׁא – אֵינוֹ גֵּט!",
-     "en": "<b>Rava said to him: But</b> you can <b>say</b> an opposite inference <b>from the first clause:</b> If a husband says: This is your bill of divorce from today if I die from this illness, and the house collapsed on him or a snake bit him, then <b>it is not</b> a valid <b>bill of divorce.</b> Apparently, an uncommon, unavoidable accident is not included within his condition. If so, the inference from first clause of the <i>baraita</i> contradicts the inference from latter clause and it cannot be used to prove either opinion."
-    },
-    {
-     "ref": "Gittin 73a",
-     "i": 13,
-     "he": "אֲמַר לֵיהּ רַב אַחָא מִדִּפְתִּי לְרָבִינָא: וּמִשּׁוּם דְּקַשְׁיָא רֵישָׁא אַסֵּיפָא – לָא מוֹתְבִינַן תְּיוּבְתָּא מִינַּהּ?",
-     "en": "<b>Rav Aḥa of Difti said to Ravina: And because</b> there is <b>a difficulty</b> presented by the contradiction between <b>the first clause</b> of the <i>baraita</i> <b>and the latter clause, can we no</b> longer <b>raise an objection from it?</b> Seemingly, the challenge raised by Ravina from the latter clause of the <i>baraita</i> is still valid."
-    },
-    {
-     "ref": "Gittin 73a",
-     "i": 14,
-     "he": "אֲמַר לֵיהּ: אִין, כֵּיוָן דְּקַשְׁיָא רֵישָׁא אַסֵּיפָא – לָא אִיתְּמַר בֵּי מִדְרְשָׁא, וּמְשַׁבַּשְׁתָּא הִיא; זִיל בָּתַר סְבָרָא.",
-     "en": "Ravina <b>said to him: Yes,</b> Rava was correct. <b>Since</b> there is <b>a difficulty</b> presented by the contradiction between <b>the first clause</b> of the <i>baraita</i> <b>and the latter clause,</b> this <i>baraita</i> <b>was</b> never <b>stated</b> in <b>the study hall and it is corrupted.</b> As it is not possible to rely on this <i>baraita</i> one must <b>follow reason,</b> and the most reasonable interpretation is that his condition would not include an uncommon and unavoidable accident."
     }
    ],
    "span": [
@@ -4079,8 +4046,8 @@
      "end": 14
     }
    ],
-   "words": 435,
-   "minutes": 3
+   "words": 221,
+   "minutes": 2
   },
   {
    "id": "gittin-73a-15-17",

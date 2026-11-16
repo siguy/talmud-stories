@@ -1,0 +1,74 @@
+{
+ "report": {
+  "kiddushin": {
+   "measurable": 41,
+   "A_starts_kept": 41,
+   "B_ends_kept": 40,
+   "C_exact": 39,
+   "C_left_alone": 39,
+   "D_extra": 3,
+   "D_removed": 0,
+   "B_cut_fine": 1,
+   "E_stories": 6,
+   "E_jeff_segments_before": 10,
+   "E_jeff_segments_after": 12,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 100.0
+  },
+  "gittin": {
+   "measurable": 76,
+   "A_starts_kept": 76,
+   "B_ends_kept": 75,
+   "C_exact": 63,
+   "C_left_alone": 63,
+   "D_extra": 20,
+   "D_removed": 6,
+   "B_cut_fine": 1,
+   "E_stories": 19,
+   "E_jeff_segments_before": 48,
+   "E_jeff_segments_after": 48,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 100.0
+  },
+  "yevamot": {
+   "measurable": 54,
+   "A_starts_kept": 54,
+   "B_ends_kept": 51,
+   "B_cut_fine": 3,
+   "C_exact": 43,
+   "C_left_alone": 43,
+   "D_extra": 23,
+   "D_removed": 4,
+   "E_stories": 6,
+   "E_jeff_segments_before": 10,
+   "E_jeff_segments_after": 10,
+   "narrative_lost": 0,
+   "narrative_lost_pct": 0.0,
+   "C_pct": 100.0
+  }
+ },
+ "cases": {
+  "E_past_his_end": [
+   {
+    "tractate": "kiddushin",
+    "key": "2005#6",
+    "card": "kiddushin-12a-14-15",
+    "jeff": [
+     301,
+     303
+    ],
+    "before": [
+     301,
+     302
+    ],
+    "after": [
+     301,
+     304
+    ]
+   }
+  ]
+ },
+ "unsorted_cut_ends": []
+}

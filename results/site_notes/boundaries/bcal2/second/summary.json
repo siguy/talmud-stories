@@ -1,0 +1,19 @@
+{
+ "read": 15,
+ "invalid": [],
+ "by_why": {
+  "random adjust": {
+   "agree": 3
+  },
+  "trim removes half or more": {
+   "agree": 5
+  },
+  "undoes an earlier extension": {
+   "agree": 5,
+   "disagree": 2
+  }
+ },
+ "random_adjust_disagree_pct": 0.0,
+ "gate": "apply all but the disagreed",
+ "keeps_not_complete": []
+}

@@ -302,7 +302,11 @@
    "start_segment": 4,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rabbi Zeira's closing remark that the old man's branch earned him the pillar of fire is the story's punchline and belongs with it."
+   },
    "reviewed": true,
    "summary": "Rabbi Yehuda bar Elai would dance before the bride with a myrtle branch, and Rav Shmuel bar Rav Yitzḥak would base his dance on three myrtle branches.",
    "segments": [
@@ -311,6 +315,12 @@
      "i": 4,
      "he": "אָמְרוּ עָלָיו עַל רַבִּי יְהוּדָה בַּר אִילְעַאי שֶׁהָיָה נוֹטֵל בַּד שֶׁל הֲדַס, וּמְרַקֵּד לִפְנֵי הַכַּלָּה, וְאוֹמֵר: ״כַּלָּה נָאָה וַחֲסוּדָה״. רַב שְׁמוּאֵל בַּר רַב יִצְחָק מְרַקֵּד אַתְּלָת. אָמַר רַבִּי זֵירָא: קָא מַכְסֵיף לַן סָבָא: כִּי נָח נַפְשֵׁיהּ, אִיפְּסִיק עַמּוּדָא דְנוּרָא בֵּין דִּידֵיהּ לְכוּלֵּי עָלְמָא, וּגְמִירִי דְּלָא אִפְּסִיק עַמּוּדָא דְנוּרָא אֶלָּא אִי לְחַד בְּדָרָא, אִי לִתְרֵי בְּדָרָא.",
      "en": "With regard to the mitzva of bringing joy to the bride and groom, the Gemara relates: The Sages <b>said about Rabbi Yehuda bar Elai that he would take a myrtle branch and dance before the bride, and say: A fair and attractive bride. Rav Shmuel bar Rav Yitzḥak would</b> base his <b>dance on three</b> myrtle branches that he would juggle. <b>Rabbi Zeira said: The old man is humiliating us,</b> as through his conduct he is demeaning the Torah and the Torah scholars. It is further related: <b>When</b> Rav Shmuel bar Rav Yitzḥak <b>died, a pillar of fire demarcated between him</b> and <b>everyone</b> else, <b>and we learn</b> through tradition <b>that a pillar of fire demarcates only for either one</b> person <b>in a generation or for two</b> people <b>in a generation.</b>"
+    },
+    {
+     "ref": "Ketubot 17a",
+     "i": 5,
+     "he": "אָמַר רַבִּי זֵירָא: אַהַנְיָיה לֵיהּ שׁוֹטִיתֵיהּ לְסָבָא. וְאָמְרִי לַהּ: שְׁטוּתֵיהּ לְסָבָא. וְאָמְרִי לַהּ: שִׁיטְתֵיהּ לְסָבָא.",
+     "en": "<b>Rabbi Zeira said: His branch [<i>shotitei</i>] was effective for the old man,</b> as it is due to this mitzva that he fulfilled so enthusiastically that he was privileged to receive this great reward. <b>And some say</b> that Rabbi Zeira said: <b>His nonsense [<i>shetutei</i>]</b> was effective <b>for the old man. And some say</b> that he said: <b>His method [<i>shittatei</i>]</b> was effective <b>for the old man.</b>"
     }
    ],
    "span": [
@@ -320,8 +330,8 @@
      "end": 4
     }
    ],
-   "words": 129,
-   "minutes": 1
+   "words": 199,
+   "minutes": 2
   },
   {
    "id": "ketubot-17a-6-6",
@@ -838,7 +848,11 @@
    "start_segment": 2,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Abaye's own reflection on his failed chase after the tenant farmer is the story's ending and should be included."
+   },
    "reviewed": true,
    "summary": "Abaye's tenant farmer asks him about betrothal, and Abaye then asks Rav Yosef, who corrects Abaye's understanding of the law.",
    "segments": [
@@ -853,6 +867,12 @@
      "i": 3,
      "he": "כִּי אֲתָא לְקַמֵּיהּ דְּרַב יוֹסֵף, אֲמַר לֵיהּ: רַב וּשְׁמוּאֵל דְּאָמְרִי תַּרְוַיְיהוּ: צְרִיכָה לְהַמְתִּין עֶשְׂרִים וְאַרְבָּעָה חֹדֶשׁ, חוּץ מִיּוֹם שֶׁנּוֹלַד בּוֹ וְחוּץ מִיּוֹם שֶׁנִּתְאָרְסָה בּוֹ. רְהַט בָּתְרֵיהּ תְּלָתָא פַּרְסֵי וְאָמְרִי לַהּ פַּרְסָא בְּחָלָא, וְלָא אַדְרְכֵיהּ.",
      "en": "<b>When</b> Abaye <b>came before Rav Yosef</b> and told him of the incident, Rav Yosef <b>said to him</b> in response: <b>Rav and Shmuel both say: She must wait twenty-four months</b> before even becoming betrothed, <b>excluding the day that</b> the child <b>was born and excluding the day she became betrothed.</b> When Abaye heard this, <b>he ran three parasangs</b> after his tenant farmer, <b>and some say</b> that he ran <b>one parasang [<i>parsa</i>] through sand.</b> He wanted to inform him that he should not rely on the leniency, but rather he should act in accordance with Rav and Shmuel, who prohibited the betrothal, <b>but he did not</b> succeed in <b>catching up to him.</b>"
+    },
+    {
+     "ref": "Ketubot 60b",
+     "i": 4,
+     "he": "אָמַר אַבָּיֵי: הַאי מִילְּתָא דַאֲמוּר רַבָּנַן אֲפִילּוּ בֵּיעֲתָא בְּכוּתָּחָא לָא לִישְׁרֵי אִינִישׁ בִּמְקוֹם רַבֵּיהּ, לָא מִשּׁוּם דְּמִיחֲזֵי כְּאַפְקִירוּתָא, אֶלָּא מִשּׁוּם דְּלָא מִסְתַּיְּיעָא מִילְּתָא לְמֵימְרָא. דְּהָא אֲנָא הֲוָה גְּמִירְנָא לֵיהּ לְהָא דְּרַב וּשְׁמוּאֵל, אֲפִילּוּ הָכִי לָא מִסְתַּיְּיעָא לִי מִילְּתָא לְמֵימַר.",
+     "en": "<b>Abaye said</b> that he learned from this situation <b>that which the Sages said: A person should not permit even</b> eating <b>an egg in <i>kutaḥ</i>,</b> a dish made with milk, <b>in his teacher’s vicinity.</b> This is a very simple ruling, as an egg is not meat and may unquestionably be eaten with milk. There are no stringencies that apply to this case, but nevertheless one should not rule even on such a <i>halakha</i> in his teacher’s vicinity. Abaye explained that this is <b>not because it appears disrespectful</b> to teach <i>halakha</i> in one’s teacher’s vicinity, as this is a simple matter that does not require great knowledge of <i>halakha</i>, <b>rather because he will not be successful in saying the matter</b> correctly. An illustration of this principle is what just happened, <b>since I had learned this</b> <i>halakha</i> <b>of Rav and Shmuel,</b> and <b>even so I was unsuccessful in saying it</b> correctly, as I ruled in the vicinity of my teacher, Rav Yosef."
     }
    ],
    "span": [
@@ -862,8 +882,8 @@
      "end": 3
     }
    ],
-   "words": 273,
-   "minutes": 2
+   "words": 434,
+   "minutes": 3
   },
   {
    "id": "ketubot-61a-14-14",
@@ -2622,7 +2642,13 @@
    "start_segment": 10,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The story ends with Rav Yosef's reply in [8]; [9] is the Gemara's own question and answer about a remedy, not part of the incident.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": true,
    "summary": "Two men bring conflicting deeds to Rav Yosef, who rules in favor of the one with a specific date, leading the loser to request a formal document of the ruling.",
    "segments": [
@@ -2649,12 +2675,6 @@
      "i": 0,
      "he": "טִירְפָא מֵאִיָּיר וְאֵילָךְ. אֲמַר לֵיהּ: יָכְלִי לְמֵימַר לָךְ: אַתְּ בַּר חַד בְּנִיסָן אַתְּ.",
      "en": "a document of <b>authorization to repossess</b> liened property of the seller from anyone who purchased property from him <b>from</b> the first of the month of <b>Iyyar and on.</b> Rav Yosef <b>said to him:</b> A purchaser <b>can say to you: Your</b> deed is from <b>the first of Nisan,</b> so that the field that you purchased is rightfully yours and it is the other man, whose deed was dated on the fifth of Nisan, who took it illegally. Therefore, you should take possession of that field rather than repossessing other property."
-    },
-    {
-     "ref": "Ketubot 95a",
-     "i": 1,
-     "he": "מַאי תַּקַּנְתֵּיהּ? נִכְתְּבוּ הַרְשָׁאָה לַהֲדָדֵי.",
-     "en": "The Gemara asks: If so, <b>what is his remedy?</b> The Gemara answers: <b>Let</b> the deed holders <b>write</b> a document of <b>authorization to each other.</b> If the individual whose deed was written on the fifth of Nisan authorizes the other individual to repossess property on his behalf, then he will be able to repossess property sold after the end of Nisan, because regardless of when his deed was written and whose deed was written first, he now has the right to repossess liened property."
     }
    ],
    "span": [
@@ -2669,8 +2689,8 @@
      "end": 1
     }
    ],
-   "words": 364,
-   "minutes": 3
+   "words": 281,
+   "minutes": 2
   },
   {
    "id": "ketubot-98a-6-7",
@@ -2928,34 +2948,21 @@
    "tractate": "ketubot",
    "ref": "Ketubot 103b",
    "refs": [
-    "Ketubot 103b",
     "Ketubot 104a"
    ],
    "start_segment": 24,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "5-7 are the Gemara's question and answer about where Rabbi lay ill; the story of his death runs from the fast in 8 to the Divine Voice in 12.",
+    "start_trim": 3,
+    "end_trim": 0
+   },
    "reviewed": true,
    "summary": "When Rabbi Yehuda HaNasi became ill, he was moved from Beit She'arim to the higher altitude of Tzippori. The Gemara recounts the dramatic events surrounding the death of Rabbi Yehuda HaNasi, including his maidservant's intervention to allow his soul to depart and Bar Kappara's announcement of his passing.",
    "segments": [
-    {
-     "ref": "Ketubot 103b",
-     "i": 24,
-     "he": "תַּנְיָא: רַבִּי מוּטָל בְּצִיפּוֹרִי, וּמָקוֹם מוּכָן לוֹ בְּבֵית שְׁעָרִים. וְהָתַנְיָא: ״צֶדֶק צֶדֶק תִּרְדֹּף״ — הַלֵּךְ אַחַר רַבִּי לְבֵית שְׁעָרִים!",
-     "en": "<b>It is taught</b> in a <i>baraita</i>: <b>Rabbi</b> Yehuda HaNasi was <b>lying</b> ill in <b>Tzippori and a</b> burial <b>site was ready for him in Beit She’arim.</b> The Gemara asks: <b>But isn’t it taught</b> in a <i>baraita</i>: <b>“Justice, justice shall you follow”</b> (Deuteronomy 16:20); <b>follow Rabbi</b> Yehuda HaNasi <b>to Beit She’arim,</b> i.e., one should seek to have his case adjudicated by Rabbi Yehuda HaNasi’s court in Beit She’arim. This indicates that Beit She’arim, not Tzippori, was Rabbi Yehuda HaNasi’s place of residence, and therefore he must have been lying ill in Beit She’arim."
-    },
-    {
-     "ref": "Ketubot 103b",
-     "i": 25,
-     "he": "רַבִּי בְּבֵית שְׁעָרִים הֲוָה, אֶלָּא כֵּיוָן דַּחֲלַשׁ אַמְטְיוּהִי לְצִיפּוֹרִי,",
-     "en": "The Gemara answers: <b>Rabbi</b> Yehuda HaNasi <b>was in Beit She’arim, but when he became ill they transferred him to Tzippori,</b>"
-    },
-    {
-     "ref": "Ketubot 104a",
-     "i": 0,
-     "he": "דְּמִדַּלְיָא וּבְסִים אַוֵּירָא.",
-     "en": "<b>which is</b> situated at a <b>high</b> altitude <b>and</b> whose <b>air is scented.</b>"
-    },
     {
      "ref": "Ketubot 104a",
      "i": 1,
@@ -2999,8 +3006,8 @@
      "end": 5
     }
    ],
-   "words": 551,
-   "minutes": 4
+   "words": 426,
+   "minutes": 3
   },
   {
    "id": "ketubot-104b-7-15",
@@ -3012,7 +3019,11 @@
    "start_segment": 7,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rava's reply to the widow begun in 13 is cut off mid-thought and finishes in 14, which closes the case; 15 is the chapter's end."
+   },
    "reviewed": true,
    "summary": "Rav Ḥiyya Arikha's sister-in-law sues him for her marriage contract after 25 years of support, leading to a series of court rulings by Rabba bar Sheila and Rava regarding property seizure and scribal errors.",
    "segments": [
@@ -3069,6 +3080,12 @@
      "i": 15,
      "he": "אֲמַר לַהּ רָבָא: בְּהָא לֵיכָּא לְמֵימַר טָעוּת סוֹפֵר הוּא, דִּבְהָא אֲפִילּוּ רַבָּה בַּר שֵׁילָא טָעֵי. מֵעִיקָּרָא הוּא סְבַר הָנֵי וְהָנֵי דִּידֵיהּ, מָה לִי מֵהָנֵי, מָה לִי מֵהָנֵי,",
      "en": "<b>Rava said to her: In this</b> case, <b>it cannot be said</b> that the clause was meant to be included in the document and <b>it</b> was left out due to a <b>scribal error, because in this</b> case <b>even Rabba bar Sheila erred</b> and thought that the clause should not be included. <b>Initially,</b> Rabba bar Sheila <b>thought</b> as follows: Since <b>these</b> properties that always belonged to Rav Ḥiyya Arikha <b>and those</b> properties that had belonged to his deceased brother <b>are</b> all <b>his,</b> i.e., Rav Ḥiyya Arikha’s, as he inherited his brother’s property, <b>what</b> difference does it make <b>to me</b> if she collects <b>from these</b> properties, and <b>what</b> difference does it make <b>to me</b> if she collects <b>from those</b> properties? Although only the property of her deceased husband is liened for the payment of her marriage contract, it should not really matter whether she collects from this property or from other property belonging to the heir."
+    },
+    {
+     "ref": "Ketubot 104b",
+     "i": 16,
+     "he": "וְלָא הִיא. זִימְנִין דְּאָזְלָה וּמַשְׁבְּחָה לְהוּ וּדְבַעְלַהּ מַכְסְפִי, וְאָמַר לַהּ: שְׁקוּל דִּידָךְ וְהַב לִי דִּידִי, וְאָתֵי לְאַפּוֹקֵי לַעַז עַל בֵּי דִינָא.",
+     "en": "Rava continues: <b>But that is not so. Sometimes</b> the widow <b>will go and improve</b> the property of the heir, thinking that she will receive her payment from it, <b>and</b> the property <b>of her</b> deceased <b>husband</b> will <b>depreciate</b> due to neglect on the part of the heir, who knows that it is this property that is liened to ensure payment of the widow’s marriage contract. <b>And</b> eventually, the heir will <b>say to her: Take your</b> property, i.e., the property that belonged to your husband, <b>and give me my</b> property. <b>And</b> people <b>will come to cast aspersion on the court</b> as not being concerned for the welfare of the woman, who will be left with the depreciated property. Consequently, the document of authorization to seize property must specify exactly which property belonged to the widow’s deceased husband, which she is entitled to collect. Since Rabba bar Sheila erred and did not write this specification, the document of authorization he wrote was useless."
     }
    ],
    "span": [
@@ -3078,8 +3095,8 @@
      "end": 15
     }
    ],
-   "words": 837,
-   "minutes": 6
+   "words": 997,
+   "minutes": 7
   },
   {
    "id": "ketubot-105b-10-11",
