@@ -58,20 +58,21 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `remove-borderline` | `talmud-stories` | **2 FILES** |
-| `signup-flow` | `berakhot-shas-local-run-a26611` | clean |
-| `awesome-noether-c0b2e3` | `jeff-comms-review-92c526` | clean |
-| `narrate-test-a16cdf` | `narrate-test-a16cdf` | clean |
-| `(detached)` | `recent-work-plans-d0818b` | clean |
-| `priceless-volhard-0e79cd` | `sessions-cleanup-consolidate-fc92b3` | **8 FILES** |
-| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | clean |
-| `post-shas-run-fixes` | `shas-run` | **1 FILES** |
-| `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
-| `signup-e-email` | `signup-e-email` | clean |
-| `stories-background-info-a2bcf3` | `stories-background-info-a2bcf3` | clean |
+| `remove-borderline` | `talmud-stories` | **1770 FILES** |
+| `signup-c` | `wt` | **36 FILES** |
+| `signup-flow` | `berakhot-shas-local-run-a26611` | **544 FILES** |
+| `(detached)` | `jeff-comms-review-92c526` | **13 FILES** |
+| `narrate-test-a16cdf` | `narrate-test-a16cdf` | **889 FILES** |
+| `(detached)` | `recent-work-plans-d0818b` | **1596 FILES** |
+| `priceless-volhard-0e79cd` | `sessions-cleanup-consolidate-fc92b3` | clean |
+| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | **1035 FILES** |
+| `post-shas-run-fixes` | `shas-run` | **1245 FILES** |
+| `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **1595 FILES** |
+| `signup-e-email` | `signup-e-email` | **900 FILES** |
+| `stories-background-info-a2bcf3` | `stories-background-info-a2bcf3` | **513 FILES** |
 <!-- board-live:end -->
 
-## Done — 68 items, never deleted
+## Done — 69 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -142,5 +143,6 @@ staleness check: it changes whenever anyone edits anything.*
 | [Septimus site — biblical stories out of scope, Jeff's 2026-11-12 verdicts applied](work/done/2026-11-13-septimus-biblical-out-and-jeff-verdicts.md) | publication | — |
 | [Septimus site card text leak, Sanhedrin 52b:4 as a regular story, and the G6 judge-prompt re-pin](work/done/2026-11-13-site-card-text-and-g6-pin.md) | publication | — |
 | [The narrate test — can writing a summary tell a story from a non-story, and find its borders?](work/done/2026-11-14-narrate-test.md) | classification, boundaries | [2026-11-14-narrate-test.md](docs/findings/2026-11-14-narrate-test.md) |
+| [Review the boundaries of every story on the Septimus site (display only)](work/done/2026-11-15-full-boundary-review.md) | boundaries, publication | [2026-11-16-full-boundary-review.md](docs/findings/2026-11-16-full-boundary-review.md) |
 | [Background notes (and a "why it's here" line) for every story on the Septimus site](work/done/2026-11-15-shas-background-notes.md) | publication | — |
-<!-- board-checksum: f2a2c7b69654ba21 -->
+<!-- board-checksum: 5e9c554b195673d1 -->
