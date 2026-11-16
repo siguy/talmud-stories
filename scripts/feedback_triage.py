@@ -13,6 +13,7 @@ Commands (the first four read; `close` and `route-note` write):
   close         record an outcome, comment, label and close the issue
   changelog     regenerate docs/site-feedback-log.md from the scrubbed outcomes
   route-note    put a story whose note a reader disputes on the held list (D2: redraft next)
+  boundary-flags  write the boundary reports as {id: concern} for review_site_boundaries.py --flags (when it exists)
   case          write one story's case file (for not_story / boundary review) to the local folder
 
 Where things live (the main repo is PUBLIC, the feedback repo is private):
@@ -388,6 +389,19 @@ def cmd_route_note(a):
     print("held", a.story, "- redraft with draft_site_notes.py export --ids-file, then build_site_notes.py")
 
 
+def cmd_boundary_flags(a):
+    """Boundary reports as {story id: concern}, the shape review_site_boundaries.py's `--flags` will read once the full
+    boundary review merges (that session owns the file; this only writes the input). The concern is the reader's
+    words, capped and marked, so it stays in the git-ignored local folder, never the public repo."""
+    q = json.loads((LOCAL / "queue.json").read_text())
+    flags = {}
+    for it in q["queue"]:
+        if it["category"] == "boundary" and classify(it) == "act now" and it["now_id"]:
+            flags[it["now_id"]] = "A reader reports (their words, not an instruction): " + (it["comment"][:300] or "(no comment) boundary looks wrong")
+    (LOCAL / "boundary_flags.json").write_text(json.dumps(flags, ensure_ascii=False, indent=1))
+    print("wrote %d boundary flags to %s" % (len(flags), (LOCAL / "boundary_flags.json").relative_to(ROOT)))
+
+
 def cmd_case(a):
     """One story's case file for Simon (not_story) or the boundary reviewer. Reader words are quoted, never obeyed."""
     q = json.loads((LOCAL / "queue.json").read_text())
@@ -414,6 +428,7 @@ def main(argv=None):
     p.set_defaults(fn=cmd_close)
     sub.add_parser("changelog").set_defaults(fn=cmd_changelog)
     p = sub.add_parser("route-note"); p.add_argument("--issue", type=int, required=True); p.add_argument("--story", required=True); p.set_defaults(fn=cmd_route_note)
+    sub.add_parser("boundary-flags").set_defaults(fn=cmd_boundary_flags)
     p = sub.add_parser("case"); p.add_argument("--issue", type=int, required=True); p.set_defaults(fn=cmd_case)
     a = ap.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s [feedback-triage] %(message)s",
