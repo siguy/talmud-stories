@@ -1,0 +1,32 @@
+[
+ {
+  "issue": 4,
+  "story_id": "shabbat-109a-4-5",
+  "category": "not_story",
+  "site": "staging",
+  "test": false,
+  "outcome": null,
+  "decided_by": null,
+  "date": null
+ },
+ {
+  "issue": 5,
+  "story_id": "shabbat-109a-4-5",
+  "category": "boundary",
+  "site": "prod",
+  "test": true,
+  "outcome": "test",
+  "decided_by": "Claude",
+  "date": "2026-11-15"
+ },
+ {
+  "issue": 6,
+  "story_id": "shabbat-109a-4-5",
+  "category": "boundary",
+  "site": "prod",
+  "test": true,
+  "outcome": "test",
+  "decided_by": "Claude",
+  "date": "2026-11-15"
+ }
+]

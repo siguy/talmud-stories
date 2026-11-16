@@ -37,3 +37,7 @@ results/v11/triage_rules/
 # `scripts/draft_site_notes.py export`. keys/, answers/ and parts/ ARE committed: answers cost agent time.
 results/site_notes/*/batches/
 results/site_notes/boundaries/*/batches/
+
+# Reader feedback: quotes readers, so never committed (the full ledger lives in the private feedback repo)
+results/site_feedback/_local/
+results/site_feedback/_private/
