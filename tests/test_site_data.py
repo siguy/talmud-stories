@@ -98,7 +98,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 21778, "kiddushin": 11456, "gittin": 25604, "yevamot": 18627, "berakhot": 24851}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept; second twin-pass pass: yevamot -1, berakhot -2; 2026-11-15 boundary review (legal argument trimmed, cut-off stories finished, split stories merged; work/done/2026-11-15-shas-background-notes.md): ketubot -1902, kiddushin -405, gittin +662, yevamot +572, berakhot -68; then gittin -207 (two nested duplicates removed, 14a finished)
+SITE_WORDS = {"ketubot": 21961, "kiddushin": 11493, "gittin": 25109, "yevamot": 17531, "berakhot": 24943}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept; second twin-pass pass: yevamot -1, berakhot -2; 2026-11-15 boundary review (legal argument trimmed, cut-off stories finished, split stories merged; work/done/2026-11-15-shas-background-notes.md): ketubot -1902, kiddushin -405, gittin +662, yevamot +572, berakhot -68; then gittin -207 (two nested duplicates removed, 14a finished); 2026-11-16 full boundary review (work/2026-11-15-full-boundary-review.md, runs bcal1/bcal2/bfull1): ketubot +183, kiddushin +37, gittin -495, yevamot -1096, berakhot +92
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -610,3 +610,29 @@ def test_signup_reads_fields_that_exist_with_the_right_types():
             assert isinstance(s["words"], int) and s["words"] > 0, s["id"]
     redirects = json.loads((ROOT / "site/data/redirects.json").read_text())
     assert isinstance(redirects, dict) and all(v is None or isinstance(v, str) for v in redirects.values())
+
+
+def test_no_segment_is_shown_in_two_cards():
+    """Full boundary review (2026-11-16): a trim, extension or merge may never make two cards show one segment.
+    review_site_boundaries.py refuses such a change against every card of the tractate; this checks the result."""
+    from collections import Counter
+    for r in json.loads((ROOT / "site/data/index.json").read_text())["tractates"]:
+        stories = json.loads((ROOT / f"site/data/{r['tractate']}.json").read_text())["stories"]
+        seen = Counter((g["ref"], g["i"]) for s in stories for g in s["segments"])
+        assert not [k for k, n in seen.items() if n > 1], r["tractate"]
+
+
+def test_every_story_a_boundary_review_changed_has_a_note_drafted_after_it():
+    """`apply` marks a changed story's note `drafted: boundary-changed`; only a redraft clears it. A note still carrying
+    that mark describes boundaries the site no longer shows (plan 2026-11-15, step 6)."""
+    site = {s["id"] for r in json.loads((ROOT / "site/data/index.json").read_text())["tractates"]
+            for s in json.loads((ROOT / f"site/data/{r['tractate']}.json").read_text())["stories"]}
+    stale = []
+    for run in sorted((ROOT / "results/site_notes/boundaries").glob("*/applied.json")):
+        changed = set((run.parent / "changed.txt").read_text().split()) & site
+        for i in changed:
+            t = i.rsplit("-", 3)[0]
+            n = json.loads((ROOT / f"site/data/notes/{t}.json").read_text())["notes"].get(i, {})
+            if n.get("drafted") == "boundary-changed":
+                stale.append(i)
+    assert not stale, stale

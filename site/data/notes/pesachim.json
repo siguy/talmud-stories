@@ -144,45 +144,29 @@
    "approved": true
   },
   "pesachim-13a-10-14": {
-   "note": "Someone left a saddlebag full of leavened bread with Yohanan Hakuka'a. Mice bored a hole in it and the bread was spilling out. On the eve of Passover he came to Rabbi Yehuda HaNasi, who told him at the first hour to wait, and again at the second, third and fourth. At the fifth hour he told him to go and sell it in the market. Rav Yosef and Abaye then argue whether the sale was meant for gentiles or for Jews, and Rav Adda bar Mattana reminds Rav Yosef that he had once said explicitly: sell it to gentiles.",
-   "why": "The Gemara is asking until what hour leaven may be eaten on Passover eve. The story is brought to show that Rabbi Yehuda HaNasi also held, like Rabbi Yehuda, that Jews may no longer eat it in the fifth hour.",
+   "note": "A man left a saddlebag full of leavened bread in the care of Yohanan Hakuka'a. Mice gnawed a hole in it, and the bread began spilling out. On the day before Passover, Yohanan came to Rabbi to ask what to do. In the first, second, third and fourth hours Rabbi told him to wait; in the fifth hour he told him, Go and sell it in the market.",
+   "why": "The Gemara claims Rabbi agrees with the ruling that follows Rabbi Yehuda on how late on Passover eve leaven is allowed. Afterward it debates whether Rabbi meant selling to gentiles or to a Jew, and why Yohanan could not just keep the bread himself.",
    "people": [
     {
      "name": "Yohanan Hakuka'a",
-     "about": "The man holding the deposited saddlebag of leaven who asks what to do."
+     "about": "The man entrusted with the saddlebag of leavened bread, who asked Rabbi what to do."
     },
     {
      "name": "Rabbi",
-     "about": "Rabbi Yehuda HaNasi, who tells him to wait hour by hour, then to sell it."
-    },
-    {
-     "name": "Rav Yosef",
-     "about": "Sage who first suggests the sale was to Jews."
-    },
-    {
-     "name": "Abaye",
-     "about": "Sage who asks why, if so, the man did not keep the leaven himself."
-    },
-    {
-     "name": "Rav Adda bar Mattana",
-     "about": "Rav Yosef's student, who reminds him he once said it was to be sold to gentiles."
+     "about": "Rabbi Yehuda HaNasi, who told him to wait hour by hour and then to sell it."
     }
    ],
    "terms": [
     {
-     "term": "leaven",
-     "meaning": "Bread or dough that has risen. Jews may not eat or own it on Passover, and from a set hour on the day before, it must be gone."
+     "term": "leavened bread",
+     "meaning": "Bread or food that has risen, called hametz. It may not be eaten or owned on Passover and must be gone by midday on the day before."
     },
     {
-     "term": "first hour, fifth hour",
-     "meaning": "The daylight hours counted from morning. The Sages disagree whether leaven may still be eaten in the fifth hour before it becomes forbidden in the sixth."
-    },
-    {
-     "term": "charity collectors",
-     "meaning": "Officials who gather money or food for the poor. The baraita says they sell to others, not to themselves, so no one suspects them."
+     "term": "the fifth hour",
+     "meaning": "Hours are counted from morning, so the fifth hour is late morning, shortly before leaven becomes fully forbidden at the sixth hour."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "pesachim-22b-10-10": {
@@ -1278,63 +1262,87 @@
    "approved": true
   },
   "pesachim-103b-0-0": {
-   "note": "Rav Beruna and Rav Hananel, students of Rav, were eating together while Rav Yeiva the Elder served them. They asked him for a cup so they could recite Grace after Meals, then changed their minds and asked for a cup to drink. He told them that Rav had said that once they asked for the cup for Grace, they were forbidden to drink, because they had turned their minds away from drinking.",
-   "why": "Rava told this story to explain to his guest Rav Ya'akov bar Abba why he said the wine blessing again over the cup of Grace after Meals: like Rav's students, he held that getting ready for Grace ends the earlier blessing on wine.",
+   "note": "Rav Ya'akov bar Abba visited Rava's house and saw him say the blessing over wine on the first cup, and then say it again over the cup of Grace after Meals. He asked why, since Rava had already blessed once. Rava said that was their practice at the Exilarch's house. Rav Ya'akov answered that there they never knew whether another cup would come, but here the cup was right in front of them. Rava said he followed Rav's students: Rav Beruna and Rav Hananel were eating, served by Rav Yeiva the Elder. They asked for a cup to say Grace, then changed their minds and asked for one to drink. Rav Yeiva told them that Rav had said that once they asked for the Grace cup, they could not drink without a new blessing, since they had turned their minds away from drinking.",
+   "why": "The Gemara has been discussing the order of blessings at a meal. After the story it brings three Sages with three different practices about wine blessings, and Rav Ashi rules against Rav's students.",
    "people": [
     {
+     "name": "Rav Ya'akov bar Abba",
+     "about": "A visitor at Rava's house who questioned his second blessing over wine."
+    },
+    {
+     "name": "Rava",
+     "about": "The host, who said the wine blessing twice and defended the practice."
+    },
+    {
      "name": "Rav Beruna",
-     "about": "One of Rav's students at the meal."
+     "about": "One of Rav's students in the story Rava tells."
     },
     {
      "name": "Rav Hananel",
-     "about": "One of Rav's students at the meal."
+     "about": "One of Rav's students, eating with Rav Beruna."
     },
     {
      "name": "Rav Yeiva the Elder",
-     "about": "Serves the students and tells them what Rav said."
+     "about": "The Sage who served the two students and told them Rav's ruling."
+    }
+   ],
+   "terms": [
+    {
+     "term": "Who creates the fruit of the vine",
+     "meaning": "The closing words of the blessing said before drinking wine."
     },
     {
-     "name": "Rav",
-     "about": "The teacher whose ruling Rav Yeiva the Elder reports."
+     "term": "Grace after Meals",
+     "meaning": "The blessings said after eating a meal with bread, often recited over a cup of wine."
+    },
+    {
+     "term": "Exilarch",
+     "meaning": "The official head of the Jewish community in Babylonia; Sages often dined at his house."
+    }
+   ],
+   "drafted": "bfull1notes",
+   "approved": true
+  },
+  "pesachim-103b-1-2": {
+   "note": "Ameimar, Mar Zutra and Rav Ashi were eating a meal together, with Rav Aḥa, son of Rava, serving them. Ameimar said the blessing over wine before every cup, Mar Zutra only over the first cup and the cup after Grace after Meals, and Rav Ashi only over the first cup. When Rav Aḥa asked whose practice to follow, Ameimar said he had kept changing his mind about drinking more; Mar Zutra said he followed the students of Rav; Rav Ashi said the law is not like the students of Rav, pointing to Rav's own ruling on the order of blessings when a Festival falls after Shabbat.",
+   "why": "Rava has just defended saying a second blessing on the cup after Grace by citing the students of Rav, who held that preparing to say Grace ends one's intention to drink. The three Sages here split over that very principle; the Gemara then rejects Rav Ashi's proof.",
+   "people": [
+    {
+     "name": "Ameimar",
+     "about": "One of three Sages at the meal; he blessed every cup because each time he had meant it to be his last."
+    },
+    {
+     "name": "Mar Zutra",
+     "about": "Dined with Ameimar and Rav Ashi; he followed the students of Rav and blessed the first and last cups."
+    },
+    {
+     "name": "Rav Ashi",
+     "about": "The third Sage at the meal; he blessed only the first cup and argued the law is not like the students of Rav."
+    },
+    {
+     "name": "Rav Aḥa, son of Rava",
+     "about": "Served the three Sages at the meal and asked them whose practice to follow."
     }
    ],
    "terms": [
     {
      "term": "Grace after Meals",
-     "meaning": "The blessings said after eating a meal with bread, sometimes over a cup of wine."
-    }
-   ],
-   "drafted": "shas1",
-   "approved": true
-  },
-  "pesachim-103b-1-2": {
-   "note": "Ameimar, Mar Zutra and Rav Ashi were eating together while Rav Aha, son of Rava, served them. Ameimar said the wine blessing over every cup, Mar Zutra over the first cup and the last, and Rav Ashi over the first cup only. Rav Aha asked them whose practice he should follow. Ameimar said he kept changing his mind, meaning each cup was meant to be his last, and Mar Zutra said he followed the students of Rav. Rav Ashi's reply comes in the discussion that follows.",
-   "why": "Just before this, Rava used a ruling from Rav's students to explain why he blessed the wine again after Grace after Meals. Here three later Sages each do it differently, and Mar Zutra names Rav's students as his source.",
-   "people": [
-    {
-     "name": "Ameimar",
-     "about": "Blesses every cup, because each time he meant it to be his last."
+     "meaning": "The blessings said after eating a meal with bread, often recited over a cup of wine."
     },
     {
-     "name": "Mar Zutra",
-     "about": "Blesses the first and last cups, following the students of Rav."
+     "term": "kiddush",
+     "meaning": "The blessing that sanctifies Shabbat or a Festival at its start, said over wine."
     },
     {
-     "name": "Rav Ashi",
-     "about": "Blesses only the first cup."
+     "term": "havdala",
+     "meaning": "The blessing at the end of Shabbat or a Festival that marks the separation between holy time and ordinary time."
     },
     {
-     "name": "Rav Aha, son of Rava",
-     "about": "Serves the three Sages and asks whose practice to follow."
+     "term": "halakha",
+     "meaning": "Jewish law; the practical ruling that is followed."
     }
    ],
-   "terms": [
-    {
-     "term": "students of Rav",
-     "meaning": "Rav's disciples, who held that once you prepare for Grace after Meals, you must bless any further wine again."
-    }
-   ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "pesachim-103b-5-7": {

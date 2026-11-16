@@ -2,30 +2,30 @@
  "tractate": "niddah",
  "notes": {
   "niddah-6a-11-12": {
-   "note": "Rabbi Yehuda HaNasi once ruled in a woman's case according to Rabbi Eliezer, who held that a woman who had gone three expected cycles without bleeding is impure only from the moment she sees blood, not retroactively. Afterward, when he remembered that many Sages, not just one, disagreed with Rabbi Eliezer, he said: Rabbi Eliezer is worthy to rely upon in exigent circumstances.",
-   "why": "Rav Huna holds that a menstruating woman's retroactive impurity affects only sacrificial food, not teruma. The Gemara argues that since there was no sacrificial food in Rabbi Yehuda HaNasi's day, this case must have involved teruma, which challenges Rav Huna.",
+   "note": "Rabbi Yehuda HaNasi once decided a real case following the view of Rabbi Eliezer: a woman who has gone three expected cycles without bleeding is not made impure retroactively when she bleeds again. Afterward he remembered that other Sages disagreed with Rabbi Eliezer, and he said: Rabbi Eliezer is worthy to rely upon in exigent circumstances. The Gemara then asks what it was that he remembered.",
+   "why": "The Gemara is testing Rav Huna's view that a menstruating woman's retroactive impurity does not affect teruma. This case, which must have involved teruma, implies the majority view makes teruma impure retroactively, contradicting Rav Huna.",
    "people": [
     {
      "name": "Rabbi Yehuda HaNasi",
-     "about": "Rules according to Rabbi Eliezer and then defends relying on him in a time of need."
+     "about": "Called simply Rabbi; ruled in this case according to Rabbi Eliezer and then reconsidered."
     },
     {
      "name": "Rabbi Eliezer",
-     "about": "The Sage whose opinion, disputed by many colleagues, is followed in this case."
+     "about": "The Sage whose lenient view Rabbi Yehuda HaNasi followed; other Sages disagreed with him."
     }
    ],
    "terms": [
     {
      "term": "exigent circumstances",
-     "meaning": "A situation of pressing need or hardship, when a Sage may rely on a minority opinion."
+     "meaning": "A situation of pressing need, when a minority opinion may be relied on even though the law normally follows the majority."
     },
     {
      "term": "retroactive impurity",
-     "meaning": "The rule that a woman who finds menstrual blood is treated as impure for a period before she found it, so things she touched then become impure too."
+     "meaning": "The rule that a woman who finds menstrual blood may be treated as having been ritually impure for a period before she noticed it, affecting pure foods she touched in that time."
     }
    ],
-   "drafted": "shas1",
-   "approved": true
+   "drafted": "bfull1notes",
+   "approved": false
   },
   "niddah-6b-4-4": {
    "note": "Rabban Gamliel's maidservant was baking loaves of teruma, and between each loaf she washed her hand and examined herself. After the last one she found she was impure from menstrual blood, and she asked Rabban Gamliel. He told her all the loaves were impure. She said: My teacher, did I not examine myself between each one? He answered: If so, this last one is impure and all the rest are pure.",
@@ -343,21 +343,25 @@
    "approved": true
   },
   "niddah-20b-19-20": {
-   "note": "Rabbi Yehuda HaNasi examined a woman's blood at night and deemed it impure. He looked at it again by day and deemed it pure. He waited an hour and deemed it impure again, then said: Woe is me, perhaps I erred! The Gemara objects that he certainly erred, since a baraita teaches that an authority may not reason that the blood would have been impure had it still been moist.",
-   "why": "The Gemara retells the incident so it fits that rule: a judge has only what his eyes see, so each ruling followed what he saw at the time, and the blood was impure but slowly fading. It then turns to how Sages examined blood by light and shade.",
+   "note": "Rabbi Yehuda HaNasi examined a woman's blood at night and declared it impure. Looking at it again by day, he declared it pure. He waited an hour and declared it impure again. Then he said: Woe is me! Perhaps I erred.",
+   "why": "The Gemara is discussing how Sages examined blood and whether one may rule on it based on how it would have looked earlier; it questions his worry, citing a rule that one may not say the blood would have been impure had it been moist, and then rereads the incident.",
    "people": [
     {
      "name": "Rabbi Yehuda HaNasi",
-     "about": "Called 'Rabbi'; he examined the same blood three times and worried he had ruled wrongly."
+     "about": "Called simply Rabbi; examined the blood three times, changed his ruling twice and feared he had erred."
     }
    ],
    "terms": [
     {
-     "term": "Baraita",
-     "meaning": "A teaching of the early Sages that was not included in the Mishna, the core collection of Jewish law."
+     "term": "examining blood",
+     "meaning": "A woman who found a stain could bring it to a Sage, who judged by its color whether it was menstrual blood making her ritually impure, or a color that leaves her pure."
+    },
+    {
+     "term": "impure / pure",
+     "meaning": "Ritual status, not hygiene. A woman who is impure from menstruation may not have relations with her husband or touch certain sacred foods until she purifies herself."
     }
    ],
-   "drafted": "shas1",
+   "drafted": "bfull1notes",
    "approved": true
   },
   "niddah-22b-2-3": {

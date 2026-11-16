@@ -137,16 +137,16 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 is the Gemara's question about whose authority the act followed; the story is Rav Dimi's account of bringing the Torah scroll and its corrected telling.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "In Tzippori, after forgetting to bring a Torah scroll to the synagogue before Shabbat, the community utilized existing sheets on posts as partitions to allow the scroll to be brought and read.",
    "segments": [
-    {
-     "ref": "Sukkah 16b",
-     "i": 5,
-     "he": "וְאִם תֹּאמַר: מַעֲשֶׂה שֶׁנַּעֲשָׂה בְּצִיפּוֹרִי, עַל פִּי מִי נַעֲשָׂה? לֹא עַל פִּי רַבִּי יוֹסֵי, אֶלָּא עַל פִּי רַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי.",
-     "en": "The Gemara asks: <b>And if you say:</b> Since Rabbi Yosei does not hold in accordance with the opinion of Rabbi Yehuda with regard to the laws of Shabbat, <b>according to whose</b> opinion was the <b>action that was taken in Tzippori performed,</b> where they relied on suspended partitions even on Shabbat? The Gemara answers: It was <b>not</b> performed <b>according to</b> the opinion of <b>Rabbi Yosei</b> but <b>rather on the authority of Rabbi Yishmael, son of Rabbi Yosei.</b>"
-    },
     {
      "ref": "Sukkah 16b",
      "i": 6,
@@ -167,7 +167,7 @@
      "end": 7
     }
    ],
-   "words": 260,
+   "words": 184,
    "minutes": 2
   },
   {
@@ -717,13 +717,18 @@
    "tractate": "sukkah",
    "ref": "Sukkah 48b",
    "refs": [
-    "Sukkah 48b",
-    "Sukkah 49a"
+    "Sukkah 48b"
    ],
    "start_segment": 11,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The Sadducee pelted with etrogim and the altar sealed with salt ends in segment 5; segment 6 is the legal rule about a defective altar, not part of the events.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "A Sadducee priest intentionally pours the water libation on his feet, causing the people to pelt him with etrogim and damage the altar, which is then temporarily repaired with salt.",
    "segments": [
@@ -732,12 +737,6 @@
      "i": 11,
      "he": "מַעֲרָבוֹ שֶׁל מַיִם. תָּנוּ רַבָּנַן: מַעֲשֶׂה בְּצַדּוּקִי אֶחָד שֶׁנִּיסֵּךְ עַל גַּבֵּי רַגְלָיו, וּרְגָמוּהוּ כׇּל הָעָם בְּאֶתְרוֹגֵיהֶן. וְאוֹתוֹ הַיּוֹם נִפְגְּמָה קֶרֶן הַמִּזְבֵּחַ, וְהֵבִיאוּ בּוּל שֶׁל מֶלַח וּסְתָמוּהוּ. לֹא מִפְּנֵי שֶׁהוּכְשַׁר לַעֲבוֹדָה, אֶלָּא מִפְּנֵי שֶׁלֹּא יֵרָאֶה מִזְבֵּחַ פָּגוּם.",
      "en": "§ The mishna continues: The basin to the <b>west of</b> the altar was <b>for water,</b> and the basin to the east of the altar was for wine, and they would tell the one pouring the water to raise his hand. <b>The Sages taught:</b> There was <b>an incident involving one Sadducee</b> priest <b>who poured</b> the water <b>on his feet,</b> and in anger <b>all the people pelted him with their <i>etrogim</i>. And that day, the horn of the altar was damaged</b> as a result of the pelting and the ensuing chaos. <b>They brought a fistful of salt and sealed</b> the damaged section, <b>not because it rendered</b> the altar <b>fit for the</b> Temple <b>service, but</b> in deference to the altar, <b>so that the altar would not be seen</b> in its <b>damaged</b> state."
-    },
-    {
-     "ref": "Sukkah 49a",
-     "i": 0,
-     "he": "שֶׁכׇּל מִזְבֵּחַ שֶׁאֵין לוֹ לֹא כֶּבֶשׁ וְלֹא קֶרֶן וְלֹא יְסוֹד וְלֹא רִיבּוּעַ — פָּסוּל לַעֲבוֹדָה. רַבִּי יוֹסֵי בַּר יְהוּדָה אוֹמֵר: אַף הַסּוֹבֵב.",
-     "en": "<b>As any altar that lacks a ramp, or a horn, or a base, or</b> the shape of <b>a square,</b> either because it was not erected as a square or due to damage, <b>is disqualified for</b> use in the Temple <b>service. Rabbi Yosei bar Yehuda says: Even the surrounding ledge</b> must be complete, and if it is lacking it disqualifies the altar."
     }
    ],
    "span": [
@@ -752,8 +751,8 @@
      "end": 0
     }
    ],
-   "words": 191,
-   "minutes": 2
+   "words": 130,
+   "minutes": 1
   },
   {
    "id": "sukkah-51b-5-8",
