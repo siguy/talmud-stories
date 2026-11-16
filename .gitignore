@@ -35,3 +35,8 @@ results/v11/triage_rules/
 .stitch/*
 !.stitch/DESIGN.md
 !.stitch/manifest.json
+
+# Note-drafting inputs: one text file per story, regenerated from site/data by
+# `scripts/draft_site_notes.py export`. keys/, answers/ and parts/ ARE committed: answers cost agent time.
+results/site_notes/*/batches/
+results/site_notes/boundaries/*/batches/

@@ -229,7 +229,11 @@
    "start_segment": 1,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Adds segment 8, which gives the two prophecies and the Sages' reply 'Akiva, you have comforted us', the end of the story."
+   },
    "reviewed": false,
    "summary": "The Sages visit the ruins of the Temple and weep at the sight of a fox in the Holy of Holies, but Rabbi Akiva laughs, explaining that this proves the eventual fulfillment of the prophecies of redemption.",
    "segments": [
@@ -244,6 +248,12 @@
      "i": 2,
      "he": "אָמַר לָהֶן: לְכָךְ אֲנִי מְצַחֵק, דִּכְתִיב: ״וְאָעִידָה לִּי עֵדִים נֶאֱמָנִים אֵת אוּרִיָּה הַכֹּהֵן וְאֶת זְכַרְיָה בֶּן יְבֶרֶכְיָהוּ״ – וְכִי מָה עִנְיַן אוּרִיָּה אֵצֶל זְכַרְיָה? אוּרִיָּה בְּמִקְדָּשׁ רִאשׁוֹן, וּזְכַרְיָה בְּמִקְדָּשׁ שֵׁנִי! אֶלָּא: תָּלָה הַכָּתוּב נְבוּאָתוֹ שֶׁל זְכַרְיָה בִּנְבוּאָתוֹ שֶׁל אוּרִיָּה.",
      "en": "Rabbi Akiva <b>said to them: That is why I am laughing, as it is written,</b> when God revealed the future to the prophet Isaiah: <b>“And I will take to Me faithful witnesses to attest: Uriah the priest, and Zechariah the son of Jeberechiah”</b> (Isaiah 8:2). <b>Now what is the connection between Uriah and Zechariah?</b> He clarifies the difficulty: <b>Uriah</b> prophesied <b>during the First Temple</b> period, <b>and Zechariah</b> prophesied <b>during the Second Temple</b> period, as he was among those who returned to Zion from Babylonia. <b>Rather, the verse established that</b> fulfillment of <b>the prophecy of Zechariah</b> is <b>dependent on</b> fulfillment of <b>the prophecy of Uriah.</b>"
+    },
+    {
+     "ref": "Makkot 24b",
+     "i": 3,
+     "he": "בְּאוּרִיָּה כְּתִיב ״לָכֵן בִּגְלַלְכֶם צִיּוֹן שָׂדֶה תֵחָרֵשׁ״, בִּזְכַרְיָה כְּתִיב ״עוֹד יֵשְׁבוּ זְקֵנִים וּזְקֵנוֹת בִּרְחֹבוֹת יְרוּשָׁלִָם״. עַד שֶׁלֹּא נִתְקַיְּימָה נְבוּאָתוֹ שֶׁל אוּרִיָּה הָיִיתִי מִתְיָירֵא שֶׁלֹּא תִּתְקַיֵּים נְבוּאָתוֹ שֶׁל זְכַרְיָה, עַכְשָׁיו שֶׁנִּתְקַיְּימָה נְבוּאָתוֹ שֶׁל אוּרִיָּה – בְּיָדוּעַ שֶׁנְּבוּאָתוֹ שֶׁל זְכַרְיָה מִתְקַיֶּימֶת. בַּלָּשׁוֹן הַזֶּה אָמְרוּ לוֹ: עֲקִיבָא נִיחַמְתָּנוּ, עֲקִיבָא נִיחַמְתָּנוּ.",
+     "en": "<b>In</b> the prophecy of <b>Uriah it is written: “Therefore, for your sake Zion shall be plowed as a field,</b> and Jerusalem shall become rubble, and the Temple Mount as the high places of a forest” (Micah 3:12), where foxes are found. There is a rabbinic tradition that this was prophesied by Uriah. <b>In</b> the prophecy of <b>Zechariah it is written: “There shall yet be elderly men and elderly women sitting in the streets of Jerusalem”</b> (Zechariah 8:4). <b>Until the prophecy of Uriah</b> with regard to the destruction of the city <b>was fulfilled I was afraid that the prophecy of Zechariah would not be fulfilled,</b> as the two prophecies are linked. <b>Now that the prophecy of Uriah was fulfilled, it</b> is <b>evident that the prophecy of Zechariah</b> remains <b>valid.</b> The Gemara adds: The Sages <b>said to him,</b> employing <b>this formulation: Akiva, you have comforted us; Akiva, you have comforted us.</b>"
     }
    ],
    "span": [
@@ -253,8 +263,8 @@
      "end": 2
     }
    ],
-   "words": 233,
-   "minutes": 2
+   "words": 382,
+   "minutes": 3
   }
  ],
  "out_of_scope": [

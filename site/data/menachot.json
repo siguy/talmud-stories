@@ -511,16 +511,16 @@
    "start_segment": 0,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Drops segment 6, the tail of the Gemara's answer about the earlier version; segment 7 is the alternative version of the Ravina and Mar bar Rav Ashi incident.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Ravina observes Mar bar Rav Ashi's ritual fringes tear in public on Shabbat and questions why he did not remove the garment immediately, leading to a discussion on human dignity.",
    "segments": [
-    {
-     "ref": "Menachot 38a",
-     "i": 0,
-     "he": "בְּלָאו דְּ״לֹא תָסוּר״.",
-     "en": "He stated this <b>with regard to the prohibition of: “You shall not deviate</b> to the left or the right of that which they tell you” (Deuteronomy 17:11). A prohibition by rabbinic law is overridden by human dignity, but not a prohibition by Torah law. Therefore, Mar bar Rav Ashi would have removed his garment had he known about the tear."
-    },
     {
      "ref": "Menachot 38a",
      "i": 1,
@@ -535,7 +535,7 @@
      "end": 1
     }
    ],
-   "words": 224,
+   "words": 164,
    "minutes": 2
   },
   {
@@ -1366,14 +1366,15 @@
    "tractate": "menachot",
    "ref": "Menachot 103b",
    "refs": [
-    "Menachot 103b"
+    "Menachot 103b",
+    "Menachot 104a"
    ],
    "start_segment": 18,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "After reporting a case where the Sages measured the blood of a dead mule from the Nasi's house, Rabbi Beivai is challenged by a contradictory tradition and falls silent, explaining that his poverty prevents him from concentrating on the debate.",
+   "summary": "Rabbi Beivai reported, in the name of Rabbi Yehoshua ben Levi, that a mule belonging to the household of Rabbi died and the Sages estimated its blood at a quarter-log.",
    "segments": [
     {
      "ref": "Menachot 103b",
@@ -1392,32 +1393,13 @@
      "i": 20,
      "he": "אִישְׁתִּיק, אֲמַר לֵיהּ רַבִּי זְרִיקָא: מַאי טַעְמָא לָא קָא מַהְדַּר מָר? אֲמַר לֵיהּ: הֵיכִי אַהְדַּר לֵיהּ, דְּאָמַר רַבִּי חָנִין: ״וְהָיוּ חַיֶּיךָ תְּלֻאִים לְךָ מִנֶּגֶד״ – זֶה הַלּוֹקֵחַ תְּבוּאָה מִשָּׁנָה לְשָׁנָה.",
      "en": "Rabbi Beivai <b>was silent</b> and did not answer. <b>Rabbi Zerika said to him: What is the reason</b> that <b>the Master does not respond</b> to the question? Rabbi Beivai <b>said to him: How can I respond to him?</b> My circumstances can be described <b>as Rabbi Ḥanin said</b> in interpreting the verse: “And your life shall hang in doubt before you; and you shall fear night and day, and you shall have no assurance of your life” (Deuteronomy 28:66). <b>“And your life shall hang in doubt before you”; this</b> is referring to one <b>who purchases grain from one year for the next,</b> because he is not certain that he will find grain to eat in the next year."
-    }
-   ],
-   "span": [
+    },
     {
      "ref": "Menachot 103b",
-     "start": 18,
-     "end": 20
-    }
-   ],
-   "words": 295,
-   "minutes": 2
-  },
-  {
-   "id": "menachot-104a-0-1",
-   "tractate": "menachot",
-   "ref": "Menachot 104a",
-   "refs": [
-    "Menachot 104a"
-   ],
-   "start_segment": 0,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "A story continuing from the previous page about a dead mule in the Nasi's house leads to a legal challenge that Rabbi Beivai is too impoverished and distracted to answer, eventually resolved by Rav Yosef.",
-   "segments": [
+     "i": 21,
+     "he": "״וּפָחַדְתָּ לַיְלָה וְיוֹמָם״ – זֶה הַלּוֹקֵחַ תְּבוּאָה מֵעֶרֶב שַׁבָּת לְעֶרֶב שַׁבָּת, ״וְאַל תַּאֲמֵן בְּחַיֶּיךָ״ – זֶה הַסּוֹמֵךְ עַל הַפַּלְטֵר.",
+     "en": "<b>“And you shall fear night and day”; this</b> is referring to one <b>who purchases grain</b> from one <b>Shabbat eve to another</b> because he does not have the resources to provide for himself further. <b>“And you shall have no assurance of your life”; this</b> is referring to one <b>who relies on the baker [<i>hapalter</i>]</b> to give him bread because he has no grain of his own."
+    },
     {
      "ref": "Menachot 104a",
      "i": 0,
@@ -1433,13 +1415,18 @@
    ],
    "span": [
     {
+     "ref": "Menachot 103b",
+     "start": 18,
+     "end": 21
+    },
+    {
      "ref": "Menachot 104a",
      "start": 0,
      "end": 1
     }
    ],
-   "words": 67,
-   "minutes": 1
+   "words": 429,
+   "minutes": 3
   },
   {
    "id": "menachot-109b-9-15",

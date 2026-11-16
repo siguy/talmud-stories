@@ -609,15 +609,26 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 11a",
    "refs": [
+    "Bava Batra 10b",
     "Bava Batra 11a"
    ],
    "start_segment": 0,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 6 is the end of a sentence begun in segment 5 (Rava gave the money to gentile poor and Rabbi Ami was angry because...), so segment 5 is added to make it readable."
+   },
    "reviewed": false,
    "summary": "A queen mother sends money to Rabbi Ami who refuses it, but Rava accepts it for political peace, leading to a conflict between the two rabbis.",
    "segments": [
+    {
+     "ref": "Bava Batra 10b",
+     "i": 13,
+     "he": "וְרַבִּי אַמֵּי נָמֵי, מִשּׁוּם שְׁלוֹם מַלְכוּת! דְּאִיבְּעִי לֵיהּ לְמִפְלְגִינְהוּ לַעֲנִיֵּי גוֹיִים. וְרָבָא נָמֵי – לַעֲנִיֵּי גוֹיִים יַהֲבִינְהוּ; וְרַבִּי אַמֵּי דְּאִיקְּפַד, הוּא",
+     "en": "The Gemara asks: <b>But</b> did <b>Rabbi Ami</b> not <b>also</b> see the importance of accepting the money <b>for the sake of peace with the kingdom?</b> The Gemara answers: Rabbi Ami maintains that Rava <b>should have distributed</b> the money <b>to the gentile poor</b> rather than to the Jewish poor, as it is a disgrace to the Jews to require the kindness of the nations of the world in order to support their poor. The Gemara comments: In fact, <b>Rava also gave</b> the money <b>to the gentile poor</b> and not to the Jewish poor. <b>And Rabbi Ami got angry</b> because"
+    },
     {
      "ref": "Bava Batra 11a",
      "i": 0,
@@ -632,39 +643,8 @@
      "end": 0
     }
    ],
-   "words": 30,
+   "words": 127,
    "minutes": 1
-  },
-  {
-   "id": "bava_batra-11a-1-1",
-   "tractate": "bava_batra",
-   "ref": "Bava Batra 11a",
-   "refs": [
-    "Bava Batra 11a"
-   ],
-   "start_segment": 1,
-   "classification": "HIGH_CONFIDENCE",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "During a drought, Binyamin the Righteous finds the charity fund empty and uses his own money to save a starving woman and her children.",
-   "segments": [
-    {
-     "ref": "Bava Batra 11a",
-     "i": 1,
-     "he": "תַּנְיָא: אָמְרוּ עָלָיו עַל בִּנְיָמִין הַצַּדִּיק, שֶׁהָיָה מְמוּנֶּה עַל קוּפָּה שֶׁל צְדָקָה; פַּעַם אַחַת בָּאתָה אִשָּׁה לְפָנָיו בִּשְׁנֵי בַצּוֹרֶת, אָמְרָה לוֹ: רַבִּי, פַּרְנְסֵנִי! אָמַר לָהּ: הָעֲבוֹדָה, שֶׁאֵין בְּקוּפָּה שֶׁל צְדָקָה כְּלוּם! אָמְרָה לוֹ: רַבִּי, אִם אֵין אַתָּה מְפַרְנְסֵנִי, הֲרֵי אִשָּׁה וְשִׁבְעָה בָּנֶיהָ מֵתִים! עָמַד וּפִרְנְסָהּ מִשֶּׁלּוֹ. לְיָמִים חָלָה וְנָטָה לָמוּת, אָמְרוּ מַלְאֲכֵי הַשָּׁרֵת לִפְנֵי הַקָּדוֹשׁ בָּרוּךְ הוּא: רִבּוֹנוֹ שֶׁל עוֹלָם, אַתָּה אָמַרְתָּ: כׇּל הַמְקַיֵּים נֶפֶשׁ אַחַת מִיִּשְׂרָאֵל, כְּאִילּוּ קִיֵּים עוֹלָם מָלֵא; וּבִנְיָמִין הַצַּדִּיק, שֶׁהֶחֱיָה אִשָּׁה וְשִׁבְעָה בָּנֶיהָ, יָמוּת בְּשָׁנִים מוּעָטוֹת הַלָּלוּ? מִיָּד קָרְעוּ לוֹ גְּזַר דִּינוֹ. תָּנָא: הוֹסִיפוּ לוֹ עֶשְׂרִים וּשְׁתַּיִם שָׁנָה עַל שְׁנוֹתָיו.",
-     "en": "§ <b>It is taught</b> in a <i>baraita</i>: The following <b>was said about Binyamin the righteous, who was appointed</b> supervisor <b>over the charity fund. Once, a woman came before him during years of drought</b> and <b>said to him: My master, sustain me. He said to her:</b> I swear <b>by the Temple service that there is nothing</b> left <b>in the charity fund. She said to him: My master, if you do not sustain me, a woman and her seven sons will die. He arose and sustained her with his own</b> funds. <b>After some time, he fell deathly ill. The ministering angels said to the Holy One, Blessed be He: Master of the Universe, You said</b> that <b>anyone who preserves a single life in Israel is</b> regarded <b>as if he has preserved an entire world. Should</b> then <b>Binyamin the righteous, who saved a woman and her seven sons, die after these few years,</b> still in his youth? <b>They immediately tore up his sentence.</b> A Sage <b>taught: They added twenty-two years to his life.</b>"
-    }
-   ],
-   "span": [
-    {
-     "ref": "Bava Batra 11a",
-     "start": 1,
-     "end": 1
-    }
-   ],
-   "words": 171,
-   "minutes": 2
   },
   {
    "id": "bava_batra-11a-1-3",
@@ -1286,12 +1266,17 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 31a",
    "refs": [
-    "Bava Batra 31a"
+    "Bava Batra 31a",
+    "Bava Batra 31b"
    ],
    "start_segment": 8,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rav Nahman's reply to Rava ends mid-sentence and is completed in segment 8."
+   },
    "reviewed": false,
    "summary": "Two people claim ancestral land and both bring witnesses of usage, leading Rav Nahman to rule that the land returns to the proven ancestral line.",
    "segments": [
@@ -1306,6 +1291,12 @@
      "i": 9,
      "he": "אָמַר רַב נַחְמָן: אוֹקִי אֲכִילָה לְבַהֲדֵי אֲכִילָה, וְאוֹקִי אַרְעָא בְּחֶזְקַת אֲבָהָתָא. אֲמַר לֵיהּ רָבָא: הָא עֵדוּת מוּכְחֶשֶׁת הִיא! אֲמַר לֵיהּ: נְהִי דְּאִיתַּכְחַשׁ בַּאֲכִילְתָה,",
      "en": "<b>Rav Naḥman said: Establish</b> the testimony with regard to the <b>profiting</b> by the first litigant <b>alongside</b> the testimony with regard to the <b>profiting</b> by the second, and the two testimonies cancel each other out, leaving the testimony with regard to ownership by the ancestors of the first litigant. <b>And</b> therefore, <b>establish the land in</b> the <b>presumptive ownership of</b> the litigant who brought witnesses that it belonged to his <b>ancestors. Rava</b> objected and <b>said to him: This testimony</b> cannot be relied on, as it <b>is contradicted</b> by the other testimony. Rav Naḥman responded and <b>said to him: Although</b> it is so <b>that</b> the testimony <b>was contradicted with regard to profiting</b> from the land,"
+    },
+    {
+     "ref": "Bava Batra 31b",
+     "i": 0,
+     "he": "בַּאֲבָהָתָא מִי אִתַּכְחַשׁ?!",
+     "en": "<b>was</b> the testimony <b>contradicted with regard to</b> ownership of <b>the ancestors?</b>"
     }
    ],
    "span": [
@@ -1315,7 +1306,7 @@
      "end": 9
     }
    ],
-   "words": 210,
+   "words": 221,
    "minutes": 2
   },
   {
@@ -1384,7 +1375,11 @@
    "start_segment": 6,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 8 holds Rabba's ruling and Rav Yosef's reply, the outcome of the case."
+   },
    "reviewed": false,
    "summary": "A man challenges another's right to land, and the possessor claims he bought it and produces a bill of sale. A man claiming land ownership whispers to Rabba that his deed is forged but his claim is true, leading to a legal debate between Rabba and Rav Yosef.",
    "segments": [
@@ -1399,6 +1394,12 @@
      "i": 0,
      "he": "אֲמַר לֵיהּ: שְׁטָרָא זַיְיפָא הוּא! גְּחֵין לְחֵישׁ לֵיהּ לְרַבָּה: אִין, שְׁטָרָא זַיְיפָא הוּא; מִיהוּ שְׁטָרָא מְעַלְּיָא הֲוָה לִי, וְאִירְכַס, וְאָמֵינָא: אֶינְקֹיט הַאי בִּידַאי כָּל דְּהוּ.",
      "en": "The first <b>said to him</b> in response: <b>It is a forged bill</b> of sale. The possessor <b>leaned</b> over and <b>whispered to Rabba: Yes, it is a forged bill. But I had a proper bill</b> of sale <b>and it was lost, and I said</b> to myself: <b>I will hold this</b> bill of sale <b>in my possession, such as it is.</b>"
+    },
+    {
+     "ref": "Bava Batra 32b",
+     "i": 1,
+     "he": "אָמַר רַבָּה: מָה לוֹ לְשַׁקֵּר? אִי בָּעֵי, אָמַר לֵיהּ: שְׁטָרָא מְעַלְּיָא הוּא. אֲמַר לֵיהּ רַב יוֹסֵף: אַמַּאי סָמְכַתְּ – אַהַאי שְׁטָרָא; הַאי שְׁטָרָא חַסְפָּא בְּעָלְמָא הוּא.",
+     "en": "<b>Rabba said: Why would he lie</b> and state this claim? <b>If</b> he <b>wants</b> to lie, he can <b>say to him</b> that <b>it is a proper bill</b> of sale, and he would have been deemed credible and awarded the field. <b>Rav Yosef said to</b> Rabba: In the final analysis, <b>on what</b> are <b>you relying</b> to award him the land? <b>On this bill</b> of sale? <b>This</b> admittedly forged <b>bill is merely</b> a worthless <b>shard,</b> and cannot be used in court as evidence."
     }
    ],
    "span": [
@@ -1413,8 +1414,8 @@
      "end": 0
     }
    ],
-   "words": 108,
-   "minutes": 1
+   "words": 188,
+   "minutes": 2
   },
   {
    "id": "bava_batra-32b-2-2",
@@ -1426,7 +1427,11 @@
    "start_segment": 2,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 7 holds Rabba's ruling and Rav Yosef's reply on this case; segment 8 is the general halakha for both cases."
+   },
    "reviewed": false,
    "summary": "In a debt dispute, the creditor whispers to Rava that his promissory note is forged but the debt is valid, mirroring the previous land case.",
    "segments": [
@@ -1435,6 +1440,12 @@
      "i": 2,
      "he": "הַהוּא דְּאָמַר לְחַבְרֵיהּ: הַב לִי מְאָה זוּזִי דְּמַסֵּיקְנָא בָּךְ, וְהָא שְׁטָרָא. אֲמַר לֵיהּ: שְׁטָרָא זַיְיפָא הוּא. גְּחֵין לְחֵישׁ לֵיהּ לְרָבָא: אִין, שְׁטָרָא זַיְיפָא; מִיהוּ שְׁטָרָא מְעַלְּיָא הֲוָה לִי, וְאִירְכַס, וְאָמֵינָא: אֶינְקוֹט הַאי בִּידַאי כָּל דְּהוּ.",
      "en": "The Gemara relates a similar incident: There was <b>a certain</b> person <b>who said to another: Give me one hundred dinars that I am</b> attempting to <b>collect from you, and this</b> is <b>the</b> promissory <b>note</b> that attests to the debt. The latter <b>said to him</b> in response: <b>It is a forged</b> promissory <b>note.</b> The first person <b>leaned</b> over and <b>whispered to Rava: Yes, it is a forged</b> promissory <b>note. But I had a proper</b> promissory <b>note and it was lost, and I said</b> to myself: <b>I will hold this</b> promissory note <b>in my possession, such as it is.</b>"
+    },
+    {
+     "ref": "Bava Batra 32b",
+     "i": 3,
+     "he": "אָמַר רַבָּה: מָה לוֹ לְשַׁקֵּר? אִי בָּעֵי, אָמַר לֵיהּ: שְׁטָרָא מְעַלְּיָא הוּא. אֲמַר לֵיהּ רַב יוֹסֵף: אַמַּאי קָא סָמְכַתְּ – אַהַאי שְׁטָרָא; הַאי שְׁטָרָא חַסְפָּא בְּעָלְמָא הוּא.",
+     "en": "<b>Rabba said: Why would he lie</b> and state this claim? <b>If</b> he <b>wants</b> to lie, he can <b>say to him</b> that <b>it is a proper</b> promissory <b>note,</b> and he will be deemed credible and awarded the money. <b>Rav Yosef said to</b> Rabba: In the final analysis, <b>on what</b> are <b>you relying</b> to award him the money? <b>On this</b> promissory <b>note? This document is merely a shard,</b> and cannot be used in court as evidence."
     }
    ],
    "span": [
@@ -1444,8 +1455,8 @@
      "end": 2
     }
    ],
-   "words": 97,
-   "minutes": 1
+   "words": 171,
+   "minutes": 2
   },
   {
    "id": "bava_batra-32b-8-8",
@@ -1882,7 +1893,13 @@
    "start_segment": 7,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Abaye's case and Rava's verdict are in segments 6-8; segment 9 is Rav Ashi's and Rav Aha's hypothetical legal tactics.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Abaye shows Rava how the swindlers of Pumbedita manipulate legal claims by first denying they received an item and then claiming they bought it once witnesses prove they have it.",
    "segments": [
@@ -1903,12 +1920,6 @@
      "i": 0,
      "he": "״רָאָה״ תַּנְיָא.",
      "en": "as it <b>is taught</b> in the earlier <i>baraita</i> that the owner has a valid claim only when he, and witnesses, <b>saw</b> his cloak in the possession of the launderer and can definitively identify it. He cannot state a claim based on the mere possibility that it is his. This validates the claim of the craftsmen of Pumbedita."
-    },
-    {
-     "ref": "Bava Batra 46b",
-     "i": 1,
-     "he": "אָמַר רַב אָשֵׁי: וְאִי חַכִּים, מְשַׁוֵּי לֵיהּ ״רָאָה״ – דְּאָמַר לֵיהּ: אַמַּאי תְּפִיסַתְּ לֵיהּ, לָאו מִשּׁוּם דְּאִית לָךְ גַּבַּאי? הַשְׁתָּא אַפְּקִינְהוּ וְשַׁיְּמִינְהוּ – שְׁקוֹל אַתְּ דִּידָך,ְ וְאֶשְׁקוֹל אֲנָא דִּידִי. אֲמַר לֵיהּ רַב אַחָא בְּרֵיהּ דְּרַב אַוְיָא לְרַב אָשֵׁי, מָצֵי אָמַר לֵיהּ: לָא צְרִיכְנָא לְשׁוּמָא דִידָךְ, כְּבָר שָׁמוּהַּ קַמָּאֵי דְקַמָּךְ.",
-     "en": "<b>Rav Ashi said: And if</b> the owner <b>is clever, he will render</b> the situation into one of his having <b>seen</b> his cloak, <b>as</b> the owner can <b>say to</b> the craftsman: <b>Why</b> are you <b>holding it? Is it not due to</b> the fact <b>that there is</b> money of <b>yours with me,</b> and you are using the cloak as a means of collecting the debt that I owe you? <b>Now bring out</b> my cloak before the appraisers <b>and they will appraise its</b> value, and then <b>you take</b> what is rightfully <b>yours, and I will take</b> what is rightfully <b>mine.</b> When the craftsman presents the cloak, the ruling will change, as the owner will have seen the cloak. <b>Rav Aḥa, son of Rav Avya, said to Rav Ashi:</b> If the craftsman is clever, he <b>can say to</b> the owner: <b>I do not need your appraisal,</b> as the <b>earlier ones who preceded you already appraised it</b> and determined that its value does not exceed that of your debt to me."
     }
    ],
    "span": [
@@ -1923,8 +1934,8 @@
      "end": 1
     }
    ],
-   "words": 418,
-   "minutes": 3
+   "words": 252,
+   "minutes": 2
   },
   {
    "id": "bava_batra-48b-6-6",
@@ -2143,49 +2154,19 @@
    "minutes": 1
   },
   {
-   "id": "bava_batra-58a-8-8",
-   "tractate": "bava_batra",
-   "ref": "Bava Batra 58a",
-   "refs": [
-    "Bava Batra 58a"
-   ],
-   "start_segment": 8,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Rabbi Bena’a solves a riddle-based inheritance left by a father to his sons using symbolic interpretation.",
-   "segments": [
-    {
-     "ref": "Bava Batra 58a",
-     "i": 8,
-     "he": "הָהוּא דַּאֲמַר לְהוּ: חָבִיתָא דְעַפְרָא לְחַד בְּרַאי, חָבִיתָא דְגַרְמֵי לְחַד בְּרַאי, חָבִיתָא דְאוּדְרָא לְחַד בְּרַאי. לָא הֲווֹ יָדְעִי מַאי קָאָמַר לְהוּ. אֲתוֹ לְקַמֵּיהּ דְּרַבִּי בְּנָאָה, אֲמַר לְהוּ: ״אִית לְכוּ אַרְעָא?״ אֲמַרוּ לֵיהּ: ״אִין״. ״אִית לְכוּ חֵיוָתָא?״ ״אִין״. ״אִית לְכוּ בִּסְתַּרְקֵי?״ ״אִין״. ״אִי הָכִי, הָכִי קָאָמַר לְכוּ״.",
-     "en": "§ The Gemara relates additional incidents involving Rabbi Bena’a: There was <b>a certain</b> individual <b>who said to</b> his family before he died: <b>A barrel of earth to one of my sons, a barrel of bones to one of my sons,</b> and <b>a barrel of wads</b> of wool <b>to one of my sons. They did not know what he was saying to them. They came before Rabbi Bena’a</b> for guidance. Rabbi Bena’a <b>said to them: Do you have land</b> that your father left as an inheritance? <b>They said to him: Yes.</b> He asked: <b>Do you have livestock</b> that your father left as an inheritance? They said: <b>Yes.</b> He asked: <b>Do you have quilts [<i>bistarkei</i>]</b> that your father left as an inheritance? They said: <b>Yes.</b> He said to them: <b>If so, this is what he said to you,</b> i.e., he meant that he is bequeathing land to one son, livestock to the second, and quilts to the third."
-    }
-   ],
-   "span": [
-    {
-     "ref": "Bava Batra 58a",
-     "start": 8,
-     "end": 8
-    }
-   ],
-   "words": 158,
-   "minutes": 2
-  },
-  {
    "id": "bava_batra-58a-8-10",
    "tractate": "bava_batra",
    "ref": "Bava Batra 58a",
    "refs": [
-    "Bava Batra 58a"
+    "Bava Batra 58a",
+    "Bava Batra 58b"
    ],
    "start_segment": 8,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "Rabbi Bena’a identifies the single legitimate heir among ten sons by staging a test to see who would refuse to strike their father's grave.",
+   "summary": "A dying man left one son a barrel of earth, another a barrel of bones, and a third a barrel of wool wads; Rabbi Bena'a worked out that he meant land, livestock and quilts.",
    "segments": [
     {
      "ref": "Bava Batra 58a",
@@ -2204,33 +2185,7 @@
      "i": 10,
      "he": "לָא יָדְעִי לְהֵי מִינַּיְיהוּ. אֲתוֹ לְקַמֵּיהּ דְּרַבִּי בְּנָאָה, אֲמַר לְהוּ: זִילוּ חֲבוּטוּ קִבְרָא דַּאֲבוּכוֹן, עַד דְּקָאֵי וּמְגַלֵּי לְכוּ לְהֵי מִינַּיְיכוּ שְׁבַקא. אֲזַלוּ כּוּלְּהוּ, הָהוּא דִּבְרֵיהּ הֲוָה לָא אֲזַל. אֲמַר לְהוּ: כּוּלְּהוּ נִכְסֵי דְּהַאי. אֲזַלוּ אֲכַלוּ קוּרָצָא בֵּי מַלְכָּא, אָמְרִי: אִיכָּא גַּבְרָא חַד בִּיהוּדָאֵי, דְּקָא מַפֵּיק מָמוֹנָא מֵאִנָשֵׁי בְּלָא סָהֲדִי וּבְלָא מִידֵּי. אַתְיוּהוּ חַבְשׁוּהוּ.",
      "en": "<b>They did not know</b> to <b>which of them</b> he intended to leave his property. <b>They came before Rabbi Bena’a</b> for guidance, and <b>he said to</b> the sons: <b>Go strike your father’s grave, until he rises and reveals to you to which of you he left</b> his property. <b>They all went,</b> but <b>that</b> one <b>who was his son did not go.</b> Rabbi Bena’a <b>said to them: All of</b> the <b>property belongs to this</b> son who did not go. The other brothers were angry. <b>They went and slandered [<i>akhlu kuretza</i>]</b> Rabbi Bena’a in <b>the king’s house. They said: There is one man among the Jews who removes money from people without witnesses and without any</b> evidence. The king’s guards <b>brought</b> Rabbi Bena’a <b>and imprisoned him.</b>"
-    }
-   ],
-   "span": [
-    {
-     "ref": "Bava Batra 58a",
-     "start": 8,
-     "end": 10
-    }
-   ],
-   "words": 371,
-   "minutes": 3
-  },
-  {
-   "id": "bava_batra-58a-11-13",
-   "tractate": "bava_batra",
-   "ref": "Bava Batra 58a",
-   "refs": [
-    "Bava Batra 58a",
-    "Bava Batra 58b"
-   ],
-   "start_segment": 11,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "After Rabbi Bena’a's wife confuses the authorities with a riddle, Bena’a is summoned to explain it, leading to his appointment as a judge. Rabbi Bena'a continues his journey, correcting flawed or simplistic maxims inscribed on city gates, leading the locals to rewrite their laws based on his wisdom.",
-   "segments": [
+    },
     {
      "ref": "Bava Batra 58a",
      "i": 11,
@@ -2265,7 +2220,7 @@
    "span": [
     {
      "ref": "Bava Batra 58a",
-     "start": 11,
+     "start": 8,
      "end": 13
     },
     {
@@ -2274,8 +2229,8 @@
      "end": 1
     }
    ],
-   "words": 465,
-   "minutes": 4
+   "words": 836,
+   "minutes": 6
   },
   {
    "id": "bava_batra-60a-10-11",
@@ -2373,7 +2328,11 @@
    "start_segment": 10,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 3,
+    "reason": "Rabbi Yehoshua's speech breaks off at 8; 9-11 complete his practical conclusion (leave part unplastered, the meal, the woman, the verse), and the Gemara's exposition in 12-13 is left out."
+   },
    "reviewed": false,
    "summary": "Following the destruction of the Second Temple, Rabbi Yehoshua uses a series of logical arguments to convince a group of extreme ascetics to adopt a more moderate and sustainable form of national mourning.",
    "segments": [
@@ -2394,6 +2353,24 @@
      "i": 12,
      "he": "אָמַר לָהֶן: בָּנַי, בּוֹאוּ וְאוֹמַר לָכֶם: שֶׁלֹּא לְהִתְאַבֵּל כׇּל עִיקָּר אִי אֶפְשָׁר – שֶׁכְּבָר נִגְזְרָה גְּזֵרָה; וּלְהִתְאַבֵּל יוֹתֵר מִדַּאי אִי אֶפְשָׁר – שֶׁאֵין גּוֹזְרִין גְּזֵירָה עַל הַצִּבּוּר, אֶלָּא אִם כֵּן רוֹב צִבּוּר יְכוֹלִין לַעֲמוֹד בָּהּ – דִּכְתִיב: ״בַּמְּאֵרָה אַתֶּם נֵאָרִים, וְאֹתִי אַתֶּם קֹבְעִים; הַגּוֹי כֻּלּוֹ״ –",
      "en": "Rabbi Yehoshua <b>said to them: My children, come, and I will tell you</b> how we should act. <b>To not mourn at all</b> is <b>impossible, as</b> the <b>decree was already issued</b> and the Temple has been destroyed. <b>But to mourn excessively</b> as you are doing is also <b>impossible, as</b> the Sages <b>do not issue a decree upon the public unless a majority of the public is able to abide by it, as it is written: “You are cursed with the curse, yet you rob Me, even this whole nation”</b> (Malachi 3:9), indicating that the prophet rebukes the people for neglecting observances only if they were accepted by the whole nation."
+    },
+    {
+     "ref": "Bava Batra 60b",
+     "i": 13,
+     "he": "אֶלָּא כָּךְ אָמְרוּ חֲכָמִים: סָד אָדָם אֶת בֵּיתוֹ בְּסִיד, וּמְשַׁיֵּיר בּוֹ דָּבָר מוּעָט; וְכַמָּה? אָמַר רַב יוֹסֵף: אַמָּה עַל אַמָּה. אָמַר רַב חִסְדָּא: כְּנֶגֶד הַפֶּתַח.",
+     "en": "Rabbi Yehoshua continues: <b>Rather, this</b> is what <b>the Sages said: A person</b> may <b>plaster his house with plaster, but</b> he must <b>leave</b> over <b>a small amount in it</b> without plaster to remember the destruction of the Temple. The Gemara interjects: <b>And how much</b> is a small amount? <b>Rav Yosef said:</b> One <b>cubit by</b> one <b>cubit. Rav Ḥisda said:</b> This should be <b>opposite the entrance,</b> so that it is visible to all."
+    },
+    {
+     "ref": "Bava Batra 60b",
+     "i": 14,
+     "he": "עוֹשֶׂה אָדָם כׇּל צׇרְכֵי סְעוּדָה, וּמְשַׁיֵּיר דָּבָר מוּעָט; מַאי הִיא? אָמַר רַב פָּפָּא: כָּסָא דְהַרְסָנָא.",
+     "en": "Rabbi Yehoshua continues: The Sages said that <b>a person</b> may <b>prepare all</b> that he <b>needs for a meal, but</b> he must <b>leave</b> out <b>a small item</b> to remember the destruction of the Temple. The Gemara interjects: <b>What</b> is <b>this</b> small item? <b>Rav Pappa said:</b> Something akin to <b>small, fried fish.</b>"
+    },
+    {
+     "ref": "Bava Batra 60b",
+     "i": 15,
+     "he": "עוֹשָׂה אִשָּׁה כׇּל תַּכְשִׁיטֶיהָ, וּמְשַׁיֶּירֶת דָּבָר מוּעָט; מַאי הִיא? אָמַר רַב: בַּת צִדְעָא. שֶׁנֶּאֱמַר: ״אִם אֶשְׁכָּחֵךְ יְרוּשָׁלִָם, תִּשְׁכַּח יְמִינִי. תִּדְבַּק לְשׁוֹנִי לְחִכִּי וְגוֹ׳״.",
+     "en": "Rabbi Yehoshua continues: The Sages said that <b>a woman</b> may <b>engage</b> in <b>all</b> of <b>her cosmetic treatments, but</b> she must <b>leave</b> out <b>a small matter</b> to remember the destruction of the Temple. The Gemara interjects: <b>What</b> is <b>this</b> small matter? <b>Rav said:</b> She does not remove hair from the place on the <b>temple</b> from which women would remove hair. The source for these practices is a verse, <b>as it is stated: “If I forget you, Jerusalem, let my right hand forget its cunning. Let my tongue cleave to the roof of my mouth,</b> if I remember you not; if I set not Jerusalem above my highest joy” (Psalms 137:5–6)."
     }
    ],
    "span": [
@@ -2403,8 +2380,8 @@
      "end": 12
     }
    ],
-   "words": 366,
-   "minutes": 3
+   "words": 596,
+   "minutes": 4
   },
   {
    "id": "bava_batra-73a-7-7",
@@ -3103,7 +3080,11 @@
    "start_segment": 14,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rav Yosef's account finishes in 9 with his conclusion that the measure is four cubits; the Gemara's proofs from 10 onward stay out."
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda recounts an incident in Tzalmon where a man planted vines at specific intervals and manipulated the branches to allow for sowing other crops between the rows. Rav Yosef recounts an incident in the village of shepherds where Rav Yehuda ordered a seller of trees to provide the buyer with enough land for an ox and its equipment.",
    "segments": [
@@ -3124,6 +3105,12 @@
      "i": 0,
      "he": "בְּדוּרָא דְרָעֲוָתָא, וַאֲתוֹ לְקַמֵּיהּ דְּרַב יְהוּדָה, וַאֲמַר לֵיהּ: ״זִיל הַב לֵיהּ כִּמְלֹא בָּקָר וְכֵלָיו״; וְלָא הֲוָה יָדַעְנָא ״כִּמְלֹא בָּקָר וְכֵלָיו״ כַּמָּה; כֵּיוָן דְּשַׁמְעִתַהּ לְהָא דִּתְנַן: לֹא יִטַּע אָדָם אִילָן סָמוּךְ לִשְׂדֵה חֲבֵירוֹ, אֶלָּא אִם כֵּן הִרְחִיק מִמֶּנָּה אַרְבַּע אַמּוֹת;",
      "en": "involving the sale of trees <b>in a village of shepherds, and they came before Rav Yehuda, and he said to</b> the seller: <b>Go</b> and <b>give to</b> the one who bought the trees <b>sufficient</b> land <b>for an ox and its vessels. But I did not know how much</b> was <b>sufficient</b> land <b>for an ox and its vessels. When I heard that which we learned</b> in a mishna (26a), I came to a conclusion with regard to this case. The mishna teaches as follows: <b>A person may not plant a tree close by the field of another, unless he places it at a distance</b> of <b>four cubits from</b> the other field."
+    },
+    {
+     "ref": "Bava Batra 83a",
+     "i": 1,
+     "he": "וְתָנֵי עֲלַהּ: אַרְבַּע אַמּוֹת שֶׁאָמְרוּ – כְּדֵי עֲבוֹדַת הַכֶּרֶם; אָמֵינָא: שְׁמַע מִינַּהּ, ״כִּמְלֹא בָּקָר וְכֵלָיו״ – אַרְבַּע אַמּוֹת.",
+     "en": "Rav Yosef continues: <b>And it is taught</b> in a <i>baraita</i> <b>with regard to</b> this mishna: The <b>four cubits that</b> the Sages <b>stated</b> are <b>for the work of the vineyard,</b> so that he does not take oxen and a plow into his neighbor’s field while tending to his vineyard. <b>I</b> studied this mishna and <i>baraita</i> and <b>said: Learn from it</b> that the phrase: <b>Sufficient for the ox and its vessels,</b> means <b>four cubits.</b> At this stage, the Gemara has demonstrated that Rav Naḥman’s opinion is supported by a mishna, whereas Rav Yosef’s ruling is supported by the incident involving Rav Yehuda."
     }
    ],
    "span": [
@@ -3138,8 +3125,8 @@
      "end": 0
     }
    ],
-   "words": 250,
-   "minutes": 2
+   "words": 350,
+   "minutes": 3
   },
   {
    "id": "bava_batra-88a-5-7",
@@ -3877,7 +3864,11 @@
    "start_segment": 2,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 9 holds the outcome (the document of admission and Rava's anger), so it is added to complete the story."
+   },
    "reviewed": false,
    "summary": "Issur the Convert, on his deathbed, successfully transfers a large sum of money held by Rava to his son Rav Mari by using a legal admission, despite Rava's attempts to find a way to keep the funds.",
    "segments": [
@@ -3898,6 +3889,12 @@
      "i": 4,
      "he": "אִי בִּמְשִׁיכָה – לֵיתַנְהוּ גַּבֵּיהּ. אִי בַּחֲלִיפִין – אֵין מַטְבֵּעַ נִקְנֶה בַּחֲלִיפִין. אִי אַגַּב קַרְקַע – לֵית לֵיהּ אַרְעָא. אִי בְּמַעֲמַד שְׁלָשְׁתָּן – אִי שָׁלַח לִי לָא אָזֵילְנָא.",
      "en": "<b>If</b> he attempts to acquire the dinars <b>by pulling</b> them, which is a formal act of acquisition, he will not be able to do this, as the dinars <b>are not with him. If</b> he attempts to acquire them <b>by</b> means of symbolic <b>exchange,</b> a pro forma act of acquisition effecting the transfer of ownership of an article, <b>money cannot be acquired by</b> means of symbolic <b>exchange. If</b> he attempts to acquire them <b>by means of</b> the acquisition of <b>land,</b> Issur <b>does not have</b> any <b>land. If</b> he attempts to acquire them by means of verbal instruction made by his father <b>in the presence of</b> all <b>three</b> parties, i.e., the giver, the recipient, and the bailee, <b>if he sends for me,</b> the bailee, <b>I shall not go,</b> as without the presence of the bailee he cannot transfer ownership of the money."
+    },
+    {
+     "ref": "Bava Batra 149a",
+     "i": 5,
+     "he": "מַתְקֵיף לַהּ רַב אִיקָא בְּרֵיהּ דְּרַב אַמֵּי: אַמַּאי? וְלוֹדֵי אִיסּוּר דְּהָלֵין זוּזֵי דְּרַב מָרִי נִינְהוּ, וְלִיקְנִינְהוּ בְּאוֹדִיתָא! אַדְּהָכִי, נְפַק אוֹדִיתָא מִבֵּי אִיסּוּר. אִיקְּפַד רָבָא, אָמַר: קָא מַגְמְרִי טַעֲנָתָא לְאִינָשֵׁי, וּמַפְסְדִי לִי.",
+     "en": "<b>Rav Ika, son of Rav Ami, objected to this: Why</b> is Rav Mari unable to acquire the money? <b>But</b> why not <b>let Issur admit that these dinars are</b> owned <b>by Rav Mari, and he shall transfer</b> ownership of <b>them</b> to Rav Mari <b>by</b> means of a document of <b>admission? In the meantime,</b> a document of <b>admission</b> stating that the dinars belonged to Rav Mari <b>emerged from Issur’s house. Rava became angry,</b> and <b>said: They are teaching people</b> legal <b>claims and causing me loss.</b> In any event, this incident proves that the admission of a person on his deathbed is a valid means of transferring ownership."
     }
    ],
    "span": [
@@ -3907,8 +3904,8 @@
      "end": 4
     }
    ],
-   "words": 392,
-   "minutes": 3
+   "words": 497,
+   "minutes": 4
   },
   {
    "id": "bava_batra-151a-4-4",
@@ -4235,13 +4232,18 @@
    "tractate": "bava_batra",
    "ref": "Bava Batra 155a",
    "refs": [
-    "Bava Batra 155a",
-    "Bava Batra 155b"
+    "Bava Batra 155a"
    ],
    "start_segment": 3,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The Bnei Brak incident is in segment 6; segments 7-9 are legal argument about age and puberty.",
+    "start_trim": 0,
+    "end_trim": 3
+   },
    "reviewed": false,
    "summary": "In Bnei Brak, a man sold his father's inheritance and died, leading his family to challenge the sale's validity based on his age at the time of death.",
    "segments": [
@@ -4250,24 +4252,6 @@
      "i": 3,
      "he": "מֵתִיב רַבִּי זֵירָא: מַעֲשֶׂה בִּבְנֵי בְרַק בְּאֶחָד שֶׁמָּכַר בְּנִכְסֵי אָבִיו, וּמֵת; וּבָאוּ בְּנֵי מִשְׁפָּחָה, וְעִרְעֲרוּ לוֹמַר: קָטָן הָיָה בִּשְׁעַת מִיתָה. וּבָאוּ וְשָׁאֲלוּ אֶת רַבִּי עֲקִיבָא: מַהוּ לְבוֹדְקוֹ? אָמַר לָהֶם: אִי אַתֶּם רַשָּׁאִין לְנַוְּולוֹ. וְעוֹד, סִימָנִין עֲשׂוּיִין לְהִשְׁתַּנּוֹת לְאַחַר מִיתָה. בִּשְׁלָמָא לְמַאן דְּאָמַר בֶּן שְׁמֹנֶה עֶשְׂרֵה שָׁנָה,",
      "en": "<b>Rabbi Zeira raises an objection</b> from the aforementioned <i>baraita</i>: There was <b>an incident in Bnei Brak involving one who sold</b> some <b>of his father’s property,</b> which he had inherited, <b>and he died, and</b> the <b>members of</b> his <b>family came and contested</b> the sale, <b>saying: He was a minor at the time of</b> his <b>death,</b> and therefore the sale was not valid. <b>And they came and asked Rabbi Akiva: What is</b> the <i>halakha</i>? Is it permitted to exhume the corpse in order <b>to examine it</b> and ascertain whether or not the heir was a minor at the time of his death? Rabbi Akiva <b>said to them:</b> It is <b>not permitted</b> for <b>you to disgrace him</b> for the sake of a monetary claim. <b>And furthermore, signs</b> indicating puberty <b>are likely to change after death,</b> and therefore nothing can be proved by exhuming the body. Rabbi Zeira explains the objection: <b>Granted, according to the one who says</b> that the heir can sell the property once he is <b>eighteen years old,</b>"
-    },
-    {
-     "ref": "Bava Batra 155b",
-     "i": 0,
-     "he": "הַיְינוּ דְּקָאָתוּ וְאָמְרוּ לֵיהּ: מַהוּ לְבוֹדְקוֹ. אֶלָּא אִי אָמְרַתְּ מִבֶּן עֶשְׂרִים, כִּי בָּדְקוּ לֵיהּ מַאי הָוֵי? וְהָא תְּנַן: בֶּן עֶשְׂרִים שֶׁלֹּא הֵבִיא שְׁתֵּי שְׂעָרוֹת – יָבִיאוּ רְאָיָה שֶׁהוּא בֶּן עֶשְׂרִים; וְהוּא הַסָּרִיס, לֹא חוֹלֵץ וְלֹא מְיַבֵּם!",
-     "en": "<b>this is</b> the reason <b>that they came and said to</b> Rabbi Akiva: <b>What is</b> the <i>halakha</i>? Is it permitted <b>to examine</b> the corpse? <b>But if you say</b> that he can sell the property <b>from</b> the time he is <b>twenty</b> years <b>old,</b> even <b>if they examine him, what of it? But didn’t we learn</b> in a mishna (<i>Nidda</i> 47b): With regard to <b>a twenty-</b>year<b>-old</b> man <b>who did not develop two</b> pubic <b>hairs, proof must be brought that he is twenty</b> years <b>old,</b> and then he is no longer considered a minor. <b>And he is the sexually underdeveloped man,</b> who is excluded from the mitzva of levirate marriage. Therefore, if his married brother dies childless, <b>he neither performs <i>ḥalitza</i> nor enters into levirate marriage</b> with his widow. Since a twenty-year-old is considered an adult even if he has not developed signs of puberty, there is no reason to examine the body."
-    },
-    {
-     "ref": "Bava Batra 155b",
-     "i": 1,
-     "he": "לָאו אִיתְּמַר עֲלַהּ, אָמַר רַבִּי שְׁמוּאֵל בַּר רַב יִצְחָק אָמַר רַב: וְהוּא שֶׁנּוֹלְדוּ בּוֹ סִימָנֵי סָרִיס? אָמַר רָבָא: דַּיְקָא נָמֵי, דְּקָתָנֵי: וְהוּא הַסָּרִיס; שְׁמַע מִינַּהּ.",
-     "en": "The Gemara replies: <b>Wasn’t it stated with regard to that</b> mishna: <b>Rabbi Shmuel bar Rav Yitzḥak says</b> that <b>Rav says: And</b> is <b>this</b> the <i>halakha</i> only <b>where he developed the signs of a sexually underdeveloped man?</b> Otherwise, a twenty-year-old who has not developed two pubic hairs is still considered a minor. The examination of the deceased could therefore be effective to see if he has other signs of being sexually underdeveloped. <b>Rava said:</b> The language of the mishna <b>is also precise, as it teaches: And he is the sexually underdeveloped man.</b> The usage of the definitive article indicates that the mishna is referring to one who is clearly a sexually underdeveloped man. The Gemara affirms: One can <b>conclude from</b> the mishna that the mishna is speaking of one who developed the signs of a sexually underdeveloped man."
-    },
-    {
-     "ref": "Bava Batra 155b",
-     "i": 2,
-     "he": "וְכִי לָא נוֹלְדוּ לוֹ סִימָנֵי סָרִיס, עַד כַּמָּה? תָּנֵי רַבִּי חִיָּיא: עַד רוֹב שְׁנוֹתָיו. כִּי אֲתָא לְקַמֵּיהּ דְּרַבִּי חִיָּיא, אִי כָּחֵישׁ אֲמַר לְהוּ: לִיבְרֵי; וְאִי אִבְּרִי אֲמַר לְהוּ: לִיכְחוֹשׁ. דְּהָנֵי סִימָנֵי – זִמְנִין דְּאָתוּ מֵחֲמַת כְּחִישׁוּתָא, זִמְנִין דְּאָתוּ מֵחֲמַת בְּרִיּוּתָא.",
-     "en": "The Gemara asks: <b>And if he did not develop the signs of a sexually underdeveloped man, until when</b> is he considered a minor if he does not develop two pubic hairs? <b>Rabbi Ḥiyya teaches</b> in a <i>baraita</i>: He is considered a minor <b>until most of his years</b> have elapsed, i.e., until he is thirty-five years old. <b>When</b> the case of one who had not developed pubic hair <b>would come before Rabbi Ḥiyya,</b> he would offer the following advice: <b>If</b> the person was <b>thin, he</b> would <b>say to</b> those appearing in court: Cause him <b>to become fat, and if he was fat, he</b> would <b>say to them:</b> Cause him <b>to become thin.</b> This is <b>because these signs</b> indicating puberty <b>sometimes develop due to</b> excessive <b>thinness,</b> and <b>sometimes they develop due to corpulence.</b>"
     }
    ],
    "span": [
@@ -4282,8 +4266,8 @@
      "end": 2
     }
    ],
-   "words": 591,
-   "minutes": 4
+   "words": 169,
+   "minutes": 2
   },
   {
    "id": "bava_batra-155b-7-8",
