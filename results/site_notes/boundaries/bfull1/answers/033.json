@@ -1,0 +1,22 @@
+{
+"01": {"code": "04023C", "action": "keep", "reason": "Berurya and the whispering student is told in full in segments 5-6; the closing baraita line shares segment 6 and cannot be cut."},
+"02": {"code": "7EFB0A", "action": "keep", "reason": "The woman before the judge is a complete one-segment anecdote."},
+"03": {"code": "CAC0F4", "action": "keep", "reason": "Rava's visit to appease Rav Yosef and his exposition of the verses runs 5-8 with no surrounding argument included."},
+"04": {"code": "CA1817", "action": "keep", "reason": "Rabbi Perida's student and the Divine Voice's reward run 5-7, complete, and the next segment is a new teaching."},
+"05": {"code": "B1DC30", "action": "keep", "reason": "Rabbi Elazar ben Pedat's cloak and the serpent is a complete one-segment story."},
+"06": {"code": "CA0233", "action": "keep", "reason": "Rav Dimi's report about Geder and Hamtan is one segment; what follows is the Gemara's questions about it."},
+"07": {"code": "B36243", "action": "keep", "reason": "Ravina rebuking the man and Rav Ashi's reply run 5-6; Rava's opening rule shares segment 5."},
+"08": {"code": "407DA5", "action": "adjust", "first": 5, "last": 6, "reason": "Imma Shalom's question and Rabbi Eliezer's answer in segment 6 finish the story; the discussion of distance that follows is argument."},
+"09": {"code": "8BFCF8", "action": "keep", "reason": "The knife inspection and Rabbi Elazar's punishment run 5-6; the next segments are the Gemara's questions."},
+"10": {"code": "2BEACD", "action": "keep", "reason": "Lahman bar Ristak's alleyway and Abaye's advice run 5-8; Rav Huna reporting to Rava is a separate site story."},
+"11": {"code": "EDAC21", "action": "keep", "reason": "Rabban Gamliel's journey from Akko to the Ladder of Tyre runs 5-10, with its interruptions inside; the lessons and discussion that follow are argument."},
+"12": {"code": "D48B2D", "action": "keep", "reason": "Reish Lakish at the inn, from arrival to Rabbi Afes's answer, runs 5-8; the clarifying lines in between cannot be cut out."},
+"13": {"code": "6BD50C", "action": "keep", "reason": "The three sages at the inn through Rabbi Yohanan's answer run 5-8; the Neharde'a question shares segment 8."},
+"14": {"code": "CDF8BF", "action": "merge", "merge_with": "eruvin-68b-0-3", "reason": "Ravina's challenge to Rava and Rava's replies, right after, are part of the same incident with the spilled water."},
+"15": {"code": "1B6083", "action": "adjust", "first": 6, "last": 8, "reason": "Segment 5 is the Gemara's question about the mishna; the Sadducee incident and its versions are told in 6-8."},
+"16": {"code": "D53B88", "action": "keep", "reason": "The man hiding his coral ring from Rabbi Yehuda Nesia is a complete one-segment story."},
+"17": {"code": "EAC595", "action": "keep", "reason": "Ivut bar Ihi's side post and Rav Anan throwing it down run 5-6; the Gemara's framing shares those segments."},
+"18": {"code": "4E148A", "action": "keep", "reason": "Rabbi Akiva's two tithes is a single segment that also carries the objection, so it cannot be trimmed."},
+"19": {"code": "085D48", "action": "adjust", "first": 5, "last": 6, "reason": "The incident and Rabbi Hiyya's ruling with Rabbi Yishmael's reply end at 6; 7-11 are the later dilemma about why he ruled that way."},
+"20": {"code": "7E415B", "action": "adjust", "first": 5, "last": 6, "reason": "Ben Bonyas before Rabbi ends at 6; segment 7 is the Gemara's explanation with a verse."}
+}

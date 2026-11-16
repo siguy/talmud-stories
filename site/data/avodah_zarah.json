@@ -331,13 +331,18 @@
    "tractate": "avodah_zarah",
    "ref": "Avodah Zarah 10a",
    "refs": [
-    "Avodah Zarah 10a",
-    "Avodah Zarah 10b"
+    "Avodah Zarah 10a"
    ],
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 7 is the Gemara asking why Rabbi did not speak openly, which is discussion and not part of the two Antoninus episodes.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Antoninus seeks political advice from Rabbi Yehuda HaNasi, who responds through symbolic physical actions in a garden rather than direct speech to avoid Roman spies.",
    "segments": [
@@ -352,12 +357,6 @@
      "i": 14,
      "he": "אֲמַר לֵיהּ: מְצַעֲרִין לִי חֲשִׁיבִי רוֹמָאֵי. [הֲוָה] מְעַיֵּיל לֵיהּ (לגינא) [לְגִינְּתָא], כֹּל יוֹמָא עֲקַר לֵיהּ פּוּגְלָא מִמֵּשָׁרָא קַמֵּיהּ. אֲמַר: שְׁמַע מִינַּהּ הָכִי קָאָמַר לִי — אַתְּ קְטוֹל חַד חַד מִינַּיְיהוּ, וְלָא תִּתְגָּרֵה בְּהוּ בְּכוּלְּהוּ.",
      "en": "Antoninus also <b>said to</b> Rabbi Yehuda HaNasi: <b>Important Romans are upsetting me;</b> what can I do about them? Rabbi Yehuda HaNasi <b>brought him to</b> his <b>garden,</b> and <b>every day he uprooted a radish from the garden bed before him.</b> Antoninus <b>said</b> to himself: <b>Learn from it</b> that <b>this</b> is what Rabbi Yehuda HaNasi <b>is saying to me: You</b> should <b>kill them one</b> by <b>one, and do not incite all of them</b> at once."
-    },
-    {
-     "ref": "Avodah Zarah 10b",
-     "i": 0,
-     "he": "וְלֵימָא לֵיהּ מֵימָר [בְּהֶדְיָא]! אָמַר: שָׁמְעִי בִּי חֲשִׁיבִי דְּרוֹמָאֵי וּמְצַעֲרוּ לִי. וְלֵימָא לֵיהּ בְּלַחַשׁ! מִשּׁוּם דִּכְתִיב: ״כִּי עוֹף הַשָּׁמַיִם יוֹלִיךְ אֶת הַקּוֹל״.",
-     "en": "The Gemara asks: <b>But</b> why not <b>let him say</b> his advice <b>explicitly?</b> Why did Rabbi Yehuda HaNasi answer in such a circumspect way, which could have been interpreted incorrectly? The Gemara answers: Rabbi Yehuda HaNasi <b>said</b> to himself: If I answer openly, <b>the important Romans</b> might <b>hear me and will cause</b> me <b>anguish.</b> The Gemara asks: <b>But</b> why not <b>let him say</b> his advice <b>quietly?</b> The Gemara explains: Rabbi Yehuda HaNasi was still worried that they might hear what he had said, <b>because it is written:</b> “Curse not the king, no, not in your thought, and curse not the rich in your bedchamber, <b>for a bird of the air shall carry the voice”</b> (Ecclesiastes 10:20)."
     }
    ],
    "span": [
@@ -372,8 +371,8 @@
      "end": 0
     }
    ],
-   "words": 364,
-   "minutes": 3
+   "words": 249,
+   "minutes": 2
   },
   {
    "id": "avodah_zarah-10b-1-1",
@@ -459,16 +458,16 @@
    "start_segment": 10,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 is the baraita's verse exegesis; Ketia's story itself begins at 'What is it that occurred' in segment 6 and ends with the Divine Voice and Rabbi weeping.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Ketia bar Shalom saves the Jewish people from an emperor's decree through a clever argument and is executed, circumcising himself just before death to earn a place in the World-to-Come.",
    "segments": [
-    {
-     "ref": "Avodah Zarah 10b",
-     "i": 10,
-     "he": "תַּנְיָא נָמֵי הָכִי: ״מְלָכֶיהָ״ וְלֹא כׇּל מְלָכֶיהָ, ״כָּל נְשִׂיאֶיהָ״ וְלֹא כׇּל שָׂרֶיהָ. ״מְלָכֶיהָ״ וְלֹא כׇּל מְלָכֶיהָ — פְּרָט לְאַנְטוֹנִינוּס בֶּן אַסְוִירוּס, ״כָּל נְשִׂיאֶיהָ״ וְלֹא כׇּל שָׂרֶיהָ — פְּרָט לִקְטִיעָה בַּר שָׁלוֹם.",
-     "en": "<b>This is also taught</b> in a <i>baraita</i>: The verse states: <b>“Her kings,” but not: All of her kings,</b> and: <b>“All her leaders,” but not: All of her officers.</b> The inference learned from the wording of the verse: <b>“Her kings,” but not: All of her kings,</b> serves <b>to exclude Antoninus the son of Asveirus;</b> and the inference from the wording: <b>“All her leaders,” but not: All of her officers,</b> serves <b>to exclude</b> the Roman officer <b>Ketia, son of Shalom.</b>"
-    },
     {
      "ref": "Avodah Zarah 10b",
      "i": 11,
@@ -501,7 +500,7 @@
      "end": 14
     }
    ],
-   "words": 568,
+   "words": 489,
    "minutes": 4
   },
   {
@@ -730,7 +729,13 @@
    "start_segment": 8,
    "classification": "LOW_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The woman's confession and Rav Hisda's response are told in [5]; [6] is the Gemara's inference and answer and [7] is an alternative version of the objection, both legal argument.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "A woman confesses her grave sins to Rav Hisda and subsequently dies, serving as a case study for the fate of those who repent from heresy or severe sin.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -740,18 +745,6 @@
      "i": 8,
      "he": "לְמֵימְרָא, דְּכׇל הַפּוֹרֵשׁ מִמִּינוּת מָיֵית? וְהָא הָהִיא דַּאֲתַאי לְקַמֵּיהּ דְּרַב חִסְדָּא, וְאָמְרָה לֵיהּ: קַלָּה שֶׁבַּקַּלּוֹת עָשְׂתָה בְּנָהּ הַקָּטָן מִבְּנָהּ הַגָּדוֹל, וַאֲמַר לַהּ רַב חִסְדָּא: טְרַחוּ לַהּ בִּזְוָודְתָּא, וְלָא מִתָה.",
      "en": "The Gemara asks: Is this <b>to say that anyone who separates</b> himself <b>from heresy</b> and returns from his mistaken ways must <b>die? But</b> what about <b>that</b> woman <b>who came before Rav Ḥisda</b> to confess to him, <b>and she said to him: The lightest of the light,</b> i.e., the least of the sins that she committed, is that <b>she conceived her younger son from</b> engaging in intercourse with <b>her older son. And Rav Ḥisda said to her: Prepare funeral shrouds for her,</b> i.e., yourself, as you will certainly die soon, <b>but she did not die.</b>"
-    },
-    {
-     "ref": "Avodah Zarah 17a",
-     "i": 9,
-     "he": "מִדְּקָאָמְרָה קַלָּה שֶׁבַּקַּלּוֹת עָשְׂתָה, מִכְּלָל דְּמִינוּת [נָמֵי] הָוְיָא בַּהּ! הָהוּא דְּלָא הָדְרָא בַּהּ שַׁפִּיר, וּמִשּׁוּם הָכִי לֹא מֵתָה.",
-     "en": "The above incident refutes the claim that anyone who repents for the sin of heresy must die, as <b>from</b> the fact <b>that she said</b> that <b>the lightest of the light</b> of her sins was that <b>she conceived</b> one son from engaging in intercourse with another son, <b>by inference</b> one can learn <b>that she was also involved in heresy,</b> and yet she did not die. The Gemara answers: <b>That</b> is a case <b>where</b> the woman <b>did not repent properly, and due to that</b> reason <b>she did not die.</b>"
-    },
-    {
-     "ref": "Avodah Zarah 17a",
-     "i": 10,
-     "he": "אִיכָּא דְּאָמְרִי: מִמִּינוּת — אִין, מֵעֲבֵירָה — לָא? וְהָא הָהִיא דַּאֲתַאי קַמֵּיהּ דְּרַב חִסְדָּא, וַאֲמַר לְהוּ [רַב חִסְדָּא: זַוִּידוּ לַהּ זְוַודְתָּא], וּמִתָה! מִדְּקָאָמְרָה ״קַלָּה שֶׁבַּקַּלּוֹת״, מִכְּלָל דְּמִינוּת נָמֵי הַוְיָא בַּהּ.",
-     "en": "<b>There are</b> those <b>who say</b> there is a different version of the objection to the Gemara’s statement that those who repent for the sin of heresy must die: Is that to say that if one repents <b>for</b> the sin of <b>heresy, yes,</b> the result is death, whereas if one repents <b>for</b> the <b>sin</b> of forbidden sexual intercourse he does <b>not</b> die? <b>But</b> what about <b>that</b> woman <b>who came before Rav Ḥisda</b> to confess to him <b>and Rav Ḥisda said to</b> those present: <b>Prepare funeral shrouds for her, and she died?</b> The Gemara answers: <b>From</b> the fact <b>that she said: The lightest of the light, by inference</b> one can learn <b>that she was also involved in heresy.</b>"
     }
    ],
    "span": [
@@ -761,8 +754,8 @@
      "end": 10
     }
    ],
-   "words": 297,
-   "minutes": 2
+   "words": 94,
+   "minutes": 1
   },
   {
    "id": "avodah_zarah-17a-11-15",
@@ -2778,7 +2771,13 @@
    "start_segment": 6,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The drinking incident ends with Rabbi Yehoshua ben Levi's explanation of both rulings; segments 7-8 are the Gemara's questions and answers about it.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "Two rabbis drinking wine ask a passerby to serve them, only to discover after he pours that he is a gentile, leading to a dispute over the wine's status.",
    "segments": [
@@ -2793,18 +2792,6 @@
      "i": 0,
      "he": "מֵימָר אָמַר: סָלְקָא דַּעְתֵּיהּ דְּרַבָּנַן כִּי הָנֵי שִׁיכְרָא קָא שָׁתוּ? אֶלָּא וַדַּאי הַאי חַמְרָא הוּא, וְנַסְּכֵיהּ. מַאן דְּשָׁרֵי שַׁפִּיר שְׁרֵי, מֵימָר אָמַר: סָלְקָא דַעְתָּךְ דְּרַבָּנַן כִּי הָנֵי חַמְרָא קָא שָׁתוּ, וְאָמְרוּ לִיה לְדִידִי ״תָּא אַשְׁקֵינַן״? אֶלָּא וַדַּאי שִׁיכְרָא הוּא (קָא שָׁתוּ), וְלָא נַסְּכֵיהּ.",
      "en": "the gentile <b>says</b> to himself: Can it <b>enter your mind that</b> great <b>Sages like these are drinking liquor [<i>shikhra</i>]? Rather, this is certainly wine</b> that they are drinking, <b>and</b> therefore the gentile may have <b>poured it as a libation.</b> Rabbi Yehoshua ben Levi continues to explain that <b>the one who deemed</b> the wine <b>permitted properly deemed</b> it <b>permitted,</b> as he holds that the gentile <b>says</b> to himself: Can it <b>enter your mind that</b> great <b>Rabbis like these are drinking wine and they say to me,</b> a gentile: <b>Come, serve us drinks? Rather, it is certainly liquor</b> that <b>they are drinking, and</b> therefore <b>he did not pour it as a libation.</b>"
-    },
-    {
-     "ref": "Avodah Zarah 58b",
-     "i": 1,
-     "he": "וְהָא קָא חָזֵי! בְּלֵילְיָא. וְהָא קָא מֹרַח לֵיהּ! בְּחַדְתָּא.",
-     "en": "The Gemara asks: <b>But doesn’t</b> the gentile <b>see</b> whether it is wine or liquor? The Gemara answers: The incident occurred <b>at night.</b> The Gemara asks: <b>But doesn’t</b> the gentile <b>smell it</b> and recognize that it is wine? The Gemara answers: This incident occurred <b>with new</b> wine, whose smell does not diffuse."
-    },
-    {
-     "ref": "Avodah Zarah 58b",
-     "i": 2,
-     "he": "וְהָא קָא נָגַע בֵּיהּ בְּנַטְלָא, וְהָוֵה לֵיהּ מַגַּע גּוֹי שֶׁלֹּא בְּכַוָּונָה וְאָסוּר! לָא צְרִיכָא, דְּקָא מוֹרֵיק אוֹרוֹקֵי, וְהָוֵה לֵיהּ כֹּחוֹ שֶׁלֹּא בְּכַוָּונָה, וְכֹל כֹּחוֹ שֶׁלֹּא בְּכַוָּונָה לָא גְּזַרוּ בֵּיהּ רַבָּנַן.",
-     "en": "The Gemara asks: <b>But didn’t</b> the gentile <b>touch</b> the wine when he drew the wine <b>in the pail, and</b> therefore <b>it is</b> a case of <b>a gentile’s unintentional touch,</b> which renders the wine <b>prohibited?</b> The Gemara replies: <b>No,</b> it was <b>necessary</b> to teach this <i>halakha</i> because the gentile <b>was pouring</b> from one vessel to another without touching the wine, <b>and</b> therefore <b>it was</b> a case where the wine was poured by <b>the force of</b> the gentile’s action, <b>without</b> any <b>intention</b> of offering it as a libation. <b>And</b> in <b>any</b> case where wine is poured by <b>force of</b> a gentile’s action, <b>without</b> any <b>intention</b> of offering it as a libation, <b>the Sages did not issue a decree</b> prohibiting the wine, and it is permitted to drink it."
     }
    ],
    "span": [
@@ -2819,8 +2806,8 @@
      "end": 2
     }
    ],
-   "words": 398,
-   "minutes": 3
+   "words": 221,
+   "minutes": 2
   },
   {
    "id": "avodah_zarah-58b-6-7",

@@ -12,10 +12,20 @@
    "start_segment": 4,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "The story starts in segment 4, where Yonatan ben Uzziel's translation makes the land quake and a Divine Voice asks who revealed God's secrets; segment 5 is his answer to that voice."
+   },
    "reviewed": false,
    "summary": "Yonatan ben Uzziel stands to defend his translation of the Prophets and is subsequently barred by a Divine Voice from translating the Hagiographa.",
    "segments": [
+    {
+     "ref": "Megillah 3a",
+     "i": 3,
+     "he": "וְאָמַר רַבִּי יִרְמְיָה וְאִיתֵּימָא רַבִּי חִיָּיא בַּר אַבָּא: תַּרְגּוּם שֶׁל תּוֹרָה — אוּנְקְלוֹס הַגֵּר אֲמָרוֹ מִפִּי רַבִּי אֱלִיעֶזֶר וְרַבִּי יְהוֹשֻׁעַ. תַּרְגּוּם שֶׁל נְבִיאִים — יוֹנָתָן בֶּן עוּזִּיאֵל אֲמָרוֹ מִפִּי חַגַּי זְכַרְיָה וּמַלְאָכִי, וְנִזְדַּעְזְעָה אֶרֶץ יִשְׂרָאֵל אַרְבַּע מֵאוֹת פַּרְסָה עַל אַרְבַּע מֵאוֹת פַּרְסָה. יָצְתָה בַּת קוֹל וְאָמְרָה: מִי הוּא זֶה שֶׁגִּילָּה סְתָרַיי לִבְנֵי אָדָם?",
+     "en": "§ The Gemara cites another ruling of Rabbi Yirmeya or Rabbi Ḥiyya bar Abba. <b>Rabbi Yirmeya said, and some say</b> that it was <b>Rabbi Ḥiyya bar Abba</b> who said: <b>The</b> Aramaic <b>translation of the Torah</b> used in the synagogues <b>was composed by Onkelos the convert based on</b> the teachings of <b>Rabbi Eliezer and Rabbi Yehoshua. The</b> Aramaic <b>translation of the Prophets was composed by Yonatan ben Uzziel based on</b> a tradition going back to the last prophets, <b>Haggai, Zechariah, and Malachi.</b> The Gemara relates that when Yonatan ben Uzziel wrote his translation, <b>Eretz Yisrael quaked</b> over an area of <b>four hundred parasangs [<i>parsa</i>] by four hundred parasangs,</b> and <b>a Divine Voice emerged and said: Who is this who has revealed My secrets to mankind?</b>"
+    },
     {
      "ref": "Megillah 3a",
      "i": 4,
@@ -36,8 +46,8 @@
      "end": 5
     }
    ],
-   "words": 188,
-   "minutes": 2
+   "words": 314,
+   "minutes": 3
   },
   {
    "id": "megillah-5a-18-18",

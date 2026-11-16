@@ -5,7 +5,6 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Avodah Zarah 11b** (`avodah_zarah-11b-2-3`): This describes a recurring Roman ritual rather than a single event.
 - **Avodah Zarah 19a** (`avodah_zarah-19a-18-18`): The last segment adds Rabbi Tanhum bar Hanilai's separate teaching on dividing one's study, which is not part of the Rav Hisda incident.
 - **Avodah Zarah 20b** (`avodah_zarah-20b-2-2`): The STORY is a single three-word answer ("it was a corner") to a question about an incident told earlier; it has no events of its own.
-- **Bava Batra 11a** (`bava_batra-11a-0-0`): The STORY segments hold only the Gemara's follow-up explanation; the incident itself (the queen's gift, Rabbi Ami's refusal, Rava's acceptance) is in the BEFORE segment just preceding.
 - **Bava Batra 11a** (`bava_batra-11a-1-3`): The STORY joins two separate tales, Binyamin the righteous and King Munbaz.
 - **Bava Batra 151b** (`bava_batra-151b-7-7`): The incident itself is a two-line report quoted as an objection; the rest is legal back-and-forth.
 - **Bava Batra 30b** (`bava_batra-30b-5-7`): The STORY combines two separate land cases (segment 4 and segments 5-6) that are not one narrative.
@@ -23,6 +22,7 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Chagigah 18a** (`chagigah-18a-9-9`): The story is a single sentence, quoted inside a legal objection; it has an event but almost no narrative.
 - **Chullin 106a** (`chullin-106a-1-1`): The Hebrew of the story is a single clause of Rav Dimi's two-part saying; the incident itself comes only from the translator's explanation, and the second half (the final waters) falls in the next segment.
 - **Chullin 106a** (`chullin-106a-2-3`): The Hebrew is a single line saying that neglecting the final waters led to a divorce; the incident itself appears only in the translator's explanation.
+- **Chullin 30b** (`chullin-30b-15-15`): The English names Rava as shooting the arrow while the AFTER discussion treats Rabbi Yona bar Tahlifa as the slaughterer; the note leaves the shooter unnamed, worth checking.
 - **Chullin 44a** (`chullin-44a-5-5`): Mostly a statement of who said what in Rav's name; the only event is Rami bar Yehezkel's arrival and remark.
 - **Chullin 48a** (`chullin-48a-14-15`): Combines two separate anecdotes: Rabbi Yirmeya in the butchers' market, and Rava's report about Rav Nahman.
 - **Chullin 56b** (`chullin-56b-5-5`): The hen is sent to Rabbi Abbahu, but the English translation credits the ruling and answer to Rabbi Elazar HaKappar, which the Aramaic does not name; the note avoids naming who ruled.
@@ -31,7 +31,6 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Eruvin 104a** (`eruvin-104a-13-13`): The STORY ends mid-debate with Abaye's objection; the reply comes in the AFTER segments.
 - **Eruvin 43b** (`eruvin-43b-10-10`): The STORY segment is only the Gemara quoting the opening words of a mishna ('On one occasion they did not enter the port, etc.'); the events come from the translator's expansion, not from the segment's own text.
 - **Eruvin 47b** (`eruvin-47b-0-0`): Very short: only the bare report that Yosef the priest went to Tzeidan, with no further events.
-- **Eruvin 68b** (`eruvin-68b-0-3`): The STORY segments are a legal exchange with no events of their own; the incident they rest on (the spilled water and Rava's plan) is in the BEFORE segments.
 - **Gittin 56a** (`gittin-56a-14-17`): The STORY segments stop mid-scene: Vespasian's offer and Rabban Yoḥanan's request for Yavne, the outcome of the meeting, sit in the AFTER segments.
 - **Ketubot 8a** (`ketubot-8a-12-12`): Two unrelated short reports (Ravina's son's match, and Rav Tahlifa's six blessings) are joined in one story.
 - **Makkot 16b** (`makkot-16b-6-6`): The STORY is mostly a legal ruling; the incident itself is one sentence, a man who ate the creature and was flogged.
@@ -41,6 +40,7 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Nedarim 66b** (`nedarim-66b-3-5`): Two separate incidents (spitting on Rabban Shimon ben Gamliel, and the search for something beautiful in Likhlukhit) are joined as one story.
 - **Nedarim 91b** (`nedarim-91b-2-4`): The STORY span joins two separate incidents (the palm-wall escape and the cress), each told as its own case.
 - **Niddah 64b** (`niddah-64b-18-18`): The story is a one-line precedent and stops mid-sentence as the Gemara starts analyzing it.
+- **Niddah 6a** (`niddah-6a-11-12`): The last story segment continues into the Gemara's analysis of the case ("And we discussed it..."), which runs on past the end of the story.
 - **Pesachim 49a** (`pesachim-49a-15-15`): Not much of a story: two brief reports of marriages and their results, with no events beyond that.
 - **Sanhedrin 52b** (`sanhedrin-52b-3-3`): The STORY segment only quotes the opening of the mishna's report, cut short with "etc.", plus Rav Yosef's one-line comment; the events themselves appear only in the translator's gloss.
 - **Sanhedrin 82a** (`sanhedrin-82a-4-5`): The translation identifies Rabbi Perida's grandfather as Rabbi Hiyya bar Avuya himself; worth checking.
@@ -60,7 +60,6 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Yevamot 65b** (`yevamot-65b-15-17`): Combines two separate stories: the woman before Rav Nahman, and Rabbi Hiyya's wife Yehudit.
 - **Yevamot 75b** (`yevamot-75b-15-15`): The last segment (Shmuel's ruling on a punctured member, and Rava's discussion of it) is a legal ruling, not part of the two incidents.
 - **Yoma 23b** (`yoma-23b-1-1`): The STORY segment begins mid-incident: the attack itself is only alluded to in the BEFORE segments, and the father's words end with 'etc.'
-- **Yoma 87b** (`yoma-87b-2-2`): The STORY segments are the Gemara's questions and answer about the Rav and Rabbi Ḥanina incident, which itself is told in the BEFORE segments.
 
 ## Passages to check
 
@@ -69,7 +68,6 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Avodah Zarah 11b** (`avodah_zarah-11b-2-3`): This describes a recurring Roman ritual rather than a single event.
 - **Avodah Zarah 19a** (`avodah_zarah-19a-18-18`): The last segment adds Rabbi Tanhum bar Hanilai's separate teaching on dividing one's study, which is not part of the Rav Hisda incident.
 - **Avodah Zarah 20b** (`avodah_zarah-20b-2-2`): The STORY is a single three-word answer ("it was a corner") to a question about an incident told earlier; it has no events of its own.
-- **Bava Batra 11a** (`bava_batra-11a-0-0`): The STORY segments hold only the Gemara's follow-up explanation; the incident itself (the queen's gift, Rabbi Ami's refusal, Rava's acceptance) is in the BEFORE segment just preceding.
 - **Bava Batra 11a** (`bava_batra-11a-1-3`): The STORY joins two separate tales, Binyamin the righteous and King Munbaz.
 - **Bava Batra 151b** (`bava_batra-151b-7-7`): The incident itself is a two-line report quoted as an objection; the rest is legal back-and-forth.
 - **Bava Batra 30b** (`bava_batra-30b-5-7`): The STORY combines two separate land cases (segment 4 and segments 5-6) that are not one narrative.
@@ -87,6 +85,7 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Chagigah 18a** (`chagigah-18a-9-9`): The story is a single sentence, quoted inside a legal objection; it has an event but almost no narrative.
 - **Chullin 106a** (`chullin-106a-1-1`): The Hebrew of the story is a single clause of Rav Dimi's two-part saying; the incident itself comes only from the translator's explanation, and the second half (the final waters) falls in the next segment.
 - **Chullin 106a** (`chullin-106a-2-3`): The Hebrew is a single line saying that neglecting the final waters led to a divorce; the incident itself appears only in the translator's explanation.
+- **Chullin 30b** (`chullin-30b-15-15`): The English names Rava as shooting the arrow while the AFTER discussion treats Rabbi Yona bar Tahlifa as the slaughterer; the note leaves the shooter unnamed, worth checking.
 - **Chullin 44a** (`chullin-44a-5-5`): Mostly a statement of who said what in Rav's name; the only event is Rami bar Yehezkel's arrival and remark.
 - **Chullin 48a** (`chullin-48a-14-15`): Combines two separate anecdotes: Rabbi Yirmeya in the butchers' market, and Rava's report about Rav Nahman.
 - **Chullin 56b** (`chullin-56b-5-5`): The hen is sent to Rabbi Abbahu, but the English translation credits the ruling and answer to Rabbi Elazar HaKappar, which the Aramaic does not name; the note avoids naming who ruled.
@@ -95,7 +94,6 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Eruvin 104a** (`eruvin-104a-13-13`): The STORY ends mid-debate with Abaye's objection; the reply comes in the AFTER segments.
 - **Eruvin 43b** (`eruvin-43b-10-10`): The STORY segment is only the Gemara quoting the opening words of a mishna ('On one occasion they did not enter the port, etc.'); the events come from the translator's expansion, not from the segment's own text.
 - **Eruvin 47b** (`eruvin-47b-0-0`): Very short: only the bare report that Yosef the priest went to Tzeidan, with no further events.
-- **Eruvin 68b** (`eruvin-68b-0-3`): The STORY segments are a legal exchange with no events of their own; the incident they rest on (the spilled water and Rava's plan) is in the BEFORE segments.
 - **Gittin 56a** (`gittin-56a-14-17`): The STORY segments stop mid-scene: Vespasian's offer and Rabban Yoḥanan's request for Yavne, the outcome of the meeting, sit in the AFTER segments.
 - **Ketubot 8a** (`ketubot-8a-12-12`): Two unrelated short reports (Ravina's son's match, and Rav Tahlifa's six blessings) are joined in one story.
 - **Makkot 16b** (`makkot-16b-6-6`): The STORY is mostly a legal ruling; the incident itself is one sentence, a man who ate the creature and was flogged.
@@ -105,6 +103,7 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Nedarim 66b** (`nedarim-66b-3-5`): Two separate incidents (spitting on Rabban Shimon ben Gamliel, and the search for something beautiful in Likhlukhit) are joined as one story.
 - **Nedarim 91b** (`nedarim-91b-2-4`): The STORY span joins two separate incidents (the palm-wall escape and the cress), each told as its own case.
 - **Niddah 64b** (`niddah-64b-18-18`): The story is a one-line precedent and stops mid-sentence as the Gemara starts analyzing it.
+- **Niddah 6a** (`niddah-6a-11-12`): The last story segment continues into the Gemara's analysis of the case ("And we discussed it..."), which runs on past the end of the story.
 - **Pesachim 49a** (`pesachim-49a-15-15`): Not much of a story: two brief reports of marriages and their results, with no events beyond that.
 - **Sanhedrin 52b** (`sanhedrin-52b-3-3`): The STORY segment only quotes the opening of the mishna's report, cut short with "etc.", plus Rav Yosef's one-line comment; the events themselves appear only in the translator's gloss.
 - **Sanhedrin 82a** (`sanhedrin-82a-4-5`): The translation identifies Rabbi Perida's grandfather as Rabbi Hiyya bar Avuya himself; worth checking.
@@ -125,4 +124,3 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Yevamot 65b** (`yevamot-65b-15-17`): Combines two separate stories: the woman before Rav Nahman, and Rabbi Hiyya's wife Yehudit.
 - **Yevamot 75b** (`yevamot-75b-15-15`): The last segment (Shmuel's ruling on a punctured member, and Rava's discussion of it) is a legal ruling, not part of the two incidents.
 - **Yoma 23b** (`yoma-23b-1-1`): The STORY segment begins mid-incident: the attack itself is only alluded to in the BEFORE segments, and the father's words end with 'etc.'
-- **Yoma 87b** (`yoma-87b-2-2`): The STORY segments are the Gemara's questions and answer about the Rav and Rabbi Ḥanina incident, which itself is told in the BEFORE segments.
