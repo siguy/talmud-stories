@@ -34,7 +34,13 @@ asking Jeff.
   with a JSON block.
 - Proof it works: issue #3, a test on Avodah Zarah on 2026-11-15, after the redeploy that
   opened the form to all 37 tractates.
-- **All 3 issues ever filed are our own tests. No real reader has reported anything yet.**
+- **4 issues so far, all ours.** #1-#3 are closed tests. **#4 is open, came from staging through
+  the fallback link, and has no labels** — a label filter would never see it.
+- **No GitHub Actions workflow is involved in feedback**, in any repo: the path is browser ->
+  Cloud Run -> GitHub REST API -> issue. Abuse limits already in place include
+  `--max-instances 2` (`worker/gcp/deploy.sh`).
+- **The main repo `siguy/talmud-stories` is PUBLIC; the feedback repo is private.** Anything this
+  plan writes into the main repo is public.
 - Fixing tools: `scripts/review_site_boundaries.py` (trim / extend / merge),
   `septimus_site_decisions.json` (`remove`, `keep`, `merge`), `scripts/draft_site_notes.py`
   + `build_site_notes.py` + `approve_notes.py`, `results/site_notes/held.json`.
@@ -47,14 +53,29 @@ asking Jeff.
 | No "background note" category | The note says "Spot a mistake? Use Report a problem", but a note mistake can only be sent as "Something else" |
 | A report does not say which note version or boundary the reader saw | By the time we read it the note may be redrafted or the boundary moved; we cannot tell if it is already fixed |
 | `review_site_boundaries.py export` only reads the drafters' flag list | There is no way to send it one reader-reported story |
-| No rate limit on the endpoint | A script could file many issues; honeypot and size caps are the only defence |
+| No rate limit on the endpoint | A script could file many issues; honeypot, size caps and the 2-instance cap are the only defence |
+| Staging reports fail the endpoint's origin check and fall back into the real queue | `deploy.sh` allows only `https://talmud-stories.vercel.app`; issue #4 came from `talmud-stories-staging.vercel.app` |
+| The "Send via GitHub instead" fallback is a dead end for readers | The feedback repo is private, so anyone but Simon gets a 404 |
+| Fallback reports bypass the worker's checks | Their JSON is built in the browser; triage must re-check id, category and caps itself |
+| Half-migrated and dead pieces (see Phase 0) | Cloudflare instructions in `worker/README.md` (pointing at the public repo), stale comments, orphaned workflows |
 | The reader never hears back | Reports are anonymous and readers cannot see the private repo |
 | "Send via GitHub instead" issues have a different, sometimes cut-off body | The triage script must read both shapes |
 | ~~Boundary tool's text says "4 forward", its code allows 6~~ | Fixed 2026-11-15: 6 is the rule (Simon: "make the changes you see fit"); the worker comment still says 4 |
 
 ---
 
-## Phase 0. Bookkeeping (before any work)
+## Phase 0. Bookkeeping and cleanup (before any work)
+
+**Cleanup (Simon: "we may need to clean all of this up").**
+- [ ] `worker/README.md`: delete the Cloudflare section (it tells you to set `REPO = siguy/talmud-stories`,
+      the public repo). `worker/feedback-worker.js`: fix the "Cloudflare Worker" header and the stale
+      "end_forward <= 4" comment (the rule is 6).
+- [ ] Disable the orphaned GitHub workflows: "Septimus email test" (its branch is gone) and
+      `pages-build-deployment` (failing since September; Pages is off). `gh workflow disable`, with Simon's yes.
+- [ ] `septimus-weekly.yml` (the sign-up weekly hand-out) lives on five `septimus/*` branches and never on
+      main, so it has never run. Not part of this plan: name it to Simon as the sign-up work's decision.
+- [ ] Staging: see D10.
+- [ ] Fallback: see D11.
 
 - [ ] Read `STATE.md`, `STATUS.md`, and `docs/capabilities/` for publication and review.
 - [ ] Copy `work/_TEMPLATE.md` to `work/2026-11-15-reader-feedback-loop.md`. Fill `writes:`
@@ -63,7 +84,9 @@ asking Jeff.
       `results/site_notes/held.json`, `results/shas_run/septimus_site_decisions.json`,
       `site/data/boundary_extensions.json`, `site/data/notes/`, `tests/`.
 - [ ] Run `python3 scripts/board.py lanes`. This item shares files with the notes and
-      boundary work, so it cannot run beside them.
+      boundary work, so it cannot run beside them. The full boundary review
+      (`docs/history/2026-11-15-PLAN-full-boundary-review.md`) owns `scripts/review_site_boundaries.py`;
+      the boundary route below waits for it to merge.
 
 ## Phase 1. Intake: make each report carry what triage needs
 
@@ -72,17 +95,23 @@ asking Jeff.
       tractate added in November. Mark both "TEST, please close".
 - [ ] Check both appear in the feedback repo with labels `story-feedback` and `tractate:<name>`.
 - [ ] Send one from a phone. Most readers are on phones.
-- [ ] Break it on purpose once (airplane mode): the "Send via GitHub instead" link must appear.
+- [ ] Break it on purpose once (airplane mode): the fallback must appear, and it must be the
+      reader-usable one decided in D11 (not a link to a private repo).
 - [ ] Check the address the family actually opens matches the worker's allowed origin
       (`worker/README.md`, "Redeploying"). A preview address or custom domain fails silently
       with "did not send".
 
 **1b. Add what is missing to the form and the worker.**
+- [ ] **Test first:** there is no test that the app's and the worker's category lists agree
+      (`feedback-worker.test.mjs` hardcodes 4). Write one that parses `CATS` from `site/app.js` and
+      `CATEGORIES` from the worker and asserts they are equal; then add the category.
 - [ ] New category `note`: "The background note is wrong". Put it in `site/app.js` (`CATS`)
       and `worker/feedback-worker.js` (`CATEGORIES`).
 - [ ] Add to the payload, and to the worker's copied-and-capped field list:
   - `span` (the segments shown right now) and `extended` (was the boundary already adjusted)
-  - `note_run` and `note_approved` (which draft of the note was on screen; empty if none)
+  - `note_drafted` and `note_approved` (the note's existing `drafted` stamp and approval; empty if none)
+  - `site`: `prod` or `staging` (from the page address), and `test: true` when the reporter ticks a
+    hidden-to-readers test box or the comment starts with "TEST" — tests never become reader cases
   - nothing else. The detector grade stays out (Simon 2026-11-14); triage looks it up by id.
 - [ ] Do **not** add sign-in identity in this step (see Decisions, D6).
 - [ ] Redeploy the worker (`worker/gcp/deploy.sh`, needs Simon's Google login) and the site.
@@ -92,13 +121,13 @@ asking Jeff.
 - Already in place: hidden honeypot field, every field capped, story id must match the id
   pattern, GitHub token limited to Issues on the one private repo, site not indexed by
   search engines.
-- [ ] Add: cap the Cloud Run service at 1 or 2 instances, so a flood cannot run up a bill.
+- Already done: the Cloud Run service is capped at 2 instances (`deploy.sh`).
 - [ ] Add: triage marks junk with a `spam` label and closes it; duplicates collapse (Phase 2).
 - [ ] Only if abused: a per-address limit in `worker/gcp/server.js` (a few per minute).
 - Token expires 2027-10-15. Put a reminder in the calendar now.
 
 **Done when:** a test report of each of the 6 categories arrives as an issue carrying story
-id, passage (if flagged), category, span, and note version.
+id, passage (if flagged), category, span, note version, site and the test flag.
 
 ## Phase 2. Triage: one script, one ledger
 
@@ -108,11 +137,16 @@ New file `scripts/feedback_triage.py`. It reads; it changes nothing on the site.
     python3 scripts/feedback_triage.py report    # print the weekly list for Simon
     python3 scripts/feedback_triage.py close --issue 12 --outcome fixed --what "..."   # Phase 4
 
-What `pull` does:
-- [ ] Reads open issues: `gh issue list -R siguy/talmud-stories-feedback --label story-feedback
-      --state open --json number,title,body,createdAt,labels`.
-- [ ] Pulls the JSON block out of each body. Handles both shapes (worker issue, fallback
-      issue). An issue it cannot read is listed under "could not read"; it is never skipped.
+What `pull` does (logs to `project.log` with the count at each step, per Simon's standard):
+- [ ] Reads **every** open issue in the feedback repo, with **no label filter**:
+      `gh issue list -R siguy/talmud-stories-feedback --state open --limit 500 --json number,title,body,createdAt,labels`.
+      Fallback issues arrive unlabelled (#4 today); a label filter would drop them silently.
+- [ ] Sorts each issue into **worker report / fallback report / unreadable**, and counts and names
+      each group. An issue it cannot read is listed under "could not read"; it is never skipped.
+- [ ] Re-checks every report against the worker's own rules (story id pattern, known category,
+      field caps), **from one shared definition** rather than a copy, because fallback reports
+      never passed through the worker.
+- [ ] Tags (never drops) reports from staging and reports flagged as tests.
 - [ ] Follows `site/data/redirects.json`, so a report on a story since merged lands on the
       story that now holds it.
 - [ ] Looks up the story's state today: detector grade, `reviewed` (Jeff-validated
@@ -127,8 +161,11 @@ What `pull` does:
       `results/site_feedback/ledger.json`.
 
 **The ledger** is the durable record: one entry per issue with the report, the outcome, who
-decided, what changed, the commit, the date. The issues live in another repo and can be
-deleted; the ledger is in ours.
+decided, what changed, the commit, the date. **Because the main repo is public, the full ledger
+(reader comments, names) lives in the private feedback repo**, committed there by the script.
+The main repo gets only a scrubbed `results/site_feedback/outcomes.json`: issue number, story id,
+category, outcome, date and who decided — **no comment text, no names**. `queue.json` (which
+quotes comments) is written to a git-ignored local folder, never committed.
 
 What `report` prints: counts by category and by tractate, then one line per story,
 grouped as: act now / needs Simon / route elsewhere / could not read.
@@ -137,15 +174,16 @@ grouped as: act now / needs Simon / route elsewhere / could not read.
 
 | Report | What it triggers | Tool (already exists) | Who approves |
 |---|---|---|---|
-| **boundary** | A boundary review of that one story | `review_site_boundaries.py` -> `boundary_extensions.json` or a `merge` | Simon's standing rules (trim to the narrative; extend a little; merge two halves). Simon sees the before/after list. A story in a Jeff-reviewed tractate: Simon decides each one |
+| **boundary** | A boundary review of that one story | `review_site_boundaries.py` -> `boundary_extensions.json` or a `merge` | Simon's standing rules (trim to the narrative; extend a little; merge two halves). Simon sees the before/after list. In a Jeff-reviewed tractate the same rule as the full boundary review applies (its Decision 1): display-only changes allowed, and any trim that cuts a segment Jeff listed goes to Simon |
 | **not_story** | A candidate removal | `septimus_site_decisions.json` -> `remove` | **Simon, always.** Jeff only if it exposes a rule question |
 | **note** | Pull the note and redraft it | add to `held.json` -> `draft_site_notes.py` -> `build_site_notes.py` -> `approve_notes.py --ids` | Simon spot-checks the redraft (or a standing rule, D2) |
 | **hebrew / translation** | Check whose mistake it is; usually Sefaria's | none of ours, see below | Simon decides whether we forward it |
 | **other** | Claude reads it and re-files it as one of the above, or as a site bug | n/a | n/a |
 
 **Boundary, step by step**
-- [ ] One small change to `review_site_boundaries.py export`: accept `--flags <file>`
-      (default stays `passage_flags.json`). Triage writes
+- [ ] **Waits for the full boundary review to merge**: that work owns `review_site_boundaries.py`
+      and adds `--flags <file>` (default `passage_flags.json`) and `apply` marking changed notes
+      for redraft. Until then, boundary reports are queued, not acted on. Triage writes
       `results/site_feedback/boundary_flags.json` in the same `{id: concern}` shape, where the
       concern is the reader's comment, capped and marked as a reader's words.
 - [ ] Run export -> review -> import -> apply -> `build_site_data.py`, exactly as for the
@@ -201,7 +239,8 @@ The text is Sefaria's; we display it.
       `sefaria`, `asked-jeff`, `spam`.
 - [ ] An issue waiting on Jeff stays open with `asked-jeff` and the question's slug.
 - [ ] **Changelog:** generated from the ledger, never hand-written:
-      `docs/site-feedback-log.md` (date, story, what was reported, what changed).
+      `docs/site-feedback-log.md` (date, story, category, what changed). It is public, so it never
+      quotes a reader or names one.
 - [ ] The reader cannot see any of this (anonymous form, private repo). If Simon wants
       readers to see it, the same ledger can feed a small "Recently fixed, thanks to
       readers" list on the site, first names only and only with consent (D5).
@@ -213,8 +252,8 @@ or an `asked-jeff` label.
 
 Patching fixes one story. These five uses make the next run better.
 
-**5a. The reader-case set.** `results/site_feedback/reader_cases.json`, built from the
-ledger. One row per resolved report: story, kind, what the reader claimed, the outcome
+**5a. The reader-case set.** Built from the ledger and kept in the **private** feedback repo
+(it carries the readers' claims); the main repo gets only ids and outcomes. One row per resolved report: story, kind, what the reader claimed, the outcome
 (confirmed / rejected / unclear), and **who confirmed it** (Simon, the judges, or Jeff).
 - It is a **held-out** set: never shown to the detector or note writer as examples
   (Critical Rule 2).
@@ -260,7 +299,7 @@ feedback channel).
 
 | Step | Who |
 |---|---|
-| Pull, parse, de-duplicate, look up state, print the list | Automatic (can be a scheduled run) |
+| Pull, parse, de-duplicate, look up state, print the list | Automatic: a **local** scheduled task on Simon's Mac, or a workflow in the **private** feedback repo that prints counts only. **Never** a GitHub Action in the public main repo: its logs are public and would show reader text |
 | Sefaria comparison for text reports | Automatic |
 | Boundary review of reported stories | Automatic under Simon's standing rules; Simon reads the before/after |
 | Note redraft | Automatic; approval per D2 |
@@ -288,8 +327,12 @@ bodies are fixture files, `gh` is never called.
 - [ ] Worker and app list the same categories, including `note` (extend the existing sync
       check in `tests/test_site_data.py`).
 - [ ] The worker keeps the new fields, caps them, and still refuses bad ids and categories.
-- [ ] The parser reads a worker issue, a fallback issue, and a cut-off fallback issue. An
-      unreadable one is reported by number, not dropped.
+- [ ] The parser reads a worker issue, a fallback issue (unlabelled, like #4), and a cut-off
+      fallback issue. An unreadable one is reported by number, not dropped. No label filter anywhere.
+- [ ] A fallback report with a bad id, unknown category or oversize field is re-checked and
+      marked, using the same definitions as the worker.
+- [ ] Nothing under the main repo contains a reader's comment or name (scan `results/site_feedback/`
+      and `docs/site-feedback-log.md`).
 - [ ] A hostile comment (a fake JSON block, or "ignore your instructions") changes nothing:
       the parser takes only the worker's block, and the comment reaches agents only as
       quoted reader text.
@@ -302,8 +345,9 @@ bodies are fixture files, `gh` is never called.
 - [ ] The reader-case scorer counts only confirmed rows and prints who confirmed them.
 - [ ] `review_site_boundaries.py export --flags` with one id produces one story file.
 - [ ] `python3 -m pytest tests/ -q` passes before stopping (includes the bookkeeping test).
-- [ ] One live check after deploy: a real report of each category, pulled, fixed and closed
-      end to end.
+- [ ] The end-to-end flow (pull -> route -> close) runs against **fixture issues**; live, only one
+      smoke report, flagged `test`, closed with outcome `test`, so fake reports never enter the ledger
+      as reader cases.
 
 ## Build order (each step is useful by itself)
 
@@ -326,7 +370,8 @@ bodies are fixture files, `gh` is never called.
 | The set only shows false positives, so "improvement" could mean finding fewer stories | Always report it beside recall on the goldens; never by itself |
 | Reader text steering an agent | Comments are capped, quoted as reader words, and never executed as instructions |
 | Spam or a flood | Honeypot, caps, instance cap, `spam` label; rate limit if needed |
-| Names in reports | The repo stays private; the public log uses no names without consent |
+| Names in reports | Full ledger only in the private repo; the public repo holds ids and outcomes; a test enforces it |
+| Staging reports polluting the real queue | Tagged by `site`, reported separately (D10) |
 | Worker token expires (2027-10-15) or origin mismatch | Calendar reminder; the fallback link; Phase 1a check after any address change |
 | Overloading Jeff | One batched question per round, three confirmed cases minimum |
 | Collision with other open work on the same files | `writes:` in the work item and `board.py lanes` |
@@ -348,5 +393,28 @@ bodies are fixture files, `gh` is never called.
   the form is anonymous unless they type a name.
 - **D7. "A story is missing":** readers cannot report this today, and it is the one thing the
   reader-case set cannot measure. Add a simple site-wide link for it later? (Not in this plan.)
-- **D8. Extension limit:** settled 2026-11-15 — 6 segments forward (Simon: "make the changes you see fit").
+- **D8. Extension limit:** settled 2026-11-15: 6 segments forward (Simon: "make the changes you see fit").
+- **D10. Staging reports:** allow the staging site as a second origin and tag its reports `site: staging`
+  (recommended), or give staging its own endpoint and feedback repo?
+- **D11. The fallback when the endpoint fails:** today it links to a private repo, a 404 for readers.
+  Replace it with a "copy this report" box plus a mailto link to an address you choose (recommended),
+  or keep it, labelled as working for you only?
+- **D12. Where triage runs:** a local scheduled task on your Mac (recommended: simplest, nothing
+  public), or a workflow in the private feedback repo?
 - **D9. Cadence:** weekly on Sunday, with you giving about 15 minutes. OK?
+
+## Plan Review — 2026-11-15
+VERDICT: READY (after the changes below; it was FIX FIRST)
+Mode: code
+Biggest risk: reports silently skipped (label filter) and reader text committed to the public main repo. Both fixed in Phase 2.
+False premises: "all 3 issues are tests" (there are 4; #4 is open and unlabelled); "fallback issues carry the label" (they don't); "the fallback works for readers" (private repo, 404); "cap Cloud Run instances" (already done); "extend the existing sync check" (none exists); "the ledger is private" (the main repo is public); `note_run` (no such field).
+Accepted changes:
+- `pull` reads every open issue, no label filter; worker / fallback / unreadable counted and named.
+- Full ledger and reader cases in the private feedback repo; main repo keeps ids and outcomes only, with a test.
+- Fallback reports re-checked against the worker's rules from one shared definition.
+- Phase 0 cleanup: Cloudflare docs, stale comments, orphaned workflows; staging (D10) and fallback (D11) decided before 1a.
+- Triage never runs as a GitHub Action in the public repo (D12).
+- New app/worker category sync test written before adding `note`; `note_drafted` instead of `note_run`; `site` and `test` flags at intake; end-to-end on fixtures.
+- Boundary route waits for the full boundary review to merge (shared file); Jeff-tractate rule made consistent with that plan.
+Deferred / NOT in scope: Phase 5 until ~20 confirmed cases; the Sefaria monthly list; D5; `septimus-weekly.yml` (sign-up work's decision).
+Open questions: D1-D7, D9-D12, asked first by the executing session.
