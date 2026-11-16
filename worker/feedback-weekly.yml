@@ -1,0 +1,35 @@
+# Weekly feedback triage (plan D12: runs in the PRIVATE feedback repo, never the public one).
+# Install: copy this file to siguy/talmud-stories-feedback/.github/workflows/triage.yml
+# (repo Settings > Actions > General > Workflow permissions: "Read and write"). No secrets to add:
+# the built-in token can read and close that repo's issues and commit the ledger to it.
+# Logs here are private, and the job prints counts only (no reader text) anyway.
+name: weekly feedback triage
+on:
+  schedule: [{ cron: "0 14 * * 0" }]   # Sundays, 14:00 UTC
+  workflow_dispatch: {}
+permissions: { contents: write, issues: write }
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4        # this private repo: the ledger lives here
+        with: { path: private }
+      - uses: actions/checkout@v4        # the public site repo: the script and the site data
+        with: { repository: siguy/talmud-stories, path: site-repo }
+      - name: pull and count
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FEEDBACK_PRIVATE_DIR: ${{ github.workspace }}/private
+        run: |
+          cd site-repo
+          python3 scripts/feedback_triage.py pull
+          python3 - <<'PY'
+          import json
+          q = json.load(open("results/site_feedback/_local/queue.json"))
+          print("open issues:", q["n_issues"], "| worker:", q["n_worker"], "| fallback:", q["n_fallback"], "| could not read:", len(q["unreadable"]))
+          PY
+      - name: save the ledger
+        run: |
+          cd private
+          git config user.name "feedback-triage"; git config user.email "triage@users.noreply.github.com"
+          git add ledger.json && (git diff --cached --quiet || git commit -m "ledger: weekly pull" && git push)
