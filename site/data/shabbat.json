@@ -984,12 +984,17 @@
    "tractate": "shabbat",
    "ref": "Shabbat 46a",
    "refs": [
-    "Shabbat 46a"
+    "Shabbat 46a",
+    "Shabbat 46b"
    ],
    "start_segment": 7,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 7 completes the cited baraita and gives Rav Nahman bar Yitzhak's closing remark that Rava did not embarrass Rav Avya."
+   },
    "reviewed": false,
    "summary": "Rav Avya arrives at Rava's house with muddy feet and sits on his bed, leading an angry Rava to attempt to embarrass him with difficult legal questions.",
    "segments": [
@@ -998,6 +1003,12 @@
      "i": 7,
      "he": "רַב אַוְיָא אִיקְּלַע לְבֵי רָבָא. הֲוָה מְאִיסָן (בֵּי) כַּרְעֵיהּ בְּטִינָא. אִתֵּיב אַפּוּרְיָא קַמֵּיהּ דְּרָבָא. אִיקְּפַד רָבָא, בְּעָא לְצַעוֹרֵיהּ. אֲמַר לֵיהּ: מַאי טַעְמָא רַבָּה וְרַב יוֹסֵף דְּאָמְרִי תַּרְוַויְיהוּ שְׁרָגָא דְנַפְטָא נָמֵי שְׁרֵי לְטַלְטוֹלַהּ? אֲמַר לֵיהּ: הוֹאִיל וְחַזְיָא לְכַסּוֹיֵי בַּהּ מָנָא. אֶלָּא מֵעַתָּה, כׇּל צְרוֹרוֹת שֶׁבֶּחָצֵר מִטַּלְטְלִין, הוֹאִיל וְחַזְיִין לְכַסּוֹיֵי בְּהוּ מָנָא. אֲמַר לֵיהּ: הָא אִיכָּא תּוֹרַת כְּלִי עָלֶיהָ. הָנֵי לֵיכָּא תּוֹרַת כְּלִי עֲלֵיהֶן. מִי לָא תַּנְיָא:",
      "en": "The Gemara relates: <b>Rav Avya happened</b> to come <b>to Rava’s house. His feet were dirty with clay</b> and <b>he put them on the bed before Rava. Rava became angry</b> at him for dirtying the bed and, therefore, <b>sought to torment him</b> with questions that he could not answer. Rava <b>said to him: What is the reason</b> that <b>Rabba and Rav Yosef both said</b> that with regard to <b>a naphtha lamp, too, that it is permitted to move it?</b> Rav Avya <b>said to him: Since it is suitable to cover a vessel with it.</b> Rava <b>said to him: But if that is so, all pebbles</b> in the yard <b>may</b> also <b>be carried</b> <i>ab initio</i> on Shabbat, <b>since it is suitable to cover a vessel with them.</b> Rav Avya <b>said to him:</b> There is a distinction between these cases. <b>This,</b> the lamp, <b>the status of a vessel</b> applies <b>to it</b> and there are leniencies that apply to vessels with regard to the <i>halakhot</i> of set-aside. <b>These,</b> the pebbles, <b>the status of a vessel does not</b> apply <b>to it,</b> as they are a raw material. Carrying them is prohibited unless designated for a specific purpose before Shabbat. <b>Was it not taught</b> in a <i>baraita</i> that"
+    },
+    {
+     "ref": "Shabbat 46b",
+     "i": 0,
+     "he": "הַשֵּׁירִים וְהַנְּזָמִים וְהַטַּבָּעוֹת, הֲרֵי הֵן כְּכׇל הַכֵּלִים הַנִּטָּלִים בֶּחָצֵר. וְאָמַר עוּלָּא: מַה טַּעַם? — הוֹאִיל וְאִיכָּא תּוֹרַת כְּלִי עֲלֵיהֶן. הָכָא נָמֵי הוֹאִיל וְאִיכָּא תּוֹרַת כְּלִי עֲלֵיהֶן. אָמַר רַב נַחְמָן בַּר יִצְחָק: בְּרִיךְ רַחֲמָנָא דְּלָא כַּסְּפֵיהּ רָבָא לְרַב אַוְיָא.",
+     "en": "<b>bracelets, nose-rings and rings,</b> although it is prohibited to go out into the public domain wearing them on Shabbat, <b>they are like all the vessels that may be moved in the courtyard;</b> in the private domain, one may move them and they are not set-aside. <b>And Ulla said: What is the reason</b> that it is permitted to move nose-rings in the yard? It is <b>because the status of a vessel</b> applies <b>to it.</b> Apparently, vessel status is sufficient to permit moving it on Shabbat. <b>Rav Naḥman bar Yitzḥak said: Thank God</b> that <b>Rava did not embarrass Rav Avya</b> and Rav Avya managed to successfully answer Rava’s questions."
     }
    ],
    "span": [
@@ -1007,8 +1018,8 @@
      "end": 7
     }
    ],
-   "words": 202,
-   "minutes": 2
+   "words": 309,
+   "minutes": 3
   },
   {
    "id": "shabbat-48a-1-2",
@@ -1162,16 +1173,16 @@
    "start_segment": 15,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Drop the brief Antioch goats incident (6), which belongs to the legal discussion, keeping the story of the father who nursed his son with the Sages' reactions.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "A widower who could not afford a wet-nurse miraculously developed breasts to nurse his son, sparking a debate among later sages about whether this miracle indicated his greatness or his deficiency.",
    "segments": [
-    {
-     "ref": "Shabbat 53b",
-     "i": 15,
-     "he": "תַּנְיָא, אָמַר רַבִּי יְהוּדָה: מַעֲשֶׂה בְּעִזִּים שֶׁל אַנְטוֹכְיָא שֶׁהָיוּ דַּדֵּיהֶן גַּסִּין, וְעָשׂוּ לָהֶן כִּיסִין כְּדֵי שֶׁלֹּא יִסָּרְטוּ דַּדֵּיהֶן.",
-     "en": "The Gemara adds: <b>It was taught</b> in a <i>baraita</i> that <b>Rabbi Yehuda said:</b> There was <b>an incident involving the goats</b> belonging to the residents of <b>a house in Antioch whose udders were</b> especially <b>large</b> and they would drag along the ground. <b>And they made pouches for them so that their udders would not get scratched.</b>"
-    },
     {
      "ref": "Shabbat 53b",
      "i": 16,
@@ -1198,7 +1209,7 @@
      "end": 18
     }
    ],
-   "words": 261,
+   "words": 206,
    "minutes": 2
   },
   {
@@ -1687,7 +1698,11 @@
    "start_segment": 3,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 3,
+    "reason": "The children's interpretations continue through segment 9 (kuf and reish); segment 10 is a Gemara aside and shin/tav in segment 11 is beyond the allowed extension."
+   },
    "reviewed": false,
    "summary": "Young students arrive at the study hall and amaze the Sages with novel homiletic interpretations of the Hebrew alphabet, which are then reported to Rabbi Yehoshua ben Levi.",
    "segments": [
@@ -1696,6 +1711,24 @@
      "i": 3,
      "he": "אָמְרִי לֵיהּ רַבָּנַן לְרַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי: אֲתוֹ דַּרְדְּקֵי הָאִידָּנָא לְבֵי מִדְרְשָׁא וַאֲמַרוּ מִילֵּי דַּאֲפִילּוּ בִּימֵי יְהוֹשֻׁעַ בִּן נוּן לָא אִיתְּמַר כְּווֹתַיְיהוּ: אָלֶ״ף בֵּי״ת — אֲלַף בִּינָה. גִּימֶ״ל דָּלֶ״ת — גְּמוֹל דַּלִּים. מַאי טַעְמָא פְּשׁוּטָה כַּרְעֵיהּ דְּגִימֶ״ל לְגַבֵּי דָּלֶ״ת — שֶׁכֵּן דַּרְכּוֹ שֶׁל גּוֹמֵל חֲסָדִים לָרוּץ אַחַר דַּלִּים. וּמַאי טַעְמָא פְּשׁוּטָה כַּרְעֵיהּ דְּדָלֶ״ת לְגַבַּי גִּימֶ״ל — דְּלַימְצְיַהּ לֵיהּ נַפְשֵׁיהּ. וּמַאי טַעְמָא מְהַדַּר אַפֵּיהּ דְּדָלֶ״ת מִגִּימֶ״ל — דְּלִיתֵּן לֵיהּ בְּצִינְעָה, כִּי הֵיכִי דְּלָא לִיכְּסִיף מִינֵּיהּ.",
      "en": "<b>The Sages said to Rabbi Yehoshua ben Levi: Young students came</b> today <b>to the study hall and said things</b> the likes of <b>which were not said</b> even <b>in the days of Joshua bin Nun.</b> These children who only knew the Hebrew alphabet interpreted the letters homiletically.<br><b><i>Alef beit</i></b> means <b>learn</b> [<b><i>elaf</i></b>] the <b>wisdom</b> [<b><i>bina</i></b>] of the Torah.<br><b><i>Gimmel dalet</i></b> means <b>give to the poor</b> [<b><i>gemol dalim</i></b>]. <b>Why is the leg of the <i>gimmel</i> extended toward</b> the <b><i>dalet</i>? Because it is the manner of one who bestows loving-kindness to pursue the poor. And why</b> is the <b>leg of</b> the <b><i>dalet</i> extended toward</b> the <b><i>gimmel</i>?</b> It is so <b>that</b> a poor person <b>will make himself available to him</b> who wants to give him charity. <b>And why does the <i>dalet</i> face away from</b> the <b><i>gimmel</i>?</b> It is to teach <b>that one should give</b> charity <b>discreetly so that</b> the poor person <b>will not be embarrassed by him.</b>"
+    },
+    {
+     "ref": "Shabbat 104a",
+     "i": 4,
+     "he": "ה״ו — זֶה שְׁמוֹ שֶׁל הַקָּדוֹשׁ בָּרוּךְ הוּא. ז״ח ט״י כ״ל — וְאִם אַתָּה עוֹשֶׂה כֵּן, הַקָּדוֹשׁ בָּרוּךְ הוּא זָן אוֹתְךָ, וְחָן אוֹתְךָ, וּמֵטִיב לְךָ, וְנוֹתֵן לְךָ יְרוּשָּׁה, וְקוֹשֵׁר לְךָ כֶּתֶר לָעוֹלָם הַבָּא. מֵ״ם פְּתוּחָה, מֵ״ם סְתוּמָה — מַאֲמָר פָּתוּחַ, מַאֲמָר סָתוּם. נוּ״ן כְּפוּפָה, נוּ״ן פְּשׁוּטָה — נֶאֱמָן כָּפוּף, נֶאֱמָן פָּשׁוּט.",
+     "en": "The children continued to interpret the letters.<br><b><i>Heh vav</i>: That is</b> the principal <b>name of the Holy One, Blessed be He.</b><br><b><i>Zayin ḥet</i>, <i>tet yod</i>, <i>kaf lamed</i>: And if you do so, the Holy One, Blessed be He, feeds [<i>zan</i>] you, and shows you favor [<i>ḥan</i>], and bestows goodness [<i>meitiv</i>] upon you, and gives you an inheritance [<i>yerusha</i>], and ties a crown [<i>keter</i>] for you in the World to Come [<i>la’olam haba</i>].</b><br>The <b>open <i>mem</i> and closed <i>mem</i></b> indicate that the Torah contains <b>an open statement,</b> understood by all, and <b>an esoteric statement.</b><br>The <b>bent <i>nun</i></b> and the <b>straight <i>nun</i></b> at the end of a word refer to <b>a faithful person who is bent [<i>ne’eman kafuf</i>]</b> and is modest now, who will ultimately become a <b>well-known faithful person [<i>ne’eman pashut</i>].</b>"
+    },
+    {
+     "ref": "Shabbat 104a",
+     "i": 5,
+     "he": "ס״ע — סְמוֹךְ עֲנִיִּים. לִישָּׁנָא אַחֲרִינָא: סִימָנִין עֲשֵׂה בַּתּוֹרָה וּקְנֵה אוֹתָהּ. פ׳ כְּפוּפָה, פ׳ פְּשׁוּטָה — פֶּה פָּתוּחַ, פֶּה סָתוּם. צָדִ״י כְּפוּפָה וְצָדִ״י פְּשׁוּטָה — צַדִּיק כָּפוּף, צַדִּיק פָּשׁוּט. הַיְינוּ: נֶאֱמָן כָּפוּף, נֶאֱמָן פָּשׁוּט! הוֹסִיף לְךָ הַכָּתוּב כְּפִיפָה עַל כְּפִיפָתוֹ, מִכָּאן שֶׁנִּתְּנָה הַתּוֹרָה בִּמְנוֹד רֹאשׁ.",
+     "en": "<b><i>Samekh ayin</i>: Support the poor [<i>semokh aniyyim</i>]</b> to prevent them from falling further. <b>Another version: Make mnemonic</b> signs <b>[<i>simanim aseh</i>]</b> to remember <b>the Torah and acquire it.</b><br>The <b>bent <i>peh</i></b> and the <b>straight <i>peh</i>:</b> Sometimes one needs to have <b>an open mouth [<i>peh patuaḥ</i>]</b> and speak, and sometimes one needs to have <b>a closed mouth [<i>peh satum</i>].</b><br>The <b>bent <i>tzadi</i></b> and the <b>straight <i>tzadi</i></b> indicate that <b>a righteous</b> person who is <b>bent</b> and humble <b>[<i>tzaddik kafuf</i>]</b> now will ultimately become <b>a well-known righteous</b> person <b>[<i>tzaddik pashut</i>]</b> whose righteousness is apparent to all. The Gemara asks: <b>That is identical</b> to the interpretation of the bent and straight <i>nun</i>: <b><i>Ne’eman kafuf</i>, <i>ne’eman pashut</i>.</b> The Gemara explains: <b>The verse added</b> the <b>bending</b> of the righteous person <b>to the bending of</b> the faithful person. <b>From here</b> it is derived <b>that the Torah was given in</b> an atmosphere of <b>gravity.</b> One must receive the Torah with a sense of awe and extreme humility."
+    },
+    {
+     "ref": "Shabbat 104a",
+     "i": 6,
+     "he": "קוּ״ף — קָדוֹשׁ. רֵי״שׁ — רָשָׁע. מַאי טַעְמָא מְהַדַּר אַפֵּיהּ דְּקוּ״ף מֵרֵי״שׁ — אָמַר הַקָּדוֹשׁ בָּרוּךְ הוּא: אֵין אֲנִי יָכוֹל לְהִסְתַּכֵּל בָּרָשָׁע. וּמַאי טַעְמָא מְהַדַּר תָּגֵיהּ דְּקוּ״ף לְגַבֵּי רֵי״שׁ — אָמַר הַקָּדוֹשׁ בָּרוּךְ הוּא: אִם חוֹזֵר בּוֹ אֲנִי קוֹשֵׁר לוֹ כֶּתֶר כְּמוֹתִי. וּמַאי טַעְמָא כַּרְעֵיהּ דְּקוּ״ף תַּלְיָא — דְּאִי הָדַר בֵּיהּ, לִיעַיֵּיל.",
+     "en": "The children continued:<br><b><i>Kuf</i>: Holy [<i>kadosh</i>],</b> referring to God.<br><b><i>Reish</i>: A wicked person [<i>rasha</i>]. Why is the <i>kuf</i> facing away from</b> the <b><i>reish</i>?</b> This question was phrased euphemistically, as it is the <i>reish</i> that is facing away from the <i>kuf</i>. <b>The Holy One, Blessed be He, said: I am unable look at a wicked person,</b> i.e., the wicked person does not want to look toward God. <b>And why is the crown of</b> the letter <b><i>kuf</i> turned toward</b> the <b><i>reish</i>? The Holy One, Blessed be He, said: If</b> the wicked person <b>repents</b> his evil ways <b>I will tie a crown for him like My own. And why is the leg of</b> the <b><i>kuf</i> suspended</b> and not connected to the roof of the letter? <b>Because if</b> the wicked person <b>repents he can enter</b> through this opening if he so desires."
     }
    ],
    "span": [
@@ -1705,8 +1738,8 @@
      "end": 3
     }
    ],
-   "words": 162,
-   "minutes": 2
+   "words": 634,
+   "minutes": 5
   },
   {
    "id": "shabbat-108a-5-8",
@@ -1966,13 +1999,18 @@
    "tractate": "shabbat",
    "ref": "Shabbat 115a",
    "refs": [
-    "Shabbat 115a",
-    "Shabbat 115b"
+    "Shabbat 115a"
    ],
    "start_segment": 6,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 7 is the Gemara's analysis of which tanna'im disagree, not part of the incident.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Abba Halafta visits Rabban Gamliel and, upon seeing him reading a translation of Job, reminds him of a precedent, leading Gamliel to order the book buried in a wall.",
    "segments": [
@@ -1981,12 +2019,6 @@
      "i": 6,
      "he": "אָמַר רַבִּי יוֹסֵי: מַעֲשֶׂה בְּאַבָּא חֲלַפְתָּא שֶׁהָלַךְ אֵצֶל רַבָּן גַּמְלִיאֵל בְּרִיבִּי לִטְבֶרְיָא, וּמְצָאוֹ שֶׁהָיָה יוֹשֵׁב עַל שֻׁלְחָנוֹ שֶׁל יוֹחָנָן הַנָּזוּף וּבְיָדוֹ סֵפֶר אִיּוֹב תַּרְגּוּם, וְהוּא קוֹרֵא בּוֹ. אָמַר לוֹ: זָכוּר אֲנִי בְּרַבָּן גַּמְלִיאֵל אֲבִי אָבִיךָ שֶׁהָיָה עוֹמֵד עַל גַּבֵּי מַעֲלָה בְּהַר הַבַּיִת, וְהֵבִיאוּ לְפָנָיו סֵפֶר אִיּוֹב תַּרְגּוּם, וְאָמַר לַבַּנַּאי: שַׁקְּעֵהוּ תַּחַת הַנִּדְבָּךְ. אַף הוּא צִוָּה עָלָיו וּגְנָזוֹ. רַבִּי יוֹסֵי בְּרַבִּי יְהוּדָה אוֹמֵר: עֲרֵיבָה שֶׁל טִיט כָּפוּ עָלָיו. אָמַר רַבִּי, שְׁתֵּי תְּשׁוּבוֹת בַּדָּבָר: חֲדָא, וְכִי טִיט בְּהַר הַבַּיִת מִנַּיִן? וְעוֹד, וְכִי מוּתָּר לְאַבְּדָן בַּיָּד? אֶלָּא מַנִּיחָן בִּמְקוֹם הַתּוּרְפָּה וְהֵן מַרְקִיבִין מֵאֲלֵיהֶן. מַאן תַּנָּאֵי",
      "en": "<b>Rabbi Yosei said:</b> There was <b>an incident involving</b> my <b>father, Ḥalafta, who went to the esteemed Rabban Gamliel</b> of Yavne in <b>Tiberias, where he found him sitting at the table of Yoḥanan HaNazuf and in his hand</b> there was <b>a translation of the book of Job, and he was reading</b> from <b>it.</b> Yoḥanan <b>said to</b> Rabban Gamliel of Yavne: <b>I remember Rabban Gamliel, your father’s father, who was standing on top of a step on the Temple Mount. And they brought before him a translation of the book of Job, and he said to the builder: Bury this</b> book <b>under the course of bricks.</b> When he heard of that incident, Rabban Gamliel of Yavne <b>ordered that it</b> be buried <b>and he buried it. Rabbi Yosei, son of Rabbi Yehuda, says</b> that on the Temple Mount <b>they overturned a large bowl of mortar on it. Rabbi</b> Yehuda HaNasi <b>said:</b> There are <b>two responses to this</b> that prove that it did not happen: <b>One, from where would they get mortar on the Temple Mount?</b> Construction on the Temple Mount was performed with other materials, not with mortar. <b>And furthermore, is it permitted to</b> actively <b>destroy</b> even sacred writings that are not read, <b>with one’s hands? Rather,</b> at the very least <b>they leave them in a neglected place,</b> where they are likely to decompose quickly, <b>and they decay on their own.</b> The Gemara seeks to clarify: <b>Who are</b> the <b><i>tanna’im</i></b> who dispute this <i>halakha</i> according to Rav Huna?"
-    },
-    {
-     "ref": "Shabbat 115b",
-     "i": 0,
-     "he": "אִילֵּימָא תַּנָּא קַמָּא דְּרַבִּי יוֹסֵי — וְדִילְמָא בְּהָא קָמִיפַּלְגִי, מָר סָבַר: נִיתְּנוּ לִקְרוֹת בָּהֶן, וּמָר סָבַר: לֹא נִיתְּנוּ לִקְרוֹת בָּהֶן. אֶלָּא רַבִּי יוֹסֵי וְתַנָּא דְּגִיפְטִית.",
-     "en": "<b>If we say</b> it is the <b>first <i>tanna</i></b> who disagrees with <b>Rabbi Yosei,</b> that is not necessarily so, <b>and perhaps they are disagreeing about this: This Master,</b> the first <i>tanna</i>, <b>holds</b> that books written in other languages <b>may be read; and this Master,</b> Rabbi Yosei, <b>holds</b> that <b>they may not be read,</b> and their dispute is unrelated to the dispute between Rav Huna and Rav Ḥisda. <b>Rather,</b> it is the dispute between <b>Rabbi Yosei</b> and <b>the</b> first <b><i>tanna</i>,</b> who spoke <b>about</b> books written in <b>Coptic.</b> According to that <i>tanna</i>, even books that may not be read are rescued, whereas Rabbi Yosei holds that they are not rescued."
     }
    ],
    "span": [
@@ -2001,8 +2033,8 @@
      "end": 0
     }
    ],
-   "words": 355,
-   "minutes": 3
+   "words": 245,
+   "minutes": 2
   },
   {
    "id": "shabbat-115b-1-1",
@@ -2089,12 +2121,17 @@
    "tractate": "shabbat",
    "ref": "Shabbat 118b",
    "refs": [
-    "Shabbat 118b"
+    "Shabbat 118b",
+    "Shabbat 119a"
    ],
    "start_segment": 13,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 7 finishes Abaye's sentence that is cut off mid-clause in segment 6."
+   },
    "reviewed": false,
    "summary": "While climbing a staircase, Rabba's ritual fringe broke, and he refused to move until it was fixed.",
    "segments": [
@@ -2103,6 +2140,12 @@
      "i": 13,
      "he": "אֲמַר לֵיהּ רַב יוֹסֵף לְרַב יוֹסֵף בְּרֵיהּ דְּרַבָּה: אֲבוּךְ, בְּמַאי זְהִיר טְפֵי? אֲמַר לֵיהּ: בְּצִיצִית. יוֹמָא חַד הֲוָה קָא סָלֵיק בְּדַרְגָּא. אִיפְּסִיק לֵיהּ חוּטָא, וְלָא נְחֵית וַאֲתָא, כַּמָּה דְּלָא רַמְיַהּ. וְאָמַר אַבָּיֵי: תֵּיתֵי לִי, דְּכִי חָזֵינָא צוּרְבָּא מֵרַבָּנַן דִּשְׁלִים מַסֶּכְתֵּיהּ",
      "en": "<b>Rav Yosef said to Rav Yosef, son of Rabba: In what</b> area <b>was your father,</b> Rabba, <b>especially vigilant?</b> He <b>said to him:</b> It was <b>in</b> the mitzva of <b>ritual fringes.</b> The Gemara relates: <b>One day he was climbing the stairs</b> when a <b>string</b> from his ritual fringes <b>was severed, and he would not descend until he placed</b> a new string <b>on</b> the garment. <b>And Abaye said: May I receive</b> my reward because <b>when I see a young Torah scholar who has completed a tractate</b> that <b>he</b> studied"
+    },
+    {
+     "ref": "Shabbat 119a",
+     "i": 0,
+     "he": "עָבֵידְנָא יוֹמָא טָבָא לְרַבָּנַן. אָמַר רָבָא תֵּיתֵי לִי, דְּכִי אֲתָא צוּרְבָּא מֵרַבָּנַן לְקַמַּאי לְדִינָא, לָא מָזֵיגְנָא רֵישִׁי אַבֵּי סַדְיָא כַּמָּה דְּלָא מְהַפֵּיכְנָא בְּזָכוּתֵיהּ. אָמַר מָר בַּר רַב אָשֵׁי: פְּסִילְנָא לֵיהּ לְצוּרְבָּא מֵרַבָּנַן לְדִינָא. מַאי טַעְמָא? — דְּחַבִּיב עֲלַי כְּגוּפַאי, וְאֵין אָדָם רוֹאֶה חוֹבָה לְעַצְמוֹ.",
+     "en": "<b>I make a feast for the Sages. Rava said: May I receive</b> my reward <b>because when a young Torah scholar comes before me for judgment, I do not put my head on the pillow until I seek</b> as many of <b>his merits</b> as possible, based on conditions and his claims. <b>Mar bar Rav Ashi said: I am disqualified to</b> sit in <b>judgment of a young Torah scholar. What is the reason</b> that I am disqualified? It is <b>because</b> the Torah scholar <b>is as beloved to me as my</b> own <b>self, and a person does not find fault in himself.</b>"
     }
    ],
    "span": [
@@ -2112,8 +2155,8 @@
      "end": 13
     }
    ],
-   "words": 87,
-   "minutes": 1
+   "words": 186,
+   "minutes": 2
   },
   {
    "id": "shabbat-119a-4-4",
@@ -3726,16 +3769,16 @@
    "start_segment": 3,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 is a run of aphorisms on youth and age; the story is the eunuch's exchange with Rabbi Yehoshua ben Korha in 7-8.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "An apostate eunuch mocks Rabbi Yehoshua ben Korḥa for his baldness and lack of shoes, leading to a sharp exchange of insults regarding their respective physical conditions.",
    "segments": [
-    {
-     "ref": "Shabbat 152a",
-     "i": 3,
-     "he": "תַּנְיָא, רַבִּי יוֹסֵי בַּר קִיסְמָא אוֹמֵר: טָבָא תְּרֵי מִתְּלָת. וַוי לַהּ לַחֲדָא דְּאָזְלָא וְלָא אָתְיָא. מַאי הִיא? אָמַר רַב חִסְדָּא: יַנְקוּתָא. כִּי אֲתָא רַב דִּימִי אָמַר: יַנְקוּתָא — כְּלִילָא דְּוַורְדָּא, סָבוּתָא — כְּלִילָא דְחִילְפָא. תָּנָא מִשְּׁמֵיהּ דְּרַבִּי מֵאִיר: דּוֹק בְּכַכֵּי וְתַשְׁכַּח בְּנִיגְרֵי, שֶׁנֶּאֱמַר: ״וַנִּשְׂבַּע לֶחֶם וַנִּהְיֶה טוֹבִים וְרָעָה לֹא רָאִינוּ״. אֲמַר לֵיהּ שְׁמוּאֵל לְרַב יְהוּדָה: שִׁינָּנָא, שְׁרֵי שַׂקָּיךָ וְעַיֵּיל לַחְמָךְ. עַד אַרְבְּעִין שְׁנִין — מֵיכְלָא מְעַלֵּי, מִכָּאן וְאֵילָךְ — מִשְׁתְּיָא מְעַלֵּי.",
-     "en": "<b>It was taught</b> in a <i>baraita</i> that <b>Rabbi Yosei bar Kisma says:</b> The <b>two</b> feet of one’s youth <b>are better than the three</b> of old age, when one walks with a cane. <b>Woe to the one who goes and does not come</b> back. <b>What is this</b> referring to? <b>Rav Ḥisda said: Youth.</b> Similarly, <b>when Rav Dimi came</b> from Eretz Yisrael to Babylonia <b>he said: Youth is a crown of roses; old age is a crown of thorns.</b> The Sage <b>taught in the name of Rabbi Meir: Grind</b> food <b>with your teeth and</b> you will <b>find in your feet</b> the strength to carry your body, <b>as it is stated: “For we were sated with our bread and were well, and saw no evil”</b> (Jeremiah 44:17). <b>Shmuel said to Rav Yehuda: Large-toothed one; untie your sack,</b> that is, your mouth, <b>and insert your food. Until</b> the age of <b>forty years, food is beneficial; from here and on, drinking is beneficial.</b>"
-    },
     {
      "ref": "Shabbat 152a",
      "i": 4,
@@ -3756,8 +3799,8 @@
      "end": 5
     }
    ],
-   "words": 428,
-   "minutes": 3
+   "words": 270,
+   "minutes": 2
   },
   {
    "id": "shabbat-152a-15-15",

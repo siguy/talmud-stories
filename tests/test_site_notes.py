@@ -1,0 +1,149 @@
+"""Background notes for the Septimus site (work/2026-11-15-shas-background-notes.md).
+
+The merge must never let unreviewed text replace a note Simon approved, never ship a held
+draft as approved, and never count a missing or invalid subagent answer as a note."""
+import json
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+import build_site_notes as B  # noqa: E402
+import draft_site_notes as D  # noqa: E402
+
+STORY = {"id": "t-2a-1-1", "ref": "T 2a",
+         "segments": [{"ref": "T 2a", "i": 1, "he": "", "en": "<b>Rav Huna</b> went to the market."}]}
+OLD = {"note": "Rav Huna goes to the market.", "why": "", "people": [], "terms": [], "approved": True}
+
+
+def draft(**kw):
+    return {"id": STORY["id"], "note": "A new draft.", "why": "The Gemara has just ruled on markets.",
+            "people": [{"name": "Rav Huna", "about": "a sage"}], "terms": [], "flag": "", **kw}
+
+
+def run(prev, rec, held):
+    notes, ev = B.merge([STORY], prev, {STORY["id"]: rec} if rec else {}, held, {})
+    return notes.get(STORY["id"]), ev
+
+
+def test_an_approved_note_keeps_its_text_and_gains_only_the_why():
+    n, _ = run({STORY["id"]: OLD}, draft(), {})
+    assert n["note"] == OLD["note"] and n["approved"] is True
+    assert n["why"] == "The Gemara has just ruled on markets."
+
+
+def test_an_unapproved_unheld_note_keeps_its_text_and_is_not_approved_by_the_merge():
+    n, _ = run({STORY["id"]: {**OLD, "approved": False}}, draft(), {})
+    assert n["note"] == OLD["note"] and n["approved"] is False
+
+
+def test_a_held_note_is_redrafted_whole_and_its_hold_cleared():
+    held = {STORY["id"]: "October: cut off"}
+    n, ev = run({STORY["id"]: {**OLD, "approved": False}}, draft(), held)
+    assert n["note"] == "A new draft." and n["approved"] is False
+    assert STORY["id"] not in held and ev["drafted"] == 1
+
+
+def test_a_flagged_draft_is_held():
+    held = {}
+    n, _ = run({}, draft(flag="Not a story: a legal ruling only."), held)
+    assert n["approved"] is False and held[STORY["id"]].startswith("Not a story")
+
+
+def test_a_person_from_outside_the_story_is_a_warning_not_a_hold():
+    """Simon 2026-11-15: names from the surrounding discussion are fine as background."""
+    held = {}
+    B.PERSON_WARNINGS.clear()
+    run({}, draft(people=[{"name": "Rabbi Akiva", "about": "x"}]), held)
+    assert STORY["id"] not in held and any("Rabbi Akiva" in w for w in B.PERSON_WARNINGS)
+
+
+def test_a_bad_why_on_an_approved_note_is_dropped_and_the_note_still_ships():
+    held = {}
+    n, _ = run({STORY["id"]: OLD}, draft(why="x" * 400), held)
+    assert n["why"] == "" and n["approved"] is True and held[STORY["id"]].startswith("why dropped")
+
+
+def test_hebrew_in_a_draft_holds_it():
+    held = {}
+    run({}, draft(note="He said שלום."), held)
+    assert "Hebrew" in held[STORY["id"]]
+
+
+def test_a_story_with_no_note_and_no_draft_is_reported_missing():
+    n, ev = run({}, None, {})
+    assert n is None and ev["missing"] == [STORY["id"]]
+
+
+def test_an_invalid_subagent_answer_is_never_a_note():
+    assert D.validate("not json")[0] is None
+    assert D.validate({"note": "", "why": ""})[0] is None
+    assert D.validate({"note": "ok", "people": "Rav Huna"})[0] is None
+    assert D.validate(json.dumps({"note": "ok", "why": "", "people": [], "terms": [], "flag": ""}))[0]
+
+
+def test_the_why_renders_inside_the_background_box():
+    js = (ROOT / "site/app.js").read_text()
+    box = js[js.index("function noteMarkup"):js.index("function feedbackMarkup")]
+    assert "n.why" in box and box.index("n.why") < box.index("Written by AI")
+
+
+def test_no_held_note_is_approved_unless_simon_approved_it_in_october():
+    held = json.loads((ROOT / "results/site_notes/held.json").read_text()) if (ROOT / "results/site_notes/held.json").exists() else {}
+    approved_held = []
+    for f in (ROOT / "site/data/notes").glob("*.json"):
+        approved_held += [i for i, n in json.loads(f.read_text())["notes"].items()
+                          if n.get("approved") and i in held and not held[i].startswith("why dropped")]
+    assert not approved_held, approved_held[:5]
+
+
+def test_an_answer_filed_under_the_wrong_story_is_rejected():
+    """A subagent that skips 07.txt shifts every later answer by one; the code catches it."""
+    code_a, code_b = D.story_code("r", "t-2a-1-1"), D.story_code("r", "t-2a-5-5")
+    assert code_a != code_b
+    ans = {"code": code_b, "note": "ok", "why": "", "people": [], "terms": [], "flag": ""}
+    assert D.validate(ans, code_a)[0] is None
+    assert D.validate({**ans, "code": code_a.lower()}, code_a)[0]
+
+
+def test_every_story_file_opens_with_its_code():
+    s = {"ref": "T 2a", "segments": [{"ref": "T 2a", "i": 1, "he": "א", "en": "x"}]}
+    flat = [("T 2a", 0, "", "before"), ("T 2a", 1, "א", "x"), ("T 2a", 2, "", "after")]
+    text = D.story_file(s, flat, {("T 2a", k): k for k in range(3)}, "ABC123")
+    assert text.splitlines()[0] == "Story code: ABC123"
+    assert "[1] BEFORE" in text and "[2] STORY" in text and "[3] AFTER" in text
+
+
+def test_a_flag_on_a_never_reviewed_kept_note_holds_it_and_flags_the_passage():
+    held, pf = {}, {}
+    notes, _ = B.merge([STORY], {STORY["id"]: {**OLD, "approved": False}},
+                       {STORY["id"]: draft(flag="Cut off: the ending is in the next segment.")}, held, pf)
+    n = notes[STORY["id"]]
+    assert n["note"] == OLD["note"] and n["approved"] is False
+    assert held[STORY["id"]].startswith("Cut off") and pf[STORY["id"]].startswith("Cut off")
+
+
+def test_a_flag_on_an_approved_note_flags_the_passage_but_keeps_the_note_approved():
+    held, pf = {}, {}
+    notes, _ = B.merge([STORY], {STORY["id"]: OLD}, {STORY["id"]: draft(flag="Cut off.")}, held, pf)
+    assert notes[STORY["id"]]["approved"] is True and STORY["id"] not in held and pf[STORY["id"]] == "Cut off."
+
+
+def test_a_draft_from_an_earlier_run_is_replaced_whole():
+    held = {}
+    prev = {STORY["id"]: {**OLD, "approved": False, "drafted": "pilot1"}}
+    notes, _ = B.merge([STORY], prev, {STORY["id"]: {**draft(), "_run": "pilot2"}}, held, {})
+    assert notes[STORY["id"]]["note"] == "A new draft." and notes[STORY["id"]]["drafted"] == "pilot2"
+
+
+def test_every_story_on_the_site_has_a_note():
+    """A rebuild of site/data can add stories (a new tractate, a boundary split). They must not go
+    live with no Background box unnoticed: draft them with scripts/draft_site_notes.py."""
+    missing = []
+    for t in json.loads((ROOT / "site/data/index.json").read_text())["tractates"]:
+        slug = t["tractate"]
+        notes_file = ROOT / f"site/data/notes/{slug}.json"
+        notes = json.loads(notes_file.read_text())["notes"] if notes_file.exists() else {}
+        missing += [s["id"] for s in json.loads((ROOT / f"site/data/{slug}.json").read_text())["stories"]
+                    if s["id"] not in notes]
+    assert not missing, f"{len(missing)} stories have no note: {missing[:5]}"

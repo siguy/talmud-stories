@@ -1,1093 +1,1411 @@
 {
-  "_what": "Simon's decisions on what the Septimus family site ships, read by scripts/build_site_data.py (docs/technical/septimus-story-filter.md). Policy and per-passage removals/inclusions, each with who decided and when. Gate rulings (G4, G6, the judges) live in decisions.json beside this file.",
-  "biblical": {
-    "ships": false,
-    "bucket": "out_of_scope",
-    "rule": "R-S1",
-    "decided_by": "Simon 2026-11-13",
-    "reverses": "Simon 2026-11-10 (biblical stories ship, flagged)",
-    "_ruling": "Simon, 2026-11-13: 'I think it makes sense to remove biblical stories so we keep it consistent. I want to find them, but we now exclude from septimus stories and jeff's scholarly work (unless someone filters for them).' After Jeff ruled the Berakhot 54a-b lepers out of scope (R-S1, 2026-11-12). Every story flagged biblical leaves `stories` and is kept in the tractate file's `out_of_scope` list with its reason."
-  },
-  "remove": {
-    "_ruling": "Jeff's 2026-11-12 not / borderline verdicts on passages the site shipped; the site ships definite stories only (Simon 2026-11-13). Matched by span OVERLAP against the build's own cells (Lesson 36); a removal that matches nothing is named on stderr. The span is the one Jeff was shown (Eruvin: the review card's key, e.g. 53b_8-9 for the site's 53b:8, 67b_15-16 for 67b:15-18). Second batch (Simon 2026-11-14, 'just remove them if you are sure.'): 17 twin-pass cards from unreviewed tractates, flagged while writing summaries and marked SURE_REMOVE by a rules-based triage against docs/STORY_RULES.md; no Jeff verdict on any, so these entries carry no `jeff` field and name their rule and reason (docs/findings/2026-11-14-twin-pass-site-cards.md). Third batch (Simon 2026-11-14, same words): the second twin-pass triage pass -- 32 SURE_REMOVE cards plus chagigah-13a-10-10, a duplicate allusion whose full story ships as chagigah-13a-12-12. Each removed card's permanent id becomes `retired` in site/data/story_ids.json (never deleted, never reused). An entry with `exact: true` removes only the story whose source span is exactly its own, for a card whose segments another shipped card also covers (bava_batra-30b-5-5 lies inside bava_batra-30b-5-7, which is not triaged and stays).",
-    "passages": [
-      {
-        "tractate": "arakhin",
-        "ref": "Arakhin 23b",
-        "start_segment": 0,
-        "end_segment": 1,
-        "jeff": "not",
-        "rule": "R-C0",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
-      },
-      {
-        "tractate": "pesachim",
-        "ref": "Pesachim 66b",
-        "start_segment": 4,
-        "end_segment": 4,
-        "jeff": "not",
-        "rule": "R-B4",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
-      },
-      {
-        "tractate": "shabbat",
-        "ref": "Shabbat 147a",
-        "start_segment": 6,
-        "end_segment": 6,
-        "jeff": "not",
-        "rule": "R-C2",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
-      },
-      {
-        "tractate": "chullin",
-        "ref": "Chullin 46a",
-        "start_segment": 8,
-        "end_segment": 8,
-        "jeff": "borderline",
-        "rule": "R-C7",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
-      },
-      {
-        "tractate": "chullin",
-        "ref": "Chullin 57b",
-        "start_segment": 6,
-        "end_segment": 7,
-        "jeff": "borderline",
-        "rule": "R-C7",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
-      },
-      {
-        "tractate": "niddah",
-        "ref": "Niddah 7b",
-        "start_segment": 4,
-        "end_segment": 5,
-        "jeff": "borderline",
-        "rule": "R-C7",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
-      },
-      {
-        "tractate": "eruvin",
-        "ref": "Eruvin 41a",
-        "start_segment": 1,
-        "end_segment": 1,
-        "jeff": "not",
-        "rule": "jeff-verdict",
-        "list_id": "eruvin_026",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/expert_lists/superseded_by_rule.json"
-      },
-      {
-        "tractate": "eruvin",
-        "ref": "Eruvin 51a",
-        "start_segment": 2,
-        "end_segment": 3,
-        "jeff": "not",
-        "rule": "jeff-verdict",
-        "list_id": "eruvin_035",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/expert_lists/superseded_by_rule.json"
-      },
-      {
-        "tractate": "eruvin",
-        "ref": "Eruvin 53b",
-        "start_segment": 8,
-        "end_segment": 9,
-        "jeff": "not",
-        "rule": "jeff-verdict",
-        "list_id": "eruvin_040",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/expert_lists/superseded_by_rule.json"
-      },
-      {
-        "tractate": "eruvin",
-        "ref": "Eruvin 59b",
-        "start_segment": 9,
-        "end_segment": 11,
-        "jeff": "not",
-        "rule": "jeff-verdict",
-        "list_id": "eruvin_050",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/expert_lists/superseded_by_rule.json"
-      },
-      {
-        "tractate": "eruvin",
-        "ref": "Eruvin 67b",
-        "start_segment": 15,
-        "end_segment": 16,
-        "jeff": "not",
-        "rule": "jeff-verdict",
-        "list_id": "eruvin_063",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/expert_lists/superseded_by_rule.json"
-      },
-      {
-        "tractate": "eruvin",
-        "ref": "Eruvin 68a",
-        "start_segment": 10,
-        "end_segment": 11,
-        "jeff": "not",
-        "rule": "jeff-verdict",
-        "list_id": "eruvin_064",
-        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
-        "source": "results/expert_lists/superseded_by_rule.json"
-      },
-      {
-        "tractate": "taanit",
-        "ref": "Taanit 28a",
-        "start_segment": 6,
-        "end_segment": 6,
-        "card": "taanit-28a-6-6",
-        "rule": "R-C0",
-        "reason": "only the question that opens the story at 28a:7-8; no event of its own",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chullin",
-        "ref": "Chullin 128a",
-        "start_segment": 9,
-        "end_segment": 9,
-        "card": "chullin-128a-9-9",
-        "rule": "R-C2",
-        "reason": "a teaching, no event",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "shabbat",
-        "ref": "Shabbat 156a",
-        "start_segment": 4,
-        "end_segment": 4,
-        "card": "shabbat-156a-4-4",
-        "rule": "R-C2",
-        "reason": "question and answer plus rulings",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yoma",
-        "ref": "Yoma 35b",
-        "start_segment": 5,
-        "end_segment": 5,
-        "card": "yoma-35b-5-5",
-        "rule": "R-C0",
-        "reason": "hypothetical heavenly-court scene; the Hillel story is its own card, yoma-35b-6-7",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "avodah_zarah",
-        "ref": "Avodah Zarah 69a",
-        "start_segment": 1,
-        "end_segment": 1,
-        "card": "avodah_zarah-69a-1-1",
-        "rule": "R-C2",
-        "reason": "a debate",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chullin",
-        "ref": "Chullin 56a",
-        "start_segment": 10,
-        "end_segment": 10,
-        "card": "chullin-56a-10-10",
-        "rule": "R-C2",
-        "reason": "discussion; the real case, chullin-56a-11-11, ships",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yevamot",
-        "ref": "Yevamot 42b",
-        "start_segment": 8,
-        "end_segment": 8,
-        "card": "yevamot-42b-8-8",
-        "rule": "R-C2",
-        "reason": "question and answer plus a stock rebuke",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "ref": "Sanhedrin 29b",
-        "start_segment": 21,
-        "end_segment": 21,
-        "card": "sanhedrin-29b-21-21",
-        "rule": "R-C0",
-        "reason": "one fact, then debate",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "bava_metzia",
-        "ref": "Bava Metzia 73a",
-        "start_segment": 9,
-        "end_segment": 9,
-        "card": "bava_metzia-73a-9-9",
-        "rule": "R-C2/R-C5",
-        "reason": "a single speech act",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "megillah",
-        "ref": "Megillah 28a",
-        "start_segment": 7,
-        "end_segment": 7,
-        "card": "megillah-28a-7-7",
-        "rule": "R-C3/R-C5",
-        "reason": "a habit, not an event",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "megillah",
-        "ref": "Megillah 28a",
-        "start_segment": 19,
-        "end_segment": 19,
-        "card": "megillah-28a-19-19",
-        "rule": "R-C2",
-        "reason": "sayings",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sukkah",
-        "ref": "Sukkah 28a",
-        "start_segment": 3,
-        "end_segment": 3,
-        "card": "sukkah-28a-3-3",
-        "rule": "R-C5",
-        "reason": "a list of habits",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sukkah",
-        "ref": "Sukkah 53a",
-        "start_segment": 2,
-        "end_segment": 2,
-        "card": "sukkah-53a-2-2",
-        "rule": "R-C2/R-C5",
-        "reason": "what Hillel would say, no event",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "pesachim",
-        "ref": "Pesachim 57a",
-        "start_segment": 7,
-        "end_segment": 7,
-        "card": "pesachim-57a-7-7",
-        "rule": "R-C2/R-C5",
-        "reason": "speech / lament, no event",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "moed_katan",
-        "ref": "Moed Katan 12b",
-        "start_segment": 13,
-        "end_segment": 13,
-        "card": "moed_katan-12b-13-13",
-        "rule": "R-C2",
-        "reason": "a ruling plus a curse; the story is moed_katan-12b-14-14, which ships",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "berakhot",
-        "ref": "Berakhot 44a",
-        "start_segment": 4,
-        "end_segment": 4,
-        "card": "berakhot-44a-4-4",
-        "rule": "R-C5",
-        "reason": "description, no event",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "taanit",
-        "ref": "Taanit 23b",
-        "start_segment": 8,
-        "end_segment": 8,
-        "card": "taanit-23b-8-8",
-        "rule": "R-C0",
-        "reason": "contrast frame only; its payoff ships as taanit-23b-9-9 (drop 8-8, do not widen 9-9)",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "avodah_zarah",
-        "ref": "Avodah Zarah 14b",
-        "start_segment": 7,
-        "end_segment": 7,
-        "card": "avodah_zarah-14b-7-7",
-        "rule": "R-C2",
-        "reason": "Speech only: Rav Dimi glosses a mishnaic word, Abaye retorts; ordinary scholarly exchange, no event.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "bava_batra",
-        "ref": "Bava Batra 30b",
-        "start_segment": 5,
-        "end_segment": 5,
-        "card": "bava_batra-30b-5-5",
-        "rule": "R-C0 limit",
-        "reason": "Litigants' dialogue then Rava's ruling: a case before a rabbi and his ruling, which Jeff 2026-10-25 ruled not a story (Yevamot 45a:16, Gittin 89a:19). Neighbour 30b-6-7 has the same shape.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md",
-        "exact": true
-      },
-      {
-        "tractate": "bava_metzia",
-        "ref": "Bava Metzia 73b",
-        "start_segment": 2,
-        "end_segment": 2,
-        "card": "bava_metzia-73b-2-2",
-        "rule": "R-C2",
-        "reason": "Speech only: Rava of Barnish puts a halakhic challenge to Rav Ashi; Q&A about interest.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "bava_metzia",
-        "ref": "Bava Metzia 73b",
-        "start_segment": 6,
-        "end_segment": 6,
-        "card": "bava_metzia-73b-6-6",
-        "rule": "R-C2",
-        "reason": "Speech only: Rav Pappa asks Rava about tax-payers' labour; Rava answers citing Rav Sheshet.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "beitzah",
-        "ref": "Beitzah 22a",
-        "start_segment": 16,
-        "end_segment": 16,
-        "card": "beitzah-22a-16-16",
-        "rule": "R-C2 / R-C0 limit",
-        "reason": "Ameimar's ruling (permitted eye-ointment), Rav Ashi's objection, Ameimar's reply: ruling plus scholarly debate, no narrated event.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "beitzah",
-        "ref": "Beitzah 25b",
-        "start_segment": 14,
-        "end_segment": 14,
-        "card": "beitzah-25b-14-14",
-        "rule": "R-C5 / R-C3",
-        "reason": "Habit only: Ameimar and Mar Zutra used to be carried by students; reasons given; no event follows.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "berakhot",
-        "ref": "Berakhot 30b",
-        "start_segment": 1,
-        "end_segment": 1,
-        "card": "berakhot-30b-1-1",
-        "rule": "R-C2",
-        "reason": "Speech only: Hanina Kara states a halakha, R. Yannai dismisses it ('go read your verses outside'). A rebuke is ordinary Talmudic discourse (Jeff, Ketubot 21b:0, 2026-10-07).",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "berakhot",
-        "ref": "Berakhot 50a",
-        "start_segment": 13,
-        "end_segment": 13,
-        "card": "berakhot-50a-13-13",
-        "rule": "R-C5 / R-C3",
-        "reason": "Habit: Rava's report of how the Sages used to bless at the Exilarch's, then Gemara Q&A; no one-time event.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chagigah",
-        "ref": "Chagigah 5b",
-        "start_segment": 4,
-        "end_segment": 4,
-        "card": "chagigah-5b-4-4",
-        "rule": "R-C2",
-        "reason": "Setting plus question and answer (deathbed; Sages ask, R. Yehoshua answers with a verse) - Jeff's Shabbat 147a:6 rule: a setting framing a Q&A is not enough.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chagigah",
-        "ref": "Chagigah 13a",
-        "start_segment": 10,
-        "end_segment": 10,
-        "card": "chagigah-13a-10-10",
-        "rule": "R-C6 / duplicate",
-        "reason": "duplicate: a one-line allusion to the incident told in full at 13a:12, which ships as chagigah-13a-12-12",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked FIX_NOT_REMOVE: duplicate; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chagigah",
-        "ref": "Chagigah 15a",
-        "start_segment": 7,
-        "end_segment": 7,
-        "card": "chagigah-15a-7-7",
-        "rule": "R-C2",
-        "reason": "Exegetical Q&A between Aher and R. Meir (Ecclesiastes 7:14); speech only, no event. (Dialogue continues in 15a:8.)",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chagigah",
-        "ref": "Chagigah 15b",
-        "start_segment": 14,
-        "end_segment": 14,
-        "card": "chagigah-15b-14-14",
-        "rule": "R-C2",
-        "reason": "Speech only: Nimos HaGardi's question to R. Meir and his answer.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chullin",
-        "ref": "Chullin 50a",
-        "start_segment": 3,
-        "end_segment": 3,
-        "card": "chullin-50a-3-3",
-        "rule": "R-C5",
-        "reason": "Eyewitness report of a practice cited as evidence ('I was standing before R. Ami... he ate'); nothing follows.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "chullin",
-        "ref": "Chullin 124a",
-        "start_segment": 20,
-        "end_segment": 20,
-        "card": "chullin-124a-20-20",
-        "rule": "R-C2",
-        "reason": "Halakhic exchange: Nahman questions Ulla and swears he would not accept the ruling. Sharp retort = ordinary discourse (Ketubot 21b:0). Its detector continuation 124a:21-25 does not ship, so this is a fragment.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "eruvin",
-        "ref": "Eruvin 68a",
-        "start_segment": 2,
-        "end_segment": 2,
-        "card": "eruvin-68a-2-2",
-        "rule": "R-C2",
-        "reason": "Speech only: Rabba bar Rav Hanan asks Abaye why their alley has no eiruv; Abaye explains. Not on Jeff's 2005 list.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "megillah",
-        "ref": "Megillah 28a",
-        "start_segment": 5,
-        "end_segment": 5,
-        "card": "megillah-28a-5-5",
-        "rule": "R-C2",
-        "reason": "Question and answer: disciples ask R. Nehunya how he merited long life; he lists his virtues. Speech only (its commentary 28a:7 was removed today).",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "nedarim",
-        "ref": "Nedarim 49b",
-        "start_segment": 10,
-        "end_segment": 10,
-        "card": "nedarim-49b-10-10",
-        "rule": "R-C5 / R-C3",
-        "reason": "Habit: R. Yehuda carried a pitcher, R. Shimon a basket, with a saying; no event follows.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "niddah",
-        "ref": "Niddah 24b",
-        "start_segment": 16,
-        "end_segment": 16,
-        "card": "niddah-24b-16-16",
-        "rule": "R-C5",
-        "reason": "Habitual observations as a gravedigger (bones of drinkers); no single event. The real incidents are 24b:17-18.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "pesachim",
-        "ref": "Pesachim 51a",
-        "start_segment": 10,
-        "end_segment": 10,
-        "card": "pesachim-51a-10-10",
-        "rule": "R-C2",
-        "reason": "Rav Ashi's legal reasoning plus Rabba bar bar Hana's instruction to his son: speech only.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "pesachim",
-        "ref": "Pesachim 68b",
-        "start_segment": 12,
-        "end_segment": 12,
-        "card": "pesachim-68b-12-12",
-        "rule": "R-C5 / R-C3",
-        "reason": "Habit: every thirty days Rav Sheshet reviewed and said 'rejoice my soul'; then Gemara discussion. No event.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "pesachim",
-        "ref": "Pesachim 101a",
-        "start_segment": 5,
-        "end_segment": 5,
-        "card": "pesachim-101a-5-5",
-        "rule": "R-C5 / R-C3",
-        "reason": "Habit cited as evidence: when Rabba recited kiddush he would tell students to eat. No event.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "ref": "Sanhedrin 38b",
-        "start_segment": 17,
-        "end_segment": 17,
-        "card": "sanhedrin-38b-17-17",
-        "rule": "R-C2",
-        "reason": "Baraita: Akiva's exegesis and R. Elazar b. Azarya's rebuke ('leave aggada'). Ordinary scholarly rebuke, speech only.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "ref": "Sanhedrin 39a",
-        "start_segment": 6,
-        "end_segment": 6,
-        "card": "sanhedrin-39a-6-6",
-        "rule": "R-C2",
-        "reason": "Polemical exegesis between the emperor and Rabban Gamliel; speech only, no act (unlike 39a:4-5, where he spins quinces).",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "ref": "Sanhedrin 39a",
-        "start_segment": 7,
-        "end_segment": 7,
-        "card": "sanhedrin-39a-7-7",
-        "rule": "R-C2",
-        "reason": "Continuation of the same emperor-Gamliel argument; speech only.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "ref": "Sanhedrin 100a",
-        "start_segment": 5,
-        "end_segment": 5,
-        "card": "sanhedrin-100a-5-5",
-        "rule": "R-C2",
-        "reason": "Frame dialogue: R. Yirmeya teaches, an elder praises him, he asks R. Zeira whether that is irreverent. Speech only; the story it introduces (100a:6-7) ships as its own card.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "ref": "Sanhedrin 111a",
-        "start_segment": 3,
-        "end_segment": 3,
-        "card": "sanhedrin-111a-3-3",
-        "rule": "R-C2",
-        "reason": "Exegesis plus rebuke (Yohanan to Reish Lakish; Rav to Rav Kahana): speech only, ordinary discourse.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sukkah",
-        "ref": "Sukkah 26a",
-        "start_segment": 6,
-        "end_segment": 6,
-        "card": "sukkah-26a-6-6",
-        "rule": "R-C0 limit",
-        "reason": "One event (eye pain) and a ruling (permitted to sleep outside the sukka), nothing else narrated: not a story (Jeff 2026-10-25). Neighbour 26a-7-7 has the same shape.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yevamot",
-        "ref": "Yevamot 15a",
-        "start_segment": 16,
-        "end_segment": 16,
-        "card": "yevamot-15a-16-16",
-        "rule": "R-C5",
-        "reason": "Report of what Beit Shammai did (they widened the trough), cited as an objection, nothing follows - the same shape as Jeff's Yevamot 15a Akiva-etrog ruling. Not on his 2005 list.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yoma",
-        "ref": "Yoma 19b",
-        "start_segment": 5,
-        "end_segment": 5,
-        "card": "yoma-19b-5-5",
-        "rule": "R-C2",
-        "reason": "Teaching scene: Rav corrects a name's pronunciation with a gesture (a quasi-speech act), then Gemara analysis. No event.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yoma",
-        "ref": "Yoma 77b",
-        "start_segment": 9,
-        "end_segment": 9,
-        "card": "yoma-77b-9-9",
-        "rule": "R-C0 limit / R-C2",
-        "reason": "Ruling (Rav Yosef permits the villagers to cross the water) plus Abaye's objection, in two versions. Ruling and debate, nothing else narrated.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yoma",
-        "ref": "Yoma 78a",
-        "start_segment": 9,
-        "end_segment": 9,
-        "card": "yoma-78a-9-9",
-        "rule": "R-C2 / R-C5",
-        "reason": "Report of an Eretz Yisrael custom plus R. Yaakov's correction of a transmitter. Speech only.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yoma",
-        "ref": "Yoma 79a",
-        "start_segment": 1,
-        "end_segment": 1,
-        "card": "yoma-79a-1-1",
-        "rule": "R-C5",
-        "reason": "A precedent of practice (RYBZ and Rabban Gamliel ask for their food to be taken up to the sukka), cited as an objection - the same shape as Jeff's Akiva-etrog 'just a report' (Yevamot 15a). Neighbour 79a-2-2 has the same shape.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "yoma",
-        "ref": "Yoma 87a",
-        "start_segment": 14,
-        "end_segment": 14,
-        "card": "yoma-87a-14-14",
-        "rule": "R-C5 / R-C3",
-        "reason": "Habit: R. Zeira would pace before someone who had insulted him; no event.",
-        "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      }
-    ]
-  },
-  "include": {
-    "_ruling": "Explicit per-passage inclusions: an expert verdict of `story` plus Simon's yes. The only way past the definite-only filter, and never a rule. Matched by overlap against stories[] of the first run.",
-    "passages": [
-      {
-        "tractate": "sanhedrin",
-        "ref": "Sanhedrin 52b",
-        "start_segment": 4,
-        "end_segment": 4,
-        "jeff": "story",
-        "rule": "R-C1",
-        "decided_by": "Jeff Rubenstein 2026-11-12 ('In any case, I would include it'); Simon 2026-11-13 ('Include this')",
-        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json",
-        "why_held": "LOW_CONFIDENCE in both v14 runs"
-      }
-    ]
-  },
-  "promote": {
-    "_ruling": "A RULE over a graded pool, not a per-passage edit: every passage in `source` (both Claude grader passes said `story` under the judge prompt with sha `judge_prompt_sha`) ships as a story, carrying `included_by` so the whole batch can be filtered or removed in one step. The build refuses if the source file's ids, count or prompt sha differ from this record. Still narrowed by every exclusion (biblical, the judges' not-a-story drop, `remove`, overlap with a story already shipped or out of scope). Model-graded, NOT expert-labelled: never read into a golden, ruler, expert list or recall/precision ruler.",
-    "rules": [
-      {
-        "included_by": "low-pool-grader-2026-11-13",
-        "rule": "both Claude grader passes say story",
-        "judge_prompt": "src/prompts/judge_register_v2.md",
-        "judge_prompt_sha": "88e8fff62716",
-        "source": "results/shas_run/low_pool/pool/promotions.json",
-        "count": 80,
-        "ids": [
-          "Avodah Zarah 16a:9-9",
-          "Avodah Zarah 17a:8-10",
-          "Avodah Zarah 19a:5-5",
-          "Avodah Zarah 19a:18-Avodah Zarah 19b:0",
-          "Avodah Zarah 28a:8-8",
-          "Avodah Zarah 29a:5-5",
-          "Avodah Zarah 38b:5-5",
-          "Avodah Zarah 74b:3-3",
-          "Bava Batra 126a:9-Bava Batra 126b:0",
-          "Bava Batra 164b:12-12",
-          "Bava Kamma 21a:8-8",
-          "Bava Kamma 50b:16-17",
-          "Bava Kamma 58b:14-15",
-          "Bava Kamma 80a:9-9",
-          "Bava Kamma 81b:9-10",
-          "Bava Kamma 116b:20-Bava Kamma 117a:0",
-          "Bava Kamma 117a:12-13",
-          "Bava Kamma 117b:8-8",
-          "Bava Metzia 51a:5-5",
-          "Bava Metzia 51a:6-6",
-          "Bava Metzia 66b:11-11",
-          "Bava Metzia 81a:8-8",
-          "Bava Metzia 85a:2-2",
-          "Bekhorot 36a:8-9",
-          "Berakhot 18b:3-3",
-          "Berakhot 19a:2-2",
-          "Berakhot 48a:2-2",
-          "Berakhot 49a:14-14",
-          "Berakhot 54a:10-10",
-          "Berakhot 55b:15-15",
-          "Berakhot 58b:6-6",
-          "Chagigah 5b:0-0",
-          "Chagigah 5b:7-7",
-          "Chagigah 18a:9-9",
-          "Chullin 43b:1-1",
-          "Chullin 50a:13-13",
-          "Chullin 110a:2-2",
-          "Eruvin 54b:3-3",
-          "Eruvin 63a:11-12",
-          "Horayot 14a:3-3",
-          "Horayot 14a:4-4",
-          "Makkot 5b:2-3",
-          "Moed Katan 12b:14-14",
-          "Moed Katan 16b:11-11",
-          "Moed Katan 17a:23-23",
-          "Nazir 57b:4-4",
-          "Nedarim 23a:3-3",
-          "Nedarim 41a:3-3",
-          "Nedarim 41a:4-4",
-          "Nedarim 48b:0-0",
-          "Niddah 52a:17-17",
-          "Niddah 66a:22-22",
-          "Pesachim 3b:6-6",
-          "Pesachim 117b:17-17",
-          "Sanhedrin 25a:9-10",
-          "Sanhedrin 39a:10-10",
-          "Sanhedrin 109a:15-15",
-          "Shabbat 20b:10-10",
-          "Shabbat 129a:8-8",
-          "Shevuot 30b:3-3",
-          "Sotah 48a:17-17",
-          "Sotah 49b:4-4",
-          "Sukkah 10b:4-4",
-          "Taanit 18b:6-6",
-          "Taanit 21b:6-6",
-          "Taanit 21b:7-7",
-          "Taanit 23b:9-9",
-          "Taanit 24a:9-9",
-          "Taanit 24a:14-14",
-          "Taanit 24a:15-15",
-          "Taanit 24a:16-16",
-          "Taanit 24b:4-4",
-          "Taanit 25b:13-13",
-          "Yevamot 72b:3-6",
-          "Yevamot 78b:11-11",
-          "Yevamot 84a:2-2",
-          "Yevamot 108a:7-7",
-          "Yoma 22b:17-17",
-          "Yoma 26b:4-4",
-          "Zevachim 100a:4-4"
-        ],
-        "evidence": "Calibration vs Jeff on 300 spans he ruled: both-passes-story 32/33 = 0.97 precision (Wilson 95% 0.85-1.00), recall 32/141; blind slice 6/6. docs/findings/2026-11-13-low-pool-grader-calibration.md, results/shas_run/low_pool/calibration/score.json",
-        "review_bar": {
-          "planned": "Simon reads a seeded random 60 (results/shas_run/low_pool/pool/review_sample.json, validation/ui/low_pool_promotions_review.html); ship only if >= 54 of 60 are yes",
-          "completed": false,
-          "status": "WAIVED / PARTIAL: Simon read part of the sample informally and approved. His per-passage verdicts were not exported, so no count against the 54/60 bar exists."
-        },
-        "bounds": "the pool unit's cells: the detector span the grade refers to (identical in both runs for 76 of 80; for the other 4 the span of the run that proposed the wider or only one). Not the grader's chosen segments: every other site story is bounded by a detector span, and the grader's picks are relative to a context window and sometimes non-contiguous.",
-        "summary": "the detector's one_sentence_summary of the SAME passage (identical cells), run 1 then run 2, when reader-facing; otherwise none. Never the grader's reason.",
-        "decided_by": "Simon 2026-11-14",
-        "words": "Im looking through these stories and they seem to mostly be stories so far. I didnt review all of them, but I suggest we add them at this point."
-      }
-    ]
-  },
-  "keep": {
-    "_ruling": "Simon's explicit KEEP decisions on cards a triage flagged: these ship, and a future triage must not re-flag them. The build ignores this list except to REFUSE a `remove` entry that overlaps a kept passage (by cells) or names a kept card: undoing one of Simon's keeps takes editing this list, on purpose. Matched like `remove` (single-page span; `card` is the permanent id).",
-    "passages": [
-      {
-        "tractate": "pesachim",
-        "ref": "Pesachim 49a",
-        "start_segment": 15,
-        "end_segment": 15,
-        "card": "pesachim-49a-15-15",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "if they're stories, which they seem to be, keep them",
-        "source": "twin-pass triage 2026-11-14, cards shown to Simon"
-      },
-      {
-        "tractate": "ketubot",
-        "ref": "Ketubot 86a",
-        "start_segment": 4,
-        "end_segment": 4,
-        "card": "ketubot-86a-4-4",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "if they're stories, which they seem to be, keep them",
-        "source": "twin-pass triage 2026-11-14, cards shown to Simon"
-      },
-      {
-        "tractate": "rosh_hashanah",
-        "ref": "Rosh Hashanah 18a",
-        "start_segment": 7,
-        "end_segment": 7,
-        "card": "rosh_hashanah-18a-7-7",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "if they're stories, which they seem to be, keep them",
-        "source": "twin-pass triage 2026-11-14, cards shown to Simon"
-      },
-      {
-        "tractate": "yevamot",
-        "ref": "Yevamot 105a",
-        "start_segment": 13,
-        "end_segment": 13,
-        "card": "yevamot-105a-13-13",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "if they're stories, which they seem to be, keep them",
-        "source": "twin-pass triage 2026-11-14, cards shown to Simon"
-      },
-      {
-        "tractate": "avodah_zarah",
-        "ref": "Avodah Zarah 65b",
-        "start_segment": 5,
-        "end_segment": 5,
-        "card": "avodah_zarah-65b-5-5",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "bava_batra",
-        "ref": "Bava Batra 8a",
-        "start_segment": 16,
-        "end_segment": 16,
-        "card": "bava_batra-8a-16-16",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "bava_metzia",
-        "ref": "Bava Metzia 85b",
-        "start_segment": 4,
-        "end_segment": 4,
-        "card": "bava_metzia-85b-4-4",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "bava_metzia",
-        "ref": "Bava Metzia 85b",
-        "start_segment": 7,
-        "end_segment": 7,
-        "card": "bava_metzia-85b-7-7",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "berakhot",
-        "ref": "Berakhot 19a",
-        "start_segment": 9,
-        "end_segment": 9,
-        "card": "berakhot-19a-9-9",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "makkot",
-        "ref": "Makkot 16b",
-        "start_segment": 6,
-        "end_segment": 6,
-        "card": "makkot-16b-6-6",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "moed_katan",
-        "ref": "Moed Katan 21a",
-        "start_segment": 6,
-        "end_segment": 6,
-        "card": "moed_katan-21a-6-6",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "moed_katan",
-        "ref": "Moed Katan 25b",
-        "start_segment": 2,
-        "end_segment": 2,
-        "card": "moed_katan-25b-2-2",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "moed_katan",
-        "ref": "Moed Katan 25b",
-        "start_segment": 9,
-        "end_segment": 9,
-        "card": "moed_katan-25b-9-9",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "taanit",
-        "ref": "Taanit 21b",
-        "start_segment": 8,
-        "end_segment": 8,
-        "card": "taanit-21b-8-8",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      },
-      {
-        "tractate": "yoma",
-        "ref": "Yoma 38b",
-        "start_segment": 2,
-        "end_segment": 2,
-        "card": "yoma-38b-2-2",
-        "decided_by": "Simon 2026-11-14 (keep)",
-        "simon": "keep them all",
-        "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
-      }
-    ]
-  },
-  "merge": {
-    "_ruling": "Display cards joined into one story (Simon 2026-11-14): the built stories overlapping each member are combined into one card over the union of their segments, which must be contiguous. `keep` is the permanent id the merged card holds: the build sets that registry entry's span to the merged span (the documented way to settle the tie a merge of two equal cards would otherwise be refused on), so every other member's id becomes `redirect` to it. The merged card's summary is the one written for `keep` in results/shas_run/site_summaries_written.json -- a member's own summary describes only its half. A merge whose members no longer match exactly one built story each is named on stderr and not applied. The flagged card is the one absorbed. Display only: goldens and runs are untouched.",
-    "groups": [
-      {
-        "tractate": "megillah",
-        "keep": "megillah-29a-5-5",
-        "members": [
-          {
-            "ref": "Megillah 29a",
-            "start_segment": 4,
-            "end_segment": 4,
-            "card": "megillah-29a-4-4"
-          },
-          {
-            "ref": "Megillah 29a",
-            "start_segment": 5,
-            "end_segment": 5,
-            "card": "megillah-29a-5-5"
-          }
-        ],
-        "rule": "boundary",
-        "reason": "29a:4 is mostly Abaye's teaching; its last sentence (Shmuel's father and Levi hear the Divine Presence and leave) is the foil to Rav Sheshet staying in 29a:5. One story, 29a:4-5.",
-        "decided_by": "Simon 2026-11-14 (fix, do not remove); rules-based triage marked FIX_NOT_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "keep": "sanhedrin-11a-7-7",
-        "members": [
-          {
-            "ref": "Sanhedrin 11a",
-            "start_segment": 7,
-            "end_segment": 7,
-            "card": "sanhedrin-11a-7-7"
-          },
-          {
-            "ref": "Sanhedrin 11a",
-            "start_segment": 8,
-            "end_segment": 8,
-            "card": "sanhedrin-11a-8-8"
-          }
-        ],
-        "rule": "merge",
-        "reason": "11a:8 continues the Shmuel HaKatan eulogy baraita ('and they also wished to say thus... about Yehuda ben Bava'). One story, 11a:7-8.",
-        "decided_by": "Simon 2026-11-14 (fix, do not remove); rules-based triage marked FIX_NOT_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      },
-      {
-        "tractate": "sanhedrin",
-        "keep": "sanhedrin-104a-8-8",
-        "members": [
-          {
-            "ref": "Sanhedrin 104a",
-            "start_segment": 7,
-            "end_segment": 7,
-            "card": "sanhedrin-104a-7-7"
-          },
-          {
-            "ref": "Sanhedrin 104a",
-            "start_segment": 8,
-            "end_segment": 8,
-            "card": "sanhedrin-104a-8-8"
-          }
-        ],
-        "rule": "merge",
-        "reason": "104a:7 (the skull that will not stay buried) runs straight into 104a:8 (he wraps it, his wife burns it). One story, 104a:7-8.",
-        "decided_by": "Simon 2026-11-14 (fix, do not remove); rules-based triage marked FIX_NOT_REMOVE; no Jeff verdict",
-        "simon": "just remove them if you are sure.",
-        "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
-      }
-    ]
-  }
+ "_what": "Simon's decisions on what the Septimus family site ships, read by scripts/build_site_data.py (docs/technical/septimus-story-filter.md). Policy and per-passage removals/inclusions, each with who decided and when. Gate rulings (G4, G6, the judges) live in decisions.json beside this file.",
+ "biblical": {
+  "ships": false,
+  "bucket": "out_of_scope",
+  "rule": "R-S1",
+  "decided_by": "Simon 2026-11-13",
+  "reverses": "Simon 2026-11-10 (biblical stories ship, flagged)",
+  "_ruling": "Simon, 2026-11-13: 'I think it makes sense to remove biblical stories so we keep it consistent. I want to find them, but we now exclude from septimus stories and jeff's scholarly work (unless someone filters for them).' After Jeff ruled the Berakhot 54a-b lepers out of scope (R-S1, 2026-11-12). Every story flagged biblical leaves `stories` and is kept in the tractate file's `out_of_scope` list with its reason."
+ },
+ "remove": {
+  "_ruling": "Jeff's 2026-11-12 not / borderline verdicts on passages the site shipped; the site ships definite stories only (Simon 2026-11-13). Matched by span OVERLAP against the build's own cells (Lesson 36); a removal that matches nothing is named on stderr. The span is the one Jeff was shown (Eruvin: the review card's key, e.g. 53b_8-9 for the site's 53b:8, 67b_15-16 for 67b:15-18). Second batch (Simon 2026-11-14, 'just remove them if you are sure.'): 17 twin-pass cards from unreviewed tractates, flagged while writing summaries and marked SURE_REMOVE by a rules-based triage against docs/STORY_RULES.md; no Jeff verdict on any, so these entries carry no `jeff` field and name their rule and reason (docs/findings/2026-11-14-twin-pass-site-cards.md). Third batch (Simon 2026-11-14, same words): the second twin-pass triage pass -- 32 SURE_REMOVE cards plus chagigah-13a-10-10, a duplicate allusion whose full story ships as chagigah-13a-12-12. Each removed card's permanent id becomes `retired` in site/data/story_ids.json (never deleted, never reused). An entry with `exact: true` removes only the story whose source span is exactly its own, for a card whose segments another shipped card also covers (bava_batra-30b-5-5 lies inside bava_batra-30b-5-7, which is not triaged and stays).",
+  "passages": [
+   {
+    "tractate": "arakhin",
+    "ref": "Arakhin 23b",
+    "start_segment": 0,
+    "end_segment": 1,
+    "jeff": "not",
+    "rule": "R-C0",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+   },
+   {
+    "tractate": "pesachim",
+    "ref": "Pesachim 66b",
+    "start_segment": 4,
+    "end_segment": 4,
+    "jeff": "not",
+    "rule": "R-B4",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+   },
+   {
+    "tractate": "shabbat",
+    "ref": "Shabbat 147a",
+    "start_segment": 6,
+    "end_segment": 6,
+    "jeff": "not",
+    "rule": "R-C2",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+   },
+   {
+    "tractate": "chullin",
+    "ref": "Chullin 46a",
+    "start_segment": 8,
+    "end_segment": 8,
+    "jeff": "borderline",
+    "rule": "R-C7",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+   },
+   {
+    "tractate": "chullin",
+    "ref": "Chullin 57b",
+    "start_segment": 6,
+    "end_segment": 7,
+    "jeff": "borderline",
+    "rule": "R-C7",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+   },
+   {
+    "tractate": "niddah",
+    "ref": "Niddah 7b",
+    "start_segment": 4,
+    "end_segment": 5,
+    "jeff": "borderline",
+    "rule": "R-C7",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+   },
+   {
+    "tractate": "eruvin",
+    "ref": "Eruvin 41a",
+    "start_segment": 1,
+    "end_segment": 1,
+    "jeff": "not",
+    "rule": "jeff-verdict",
+    "list_id": "eruvin_026",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/expert_lists/superseded_by_rule.json"
+   },
+   {
+    "tractate": "eruvin",
+    "ref": "Eruvin 51a",
+    "start_segment": 2,
+    "end_segment": 3,
+    "jeff": "not",
+    "rule": "jeff-verdict",
+    "list_id": "eruvin_035",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/expert_lists/superseded_by_rule.json"
+   },
+   {
+    "tractate": "eruvin",
+    "ref": "Eruvin 53b",
+    "start_segment": 8,
+    "end_segment": 9,
+    "jeff": "not",
+    "rule": "jeff-verdict",
+    "list_id": "eruvin_040",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/expert_lists/superseded_by_rule.json"
+   },
+   {
+    "tractate": "eruvin",
+    "ref": "Eruvin 59b",
+    "start_segment": 9,
+    "end_segment": 11,
+    "jeff": "not",
+    "rule": "jeff-verdict",
+    "list_id": "eruvin_050",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/expert_lists/superseded_by_rule.json"
+   },
+   {
+    "tractate": "eruvin",
+    "ref": "Eruvin 67b",
+    "start_segment": 15,
+    "end_segment": 16,
+    "jeff": "not",
+    "rule": "jeff-verdict",
+    "list_id": "eruvin_063",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/expert_lists/superseded_by_rule.json"
+   },
+   {
+    "tractate": "eruvin",
+    "ref": "Eruvin 68a",
+    "start_segment": 10,
+    "end_segment": 11,
+    "jeff": "not",
+    "rule": "jeff-verdict",
+    "list_id": "eruvin_064",
+    "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+    "source": "results/expert_lists/superseded_by_rule.json"
+   },
+   {
+    "tractate": "taanit",
+    "ref": "Taanit 28a",
+    "start_segment": 6,
+    "end_segment": 6,
+    "card": "taanit-28a-6-6",
+    "rule": "R-C0",
+    "reason": "only the question that opens the story at 28a:7-8; no event of its own",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chullin",
+    "ref": "Chullin 128a",
+    "start_segment": 9,
+    "end_segment": 9,
+    "card": "chullin-128a-9-9",
+    "rule": "R-C2",
+    "reason": "a teaching, no event",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "shabbat",
+    "ref": "Shabbat 156a",
+    "start_segment": 4,
+    "end_segment": 4,
+    "card": "shabbat-156a-4-4",
+    "rule": "R-C2",
+    "reason": "question and answer plus rulings",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yoma",
+    "ref": "Yoma 35b",
+    "start_segment": 5,
+    "end_segment": 5,
+    "card": "yoma-35b-5-5",
+    "rule": "R-C0",
+    "reason": "hypothetical heavenly-court scene; the Hillel story is its own card, yoma-35b-6-7",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "avodah_zarah",
+    "ref": "Avodah Zarah 69a",
+    "start_segment": 1,
+    "end_segment": 1,
+    "card": "avodah_zarah-69a-1-1",
+    "rule": "R-C2",
+    "reason": "a debate",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chullin",
+    "ref": "Chullin 56a",
+    "start_segment": 10,
+    "end_segment": 10,
+    "card": "chullin-56a-10-10",
+    "rule": "R-C2",
+    "reason": "discussion; the real case, chullin-56a-11-11, ships",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yevamot",
+    "ref": "Yevamot 42b",
+    "start_segment": 8,
+    "end_segment": 8,
+    "card": "yevamot-42b-8-8",
+    "rule": "R-C2",
+    "reason": "question and answer plus a stock rebuke",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 29b",
+    "start_segment": 21,
+    "end_segment": 21,
+    "card": "sanhedrin-29b-21-21",
+    "rule": "R-C0",
+    "reason": "one fact, then debate",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "bava_metzia",
+    "ref": "Bava Metzia 73a",
+    "start_segment": 9,
+    "end_segment": 9,
+    "card": "bava_metzia-73a-9-9",
+    "rule": "R-C2/R-C5",
+    "reason": "a single speech act",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "megillah",
+    "ref": "Megillah 28a",
+    "start_segment": 7,
+    "end_segment": 7,
+    "card": "megillah-28a-7-7",
+    "rule": "R-C3/R-C5",
+    "reason": "a habit, not an event",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "megillah",
+    "ref": "Megillah 28a",
+    "start_segment": 19,
+    "end_segment": 19,
+    "card": "megillah-28a-19-19",
+    "rule": "R-C2",
+    "reason": "sayings",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sukkah",
+    "ref": "Sukkah 28a",
+    "start_segment": 3,
+    "end_segment": 3,
+    "card": "sukkah-28a-3-3",
+    "rule": "R-C5",
+    "reason": "a list of habits",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sukkah",
+    "ref": "Sukkah 53a",
+    "start_segment": 2,
+    "end_segment": 2,
+    "card": "sukkah-53a-2-2",
+    "rule": "R-C2/R-C5",
+    "reason": "what Hillel would say, no event",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "pesachim",
+    "ref": "Pesachim 57a",
+    "start_segment": 7,
+    "end_segment": 7,
+    "card": "pesachim-57a-7-7",
+    "rule": "R-C2/R-C5",
+    "reason": "speech / lament, no event",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "moed_katan",
+    "ref": "Moed Katan 12b",
+    "start_segment": 13,
+    "end_segment": 13,
+    "card": "moed_katan-12b-13-13",
+    "rule": "R-C2",
+    "reason": "a ruling plus a curse; the story is moed_katan-12b-14-14, which ships",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "berakhot",
+    "ref": "Berakhot 44a",
+    "start_segment": 4,
+    "end_segment": 4,
+    "card": "berakhot-44a-4-4",
+    "rule": "R-C5",
+    "reason": "description, no event",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "taanit",
+    "ref": "Taanit 23b",
+    "start_segment": 8,
+    "end_segment": 8,
+    "card": "taanit-23b-8-8",
+    "rule": "R-C0",
+    "reason": "contrast frame only; its payoff ships as taanit-23b-9-9 (drop 8-8, do not widen 9-9)",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage against docs/STORY_RULES.md marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "summary-writing flag (twin-pass cards with no reader summary) + rules-based triage, docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "avodah_zarah",
+    "ref": "Avodah Zarah 14b",
+    "start_segment": 7,
+    "end_segment": 7,
+    "card": "avodah_zarah-14b-7-7",
+    "rule": "R-C2",
+    "reason": "Speech only: Rav Dimi glosses a mishnaic word, Abaye retorts; ordinary scholarly exchange, no event.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "bava_batra",
+    "ref": "Bava Batra 30b",
+    "start_segment": 5,
+    "end_segment": 5,
+    "card": "bava_batra-30b-5-5",
+    "rule": "R-C0 limit",
+    "reason": "Litigants' dialogue then Rava's ruling: a case before a rabbi and his ruling, which Jeff 2026-10-25 ruled not a story (Yevamot 45a:16, Gittin 89a:19). Neighbour 30b-6-7 has the same shape.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md",
+    "exact": true
+   },
+   {
+    "tractate": "bava_metzia",
+    "ref": "Bava Metzia 73b",
+    "start_segment": 2,
+    "end_segment": 2,
+    "card": "bava_metzia-73b-2-2",
+    "rule": "R-C2",
+    "reason": "Speech only: Rava of Barnish puts a halakhic challenge to Rav Ashi; Q&A about interest.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "bava_metzia",
+    "ref": "Bava Metzia 73b",
+    "start_segment": 6,
+    "end_segment": 6,
+    "card": "bava_metzia-73b-6-6",
+    "rule": "R-C2",
+    "reason": "Speech only: Rav Pappa asks Rava about tax-payers' labour; Rava answers citing Rav Sheshet.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "beitzah",
+    "ref": "Beitzah 22a",
+    "start_segment": 16,
+    "end_segment": 16,
+    "card": "beitzah-22a-16-16",
+    "rule": "R-C2 / R-C0 limit",
+    "reason": "Ameimar's ruling (permitted eye-ointment), Rav Ashi's objection, Ameimar's reply: ruling plus scholarly debate, no narrated event.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "beitzah",
+    "ref": "Beitzah 25b",
+    "start_segment": 14,
+    "end_segment": 14,
+    "card": "beitzah-25b-14-14",
+    "rule": "R-C5 / R-C3",
+    "reason": "Habit only: Ameimar and Mar Zutra used to be carried by students; reasons given; no event follows.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "berakhot",
+    "ref": "Berakhot 30b",
+    "start_segment": 1,
+    "end_segment": 1,
+    "card": "berakhot-30b-1-1",
+    "rule": "R-C2",
+    "reason": "Speech only: Hanina Kara states a halakha, R. Yannai dismisses it ('go read your verses outside'). A rebuke is ordinary Talmudic discourse (Jeff, Ketubot 21b:0, 2026-10-07).",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "berakhot",
+    "ref": "Berakhot 50a",
+    "start_segment": 13,
+    "end_segment": 13,
+    "card": "berakhot-50a-13-13",
+    "rule": "R-C5 / R-C3",
+    "reason": "Habit: Rava's report of how the Sages used to bless at the Exilarch's, then Gemara Q&A; no one-time event.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chagigah",
+    "ref": "Chagigah 5b",
+    "start_segment": 4,
+    "end_segment": 4,
+    "card": "chagigah-5b-4-4",
+    "rule": "R-C2",
+    "reason": "Setting plus question and answer (deathbed; Sages ask, R. Yehoshua answers with a verse) - Jeff's Shabbat 147a:6 rule: a setting framing a Q&A is not enough.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chagigah",
+    "ref": "Chagigah 13a",
+    "start_segment": 10,
+    "end_segment": 10,
+    "card": "chagigah-13a-10-10",
+    "rule": "R-C6 / duplicate",
+    "reason": "duplicate: a one-line allusion to the incident told in full at 13a:12, which ships as chagigah-13a-12-12",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked FIX_NOT_REMOVE: duplicate; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chagigah",
+    "ref": "Chagigah 15a",
+    "start_segment": 7,
+    "end_segment": 7,
+    "card": "chagigah-15a-7-7",
+    "rule": "R-C2",
+    "reason": "Exegetical Q&A between Aher and R. Meir (Ecclesiastes 7:14); speech only, no event. (Dialogue continues in 15a:8.)",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chagigah",
+    "ref": "Chagigah 15b",
+    "start_segment": 14,
+    "end_segment": 14,
+    "card": "chagigah-15b-14-14",
+    "rule": "R-C2",
+    "reason": "Speech only: Nimos HaGardi's question to R. Meir and his answer.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chullin",
+    "ref": "Chullin 50a",
+    "start_segment": 3,
+    "end_segment": 3,
+    "card": "chullin-50a-3-3",
+    "rule": "R-C5",
+    "reason": "Eyewitness report of a practice cited as evidence ('I was standing before R. Ami... he ate'); nothing follows.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "chullin",
+    "ref": "Chullin 124a",
+    "start_segment": 20,
+    "end_segment": 20,
+    "card": "chullin-124a-20-20",
+    "rule": "R-C2",
+    "reason": "Halakhic exchange: Nahman questions Ulla and swears he would not accept the ruling. Sharp retort = ordinary discourse (Ketubot 21b:0). Its detector continuation 124a:21-25 does not ship, so this is a fragment.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "eruvin",
+    "ref": "Eruvin 68a",
+    "start_segment": 2,
+    "end_segment": 2,
+    "card": "eruvin-68a-2-2",
+    "rule": "R-C2",
+    "reason": "Speech only: Rabba bar Rav Hanan asks Abaye why their alley has no eiruv; Abaye explains. Not on Jeff's 2005 list.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "megillah",
+    "ref": "Megillah 28a",
+    "start_segment": 5,
+    "end_segment": 5,
+    "card": "megillah-28a-5-5",
+    "rule": "R-C2",
+    "reason": "Question and answer: disciples ask R. Nehunya how he merited long life; he lists his virtues. Speech only (its commentary 28a:7 was removed today).",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "nedarim",
+    "ref": "Nedarim 49b",
+    "start_segment": 10,
+    "end_segment": 10,
+    "card": "nedarim-49b-10-10",
+    "rule": "R-C5 / R-C3",
+    "reason": "Habit: R. Yehuda carried a pitcher, R. Shimon a basket, with a saying; no event follows.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "niddah",
+    "ref": "Niddah 24b",
+    "start_segment": 16,
+    "end_segment": 16,
+    "card": "niddah-24b-16-16",
+    "rule": "R-C5",
+    "reason": "Habitual observations as a gravedigger (bones of drinkers); no single event. The real incidents are 24b:17-18.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "pesachim",
+    "ref": "Pesachim 51a",
+    "start_segment": 10,
+    "end_segment": 10,
+    "card": "pesachim-51a-10-10",
+    "rule": "R-C2",
+    "reason": "Rav Ashi's legal reasoning plus Rabba bar bar Hana's instruction to his son: speech only.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "pesachim",
+    "ref": "Pesachim 68b",
+    "start_segment": 12,
+    "end_segment": 12,
+    "card": "pesachim-68b-12-12",
+    "rule": "R-C5 / R-C3",
+    "reason": "Habit: every thirty days Rav Sheshet reviewed and said 'rejoice my soul'; then Gemara discussion. No event.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "pesachim",
+    "ref": "Pesachim 101a",
+    "start_segment": 5,
+    "end_segment": 5,
+    "card": "pesachim-101a-5-5",
+    "rule": "R-C5 / R-C3",
+    "reason": "Habit cited as evidence: when Rabba recited kiddush he would tell students to eat. No event.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 38b",
+    "start_segment": 17,
+    "end_segment": 17,
+    "card": "sanhedrin-38b-17-17",
+    "rule": "R-C2",
+    "reason": "Baraita: Akiva's exegesis and R. Elazar b. Azarya's rebuke ('leave aggada'). Ordinary scholarly rebuke, speech only.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 39a",
+    "start_segment": 6,
+    "end_segment": 6,
+    "card": "sanhedrin-39a-6-6",
+    "rule": "R-C2",
+    "reason": "Polemical exegesis between the emperor and Rabban Gamliel; speech only, no act (unlike 39a:4-5, where he spins quinces).",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 39a",
+    "start_segment": 7,
+    "end_segment": 7,
+    "card": "sanhedrin-39a-7-7",
+    "rule": "R-C2",
+    "reason": "Continuation of the same emperor-Gamliel argument; speech only.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 100a",
+    "start_segment": 5,
+    "end_segment": 5,
+    "card": "sanhedrin-100a-5-5",
+    "rule": "R-C2",
+    "reason": "Frame dialogue: R. Yirmeya teaches, an elder praises him, he asks R. Zeira whether that is irreverent. Speech only; the story it introduces (100a:6-7) ships as its own card.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 111a",
+    "start_segment": 3,
+    "end_segment": 3,
+    "card": "sanhedrin-111a-3-3",
+    "rule": "R-C2",
+    "reason": "Exegesis plus rebuke (Yohanan to Reish Lakish; Rav to Rav Kahana): speech only, ordinary discourse.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sukkah",
+    "ref": "Sukkah 26a",
+    "start_segment": 6,
+    "end_segment": 6,
+    "card": "sukkah-26a-6-6",
+    "rule": "R-C0 limit",
+    "reason": "One event (eye pain) and a ruling (permitted to sleep outside the sukka), nothing else narrated: not a story (Jeff 2026-10-25). Neighbour 26a-7-7 has the same shape.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yevamot",
+    "ref": "Yevamot 15a",
+    "start_segment": 16,
+    "end_segment": 16,
+    "card": "yevamot-15a-16-16",
+    "rule": "R-C5",
+    "reason": "Report of what Beit Shammai did (they widened the trough), cited as an objection, nothing follows - the same shape as Jeff's Yevamot 15a Akiva-etrog ruling. Not on his 2005 list.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yoma",
+    "ref": "Yoma 19b",
+    "start_segment": 5,
+    "end_segment": 5,
+    "card": "yoma-19b-5-5",
+    "rule": "R-C2",
+    "reason": "Teaching scene: Rav corrects a name's pronunciation with a gesture (a quasi-speech act), then Gemara analysis. No event.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yoma",
+    "ref": "Yoma 77b",
+    "start_segment": 9,
+    "end_segment": 9,
+    "card": "yoma-77b-9-9",
+    "rule": "R-C0 limit / R-C2",
+    "reason": "Ruling (Rav Yosef permits the villagers to cross the water) plus Abaye's objection, in two versions. Ruling and debate, nothing else narrated.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yoma",
+    "ref": "Yoma 78a",
+    "start_segment": 9,
+    "end_segment": 9,
+    "card": "yoma-78a-9-9",
+    "rule": "R-C2 / R-C5",
+    "reason": "Report of an Eretz Yisrael custom plus R. Yaakov's correction of a transmitter. Speech only.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yoma",
+    "ref": "Yoma 79a",
+    "start_segment": 1,
+    "end_segment": 1,
+    "card": "yoma-79a-1-1",
+    "rule": "R-C5",
+    "reason": "A precedent of practice (RYBZ and Rabban Gamliel ask for their food to be taken up to the sukka), cited as an objection - the same shape as Jeff's Akiva-etrog 'just a report' (Yevamot 15a). Neighbour 79a-2-2 has the same shape.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "yoma",
+    "ref": "Yoma 87a",
+    "start_segment": 14,
+    "end_segment": 14,
+    "card": "yoma-87a-14-14",
+    "rule": "R-C5 / R-C3",
+    "reason": "Habit: R. Zeira would pace before someone who had insulted him; no event.",
+    "decided_by": "Simon 2026-11-14 (remove if sure); rules-based triage marked SURE_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "bava_batra",
+    "ref": "Bava Batra 11a",
+    "start_segment": 1,
+    "end_segment": 1,
+    "exact": true,
+    "reason": "Shown twice: wholly inside bava_batra-11a-1-3, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "bava_batra-11a-1-1"
+   },
+   {
+    "tractate": "bava_batra",
+    "ref": "Bava Batra 58a",
+    "start_segment": 8,
+    "end_segment": 8,
+    "exact": true,
+    "reason": "Shown twice: wholly inside bava_batra-58a-8-10, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "bava_batra-58a-8-8"
+   },
+   {
+    "tractate": "gittin",
+    "ref": "Gittin 35a",
+    "start_segment": 10,
+    "end_segment": 10,
+    "exact": true,
+    "reason": "Shown twice: wholly inside gittin-35a-10-13, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "gittin-35a-10-10"
+   },
+   {
+    "tractate": "gittin",
+    "ref": "Gittin 38a",
+    "start_segment": 16,
+    "end_segment": 16,
+    "exact": true,
+    "reason": "Shown twice: wholly inside gittin-38a-16-17, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "gittin-38a-16-16"
+   },
+   {
+    "tractate": "nedarim",
+    "ref": "Nedarim 66b",
+    "start_segment": 3,
+    "end_segment": 3,
+    "exact": true,
+    "reason": "Shown twice: wholly inside nedarim-66b-3-5, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "nedarim-66b-3-3"
+   },
+   {
+    "tractate": "nedarim",
+    "ref": "Nedarim 91b",
+    "start_segment": 2,
+    "end_segment": 2,
+    "exact": true,
+    "reason": "Shown twice: wholly inside nedarim-91b-2-4, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "nedarim-91b-2-2"
+   },
+   {
+    "tractate": "niddah",
+    "ref": "Niddah 66a",
+    "start_segment": 11,
+    "end_segment": 11,
+    "exact": true,
+    "reason": "Shown twice: wholly inside niddah-66a-11-14, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "niddah-66a-11-11"
+   },
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 68a",
+    "start_segment": 6,
+    "end_segment": 6,
+    "exact": true,
+    "reason": "Shown twice: wholly inside sanhedrin-68a-0-9, which ships.",
+    "decided_by": "Simon 2026-11-15 ('those are duplicates. keep the long ones only')",
+    "source": "overlap check 2026-11-15",
+    "rule": "duplicate",
+    "card": "sanhedrin-68a-6-6"
+   },
+   {
+    "tractate": "bava_kamma",
+    "ref": "Bava Kamma 51a",
+    "start_segment": 0,
+    "end_segment": 0,
+    "exact": true,
+    "reason": "Only a legal exchange continuing bava_kamma-50b-16-17; no events of its own (boundary review 2026-11-15).",
+    "decided_by": "Simon 2026-11-15 ('remove them')",
+    "source": "boundary review bfix1",
+    "rule": "no-events",
+    "card": "bava_kamma-51a-0-0"
+   },
+   {
+    "tractate": "nazir",
+    "ref": "Nazir 20a",
+    "start_segment": 1,
+    "end_segment": 2,
+    "exact": true,
+    "reason": "Legal analysis only; Queen Helene's story is in the mishna outside the passage (boundary review 2026-11-15).",
+    "decided_by": "Simon 2026-11-15 ('remove them')",
+    "source": "boundary review bfix1",
+    "rule": "no-events",
+    "card": "nazir-20a-1-2"
+   }
+  ]
+ },
+ "include": {
+  "_ruling": "Explicit per-passage inclusions: an expert verdict of `story` plus Simon's yes. The only way past the definite-only filter, and never a rule. Matched by overlap against stories[] of the first run.",
+  "passages": [
+   {
+    "tractate": "sanhedrin",
+    "ref": "Sanhedrin 52b",
+    "start_segment": 4,
+    "end_segment": 4,
+    "jeff": "story",
+    "rule": "R-C1",
+    "decided_by": "Jeff Rubenstein 2026-11-12 ('In any case, I would include it'); Simon 2026-11-13 ('Include this')",
+    "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json",
+    "why_held": "LOW_CONFIDENCE in both v14 runs"
+   }
+  ]
+ },
+ "promote": {
+  "_ruling": "A RULE over a graded pool, not a per-passage edit: every passage in `source` (both Claude grader passes said `story` under the judge prompt with sha `judge_prompt_sha`) ships as a story, carrying `included_by` so the whole batch can be filtered or removed in one step. The build refuses if the source file's ids, count or prompt sha differ from this record. Still narrowed by every exclusion (biblical, the judges' not-a-story drop, `remove`, overlap with a story already shipped or out of scope). Model-graded, NOT expert-labelled: never read into a golden, ruler, expert list or recall/precision ruler.",
+  "rules": [
+   {
+    "included_by": "low-pool-grader-2026-11-13",
+    "rule": "both Claude grader passes say story",
+    "judge_prompt": "src/prompts/judge_register_v2.md",
+    "judge_prompt_sha": "88e8fff62716",
+    "source": "results/shas_run/low_pool/pool/promotions.json",
+    "count": 80,
+    "ids": [
+     "Avodah Zarah 16a:9-9",
+     "Avodah Zarah 17a:8-10",
+     "Avodah Zarah 19a:5-5",
+     "Avodah Zarah 19a:18-Avodah Zarah 19b:0",
+     "Avodah Zarah 28a:8-8",
+     "Avodah Zarah 29a:5-5",
+     "Avodah Zarah 38b:5-5",
+     "Avodah Zarah 74b:3-3",
+     "Bava Batra 126a:9-Bava Batra 126b:0",
+     "Bava Batra 164b:12-12",
+     "Bava Kamma 21a:8-8",
+     "Bava Kamma 50b:16-17",
+     "Bava Kamma 58b:14-15",
+     "Bava Kamma 80a:9-9",
+     "Bava Kamma 81b:9-10",
+     "Bava Kamma 116b:20-Bava Kamma 117a:0",
+     "Bava Kamma 117a:12-13",
+     "Bava Kamma 117b:8-8",
+     "Bava Metzia 51a:5-5",
+     "Bava Metzia 51a:6-6",
+     "Bava Metzia 66b:11-11",
+     "Bava Metzia 81a:8-8",
+     "Bava Metzia 85a:2-2",
+     "Bekhorot 36a:8-9",
+     "Berakhot 18b:3-3",
+     "Berakhot 19a:2-2",
+     "Berakhot 48a:2-2",
+     "Berakhot 49a:14-14",
+     "Berakhot 54a:10-10",
+     "Berakhot 55b:15-15",
+     "Berakhot 58b:6-6",
+     "Chagigah 5b:0-0",
+     "Chagigah 5b:7-7",
+     "Chagigah 18a:9-9",
+     "Chullin 43b:1-1",
+     "Chullin 50a:13-13",
+     "Chullin 110a:2-2",
+     "Eruvin 54b:3-3",
+     "Eruvin 63a:11-12",
+     "Horayot 14a:3-3",
+     "Horayot 14a:4-4",
+     "Makkot 5b:2-3",
+     "Moed Katan 12b:14-14",
+     "Moed Katan 16b:11-11",
+     "Moed Katan 17a:23-23",
+     "Nazir 57b:4-4",
+     "Nedarim 23a:3-3",
+     "Nedarim 41a:3-3",
+     "Nedarim 41a:4-4",
+     "Nedarim 48b:0-0",
+     "Niddah 52a:17-17",
+     "Niddah 66a:22-22",
+     "Pesachim 3b:6-6",
+     "Pesachim 117b:17-17",
+     "Sanhedrin 25a:9-10",
+     "Sanhedrin 39a:10-10",
+     "Sanhedrin 109a:15-15",
+     "Shabbat 20b:10-10",
+     "Shabbat 129a:8-8",
+     "Shevuot 30b:3-3",
+     "Sotah 48a:17-17",
+     "Sotah 49b:4-4",
+     "Sukkah 10b:4-4",
+     "Taanit 18b:6-6",
+     "Taanit 21b:6-6",
+     "Taanit 21b:7-7",
+     "Taanit 23b:9-9",
+     "Taanit 24a:9-9",
+     "Taanit 24a:14-14",
+     "Taanit 24a:15-15",
+     "Taanit 24a:16-16",
+     "Taanit 24b:4-4",
+     "Taanit 25b:13-13",
+     "Yevamot 72b:3-6",
+     "Yevamot 78b:11-11",
+     "Yevamot 84a:2-2",
+     "Yevamot 108a:7-7",
+     "Yoma 22b:17-17",
+     "Yoma 26b:4-4",
+     "Zevachim 100a:4-4"
+    ],
+    "evidence": "Calibration vs Jeff on 300 spans he ruled: both-passes-story 32/33 = 0.97 precision (Wilson 95% 0.85-1.00), recall 32/141; blind slice 6/6. docs/findings/2026-11-13-low-pool-grader-calibration.md, results/shas_run/low_pool/calibration/score.json",
+    "review_bar": {
+     "planned": "Simon reads a seeded random 60 (results/shas_run/low_pool/pool/review_sample.json, validation/ui/low_pool_promotions_review.html); ship only if >= 54 of 60 are yes",
+     "completed": false,
+     "status": "WAIVED / PARTIAL: Simon read part of the sample informally and approved. His per-passage verdicts were not exported, so no count against the 54/60 bar exists."
+    },
+    "bounds": "the pool unit's cells: the detector span the grade refers to (identical in both runs for 76 of 80; for the other 4 the span of the run that proposed the wider or only one). Not the grader's chosen segments: every other site story is bounded by a detector span, and the grader's picks are relative to a context window and sometimes non-contiguous.",
+    "summary": "the detector's one_sentence_summary of the SAME passage (identical cells), run 1 then run 2, when reader-facing; otherwise none. Never the grader's reason.",
+    "decided_by": "Simon 2026-11-14",
+    "words": "Im looking through these stories and they seem to mostly be stories so far. I didnt review all of them, but I suggest we add them at this point."
+   }
+  ]
+ },
+ "keep": {
+  "_ruling": "Simon's explicit KEEP decisions on cards a triage flagged: these ship, and a future triage must not re-flag them. The build ignores this list except to REFUSE a `remove` entry that overlaps a kept passage (by cells) or names a kept card: undoing one of Simon's keeps takes editing this list, on purpose. Matched like `remove` (single-page span; `card` is the permanent id).",
+  "passages": [
+   {
+    "tractate": "pesachim",
+    "ref": "Pesachim 49a",
+    "start_segment": 15,
+    "end_segment": 15,
+    "card": "pesachim-49a-15-15",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "if they're stories, which they seem to be, keep them",
+    "source": "twin-pass triage 2026-11-14, cards shown to Simon"
+   },
+   {
+    "tractate": "ketubot",
+    "ref": "Ketubot 86a",
+    "start_segment": 4,
+    "end_segment": 4,
+    "card": "ketubot-86a-4-4",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "if they're stories, which they seem to be, keep them",
+    "source": "twin-pass triage 2026-11-14, cards shown to Simon"
+   },
+   {
+    "tractate": "rosh_hashanah",
+    "ref": "Rosh Hashanah 18a",
+    "start_segment": 7,
+    "end_segment": 7,
+    "card": "rosh_hashanah-18a-7-7",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "if they're stories, which they seem to be, keep them",
+    "source": "twin-pass triage 2026-11-14, cards shown to Simon"
+   },
+   {
+    "tractate": "yevamot",
+    "ref": "Yevamot 105a",
+    "start_segment": 13,
+    "end_segment": 13,
+    "card": "yevamot-105a-13-13",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "if they're stories, which they seem to be, keep them",
+    "source": "twin-pass triage 2026-11-14, cards shown to Simon"
+   },
+   {
+    "tractate": "avodah_zarah",
+    "ref": "Avodah Zarah 65b",
+    "start_segment": 5,
+    "end_segment": 5,
+    "card": "avodah_zarah-65b-5-5",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "bava_batra",
+    "ref": "Bava Batra 8a",
+    "start_segment": 16,
+    "end_segment": 16,
+    "card": "bava_batra-8a-16-16",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "bava_metzia",
+    "ref": "Bava Metzia 85b",
+    "start_segment": 4,
+    "end_segment": 4,
+    "card": "bava_metzia-85b-4-4",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "bava_metzia",
+    "ref": "Bava Metzia 85b",
+    "start_segment": 7,
+    "end_segment": 7,
+    "card": "bava_metzia-85b-7-7",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "berakhot",
+    "ref": "Berakhot 19a",
+    "start_segment": 9,
+    "end_segment": 9,
+    "card": "berakhot-19a-9-9",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "makkot",
+    "ref": "Makkot 16b",
+    "start_segment": 6,
+    "end_segment": 6,
+    "card": "makkot-16b-6-6",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "moed_katan",
+    "ref": "Moed Katan 21a",
+    "start_segment": 6,
+    "end_segment": 6,
+    "card": "moed_katan-21a-6-6",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "moed_katan",
+    "ref": "Moed Katan 25b",
+    "start_segment": 2,
+    "end_segment": 2,
+    "card": "moed_katan-25b-2-2",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "moed_katan",
+    "ref": "Moed Katan 25b",
+    "start_segment": 9,
+    "end_segment": 9,
+    "card": "moed_katan-25b-9-9",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "taanit",
+    "ref": "Taanit 21b",
+    "start_segment": 8,
+    "end_segment": 8,
+    "card": "taanit-21b-8-8",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   },
+   {
+    "tractate": "yoma",
+    "ref": "Yoma 38b",
+    "start_segment": 2,
+    "end_segment": 2,
+    "card": "yoma-38b-2-2",
+    "decided_by": "Simon 2026-11-14 (keep)",
+    "simon": "keep them all",
+    "source": "twin-pass triage 2026-11-14 SHOW_SIMON (11 cards shown to Simon)"
+   }
+  ]
+ },
+ "merge": {
+  "_ruling": "Display cards joined into one story (Simon 2026-11-14): the built stories overlapping each member are combined into one card over the union of their segments, which must be contiguous. `keep` is the permanent id the merged card holds: the build sets that registry entry's span to the merged span (the documented way to settle the tie a merge of two equal cards would otherwise be refused on), so every other member's id becomes `redirect` to it. The merged card's summary is the one written for `keep` in results/shas_run/site_summaries_written.json -- a member's own summary describes only its half. A merge whose members no longer match exactly one built story each is named on stderr and not applied. The flagged card is the one absorbed. Display only: goldens and runs are untouched.",
+  "groups": [
+   {
+    "tractate": "megillah",
+    "keep": "megillah-29a-5-5",
+    "members": [
+     {
+      "ref": "Megillah 29a",
+      "start_segment": 4,
+      "end_segment": 4,
+      "card": "megillah-29a-4-4"
+     },
+     {
+      "ref": "Megillah 29a",
+      "start_segment": 5,
+      "end_segment": 5,
+      "card": "megillah-29a-5-5"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "29a:4 is mostly Abaye's teaching; its last sentence (Shmuel's father and Levi hear the Divine Presence and leave) is the foil to Rav Sheshet staying in 29a:5. One story, 29a:4-5.",
+    "decided_by": "Simon 2026-11-14 (fix, do not remove); rules-based triage marked FIX_NOT_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "keep": "sanhedrin-11a-7-7",
+    "members": [
+     {
+      "ref": "Sanhedrin 11a",
+      "start_segment": 7,
+      "end_segment": 7,
+      "card": "sanhedrin-11a-7-7"
+     },
+     {
+      "ref": "Sanhedrin 11a",
+      "start_segment": 8,
+      "end_segment": 8,
+      "card": "sanhedrin-11a-8-8"
+     }
+    ],
+    "rule": "merge",
+    "reason": "11a:8 continues the Shmuel HaKatan eulogy baraita ('and they also wished to say thus... about Yehuda ben Bava'). One story, 11a:7-8.",
+    "decided_by": "Simon 2026-11-14 (fix, do not remove); rules-based triage marked FIX_NOT_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "sanhedrin",
+    "keep": "sanhedrin-104a-8-8",
+    "members": [
+     {
+      "ref": "Sanhedrin 104a",
+      "start_segment": 7,
+      "end_segment": 7,
+      "card": "sanhedrin-104a-7-7"
+     },
+     {
+      "ref": "Sanhedrin 104a",
+      "start_segment": 8,
+      "end_segment": 8,
+      "card": "sanhedrin-104a-8-8"
+     }
+    ],
+    "rule": "merge",
+    "reason": "104a:7 (the skull that will not stay buried) runs straight into 104a:8 (he wraps it, his wife burns it). One story, 104a:7-8.",
+    "decided_by": "Simon 2026-11-14 (fix, do not remove); rules-based triage marked FIX_NOT_REMOVE; no Jeff verdict",
+    "simon": "just remove them if you are sure.",
+    "source": "twin-pass triage 2026-11-14 (rules-based, against docs/STORY_RULES.md), docs/findings/2026-11-14-twin-pass-site-cards.md"
+   },
+   {
+    "tractate": "avodah_zarah",
+    "keep": "avodah_zarah-17b-3-13",
+    "members": [
+     {
+      "ref": "Avodah Zarah 17b",
+      "start_segment": 3,
+      "end_segment": 13,
+      "card": "avodah_zarah-17b-3-13"
+     },
+     {
+      "ref": "Avodah Zarah 18a",
+      "start_segment": 3,
+      "end_segment": 3,
+      "card": "avodah_zarah-18a-3-3"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "The directly following site story gives the reason for the daughter's sentence, which completes this same trial narrative.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "avodah_zarah",
+    "keep": "avodah_zarah-39a-9-9",
+    "members": [
+     {
+      "ref": "Avodah Zarah 39a",
+      "start_segment": 9,
+      "end_segment": 9,
+      "card": "avodah_zarah-39a-9-9"
+     },
+     {
+      "ref": "Avodah Zarah 39a",
+      "start_segment": 10,
+      "end_segment": 10,
+      "card": "avodah_zarah-39a-10-10"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "The directly preceding site story holds the setting of the same Rabba bar bar Hana incident (the tzahanta called batei).",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "bava_kamma",
+    "keep": "bava_kamma-112a-13-14",
+    "members": [
+     {
+      "ref": "Bava Kamma 112a",
+      "start_segment": 13,
+      "end_segment": 14,
+      "card": "bava_kamma-112a-13-14"
+     },
+     {
+      "ref": "Bava Kamma 112b",
+      "start_segment": 1,
+      "end_segment": 1,
+      "card": "bava_kamma-112b-1-1"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "One story across the page break; the reviewer of 112b said it continues 112a's case (one segment between).",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "bava_metzia",
+    "keep": "bava_metzia-42a-11-11",
+    "members": [
+     {
+      "ref": "Bava Metzia 42a",
+      "start_segment": 11,
+      "end_segment": 11,
+      "card": "bava_metzia-42a-11-11"
+     },
+     {
+      "ref": "Bava Metzia 42b",
+      "start_segment": 0,
+      "end_segment": 2,
+      "card": "bava_metzia-42b-0-2"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "One story across the page break; the reviewer said the 42b part completes the 42a incident.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "kiddushin",
+    "keep": "kiddushin-70a-11-16",
+    "members": [
+     {
+      "ref": "Kiddushin 70a",
+      "start_segment": 11,
+      "end_segment": 16,
+      "card": "kiddushin-70a-11-16"
+     },
+     {
+      "ref": "Kiddushin 70b",
+      "start_segment": 1,
+      "end_segment": 8,
+      "card": "kiddushin-70b-1-8"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "One story across the page break (the two halves merged into each other in review).",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "menachot",
+    "keep": "menachot-103b-18-20",
+    "members": [
+     {
+      "ref": "Menachot 103b",
+      "start_segment": 18,
+      "end_segment": 20,
+      "card": "menachot-103b-18-20"
+     },
+     {
+      "ref": "Menachot 104a",
+      "start_segment": 0,
+      "end_segment": 1,
+      "card": "menachot-104a-0-1"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "One story split across two pages with one segment between; Rabbi Beivai's closing line ends it.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "tamid",
+    "keep": "tamid-31b-14-14",
+    "members": [
+     {
+      "ref": "Tamid 31b",
+      "start_segment": 14,
+      "end_segment": 14,
+      "card": "tamid-31b-14-14"
+     },
+     {
+      "ref": "Tamid 32b",
+      "start_segment": 0,
+      "end_segment": 3,
+      "card": "tamid-32b-0-3"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "The adjacent site story opens with the women's reply about the golden bread and Alexander's lesson, the end of this same campaign narrative.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "bava_batra",
+    "keep": "bava_batra-58a-8-10",
+    "members": [
+     {
+      "ref": "Bava Batra 58a",
+      "start_segment": 8,
+      "end_segment": 10,
+      "card": "bava_batra-58a-8-10"
+     },
+     {
+      "ref": "Bava Batra 58a",
+      "start_segment": 11,
+      "end_segment": 13,
+      "card": "bava_batra-58a-11-13"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "The directly preceding site story tells how Rabbi Bena'a was imprisoned, which this story's release and judgeship continue as one narrative.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   },
+   {
+    "tractate": "moed_katan",
+    "keep": "moed_katan-9a-19-22",
+    "members": [
+     {
+      "ref": "Moed Katan 9a",
+      "start_segment": 19,
+      "end_segment": 22,
+      "card": "moed_katan-9a-19-22"
+     },
+     {
+      "ref": "Moed Katan 9b",
+      "start_segment": 3,
+      "end_segment": 4,
+      "card": "moed_katan-9b-3-4"
+     }
+    ],
+    "rule": "boundary",
+    "reason": "The father's blessings and the son's encounter are one story, 4 segments apart; the reviewer asked for the halves to be joined.",
+    "decided_by": "Simon 2026-11-15: 'if this is actually 1 story, then make it 1'",
+    "source": "boundary review bfix1"
+   }
+  ]
+ }
 }

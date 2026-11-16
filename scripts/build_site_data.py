@@ -160,7 +160,16 @@ def apply_merges(tractate, stories, pages, registry, out_why, matched):
         keep = parts[[m["card"] for m in grp["members"]].index(grp["keep"])]
         segs = sorted((g for s in parts for g in s["segments"]), key=lambda g: pos[(g["ref"], g["i"])])
         ks = [pos[(g["ref"], g["i"])] for g in segs]
-        assert ks == list(range(ks[0], ks[0] + len(ks))), f"merge {grp['keep']}: members are not contiguous"
+        # Two halves of one story may sit a segment or two apart (Simon 2026-11-15: "if this is actually 1 story,
+        # then make it 1"); the merged card includes what lies between. A wider gap is refused.
+        gap = (ks[-1] - ks[0] + 1) - len(set(ks))
+        assert 0 <= gap <= MERGE_MAX_GAP, f"merge {grp['keep']}: members are {gap} segments apart"
+        if gap:
+            have = set(ks)
+            byk = {pos[(p["ref"], g.get("index"))]: (p["ref"], g) for p in pages for g in p["segments"]}
+            segs = sorted(segs + [{"ref": byk[k][0], "i": byk[k][1].get("index"), "he": clean(byk[k][1].get("hebrew")),
+                                   "en": clean(byk[k][1].get("english"))} for k in range(ks[0], ks[-1] + 1) if k not in have],
+                          key=lambda g: pos[(g["ref"], g["i"])])
         merged = dict(keep, segments=segs, ref=segs[0]["ref"], start_segment=segs[0]["i"], summary="",
                       refs=list(dict.fromkeys(g["ref"] for g in segs)))
         merged["span"] = IDS.span_of(segs)
@@ -523,13 +532,15 @@ def build(tractate, matched=None, registry=None):
 
 
 EXT = DATA_EXT = ROOT / "site" / "data" / "boundary_extensions.json"
-MAX_BACK, MAX_FWD = 2, 4
+MERGE_MAX_GAP = 4   # Moed Katan 9a/9b: one story 4 segments apart (Simon 2026-11-15)
+MAX_BACK, MAX_FWD = 2, 6   # forward was 4; 6 since 2026-11-15 (Gittin 14a needed 5; Simon: "make the changes you see fit")
 
 
 def apply_extensions(tractate, stories, pages, moved=()):
-    """Display-only: widen a cut-off story by whole neighbouring segments (never the golden).
+    """Display-only: widen a cut-off story by whole neighbouring segments, or trim the legal argument off its ends
+    (Simon 2026-11-15: "we don't need the legal argument"), never the golden.
 
-    site/data/boundary_extensions.json: {story_id: {start_back, end_forward, reason}}, produced by
+    site/data/boundary_extensions.json: {story_id: {start_back, end_forward, [start_trim, end_trim], reason}}, produced by
     reviewing each cut-off story against its real neighbouring segments. Ids and the
     golden are untouched; an extended story says so (`extended`), so the page can tell the reader.
 
@@ -544,19 +555,24 @@ def apply_extensions(tractate, stories, pages, moved=()):
     pos = {(r, g.get("index")): k for k, (r, g) in enumerate(flat)}
     for s in stories:
         e = ext.get(s["id"])
-        if not e or not (e.get("start_back") or e.get("end_forward")):
+        if not e or not any(e.get(k) for k in ("start_back", "end_forward", "start_trim", "end_trim")):
             continue
         if s["id"] in moved:
             print(f"  extension NOT applied, the span moved: {s['id']} -- re-decide it in {EXT.name}", file=sys.stderr)
             continue
         sb, ef = int(e.get("start_back") or 0), int(e.get("end_forward") or 0)
-        assert 0 <= sb <= MAX_BACK and 0 <= ef <= MAX_FWD, (s["id"], sb, ef)
+        st, et = int(e.get("start_trim") or 0), int(e.get("end_trim") or 0)
+        assert 0 <= sb <= MAX_BACK and 0 <= ef <= MAX_FWD and st >= 0 and et >= 0, (s["id"], sb, ef, st, et)
+        assert not (sb and st) and not (ef and et), (s["id"], "an end is widened or trimmed, not both")
         a, z = s["segments"][0], s["segments"][-1]
         ka, kz = pos[(a["ref"], a["i"])], pos[(z["ref"], z["i"])]
-        lo, hi = max(0, ka - sb), min(len(flat) - 1, kz + ef)
+        lo, hi = max(0, ka - sb + st), min(len(flat) - 1, kz + ef - et)
+        assert lo <= hi, (s["id"], "trimmed to nothing")
         s["segments"] = [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
                          for r, g in flat[lo:hi + 1]]
-        s["extended"] = {"start_back": ka - lo, "end_forward": hi - kz, "reason": cap_reason(e.get("reason"))}
+        s["extended"] = {"start_back": max(ka - lo, 0), "end_forward": max(hi - kz, 0), "reason": cap_reason(e.get("reason"))}
+        if st or et:
+            s["extended"].update(start_trim=max(lo - ka, 0), end_trim=max(kz - hi, 0))
         s["refs"] = list(dict.fromkeys(g["ref"] for g in s["segments"]))
     return stories
 

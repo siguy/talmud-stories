@@ -216,10 +216,20 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 5 contains the decree, Yehuda ben Shammua and the visit to the matron that open the story; its legal lead-in cannot be separated."
+   },
    "reviewed": false,
    "summary": "Yehuda ben Shammua and his colleagues, following the advice of a Roman matron, staged a nighttime protest against anti-Jewish decrees, leading to their successful nullification.",
    "segments": [
+    {
+     "ref": "Rosh Hashanah 19a",
+     "i": 4,
+     "he": "מֵתִיב רַב טוֹבִי בַּר מַתְנָה: בְּעֶשְׂרִים וּתְמָנְיָא בֵּיהּ אֲתָת בְּשׂוֹרְתָּא טָבְתָּא לִיהוּדָאֵי דְּלָא יְעִידוֹן מֵאוֹרָיְיתָא. שֶׁגָּזְרָה מַלְכוּת הָרְשָׁעָה גְּזֵרָה שֶׁלֹּא יַעַסְקוּ בַּתּוֹרָה, וְשֶׁלֹּא יָמוּלוּ אֶת בְּנֵיהֶם, וְשֶׁיְּחַלְּלוּ שַׁבָּתוֹת. מָה עָשָׂה יְהוּדָה בֶּן שַׁמּוּעַ וַחֲבֵירָיו? הָלְכוּ וְנָטְלוּ עֵצָה מִמַּטְרוֹנִיתָא אַחַת שֶׁכׇּל גְּדוֹלֵי רוֹמִי מְצוּיִין אֶצְלָהּ.",
+     "en": "<b>Rav Tovi bar Mattana raised an objection</b> against the opinion that <i>Megillat Ta’anit</i> was nullified, from that which is written in it: <b>On the twenty-eighth of</b> Adar the <b>good tidings came to the Jews that they should not turn away from the Torah,</b> and on that day fasting is forbidden. And this is explained: <b>For the wicked kingdom issued a decree against Israel that they should not occupy themselves with Torah</b> study, <b>and that they should not circumcise their sons, and that they should desecrate Shabbat. What did Yehuda ben Shammua and his colleagues do? They went and took advice from</b> a certain <b>matron [<i>matronita</i>] whom all the prominent men of Rome would visit regularly,</b> thinking that she would know how to annul the decree."
+    },
     {
      "ref": "Rosh Hashanah 19a",
      "i": 5,
@@ -234,8 +244,8 @@
      "end": 5
     }
    ],
-   "words": 114,
-   "minutes": 1
+   "words": 241,
+   "minutes": 2
   },
   {
    "id": "rosh_hashanah-21a-1-1",
