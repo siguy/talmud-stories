@@ -682,6 +682,9 @@ def second_select(run, changes, refused, targets=(), sample=100, keeps=40, seed=
         if c["kind"] == "merge":
             why[c["ids"][0]] = "merge"
             continue
+        if c["kind"] == "delete":      # undoes an extension someone decided earlier: always read
+            why[c["ids"][0]] = "undoes an earlier extension"
+            continue
         s = site[c["ids"][0]]
         _, pos = flat_of(s["tractate"])
         b0, b1 = shown_bounds(s, pos)

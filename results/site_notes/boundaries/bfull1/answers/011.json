@@ -1,0 +1,22 @@
+{
+"01": {"code": "7B0A20", "action": "keep", "reason": "Ravina accepting the jewelry and his answer to Rabba Tosfa'a is the whole story in one segment."},
+"02": {"code": "C6363D", "action": "keep", "reason": "Rav Hisda dismissing the dishonest sharecropper is complete in one segment; the surrounding text is verse exegesis."},
+"03": {"code": "10C8DF", "action": "keep", "reason": "The broken-ax case before Rav and the fact that Rav Kahana and Rav Asi questioned him and he fell silent are the events; the Gemara's inferences sit in the same segments and cannot be cut."},
+"04": {"code": "04816C", "action": "keep", "reason": "The donkey and basket case with Rav Yehuda's ruling is one segment; the question and answer inside it cannot be split off, and what follows is legal argument."},
+"05": {"code": "10AAE6", "action": "keep", "reason": "The goat, the turnip and the barrel with Rava's ruling is complete in one segment; the next segments are separate legal discussion."},
+"06": {"code": "BFC054", "action": "adjust", "first": 3, "last": 5, "reason": "Rami bar Hama's reply makes no sense without the question Rav Hisda put to him, so the dilemma segments are added (the opening at [1] is outside the limit); Rava's later comment is analysis and stays out."},
+"07": {"code": "E57BF3", "action": "keep", "reason": "The mansion on the orphans' garbage heap and Rav Nahman's confiscation are one segment; the Gemara's question inside it cannot be separated."},
+"08": {"code": "C6FF26", "action": "adjust", "first": 3, "last": 6, "reason": "The story is Rav Hisda's question to Rav Nahman and Rav Nahman's demand to hear the facts, which leads to the cistern incident and the verdict, so it starts at [3]; the dispute after [6] is dropped."},
+"09": {"code": "330863", "action": "keep", "reason": "The slap, the question to Rav Yosef, the half-dinar verdict and the plaintiff's change of mind run [5]-[10]; the legal exchange in the middle cannot be cut out without breaking the story, and [11] is Shmuel's prosbol teaching."},
+"10": {"code": "2D9DC8", "action": "keep", "reason": "Hanan the wicked slapping a man twice to pay with a clipped dinar is complete in one segment."},
+"11": {"code": "14ACBA", "action": "keep", "reason": "Shimon HaAmasoni giving up his exposition of 'et' and Rabbi Akiva's later reading of it make one complete anecdote."},
+"12": {"code": "3D4583", "action": "keep", "reason": "The woman baking, the goat that ate her dough and died, and Rava's verdict are one segment; the reconciliation with Rav that follows is argument."},
+"13": {"code": "AC4A5E", "action": "keep", "reason": "Nehunya's well-digging (the background the story turns on), his daughter's fall and Rabbi Hanina ben Dosa's explanation run [5]-[7]; Rabbi Aha's teaching that follows is exegesis."},
+"14": {"code": "A0DD99", "action": "keep", "reason": "The man throwing stones, the pious man's rebuke and the later stumble form one complete story in [5]-[6]."},
+"15": {"code": "BA95BE", "action": "keep", "reason": "The ox in the water channel, Rav Nahman's tereifa ruling and his remark to the owner are the story; the Gemara's inference shares [6] and cannot be cut, and Rava's objections follow."},
+"16": {"code": "E74A15", "action": "adjust", "first": 5, "last": 5, "reason": "The date-palm case ends with Rav Nahman's ruling in [5]; Rava's question in [6] opens the legal debate that Abaye continues."},
+"17": {"code": "61A2B7", "action": "keep", "reason": "Eliezer Ze'eira's black shoes, his arrest, his question to the officials and his release after Shmuel confirmed him are complete in [5]-[9]."},
+"18": {"code": "8039C4", "action": "keep", "reason": "Rabban Gamliel blinding Tavi and Rabbi Yehoshua's answer are the story; the opening of Rav Hisda's objection shares [5] and cannot be cut, and what follows is Gemara analysis."},
+"19": {"code": "E6D8F8", "action": "keep", "reason": "Rav Adda bar Ahava's exchange with Rav Huna and the curse on Hova's children are [5]-[6]; the alternate version at the end of [6] shares the segment and cannot be cut."},
+"20": {"code": "9864C9", "action": "keep", "reason": "Rav, Shmuel and Rav Asi at the celebration, the cat that maimed the baby and Rav's resulting ruling run [5]-[8]; the Gemara's questions on that ruling start at [9]."}
+}
