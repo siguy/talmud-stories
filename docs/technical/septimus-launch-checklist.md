@@ -55,6 +55,9 @@ Main is merged into all five sign-up branches; staging runs the new list.
 - [ ] Script: remove a sign-up record whose Google account no longer exists (found in the d review).
 - [ ] Script: delete everyone's personal data six months after the yahrzeit.
 - [ ] About Joe Septimus page: put in Daniel's text.
+- [ ] **Rewrite "How the stories were chosen"** (Simon, 2026-11-17): more about what was done and the rules a
+      story must meet; more about Prof. Jeff Rubenstein's background; a little about Simon. Draft the wording for
+      Simon to approve before it goes on the site; check every fact about Jeff against a source.
 - [ ] Freeze the story list (ids and order) as list v1.
 
 ## 5. Testing still needed (all on staging)
@@ -88,9 +91,14 @@ databases: staging's accounts are test accounts and stay there; real people sign
 **Moment 1: open sign-ups** (can happen before the start date is known; nobody is handed stories yet).
 
 - [x] Merge the sign-up work into `main` (2026-11-16, one pull request, #101; #97 to #100 closed as included).
-- [ ] Add the real site's address to the live project's authorised sign-in domains (exact address only).
+- [x] The real site's address is on the live project's authorised sign-in domains (checked 2026-11-17:
+      `talmud-stories.vercel.app`).
 - [ ] Restrict the public web key in the Google Cloud console to Firebase and the site's addresses.
-- [ ] `./scripts/deploy_prod.sh`. Sign up once yourself on the real site.
+- [x] **The real site already runs the sign-up** (found 2026-11-17): a production deploy on 2026-11-17, about
+      04:23 UTC, put everything on `main` live, so `talmud-stories.vercel.app` opens on the join page and anyone can
+      sign up. Not done from this session. The live database held 0 sign-ups when checked. Simon to decide: leave
+      it, or roll the real site back until launch.
+- [ ] Sign up once yourself on the real site.
 - [ ] Share the link (with `?src=` for each community).
 
 **Moment 2: start the learning** (needs the start date, and the email finished).
@@ -115,6 +123,8 @@ databases: staging's accounts are test accounts and stay there; real people sign
 - Sample stories or a visual on the front page.
 - "Give me another story" for people who want more (agreed; after launch).
 - Marking your stories inside the tractate lists; "Next story" on the story page.
+
+- Updating the separate Talmud stories page on the simonbrief.com hub (Simon, 2026-11-17: consider it, not yet).
 
 ## 7. After launch
 
