@@ -57,7 +57,9 @@ Main is merged into all five sign-up branches; staging runs the new list.
 - [ ] About Joe Septimus page: put in Daniel's text.
 - [ ] **Rewrite "How the stories were chosen"** (Simon, 2026-11-17): more about what was done and the rules a
       story must meet; more about Prof. Jeff Rubenstein's background; a little about Simon. Draft the wording for
-      Simon to approve before it goes on the site; check every fact about Jeff against a source.
+      Simon to approve before it goes on the site; check every fact about Jeff against a source. **Drafted
+      2026-11-17:** [`how-the-stories-were-chosen-draft.md`](how-the-stories-were-chosen-draft.md), with five points
+      for Simon to settle. Not on the site.
 - [ ] Freeze the story list (ids and order) as list v1.
 
 ## 5. Testing still needed (all on staging)
