@@ -1,20 +1,11 @@
-# Feedback worker (one-time setup, ~10 min)
+# Feedback endpoint
 
 Turns a "Report a problem" submission on the site into a GitHub issue labelled `story-feedback`
-(machine-readable JSON inside), which Claude reads directly. Free Cloudflare tier is plenty.
+(machine-readable JSON inside), which `scripts/feedback_triage.py` reads. It runs on Google Cloud Run;
+the code (`feedback-worker.js`) is plain fetch/Request and `gcp/server.js` wraps it. The feedback repo
+`siguy/talmud-stories-feedback` is private: never point `REPO` at the public main repo.
 
-1. Create a **fine-grained GitHub token**: only this repo, permission *Issues: Read and write*, nothing else.
-2. `npm i -g wrangler && wrangler login`
-3. From this folder: `wrangler deploy feedback-worker.js --name septimus-feedback --compatibility-date 2026-10-01`
-4. `wrangler secret put GITHUB_TOKEN --name septimus-feedback` (paste the token)
-5. In the Cloudflare dashboard → the worker → Settings → Variables: `REPO` = `siguy/talmud-stories`;
-   `ALLOWED_ORIGIN` = the site's URL once it is hosted.
-6. Put the worker URL in `site/config.js` (`feedbackEndpoint`).
-
-Until step 6, the site's form falls back to opening a pre-filled GitHub issue (needs a GitHub login).
-If the repo is public, feedback issues are public: keep the repo private or tell people not to leave contact details.
-
-## Alternative: Google Cloud Run (this is what is deployed)
+## Setup (Google Cloud Run)
 
 Same code (`feedback-worker.js`), wrapped by `worker/gcp/server.js` (no dependencies). Effectively free at this volume,
 but the project needs a billing account linked. Defaults: project `simon-main`, region `us-central1`, repo `siguy/talmud-stories-feedback` (private).
@@ -45,7 +36,7 @@ feedback on the other 33 tractates gets a 400 and the reader sees "Sorry, that d
 1. `gcloud auth login` (if the session has expired).
 2. `worker/gcp/deploy.sh`. The token secret (`feedback-github-token`) is already in Secret Manager, so there is
    **no** `set-token.sh` step unless the token has expired (created 2026-10-15, 1-year expiry). The script sets
-   `REPO=siguy/talmud-stories-feedback` and `ALLOWED_ORIGIN=https://talmud-stories.vercel.app` by default.
+   `REPO=siguy/talmud-stories-feedback` and `ALLOWED_ORIGIN` of production plus staging (comma-separated; a staging report is tagged `site: staging` and set aside by triage).
    **Check that origin is exactly the address you open the site at.** A browser refuses the worker's answer from
    any other origin (a Vercel preview URL such as `talmud-stories-git-....vercel.app`, a custom domain), and the
    reader sees the same "did not send" message. Override with `ALLOWED_ORIGIN=https://... worker/gcp/deploy.sh`.

@@ -105,8 +105,8 @@ test("every field is capped and only whitelisted fields are copied", () => {
   assert.equal(d.segment.ref.length, 40); assert.equal(d.segment.he.length, 2000); assert.equal(d.segment.en.length, 2000);
   assert.equal(d.reviewed, true); assert.equal(d.in_mishnah, false);
   assert.equal(d.extra, undefined); assert.equal(d.classification, undefined);
-  assert.deepEqual(Object.keys(d).sort(), ["category", "comment", "in_mishnah", "name", "page_url", "ref", "refs", "reviewed",
-    "segment", "story_id", "submitted_at", "summary", "tractate"]);
+  assert.deepEqual(Object.keys(d).sort(), ["category", "comment", "extended", "in_mishnah", "name", "note_approved", "note_drafted",
+    "page_url", "ref", "refs", "reviewed", "segment", "site", "span", "story_id", "submitted_at", "summary", "test", "tractate"]);
 });
 
 test("refs: up to 10 kept (an extended story can cross more than two pages); non-array becomes []", () => {
@@ -256,4 +256,37 @@ test("server.js: GitHub unreachable answers 502 and the process stays up", async
   r = await fetch(base, { method: "OPTIONS" });
   assert.equal(r.status, 200);
   assert.equal(child.exitCode, null);
+});
+
+// ---- 2026-11-15: reader feedback loop (docs/history/2026-11-15-PLAN-reader-feedback-loop.md) -------
+test("the app's category list and the worker's are the same list, in the same words", () => {
+  const app = readFileSync(join(HERE, "..", "site", "app.js"), "utf8");
+  const block = app.match(/var CATS = \[(.*?)\];\n/s)[1];
+  const appCats = [...block.matchAll(/\["(\w+)", "([^"]+)"\]/g)].map((m) => m[1]).sort();
+  const src = readFileSync(join(HERE, "feedback-worker.js"), "utf8");
+  const workerCats = [...src.match(/const CATEGORIES = \{(.*?)\};/s)[1].matchAll(/^\s*(\w+):/gm)].map((m) => m[1]).sort();
+  assert.deepEqual(appCats, workerCats);
+  assert.ok(workerCats.includes("note"));
+});
+
+test("a 'note' report keeps the new intake fields, capped, and defaults them when absent", () => {
+  const full = machine(buildIssue({ ...ok, category: "note", span: [{ ref: "Ketubot 20a", start: 2, end: 9 }, { ref: "x".repeat(99), start: "2", end: null }],
+    extended: 1, note_drafted: "d".repeat(99), note_approved: true, site: "staging", test: true }));
+  assert.deepEqual(full.span[0], { ref: "Ketubot 20a", start: 2, end: 9 });
+  assert.equal(full.span[1].ref.length, 40); assert.equal(full.span[1].start, null);
+  assert.equal(full.extended, true); assert.equal(full.note_drafted.length, 40); assert.equal(full.note_approved, true);
+  assert.equal(full.site, "staging"); assert.equal(full.test, true);
+  const bare = machine(buildIssue(ok));
+  assert.deepEqual([bare.span, bare.extended, bare.note_drafted, bare.site, bare.test], [[], false, "", "prod", false]);
+  assert.equal(machine(buildIssue({ ...ok, site: "<script>" })).site, "prod");
+  assert.equal(buildIssue({ ...ok, category: "note" }).title.endsWith("The background note is wrong"), true);
+});
+
+test("ALLOWED_ORIGIN may list production and staging: the caller's origin is echoed only if listed", async (t) => {
+  mockFetch(t);
+  const env = { ...ENV, ALLOWED_ORIGIN: "https://site.example, https://staging.example" };
+  const ask = (origin) => worker.fetch(new Request("https://w.invalid/", { method: "OPTIONS", headers: origin ? { Origin: origin } : {} }), env);
+  assert.equal((await ask("https://staging.example")).headers.get("Access-Control-Allow-Origin"), "https://staging.example");
+  assert.equal((await ask("https://evil.example")).headers.get("Access-Control-Allow-Origin"), "https://site.example");
+  assert.equal((await ask(null)).headers.get("Access-Control-Allow-Origin"), "https://site.example");
 });
