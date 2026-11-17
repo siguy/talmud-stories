@@ -33,7 +33,7 @@
   var p = EmailLinks.params(false), go = document.getElementById("go"), msg = document.getElementById("msg"), lead = document.getElementById("lead");
   var off = false, busy = false;
   function say(text) { msg.textContent = text; msg.focus(); }
-  if (!p) { go.hidden = true; lead.textContent = "This link is not complete. Please use the link at the bottom of your latest email."; return; }
+  if (!p) { go.style.display = "none"; lead.textContent = "This link is not complete. Please use the link at the bottom of your latest email."; return; }
   go.onclick = function () {
     if (busy) return;
     busy = true; go.setAttribute("aria-disabled", "true");

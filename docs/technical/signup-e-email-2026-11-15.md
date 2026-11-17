@@ -26,14 +26,43 @@ How a double send is prevented: `sent/<week>_<uid>` is created before each send 
 the same key goes to Resend as its Idempotency-Key. Resend clearly refusing an email removes the record, so the
 next daily run retries; a timeout or server error keeps it, so that email is never retried.
 
-## Not built (each needs a decision)
+## Unsubscribe and "Mark as learned" without signing in (built 2026-11-16)
 
-1. **One-click unsubscribe.** Resend has no unsubscribe of its own for this kind of email (the plan, section
-   8d, assumed it had). The standard header needs a small web address of ours that accepts the click. Until
-   that exists, the footer link goes to My stories ("Change my minutes or stop my stories"), and the script
-   already skips anyone whose `users` record has `emailOff: true`. Nothing sets that field yet.
-2. **The link that marks a story learned without signing in.** Needs the same kind of web address.
-3. **Sender name and Daniel's line** in the dedication. The dedication reads "In memory of Joe Septimus." for now.
+Simon chose where the click lands (2026-11-16): **on the Vercel site, with no stored password**, over a separate
+Cloud Run service holding a database key.
+
+How it works:
+
+- Each person has a **private code**, `users/<uid>.mailToken`, made by the script the first time it emails them
+  and never changed, so links in old emails keep working.
+- Every weekly and "still with us?" email carries the code in three places:
+  1. the standard one-click headers (`List-Unsubscribe`, `List-Unsubscribe-Post`), which put an Unsubscribe
+     button in the mail program itself. They point at `site/api/unsubscribe.js`, a small Vercel function;
+  2. a footer link to `site/unsubscribe.html`, a confirm page with an Undo;
+  3. a "Mark as learned" link under each story, to `site/learned.html`, also a confirm page.
+- Nothing changes on a plain visit, only on a button press (or the mail program's own POST), because mail
+  scanners open links.
+- The function and the pages hold **no key**. They write to Firestore as a signed-out visitor, and
+  `firestore.rules` has two narrow new openings (marked `EMAIL LINK`): with the right code, switch `emailOff`
+  on or off, or tick that person's story once. Nothing else, and no reading.
+- Unsubscribing stops email only (`users/<uid>.emailOff: true`); it is not leaving. The send step skips those people.
+- A week with nothing new still gets a short email when the person holds open stories.
+
+Worth a reviewer's eye: the two rule openings. Anyone holding a person's email can unsubscribe them or tick
+their stories; that is what such a link is. The code is 32 random characters, is never logged, and opens
+nothing else. `mailTokenUsed` (a copy of the code) is written next to the change because a rule can only check
+what is being written.
+
+Tested: 33 new rule tests and 4 new Store tests in the emulators; 6 Node tests for the function; and on
+staging, with a throwaway record, the one-click POST, both pages' buttons in a browser, and wrong codes refused.
+
+## Not built
+
+1. **Sender name and Daniel's line** in the dedication. The dedication reads "In memory of Joe Septimus." for now.
+2. **Turning emails back on from My stories.** Today the way back is the Undo on the unsubscribe page, or any
+   later use of the same link. A switch on My stories would need `site/signup.js` and one more rule.
+3. **Hard bounces.** The script does not track them. To check: whether Resend stops sending to an address that
+   hard-bounced on its own.
 
 ## To switch it on
 
@@ -47,8 +76,12 @@ live `SEPTIMUS_SITE_URL`.
 
 **Test send, 2026-11-15:** `python scripts/septimus_email.py --test-send` ran once in a GitHub Action on a
 throwaway branch (since deleted) and Resend reported the sample weekly email as delivered to Simon, who confirmed it
-looks right. Not yet done: a full staging run of the job with email on, and running the new `Store`
-methods against the Firestore emulator.
+looks right. Not yet done: a full staging run of the job with email on (GitHub offers "Run workflow" only
+once the workflow file is on `main`).
+
+**The rules tests need Java.** This Mac had none, so `tests/test_firestore_rules.py` had been skipping here.
+`brew install openjdk` was run on 2026-11-16; put `/opt/homebrew/opt/openjdk/bin` on the PATH to run them.
+`firestore.rules` from this branch is deployed to **staging only**. The live rules are unchanged.
 
 Resend's free plan stops at 100 emails a day. A Sunday with more people than that needs the paid plan; if the
 limit is hit, the rest are sent by the next daily run.
