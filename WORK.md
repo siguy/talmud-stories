@@ -47,7 +47,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Ask Jeff about classes, not passages — contrast pairs per feature, his own sureness on every answer, and a page ranked by what he would teach us](work/2026-10-02-jeff-feature-questions.md) | review, classification | — | — |
 | [Decide the judge's answer categories (confidence tiers?)](work/2026-10-09-judge-answer-categories.md) | classification | — | — |
 | [Story viewer for the Septimus family (mobile, Sefaria-style)](work/2026-10-12-septimus-story-viewer.md) | publication | ketubot, kiddushin, gittin, yevamot | — |
-| ["Learn all the stories" sign-up for the Septimus yahrzeit (v1)](work/2026-11-08-septimus-signup.md) | publication | ketubot, kiddushin, gittin, yevamot | — |
+| ["Learn all the stories" sign-up for the Septimus yahrzeit (v1)](work/2026-11-08-septimus-signup.md) | publication | — | — |
 | [Reader feedback loop - triage, ledger, routes](work/2026-11-16-reader-feedback-loop.md) | publication, review | — | — |
 
 <!-- board-live:start -->
@@ -58,18 +58,17 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `remove-borderline` | `talmud-stories` | **1770 FILES** |
-| `signup-c` | `wt` | **36 FILES** |
-| `signup-flow` | `berakhot-shas-local-run-a26611` | **544 FILES** |
-| `(detached)` | `jeff-comms-review-92c526` | **13 FILES** |
-| `narrate-test-a16cdf` | `narrate-test-a16cdf` | **889 FILES** |
-| `(detached)` | `recent-work-plans-d0818b` | **1596 FILES** |
+| `remove-borderline` | `talmud-stories` | **2 FILES** |
+| `after-merge` | `berakhot-shas-local-run-a26611` | clean |
+| `(detached)` | `jeff-comms-review-92c526` | clean |
+| `narrate-test-a16cdf` | `narrate-test-a16cdf` | clean |
+| `(detached)` | `recent-work-plans-d0818b` | clean |
 | `priceless-volhard-0e79cd` | `sessions-cleanup-consolidate-fc92b3` | clean |
-| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | **1035 FILES** |
-| `post-shas-run-fixes` | `shas-run` | **1245 FILES** |
-| `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **1595 FILES** |
-| `signup-e-email` | `signup-e-email` | **900 FILES** |
-| `stories-background-info-a2bcf3` | `stories-background-info-a2bcf3` | **513 FILES** |
+| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | clean |
+| `post-shas-run-fixes` | `shas-run` | **1 FILES** |
+| `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
+| `signup-e-email` | `signup-e-email` | clean |
+| `stories-background-info-a2bcf3` | `stories-background-info-a2bcf3` | clean |
 <!-- board-live:end -->
 
 ## Done — 69 items, never deleted
@@ -145,4 +144,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [The narrate test — can writing a summary tell a story from a non-story, and find its borders?](work/done/2026-11-14-narrate-test.md) | classification, boundaries | [2026-11-14-narrate-test.md](docs/findings/2026-11-14-narrate-test.md) |
 | [Review the boundaries of every story on the Septimus site (display only)](work/done/2026-11-15-full-boundary-review.md) | boundaries, publication | [2026-11-16-full-boundary-review.md](docs/findings/2026-11-16-full-boundary-review.md) |
 | [Background notes (and a "why it's here" line) for every story on the Septimus site](work/done/2026-11-15-shas-background-notes.md) | publication | — |
-<!-- board-checksum: 5e9c554b195673d1 -->
+<!-- board-checksum: bffd55e9170dbd29 -->
