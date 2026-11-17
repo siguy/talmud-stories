@@ -96,8 +96,8 @@ databases: staging's accounts are test accounts and stay there; real people sign
 - [ ] Restrict the public web key in the Google Cloud console to Firebase and the site's addresses.
 - [x] **The real site already runs the sign-up** (found 2026-11-17): a production deploy on 2026-11-17, about
       04:23 UTC, put everything on `main` live, so `talmud-stories.vercel.app` opens on the join page and anyone can
-      sign up. Not done from this session. The live database held 0 sign-ups when checked. Simon to decide: leave
-      it, or roll the real site back until launch.
+      sign up. Not done from this session. The live database held 0 sign-ups when checked. **Simon, 2026-11-17: leave it live for
+      now;** the link has not been shared. Staging keeps its test data: Simon is still experimenting there.
 - [ ] Sign up once yourself on the real site.
 - [ ] Share the link (with `?src=` for each community).
 
