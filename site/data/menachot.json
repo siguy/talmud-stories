@@ -511,16 +511,16 @@
    "start_segment": 0,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Drops segment 6, the tail of the Gemara's answer about the earlier version; segment 7 is the alternative version of the Ravina and Mar bar Rav Ashi incident.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Ravina observes Mar bar Rav Ashi's ritual fringes tear in public on Shabbat and questions why he did not remove the garment immediately, leading to a discussion on human dignity.",
    "segments": [
-    {
-     "ref": "Menachot 38a",
-     "i": 0,
-     "he": "בְּלָאו דְּ״לֹא תָסוּר״.",
-     "en": "He stated this <b>with regard to the prohibition of: “You shall not deviate</b> to the left or the right of that which they tell you” (Deuteronomy 17:11). A prohibition by rabbinic law is overridden by human dignity, but not a prohibition by Torah law. Therefore, Mar bar Rav Ashi would have removed his garment had he known about the tear."
-    },
     {
      "ref": "Menachot 38a",
      "i": 1,
@@ -535,7 +535,7 @@
      "end": 1
     }
    ],
-   "words": 224,
+   "words": 164,
    "minutes": 2
   },
   {
@@ -549,7 +549,13 @@
    "start_segment": 11,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segments 7-8 are the Gemara's analysis of what Rav and Rabba bar bar Hana disagree about, not events of the story.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": false,
    "summary": "While Rav and Rabba bar bar Hana are sitting together, a man passes by wearing a unique sky-blue cloak with ritual fringes, prompting their evaluation.",
    "segments": [
@@ -564,18 +570,6 @@
      "i": 0,
      "he": "וּגְדִילָא מִיגְּדִיל. אָמַר רַב: יָאֵי גְּלִימָא וְלָא יָאֵי תְּכֵלְתָּא, רַבָּה בַּר בַּר חָנָה אָמַר: יָאֵי גְּלִימָא וְיָאֵי תְּכֵלְתָּא.",
      "en": "<b>and</b> the ritual fringes were composed <b>entirely</b> of <b>windings,</b> without any portion of the strings hanging loose. <b>Rav said: The cloak is beautiful, but the</b> white and <b>sky-blue</b> strings are <b>not beautiful. Rabba bar bar Ḥana said: The cloak is beautiful, and the</b> white and <b>sky-blue</b> strings are also <b>beautiful.</b>"
-    },
-    {
-     "ref": "Menachot 39b",
-     "i": 1,
-     "he": "בְּמַאי קָא מִיפַּלְגִי? רַבָּה בַּר בַּר חַנָּה סָבַר: כְּתִיב ״גְּדִיל״ וּכְתִיב ״פְּתִיל״, אוֹ גְדִיל אוֹ פְתִיל.",
-     "en": "The Gemara asks: <b>With regard to what</b> principle <b>do they disagree?</b> The Gemara answers: <b>Rabba bar bar Ḥana holds</b> that since <b>it is written</b> in one verse: “You shall prepare yourself <b>twisted cords”</b> (Deuteronomy 22:12), <b>and</b> in another <b>it is written:</b> “And they shall put on the fringe of the corner a sky-blue <b>thread”</b> (Numbers 15:38), it teaches that the ritual fringes may be composed entirely of <b>either twisted cords,</b> i.e., the windings, <b>or</b> loose threads or <b>strings.</b>"
-    },
-    {
-     "ref": "Menachot 39b",
-     "i": 2,
-     "he": "וְרַב סָבַר: לְעוֹלָם פְּתִיל בָּעֵינַן, וְהָהוּא ״גְּדִילִים״ לְמִנְיָינָא הוּא דַּאֲתָא – גְּדִיל שְׁנַיִם, גְּדִילִים אַרְבָּעָה, עֲשֵׂה גְּדִיל וּפוֹתְלֵיהוּ מִתּוֹכוֹ.",
-     "en": "<b>And Rav holds</b> that <b>actually, we</b> also <b>require</b> loose <b>strings</b> in addition to the windings, <b>and</b> when <b>that</b> term <b>“twisted cords”</b> appears in the verse, <b>it comes for</b> the purpose of teaching the <b>number</b> of strings that are required. If the verse would have employed the singular term <b>twisted cord,</b> it would still indicate that <b>two</b> strings are required, as twisted means that two strings are wound around each other. Once the verse uses the plural term <b>“twisted cords,”</b> it thereby indicates that <b>four</b> strings are required. By using the terms “twisted cords” and “thread,” the verses indicates: <b>Form twisted cords</b> with the four strings that one attaches to each corner, <b>and let</b> the strings <b>hang loose from them.</b>"
     }
    ],
    "span": [
@@ -590,8 +584,8 @@
      "end": 2
     }
    ],
-   "words": 285,
-   "minutes": 2
+   "words": 88,
+   "minutes": 1
   },
   {
    "id": "menachot-41a-7-9",
@@ -893,12 +887,17 @@
    "tractate": "menachot",
    "ref": "Menachot 53a",
    "refs": [
-    "Menachot 53a"
+    "Menachot 53a",
+    "Menachot 53b"
    ],
    "start_segment": 12,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 5,
+    "reason": "Rabbi Ezra's yadid homily is cut off before he explains it; extend through his explanations and following homilies in the same encounter, stopping before the new Rabbi Yitzhak section."
+   },
    "reviewed": false,
    "summary": "Rabbi Perida initially questions the worthiness of Rabbi Ezra who is waiting at his door, but upon admitting him and seeing his embarrassment, Perida comforts him with a homily, leading to a mutual exchange of teachings.",
    "segments": [
@@ -943,6 +942,36 @@
      "i": 18,
      "he": "יָבֹא יָדִיד בֶּן יָדִיד, וְיִבְנֶה יָדִיד לְיָדִיד בְּחֶלְקוֹ שֶׁל יָדִיד, וְיִתְכַּפְּרוּ בּוֹ יְדִידִים.",
      "en": "Rabbi Ezra stated another, similar, homiletic interpretation: <b>Let <i>yadid</i>, son of <i>yadid</i>, come and build <i>yadid</i> for <i>yadid</i> in the portion of <i>yadid</i>, and let <i>yedidim</i> achieve atonement through it.</b>"
+    },
+    {
+     "ref": "Menachot 53a",
+     "i": 19,
+     "he": "יָבֹא יָדִיד – זֶה שְׁלֹמֹה הַמֶּלֶךְ, דִּכְתִיב: ״וַיִּשְׁלַח בְּיַד נָתָן הַנָּבִיא וַיִּקְרָא שְׁמוֹ יְדִידְיָהּ בַּעֲבוּר ה׳״.",
+     "en": "Rabbi Ezra explained this statement: With regard to <i>yadid</i> in the phrase: <b>Let <i>yadid</i>, this is King Solomon, as it is written</b> after Solomon’s birth: <b>“And He sent by the hand of Nathan the prophet, and he called his name Yedidya, for the Lord’s sake”</b> (II Samuel 12:25)."
+    },
+    {
+     "ref": "Menachot 53b",
+     "i": 0,
+     "he": "בֶּן יָדִיד – זֶה אַבְרָהָם, דִּכְתִיב: ״מֶה לִידִידִי בְּבֵיתִי״, וְיִבְנֶה יָדִיד – זֶה בֵּית הַמִּקְדָּשׁ, דִּכְתִיב: ״מַה יְּדִידוֹת מִשְׁכְּנוֹתֶיךָ״, לְיָדִיד – זֶה הַקָּדוֹשׁ בָּרוּךְ הוּא, דִּכְתִיב: ״אָשִׁירָה נָּא לִידִידִי״,",
+     "en": "In the phrase: <b>Son of <i>yadid</i>, this</b> <i>yadid</i> <b>is Abraham, as it is written: “What has My beloved [<i>lididi</i>] to do in My house”</b> (Jeremiah 11:15). This verse is referring to Abraham, as will be explained. In the phrase: <b>And build <i>yadid</i>, this</b> <i>yadid</i> <b>is the Temple, as it is written: “How lovely [<i>yedidot</i>] are Your tabernacles”</b> (Psalms 84:2). And with regard to the term in the phrase: <b>For <i>Yadid</i>, this is the Holy One, Blessed be He, as it is written: “Let me sing of my Beloved [<i>lididi</i>]”</b> (Isaiah 5:1)."
+    },
+    {
+     "ref": "Menachot 53b",
+     "i": 1,
+     "he": "בְּחֶלְקוֹ שֶׁל יָדִיד – זֶה בִּנְיָמִין, שֶׁנֶּאֱמַר: ״לְבִנְיָמִין אָמַר יְדִיד ה׳ יִשְׁכֹּן לָבֶטַח עָלָיו״, וְיִתְכַּפְּרוּ בּוֹ יְדִידִים – אֵלּוּ יִשְׂרָאֵל, דִּכְתִיב: ״נָתַתִּי אֶת יְדִידוּת נַפְשִׁי בְּכַף אוֹיְבֶיהָ״.",
+     "en": "<b>In the portion of <i>yadid</i>; this</b> <i>yadid</i> <b>is</b> the tribe of <b>Benjamin,</b> in whose territory the Temple was built, <b>as it is stated</b> that Moses blessed Benjamin in the following terms: <b>“Of Benjamin he said: The beloved [<i>yedid</i>] of the Lord shall dwell in safety by Him”</b> (Deuteronomy 33:12). <b>And let <i>yedidim</i> achieve atonement through it; these</b> <i>yedidim</i> <b>are the Jewish people, as it is written</b> with regard to them: <b>“I have given the dearly beloved [<i>yedidut</i>] of My soul into the hand of her enemies”</b> (Jeremiah 12:7)."
+    },
+    {
+     "ref": "Menachot 53b",
+     "i": 2,
+     "he": "יָבֹא טוֹב וִיקַבֵּל טוֹב מִטּוֹב לַטּוֹבִים. יָבֹא טוֹב – זֶה מֹשֶׁה, דִּכְתִיב: ״וַתֵּרֶא אוֹתוֹ כִּי טוֹב הוּא״. וִיקַבֵּל טוֹב – זוֹ תּוֹרָה, דִּכְתִיב: ״כִּי לֶקַח טוֹב נָתַתִּי לָכֶם״. מִטּוֹב – זֶה הַקָּדוֹשׁ בָּרוּךְ הוּא, דִּכְתִיב: ״טוֹב ה׳ לַכֹּל״. לַטּוֹבִים – אֵלּוּ יִשְׂרָאֵל, דִּכְתִיב: ״הֵטִיבָה ה׳ לַטּוֹבִים״.",
+     "en": "Rabbi Ezra stated another, similar homily: <b>Let the good one come and receive the good from the Good for the good ones.</b> He explained: <b>Let the good one come; this</b> good <b>is Moses, as it is written</b> about him: <b>“And when she saw him that he was a goodly child”</b> (Exodus 2:2). <b>And receive the good; this</b> good <b>is</b> the <b>Torah, as it is written</b> about the Torah: <b>“For I give you a good doctrine;</b> do not forsake my Torah” (Proverbs 4:2). <b>From the Good; this is</b> referring to <b>the Holy One, Blessed be He, as it is written: “The Lord is good to all”</b> (Psalms 145:9). <b>For the good ones; these</b> good ones <b>are the Jews, as it is written</b> with regard to them: <b>“Do good, Lord, to the good ones”</b> (Psalms 125:4)."
+    },
+    {
+     "ref": "Menachot 53b",
+     "i": 3,
+     "he": "יָבֹא זֶה וִיקַבֵּל זֹאת מִזֶּה לְעַם זוּ – יָבֹא זֶה – זֶה מֹשֶׁה, דִּכְתִיב: ״כִּי זֶה מֹשֶׁה הָאִישׁ״, וִיקַבֵּל זֹאת – זוֹ הַתּוֹרָה, דִּכְתִיב: ״וְזֹאת הַתּוֹרָה אֲשֶׁר שָׂם מֹשֶׁה״, מִזֶּה – זֶה הַקָּדוֹשׁ בָּרוּךְ הוּא, דִּכְתִיב: ״זֶה אֵלִי וְאַנְוֵהוּ״, לְעַם זוֹ – אֵלּוּ יִשְׂרָאֵל, שֶׁנֶּאֱמַר: ״עַם זוּ קָנִיתָ״.",
+     "en": "Rabbi Ezra stated yet another homily structured in a similar manner. <b>Let this one come and receive this from this One for this people.</b> He explained: <b>Let this one come; this is</b> referring to <b>Moses, as it is written</b> about him: <b>“For as for this Moses, the man</b> who brought us up out of the land of Egypt” (Exodus 32:1). <b>And receive this; this is</b> referring to the <b>Torah, as it is written: “And this is the Torah which Moses set</b> before the children of Israel” (Deuteronomy 4:44). <b>From this One; this is</b> referring to <b>the Holy One, Blessed be He, as it is written: “This is my God and I will glorify Him”</b> (Exodus 15:2). <b>For this people; these</b> people <b>are the Jews, as it is stated</b> about them: <b>“This people that You have gotten”</b> (Exodus 15:16)."
     }
    ],
    "span": [
@@ -952,8 +981,8 @@
      "end": 18
     }
    ],
-   "words": 640,
-   "minutes": 5
+   "words": 1154,
+   "minutes": 8
   },
   {
    "id": "menachot-64b-4-6",
@@ -1065,13 +1094,18 @@
    "tractate": "menachot",
    "ref": "Menachot 64b",
    "refs": [
-    "Menachot 64b",
-    "Menachot 65a"
+    "Menachot 64b"
    ],
    "start_segment": 9,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The three women story ends when Mordekhai's reading is confirmed; the Petahya identification and Sanhedrin languages discussion that follow are Gemara commentary.",
+    "start_trim": 0,
+    "end_trim": 3
+   },
    "reviewed": false,
    "summary": "Mordekhai correctly interprets the ambiguous language of three women bringing bird offerings, proving they were thanks-offerings for surviving danger rather than sin-offerings.",
    "segments": [
@@ -1092,24 +1126,6 @@
      "i": 11,
      "he": "אֲמַר לְהוּ מׇרְדֳּכַי: שֶׁמָּא בְּזוֹב סִיכְּנָה, שֶׁמָּא בַּיָּם סִיכְּנָה, שֶׁמָּא בְּעֵינָהּ סִיכְּנָה, דְּכוּלְּהוּ עוֹלוֹת נִינְהוּ. בְּדוּק וְאַשְׁכֻּח.",
      "en": "<b>Mordekhai said to</b> the other Sages: <b>Perhaps</b> the first woman <b>was endangered</b> in the course <b>of</b> her menstrual <b>flow [<i>zov</i>].</b> Similarly, <b>perhaps</b> the second woman <b>was endangered at sea [<i>yam</i>].</b> Finally, <b>perhaps</b> the third woman <b>was endangered through her eye [<i>ayin</i>],</b> as <i>ayin</i> is phonetically similar to <i>ona</i>. According to these explanations, each woman sought to bring a voluntary offering to give thanks to God for being saved from danger. If so, the appropriate offering in each case is not a sin offering, <b>as they are all burnt offerings.</b> It <b>was checked and</b> they <b>found</b> that Mordekhai’s interpretation was in fact correct."
-    },
-    {
-     "ref": "Menachot 65a",
-     "i": 0,
-     "he": "וְהַיְינוּ דִּתְנַן: פְּתַחְיָה עַל הַקִּינִּין זֶה מָרְדֳּכַי, לָמָּה נִקְרָא שְׁמוֹ פְּתַחְיָה – שֶׁפּוֹתֵחַ דְּבָרִים וְדוֹרְשָׁן, וְיוֹדֵעַ בְּשִׁבְעִים לָשׁוֹן.",
-     "en": "<b>And this is as we learned</b> in a mishna (<i>Shekalim</i> 13b): <b>Petaḥya</b> was responsible <b>for the nests</b> of birds, i.e., the doves or pigeons brought by a <i>zav</i>, a <i>zava</i>, a woman after childbirth, and a leper. These individuals would place the appropriate sum of money into the horn designated for this purpose, and each day Petaḥya oversaw the purchase of birds from that money and their sacrifice in the proper manner. <b>This</b> Sage <b>is Mordekhai;</b> and <b>why was he called Petaḥya,</b> which resembles the word for opening [<i>petaḥ</i>]? The reason is <b>that he would open,</b> i.e., elucidate, difficult <b>topics and interpret them</b> to the people, <b>and</b> because <b>he knew</b> all <b>seventy languages</b> known in that region at the time."
-    },
-    {
-     "ref": "Menachot 65a",
-     "i": 1,
-     "he": "כּוּלְּהוּ סַנְהֶדְרִין נָמֵי יָדְעִי שִׁבְעִים לָשׁוֹן! דְּאָמַר רַבִּי יוֹחָנָן: אֵין מוֹשִׁיבִים בַּסַּנְהֶדְרִין אֶלָּא בַּעֲלֵי חׇכְמָה, בַּעֲלֵי מַרְאֶה, בַּעֲלֵי קוֹמָה, בַּעֲלֵי זִקְנָה, בַּעֲלֵי כְשָׁפִים, וְיוֹדְעִים שִׁבְעִים לָשׁוֹן, שֶׁלֹּא תְּהֵא סַנְהֶדְרִין שׁוֹמַעַת מִפִּי הַתּוּרְגְּמָן.",
-     "en": "The Gemara asks: What was unique about Petaḥya? <b>All</b> of the members of the <b>Sanhedrin also know</b> all <b>seventy languages. As Rabbi Yoḥanan says:</b> They <b>place on the</b> Great <b>Sanhedrin only</b> men <b>of wisdom, and of</b> pleasant <b>appearance, and of</b> high <b>stature, and of</b> suitable <b>age</b> so that they will be respected. <b>And</b> they must also be <b>masters of sorcery,</b> i.e., they know the nature of sorcery, so that they can judge sorcerers, <b>and</b> they must <b>know</b> all <b>seventy languages</b> in order <b>that the Sanhedrin will not</b> need to <b>hear</b> testimony <b>from the mouth of a translator</b> in a case where a witness speaks a different language."
-    },
-    {
-     "ref": "Menachot 65a",
-     "i": 2,
-     "he": "אֶלָּא, דַּהֲוָה בָּיֵיל לִישָּׁנֵי וְדָרֵישׁ, וְהַיְינוּ דִּכְתִיב בְּמׇרְדֳּכַי ״בִּלְשָׁן״.",
-     "en": "The Gemara answers: <b>Rather,</b> Petaḥya was unique <b>as</b> he not only knew all seventy languages, but also had the ability to <b>combine</b> various <b>languages and interpret</b> them. <b>This is</b> the meaning of that <b>which is written with regard to Mordekhai: “Bilshan”</b> (Nehemiah 7:7). Bilshan is interpreted as another name for Mordekhai, as he would combine [<i>balil</i>] languages [<i>lashon</i>]."
     }
    ],
    "span": [
@@ -1124,8 +1140,8 @@
      "end": 2
     }
    ],
-   "words": 589,
-   "minutes": 4
+   "words": 295,
+   "minutes": 2
   },
   {
    "id": "menachot-65a-11-11",
@@ -1180,10 +1196,26 @@
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 2,
+    "end_forward": 0,
+    "reason": "The story of Rabbi Tarfon's silence needs its setup: Tarfon posing the difficulty and Yehuda ben Nehemya's answer that silenced him."
+   },
    "reviewed": false,
    "summary": "Yehuda bar Neḥemya silences Rabbi Tarfon in a legal debate, causing his face to brighten with pride, which leads Rabbi Akiva to rebuke him and predict his short life.",
    "segments": [
+    {
+     "ref": "Menachot 68b",
+     "i": 11,
+     "he": "<strong><big>גְּמָ׳</big></strong> יָתֵיב רַבִּי טַרְפוֹן וְקָא קַשְׁיָא לֵיהּ: מָה בֵּין קוֹדֶם לָעוֹמֶר לְקוֹדֶם שְׁתֵּי הַלֶּחֶם?",
+     "en": "<strong>GEMARA:</strong> The mishna teaches that meal offerings brought from the new crop prior to the sacrifice of the <i>omer</i> offering are unfit, whereas those brought after the <i>omer</i> but prior to the two loaves are fit. <b>Rabbi Tarfon sat and posed</b> the following <b>difficulty: What is</b> the difference <b>between</b> meal offerings brought <b>before the <i>omer</i></b> and those brought <b>before the two loaves?</b>"
+    },
+    {
+     "ref": "Menachot 68b",
+     "i": 12,
+     "he": "אָמַר לְפָנָיו יְהוּדָה בַּר נְחֶמְיָה: לֹא, אִם אָמַרְתָּ קוֹדֶם לָעוֹמֶר, שֶׁכֵּן לֹא הוּתַּר מִכְּלָלוֹ אֵצֶל הֶדְיוֹט, תֹּאמַר קוֹדֶם לִשְׁתֵּי הַלֶּחֶם, שֶׁהוּתַּר מִכְּלָלוֹ אֵצֶל הֶדְיוֹט?",
+     "en": "Rabbi <b>Yehuda bar Neḥemya said before</b> Rabbi Tarfon: <b>No,</b> one cannot compare the two situations. <b>If you said</b> that this is the <i>halakha</i> with regard to <b>before</b> the <b><i>omer</i></b> sacrifice, this is because at that stage there are <b>no</b> circumstances in which the new crop’s <b>general prohibition was permitted,</b> even <b>with regard to an ordinary</b> person; <b>shall you</b> also <b>say</b> that this is the <i>halakha</i> with regard to <b>before</b> the sacrifice of <b>the two loaves, when</b> the new crop’s <b>general prohibition was permitted with regard to an ordinary</b> person? The new crop ingredient in the meal offering is at least permitted in consumption after the <i>omer</i> is brought. Therefore, the meal offerings that were brought after the <i>omer</i> but before the two loaves are fit."
+    },
     {
      "ref": "Menachot 68b",
      "i": 13,
@@ -1198,8 +1230,8 @@
      "end": 13
     }
    ],
-   "words": 95,
-   "minutes": 1
+   "words": 282,
+   "minutes": 2
   },
   {
    "id": "menachot-69b-1-1",
@@ -1366,14 +1398,15 @@
    "tractate": "menachot",
    "ref": "Menachot 103b",
    "refs": [
-    "Menachot 103b"
+    "Menachot 103b",
+    "Menachot 104a"
    ],
    "start_segment": 18,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "After reporting a case where the Sages measured the blood of a dead mule from the Nasi's house, Rabbi Beivai is challenged by a contradictory tradition and falls silent, explaining that his poverty prevents him from concentrating on the debate.",
+   "summary": "Rabbi Beivai reported, in the name of Rabbi Yehoshua ben Levi, that a mule belonging to the household of Rabbi died and the Sages estimated its blood at a quarter-log.",
    "segments": [
     {
      "ref": "Menachot 103b",
@@ -1392,32 +1425,13 @@
      "i": 20,
      "he": "אִישְׁתִּיק, אֲמַר לֵיהּ רַבִּי זְרִיקָא: מַאי טַעְמָא לָא קָא מַהְדַּר מָר? אֲמַר לֵיהּ: הֵיכִי אַהְדַּר לֵיהּ, דְּאָמַר רַבִּי חָנִין: ״וְהָיוּ חַיֶּיךָ תְּלֻאִים לְךָ מִנֶּגֶד״ – זֶה הַלּוֹקֵחַ תְּבוּאָה מִשָּׁנָה לְשָׁנָה.",
      "en": "Rabbi Beivai <b>was silent</b> and did not answer. <b>Rabbi Zerika said to him: What is the reason</b> that <b>the Master does not respond</b> to the question? Rabbi Beivai <b>said to him: How can I respond to him?</b> My circumstances can be described <b>as Rabbi Ḥanin said</b> in interpreting the verse: “And your life shall hang in doubt before you; and you shall fear night and day, and you shall have no assurance of your life” (Deuteronomy 28:66). <b>“And your life shall hang in doubt before you”; this</b> is referring to one <b>who purchases grain from one year for the next,</b> because he is not certain that he will find grain to eat in the next year."
-    }
-   ],
-   "span": [
+    },
     {
      "ref": "Menachot 103b",
-     "start": 18,
-     "end": 20
-    }
-   ],
-   "words": 295,
-   "minutes": 2
-  },
-  {
-   "id": "menachot-104a-0-1",
-   "tractate": "menachot",
-   "ref": "Menachot 104a",
-   "refs": [
-    "Menachot 104a"
-   ],
-   "start_segment": 0,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "A story continuing from the previous page about a dead mule in the Nasi's house leads to a legal challenge that Rabbi Beivai is too impoverished and distracted to answer, eventually resolved by Rav Yosef.",
-   "segments": [
+     "i": 21,
+     "he": "״וּפָחַדְתָּ לַיְלָה וְיוֹמָם״ – זֶה הַלּוֹקֵחַ תְּבוּאָה מֵעֶרֶב שַׁבָּת לְעֶרֶב שַׁבָּת, ״וְאַל תַּאֲמֵן בְּחַיֶּיךָ״ – זֶה הַסּוֹמֵךְ עַל הַפַּלְטֵר.",
+     "en": "<b>“And you shall fear night and day”; this</b> is referring to one <b>who purchases grain</b> from one <b>Shabbat eve to another</b> because he does not have the resources to provide for himself further. <b>“And you shall have no assurance of your life”; this</b> is referring to one <b>who relies on the baker [<i>hapalter</i>]</b> to give him bread because he has no grain of his own."
+    },
     {
      "ref": "Menachot 104a",
      "i": 0,
@@ -1433,13 +1447,18 @@
    ],
    "span": [
     {
+     "ref": "Menachot 103b",
+     "start": 18,
+     "end": 21
+    },
+    {
      "ref": "Menachot 104a",
      "start": 0,
      "end": 1
     }
    ],
-   "words": 67,
-   "minutes": 1
+   "words": 429,
+   "minutes": 3
   },
   {
    "id": "menachot-109b-9-15",
@@ -1451,7 +1470,11 @@
    "start_segment": 9,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 12 is the Sages' closing reaction in Rabbi Yehuda's version of the Onias story, matching the reaction already included in Rabbi Meir's version, so it finishes the baraita."
+   },
    "reviewed": false,
    "summary": "The Gemara recounts the death of Shimon HaTzaddik and the subsequent treacherous rivalry between his sons Onias and Shimi, which led to the establishment of the Temple of Onias in Egypt.",
    "segments": [
@@ -1496,6 +1519,12 @@
      "i": 15,
      "he": "בִּקְּשׁוּ אֶחָיו הַכֹּהֲנִים לְהׇרְגוֹ, סָח לָהֶם כׇּל הַמְאוֹרָע, בִּקְּשׁוּ לַהֲרוֹג אֶת חוֹנְיוֹ, רָץ מִפְּנֵיהֶם, וְרָצוּ אַחֲרָיו, רָץ לְבֵית הַמֶּלֶךְ, וְרָצוּ אַחֲרָיו, כׇּל הָרוֹאֶה אוֹתוֹ אוֹמֵר: זֶה הוּא, זֶה הוּא, הָלַךְ לַאֲלֶכְּסַנְדְּרִיָּא שֶׁל מִצְרַיִם, וּבָנָה שָׁם מִזְבֵּחַ, וְהֶעֱלָה עָלָיו לְשֵׁם שָׁמַיִם, שֶׁנֶּאֱמַר: ״(וְהָיָה) בַּיּוֹם הַהוּא יִהְיֶה מִזְבֵּחַ לַה׳ בְּתוֹךְ אֶרֶץ מִצְרָיִם וּמַצֵּבָה אֵצֶל גְּבוּלָהּ לַה׳״.",
      "en": "<b>His fellow priests wanted to kill</b> Shimi. Shimi then <b>told them the entire incident,</b> that he had been tricked by his brother Onias, so the priests <b>wanted to kill Onias.</b> Onias <b>ran</b> away <b>from them, and they ran after him.</b> Onias <b>ran to the palace of the king, and they ran after him. Anyone who saw him would say: This is him, this is him,</b> and he was not able to escape unnoticed. Onias <b>went to Alexandria in Egypt and built an altar there, and sacrificed</b> offerings <b>upon it for the sake of Heaven. As it is stated: “In that day shall there be an altar to the Lord in the midst of the land of Egypt, and a pillar at its border, to the Lord”</b> (Isaiah 19:19). According to Rabbi Yehuda, the temple of Onias was dedicated to the worship of God."
+    },
+    {
+     "ref": "Menachot 109b",
+     "i": 16,
+     "he": "וּכְשֶׁשָּׁמְעוּ חֲכָמִים בַּדָּבָר, אָמְרוּ: וּמָה זֶה שֶׁבָּרַח מִמֶּנָּה כָּךְ, הַמְבַקֵּשׁ לֵירֵד לָהּ – עַל אַחַת כַּמָּה וְכַמָּה.",
+     "en": "<b>And when the Sages heard of the matter they said: If this one,</b> Onias, <b>who fled from</b> the position of High Priest and offered it to his brother, still was overcome with <b>such</b> jealousy to the point where he tried to have Shimi killed, <b>all the more so</b> will <b>one who wants to enter</b> a prestigious position be jealous of the one who already has that position."
     }
    ],
    "span": [
@@ -1505,8 +1534,8 @@
      "end": 15
     }
    ],
-   "words": 740,
-   "minutes": 5
+   "words": 807,
+   "minutes": 6
   }
  ],
  "out_of_scope": [

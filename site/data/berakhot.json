@@ -636,13 +636,18 @@
    "tractate": "berakhot",
    "ref": "Berakhot 18a",
    "refs": [
-    "Berakhot 18a",
-    "Berakhot 18b"
+    "Berakhot 18a"
    ],
    "start_segment": 12,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The story ends with Rabbi Hiyya's reply; segment 7 is the Gemara's exposition of the Benayahu verse and is dropped.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "While walking in a cemetery, Rabbi Ḥiyya tells Rabbi Yonatan to lift his dragging ritual fringes so as not to mock the dead, leading to a discussion on whether the deceased are aware of the living.",
    "segments": [
@@ -657,12 +662,6 @@
      "i": 13,
      "he": "אֲמַר לֵיהּ: וּמִי יָדְעִי כּוּלֵּי הַאי? וְהָא כְּתִיב: ״וְהַמֵּתִים אֵינָם יוֹדְעִים מְאוּמָה״! אֲמַר לֵיהּ: אִם קָרִיתָ — לֹא שָׁנִיתָ. אִם שָׁנִיתָ — לֹא שִׁלַּשְׁתָּ. אִם שִׁלַּשְׁתָּ — לֹא פֵּירְשׁוּ לְךָ. ״כִּי הַחַיִּים יוֹדְעִים שֶׁיָּמוּתוּ״ — אֵלּוּ צַדִּיקִים שֶׁבְּמִיתָתָן נִקְרְאוּ חַיִּים, שֶׁנֶּאֱמַר: ״וּבְנָיָהוּ בֶן יְהוֹיָדָע בֶּן אִישׁ חַי רַב פְּעָלִים מִקַּבְצְאֵל הוּא הִכָּה אֵת שְׁנֵי אֲרִאֵל מוֹאָב וְהוּא יָרַד וְהִכָּה אֶת הָאֲרִי בְּתוֹךְ הַבּוֹר בְּיוֹם הַשָּׁלֶג״.",
      "en": "Rabbi Yonatan <b>said to him: Do</b> the dead <b>know so much? Isn’t it stated: “And the dead know nothing”</b> (Ecclesiastes 9:5)? Rabbi Ḥiyya <b>said to him: If you read</b> the verse, <b>you did not</b> read it <b>a second time, and if you</b> read it <b>a second time, you did not</b> read it <b>a third time, and if you</b> read it <b>a third time, they did not explain it to you</b> properly. The meaning of the verse: “For the living know that they will die, and the dead know nothing and have no more reward, for their memory has been forgotten” (Ecclesiastes 9:5): <b>For the living know that they will die, these are the righteous, who even in their death are called living.</b> An allusion to this is <b>as it is stated: “And Benayahu, son of Yehoyada, son of a valiant man of Kabze’el, who had done mighty deeds, he smote the two altar-hearths of Moab; he went down also and slew a lion in the midst of a pit in time of snow”</b> (II Samuel 23:20)."
-    },
-    {
-     "ref": "Berakhot 18b",
-     "i": 0,
-     "he": "״בֶּן אִישׁ חַי״: אַטּוּ כּוּלֵּי עָלְמָא בְּנֵי מֵתֵי נִינְהוּ? אֶלָּא: ״בֶּן אִישׁ חַי״ — שֶׁאֲפִילּוּ בְּמִיתָתוֹ קָרוּי חַי. ״רַב פְּעָלִים מִקַּבְצְאֵל״ — שֶׁרִיבָּה וְקִבֵּץ פּוֹעֲלִים לַתּוֹרָה. ״וְהוּא הִכָּה אֵת שְׁנֵי אֲרִאֵל מוֹאָב״ — שֶׁלֹּא הִנִּיחַ כְּמוֹתוֹ לֹא בְּמִקְדָּשׁ רִאשׁוֹן וְלֹא בְּמִקְדָּשׁ שֵׁנִי.",
-     "en": "He was referred to in the verse as <b>son of a living man.</b> The Gemara wonders: <b>Is that to say,</b> the fact that the Bible referred to him with that appellation, <b>that all others are children of the dead? Rather,</b> the verse should be explained as follows: <b>The son of a living man</b> who lives forever, <b>who even in death is referred to as living. Man of Kabze’el who had done mighty deeds, as he accumulated and gathered many workers for</b> the sake of the <b>Torah. Who killed the two lion-hearted men [<i>Ariel</i>] of Moab, as</b> after his death <b>he left no one his equal, in either the First Temple or the Second Temple</b> periods, as the Temple is called <i>Ariel</i> (see Isaiah 29:1), and the two <i>Ariel</i> refers to the two Temples."
     }
    ],
    "span": [
@@ -677,8 +676,8 @@
      "end": 0
     }
    ],
-   "words": 376,
-   "minutes": 3
+   "words": 241,
+   "minutes": 2
   },
   {
    "id": "berakhot-18b-3-3",
@@ -690,7 +689,11 @@
    "start_segment": 3,
    "classification": "LOW_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Segments 7-8 hold the brother's rebuttal and their conclusion, which end the dialogue."
+   },
    "reviewed": false,
    "summary": "The sons of Rabbi Ḥiyya go to the villages and forget their studies, leading them to wonder if their deceased father is aware of their distress.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -700,6 +703,18 @@
      "i": 3,
      "he": "בְּנֵי רַבִּי חִיָּיא נְפוּק לְקִרְיָיתָא. אִייַּקַּר לְהוּ תַּלְמוּדַיְיהוּ. הֲווֹ קָא מִצַּעֲרִי לְאִדְּכוֹרֵיהּ. אֲמַר לֵיהּ חַד לְחַבְרֵיהּ: יָדַע אֲבוּן בְּהַאי צַעֲרָא? אֲמַר לֵיהּ אִידַּךְ: מְנָא יָדַע? וְהָא כְּתִיב: ״יִכְבְּדוּ בָנָיו וְלֹא יֵדָע״.",
      "en": "The Gemara relates a story on this topic: <b>The sons of Rabbi Ḥiyya went out to the villages</b> to oversee the laborers. <b>They forgot what they had learned and were struggling to recall it. One</b> of them <b>said to the other:</b> Does <b>our</b> deceased <b>father know of</b> our <b>anguish? The other said to him: From where would he know? Isn’t it written: “His sons are honored yet he shall not know it,</b> they come to sorrow and he shall not understand them” (Job 14:21)? The dead do not know."
+    },
+    {
+     "ref": "Berakhot 18b",
+     "i": 4,
+     "he": "אֲמַר לֵיהּ אִידַּךְ: וְלָא יָדַע? וְהָא כְּתִיב: ״אַךְ בְּשָׂרוֹ עָלָיו יִכְאָב וְנַפְשׁוֹ עָלָיו תֶּאֱבָל״. וְאָמַר רַבִּי יִצְחָק: קָשָׁה רִמָּה לַמֵּת כְּמַחַט בַּבָּשָׂר הַחַי!",
+     "en": "<b>The other said</b> back <b>to him: And</b> do the dead truly <b>not know? Isn’t it written: “Only in his flesh does he feel pain, in his soul does he mourn”</b> (Job 14:22)? Based on this verse <b>Rabbi Yitzḥak said:</b> Gnawing <b>maggots are as excruciating to the dead as</b> the stab of <b>a needle to the flesh of the living.</b> The dead must have the capacity to feel and know."
+    },
+    {
+     "ref": "Berakhot 18b",
+     "i": 5,
+     "he": "אָמְרִי: בְּצַעֲרָא דִידְהוּ — יָדְעִי, בְּצַעֲרָא דְאַחֲרִינָא — לָא יָדְעִי.",
+     "en": "In order to reconcile this contradiction <b>they said:</b> They <b>know of their own pain but do not know of the pain of others.</b>"
     }
    ],
    "span": [
@@ -709,8 +724,8 @@
      "end": 3
     }
    ],
-   "words": 89,
-   "minutes": 1
+   "words": 181,
+   "minutes": 2
   },
   {
    "id": "berakhot-18b-6-9",
@@ -1435,7 +1450,11 @@
    "start_segment": 14,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "The deposition of Rabban Gamliel ends in 25 with the three-weeks-to-one arrangement and the identity of the student, which completes the story."
+   },
    "reviewed": false,
    "summary": "After Rabban Gamliel publicly humiliates Rabbi Yehoshua over a legal dispute regarding the evening prayer, the Sages depose him and seek to appoint Rabbi Elazar ben Azarya as the new Nasi.",
    "segments": [
@@ -1558,6 +1577,12 @@
      "i": 11,
      "he": "אֲמַר רַבִּי יְהוֹשֻׁעַ: מוּטָב דְּאֵיקוּם וְאֵיזִיל אֲנָא לְגַבַּיְיהוּ. אֲתָא טְרַף אַבָּבָא. אֲמַר לְהוּ: מַזֶּה בֶּן מַזֶּה יַזֶּה. וְשֶׁאֵינוֹ לֹא מַזֶּה וְלֹא בֶּן מַזֶּה יֹאמַר לְמַזֶּה בֶּן מַזֶּה מֵימֶיךָ מֵי מְעָרָה וְאֶפְרְךָ אֵפֶר מִקְלֶה. אָמַר לוֹ רַבִּי עֲקִיבָא: רַבִּי יְהוֹשֻׁעַ, נִתְפַּיַּיסְתָּ? כְּלוּם עָשִׂינוּ אֶלָּא בִּשְׁבִיל כְּבוֹדְךָ, לְמָחָר אֲנִי וְאַתָּה נַשְׁכִּים לְפִתְחוֹ.",
      "en": "When he heard what happened, <b>Rabbi Yehoshua said: It is best if I go to them. He came and knocked on the door. He said to them</b> with a slight variation: <b>One who sprinkles</b> pure water on those who are ritually impure, <b>son of one who sprinkles</b> water <b>shall</b> continue <b>to sprinkle</b> water. And it is inappropriate that he who is <b>neither one who sprinkles nor son of one who sprinkles will say to one who sprinkles son of one who sprinkles: Your water is cave water</b> and not the running water required to purify one exposed to ritual impurity imparted by a corpse <b>and your ashes are burnt ashes</b> and not the ashes of a red heifer. <b>Rabbi Akiva said to him: Rabbi Yehoshua, have you been appeased? Everything we did was to</b> defend <b>your honor.</b> If you have forgiven him, none of us is opposed. <b>Early tomorrow you and I will go to</b> Rabban Gamliel’s <b>doorway</b> and offer to restore him to his position as <i>Nasi</i>."
+    },
+    {
+     "ref": "Berakhot 28a",
+     "i": 12,
+     "he": "אָמְרִי: הֵיכִי נַעֲבֵיד, נַעְבְּרֵיהּ — גְּמִירִי מַעֲלִין בַּקֹּדֶשׁ וְאֵין מוֹרִידִין. נִדְרוֹשׁ מָר חֲדָא שַׁבְּתָא וּמַר חֲדָא שַׁבְּתָא — אָתֵי לְקַנּאוֹיֵי. אֶלָּא: לִדְרוֹשׁ רַבָּן גַּמְלִיאֵל תְּלָתָא שַׁבָּתֵי וְרַבִּי אֶלְעָזָר בֶּן עֲזַרְיָה חֲדָא שַׁבְּתָא. וְהַיְינוּ דְּאָמַר מָר שַׁבָּת שֶׁל מִי הָיְתָה — שֶׁל רַבִּי אֶלְעָזָר בֶּן עֲזַרְיָה הָיְתָה. וְאוֹתוֹ תַּלְמִיד רַבִּי שִׁמְעוֹן בֶּן יוֹחַאי הֲוָה.",
+     "en": "The question arose what to do with Rabbi Elazar ben Azarya? <b>They said: What shall we do? Remove him</b> from his position. That is inappropriate as we <b>learned</b> a <i>halakha</i> through tradition: One <b>elevates</b> to a higher level of <b>sanctity and does not downgrade.</b> Therefore, one who was the <i>Nasi</i> of the Sanhedrin cannot be demoted. <b>Let</b> one <b>Sage lecture one week and</b> the other <b>Sage one week, they will come to be jealous</b> one of another, as they will be forced to appoint one as the acting head of the Sanhedrin. <b>Rather, Rabban Gamliel will lecture three weeks and Rabbi Elazar ben Azarya</b> will lecture as head of the yeshiva <b>one week.</b> That arrangement was adopted <b>and that is</b> the explanation of the exchange in tractate <i>Ḥagiga</i>: <b>Whose week was it? It was the week of Rabbi Elazar ben Azarya.</b> One final detail: <b>That student</b> who asked the original question that sparked this entire incident <b>was Rabbi Shimon ben Yoḥai.</b>"
     }
    ],
    "span": [
@@ -1572,8 +1597,8 @@
      "end": 11
     }
    ],
-   "words": 2200,
-   "minutes": 15
+   "words": 2362,
+   "minutes": 16
   },
   {
    "id": "berakhot-28b-5-6",
@@ -1672,7 +1697,13 @@
    "start_segment": 22,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The events end when Shmuel HaKatan is not removed (segment 8); segments 9-12 are the Gemara's argument and segment 13 belongs to another site story.",
+    "start_trim": 0,
+    "end_trim": 5
+   },
    "reviewed": false,
    "summary": "Rabban Gamliel requests a new blessing for the heretics, which Shmuel HaKatan institutes, only for Shmuel to forget it himself a year later while leading the congregation. Shmuel HaKatan forgets the blessing against heretics while leading the prayer, but after he struggles to remember it for hours, the Sages do not remove him because he was the one who originally composed it.",
    "segments": [
@@ -1693,36 +1724,6 @@
      "i": 0,
      "he": "וְהִשְׁקִיף בָּהּ שְׁתַּיִם וְשָׁלֹשׁ שָׁעוֹת, וְלֹא הֶעֱלוּהוּ.",
      "en": "<b>and scrutinized it,</b> in an attempt to remember the blessing for <b>two or three hours, and they did not remove him</b> from serving as prayer leader."
-    },
-    {
-     "ref": "Berakhot 29a",
-     "i": 1,
-     "he": "אַמַּאי לֹא הֶעֱלוּהוּ? וְהָאָמַר רַב יְהוּדָה אָמַר רַב: טָעָה בְּכָל הַבְּרָכוֹת כֻּלָּן — אֵין מַעֲלִין אוֹתוֹ, בְּבִרְכַּת הַמִּינִים — מַעֲלִין אוֹתוֹ. חָיְישִׁינַן שֶׁמָּא מִין הוּא?",
-     "en": "The Gemara asks: <b>Why did they not remove him? Didn’t Rav Yehuda say</b> that <b>Rav said:</b> One who was serving as the prayer leader before the congregation and <b>erred in</b> reciting <b>any of the blessings, they do not remove him</b> from serving as the prayer leader. However, one who erred while reciting <b>the blessing of the heretics they remove him,</b> as <b>we suspect that perhaps he is a heretic</b> and intentionally omitted the blessing to avoid cursing himself. Why, then, did they not remove Shmuel HaKatan?"
-    },
-    {
-     "ref": "Berakhot 29a",
-     "i": 2,
-     "he": "שָׁאנֵי שְׁמוּאֵל הַקָּטָן דְּאִיהוּ תַּקְּנַהּ.",
-     "en": "The Gemara answers: <b>Shmuel HaKatan is different because he instituted</b> this blessing and there is no suspicion of him."
-    },
-    {
-     "ref": "Berakhot 29a",
-     "i": 3,
-     "he": "וְנֵיחוּשׁ דִּלְמָא הֲדַר בֵּיהּ. אָמַר אַבָּיֵי: גְּמִירִי, טָבָא לָא הָוֵי בִּישָׁא.",
-     "en": "The Gemara continues: <b>Let us suspect</b> that <b>perhaps he reconsidered</b> and, although he had been righteous, he had a change of heart? <b>Abaye said: We learned</b> through tradition that a <b>good</b> person <b>does not become wicked.</b>"
-    },
-    {
-     "ref": "Berakhot 29a",
-     "i": 4,
-     "he": "וְלָא?! וְהָכְתִיב: ״וּבְשׁוּב צַדִּיק מִצִּדְקָתוֹ וְעָשָׂה עָוֶל״. הָהוּא רָשָׁע מֵעִיקָּרוֹ, אֲבָל צַדִּיק מֵעִיקָּרוֹ — לָא.",
-     "en": "The Gemara challenges this: <b>And</b> does he <b>not</b> become wicked? <b>Isn’t it</b> explicitly <b>written: “And when the righteous one returns from his righteousness and does wicked</b> like all of the abominations that the wicked one has done, will he live? All of the righteous deeds that he has done will not be remembered given the treachery that he has carried out, and in his sin that he has transgressed, for these he shall die” (Ezekiel 18:24)? Abaye responds: <b>That</b> verse refers to a righteous individual who was <b>initially wicked</b> and repented, but ultimately returned to his evil ways. <b>However, one who is initially righteous</b> does <b>not</b> become wicked."
-    },
-    {
-     "ref": "Berakhot 29a",
-     "i": 5,
-     "he": "וְלָא?! וְהָא תְּנַן: אַל תַּאֲמִין בְּעַצְמְךָ עַד יוֹם מוֹתְךָ, שֶׁהֲרֵי יוֹחָנָן כֹּהֵן גָּדוֹל שִׁמֵּשׁ בִּכְהוּנָּה גְּדוֹלָה שְׁמֹנִים שָׁנָה וּלְבַסּוֹף נַעֲשָׂה צָדוֹקִי.",
-     "en": "The Gemara asks: <b>And</b> does he <b>not</b> become wicked? <b>Didn’t we learn</b> in a mishna: <b>Do not be sure of yourself until the day you die, as Yoḥanan the High Priest served in the High Priesthood for eighty years and ultimately became a Sadducee.</b> Even one who is outstanding in his righteousness can become a heretic."
     }
    ],
    "span": [
@@ -1737,8 +1738,8 @@
      "end": 5
     }
    ],
-   "words": 458,
-   "minutes": 4
+   "words": 153,
+   "minutes": 2
   },
   {
    "id": "berakhot-29a-5-5",
@@ -3185,10 +3186,20 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 5 is the opening of the incident: Ulla's visit and his refusal to send the cup to Yalta."
+   },
    "reviewed": false,
    "summary": "When Ulla refuses to send the cup of blessing to Rav Nahman's wife Yalta, she reacts by smashing four hundred barrels of wine, leading to a further exchange between them.",
    "segments": [
+    {
+     "ref": "Berakhot 51b",
+     "i": 4,
+     "he": "עוּלָּא אִקְּלַע לְבֵי רַב נַחְמָן. כְּרֵיךְ רִיפְתָּא, בָּרֵיךְ בִּרְכַּת מְזוֹנָא, יְהַב לֵיהּ כָּסָא דְּבִרְכְּתָא לְרַב נַחְמָן. אֲמַר לֵיהּ רַב נַחְמָן: לִישַׁדַּר מָר כָּסָא דְבִרְכְּתָא לְיַלְתָּא. אֲמַר לֵיהּ: הָכִי אָמַר רַבִּי יוֹחָנָן: אֵין פְּרִי בִטְנָהּ שֶׁל אִשָּׁה מִתְבָּרֵךְ אֶלָּא מִפְּרִי בִּטְנוֹ שֶׁל אִישׁ, שֶׁנֶּאֱמַר ״וּבֵרַךְ פְּרִי בִטְנְךָ״. ״פְּרִי בִטְנָהּ״ לֹא נֶאֱמַר, אֶלָּא ״פְּרִי בִטְנְךָ״.",
+     "en": "The Gemara relates: <b>Ulla happened</b> to come <b>to the house of Rav Naḥman. He ate bread, recited Grace after Meals, and gave the cup of blessing to Rav Naḥman. Rav Naḥman said to him: Master, please send the cup of blessing to Yalta,</b> my wife. Ulla <b>responded to him:</b> There is no need, <b>as Rabbi Yoḥanan said as follows: The fruit of a woman’s body is blessed only from the fruit of a man’s body, as it is stated:</b> “And He will love you, and bless you, and make you numerous, <b>and He will bless the fruit of your body”</b> (Deuteronomy 7:13). The Gemara infers: “He will bless <b>the fruit of her body” was not stated. Rather,</b> “He will bless <b>the fruit of your</b> [masculine singular] <b>body.”</b> For his wife to be blessed with children, it is sufficient to give the cup to Rav Naḥman."
+    },
     {
      "ref": "Berakhot 51b",
      "i": 5,
@@ -3209,8 +3220,8 @@
      "end": 6
     }
    ],
-   "words": 203,
-   "minutes": 2
+   "words": 348,
+   "minutes": 3
   },
   {
    "id": "berakhot-53b-16-16",
@@ -3316,10 +3327,20 @@
    "start_segment": 12,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Mar son of Ravina's willow-spring miracle in segment 4 is part of the same story, since his blessing in segment 5 names both the willows and the camel."
+   },
    "reviewed": false,
    "summary": "Mar son of Ravina narrowly escapes a wild camel in Mehoza when a wall miraculously opens to provide him shelter.",
    "segments": [
+    {
+     "ref": "Berakhot 54a",
+     "i": 11,
+     "he": "וּמָר בְּרֵיהּ דְּרָבִינָא הֲוָה קָאָזֵיל בְּפַקְתָּא דַעֲרָבוֹת וּצְחָא לְמַיָּא. אִתְעֲבִיד לֵיהּ נִיסָּא, אִיבְּרִי לֵיהּ עֵינָא דְמַיָּא, וְאִישְׁתִּי.",
+     "en": "<b>And</b> once when <b>Mar, son of Ravina, was walking in a valley of willows and</b> was <b>thirsty for water, a miracle was performed for him</b> and <b>a spring of water was created for him, and he drank.</b>"
+    },
     {
      "ref": "Berakhot 54a",
      "i": 12,
@@ -3334,8 +3355,8 @@
      "end": 12
     }
    ],
-   "words": 138,
-   "minutes": 1
+   "words": 175,
+   "minutes": 2
   },
   {
    "id": "berakhot-55a-5-5",
@@ -3821,7 +3842,11 @@
    "start_segment": 3,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rav Ketina's reply calling the necromancer a liar in segment 6 finishes the encounter; the later explanations of earthquakes are discussion."
+   },
    "reviewed": false,
    "summary": "While Rav Ketina was traveling, he arrived at a necromancer's house just as an earthquake occurred, leading to a confrontation over the supernatural cause of the event.",
    "segments": [
@@ -3830,6 +3855,12 @@
      "i": 3,
      "he": "וְעַל הַזְּוָעוֹת. מַאי זְוָעוֹת? אָמַר רַב קַטִּינָא: גּוּהָא. רַב קַטִּינָא הֲוָה קָאָזֵיל בְּאוֹרְחָא. כִּי מְטָא אַפִּתְחָא דְּבֵי אוֹבָא טַמְיָא גְּנַח גּוּהָא. אָמַר: מִי יָדַע אוֹבָא טַמְיָא הַאי גּוּהָא מַהוּ? רְמָא לֵיהּ קָלָא: קַטִּינָא קַטִּינָא, אַמַּאי לָא יָדַעְנָא? בְּשָׁעָה שֶׁהַקָּדוֹשׁ בָּרוּךְ הוּא זוֹכֵר אֶת בָּנָיו שֶׁשְּׁרוּיִים בְּצַעַר בֵּין אוּמּוֹת הָעוֹלָם מוֹרִיד שְׁתֵּי דְמָעוֹת לַיָּם הַגָּדוֹל, וְקוֹלוֹ נִשְׁמָע מִסּוֹף הָעוֹלָם וְעַד סוֹפוֹ, וְהַיְינוּ גּוּהָא.",
      "en": "<b>And</b> we learned in the mishna that <b>over <i>zeva’ot</i></b> one recites the blessing: Whose strength and power fill the world. The Gemara asks: <b>What</b> are <b><i>zeva’ot</i>? Rav Ketina said: An earthquake.</b> The Gemara relates: <b>Rav Ketina was once walking along the road when he came to the entrance of the house of a necromancer and an earthquake rumbled. He said: Does this necromancer know what is this earthquake?</b> The necromancer <b>raised his voice</b> and said: <b>Ketina, Ketina, why would I not know?</b> Certainly this earthquake occurred because <b>when the Holy One, Blessed be He, remembers His children who are suffering among the nations of the world, He sheds two tears into the great sea. The sound</b> of their reverberation <b>is heard from one end of the earth to the other. And that is an earthquake.</b>"
+    },
+    {
+     "ref": "Berakhot 59a",
+     "i": 4,
+     "he": "אָמַר רַב קַטִּינָא: אוֹבָא טַמְיָא כַּדִּיב הוּא, וּמִילֵּיהּ כְּדִיבִין. אִי הָכִי — גּוּהָא גּוּהָא מִיבְּעֵי לֵיהּ? וְלָא הִיא, גּוּהָא גּוּהָא עָבֵיד, וְהַאי דְּלָא אוֹדִי לֵיהּ, כִּי הֵיכִי דְּלָא לִיטְעֵי כּוּלֵּי עָלְמָא אַבָּתְרֵיהּ.",
+     "en": "<b>Rav Ketina said: The necromancer is a liar and his statements are lies. If so, it would necessitate an earthquake</b> followed by another <b>earthquake,</b> one for each tear. The Gemara remarks: <b>That is not so,</b> as it indeed <b>causes an earthquake</b> followed by another <b>earthquake; and the fact</b> that Rav Ketina <b>did not admit that</b> the necromancer was correct was <b>so that everyone would not mistakenly follow him.</b>"
     }
    ],
    "span": [
@@ -3839,8 +3870,8 @@
      "end": 3
     }
    ],
-   "words": 136,
-   "minutes": 1
+   "words": 204,
+   "minutes": 2
   },
   {
    "id": "berakhot-60a-15-15",
@@ -3977,16 +4008,16 @@
    "start_segment": 11,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 is Rabbi Akiva's general maxim; the story of his night in the field is 6-7.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Rabbi Akiva is refused lodging in a city and forced to sleep in a field, where his lamp and animals are destroyed, only to discover the next morning that these losses kept him hidden from a marauding army that captured the city.",
    "segments": [
-    {
-     "ref": "Berakhot 60b",
-     "i": 11,
-     "he": "אָמַר רַב הוּנָא אָמַר רַב מִשּׁוּם רַבִּי מֵאִיר, וְכֵן תָּנָא מִשְּׁמֵיהּ דְּרַבִּי עֲקִיבָא: לְעוֹלָם יְהֵא אָדָם רָגִיל לוֹמַר: ״כׇּל דְּעָבֵיד רַחֲמָנָא לְטָב עָבֵיד״.",
-     "en": "<b>Rav Huna said</b> that <b>Rav said</b> that <b>Rabbi Meir said; and so it was taught</b> in a <i>baraita</i> <b>in the name of Rabbi Akiva: One must always accustom oneself to say: Everything that God does, He does for the best.</b>"
-    },
     {
      "ref": "Berakhot 60b",
      "i": 12,
@@ -4012,7 +4043,7 @@
      "end": 0
     }
    ],
-   "words": 193,
+   "words": 153,
    "minutes": 2
   },
   {

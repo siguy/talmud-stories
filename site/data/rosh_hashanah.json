@@ -44,7 +44,13 @@
    "start_segment": 10,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Rabbi Akiva's two tithes and their stated basis complete the story; segment 7 is Rabbi Yosei bar Yehuda's differing opinion on why he acted, which is legal discussion.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Rabbi Akiva picks an etrog on the first of Shevat and performs two different tithes due to the ambiguity of the new year for trees.",
    "segments": [
@@ -59,12 +65,6 @@
      "i": 0,
      "he": "אֶחָד כְּדִבְרֵי בֵּית שַׁמַּאי, וְאֶחָד כְּדִבְרֵי בֵּית הִלֵּל.",
      "en": "<b>One</b> tithe was <b>in accordance with the statement of Beit Shammai</b> that the new year for trees is on the first of Shevat, in which case it was already the third or sixth year, when one must set aside poor man’s tithe; <b>and one</b> tithe was <b>in accordance with the statement of Beit Hillel</b> that the new year for trees is on the fifteenth of Shevat, so it was still the second or fifth year, when one must set aside second tithe."
-    },
-    {
-     "ref": "Rosh Hashanah 14b",
-     "i": 1,
-     "he": "רַבִּי יוֹסֵי בַּר יְהוּדָה אוֹמֵר: לֹא מִנְהַג בֵּית שַׁמַּאי וּבֵית הִלֵּל נָהַג בָּהּ, אֶלָּא מִנְהַג רַבָּן גַּמְלִיאֵל וְרַבִּי אֱלִיעֶזֶר נָהַג בָּהּ.",
-     "en": "<b>Rabbi Yosei bar Yehuda says: He did not act</b> as he did in order to conform <b>with the</b> conflicting <b>practices of Beit Shammai and Beit Hillel. Rather, he acted</b> as he did in order to conform <b>with the</b> conflicting <b>practices of Rabban Gamliel and Rabbi Eliezer.</b>"
     }
    ],
    "span": [
@@ -79,7 +79,7 @@
      "end": 1
     }
    ],
-   "words": 214,
+   "words": 168,
    "minutes": 2
   },
   {
@@ -216,10 +216,20 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 5 contains the decree, Yehuda ben Shammua and the visit to the matron that open the story; its legal lead-in cannot be separated."
+   },
    "reviewed": false,
    "summary": "Yehuda ben Shammua and his colleagues, following the advice of a Roman matron, staged a nighttime protest against anti-Jewish decrees, leading to their successful nullification.",
    "segments": [
+    {
+     "ref": "Rosh Hashanah 19a",
+     "i": 4,
+     "he": "מֵתִיב רַב טוֹבִי בַּר מַתְנָה: בְּעֶשְׂרִים וּתְמָנְיָא בֵּיהּ אֲתָת בְּשׂוֹרְתָּא טָבְתָּא לִיהוּדָאֵי דְּלָא יְעִידוֹן מֵאוֹרָיְיתָא. שֶׁגָּזְרָה מַלְכוּת הָרְשָׁעָה גְּזֵרָה שֶׁלֹּא יַעַסְקוּ בַּתּוֹרָה, וְשֶׁלֹּא יָמוּלוּ אֶת בְּנֵיהֶם, וְשֶׁיְּחַלְּלוּ שַׁבָּתוֹת. מָה עָשָׂה יְהוּדָה בֶּן שַׁמּוּעַ וַחֲבֵירָיו? הָלְכוּ וְנָטְלוּ עֵצָה מִמַּטְרוֹנִיתָא אַחַת שֶׁכׇּל גְּדוֹלֵי רוֹמִי מְצוּיִין אֶצְלָהּ.",
+     "en": "<b>Rav Tovi bar Mattana raised an objection</b> against the opinion that <i>Megillat Ta’anit</i> was nullified, from that which is written in it: <b>On the twenty-eighth of</b> Adar the <b>good tidings came to the Jews that they should not turn away from the Torah,</b> and on that day fasting is forbidden. And this is explained: <b>For the wicked kingdom issued a decree against Israel that they should not occupy themselves with Torah</b> study, <b>and that they should not circumcise their sons, and that they should desecrate Shabbat. What did Yehuda ben Shammua and his colleagues do? They went and took advice from</b> a certain <b>matron [<i>matronita</i>] whom all the prominent men of Rome would visit regularly,</b> thinking that she would know how to annul the decree."
+    },
     {
      "ref": "Rosh Hashanah 19a",
      "i": 5,
@@ -234,8 +244,8 @@
      "end": 5
     }
    ],
-   "words": 114,
-   "minutes": 1
+   "words": 241,
+   "minutes": 2
   },
   {
    "id": "rosh_hashanah-21a-1-1",

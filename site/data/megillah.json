@@ -12,10 +12,20 @@
    "start_segment": 4,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "The story starts in segment 4, where Yonatan ben Uzziel's translation makes the land quake and a Divine Voice asks who revealed God's secrets; segment 5 is his answer to that voice."
+   },
    "reviewed": false,
    "summary": "Yonatan ben Uzziel stands to defend his translation of the Prophets and is subsequently barred by a Divine Voice from translating the Hagiographa.",
    "segments": [
+    {
+     "ref": "Megillah 3a",
+     "i": 3,
+     "he": "וְאָמַר רַבִּי יִרְמְיָה וְאִיתֵּימָא רַבִּי חִיָּיא בַּר אַבָּא: תַּרְגּוּם שֶׁל תּוֹרָה — אוּנְקְלוֹס הַגֵּר אֲמָרוֹ מִפִּי רַבִּי אֱלִיעֶזֶר וְרַבִּי יְהוֹשֻׁעַ. תַּרְגּוּם שֶׁל נְבִיאִים — יוֹנָתָן בֶּן עוּזִּיאֵל אֲמָרוֹ מִפִּי חַגַּי זְכַרְיָה וּמַלְאָכִי, וְנִזְדַּעְזְעָה אֶרֶץ יִשְׂרָאֵל אַרְבַּע מֵאוֹת פַּרְסָה עַל אַרְבַּע מֵאוֹת פַּרְסָה. יָצְתָה בַּת קוֹל וְאָמְרָה: מִי הוּא זֶה שֶׁגִּילָּה סְתָרַיי לִבְנֵי אָדָם?",
+     "en": "§ The Gemara cites another ruling of Rabbi Yirmeya or Rabbi Ḥiyya bar Abba. <b>Rabbi Yirmeya said, and some say</b> that it was <b>Rabbi Ḥiyya bar Abba</b> who said: <b>The</b> Aramaic <b>translation of the Torah</b> used in the synagogues <b>was composed by Onkelos the convert based on</b> the teachings of <b>Rabbi Eliezer and Rabbi Yehoshua. The</b> Aramaic <b>translation of the Prophets was composed by Yonatan ben Uzziel based on</b> a tradition going back to the last prophets, <b>Haggai, Zechariah, and Malachi.</b> The Gemara relates that when Yonatan ben Uzziel wrote his translation, <b>Eretz Yisrael quaked</b> over an area of <b>four hundred parasangs [<i>parsa</i>] by four hundred parasangs,</b> and <b>a Divine Voice emerged and said: Who is this who has revealed My secrets to mankind?</b>"
+    },
     {
      "ref": "Megillah 3a",
      "i": 4,
@@ -36,8 +46,8 @@
      "end": 5
     }
    ],
-   "words": 188,
-   "minutes": 2
+   "words": 314,
+   "minutes": 3
   },
   {
    "id": "megillah-5a-18-18",
@@ -745,7 +755,11 @@
    "start_segment": 12,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Adds segment 7, where the Rabbis object and Rava admits there is no remedy, closing the Roman synagogue incident."
+   },
    "reviewed": false,
    "summary": "The priests of a Roman synagogue seek Rava's help when a corpse in an adjacent room prevents them from entering, leading to a discussion on using the Ark as a partition.",
    "segments": [
@@ -754,6 +768,12 @@
      "i": 12,
      "he": "הָהוּא בֵּי כְנִישְׁתָּא (דִּיהוּדָאֵי) [דְּ]רוֹמָאֵי דַּהֲוָה פְּתִיחַ לְהָהוּא אִידְּרוֹנָא דַּהֲוָה מַחֵית בֵּיהּ מֵת, וַהֲווֹ בָּעוּ כָּהֲנֵי לְמֵיעַל לְצַלּוֹיֵי הָתָם. אֲתוֹ, אֲמַרוּ לֵיהּ לְרָבָא. אֲמַר לְהוּ: דַּלּוֹ תֵּיבוּתָא אוֹתְבוּהָ, דְּהָוֵה לֵיהּ כְּלִי עֵץ הֶעָשׂוּי לְנַחַת, וּכְלִי עֵץ הֶעָשׂוּי לְנַחַת אֵינוֹ מְקַבֵּל טוּמְאָה וְחוֹצֵץ בִּפְנֵי הַטּוּמְאָה.",
      "en": "The Gemara relates: There was <b>a certain synagogue of the Jews of Rome that opened out into a room in which a corpse was lying,</b> thereby spreading the ritual impurity of the corpse throughout the synagogue. <b>And the priests wished to enter</b> the synagogue <b>in order to pray there.</b> However, it was prohibited for them to do so because a priest may not come in contact with ritual impurity of a corpse. <b>They came and spoke to Rava,</b> about what to do. <b>He said to them: Lift up the ark and put it down</b> in the opening between the two rooms, <b>as it is a wooden utensil that is designated to rest</b> in one place and not be moved from there, <b>and</b> the <i>halakha</i> is that <b>a wooden utensil that is designated to rest is not susceptible to ritual impurity, and</b> therefore it <b>serves as a barrier to</b> prevent <b>ritual impurity</b> from spreading."
+    },
+    {
+     "ref": "Megillah 26b",
+     "i": 13,
+     "he": "אֲמַרוּ לֵיהּ רַבָּנַן לְרָבָא: וְהָא זִמְנִין דִּמְטַלְטְלִי לֵיהּ כִּי מַנַּח סֵפֶר תּוֹרָה עִלָּוֵיהּ, וְהָוֵה לֵיהּ מִיטַּלְטֵל מָלֵא וְרֵיקָם! אִי הָכִי לָא אֶפְשָׁר.",
+     "en": "<b>The Rabbis said to Rava: But isn’t</b> the ark <b>sometimes moved when a Torah scroll is</b> still <b>resting inside it, and</b> therefore <b>it is</b> a utensil that <b>is moved</b> both <b>when it is full and when it is empty;</b> such a utensil is susceptible to ritual impurity and cannot prevent ritual impurity from spreading. He said to them: <b>If so,</b> if it is as you claim, then <b>it is not possible</b> to remedy the situation."
     }
    ],
    "span": [
@@ -763,7 +783,7 @@
      "end": 12
     }
    ],
-   "words": 153,
+   "words": 228,
    "minutes": 2
   },
   {
@@ -777,16 +797,16 @@
    "start_segment": 23,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Drops segment 6, the baraita stating the general rule; the Rav Huna incident runs from segment 7 to 9.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "During a fast day decreed by Rav Huna, Rav Ḥana bar Ḥanilai and his townspeople travel to him, pay a charity levy, and then request the funds back to distribute in their own town.",
    "segments": [
-    {
-     "ref": "Megillah 27a",
-     "i": 23,
-     "he": "תַּנְיָא נָמֵי הָכִי: בְּנֵי הָעִיר שֶׁהָלְכוּ לְעִיר אַחֶרֶת וּפָסְקוּ עֲלֵיהֶן צְדָקָה — נוֹתְנִין, וּכְשֶׁהֵן בָּאִין, מְבִיאִין אוֹתָהּ עִמָּהֶן. וְיָחִיד שֶׁהָלַךְ לְעִיר אַחֶרֶת וּפָסְקוּ עָלָיו צְדָקָה — תִּנָּתֵן לַעֲנִיֵּי אוֹתָהּ הָעִיר.",
-     "en": "The Gemara comments: <b>That is also taught</b> in a <i>baraita</i>: In the case of <b>residents of a town who</b> collectively <b>went to another town and,</b> while there, the local charity collectors <b>made them pledge</b> a certain sum for <b>charity, they must give</b> the promised sum to the town’s charity collector. <b>But when they go</b> home, their money is returned to them, and <b>they bring it</b> back <b>with them. But</b> in the case of <b>an individual who went</b> from his hometown <b>to another town and,</b> while there, the local charity collectors <b>made him pledge</b> a certain sum for <b>charity, he should give it to the poor of that town.</b>"
-    },
     {
      "ref": "Megillah 27a",
      "i": 24,
@@ -818,8 +838,8 @@
      "end": 0
     }
    ],
-   "words": 356,
-   "minutes": 3
+   "words": 247,
+   "minutes": 2
   },
   {
    "id": "megillah-27b-20-21",
@@ -899,7 +919,11 @@
    "start_segment": 9,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Adds segment 8, Rabbi Nehunya's answer to Akiva's question about longevity, the point of the episode."
+   },
    "reviewed": false,
    "summary": "When Rabbi Akiva asks Rabbi Nehunya about his longevity, Nehunya's attendants beat Akiva, forcing him to climb a palm tree to continue his questioning.",
    "segments": [
@@ -914,6 +938,12 @@
      "i": 10,
      "he": "אֲמַר לֵיהּ: ״אֶחָד״ — מְיוּחָד שֶׁבְּעֶדְרוֹ.",
      "en": "Rabbi Neḥunya then addressed Rabbi Akiva’s questions. With regard to the second question, <b>he said to him:</b> The word <b>“one”</b> teaches that the lamb should be <b>the unique one of its flock,</b> i.e., only the best quality lamb should be used."
+    },
+    {
+     "ref": "Megillah 28a",
+     "i": 11,
+     "he": "אֲמַר לֵיהּ: מִיָּמַי לֹא קִבַּלְתִּי מַתָּנוֹת, וְלֹא עָמַדְתִּי עַל מִדּוֹתַי, וּוַתְּרָן בְּמָמוֹנִי הָיִיתִי.",
+     "en": "With regard to the original question, Rabbi Neḥunya <b>said to him: In</b> all <b>my days I never accepted gifts. Nor was I</b> ever <b>inflexible</b> by exacting <b>a measure</b> of retribution against those who wronged me. <b>And I was</b> always <b>openhanded with my money.</b>"
     }
    ],
    "span": [
@@ -923,7 +953,7 @@
      "end": 10
     }
    ],
-   "words": 177,
+   "words": 220,
    "minutes": 2
   },
   {

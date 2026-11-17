@@ -756,10 +756,20 @@
    "start_segment": 5,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "The doors opening by themselves continues the baraita of omens in the forty years before the destruction that begins in [4]; without it the story opens mid-sentence."
+   },
    "reviewed": false,
    "summary": "When the Temple doors began opening on their own, Rabban Yoḥanan ben Zakkai scolded them, identifying it as a sign of the Temple's future destruction.",
    "segments": [
+    {
+     "ref": "Yoma 39b",
+     "i": 4,
+     "he": "תָּנוּ רַבָּנַן: אַרְבָּעִים שָׁנָה קוֹדֶם חוּרְבַּן הַבַּיִת לֹא הָיָה גּוֹרָל עוֹלֶה בְּיָמִין, וְלֹא הָיָה לָשׁוֹן שֶׁל זְהוֹרִית מַלְבִּין, וְלֹא הָיָה נֵר מַעֲרָבִי דּוֹלֵק.",
+     "en": "<b>The Sages taught:</b> During the tenure of Shimon HaTzaddik, the lot for God always arose in the High Priest’s right hand; after his death, it occurred only occasionally; but during the <b>forty years prior to the destruction of the</b> Second <b>Temple,</b> the <b>lot</b> for God <b>did not arise in the</b> High Priest’s <b>right</b> hand at all. So too, <b>the strip of crimson</b> wool that was tied to the head of the goat that was sent to Azazel <b>did not turn white, and the westernmost lamp</b> of the candelabrum <b>did not burn</b> continually."
+    },
     {
      "ref": "Yoma 39b",
      "i": 5,
@@ -774,8 +784,8 @@
      "end": 5
     }
    ],
-   "words": 83,
-   "minutes": 1
+   "words": 175,
+   "minutes": 2
   },
   {
    "id": "yoma-47a-10-10",
@@ -1540,7 +1550,13 @@
    "start_segment": 3,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 completes the matron story; segment 6 is the Gemara's question and answer about whether he broke his oath.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Rabbi Yoḥanan seeks treatment for a gum disease from a noblewoman and uses a clever oath to extract and publicize her secret remedy.",
    "segments": [
@@ -1549,12 +1565,6 @@
      "i": 3,
      "he": "וְעוֹד אָמַר רַבִּי מַתְיָא: רַבִּי יוֹחָנָן חָשׁ בְּצַפְדִּינָא. אֲזַל גַּבַּהּ דְּהַהִיא מַטְרוֹנִיתָא, עֲבַדָא לֵיהּ מִלְּתָא חַמְשָׁא וּמַעֲלֵי שַׁבְּתָא. אֲמַר לַהּ: בְּשַׁבָּת מַאי? אֲמַרָה לֵיהּ: לָא צְרִיכַתְּ. אִי מִצְטְרִיכְנָא מַאי? אֲמַרָה לֵיהּ: אִישְׁתְּבַע לִי דְּלָא מְגַלֵּית, אִישְׁתְּבַע: לֵאלָהָא דְיִשְׂרָאֵל לָא מְגַלֵּינָא. נְפַק דַּרְשַׁהּ בְּפִירְקָא.",
      "en": "§ The mishna said: <b>And furthermore, Rabbi Matya</b> ben Ḥarash <b>said:</b> With regard to one who suffers pain in his throat, one may place medicine inside his mouth on Shabbat, although administering a remedy is prohibited on Shabbat. The Gemara discusses a related incident: <b>Rabbi Yoḥanan suffered</b> from the illness <b><i>tzefidna</i>,</b> which first affects the teeth and gums and then the intestines. <b>He went to a certain</b> gentile <b>matron [<i>matronita</i>]</b> who was a well-known healer. <b>She prepared a medicine for him on Thursday and Friday. He said to her: What</b> shall I do <b>on Shabbat,</b> when I cannot come to collect the medicine from you? <b>She said to him: You will not need</b> it. He asked her: <b>If I do need</b> it, <b>what</b> shall I do? <b>She said to him: Swear to me that you will not reveal</b> the remedy; then I will tell you, and you can prepare it yourself should you need it. <b>He swore: To the God of the Jews, I will not reveal it.</b> She told him the remedy. Rabbi Yoḥanan then <b>went out and taught it publicly,</b> revealing the secret of the remedy."
-    },
-    {
-     "ref": "Yoma 84a",
-     "i": 4,
-     "he": "וְהָא אִישְׁתְּבַע לַהּ! לֵאלָהָא דְיִשְׂרָאֵל לָא מְגַלֵּינָא. הָא לְעַמּוֹ יִשְׂרָאֵל — מְגַלֵּינָא. וְהָא אִיכָּא חִלּוּל הַשֵּׁם! דִּמְגַלֵּי לַהּ מֵעִיקָּרָא.",
-     "en": "The Gemara is surprised at this: <b>But he swore to her</b> that he would not reveal it. The Gemara answers that in his vow he declared: <b>I will not reveal it to the God of the Jews.</b> However, his words imply: <b>I will reveal it to His people, the Jews.</b> The Gemara asks: <b>Still, there is a desecration of God’s name,</b> as the matron now thinks that a great man of Rabbi Yoḥanan’s stature broke his vow. The Gemara answers: <b>He revealed</b> it <b>to her at the outset.</b> As soon as she revealed the remedy to him, he told her that his vow would not prevent him from publicizing the remedy."
     }
    ],
    "span": [
@@ -1564,8 +1574,8 @@
      "end": 4
     }
    ],
-   "words": 302,
-   "minutes": 3
+   "words": 191,
+   "minutes": 2
   },
   {
    "id": "yoma-85a-12-14",
@@ -1697,7 +1707,7 @@
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "While Rav is reciting Torah for Rabbi Yehuda HaNasi, he repeatedly restarts the portion as different sages enter the room. Rav repeatedly restarts his Torah reading as various sages enter the room, until Rabbi Ḥanina arrives and Rav refuses to restart again.",
+   "summary": "After Rav did not restart his reading out of respect for Rabbi Hanina bar Hama, he went to apologize every Yom Kippur eve for thirteen years, but Rabbi Hanina, who had dreamed Rav was destined to lead a yeshiva in Babylonia, would not be appeased.",
    "segments": [
     {
      "ref": "Yoma 87a",
@@ -1710,6 +1720,18 @@
      "i": 0,
      "he": "אֲתָא רַבִּי חִיָּיא — הֲדַר לְרֵישָׁא. עֲיַיל בַּר קַפָּרָא — הֲדַר לְרֵישָׁא. אֲתָא רַבִּי שִׁמְעוֹן בְּרַבִּי — הֲדַר לְרֵישָׁא. אֲתָא רַבִּי חֲנִינָא (בַּר) חָמָא, אָמַר: כּוּלֵּי הַאי נֶהְדַּר וְנֵיזִיל? לָא הֲדַר. אִיקְּפִיד רַבִּי חֲנִינָא, אֲזַל רַב לְגַבֵּיהּ תְּלֵיסַר מַעֲלֵי יוֹמֵי דְּכִפּוּרֵי וְלָא אִיפַּיַּיס.",
      "en": "<b>Rabbi Ḥiyya,</b> Rav’s uncle and teacher, <b>came in,</b> whereupon Rav <b>returned to the beginning</b> of the portion and began to read it again. Afterward, <b>bar Kappara came in,</b> and Rav <b>returned to the beginning</b> of the portion out of respect for bar Kappara. Then <b>Rabbi Shimon, son of Rabbi</b> Yehuda HaNasi, <b>came in,</b> and <b>he returned</b> again <b>to the beginning</b> of the portion. Then, <b>Rabbi Ḥanina bar Ḥama came in,</b> and Rav <b>said</b> to himself: <b>Shall I go back</b> and read <b>so many times? He did not return</b> but continued from where he was. <b>Rabbi Ḥanina was offended</b> because Rav showed that he was less important than the others. <b>Rav went before</b> Rabbi Ḥanina <b>on Yom Kippur eve</b> every year for <b>thirteen</b> years to appease him, <b>but he would not be appeased.</b>"
+    },
+    {
+     "ref": "Yoma 87b",
+     "i": 1,
+     "he": "וְהֵיכִי עָבֵיד הָכִי? וְהָאָמַר רַבִּי יוֹסֵי בַּר חֲנִינָא: כׇּל הַמְבַקֵּשׁ מָטוּ מֵחֲבֵירוֹ אַל יְבַקֵּשׁ מִמֶּנּוּ יוֹתֵר מִשָּׁלֹשׁ פְּעָמִים! רַב שָׁאנֵי. וְרַבִּי חֲנִינָא, הֵיכִי עָבֵיד הָכִי? וְהָאָמַר רָבָא: כׇּל הַמַּעֲבִיר עַל מִדּוֹתָיו — מַעֲבִירִין לוֹ עַל כׇּל פְּשָׁעָיו!",
+     "en": "The Gemara asks: <b>How could</b> Rav <b>act this way? Didn’t Rabbi Yosei bar Ḥanina say: Anyone who requests forgiveness from another should not ask more than three times?</b> The Gemara answers: <b>Rav is different,</b> since he was very pious and forced himself to act beyond the letter of the law. The Gemara asks: <b>And how could Rabbi Ḥanina act this way</b> and refuse to forgive Rav, though he asked many times? <b>Didn’t Rava say:</b> With regard to <b>anyone who suppresses his honor</b> and forgives someone for hurting him, God <b>pardons all his sins?</b>"
+    },
+    {
+     "ref": "Yoma 87b",
+     "i": 2,
+     "he": "אֶלָּא: רַבִּי חֲנִינָא חֶלְמָא חָזֵי לֵיהּ לְרַב דְּזַקְפוּהוּ בְּדִיקְלָא, וּגְמִירִי דְּכֹל דְּזַקְפוּהוּ בְּדִיקְלָא — רֵישָׁא הָוֵי. אָמַר: שְׁמַע מִינַּהּ בָּעֵי לְמֶעְבַּד רְשׁוּתָא וְלָא אִיפַּיַּיס, כִּי הֵיכִי דְּלֵיזִיל וְלִגְמַר אוֹרָיְיתָא בְּבָבֶל.",
+     "en": "The Gemara explains: <b>Rather,</b> this is what happened: <b>Rabbi Ḥanina saw in a dream</b> that <b>Rav was being hung on a palm tree, and</b> he <b>learned</b> as a tradition that <b>anyone</b> about whom there is a dream in <b>which he was being hung on a palm tree will become the head</b> of a yeshiva. <b>He said: Learn from this that </b>providence has decreed that <b>he must eventually become the head</b> of the yeshiva. Therefore, <b>I will not be appeased, so that he will have to go and study Torah in Babylonia.</b> He was conscious of the principle that one kingdom cannot overlap with another, and he knew that once Rav was appointed leader, he, Rabbi Ḥanina, would have to abdicate his own position or die. Therefore, he delayed being appeased, so that Rav would go to Babylonia and be appointed there as head of the yeshiva. In this way, the dream would be fulfilled, as Rav would indeed be appointed as head of a yeshiva, but since he would be in Babylonia, Rabbi Ḥanina would not lose his own position."
     }
    ],
    "span": [
@@ -1721,42 +1743,11 @@
     {
      "ref": "Yoma 87b",
      "start": 0,
-     "end": 0
-    }
-   ],
-   "words": 146,
-   "minutes": 1
-  },
-  {
-   "id": "yoma-87b-2-2",
-   "tractate": "yoma",
-   "ref": "Yoma 87b",
-   "refs": [
-    "Yoma 87b"
-   ],
-   "start_segment": 2,
-   "classification": "HIGH_CONFIDENCE",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Rabbi Ḥanina sees a dream foretelling Rav's rise to leadership and purposely avoids reconciling with him so that Rav will move to Babylon to fulfill the prophecy.",
-   "segments": [
-    {
-     "ref": "Yoma 87b",
-     "i": 2,
-     "he": "אֶלָּא: רַבִּי חֲנִינָא חֶלְמָא חָזֵי לֵיהּ לְרַב דְּזַקְפוּהוּ בְּדִיקְלָא, וּגְמִירִי דְּכֹל דְּזַקְפוּהוּ בְּדִיקְלָא — רֵישָׁא הָוֵי. אָמַר: שְׁמַע מִינַּהּ בָּעֵי לְמֶעְבַּד רְשׁוּתָא וְלָא אִיפַּיַּיס, כִּי הֵיכִי דְּלֵיזִיל וְלִגְמַר אוֹרָיְיתָא בְּבָבֶל.",
-     "en": "The Gemara explains: <b>Rather,</b> this is what happened: <b>Rabbi Ḥanina saw in a dream</b> that <b>Rav was being hung on a palm tree, and</b> he <b>learned</b> as a tradition that <b>anyone</b> about whom there is a dream in <b>which he was being hung on a palm tree will become the head</b> of a yeshiva. <b>He said: Learn from this that </b>providence has decreed that <b>he must eventually become the head</b> of the yeshiva. Therefore, <b>I will not be appeased, so that he will have to go and study Torah in Babylonia.</b> He was conscious of the principle that one kingdom cannot overlap with another, and he knew that once Rav was appointed leader, he, Rabbi Ḥanina, would have to abdicate his own position or die. Therefore, he delayed being appeased, so that Rav would go to Babylonia and be appointed there as head of the yeshiva. In this way, the dream would be fulfilled, as Rav would indeed be appointed as head of a yeshiva, but since he would be in Babylonia, Rabbi Ḥanina would not lose his own position."
-    }
-   ],
-   "span": [
-    {
-     "ref": "Yoma 87b",
-     "start": 2,
      "end": 2
     }
    ],
-   "words": 180,
-   "minutes": 2
+   "words": 419,
+   "minutes": 3
   }
  ],
  "out_of_scope": [

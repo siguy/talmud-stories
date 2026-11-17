@@ -1,0 +1,41 @@
+{
+ "read": 133,
+ "invalid": [],
+ "by_why": {
+  "merge": {
+   "agree": 1
+  },
+  "merge refused: merge with bava_batra-11a-0-0: DISAGREEMENT, that card's own review said adjust (second reader decides)": {
+   "agree": 1
+  },
+  "merge refused: merge with bava_metzia-81b-0-0: DISAGREEMENT, that card's own review said adjust (second reader decides)": {
+   "agree": 1
+  },
+  "merge refused: merge with eruvin-68b-0-3: DISAGREEMENT, that card's own review said adjust (second reader decides)": {
+   "agree": 1
+  },
+  "merge refused: merge with moed_katan-25a-8-13: DISAGREEMENT, that card's own review said keep (second reader decides)": {
+   "agree": 1
+  },
+  "merge refused: merge with yoma-87b-2-2: DISAGREEMENT, that card's own review said adjust (second reader decides)": {
+   "agree": 1
+  },
+  "random adjust": {
+   "agree": 51,
+   "disagree": 3
+  },
+  "random keep": {
+   "agree": 39,
+   "disagree": 1
+  },
+  "trim removes half or more": {
+   "agree": 29,
+   "disagree": 4
+  }
+ },
+ "random_adjust_disagree_pct": 5.6,
+ "gate": "apply all but the disagreed",
+ "keeps_not_complete": [
+  "shabbat-147b-4-4"
+ ]
+}

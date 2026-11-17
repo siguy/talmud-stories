@@ -248,16 +248,16 @@
    "start_segment": 8,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Keep the one case with a narrative arc (repayment, money lost, hearing before Rav Nahman) and drop the separate Reuven-and-Shimon case in 6.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "A debtor repays a loan privately despite a condition to pay before scholars; the money is then lost, leading to a court case where Rav Nachman validates the payment.",
    "segments": [
-    {
-     "ref": "Shevuot 41b",
-     "i": 8,
-     "he": "הָהוּא דַּאֲמַר לֵיהּ לְחַבְרֵיהּ: ״כִּי (פָּרְעַתַּן) [פָּרְעַתְּ לִי], פִּרְעַן (לִי) בְּאַפֵּי רְאוּבֵן וְשִׁמְעוֹן״. אֲזַל וּפַרְעֵיהּ בְּאַפֵּי תְרֵי מֵעָלְמָא. אָמַר אַבָּיֵי: בְּאַפֵּי בֵּי תְרֵי אֲמַר לֵיהּ, בְּאַפֵּי בֵּי תְרֵי פַּרְעֵיהּ. אֲמַר לֵיהּ רָבָא: לְהָכִי קָאָמַר לֵיהּ ״בְּאַפֵּי רְאוּבֵן וְשִׁמְעוֹן״ – כִּי הֵיכִי דְּלָא נִדְחֲיֵיהּ!",
-     "en": "The Gemara relates: There was <b>a certain</b> creditor <b>who said to</b> the debtor: <b>When you repay me, repay me in the presence of Reuven and Shimon.</b> The debtor <b>went and repaid him in the presence of two</b> other witnesses <b>from the general public.</b> When the case was brought before the Sages, <b>Abaye said:</b> The creditor <b>said to</b> the debtor to repay him <b>in the presence of two</b> people who would serve as witnesses, and <b>he repaid him in the presence of two</b> people. Therefore, the creditor has no further claim. <b>Rava said to him:</b> It is <b>for this</b> reason that the creditor <b>said to him</b> to repay him <b>in the presence of Reuven and Shimon: So that he will not</b> be able to <b>dismiss him</b> by saying that he repaid him in the presence of other witnesses."
-    },
     {
      "ref": "Shevuot 41b",
      "i": 9,
@@ -284,8 +284,8 @@
      "end": 11
     }
    ],
-   "words": 418,
-   "minutes": 3
+   "words": 281,
+   "minutes": 2
   },
   {
    "id": "shevuot-41b-14-14",
@@ -371,16 +371,16 @@
    "start_segment": 6,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Keep the two-versus-three witnesses case with Rav Huna's objection; drop the separate first case (6) and the repeated alternate version (9).",
+    "start_trim": 1,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "A debtor grants his creditor the credibility of two witnesses, but then pays in front of three witnesses to circumvent the agreement.",
    "segments": [
-    {
-     "ref": "Shevuot 42a",
-     "i": 6,
-     "he": "הָהוּא דַּאֲמַר לֵיהּ לְחַבְרֵיהּ: ״מְהֵימְנַתְּ לִי כֹּל אֵימַת דְּאָמְרַתְּ לִי לָא פָּרַעְנָא״. אֲזַל פַּרְעֵיהּ בְּאַפֵּי סָהֲדִי. אַבָּיֵי וְרָבָא דְּאָמְרִי תַּרְוַיְיהוּ: הָא הֵימְנֵיהּ. מַתְקֵיף לַהּ רַב פָּפָּא: נְהִי דְּהֵימְנֵיהּ טְפֵי מִנַּפְשֵׁיהּ, טְפֵי מִסָּהֲדֵי מִי הֵימְנֵיהּ?!",
-     "en": "The Gemara relates: There was <b>a certain</b> person <b>who said to another</b> who had lent him money: <b>I deem you credible whenever you say to me</b> that <b>I did not repay</b> the debt. He then <b>went</b> and <b>repaid</b> the debt <b>in the presence of witnesses,</b> and the creditor later denied that he had been repaid. <b>Abaye and Rava both say</b> that the witnesses are not deemed credible and the creditor can collect payment, as the debtor <b>deemed him credible</b> at the outset. <b>Rav Pappa objects to this</b> and says: <b>Although he deemed him more credible than himself</b> concerning the possibility that the debtor would claim that he repaid the debt and the creditor would deny having been repaid, <b>did he deem him more credible than witnesses?</b> Therefore, he is exempt."
-    },
     {
      "ref": "Shevuot 42a",
      "i": 7,
@@ -392,12 +392,6 @@
      "i": 8,
      "he": "אֲמַר לֵיהּ רַב הוּנָא בְּרֵיהּ דְּרַב יְהוֹשֻׁעַ לְרַב פָּפָּא: אֵימוֹר דְּאָמְרִי רַבָּנַן דְּאָזְלִינַן בָּתַר רוֹב דֵּעוֹת – הָנֵי מִילֵּי לְעִנְיַן אוּמְדָּנָא, דְּכַמָּה דִּנְפִישִׁי בְּקִיאִי טְפֵי; אֲבָל לְעִנְיַן עֵדוּת – מְאָה כִּתְרֵי, וּתְרֵי כִּמְאָה!",
      "en": "<b>Rav Huna, son of Rav Yehoshua, said to Rav Pappa: Say</b> that although <b>the Sages say that we follow the majority of opinions,</b> and the opinion of three people is therefore accepted against the opinion of two, <b>this statement</b> applies <b>with regard to assessing</b> value, <b>as the more</b> people there are, <b>the more knowledgeable they are. But with regard to testimony, one hundred</b> witnesses <b>are like two, and two are like one hundred.</b> Therefore, in this case there is no distinction between two witnesses and three witnesses."
-    },
-    {
-     "ref": "Shevuot 42a",
-     "i": 9,
-     "he": "לִישָּׁנָא אַחֲרִינָא, הָהוּא דַּאֲמַר לֵיהּ לְחַבְרֵיהּ: ״מְהֵימְנַתְּ לִי כְּבֵי תְרֵי, כֹּל אֵימַת דְּאָמְרַתְּ לָא פָּרַעְנָא״. אֲזַל וּפַרְעֵיהּ בְּאַפֵּי תְּלָתָא. אָמַר רַב פָּפָּא: כְּבֵי תְרֵי הֵימְנֵיהּ, כְּבֵי תְלָתָא לָא הֵימְנֵיהּ.",
-     "en": "The Gemara presents <b>another version</b> of the incident: <b>A certain</b> person <b>said to another</b> who had lent him money: <b>I deem you credible like two</b> witnesses <b>whenever you say</b> that <b>I did not repay. He went and repaid</b> the debt <b>in the presence of three</b> witnesses. <b>Rav Pappa said</b> that the creditor cannot deny their testimony, as the debtor <b>deemed him credible like two</b> witnesses; <b>he did not deem him credible like three</b> witnesses."
     }
    ],
    "span": [
@@ -407,8 +401,8 @@
      "end": 9
     }
    ],
-   "words": 368,
-   "minutes": 3
+   "words": 164,
+   "minutes": 2
   },
   {
    "id": "shevuot-47a-7-9",

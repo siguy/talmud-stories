@@ -23,7 +23,8 @@
      "meaning": "An item held as a pledge, which does not by itself make a sale final."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Rav Naḥman has just ruled that a man who promises a hundred dinars for betrothal but hands over only collateral has given nothing; this purchase case shows the same principle, that collateral is not payment, applied to a sale."
   },
   "kiddushin-8b-14-14": {
    "note": "A man selling glass beads offered a woman a string of them on the condition that she become betrothed (engaged) to him by accepting it. She answered, 'Give, give.' Rav Hama ruled that this phrase means nothing: she was not agreeing to the condition, so no betrothal took place.",
@@ -39,7 +40,8 @@
      "meaning": "Kiddushin, the formal act of engagement, which legally makes a woman a man's wife."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is listing replies a woman might make when a man offers her something as betrothal, such as 'Give it to a dog' or 'to a poor person'. This opens a run of three similar cases about doubled words."
   },
   "kiddushin-9a-1-1": {
    "note": "A man drinking wine in a shop was asked by a woman for a cup. He asked her whether, if he gave it to her, she would be betrothed to him with it. She replied, 'Give to drink, give it to me to drink.' Rav Hama ruled this reply means nothing, so she was not betrothed.",
@@ -55,7 +57,8 @@
      "meaning": "Kiddushin, the formal act of engagement, which legally makes a woman a man's wife."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "It follows the glass-bead seller as a second case of a woman's doubled words; the Gemara then asks what happens if she says the word only once, and rules that she is still not betrothed."
   },
   "kiddushin-9a-2-2": {
    "note": "A man picking dates was asked by a woman to throw her two. He asked whether, if he threw them, she would be betrothed to him with them, and she answered, 'Throw, throw.' Rav Zevid ruled that this phrase means nothing and she was not betrothed.",
@@ -66,59 +69,60 @@
     }
    ],
    "terms": [],
-   "approved": true
+   "approved": true,
+   "why": "It is the third in a run of cases about a woman repeating a word when offered betrothal; right after it the Gemara asks whether saying 'Throw' just once is different, and rules that she is not betrothed either way."
   },
   "kiddushin-12a-14-15": {
-   "note": "A man betrothed a woman with a blue marble stone, and Rav Hisda assessed whether it was worth a peruta, the minimum value needed. It was not, so the betrothal was not valid. The man's mother objected that it had been worth that much on the day of the betrothal, but Rav Hisda replied that she could not make the woman forbidden to other men; if another man betroths her, his betrothal is not cancelled by this earlier one.",
+   "note": "A man betrothed a woman with a blue marble stone, and Rav Hisda checked whether it was worth a peruta. The man's mother said it had been worth a peruta on the day of the betrothal, but Rav Hisda said she could not make the woman forbidden to another man. He compared it to Yehudit, Rabbi Hiyya's wife, who suffered painful childbirths and claimed her mother said she had been betrothed to someone else as a child; Rabbi Hiyya told her that her mother could not forbid her to him. When the Sages pointed out that there were witnesses in Idit who knew the stone's value that day, Rav Hisda answered that they were not here.",
+   "why": "Shmuel had ruled that a betrothal with a cheap item may still count, since it might be worth a peruta elsewhere; the Gemara shows Rav Hisda rejecting that view. Afterwards Abaye and Rava disagree, and the Sages avoided marrying into the woman's family.",
    "people": [
     {
      "name": "Rav Hisda",
-     "about": ""
+     "about": "The judge who ruled on the betrothal with the blue marble stone."
+    },
+    {
+     "name": "Yehudit",
+     "about": "Rabbi Hiyya's wife, who suffered painful childbirths and wished to leave him."
+    },
+    {
+     "name": "Rabbi Hiyya",
+     "about": "Yehudit's husband, who told her that her mother's claim could not forbid her to him."
     }
    ],
    "terms": [
     {
      "term": "peruta",
-     "meaning": "The smallest coin; an item must be worth at least this much to be used for betrothal."
+     "meaning": "The smallest coin; an object given for betrothal must be worth at least this much."
+    },
+    {
+     "term": "betrothal",
+     "meaning": "The first stage of Jewish marriage, made by giving the woman something of value; after it she is bound to the man and forbidden to others."
     }
    ],
+   "drafted": "bfull1notes",
    "approved": true
   },
   "kiddushin-12b-10-10": {
-   "note": "A man betrothed a woman with a myrtle mat, but bystanders said it was worth less than a peruta. He then said she should be betrothed with the four dinars wrapped inside it. She took the mat and said nothing, and Rava ruled that silence after the money is already given proves nothing, so she may not have agreed. The passage then continues with a debate over whether this can be learned from a related teaching, and ends with Ravina saying that someone who heard the opposing argument should be concerned that a betrothal might have taken place.",
+   "note": "A man betrothed a woman with a mat of myrtle branches. Onlookers told him it was not worth even a peruta, the smallest coin, so he said she should be betrothed with the four dinars wrapped inside it. She took the mat and said nothing. Rava ruled that this was silence after the money had already been given, and such silence is nothing: it does not show that she accepted.",
+   "why": "The discussion has been listing improper ways of betrothing a woman; right after this case Rava shows where his rule comes from, a baraita about a coin first handed over as a deposit, and the Gemara works out that silence there does not count as consent.",
    "people": [
     {
      "name": "Rava",
-     "about": ""
-    },
-    {
-     "name": "Rav Huna, son of Rav Yehoshua",
-     "about": ""
-    },
-    {
-     "name": "Rav Ahai",
-     "about": ""
-    },
-    {
-     "name": "Rav Aha bar Rav",
-     "about": ""
-    },
-    {
-     "name": "Ravina",
-     "about": ""
+     "about": "The Sage who rules on the case"
     }
    ],
    "terms": [
     {
-     "term": "dinar",
-     "meaning": "A silver coin, worth much more than a peruta."
+     "term": "betrothal",
+     "meaning": "The first, legally binding stage of Jewish marriage, made when a man gives a woman something of value for that purpose and she accepts it."
     },
     {
-     "term": "baraita",
-     "meaning": "A teaching from the time of the Mishnah that is not included in the Mishnah itself."
+     "term": "dinar",
+     "meaning": "A silver coin, worth far more than a peruta."
     }
    ],
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "kiddushin-13a-3-3": {
    "note": "A woman was selling belts and a man snatched one. When she asked for it back, he said he would give it only if she became betrothed to him. She took it and stayed silent. Rav Nahman ruled that she could say she was just taking her own property back, so her silence does not show she agreed to be betrothed.",
@@ -134,55 +138,68 @@
      "meaning": "Kiddushin, the formal act of engagement, which legally makes a woman a man's wife."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "It follows the debate on whether a woman's silence counts as consent. Rava then challenges Rav Naḥman with a teaching that a woman is betrothed with a coin snatched from her, and Rav Naḥman answers that there the couple had already arranged the marriage."
   },
   "kiddushin-22b-18-18": {
-   "note": "Rabbi Yehuda from India, a convert with no heirs, was dying. Mar Zutra asked the man's slave to carry his shoes to Mar Zutra's house, a way of claiming the slave, since a convert's property without heirs goes to whoever claims it first. One account says the slave was an adult, so Rabbi Yehuda went to death and Mar Zutra gained a slave. Another says the slave was a minor and Mar Zutra was following Abba Shaul, who holds that minor slaves can be claimed by others.",
+   "note": "Rabbi Yehuda from India was a convert who had no heirs. When he fell ill, Mar Zutra came to visit him, and when he saw that the sick man was about to die, he told the man's slave: Take off my shoes and carry them to my house. By having the slave serve him, Mar Zutra meant to claim the slave as soon as the owner died. Some say the slave was an adult, and the Gemara sums up: one departed to death, and the other departed to life.",
+   "why": "The discussion has just said a master acquires a slave when the slave does work for him, such as lifting him; Mar Zutra uses that method. Afterwards the Gemara asks whether, if the slave was a minor, he even needed to hurry.",
    "people": [
     {
      "name": "Rabbi Yehuda from India",
-     "about": "a convert who had no heirs"
+     "about": "A convert with no heirs, who was dying."
     },
     {
      "name": "Mar Zutra",
-     "about": ""
-    },
-    {
-     "name": "Abba Shaul",
-     "about": ""
+     "about": "A Sage who visited him and acquired his slave before he died."
     }
    ],
    "terms": [
     {
-     "term": "baraita",
-     "meaning": "A teaching from the time of the Mishnah that was not included in it."
+     "term": "convert without heirs",
+     "meaning": "When a convert with no Jewish heirs dies, his property is ownerless, and the first person to take possession of it acquires it."
     }
    ],
-   "approved": false
+   "drafted": "bfull1notes",
+   "approved": true
   },
   "kiddushin-25a-1-3": {
-   "note": "The Elders of Nezonya stopped coming to Rav Hisda's lecture, so he sent Rav Hamnuna to ostracize them. They said Rav Hisda had once failed to answer their question, and when they asked Rav Hamnuna about a slave whose master castrated him, he could not answer either, and they mocked his name. He went back to Rav Hisda, who said the question could be answered from a teaching tied to a Mishnah about the body's extremities, and the passage cuts off during that explanation.",
+   "note": "The elders of Nezonya stopped coming to Rav Ḥisda's lectures, and he sent Rav Hamnuna to ostracize them. Rav Hamnuna asked them why they stayed away. They said Rav Ḥisda had not answered a question of theirs, so Rav Hamnuna invited them to ask him. They asked: if a master castrates his slave, does the slave go free, as he would for a visible injury? Rav Hamnuna did not know. They mocked his name: not Hamnuna, a hot fish, but Karnuna, a cold one. He went back to Rav Ḥisda, who told him the answer was in a teaching they could have cited, and began to quote it.",
+   "why": "The Gemara is listing injuries that free a slave when his master causes them, like an eye or an extra finger. The elders' question adds castration, and the teaching Rav Ḥisda points to lists the body's extremities and, in Rabbi Yehuda HaNasi's view, castration as well.",
    "people": [
     {
-     "name": "Rav Hisda",
-     "about": ""
+     "name": "Rav Ḥisda",
+     "about": "A Sage whose lectures the elders of Nezonya stop attending."
     },
     {
      "name": "Rav Hamnuna",
-     "about": ""
+     "about": "Sent by Rav Ḥisda to ostracize the elders; cannot answer their question."
+    },
+    {
+     "name": "the elders of Nezonya",
+     "about": "Local scholars who stay away from Rav Ḥisda's lectures."
     }
    ],
    "terms": [
     {
      "term": "ostracize",
-     "meaning": "To formally shut someone out of the community as a punishment."
+     "meaning": "To place someone under a ban that cuts them off from the community until they make amends."
     },
     {
-     "term": "baraita",
-     "meaning": "A teaching from the time of the Mishnah that is not included in the Mishnah itself."
+     "term": "exposed blemish",
+     "meaning": "A visible injury to a slave's body; a master who causes one must set the slave free."
+    },
+    {
+     "term": "mishna",
+     "meaning": "A teaching from the Mishna, the first written collection of Jewish law."
+    },
+    {
+     "term": "unaffected skin",
+     "meaning": "In the laws of skin disease, a patch of healthy flesh inside a diseased spot that makes a person ritually impure."
     }
    ],
-   "approved": false
+   "drafted": "shas1",
+   "approved": true
   },
   "kiddushin-26b-2-2": {
    "note": "A man from Madon was ill in Jerusalem and wanted to give away a large amount of movable goods as a gift, but had no time for the recipient to take possession by the usual act of pulling. The Sages told him the only way was to transfer them along with land. He acquired a small plot and declared that a part of it, with a hundred sheep and a hundred barrels, was given to the recipient. He died, and the Sages carried out his gift.",
@@ -202,31 +219,38 @@
      "meaning": "A way of taking ownership of movable goods by drawing them toward oneself."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is asking whether movable goods must be piled on the land to be acquired along with it. This case is brought as proof that they need not be, since a hundred sheep could not fit on so small a plot. The Gemara rejects the proof by reading 'sela' as rock-hard land, not a tiny one."
   },
   "kiddushin-26b-4-5": {
-   "note": "A man in Jerusalem, who was either sick or healthy according to different views, wanted to give away much movable property. The Sages said the only way was to attach it to land, so he acquired a small plot, gave a square handbreadth of it to the recipient along with a hundred sheep and a hundred barrels, and then died. The Sages carried out his statement, and the passage ends by asking how everything could have been piled on so little ground.",
+   "note": "Rav Yehuda reported in Rav's name the case of a man in Jerusalem, sick by one account and healthy by another, who owned a great deal of movable property and wanted to give it away. The Sages told him the only way was to transfer it along with land. He bought a small plot near Jerusalem and said: This square handbreadth goes to so-and-so, and with it a hundred sheep and a hundred barrels. Then he died, and the Sages carried out his words.",
+   "why": "This is a second attempt to prove that goods need not be piled on the land to pass with it. The Gemara answers that the gift may have been money, which fits on a tiny plot, and then argues over why he could not have used another method.",
    "people": [
     {
      "name": "Rav Yehuda",
-     "about": ""
+     "about": "Reports the case in Rav's name."
     },
     {
      "name": "Rav",
-     "about": ""
-    },
-    {
-     "name": "Rabbi Eliezer",
-     "about": ""
+     "about": "The Sage whose account Rav Yehuda passes on."
     }
    ],
    "terms": [
     {
      "term": "movable property",
-     "meaning": "Goods that can be carried, as opposed to land."
+     "meaning": "Goods that can be moved, such as animals and barrels, as opposed to land."
+    },
+    {
+     "term": "handbreadth",
+     "meaning": "A measure of about the width of a hand, roughly 8 to 10 cm."
+    },
+    {
+     "term": "Rabbi Eliezer and the Rabbis",
+     "meaning": "Two sides of an argument over how a dying person may give property away; the two accounts of the man's health match their two views."
     }
    ],
-   "approved": false
+   "drafted": "shas1",
+   "approved": true
   },
   "kiddushin-29b-10-12": {
    "note": "A teaching says that a father who wants to study Torah takes precedence over his son, unless the son is sharp. Rav Aha bar Ya'akov sent his son to Abaye, found that his studies were not sharp, and decided to go and study himself. Abaye knew that a demon in his study hall harmed visitors. He told the townspeople to give Rav Aha no lodging, hoping that a righteous man might kill it. Rav Aha spent the night there. The demon appeared as a seven-headed serpent, and with each bow of his prayer one head fell off until it died. The next day Rav Aha told the townspeople that without a miracle they would have put him in danger.",
@@ -254,26 +278,29 @@
      "meaning": "A harmful spirit that the Talmud treats as a real danger."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "A teaching of the Sages says that when father and son both want to study, the father comes first, unless the son is quick and sharp. This story is told as an example: the father judges his son not sharp enough and goes to study himself."
   },
   "kiddushin-29b-15-15": {
-   "note": "Rav Hisda praised Rav Hamnuna as a great man, so Rav Huna asked to meet him. Rav Huna noticed that Rav Hamnuna did not cover his head as scholars did, and Rav Hamnuna explained that he was unmarried and unmarried men did not cover their heads. Rav Huna turned his face away and told him not to come before him again until he married.",
+   "note": "Rav Ḥisda kept praising Rav Hamnuna to Rav Huna as a great man, and Rav Huna asked to have him sent over. When Rav Hamnuna came, Rav Huna saw that he did not cover his head with a cloth, as Torah scholars did, and asked why. Rav Hamnuna said it was because he was not married. Rav Huna turned his face away from him and said: See that you do not see my face until you marry.",
+   "why": "The Gemara has just discussed whether a man should study Torah first or marry first; afterward it explains that Rav Huna acted on his own view that a man still unmarried at twenty spends all his days in thoughts of sin.",
    "people": [
     {
-     "name": "Rav Hisda",
-     "about": ""
+     "name": "Rav Ḥisda",
+     "about": "A Sage who praises Rav Hamnuna to Rav Huna"
     },
     {
      "name": "Rav Hamnuna",
-     "about": ""
+     "about": "A promising scholar who is not yet married"
     },
     {
      "name": "Rav Huna",
-     "about": ""
+     "about": "The senior Sage who rebukes Rav Hamnuna for not marrying"
     }
    ],
    "terms": [],
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "kiddushin-30a-7-7": {
    "note": "Rabbi Hiyya bar Abba saw Rabbi Yehoshua ben Levi hurrying his child to the synagogue to study, with only a cheap cover on his head. Asked why the rush, Rabbi Yehoshua pointed out that the verse about teaching your sons sits right next to the verse about standing at Mount Sinai. After that, Rabbi Hiyya would not eat breakfast until he had studied with his child, and Rabba bar Rav Huna would not eat before bringing his child to the study hall.",
@@ -297,7 +324,8 @@
      "meaning": "Another name for Mount Sinai, where the Torah was given."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Rabbi Yehoshua ben Levi has just taught that whoever teaches his grandson Torah is credited as if he received it at Mount Sinai. Here he is seen acting on his own teaching, and it changes the habits of others."
   },
   "kiddushin-31a-7-9": {
    "note": "When the Sages asked how far one must go to honor parents, they were told to look at Dama ben Netina, a non-Jew of Ashkelon. He turned down a huge profit from the Sages because the key to the goods lay under his sleeping father's head and he would not wake him. The next year a red heifer, which the Jewish people needed, was born in his herd. He asked only for the money he had lost out of respect for his father.",
@@ -325,27 +353,25 @@
      "meaning": "A commandment from the Torah."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Just before, Ulla taught that the nations accepted God's words once they heard 'Honor your father and your mother'. The question of how far that duty goes leads to this story, and afterward Rabbi Ḥanina argues that one who is commanded and obeys is greater than a gentile like Dama."
   },
   "kiddushin-31a-12-12": {
-   "note": "Rav Dimi told of Dama ben Netina, who was wearing a fine gold cloak and sitting among Roman nobles when his mother tore the cloak off him, hit him on the head, and spat in his face. He did not embarrass her. A closing fragment says this behavior brings a person to the life of the World-to-Come.",
+   "note": "Rav Dimi, arriving in Babylonia from the Land of Israel, reported that Dama ben Netina was once wearing a fine cloak of gold and sitting among the nobles of Rome. His mother came, tore the garment off him, smacked him on the head and spat in his face, and he did not embarrass her.",
+   "why": "The Gemara is showing how far the duty to honor parents goes, using Dama ben Netina, a gentile whose honor for his father earned him a great reward; Rav Dimi adds this second report of his restraint toward his mother.",
    "people": [
     {
      "name": "Rav Dimi",
-     "about": ""
+     "about": "A Sage who brings this report from the Land of Israel"
     },
     {
      "name": "Dama ben Netina",
-     "about": ""
+     "about": "A gentile known for honoring his parents"
     }
    ],
-   "terms": [
-    {
-     "term": "World-to-Come",
-     "meaning": "The afterlife, where the righteous are rewarded."
-    }
-   ],
-   "approved": false
+   "terms": [],
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "kiddushin-31b-1-2": {
    "note": "Rabbi Abbahu said his son Avimi honored his parents perfectly. Though Avimi and five of his sons were ordained to rule on law, he ran to open the door for his father and called out 'Yes, yes' before arriving. Once, when his father fell asleep after asking for water, Avimi stood over him until he woke, and as a reward God helped him interpret Psalm 79.",
@@ -365,7 +391,8 @@
      "meaning": "Formally authorized as a rabbi to give legal rulings."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Avimi has just taught that one son may feed his father pheasant and lose the World to Come while another sets him to grinding and earns it; his father now holds Avimi up as the son who honors properly."
   },
   "kiddushin-31b-4-4": {
    "note": "Rabbi Tarfon would bend over so his mother could step onto him to get into and out of her bed. He boasted of this in the study hall, but the Sages told him he had not yet done even half of what honoring her requires. They asked whether she had ever thrown a purse into the sea in front of him without his embarrassing her.",
@@ -381,7 +408,8 @@
      "meaning": "The place where rabbis gathered to learn and discuss Torah."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is collecting examples of how far the duty to honor parents goes, after Avimi stood over his sleeping father; this story shows that even extraordinary service can fall short of the full measure."
   },
   "kiddushin-31b-6-8": {
    "note": "Rav Asi's elderly mother kept making demands, asking for jewelry, a husband, and then one as handsome as her son. He realized she was senile and left for the Land of Israel. When he heard she was following him, he asked Rabbi Yohanan if he could leave to greet her. Rabbi Yohanan said only 'May God return you in peace,' which Rabbi Elazar said meant permission. On his way, Rav Asi heard her coffin was arriving and said that had he known, he would not have left.",
@@ -409,34 +437,37 @@
      "meaning": "Jewish law, or what the law says on a given question."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Rabbi Yohanan has just said it is fortunate never to have seen one's parents, so hard is it to honor them properly; Rav Asi's story shows that strain, and the Gemara then turns to how one honors a parent in life and in death."
   },
   "kiddushin-32b-1-1": {
-   "note": "At the wedding of his son, Rava served drinks to the guests. Rav Pappa and Rav Huna stood up for him, but Rav Mari and Rav Pinehas did not. Rava became angry and asked whether the sages who stood were not sages, or whether those who did not stand thought they were too great to honor a sage.",
+   "note": "At his son's wedding celebration, Rava himself served drinks to the guests. When he poured a cup for Rav Pappa and Rav Huna son of Rav Yehoshua, they stood up before him. When he poured for Rav Mari and Rav Pinehas son of Rav Hisda, they did not stand. Rava became angry and said: Are these rabbis real Sages, and those not Sages?",
+   "why": "Rav Yosef and Rava have said that a teacher who waives the honor due to him has it waived. The Gemara raises this story as a challenge: Rava served his guests, yet was angry when Sages did not stand for him.",
    "people": [
     {
      "name": "Rava",
-     "about": ""
+     "about": "A Sage who served drinks at his son's wedding and was angered when two guests did not stand for him."
     },
     {
      "name": "Rav Pappa",
-     "about": ""
+     "about": "A guest at the wedding who stood when Rava poured for him."
     },
     {
-     "name": "Rav Huna, son of Rav Yehoshua",
-     "about": ""
+     "name": "Rav Huna son of Rav Yehoshua",
+     "about": "A guest who stood when Rava poured for him."
     },
     {
      "name": "Rav Mari",
-     "about": ""
+     "about": "A guest who did not stand for Rava."
     },
     {
-     "name": "Rav Pinehas, son of Rav Hisda",
-     "about": ""
+     "name": "Rav Pinehas son of Rav Hisda",
+     "about": "A guest who did not stand for Rava."
     }
    ],
    "terms": [],
-   "approved": false
+   "drafted": "shas1",
+   "approved": true
   },
   "kiddushin-32b-2-2": {
    "note": "At the wedding of his son Abba Mar, Rav Pappa served drinks to the guests. He poured a cup for Rav Yitzhak, son of Rav Yehuda, who did not stand up for him, and Rav Pappa became angry. The passage concludes that a rabbi may give up the honor due him, but others should still show some sign of respect, such as getting ready to stand.",
@@ -455,7 +486,8 @@
     }
    ],
    "terms": [],
-   "approved": true
+   "approved": true,
+   "why": "This is a second challenge, after Rava's wedding, to the view that a teacher can waive his honor. The Gemara answers that even when he waives it, others must still show him some act of reverence."
   },
   "kiddushin-32b-3-5": {
    "note": "Rav Ashi held that a Nasi, unlike a rabbi, cannot give up the honor due him. The Gemara challenges this with a story. At the wedding of Rabban Gamliel's son, Rabban Gamliel, then Nasi of the Sanhedrin, stood and served drinks to Rabbi Eliezer, Rabbi Yehoshua and Rabbi Tzadok. Rabbi Eliezer refused the cup, Rabbi Yehoshua accepted it, and Eliezer objected. Rabbi Yehoshua answered that Abraham, a greater man, served his guests, and Rabbi Tzadok added that God Himself provides for every creature. The story, raised as an objection to Rav Ashi, suggests that even a Nasi may give up the honor due him.",
@@ -487,7 +519,8 @@
      "meaning": "The president or leader of the Sanhedrin, the highest Jewish court."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Rav Ashi has said that even if a rabbi may waive his honor, a Nasi may not. The Gemara cites this incident against him, since the Nasi served and the Sages accepted; afterward Rav Ashi's rule is restated as applying to a king."
   },
   "kiddushin-33a-6-6": {
    "note": "Bar Kappara (or, some say, Rabbi Shmuel bar Rabbi Yosei) was sitting in a bathhouse and did not stand when Rabbi Shimon, the son of Rabbi Yehuda HaNasi, passed by. Rabbi Shimon told his father he had taught the man part of Torat Kohanim and was still not honored. His father suggested that the man might have been thinking over what he had learned and did not see him come in.",
@@ -511,7 +544,8 @@
      "meaning": "An ancient teaching-commentary on the Book of Leviticus."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "A teaching said one need not stand for an elder in a bathhouse. The Gemara cites this story as a challenge: the father excused the student only because he was lost in thought, implying one must stand even there."
   },
   "kiddushin-33a-13-13": {
    "note": "Abaye was riding a donkey along the bank of the Sagya River. Rav Mesharshiyya and other rabbis on the other bank did not stand for him. Abaye asked whether he was not their main teacher and so deserved to be honored even from afar. They replied that it had not occurred to them, because they had not seen him.",
@@ -530,7 +564,8 @@
     }
    ],
    "terms": [],
-   "approved": true
+   "approved": true,
+   "why": "Abaye has just ruled that one stands for an ordinary elder only within four cubits, but for one's primary teacher as soon as he comes into view; both incidents show that rule in practice."
   },
   "kiddushin-33a-15-15": {
    "note": "Ravina was sitting with Rabbi Yirmeya of Difti when a man passed by without covering his head, and Ravina called him rude for not honoring a rabbi. Rabbi Yirmeya suggested the man might be from Mata Mehasya, a city with so many rabbis that people there are less careful about showing such respect.",
@@ -545,7 +580,8 @@
     }
    ],
    "terms": [],
-   "approved": true
+   "approved": true,
+   "why": "The discussion is about the respect owed to Sages and teachers; Rabbi Yirmeya suggests that someone used to seeing rabbis every day may not show it, so the lapse need not be rudeness."
   },
   "kiddushin-39a-10-11": {
    "note": "Rav Hanan and Rav Anan were traveling outside the Land of Israel and saw a man planting different kinds of seeds together. One suggested ostracizing him for a forbidden act, but the other said these laws were not clear to him. They then saw a man planting wheat and barley among grapevines. The same objection was raised, and the answer was that by Rabbi Yoshiya's view, one is liable by Torah law only if he sows wheat, barley and a grape seed in a single hand motion, so this man should not be ostracized.",
@@ -573,27 +609,46 @@
      "meaning": "To formally shut someone out of the community as a punishment."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara has just said that the ban on sowing mixed seeds applies only in the Land of Israel, while grafting different trees is banned everywhere; this story shows Sages declining to punish a man for mixed sowing."
   },
   "kiddushin-39b-13-13": {
-   "note": "Some say Elisha ben Avuya, a sage who left the faith, saw the tongue of Hutzpit the disseminator, who had been executed by the government, thrown into the street and dragged along by a pig. He asked whether a mouth that produced pearls should end up lapping dirt. The text says that for this reason he went out and sinned.",
+   "note": "Rav Yosef said that if Aher, the former Sage Elisha ben Avuya, had read the verse \"that it may go well with you\" as referring to the World-to-Come, as his grandson Rabbi Ya'akov did, he would not have sinned. The Gemara asks what made him sin. Some say he saw a son climb to a roof at his father's command, send away a mother bird as the Torah requires, and then die. Others say he saw the tongue of Hutzpit the disseminator, who had been executed by the government, lying in the street and being dragged by a pig, and said: Shall a mouth that produced pearls lap up dirt? For this he went out and sinned.",
+   "why": "The Gemara has been defending Rabbi Ya'akov's teaching that the reward for mitzvot comes in the World-to-Come, not in this world, citing a son who died returning from exactly these mitzvot; Aher is the one who drew the opposite conclusion.",
    "people": [
     {
-     "name": "Hutzpit the disseminator",
-     "about": "executed by the government"
+     "name": "Aher",
+     "about": "Literally Other, the name given to the former Sage Elisha ben Avuya after he sinned."
     },
     {
-     "name": "Elisha ben Avuya",
-     "about": "referred to only as 'he' in this passage"
+     "name": "Rabbi Ya'akov",
+     "about": "Aher's daughter's son, who taught that the promised reward is in the World-to-Come."
+    },
+    {
+     "name": "Hutzpit the disseminator",
+     "about": "A Sage executed by the government, whose tongue Aher saw in the street."
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "The Sage who says Aher would not have sinned had he read the verse as Rabbi Ya'akov did."
     }
    ],
    "terms": [
     {
+     "term": "World-to-Come",
+     "meaning": "The life after this one, where, in Rabbi Ya'akov's teaching, the reward for mitzvot is paid."
+    },
+    {
+     "term": "sending away the mother bird",
+     "meaning": "A Torah commandment to send off the mother before taking eggs or chicks from a nest; like honoring parents, it is promised long life."
+    },
+    {
      "term": "disseminator",
-     "meaning": "Meturgeman, someone who stood beside a sage and repeated his words aloud to the crowd."
+     "meaning": "The person who repeated a Sage's lecture aloud so the whole audience could hear it."
     }
    ],
-   "approved": false
+   "drafted": "bfull1notes",
+   "approved": true
   },
   "kiddushin-39b-15-15": {
    "note": "A noblewoman tried to seduce Rabbi Hanina bar Pappi. He used a spoken formula to cover himself in boils so she would be repelled, but she used magic to heal him. He fled and hid overnight in a bathhouse so dangerous that two people entering together were harmed even by day. The next day the Sages asked who had protected him, and he said angels in the form of two soldiers had guarded him all night. The Sages suggested that perhaps he had been tempted toward forbidden intercourse and resisted, since a miracle is done for anyone who resists such temptation. They cited a verse they read as referring to people like Rabbi Tzadok and his colleagues.",
@@ -617,7 +672,8 @@
      "meaning": "a soldier of the emperor, an imperial guard."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Rava has just explained that one who 'sits and does not sin' is rewarded when a chance to sin comes to him and he resists it; this story illustrates such a person."
   },
   "kiddushin-40a-1-1": {
    "note": "A noblewoman tried to seduce Rabbi Tzadok. He said he was too weak and needed food, and she offered non-kosher food. He said the one who commits this act would eat such food too, and when she lit the oven to roast it, he climbed into the oven. He explained that the one who does this act falls into the fires of Gehenna (hell). She replied that had she known how serious it was to him, she would not have caused him such distress.",
@@ -633,7 +689,8 @@
      "meaning": "the place of fiery punishment after death, roughly like hell."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Sages have just taught that a miracle is done for whoever escapes a forbidden sexual temptation, and cited a verse about 'mighty' people such as Rabbi Tzadok and his colleagues; this is the story that phrase refers to."
   },
   "kiddushin-40a-2-2": {
    "note": "Rav Kahana sold palm-leaf baskets to women, and a noblewoman tried to seduce him. He said he would first go adorn himself, climbed to the roof, and fell off. Elijah the prophet caught him and complained that saving him meant traveling four hundred parasangs. Rav Kahana answered that poverty, which forced him into a trade that brought him near women, was the cause, and Elijah gave him a basket full of dinars so he would not have to keep selling.",
@@ -657,18 +714,21 @@
      "meaning": "a coin of the period."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "It is the last in a series of stories about Sages who resisted seduction and were saved by a miracle, illustrating the teaching that whoever escapes a forbidden sexual temptation has a miracle done for him."
   },
   "kiddushin-45b-3-3": {
-   "note": "A couple wanted to marry off their minor daughter. The father wanted her to marry his relative and the mother wanted her to marry hers; the mother pressured him until he agreed to her relative. While they were eating the festive meal before the betrothal, the father's relative came up to the roof and betrothed the girl to himself. The passage ends with this act, with no ruling stated in the text.",
+   "note": "A husband and wife disagreed over whom to marry their young daughter to: he wanted his relative, she wanted hers. She pressed him until he said: Let her be for your relative. But while they were eating and drinking at the meal, his relative came onto the roof and betrothed the girl to himself.",
+   "why": "The Gemara is asking when a minor betrothed without her father's consent is still betrothed because he secretly wanted it. Abaye says this father kept his word to his wife; Rava says no one prepares a feast and then lets it go to waste.",
    "people": [],
    "terms": [
     {
-     "term": "betroth (kiddushin)",
-     "meaning": "the first stage of Jewish marriage, a formal act that binds a couple legally before they live together."
+     "term": "betrothal",
+     "meaning": "The first stage of Jewish marriage, done by giving the woman (or a minor girl's father) money or an object of value; for a minor, it depends on her father's wish."
     }
    ],
-   "approved": false
+   "drafted": "shas1",
+   "approved": true
   },
   "kiddushin-50a-9-9": {
    "note": "A man sold his property after telling the buyer he planned to move to the Land of Israel. He went but could not settle there, came back to Babylonia, and tried to cancel the sale. Rava ruled that people go to Israel intending to settle, so since he could not, he can cancel the sale. A second version of the tradition says Rava ruled the opposite: he intended to go and did go, so the sale stands.",
@@ -684,7 +744,8 @@
      "meaning": "the Land of Israel."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara has just argued that unspoken intentions do not count in a transaction. Here the seller stated his reason aloud, and the question becomes how far that stated purpose reaches."
   },
   "kiddushin-50a-10-10": {
    "note": "A similar case: a man sold his property intending to move to the Land of Israel but never went. Rav Ashi ruled the sale stands, since he could have gone had he wanted and the matter was up to him. A second version words this as a question. The Gemara says the two versions differ only if something outside his control stopped him: the first version still upholds the sale, the second implies it would be cancelled.",
@@ -700,63 +761,68 @@
      "meaning": "the Talmud's discussion and analysis that builds on the Mishnah."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "It follows the case of a seller who went but could not settle. The Gemara explains that the two versions of Rav Ashi's words differ over a man stopped on the way by circumstances beyond his control."
   },
   "kiddushin-52b-12-14": {
-   "note": "After Rabbi Meir died, Rabbi Yehuda told his students to keep Meir's students out of the study hall, calling them troublemakers who came to overwhelm him with legal questions rather than to learn. Sumakhos pushed in and quoted Meir's ruling that a priest cannot betroth a woman using his share of the Temple offerings. Yehuda got angry and said the case is irrelevant since a woman could not be in that part of the Temple courtyard. Rabbi Yosei spoke up, fearing people would say Meir died, Yehuda got angry, and Yosei stayed silent. He argued the ruling is relevant: a father or a woman's agent could accept the betrothal there, and a woman might push her way in.",
+   "note": "After Rabbi Meir died, Rabbi Yehuda told his students not to let Rabbi Meir's students in, calling them quarrelsome men who came not to learn but to overwhelm him with laws. Sumakhos, a student of Rabbi Meir, pushed his way in and reported Rabbi Meir's teaching that a priest who betroths a woman with his share of the offerings has not betrothed her. Rabbi Yehuda grew angry, repeated his warning, and objected that a woman is never in the Temple courtyard. Rabbi Yosei said: People will say Meir died, Yehuda grew angry and Yosei was silent; what will become of the Torah? He answered that a father can accept betrothal for his daughter there, a woman can send an agent, and she might push in.",
+   "why": "The mishna rules that a priest cannot betroth a woman with his portion of the offerings; this teaching gives that ruling as Rabbi Meir taught it, and the Gemara goes on to the dispute between Rabbi Yehuda and Rabbi Yosei.",
    "people": [
     {
      "name": "Rabbi Meir",
-     "about": "a sage who had died; his students are the subject"
+     "about": "A Sage who had died; his teaching is reported by his student."
     },
     {
      "name": "Rabbi Yehuda",
-     "about": ""
+     "about": "A Sage who barred Rabbi Meir's students from his study hall."
     },
     {
      "name": "Sumakhos",
-     "about": "a student of Rabbi Meir"
+     "about": "A student of Rabbi Meir who pushed his way in."
     },
     {
      "name": "Rabbi Yosei",
-     "about": ""
+     "about": "A Sage present who answered Rabbi Yehuda's objection."
     }
    ],
    "terms": [
     {
-     "term": "betroth",
-     "meaning": "to legally begin a marriage by giving the woman something of value."
+     "term": "portion of the offerings",
+     "meaning": "The parts of sacrificed animals given to priests to eat. Some, of the most sacred order, could be eaten only inside the Temple courtyard."
     },
     {
-     "term": "baraita",
-     "meaning": "a teaching from the sages of the Mishnah era that is not in the Mishnah itself."
+     "term": "betroth",
+     "meaning": "To perform the first stage of marriage, usually by giving the woman money or an object of value."
+    },
+    {
+     "term": "Temple courtyard",
+     "meaning": "The inner area of the Temple in Jerusalem where sacrifices were offered and the holiest portions eaten."
     }
    ],
-   "approved": false
+   "drafted": "shas1",
+   "approved": true
   },
   "kiddushin-57a-0-1": {
-   "note": "A teaching says Shimon HaAmasoni (some say Nehemya HaAmasoni) used to interpret every appearance of the small word 'et' in the Torah to derive extra laws. When he reached 'You shall fear the Lord your God', he stopped, since nothing could be added to the fear of God. His students asked what would become of all his earlier interpretations, and he said that just as he was rewarded for interpreting, he was rewarded for stopping. Later Rabbi Akiva taught that here 'et' includes Torah scholars, meaning they are to be feared too.",
+   "note": "Shimon HaAmasoni (some say Nehemya HaAmasoni) used to draw a teaching from every 'et' in the Torah. When he reached the verse 'You shall fear et the Lord your God', he stopped, since, as the translation explains, nothing can be feared alongside God. His students asked: What will become of all the 'et's you have interpreted? He said: Just as I was rewarded for interpreting, I am rewarded for withdrawing. This stood until Rabbi Akiva came and taught that the 'et' in that verse includes Torah scholars.",
+   "why": "The Gemara has just said that one Sage does not draw laws from the word 'et', and cites this teaching to show that this was a real method of reading that a Sage could give up.",
    "people": [
     {
      "name": "Shimon HaAmasoni",
-     "about": "some say it was Nehemya HaAmasoni"
+     "about": "A Sage who drew teachings from every 'et' in the Torah, then withdrew; some name him Nehemya HaAmasoni."
     },
     {
      "name": "Rabbi Akiva",
-     "about": "later explained the word 'et' in this verse"
+     "about": "A Sage who later read the 'et' in 'You shall fear the Lord your God' as including Torah scholars."
     }
    ],
    "terms": [
     {
      "term": "et",
-     "meaning": "a small Hebrew word marking the object of a sentence, which some sages read as hinting at an additional law."
-    },
-    {
-     "term": "baraita",
-     "meaning": "a teaching from the sages of the Mishnah era that is not in the Mishnah itself."
+     "meaning": "A small Hebrew word that marks the object of a verb and has no meaning of its own; some Sages read it as adding something extra to a verse."
     }
    ],
-   "approved": false
+   "drafted": "shas1",
+   "approved": true
   },
   "kiddushin-59a-5-7": {
    "note": "Rav Giddel was in the middle of buying a plot of land when Rabbi Abba bought it. Rav Giddel's complaint passed through Rabbi Zeira to Rav Yitzhak Nappaha, who asked Rabbi Abba whether it is wrong to snatch a poor man's found loaf; Abba said the taker is wicked. Abba said he had not known of Giddel's attempt but would not sell the land, his first purchase, though he would give it as a gift. Giddel would not take a gift, and Abba then would not take the land either, so it was called the land of the Sages.",
@@ -784,31 +850,30 @@
      "meaning": "one of the three holidays when Jews traditionally traveled to the Temple, here a time when scholars gathered."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara has been telling of agents who bought for themselves what they were sent to get for another; this story extends the theme to someone who takes a deal another person is already pursuing."
   },
   "kiddushin-66a-5-5": {
-   "note": "The Sages ask what happens if one witness tells a husband his wife was unfaithful and he stays silent. Abaye says the witness is believed; Rava says not, since such matters need two witnesses. Abaye points to a case: a blind man's messenger reported seeing the blind man's wife commit adultery, and Mar Shmuel told him to divorce her if he trusted the messenger, otherwise not.",
+   "note": "A blind man used to review mishnayot with Mar Shmuel. One day he was late, so Mar Shmuel sent a messenger to bring him. The two missed each other on different roads, and the messenger reached the blind man's house. He came back and reported that he had seen the man's wife committing adultery. The blind man asked Mar Shmuel what to do, and Mar Shmuel told him: If this messenger is trusted by you, go and divorce her; if not, do not divorce her.",
+   "why": "Abaye and Rava disagree whether a single witness is believed when he says a man's wife committed adultery; Abaye tells this case as his proof, and Rava answers that Mar Shmuel meant trusted like two witnesses.",
    "people": [
     {
      "name": "Abaye",
-     "about": ""
-    },
-    {
-     "name": "Rava",
-     "about": ""
+     "about": "The Sage who tells this case as proof for his view."
     },
     {
      "name": "Mar Shmuel",
-     "about": ""
+     "about": "The teacher with whom the blind man reviewed mishnayot, who answered his question."
     }
    ],
    "terms": [
     {
-     "term": "halakha",
-     "meaning": "Jewish law; the accepted ruling."
+     "term": "mishnayot",
+     "meaning": "Teachings of the Mishna, the earliest written collection of Jewish law, which students memorized and reviewed aloud."
     }
    ],
-   "approved": false
+   "drafted": "bfull1notes",
+   "approved": true
   },
   "kiddushin-66a-7-11": {
    "note": "King Yannai conquered sixty cities and held a feast for the Sages. A scoffer, Elazar ben Po'ira, told him that the Sages secretly resented him and suggested making them stand before the High Priest's frontplate the king wore. The elder Yehuda ben Gedidya told Yannai to be content with the crown of kingship and leave the priesthood to Aaron's descendants. His words rested on a rumor that Yannai's mother had been taken captive, which would disqualify him. The rumor was investigated and not confirmed, and in his rage the king expelled the Sages. Elazar urged him to destroy them. Yannai asked what would become of the Torah, and Elazar said it lay wrapped in the corner for anyone to study. The Sages were killed, and the world was empty of Torah until Shimon ben Shatah restored it.",
@@ -840,91 +905,80 @@
      "meaning": "the traditional teachings passed down by the Sages alongside the written text."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Abaye holds that a single witness is believed about a wife's adultery and Rava disagrees. Abaye cites this account because the rumor about Yannai's mother was 'investigated and not found', which he reads as one witness believed unless two contradict him."
   },
   "kiddushin-70a-11-16": {
-   "note": "A man insulted Rav Yehuda, who excommunicated him and declared him a slave, so the man summoned Rav Yehuda to the court of Rav Nahman. Rav Yehuda went, and when Rav Nahman offered him a seat, a citron, wine, and greetings for his wife, Rav Yehuda objected each time to his word choice, or to using a woman's service or greeting, citing Shmuel. The text ends with Rav Nahman's wife Yalta asking him to release the man so he is not seen as another ignoramus.",
+   "note": "In a Pumbedita butcher shop, a man from Neharde'a was told to wait until Rav Yehuda bar Yeḥezkel's servant was served, and mocked Rav Yehuda with an insulting name. Rav Yehuda excommunicated him and, told he often called people slaves, proclaimed him a slave. The man summoned Rav Yehuda to Rav Naḥman's court. There Rav Yehuda corrected Rav Naḥman's every word and offer, until Rav Naḥman's wife Yalta told him to get it over with. When the man claimed descent from the Hasmonean kings, Rav Yehuda quoted Shmuel that anyone who says so is a slave, and Rav Mattana, arriving that day, confirmed it. The man was proclaimed a slave and marriage contracts were torn up. When people chased Rav Yehuda to stone him, he threatened to reveal more, and they threw down their stones.",
+   "why": "The Gemara has just taught that whoever calls others flawed is himself flawed, and Shmuel's saying that he disqualifies with his own flaw; Rav Yehuda cites that very teaching in court to justify declaring the man a slave.",
    "people": [
     {
-     "name": "Rav Yehuda",
-     "about": ""
+     "name": "Rav Yehuda bar Yeḥezkel",
+     "about": "A Sage of Pumbedita, called Rav Yehuda, who excommunicates the man and is summoned to court"
     },
     {
-     "name": "Rav Nahman",
-     "about": "a judge in Neharde'a"
+     "name": "Rav Naḥman",
+     "about": "The judge in Neharde'a, son-in-law of the Exilarch, who hears the case"
     },
     {
      "name": "Rav Huna",
-     "about": ""
+     "about": "The Sage who advises Rav Yehuda to answer the summons"
     },
     {
      "name": "Yalta",
-     "about": "Rav Nahman's wife"
-    },
-    {
-     "name": "Shmuel",
-     "about": ""
-    }
-   ],
-   "terms": [
-    {
-     "term": "Exilarch",
-     "meaning": "The head of the Babylonian Jewish community."
-    },
-    {
-     "term": "excommunicated",
-     "meaning": "Formally cut off from the community as a punishment."
-    }
-   ],
-   "approved": false
-  },
-  "kiddushin-70b-1-8": {
-   "note": "Rav Nahman denied sending the summons, but Rav Yehuda showed it, and Nahman insisted on hearing the case so no one could say the Sages go easy on each other. Rav Yehuda justified excommunicating the man and calling him a slave, since he called others slaves, which Shmuel said shows one's own flawed lineage. When the man claimed Hasmonean royal descent, Rav Yehuda cited Shmuel that anyone saying so is a slave. Nahman objected that Yehuda was personally involved, so Rav Mattana confirmed Shmuel's statement. That day marriages in Neharde'a were annulled, and when a mob chased Rav Yehuda, he threatened to reveal Shmuel's remark about the dove's house and raven's house, and they dropped their stones.",
-   "people": [
-    {
-     "name": "Rav Yehuda",
-     "about": ""
-    },
-    {
-     "name": "Rav Nahman",
-     "about": "judge in Neharde'a"
+     "about": "Rav Naḥman's wife, who tells him to end the exchange"
     },
     {
      "name": "Rav Mattana",
-     "about": "confirmed Shmuel's statement"
-    },
-    {
-     "name": "Shmuel",
-     "about": "quoted for his ruling about the Hasmoneans"
+     "about": "A Sage who arrives after thirteen years away and confirms Shmuel's ruling"
     }
    ],
    "terms": [
     {
-     "term": "Hasmoneans",
-     "meaning": "the priestly royal family that ruled Judea after the Maccabee revolt."
+     "term": "excommunication",
+     "meaning": "A ban imposed by the Sages that cuts a person off from normal dealings with the community until he repents."
     },
     {
-     "term": "excommunicated",
-     "meaning": "formally cut off from the community as a penalty."
+     "term": "Exilarch",
+     "meaning": "The hereditary head of the Jewish community in Babylonia."
+    },
+    {
+     "term": "Hasmonean kings",
+     "meaning": "The Jewish royal dynasty of the Second Temple period; the story says only slaves remained of their line."
+    },
+    {
+     "term": "marriage contract",
+     "meaning": "The ketubba, the document a husband gives his wife at marriage; tearing it up here marks a marriage found to be invalid."
     }
    ],
-   "approved": false
+   "drafted": "bfix1notes",
+   "approved": true
   },
   "kiddushin-71a-4-5": {
-   "note": "In Rabbi Pinehas's time, some wanted to portray Babylonian family lineage as doubtful compared to that of the Land of Israel. He told his servants to carry him off on a stretcher after he spoke twice in the study hall. He first said bird slaughter is not required by Torah law, and while they debated it, he said the lineage of every land is doubtful compared to Israel's, and Israel's compared to Babylonia's. His servants ran off with him and the scholars could not catch him. They then checked families' lineage but stopped when they reached powerful families, since accusing them was dangerous.",
+   "note": "In Rabbi Pinehas's day, people wanted to declare the lineage of Babylonian families doubtful compared to the Land of Israel's. Rabbi Pinehas told his servants that once he had made two statements in the house of study, they should pick him up on a stretcher and run. He first announced that slaughtering a bird is not required by Torah law, and while the scholars were absorbed in that, he declared that the Land of Israel's lineage is muddled compared to Babylonia's. His servants carried him off, and his pursuers could not catch him. The scholars then examined families' lineage until they reached ones too dangerous to accuse, and stopped.",
+   "why": "The Gemara has just quoted the teaching that Babylonian lineage is purer than the Land of Israel's, and told how Rabbi Yehuda HaNasi resisted the opposite claim; this is a second attempt at that claim, met the same way.",
    "people": [
     {
      "name": "Rabbi Pinehas",
-     "about": ""
+     "about": "A Sage who declares the Land of Israel's lineage muddled compared to Babylonia's, then has himself carried away."
     }
    ],
    "terms": [
     {
      "term": "lineage",
-     "meaning": "a family's ancestry, which affects whom its members may marry."
+     "meaning": "Family descent. A flaw in it, such as descent from a forbidden union, could bar a person from marrying into other families."
+    },
+    {
+     "term": "muddled",
+     "meaning": "Mixed with families of doubtful descent, so that marrying into them would require checking first."
+    },
+    {
+     "term": "house of study",
+     "meaning": "The hall where the Sages and their students met to learn and debate."
     }
    ],
-   "approved": false
+   "drafted": "shas1",
+   "approved": true
   },
   "kiddushin-71b-2-2": {
    "note": "Ze'eiri, a Babylonian, was avoiding Rabbi Yohanan, who kept urging him to marry his daughter. When Ze'eiri carried Rabbi Yohanan over a puddle, Rabbi Yohanan asked why he honored their Torah but not their daughters. Rabbi Yohanan argued that worry about flawed Jewish ancestry in Eretz Yisrael is no reason, since people of flawed lineage also stayed in Babylonia. The Gemara then notes he forgot a teaching of Rabbi Elazar that those who stayed in Babylonia were all of sound lineage.",
@@ -952,7 +1006,8 @@
      "meaning": "The Land of Israel."
     }
    ],
-   "approved": false
+   "approved": true,
+   "why": "The Gemara has just said that anyone who speaks like a Babylonian may marry without having his lineage checked, since Babylonian families are presumed unflawed; here a Babylonian Sage holds back from marrying into a family of the Land of Israel."
   },
   "kiddushin-71b-4-8": {
    "note": "Ulla visited Pumbedita and saw that Rav Yehuda's grown son Rav Yitzhak was unmarried. Rav Yehuda said he worried about finding a woman of sound lineage. Ulla replied that none of us can be sure of our own ancestry, since we may descend from women assaulted during wars or from people the prophet Amos condemned, and Rabbi Abbahu says some descend from wife-swapping groups, which produces mamzerim. When Rav Yehuda asked how to tell, Ulla said to follow the silence. In the Land of Israel, when two people quarrel, the one who goes silent first is considered to be of finer lineage.",
@@ -980,7 +1035,8 @@
      "meaning": "a person born from certain forbidden unions, who is restricted in whom they may marry."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is discussing how to know which families have unflawed lineage; Ulla's advice gives a practical test, which Rav then applies to Babylonia in the lines that follow."
   },
   "kiddushin-73a-5-5": {
    "note": "Rabbi Zeira taught in Mehoza that a convert may marry a mamzeret, and everyone pelted him with their etrogim because the many converts felt insulted. Rava said he should have been more careful in a place with many converts. Rava first taught there that a convert may marry a priest's daughter, and they carried him on silk. He then taught the mamzeret ruling, and they said he had lost the honor of his first sermon. Rava answered that he had done what was good for them: a convert may marry from pure lineage or from a mamzeret, as he wishes.",
@@ -1004,7 +1060,8 @@
      "meaning": "a citron, the fruit used on the holiday of Sukkot."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara has just cited support for Rav's view that priests' daughters may marry men barred from the priesthood, after debating whether converts may marry a mamzeret; Rava's two teachings state both rulings, which the Gemara then adopts as law."
   },
   "kiddushin-76b-9-10": {
    "note": "Rav Adda bar Ahava's host, a convert's son, and Rav Beivai both wanted the city's official position, so they went to Rav Yosef. Rav Yosef cited a verse about appointing a king 'from among your brothers' to show that a convert cannot hold official positions. Rav Adda asked about someone whose mother is born Jewish, and Rav Yosef said the verse allows it. He ruled that Rav Beivai, a great Torah scholar, oversee religious matters and the host oversee the city's other matters. Abaye's moral was to host someone like Rav Adda bar Ahava, whose pleading won his host his post.",
@@ -1032,7 +1089,8 @@
      "meaning": "someone not born Jewish who joined the Jewish people."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The mishna says anyone whose ancestors held public posts may marry into the priesthood without checking, and the Gemara asks whether people of flawed lineage are ever appointed; this case shows who may hold a post."
   },
   "kiddushin-80a-4-4": {
    "note": "A woman came to Jerusalem with a child riding on her shoulders, as a mother would, and raised him. He later had intercourse with her, and the court stoned them for the prohibition on a mother and son. The text says this was not because he was definitely her son, since there was no testimony of that, but because he clung to her and so had the presumed status of her son.",
@@ -1056,18 +1114,8 @@
      "meaning": "treating a person as having a certain status because of how things appear, even without proof."
     }
    ],
-   "approved": true
-  },
-  "kiddushin-80b-11-11": {
-   "note": "The Rabbis are described as concerned about sin even in times of deep grief. As an example, a woman visiting her husband's grave had intercourse with a man guarding the body of someone executed by the king. Meanwhile that body was taken, and she suggested digging up her husband so the guard could claim he had done his job. The point is that even in mourning a person can give in to temptation.",
-   "people": [],
-   "terms": [
-    {
-     "term": "disinter",
-     "meaning": "to dig up a buried body."
-    }
-   ],
-   "approved": false
+   "approved": true,
+   "why": "Rabbi Yohanan holds that a court may flog, stone or burn on the basis of presumed status alone, without witnesses to the family tie; this incident is cited as a death sentence resting on such a presumption."
   },
   "kiddushin-81a-10-11": {
    "note": "Captive women who had been redeemed were lodged in the upper room of Rav Amram the Pious's house, and the ladder was removed to keep men from them. One woman was so beautiful that it seemed a light shone from the doorway, and Rav Amram lifted a ladder that ten men could not lift and began to climb. Halfway up, he braced himself and shouted that his house was on fire. The Sages came and said he had embarrassed them. He replied that it was better for them to be shamed in his house in this world than to be ashamed of him in the World-to-Come. He then swore that his evil inclination should leave him, and it came out of him like a pillar of fire. He told it that although it was fire and he was only flesh, he had beaten it.",
@@ -1087,7 +1135,8 @@
      "meaning": "the afterlife, where a person's deeds are judged."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara has been discussing how to keep men and women from being alone together, with Abaye and Rava setting up barriers and Avin warning that festivals are the dangerous time; this story shows even a pious Sage nearly overcome."
   },
   "kiddushin-81a-12-12": {
    "note": "Rabbi Meir used to mock sinners by saying it is easy to resist temptation. One day Satan appeared to him as a woman across a river, and Meir crossed a rope bridge toward her. Halfway across, the evil inclination left him and said that if heaven did not proclaim \"be careful with Rabbi Meir and his Torah,\" it would have made his blood worth two small coins. The passage ends there.",
@@ -1107,7 +1156,8 @@
      "meaning": "a very small coin."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is discussing the pull of temptation between men and women; after Rav Amram's struggle it tells of Sages who scoffed at sinners and were shown how close they came to falling."
   },
   "kiddushin-81a-13-13": {
    "note": "Rabbi Akiva, too, used to ridicule people who sinned. One day Satan appeared to him as a woman at the top of a palm tree, and Akiva grabbed the tree and began to climb. Halfway up, the evil inclination left him and said that if it were not proclaimed in heaven to take care of Rabbi Akiva and his Torah, it would have made his blood worth no more than two small coins.",
@@ -1127,7 +1177,8 @@
      "meaning": "a very small coin."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "This is the second of a run of stories, after Rabbi Meir's, about Sages who scoffed at sinners and were shown how close they came to falling, in a discussion of the pull of temptation between men and women."
   },
   "kiddushin-81a-14-14": {
    "note": "Peleimu used to say every day, 'An arrow in the eye of Satan.' On the eve of Yom Kippur, Satan came to his door as a poor man asking for food and kept asking to be let in until he sat at Peleimu's table, where he behaved disgustingly and spat into a cup. When people scolded him, he pretended to die, and people cried that Peleimu had killed a man, so Peleimu fled and hid in the bathroom. Satan followed him, revealed himself, and asked why Peleimu kept provoking him. He told Peleimu to say instead, 'Let the Merciful One rebuke the Satan.'",
@@ -1151,7 +1202,8 @@
      "meaning": "a common Aramaic way of referring to God."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "This follows the accounts of Rabbi Meir and Rabbi Akiva, who mocked sinners and were tested; here a Sage who taunts Satan daily is taught to ask God to rebuke him instead."
   },
   "kiddushin-81b-1-3": {
    "note": "Rabbi Hiyya bar Ashi would pray each day to be saved from the evil inclination. His wife, who knew he had stayed away from her for years, wondered why he needed to pray that. One day she dressed up, walked past him in the garden, and said she was Haruta, a well-known prostitute. He propositioned her, climbed a tree for a pomegranate as her price, and they had intercourse. At home he sat in the burning oven in guilt, and when she told him it was her, he did not believe her until she gave him proofs. He said he had still intended to sin, fasted for the rest of his life over it, and died in his misery.",
@@ -1171,7 +1223,8 @@
      "meaning": "the inner urge toward sin that Jewish tradition says every person struggles with."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "Right after this, the Gemara shows from verses that one who meant to sin needs atonement even if no sin took place; Rabbi Hiyya bar Ashi's lifelong fasting puts that idea into a life."
   },
   "kiddushin-81b-14-14": {
    "note": "Rav Aha bar Abba visited his son-in-law Rav Hisda and put his granddaughter on his lap. Rav Hisda asked whether she might already be betrothed. Rav Aha replied that if so Rav Hisda had broken Rav's ruling against betrothing a minor daughter. Rav Hisda answered that Rav Aha had broken Shmuel's rule against making use of a woman. Rav Aha answered with another statement of Shmuel that such actions are permitted for the sake of Heaven, meaning out of family affection without any improper element.",
@@ -1199,7 +1252,53 @@
      "meaning": "done with a pure, proper motive."
     }
    ],
-   "approved": true
+   "approved": true,
+   "why": "The Gemara is discussing how close a man may be to young relatives, and Rav Hisda has just ruled that a father may not sleep near a daughter once she is ashamed before him; this story shows where affection toward a granddaughter stands."
+  },
+  "kiddushin-70b-1-8": {
+   "note": "Rav Yehuda has come to Rav Nahman's court in Neharde'a, summoned by a man he excommunicated and declared a slave. He explained that the man had insulted a Sage's agent and habitually called people slaves. The man arrived, protesting that he came from the Hasmonean kings; Rav Yehuda quoted Shmuel that anyone who says so is a slave. When Rav Nahman objected to a ruling quoted after the fact, Rav Mattana, arriving that day after thirteen years away, confirmed it: the last Hasmonean girl had cried this from a roof, then fell and died. The man was proclaimed a slave and several marriage contracts were torn up. Townspeople chased Rav Yehuda to stone him; he threatened to reveal Shmuel's list of flawed families, and they threw down the stones, which dammed the Malka River.",
+   "why": "The Gemara is listing families of flawed lineage; in this hearing Rav Nahman presses whether Shmuel's teaching lets one only suspect a man who calls others slaves, or also proclaim him one.",
+   "people": [
+    {
+     "name": "Rav Yehuda",
+     "about": "A Sage from Pumbedita, summoned to court for declaring a man a slave."
+    },
+    {
+     "name": "Rav Nahman",
+     "about": "The judge in Neharde'a who hears the case."
+    },
+    {
+     "name": "Rav Mattana",
+     "about": "A Sage, back in Neharde'a after thirteen years, who confirms what Shmuel said."
+    }
+   ],
+   "terms": [
+    {
+     "term": "Hasmonean kings",
+     "meaning": "A royal family of priests. In Shmuel's teaching, none of them survived except slaves and one girl, so a claim to descend from them marks a man as a slave."
+    },
+    {
+     "term": "marriage contracts",
+     "meaning": "The document a husband gives his wife at marriage (ketubah). Tearing them up meant those marriages were treated as invalid."
+    },
+    {
+     "term": "excommunicate",
+     "meaning": "To put a person under a formal ban that cuts him off from the community."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": false
+  },
+  "kiddushin-80b-11-11": {
+   "note": "The Rabbis are described as concerned about sin even in times of deep grief. As an example, a woman visiting her husband's grave had intercourse with a man guarding the body of someone executed by the king. Meanwhile that body was taken, and she suggested digging up her husband so the guard could claim he had done his job. The point is that even in mourning a person can give in to temptation.",
+   "people": [],
+   "terms": [
+    {
+     "term": "disinter",
+     "meaning": "to dig up a buried body."
+    }
+   ],
+   "approved": false
   }
  }
 }

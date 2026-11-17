@@ -99,7 +99,13 @@
    "start_segment": 21,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 7 is Rabbi Abba's legal objection drawn from the incident; the story of Rabban Gamliel giving the tithes on the ship ends in segment 6.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "While traveling on a ship, Rabban Gamliel realizes he has not separated his tithes and proceeds to transfer ownership of them to the Elders traveling with him.",
    "segments": [
@@ -114,12 +120,6 @@
      "i": 0,
      "he": "וּמְקוֹמוֹ מוּשְׂכָּר לוֹ. וְעִישּׂוּר אַחֵר שֶׁאֲנִי עָתִיד לָמוֹד, נָתוּן לַעֲקִיבָא בֶּן יוֹסֵף, כְּדֵי שֶׁיִּזְכֶּה בּוֹ לַעֲנִיִּים, וּמְקוֹמוֹ מוּשְׂכָּר לוֹ.",
      "en": "<b>and the place of</b> the tithe <b>is rented to him.</b> Rabbi Yehoshua paid him a token sum to rent the field, which presumably became the equivalent of his courtyard, and thereby acquired the tithe. <b>And another one-tenth that I will measure out in the future</b> and separate from my produce as the poor man’s tithe <b>is given to Akiva ben Yosef so that he will acquire it for the poor, and its place is rented to him.</b>"
-    },
-    {
-     "ref": "Bava Metzia 11b",
-     "i": 1,
-     "he": "וְכִי רַבִּי יְהוֹשֻׁעַ וְרַבִּי עֲקִיבָא בְּצַד שָׂדֵהוּ שֶׁל רַבָּן גַּמְלִיאֵל הָיוּ עוֹמְדִין?",
-     "en": "Rabbi Abba continued: <b>But were Rabbi Yehoshua and Rabbi Akiva standing next to Rabban Gamliel’s field</b> then? All of them were on the ship. Apparently, one’s courtyard effects acquisition for him even when he is not standing next to it."
     }
    ],
    "span": [
@@ -134,7 +134,7 @@
      "end": 1
     }
    ],
-   "words": 206,
+   "words": 166,
    "minutes": 2
   },
   {
@@ -918,46 +918,28 @@
    "tractate": "bava_metzia",
    "ref": "Bava Metzia 42a",
    "refs": [
-    "Bava Metzia 42a"
+    "Bava Metzia 42a",
+    "Bava Metzia 42b"
    ],
    "start_segment": 11,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "A bailee entrusted a deposit to his mother, who stored it in a chest from which it was stolen, leading Rava to deliberate on the liability.",
+   "summary": "A man left money in another's care.",
    "segments": [
     {
      "ref": "Bava Metzia 42a",
      "i": 11,
      "he": "הָהוּא גַּבְרָא דְּאַפְקֵיד זוּזֵי גַּבֵּי חַבְרֵיהּ, אַשְׁלְמִינְהוּ לְאִימֵּיהּ, וְאוֹתְבִינְהוּ בְּקַרְטְלִיתָא, וְאִיגְּנוּב. אָמַר רָבָא: הֵיכִי נְדַיְינוּ דַּיָּינֵי לְהַאי דִּינָא?",
      "en": "The Gemara relates: There was <b>a certain man who deposited money with another.</b> The bailee <b>gave</b> the money <b>to his mother, and</b> she <b>placed</b> the money <b>in a chest [<i>bekartalita</i>], and it was stolen. Rava said: How should judges rule in this case?</b>"
-    }
-   ],
-   "span": [
+    },
     {
      "ref": "Bava Metzia 42a",
-     "start": 11,
-     "end": 11
-    }
-   ],
-   "words": 45,
-   "minutes": 1
-  },
-  {
-   "id": "bava_metzia-42b-0-2",
-   "tractate": "bava_metzia",
-   "ref": "Bava Metzia 42b",
-   "refs": [
-    "Bava Metzia 42b"
-   ],
-   "start_segment": 0,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "A man entrusted money to a friend who gave it to his mother for safekeeping; she put it in a chest from which it was stolen, leading Rava to rule on their liability.",
-   "segments": [
+     "i": 12,
+     "he": "נֵימָא לֵיהּ לְדִידֵיהּ: זִיל שַׁלֵּים, אָמַר:",
+     "en": "<b>Let us say to</b> the bailee: <b>Go pay.</b> But he can <b>say:</b> There is a principle:"
+    },
     {
      "ref": "Bava Metzia 42b",
      "i": 0,
@@ -979,13 +961,18 @@
    ],
    "span": [
     {
+     "ref": "Bava Metzia 42a",
+     "start": 11,
+     "end": 12
+    },
+    {
      "ref": "Bava Metzia 42b",
      "start": 0,
      "end": 2
     }
    ],
-   "words": 135,
-   "minutes": 1
+   "words": 196,
+   "minutes": 2
   },
   {
    "id": "bava_metzia-42b-4-4",
@@ -997,7 +984,11 @@
    "start_segment": 4,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 4,
+    "reason": "The parties' claims (7-8) and the resolution in 10 (the trader's oath and the cowherd paying for the meat) finish the case; 11 is a separate site story."
+   },
    "reviewed": false,
    "summary": "A steward bought an ox for orphans and gave it to a cowherd, but the ox died because it had no teeth to eat, leading to a dispute over liability.",
    "segments": [
@@ -1006,6 +997,30 @@
      "i": 4,
      "he": "הָהוּא אַפּוֹטְרוֹפָּא דְיַתְמֵי דִּזְבַן לְהוּ תּוֹרָא לְיַתְמֵי וּמַסְרֵיהּ לְבַקָּרָא. לָא הֲווֹ לֵיהּ כַּכֵּי וְשִׁינֵּי לְמֵיכַל, וּמִית. אָמַר רָמֵי בַּר חָמָא: הֵיכִי נְדַיְינוּ דַּיָּינֵי לְהַאי דִּינָא?",
      "en": "The Gemara relates: There was <b>a certain steward</b> who acted on behalf <b>of orphans, who purchased an ox for the orphans and passed it to the cowherd.</b> This ox <b>did not have molars and</b> other <b>teeth with which to eat, and</b> the ox <b>died</b> because it was unable to eat the standard food of oxen. <b>Rami bar Ḥama said: How should judges rule in this case?</b>"
+    },
+    {
+     "ref": "Bava Metzia 42b",
+     "i": 5,
+     "he": "נֵימָא לֵיהּ לְאַפּוֹטְרוֹפָּא: זִיל שַׁלֵּים, אָמַר: אֲנָא לְבַקָּרָא מְסַרְתֵּיהּ.",
+     "en": "<b>Let them say to the steward: Go pay</b> for the dead ox. But he can <b>say: I gave it to the cowherd</b> with the expectation that he would care for it."
+    },
+    {
+     "ref": "Bava Metzia 42b",
+     "i": 6,
+     "he": "נֵימָא לֵיהּ לְבַקָּרָא: זִיל שַׁלֵּים, אָמַר: אֲנָא בַּהֲדֵי תּוֹרֵי אוֹקֵימְתֵּיהּ, אוּכְלָא שְׁדַאי לֵיהּ, לָא הֲוָה יָדַעְינָא דְּלָא אֲכַל.",
+     "en": "<b>Let us say to the cowherd: Go pay</b> for the dead ox. <b>He</b> can <b>say: I placed</b> the ox <b>with</b> other <b>oxen and I threw food before it. We did not know that it did not eat.</b>"
+    },
+    {
+     "ref": "Bava Metzia 42b",
+     "i": 7,
+     "he": "מִכְּדֵי בַּקָּרָא שׁוֹמֵר שָׂכָר דְּיַתְמֵי הוּא! אִיבְּעִי לֵיהּ לְעַיּוֹנֵי אִי אִיכָּא פְּסֵידָא דְיַתְמֵי. הָכִי נָמֵי, וְהָכָא בְּמַאי עָסְקִינַן – דְּלֵיכָּא פְּסֵידָא דְיַתְמֵי, דְּאַשְׁכְּחוּהּ לְמָרֵיהּ דְּתוֹרָא וּשְׁקוּל יַתְמֵי זוּזֵי מִינֵּיהּ.",
+     "en": "The Gemara asks: <b>After all, the cowherd is a paid bailee of the orphans.</b> Therefore, <b>he was required to examine</b> the situation and ascertain if the ox was eating. The Gemara answers: <b>If there was loss for the orphans, indeed,</b> the cowherd would be liable to pay. <b>And with what are we dealing here?</b> It is a case <b>where there is no loss</b> incurred <b>by the orphans, as they found the</b> previous <b>owner of the ox,</b> who sold it to them, <b>and the orphans took</b> their <b>money</b> back <b>from him</b> after discovering that the ox had this deficiency."
+    },
+    {
+     "ref": "Bava Metzia 42b",
+     "i": 8,
+     "he": "אֶלָּא מַאן קָא טָעֵין? מָרֵיהּ דְּתוֹרָא קָטָעֵין. אִיבְּעִי לֵיהּ לְאוֹדוֹעַן! מַאי מוֹדְעִינַן לֵיהּ? מִידָּע יָדַע דְּמִקָּח טָעוּת הָוֵי. בְּסַפְסֵירָא דְּזָבֵן מֵהָכָא וּמְזַבֵּין לְהָכָא, הִלְכָּךְ מִישְׁתְּבַע אִיהוּ דְּלָא הֲוָה יָדַע, וּמְשַׁלֵּם בַּקָּרָא דְּמֵי בָשָׂר בְּזוֹל.",
+     "en": "The Gemara asks: <b>Rather, who</b> then <b>claims</b> compensation from the cowherd? <b>The</b> previous <b>owner of the ox claims</b> compensation from the steward: <b>He should have informed us</b> that the ox was not eating. The Gemara answers: <b>What</b> would <b>we inform</b> the previous owner? <b>He knows that it is a mistaken transaction,</b> as he would be aware that the ox had no teeth. The Gemara explains: This is a case <b>with regard to a trader who buys from here and sells to there</b> and does not know the condition of the ox. <b>Therefore,</b> the trader <b>takes an oath</b> that <b>he did not know</b> about the ox’s defect, <b>and the cowherd pays the value of the meat</b> of the ox <b>based on</b> the <b>cheapest</b> price available in the market."
     }
    ],
    "span": [
@@ -1015,8 +1030,8 @@
      "end": 4
     }
    ],
-   "words": 66,
-   "minutes": 1
+   "words": 359,
+   "minutes": 3
   },
   {
    "id": "bava_metzia-42b-9-9",
@@ -1028,7 +1043,11 @@
    "start_segment": 9,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "The bailee's and brewer's claims (7-8) finish the case as told. 9-10 are the Gemara's analysis, and the final payment line (11) is beyond the 4-segment limit."
+   },
    "reviewed": false,
    "summary": "A brewer mistakenly used a depositor's hops instead of the bailee's hops to make beer, resulting in a legal debate when the beer spoiled.",
    "segments": [
@@ -1037,6 +1056,18 @@
      "i": 9,
      "he": "הָהוּא גַּבְרָא דְּאַפְקֵיד כְּשׁוּתָא גַּבֵּי חַבְרֵיהּ, הֲוָה לֵיהּ לְדִידֵיהּ נָמֵי כַּרְיָא דִכְשׁוּתָא. אֲמַר לֵיהּ לְסַרְסְיֵהּ: מֵהַאי רְמֵי. אֲזַל רְמָא מֵאִידַּךְ. אָמַר רַב עַמְרָם: הֵיכִי נְדַיְינוּ דַּיָּינֵי לְהַאי דִּינָא?",
      "en": "The Gemara relates: There was <b>a certain man who deposited hops,</b> used in the production of beer, <b>with another.</b> The bailee <b>himself had a pile of hops.</b> The bailee <b>said to his brewer: Cast</b> hops in the beer <b>from this</b> pile. The brewer <b>went and cast from</b> the <b>other</b> pile, the pile of the one who deposited the hops, into the beer. <b>Rav Amram said: How should judges rule in this case?</b>"
+    },
+    {
+     "ref": "Bava Metzia 42b",
+     "i": 10,
+     "he": "נֵימָא לֵיהּ לְדִידֵיהּ: זִיל שַׁלֵּים, אָמַר: אֲנָא אָמְרִי לֵיהּ מֵהַאי רְמִי.",
+     "en": "<b>Let us say to</b> the bailee: <b>Go pay.</b> But he can <b>say: I said to him,</b> i.e., the brewer: <b>Cast</b> hops <b>from this</b> pile, and I am not at fault."
+    },
+    {
+     "ref": "Bava Metzia 42b",
+     "i": 11,
+     "he": "נֵימָא לֵיהּ לְסַרְסְיֵהּ: זִיל שַׁלֵּים, אָמַר: לָא אֲמַר לִי מֵהַאי רְמִי וּמֵהַאי לָא תִּרְמֵי.",
+     "en": "<b>Let us say to the brewer: Go pay.</b> He can <b>say:</b> The bailee <b>did not say to me: Cast</b> hops <b>from this</b> pile <b>and do not cast</b> hops <b>from that</b> pile. I thought he was merely giving advice, and I did not know that he was insistent that I refrain from using the other hops."
     }
    ],
    "span": [
@@ -1046,8 +1077,8 @@
      "end": 9
     }
    ],
-   "words": 72,
-   "minutes": 1
+   "words": 157,
+   "minutes": 2
   },
   {
    "id": "bava_metzia-44b-4-4",
@@ -1420,10 +1451,20 @@
    "start_segment": 1,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 5 holds the scene's opening ('On that day Rabbi Eliezer answered all possible answers...') alongside the akhnai explanation, so it comes in. The Kelim mishna in 4 is legal background and stays out."
+   },
    "reviewed": false,
    "summary": "The famous 'Oven of Akhnai' narrative where Rabbi Eliezer's rejection of the majority's legal authority leads to his ostracism, cosmic upheaval, and the eventual death of Rabban Gamliel through the prayers of Eliezer's wife.",
    "segments": [
+    {
+     "ref": "Bava Metzia 59b",
+     "i": 0,
+     "he": "וְזֶה הוּא תַּנּוּר שֶׁל עַכְנַאי. מַאי עַכְנַאי? אָמַר רַב יְהוּדָה אָמַר שְׁמוּאֵל: שֶׁהִקִּיפוּ[הוּ] דְּבָרִים כְּעַכְנָא זוֹ, וְטִמְּאוּהוּ. תָּנָא: בְּאוֹתוֹ הַיּוֹם הֵשִׁיב רַבִּי אֱלִיעֶזֶר כׇּל תְּשׁוּבוֹת שֶׁבָּעוֹלָם, וְלֹא קִיבְּלוּ הֵימֶנּוּ.",
+     "en": "<b>And this is</b> known as <b>the oven of <i>akhnai</i>.</b> The Gemara asks: <b>What</b> is the relevance of <b><i>akhnai</i>,</b> a snake, in this context? <b>Rav Yehuda said</b> that <b>Shmuel said:</b> It is characterized in that manner due to the fact <b>that</b> the Rabbis <b>surrounded</b> it <b>with</b> their <b>statements like this snake,</b> which often forms a coil when at rest, <b>and deemed it impure.</b> The Sages <b>taught: On that day,</b> when they discussed this matter, <b>Rabbi Eliezer answered all</b> possible <b>answers in the world</b> to support his opinion, <b>but</b> the Rabbis <b>did not accept</b> his explanations <b>from him.</b>"
+    },
     {
      "ref": "Bava Metzia 59b",
      "i": 1,
@@ -1492,7 +1533,7 @@
      "end": 10
     }
    ],
-   "words": 1063,
+   "words": 1161,
    "minutes": 8
   },
   {
@@ -1599,12 +1640,17 @@
    "tractate": "bava_metzia",
    "ref": "Bava Metzia 64b",
    "refs": [
-    "Bava Metzia 64b"
+    "Bava Metzia 64b",
+    "Bava Metzia 65a"
    ],
    "start_segment": 6,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 3,
+    "reason": "Rava's rebuttals and his father's retraction ('I retract') in 7-9 complete the exchange; Abaye's rulings in 10 onward stay out."
+   },
    "reviewed": false,
    "summary": "Rav Yosef bar Ḥama seized and worked the slaves of his debtors, leading his son Rava to challenge the legality of the practice based on the laws of interest.",
    "segments": [
@@ -1613,6 +1659,24 @@
      "i": 6,
      "he": "רַב יוֹסֵף בַּר חָמָא תָּקֵיף עַבְדֵי דְאִינָשֵׁי דְּמַסֵּיק בְּהוּ זוּזֵי, וְעָבֵיד בְּהוּ עֲבִידְתָּא. אֲמַר לֵיהּ רָבָא בְּרֵיהּ: מַאי טַעְמָא עָבֵיד מָר הָכִי? אֲמַר לֵיהּ: אֲנָא כְּרַב נַחְמָן סְבִירָא לִי, דְּאָמַר רַב נַחְמָן: עַבְדָּא, נְהוֹם כְּרֵיסֵיהּ לָא שָׁוֵי.",
      "en": "The Gemara relates: <b>Rav Yosef bar Ḥama,</b> Rava’s father, <b>would seize the slaves of people who owed him money, and he would work them</b> against the will of their owners. <b>Rava, son of</b> Rav Yosef bar Ḥama, <b>said to him: What is the reason that</b> the <b>Master does this,</b> i.e., seizes and uses these slaves? Rav Yosef bar Ḥama <b>said to him: I maintain</b> that the <i>halakha</i> is <b>in accordance with</b> the opinion of <b>Rav Naḥman, as Rav Naḥman said: A slave is not worth</b> even <b>the bread in his stomach.</b> When the slaves work for me and eat in my home, I am not causing the owners any monetary loss."
+    },
+    {
+     "ref": "Bava Metzia 64b",
+     "i": 7,
+     "he": "אֲמַר לֵיהּ: אֵימוֹר דְּאָמַר רַב נַחְמָן כְּגוֹן דָּארוּ עַבְדֵּיהּ דִּמְרַקֵּיד בֵּי כוּבֵי, עַבְדֵי אַחֲרִינֵי מִי אָמַר? אֲמַר לֵיהּ: אֲנָא, כִּי הָא דְּרַב דָּנִיאֵל בַּר רַב קַטִּינָא אָמַר רַב סְבִירָא לִי. דְּאָמַר: הַתּוֹקֵף עַבְדּוֹ שֶׁל חֲבֵירוֹ וְעָשָׂה בּוֹ מְלָאכָה – פָּטוּר.",
+     "en": "Rava <b>said to him: I will say that Rav Naḥman said</b> this with regard to specific slaves, <b>such as his slave Dari, who</b> only <b>dances among</b> the wine <b>barrels [<i>khuvei</i>]</b> and does not perform any labor. <b>Did he say</b> this concerning <b>other slaves?</b> All other slaves perform labor, and their labor is worth more than their board. His father <b>said to him: I maintain</b> that the <i>halakha</i> is <b>in accordance with this</b> statement said by <b>Rav Daniel bar Rav Ketina</b> that <b>Rav says, as he says: One who seizes another’s slave and has him perform labor is exempt</b> from paying the master for the labor of the slave,"
+    },
+    {
+     "ref": "Bava Metzia 65a",
+     "i": 0,
+     "he": "דְּנִיחָא לֵיהּ דְּלָא נִסְתְּרֵי עַבְדֵּיהּ.",
+     "en": "<b>as</b> it is <b>satisfactory for</b> the master <b>that</b> the work habits of <b>his slave not be undone.</b>"
+    },
+    {
+     "ref": "Bava Metzia 65a",
+     "i": 1,
+     "he": "אֲמַר לֵיהּ: הָנֵי מִילֵּי הֵיכָא דְּלָא מַסֵּיק בֵּיהּ זוּזֵי. מָר כֵּיוָן דְּמַסֵּיק בְּהוּ זוּזֵי מִחֲזֵי כְּרִבִּית. דְּאָמַר רַב יוֹסֵף בַּר מִנְיוֹמֵי אָמַר רַב נַחְמָן: אַף עַל פִּי שֶׁאָמְרוּ הַדָּר בַּחֲצַר חֲבֵירוֹ שֶׁלֹּא מִדַּעְתּוֹ אֵינוֹ צָרִיךְ לְהַעֲלוֹת לוֹ שָׂכָר. הִלְוָהוּ וְדָר בַּחֲצֵירוֹ צָרִיךְ לְהַעֲלוֹת לוֹ שָׂכָר. אֲמַר לֵיהּ: הֲדַרִי בִּי.",
+     "en": "Rava <b>said to him: This statement</b> of Rav Daniel applies <b>when</b> the one who seizes the slave <b>is not owed money</b> by the owner of the slave. But <b>since the Master is owed money by</b> the owner of the slave, this <b>has</b> the <b>appearance of interest, as Rav Yosef bar Minyumi says</b> that <b>Rav Naḥman says: Even though</b> the Sages <b>said</b> that <b>one who resides in another’s courtyard without his knowledge does not have to pay him rent,</b> nevertheless, if <b>he lent</b> a courtyard owner money <b>and</b> then <b>resides in his courtyard,</b> the lender <b>must pay him rent.</b> Rav Yosef <b>bar Ḥama said to him: I retract</b> my opinion, and I will no longer seize the slaves of my debtors."
     }
    ],
    "span": [
@@ -1622,8 +1686,8 @@
      "end": 6
     }
    ],
-   "words": 111,
-   "minutes": 1
+   "words": 358,
+   "minutes": 3
   },
   {
    "id": "bava_metzia-66a-7-8",
@@ -1672,7 +1736,11 @@
    "start_segment": 11,
    "classification": "LOW_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "The seller's refusal, Rav Pappa's view (7) and Rav Aha's rebuttal (8) finish the dispute; 9 starts a separate case."
+   },
    "reviewed": false,
    "summary": "A man sells land with a guarantee for high-quality reimbursement, but after his best land is sold, the rabbis debate whether he must provide his remaining best land or only intermediate quality.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -1682,6 +1750,18 @@
      "i": 11,
      "he": "הָהוּא גַּבְרָא דְּזַבֵּין לֵיהּ אַרְעָא לְחַבְרֵיהּ בְּאַחְרָיוּת. אֲמַר לֵיהּ: אִי טָרְפוּ לַיהּ מִנַּאי מַגְבֵּית לִי מֵעִידֵּי עִידִּית דְּאִית לָךְ. אֲמַר לֵיהּ: מֵעִידֵּי עִידִּית לָא מַגְבֵּינָא לָךְ, דְּבָעֵינָא לְמֵיקַם קַמַּאי, אֶלָּא מַגְבֵּינָא לָךְ מֵעִידִּית אַחֲרִיתִ[י] דְּאִית לִי. לְסוֹף טַרְפוּהָ מִינֵּיהּ, אֲתָא בִּדְקָא שְׁקֵיל לְעִידֵּי עִידִּית.",
      "en": "§ The Gemara relates: There was <b>a certain man who sold land to another with</b> a property <b>guarantee,</b> meaning that in the event that land is seized by the seller’s creditors, the seller will reimburse the buyer his purchase money. The buyer <b>said to him: If</b> your creditors <b>seize</b> the land <b>from me,</b> will <b>you</b> allow <b>me to collect</b> that which is owed to me <b>from</b> the most <b>superior quality of</b> the <b>superior-quality</b> land <b>that you have?</b> The seller <b>said to him: I will not</b> allow <b>you to collect from</b> the most <b>superior quality of</b> my <b>superior-quality</b> land, <b>as I want to keep</b> those <b>before me. But I will</b> allow <b>you to collect from other superior-quality</b> land <b>I have. Ultimately,</b> creditors <b>seized</b> the field <b>from</b> the buyer, and in the meantime <b>a flood came and flooded</b> the seller’s most <b>superior quality of</b> his <b>superior-quality</b> land."
+    },
+    {
+     "ref": "Bava Metzia 66b",
+     "i": 12,
+     "he": "סְבַר רַב פָּפָּא לְמֵימַר: מֵעִידִּית אֲמַר לֵיהּ, וְהָא קָיְימָא.",
+     "en": "As his remaining superior-quality land was now the best he had, the seller was unwilling to give them to the buyer and sought to repay him with intermediate-quality land, in accordance with the standard <i>halakha</i> concerning reimbursement to a buyer. <b>Rav Pappa thought to say:</b> Since the seller <b>said to</b> the buyer that he could collect <b>from</b> his <b>superior-quality</b> land, <b>and</b> this superior-quality land is <b>intact,</b> the seller must give it to him, in accordance with his promise."
+    },
+    {
+     "ref": "Bava Metzia 66b",
+     "i": 13,
+     "he": "אֲמַר לֵיהּ רַב אַחָא מִדִּפְתִּי לְרָבִינָא: וְלֵימָא לֵיהּ, כִּי אֲמַרִי לָךְ אֲנָא מַגְבֵּינָא לָךְ – דַּהֲוָה עִידֵּי עִידִּית קָיְימָא, הַשְׁתָּא קָיְימָא לֵיהּ עִידִּית בִּמְקוֹם עִידֵּי עִידִּית.",
+     "en": "<b>Rav Aḥa of Difti said to Ravina: But let</b> the seller <b>say to</b> the buyer: <b>When I said to you</b> that <b>I</b> would allow <b>you to collect</b> from my superior-quality land, that was <b>when the</b> most <b>superior quality</b> of my superior-quality land was <b>intact.</b> But <b>now</b> my <b>superior-quality</b> land <b>stands</b> for me <b>in place of the</b> most <b>superior quality of</b> the <b>superior-quality</b> land I had before, and I am not obligated to give you the very best of my property."
     }
    ],
    "span": [
@@ -1691,8 +1771,8 @@
      "end": 11
     }
    ],
-   "words": 145,
-   "minutes": 1
+   "words": 303,
+   "minutes": 3
   },
   {
    "id": "bava_metzia-67a-4-5",
@@ -2126,14 +2206,15 @@
    "tractate": "bava_metzia",
    "ref": "Bava Metzia 81a",
    "refs": [
-    "Bava Metzia 81a"
+    "Bava Metzia 81a",
+    "Bava Metzia 81b"
    ],
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "A worker asked his colleagues to watch his cloak while he baked for them, but it was stolen; Rav Pappa initially held them liable but was embarrassed when the legal status of the owner's labor was questioned.",
+   "summary": "A group of ice-plant dealers lost a companion's cloak while he baked for them, and Rav Pappa held them liable; he was embarrassed when the Sages objected, until it turned out the owner had been drinking beer, not baking, when it was stolen.",
    "segments": [
     {
      "ref": "Bava Metzia 81a",
@@ -2146,32 +2227,13 @@
      "i": 14,
      "he": "אֲמַרוּ לֵיהּ רַבָּנַן לְרַב פָּפָּא: אַמַּאי? פְּשִׁיעָה בִּבְעָלִים הִיא! אִכְּסִיף. לְסוֹף אִיגַּלַּאי מִילְּתָא דְּהָהוּא שַׁעְתָּא שִׁכְרָא הֲוָה קָא שָׁתֵי.",
      "en": "<b>The Rabbis said to Rav Pappa: Why</b> did you deem them liable to pay? <b>This is</b> akin to a case of <b>negligence</b> by a bailee while he is <b>with the owners,</b> as the owner of the cloak was baking for them at the time the cloak was stolen due to their negligence. Rav Pappa <b>was embarrassed</b> over his apparent mistake. <b>Ultimately, it was discovered that at that time,</b> when the cloak was stolen, the cloak owner <b>was drinking beer</b> and not baking. Since he was not doing work for them, this was not a case of safeguarding with the owner, and therefore Rav Pappa’s ruling was vindicated."
-    }
-   ],
-   "span": [
+    },
     {
      "ref": "Bava Metzia 81a",
-     "start": 13,
-     "end": 14
-    }
-   ],
-   "words": 187,
-   "minutes": 2
-  },
-  {
-   "id": "bava_metzia-81b-0-0",
-   "tractate": "bava_metzia",
-   "ref": "Bava Metzia 81b",
-   "refs": [
-    "Bava Metzia 81b"
-   ],
-   "start_segment": 0,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Rav Pappa rules against a group of workers for a stolen cloak, is embarrassed when challenged on legal grounds, but is vindicated when it is discovered the owner was drinking beer rather than working at the time.",
-   "segments": [
+     "i": 15,
+     "he": "הָנִיחָא לְמַאן דְּאָמַר פְּשִׁיעָה בִּבְעָלִים פָּטוּר – מִשּׁוּם הָכִי אִכְּסִיף, אֶלָּא לְמַאן דְּאָמַר חַיָּיב – אַמַּאי אִכְּסִיף? אֶלָּא הָהוּא יוֹמָא לָאו דִּידֵיהּ הֲוָה, וַאֲמַרוּ לֵיהּ לְדִידֵיהּ: זִיל אֲפִי לַן אַתְּ, וַאֲמַר לְהוּ: בְּהָהוּא אַגְרָא דְּקָא אָפֵינָא לְכוּ נְטוּרוּ גְּלִימַאי.",
+     "en": "The Gemara comments: <b>This works out well according to the one who says</b> that in a case of <b>negligence</b> by a bailee while he is <b>with the owners</b> he is <b>exempt; due to that</b> reason Rav Pappa <b>was embarrassed. But according to the one who says</b> that in a case of negligence he is <b>liable</b> even while he is with the owners, <b>why was</b> Rav Pappa <b>embarrassed? Rather,</b> this is what actually happened: <b>That day was not his</b> turn to bake, <b>and they said to him: You go</b> and <b>bake for us, and he said to them: As payment for baking for you</b> when it is not my turn, <b>safeguard my cloak.</b> In other words, they were paid bailees."
+    },
     {
      "ref": "Bava Metzia 81b",
      "i": 0,
@@ -2181,13 +2243,18 @@
    ],
    "span": [
     {
+     "ref": "Bava Metzia 81a",
+     "start": 13,
+     "end": 15
+    },
+    {
      "ref": "Bava Metzia 81b",
      "start": 0,
      "end": 0
     }
    ],
-   "words": 66,
-   "minutes": 1
+   "words": 372,
+   "minutes": 3
   },
   {
    "id": "bava_metzia-81b-1-2",
@@ -2236,7 +2303,11 @@
    "start_segment": 3,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "The story stops before its outcome; segment 6 holds Rava's ruling on the renter's claim, which ends the case (Abaye's objection shares the segment)."
+   },
    "reviewed": false,
    "summary": "A man rents a donkey and ignores the owner's warning about which path to take, leading to the donkey's death and a subsequent legal debate between Rava and Abaye.",
    "segments": [
@@ -2245,6 +2316,12 @@
      "i": 3,
      "he": "הָהוּא גַּבְרָא דְּאוֹגַר לֵיהּ חֲמָרָא לְחַבְרֵיהּ, אֲמַר לֵיהּ: חֲזִי, לָא תֵּיזוֹל בְּאוֹרְחָא דִּנְהַר פְּקוֹד דְּאִיכָּא מַיָּא, זִיל בְּאוֹרְחָא דְנַרֶשׁ דְּלֵיכָּא מַיָּא. אָזֵיל בְּאוֹרְחָא דִּנְהַר פְּקוֹד וּמִית חַמְרָא. כִּי אֲתָא, אָמַר: אִין, בְּאוֹרְחָא דִּנְהַר פְּקוֹד אֲזַלִי, וּמִיהוּ לֵיכָּא מַיָּא.",
      "en": "The Gemara relates that there was <b>a certain man who rented a donkey to another.</b> The owner <b>said to</b> the renter: <b>Look, do not go on the path of Nehar Pekod, where there is water</b> and the donkey is likely to drown. Instead, <b>go on the path of Neresh, where there is no water.</b> The renter <b>went on the path of Nehar Pekod and the donkey died. When he came</b> back, <b>he said: Yes, I went on the path of Nehar Pekod; but there was no water</b> there, and therefore the donkey’s death was caused by other factors."
+    },
+    {
+     "ref": "Bava Metzia 81b",
+     "i": 4,
+     "he": "אֲמַר לֵיהּ רָבָא: מָה לֵיהּ לְשַׁקֵּר, אִי בָּעֵי אֲמַר לֵיהּ: אֲנָא בְּאוֹרְחָא דְנַרֶשׁ אֲזַלִי. אֲמַר לֵיהּ אַבָּיֵי: ״מָה לִי לְשַׁקֵּר״ בִּמְקוֹם עֵדִים – לָא אָמְרִינַן.",
+     "en": "<b>Rava said:</b> The renter’s claim is accepted, due to the reasoning of: <b>Why should he lie?</b> In other words, <b>if</b> this man <b>wanted</b> to lie, <b>he</b> could have <b>told</b> the donkey’s owner: <b>I went on the path of Neresh,</b> as the owner instructed. <b>Abaye said to</b> Rava: <b>We do not say</b> the principle of: <b>Why would I lie, in a place</b> where there are <b>witnesses.</b> Since witnesses can be summoned to establish conclusively whether there was water along the path of Nehar Pekod, the reasoning that the renter could have stated a different claim is not employed."
     }
    ],
    "span": [
@@ -2254,8 +2331,8 @@
      "end": 3
     }
    ],
-   "words": 98,
-   "minutes": 1
+   "words": 195,
+   "minutes": 2
   },
   {
    "id": "bava_metzia-83a-9-9",
@@ -2634,12 +2711,17 @@
    "tractate": "bava_metzia",
    "ref": "Bava Metzia 84b",
    "refs": [
-    "Bava Metzia 84b"
+    "Bava Metzia 84b",
+    "Bava Metzia 85a"
    ],
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 12 finishes Rabbi's list of the three modest people, which segment 11 cuts off mid-sentence."
+   },
    "reviewed": false,
    "summary": "A flashback explains the academic rivalry between Rabbi Elazar and Rabbi Yehuda HaNasi, starting from their youth in the study hall and a controversial seating demotion.",
    "segments": [
@@ -2678,6 +2760,12 @@
      "i": 18,
      "he": "הַיְינוּ דְּאָמַר רַבִּי: שְׁלֹשָׁה עִנְוְותָנִין הֵן, וְאֵלּוּ הֵן: אַבָּא,",
      "en": "The Gemara concludes: <b>This</b> incident <b>is</b> the background to a statement <b>which Rabbi</b> Yehuda HaNasi <b>said: There are three</b> prototypical <b>modest</b> people, <b>and they are: Father,</b> i.e., Rabban Shimon ben Gamliel;"
+    },
+    {
+     "ref": "Bava Metzia 85a",
+     "i": 0,
+     "he": "וּבְנֵי בְתִירָה, וְיוֹנָתָן בֶּן שָׁאוּל. רַבָּן שִׁמְעוֹן בֶּן גַּמְלִיאֵל – הָא דַּאֲמַרַן: בְּנֵי בְתִירָה, דְּאָמַר מָר הוֹשִׁיבוּהוּ בָּרֹאשׁ וּמִינּוּהוּ לְנָשִׂיא עֲלֵיהֶן. יוֹנָתָן בֶּן שָׁאוּל, דְּקָאָמַר לֵיהּ לְדָוִד: ״וְאַתָּה תִּמְלֹךְ עַל יִשְׂרָאֵל וַאֲנִי אֶהְיֶה לְּךָ לְמִשְׁנֶה״.",
+     "en": "<b>the sons of Beteira; and Jonathan, son of Saul.</b> The Gemara discusses each case: The incident revealing the modesty of <b>Rabban Shimon ben Gamliel is that</b> which <b>we</b> just <b>said,</b> as he referred to himself modestly as a fox. <b>The sons of Beteira</b> were exceptionally modest, as they served in the position of <i>Nasi</i> and yet abdicated their positions in favor of Hillel when he emigrated from Babylonia to Eretz Yisrael. <b>As the Master said:</b> The sons of Beteira, upon recognizing that Hillel was a superior expert in <i>halakha</i>, <b>seated him at the head and appointed him <i>Nasi</i> over them</b> (see <i>Pesaḥim</i> 66a). <b>Jonathan, son of Saul,</b> was extremely modest, <b>as he said to David: “And you shall be king over Israel, and I shall be second to you”</b> (I Samuel 23:17), despite the fact that his father, Saul, was the current king."
     }
    ],
    "span": [
@@ -2687,7 +2775,7 @@
      "end": 18
     }
    ],
-   "words": 604,
+   "words": 748,
    "minutes": 5
   },
   {
@@ -2700,7 +2788,11 @@
    "start_segment": 2,
    "classification": "LOW_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "The stableman timing the fodder to Rabbi's cries of pain continues the story of his afflictions; segment 7 is the Gemara's comparison."
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda HaNasi, inspired by Rabbi Elazar's suffering, accepts thirteen years of physical ailments upon himself.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -2710,6 +2802,12 @@
      "i": 2,
      "he": "אָמַר רַבִּי, חֲבִיבִין יִסּוּרִין. קַבֵּל עֲלֵיהּ תְּלֵיסַר שְׁנֵי: שֵׁית בִּצְמִירְתָּא, וּשְׁבַע (בְּצַפְרִנָא) [בְּצַפְדִּינָא], וְאָמְרִי לַהּ: שִׁבְעָה בִּצְמִירְתָּא, וְשֵׁית (בְּצַפְרִנָא).",
      "en": "§ The Gemara returns to the previous incident. When he heard that the greatness of Rabbi Elazar, son of Rabbi Shimon, was due to his suffering, <b>Rabbi</b> Yehuda HaNasi <b>said</b> to himself: <b>Afflictions are</b> evidently <b>precious. He accepted thirteen years</b> of afflictions <b>upon himself; six</b> years <b>of stones in the kidneys and seven</b> years <b>of scurvy [<i>bitzfarna</i>]. And some say</b> it was <b>seven</b> years <b>of stones in the kidneys and six</b> years <b>of scurvy.</b>"
+    },
+    {
+     "ref": "Bava Metzia 85a",
+     "i": 3,
+     "he": "אַהוּרְיָירֵיהּ דְּבֵי רַבִּי הֲוָה עַתִּיר מִשַּׁבּוּר מַלְכָּא. כַּד הֲוָה רָמֵי כִּיסְתָּא לְחֵיוָתָא הֲוָה אָזֵיל קָלָא בִּתְלָתָא מִילֵּי. הֲוָה מְכַוֵּין דְּרָמֵי בְּהַהִיא שַׁעְתָּא דְּעָיֵיל רַבִּי לְבֵית הַכִּסֵּא, וַאֲפִילּוּ הָכִי (מ)עָבַר לֵיהּ קָלֵיהּ לְקָלַיְיהוּ וְשָׁמְעוּ לֵיהּ נָחוֹתֵי יַמָּא.",
+     "en": "The Gemara relates: <b>The stableman [<i>ahuriyareih</i>] of the house of Rabbi</b> Yehuda HaNasi <b>was wealthier than King Shapur</b> of Persia, due to Rabbi Yehuda HaNasi’s abundant livestock. <b>When</b> the stableman <b>would place fodder before the livestock, the sound</b> of their lowing <b>would travel</b> the distance <b>of three <i>mil</i>. He would calculate</b> the right moment so <b>that</b> he would <b>place</b> the fodder before the animals <b>at</b> precisely <b>that time when Rabbi</b> Yehuda HaNasi <b>entered the latrine,</b> so that the lowing of the animals would drown out Rabbi Yehuda HaNasi’s screams of pain. <b>But even so,</b> Rabbi Yehuda HaNasi’s <b>voice</b> was so loud that it <b>overcame the sound of</b> the livestock, <b>and</b> even <b>sailors heard it</b> out at sea."
     }
    ],
    "span": [
@@ -2719,8 +2817,8 @@
      "end": 2
     }
    ],
-   "words": 76,
-   "minutes": 1
+   "words": 196,
+   "minutes": 2
   },
   {
    "id": "bava_metzia-85a-5-6",
@@ -2769,7 +2867,11 @@
    "start_segment": 8,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "The serpent at the cave is left unresolved; segment 9 gives the Divine Voice explaining it, which ends the story."
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda HaNasi redeems the wayward son of Rabbi Elazar b. Shimon by ordaining him and placing him under the tutelage of a scholar, eventually leading him to become a renowned sage.",
    "segments": [
@@ -2796,6 +2898,12 @@
      "i": 11,
      "he": "כִּי נָח נַפְשֵׁיהּ (אמטוהו) [אַמְטְיוּהּ] לִמְעָרְתָּא דַאֲבוּהּ. הֲוָה הָדְרָא לַהּ עַכְנָא לִמְעָרְתָּא. אֲמַר לֵיהּ: עַכְנָא עַכְנָא! פְּתַח פִּיךָ וְיִכָּנֵס בֵּן אֵצֶל אָבִיו. לָא פְּתַחָא לְהוּ. כִּסְבוּרִים הָעָם לוֹמַר שֶׁזֶּה גָּדוֹל מִזֶּה.",
      "en": "<b>When</b> this Rabbi Yosei <b>died, he was brought to his father’s cave</b> for burial. <b>A serpent encircled the</b> entrance of the <b>cave,</b> denying any access. Those present <b>said to it: Serpent, serpent! Open your mouth, so that a son may enter next to his father.</b> The serpent <b>did not open</b> its mouth <b>for them. The people</b> there <b>thought that</b> Rabbi Yosei was denied burial alongside his father because <b>this</b> one, Rabbi Elazar, son of Rabbi Shimon, was <b>greater than that</b> one, Rabbi Yosei."
+    },
+    {
+     "ref": "Bava Metzia 85a",
+     "i": 12,
+     "he": "יָצְתָה בַּת קוֹל וְאָמְרָה: לֹא מִפְּנֵי שֶׁזֶּה גָּדוֹל מִזֶּה, אֶלָּא זֶה הָיָה בְּצַעַר מְעָרָה, וְזֶה לֹא הָיָה בְּצַעַר מְעָרָה.",
+     "en": "<b>A Divine Voice emerged and said:</b> It is <b>not because this one is greater than that one; rather,</b> it is because <b>this one,</b> Rabbi Elazar, <b>experienced the suffering of the cave, while that one,</b> i.e., Rabbi Yosei, <b>did not experience suffering of the cave.</b> Rabbi Elazar, son of Rabbi Shimon, suffered with his father for thirteen years in a cave while hiding from the Romans (see <i>Shabbat</i> 33b)."
     }
    ],
    "span": [
@@ -2805,7 +2913,7 @@
      "end": 11
     }
    ],
-   "words": 451,
+   "words": 519,
    "minutes": 4
   },
   {
@@ -2979,7 +3087,11 @@
    "start_segment": 4,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 7 is Rabbi Hiyya's explanation of what he does to keep the Torah from being forgotten, the end of the exchange."
+   },
    "reviewed": false,
    "summary": "During their Torah debates, Rabbi Ḥanina boasted that if the Torah were forgotten he could restore it by his own reasoning, and Rabbi Ḥiyya answered that he was working to ensure it would never be forgotten at all.",
    "segments": [
@@ -2988,6 +3100,12 @@
      "i": 4,
      "he": "כִּי הֲווֹ מִינְּצוּ רַבִּי חֲנִינָא וְרַבִּי חִיָּיא, אֲמַר לֵיהּ רַבִּי חֲנִינָא לְרַבִּי חִיָּיא: בַּהֲדֵי דִּידִי קָא מִינְּצֵית? חַס וְחָלִילָה, אִי מִשְׁתַּכְחָא תּוֹרָה מִיִּשְׂרָאֵל – מַהְדַּרְנָא לַהּ מִפִּילְפּוּלַי. אֲמַר לֵיהּ רַבִּי חִיָּיא לְרַבִּי חֲנִינָא: בַּהֲדֵי דִּידִי קָא מִינְּצֵית? דַּעֲבַדִי לְתוֹרָה דְּלֹא תִּשְׁתַּכַּח מִיִּשְׂרָאֵל.",
      "en": "The Gemara relates: <b>When Rabbi Ḥanina and Rabbi Ḥiyya would debate</b> matters of Torah, <b>Rabbi Ḥanina</b> would <b>say to Rabbi Ḥiyya:</b> Do you think <b>you can debate with me? Heaven forbid! If the Torah were forgotten from the Jewish people, I</b> could <b>restore it with my</b> powers of <b>analysis</b> and intellectual acumen. <b>Rabbi Ḥiyya said to Rabbi Ḥanina:</b> Do you think <b>you can debate with me?</b> You cannot compare yourself to me, <b>as I am acting</b> to ensure that <b>the Torah</b> will <b>not be forgotten by the Jewish people.</b>"
+    },
+    {
+     "ref": "Bava Metzia 85b",
+     "i": 5,
+     "he": "מַאי עָבֵידְנָא – אָזֵילְנָא וְשָׁדֵינָא כִּיתָּנָא וְגָדֵילְנָא נִישְׁבֵּי, וְצָיֵידְנָא טְבֵי וּמַאֲכֵילְנָא בִּשְׂרַיְיהוּ לְיַתְמֵי, וְאָרֵיכְנָא מְגִילָּתָא וְכָתֵבְנָא חֲמִשָּׁה חוּמְשֵׁי, וְסָלֵיקְנָא לְמָתָא וּמַקְרֵינָא חַמְשָׁה יָנוֹקֵי בְּחַמְשָׁה חוּמְשֵׁי, וּמַתְנֵינָא שִׁיתָּא יָנוֹקֵי שִׁיתָּא סִדְרֵי, וְאָמַרְנָא לְהוּ: עַד דְּהָדַרְנָא וְאָתֵינָא אַקְרוֹ אַהֲדָדֵי וְאַתְנוֹ אַהֲדָדֵי וַעֲבַדִי לַהּ לְתוֹרָה דְּלֹא תִּשְׁתַּכַּח מִיִּשְׂרָאֵל.",
+     "en": "Rabbi Ḥiyya elaborated: <b>What do I do</b> to this end? <b>I go and sow flax</b> seeds <b>and twine nets</b> with the flax, <b>and</b> then <b>I hunt deer and feed their meat to orphans.</b> Next <b>I prepare parchment</b> from their hides <b>and I write the five books</b> of the Torah on them. <b>I go to a city and teach five children the five books,</b> one book per child, <b>and I teach six</b> other <b>children the six orders</b> of the Mishna, <b>and I say to them: Until I return and come</b> here, <b>read each other</b> the Torah <b>and teach each other</b> the Mishna. This is how <b>I act</b> to ensure that <b>the Torah will not be forgotten by the Jewish people.</b>"
     }
    ],
    "span": [
@@ -2997,8 +3115,8 @@
      "end": 4
     }
    ],
-   "words": 89,
-   "minutes": 1
+   "words": 208,
+   "minutes": 2
   },
   {
    "id": "bava_metzia-85b-7-7",
@@ -3244,22 +3362,21 @@
    "tractate": "bava_metzia",
    "ref": "Bava Metzia 86a",
    "refs": [
-    "Bava Metzia 86a",
     "Bava Metzia 86b"
    ],
    "start_segment": 13,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 is the Gemara's question and answer about the mishna; the incident with Rabbi Yohanan ben Matya's son is told in segment 6.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "Rabbi Yohanan ben Matya's son hires laborers and stipulates their food, leading to a discussion on the limits of such stipulations. Rabbi Yoḥanan ben Matya's son hires laborers with a food stipulation, leading his father to intervene and clarify that they are only entitled to local custom to avoid impossible obligations.",
    "segments": [
-    {
-     "ref": "Bava Metzia 86a",
-     "i": 13,
-     "he": "מַעֲשֶׂה בְּרַבָּן יוֹחָנָן בֶּן מַתְיָא שֶׁאָמַר לִבְנוֹ צֵא וּשְׂכוֹר וְכוּ׳. מַעֲשֶׂה לִסְתּוֹר! חַסּוֹרֵי מְחַסְּרָא וְהָכִי קָתָנֵי: וְאִם פָּסַק לָהֶם מְזוֹנוֹת",
-     "en": "§ The mishna teaches that there was <b>an incident involving Rabbi Yoḥanan ben Matya, who said to his son: Go out and hire</b> laborers for us. His son hired the laborers and stipulated that he would provide sustenance for them. The Gemara asks: After the mishna has stated that all practices are in accordance with the regional custom, how can it cite this <b>incident,</b> which seems <b>to contradict</b> the previous ruling, as Rabbi Yoḥanan ben Matya and his son did not follow the regional custom? The Gemara answers: The mishna <b>is incomplete and this</b> is what it <b>is teaching:</b> All practices are in accordance with the regional custom, <b>but if</b> the employer pledged to provide sustenance for them,"
-    },
     {
      "ref": "Bava Metzia 86b",
      "i": 0,
@@ -3279,8 +3396,8 @@
      "end": 0
     }
    ],
-   "words": 258,
-   "minutes": 2
+   "words": 140,
+   "minutes": 1
   },
   {
    "id": "bava_metzia-93a-19-19",
@@ -3633,46 +3750,34 @@
    "tractate": "bava_metzia",
    "ref": "Bava Metzia 107b",
    "refs": [
-    "Bava Metzia 107b"
+    "Bava Metzia 107b",
+    "Bava Metzia 108a"
    ],
    "start_segment": 14,
    "classification": "YES",
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "Rabba bar Rav Huna is asked to cut down his trees on the riverbank but refuses to do so until his neighbors, including a powerful general, cut theirs first.",
+   "summary": "Rabba bar Rav Huna would not clear his riverside forest for the boat-pullers until the Persian general's estate did, so Rabba bar Rav Nahman had it cut down in passing; Rabba bar Rav Huna cursed whoever had cut it, and Rabba bar Rav Nahman's children died young.",
    "segments": [
     {
      "ref": "Bava Metzia 107b",
      "i": 14,
      "he": "רַבָּה בַּר רַב הוּנָא הֲוָה לֵיהּ הָהוּא אִבָּא אַגּוּדָּא דְנַהֲרָא, אֲמַרוּ לֵיהּ: נִיקּוֹץ מָר! אֲמַר לְהוּ: קוּצוּ עִילָּאֵי וְתַתָּאֵי, וַהֲדַר נִיקּוֹץ אֲנָא. הֵיכִי עָבֵיד הָכִי? וְהָכְתִיב: ״הִתְקוֹשְׁשׁוּ וָקוֹשּׁוּ״, וְאָמַר רֵישׁ לָקִישׁ: קְשׁוֹט עַצְמְךָ וְאַחַר כָּךְ קְשׁוֹט אֲחֵרִים!",
      "en": "The Gemara relates another incident: <b>Rabba bar Rav Huna had a certain forest on the bank of a river. They said to him: Let the Master cut down</b> the trees on the riverbank in accordance with the above statement. Rabba bar Rav Huna <b>said to them:</b> Let <b>those above and below</b> me along the river <b>cut down</b> their trees first, <b>and then I will cut down</b> my trees. I will achieve nothing by cutting down my trees on my own. The Gemara asks: <b>How can he do so,</b> i.e., wait for others to act? <b>But isn’t it written: “Gather yourselves together, and gather [<i>hitkosheshu vakoshu</i>]”</b> (Zephaniah 2:1), <b>and Reish Lakish says</b> concerning this: <b>Adorn [<i>keshot</i>] yourself and afterward adorn others.</b> Therefore, one must first perform the required action himself before offering advice to others."
-    }
-   ],
-   "span": [
+    },
     {
      "ref": "Bava Metzia 107b",
-     "start": 14,
-     "end": 14
-    }
-   ],
-   "words": 138,
-   "minutes": 1
-  },
-  {
-   "id": "bava_metzia-108a-1-2",
-   "tractate": "bava_metzia",
-   "ref": "Bava Metzia 108a",
-   "refs": [
-    "Bava Metzia 108a"
-   ],
-   "start_segment": 1,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Rabba bar Rav Naḥman cuts down a forest belonging to Rabba bar Rav Huna to clear a river path, leading the latter to unknowingly curse him, resulting in the death of Rabba bar Rav Naḥman's children.",
-   "segments": [
+     "i": 15,
+     "he": "הָתָם אִבָּא דְּבֵי פַרְזַק רוּפִילָא הֲוָה, וְאָמַר: אִי קָיְיצוּ – קָיֵיצְנָא, וְאִי לָא קָיְיצוּ – אַמַּאי אִיקּוֹץ. דְּאִי מִמַּתְחִי לְהוּ – אַשְׁלַיְיהוּ מִסְתַּגִּי לְהוּ,",
+     "en": "The Gemara responds: <b>There</b> it <b>was the forest of the house of Parzak, the general, and</b> it was obvious that they would pay no attention to a Jewish scholar. Rabba bar Rav Huna therefore <b>said: If</b> the workers of the Persian officer <b>cut down, I will cut down</b> as well, <b>and if</b> they do <b>not cut down, why should I cut down</b> for no purpose? <b>Since if</b> the pullers can <b>stretch their ropes they can go</b> along this side of the river,"
+    },
+    {
+     "ref": "Bava Metzia 108a",
+     "i": 0,
+     "he": "וְאִי לָא – לָא מִיסְתַּגֵּי לְהוּ.",
+     "en": "<b>and if not, they will be unable to walk,</b> but will have to cross over to the other side of the river. Therefore, no advantage exists to cutting down the trees that block part of the river."
+    },
     {
      "ref": "Bava Metzia 108a",
      "i": 1,
@@ -3688,13 +3793,18 @@
    ],
    "span": [
     {
+     "ref": "Bava Metzia 107b",
+     "start": 14,
+     "end": 15
+    },
+    {
      "ref": "Bava Metzia 108a",
-     "start": 1,
+     "start": 0,
      "end": 2
     }
    ],
-   "words": 215,
-   "minutes": 2
+   "words": 472,
+   "minutes": 4
   },
   {
    "id": "bava_metzia-109a-8-10",
@@ -3780,7 +3890,13 @@
    "start_segment": 12,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 is a cited legal ruling and the Gemara's rejection of it; the story of Rav Yosef's ultimatum to the five sons-in-law ends in segment 5.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "After his planter dies leaving five sons-in-law, Rav Yosef attempts to remove them from the land to prevent potential negligence.",
    "segments": [
@@ -3789,12 +3905,6 @@
      "i": 12,
      "he": "רַב יוֹסֵף הֲוָה לֵיהּ הָהוּא שַׁתָּלָא, שְׁכֵיב וּשְׁבַק חַמְשָׁה חַתְנָווֹתָא. אֲמַר עַד הָאִידָּנָא חַד, הַשְׁתָּא חַמְשָׁה. עַד הָאִידָּנָא לָא הֲווֹ סָמְכוּ אַהֲדָדֵי וְלָא מַפְסְדוּ לִי, הַשְׁתָּא חַמְשָׁה סָמְכוּ אַהֲדָדֵי וּמַפְסְדוּ לִי. אֲמַר לְהוּ: אִי שָׁקְלִיתוּ שְׁבָחַיְיכוּ וּמִסְתַּלְּקִיתוּ – מוּטָב, וְאִי לָא – מְסַלֵּיקְנָא לְכוּ בְּלָא שְׁבָחָא.",
      "en": "§ The Gemara relates: <b>Rav Yosef had a certain planter</b> whose job it was to plant trees, similar to a sharecropper. <b>He died and left</b> behind <b>five sons-in-law.</b> Rav Yosef <b>said: Until now</b> I had to deal with only <b>one</b> person; <b>now</b> there are <b>five. Until now they did not rely on each other</b> to plant the trees <b>and did not cause me a loss,</b> as the responsibility was their father-in-law’s, but <b>now</b> that they are <b>five they will rely on each other</b> to plant the trees <b>and cause me a loss.</b> In light of these considerations, he decided to discontinue the agreement with them. Rav Yosef <b>said to them: If you take</b> the value of <b>your enhancement</b> that you brought to the field <b>and remove</b> yourselves, all is <b>well, but if not, I will remove you without</b> giving you the value of <b>the enhancement.</b>"
-    },
-    {
-     "ref": "Bava Metzia 109a",
-     "i": 13,
-     "he": "דְּאָמַר רַב יְהוּדָה, וְאִיתֵּימָא רַב הוּנָא, וְאִיתֵּימָא רַב נַחְמָן: הַאי שַׁתָּלָא דִּשְׁכֵיב – יוֹרְשִׁין דִּילֵיהּ (מִסְתַּלְּקִין) [מְסַלְּקִינַן] לְהוּ בְּלָא שְׁבָחָא. וְלָאו מִילְּתָא הִיא.",
-     "en": "Rav Yosef explains his statement: <b>As Rav Yehuda says, and some say</b> it was <b>Rav Huna, and some say</b> it was <b>Rav Naḥman:</b> With regard to <b>this planter who died, his heirs may be removed without</b> receiving the value of the <b>enhancement.</b> The Gemara comments: <b>But this is not correct,</b> as the <i>halakha</i> is not in accordance with this opinion."
     }
    ],
    "span": [
@@ -3804,21 +3914,26 @@
      "end": 13
     }
    ],
-   "words": 205,
-   "minutes": 2
+   "words": 145,
+   "minutes": 1
   },
   {
    "id": "bava_metzia-109a-16-16",
    "tractate": "bava_metzia",
    "ref": "Bava Metzia 109a",
    "refs": [
-    "Bava Metzia 109a",
-    "Bava Metzia 109b"
+    "Bava Metzia 109a"
    ],
    "start_segment": 16,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 6 only completes Rava's general list of workers considered forewarned, which is legal discussion; Runya's case and Rava's verdict end in segment 5.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Runya, a planter for Ravina, is fired for causing a loss and unsuccessfully appeals to Rava, who justifies the dismissal.",
    "segments": [
@@ -3827,12 +3942,6 @@
      "i": 16,
      "he": "רוּנְיָא שַׁתָּלָא דְרָבִינָא הֲוָה אַפְסֵיד. סַלְּקֵיהּ אֲתָא לְקַמֵּיהּ דְּרָבָא. אֲמַר לֵיהּ חֲזִי מָר מַאי קָא עָבֵיד לִי! אֲמַר לֵיהּ: שַׁפִּיר עֲבַיד. אֲמַר לֵיהּ: הָא לֹא הִתְרָה בִּי! אֲמַר לֵיהּ: לָא (צְרִיכָא לְהַתְרוֹת) [צְרִיכַתְּ לְאַתְרוֹיֵי]. רָבָא לְטַעְמֵיהּ, דְּאָמַר רָבָא: מַקְרֵי דַרְדְּקֵי שַׁתָּלָא טַבָּחָא וְאוּמָּנָא",
      "en": "The Gemara relates that <b>Runya was the planter of Ravina.</b> He <b>caused a loss,</b> and Ravina <b>removed him</b> from his field. Runya <b>came before Rava</b> and <b>said to him:</b> Let <b>the Master see what</b> Ravina <b>has done to me.</b> Rava <b>said to him:</b> Ravina <b>did well,</b> as you caused him a loss. Runya <b>said to him: But</b> Ravina <b>did not warn me</b> beforehand. How can he force me to leave without prior warning? Rava <b>said to him:</b> In this case it <b>is not necessary to provide a warning.</b> The Gemara comments: <b>Rava</b> conforms <b>to his</b> line of <b>reasoning, as Rava said:</b> With regard to <b>a teacher of children, a planter, a ritual slaughterer, and a bloodletter,</b>"
-    },
-    {
-     "ref": "Bava Metzia 109b",
-     "i": 0,
-     "he": "וְסָפַר מָתָא – כּוּלָּן כְּמוּתְרִין וְעוֹמְדִין דָּמֵי. כְּלָלָא דְּמִילְּתָא: כֹּל פְּסֵידָא דְּלָא הָדַר – כְּמוּתְרִין וְעוֹמְדִין דָּמֵי.",
-     "en": "<b>and a town scribe</b> who drafts documents on behalf on the local residents, <b>all of these are considered forewarned.</b> Therefore, any loss incurred due to them is deducted from their wages, and they are fined without the need for prior warning. <b>The principle of</b> this <b>matter</b> is: With regard to <b>any loss that is not recoverable they are considered forewarned.</b>"
     }
    ],
    "span": [
@@ -3847,8 +3956,8 @@
      "end": 0
     }
    ],
-   "words": 176,
-   "minutes": 2
+   "words": 116,
+   "minutes": 1
   },
   {
    "id": "bava_metzia-114a-9-9",

@@ -13,7 +13,13 @@
    "start_segment": 11,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 7 completes Rabbi Yehuda HaNasi's statement 'in exigent circumstances' and then starts the Gemara's analysis, so it stays; segment 8 is only the Gemara's explanation of 'after he remembered'.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda HaNasi rules according to Rabbi Eliezer, realizes it is a minority opinion, but decides to uphold the ruling based on Rabbi Eliezer's stature.",
    "segments": [
@@ -34,12 +40,6 @@
      "i": 0,
      "he": "בִּשְׁעַת הַדְּחָק. וְהָוֵינַן בַּהּ: מַאי ״לְאַחַר שֶׁנִּזְכַּר״? אִילֵּימָא לְאַחַר שֶׁנִּזְכַּר דְּאֵין הֲלָכָה כְּרַבִּי אֱלִיעֶזֶר אֶלָּא כְּרַבָּנַן, בִּשְׁעַת הַדְּחָק הֵיכִי עָבֵיד כְּוָתֵיהּ?",
      "en": "<b>in exigent circumstances [<i>bishe’at hadeḥak</i>]. And we discussed it</b> and asked: <b>What is</b> the meaning of: <b>After he remembered? If we say</b> that this means <b>after he remembered that the <i>halakha</i> is not in accordance with</b> the opinion of <b>Rabbi Eliezer but in accordance with</b> the opinion of <b>the Rabbis,</b> if so, <b>how could</b> Rabbi Yehuda HaNasi <b>act in accordance with</b> Rabbi Eliezer even <b>in exigent circumstances,</b> since the <i>halakha</i> has been decided against him?"
-    },
-    {
-     "ref": "Niddah 6b",
-     "i": 1,
-     "he": "אֶלָּא (לָאו) דְּלָא אִיתְּמַר הִלְכְתָא, לָא כְּמָר וְלָא כְּמָר, וְכֵיוָן שֶׁנִּזְכַּר דְּלָאו יָחִיד פְּלִיג עֲלֵיהּ, אֶלָּא רַבִּים פְּלִיגִי עֲלֵיהּ, אָמַר: ״כְּדַי הוּא רַבִּי אֱלִיעֶזֶר לִסְמוֹךְ עָלָיו בִּשְׁעַת הַדְּחָק״.",
-     "en": "<b>Rather, is it not</b> correct that the <b><i>halakha</i></b> had <b>not been stated</b> on this matter, <b>neither in accordance with</b> the opinion of this <b>Sage,</b> Rabbi Eliezer, <b>nor in accordance with</b> the opinion of <b>that Sage,</b> i.e., the Rabbis. <b>And once</b> Rabbi Yehuda HaNasi <b>remembered that it was not a single</b> authority who <b>disagrees with</b> Rabbi Eliezer, <b>but</b> it was several Sages who <b>disagreed with him,</b> and there is a principle that the <i>halakha</i> follows the opinion of the many over that of an individual, <b>he</b> nevertheless <b>said: Rabbi Eliezer is worthy to rely upon in exigent circumstances.</b>"
     }
    ],
    "span": [
@@ -54,8 +54,8 @@
      "end": 1
     }
    ],
-   "words": 340,
-   "minutes": 3
+   "words": 243,
+   "minutes": 2
   },
   {
    "id": "niddah-6b-4-4",
@@ -487,7 +487,13 @@
    "start_segment": 19,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Rabbi Yehuda HaNasi's three rulings and his 'woe is me' end in segment 5; segment 6 is the Gemara questioning his statement.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda HaNasi repeatedly changes his ruling on a blood sample as the lighting conditions change, leading him to lament his potential error.",
    "segments": [
@@ -496,12 +502,6 @@
      "i": 19,
      "he": "רַבִּי רָאָה דָּם בַּלַּיְלָה וְטִימֵּא, רָאָה בַּיּוֹם וְטִיהֵר, הִמְתִּין שָׁעָה אַחַת חָזַר וְטִימֵּא, אָמַר: אוֹי לִי שֶׁמָּא טָעִיתִי!",
      "en": "§ The Gemara further relates: <b>Rabbi</b> Yehuda HaNasi once <b>saw</b> a woman’s <b>blood at night and deemed</b> it <b>impure. He</b> again <b>saw</b> that blood <b>in the day,</b> after it had dried, <b>and deemed</b> it <b>pure.</b> He <b>waited one hour</b> and then <b>deemed</b> it <b>impure again.</b> It is assumed that Rabbi Yehuda HaNasi did not conduct another examination at this point; rather, he reasoned that the previous night’s examination had been correct, and the blood’s color should be deemed impure because of how it had looked when it was moist. Rabbi Yehuda HaNasi then <b>said: Woe is me! Perhaps I erred</b> by declaring the blood impure, as based on its color it should be pure."
-    },
-    {
-     "ref": "Niddah 20b",
-     "i": 20,
-     "he": "שֶׁמָּא טָעִיתִי? וַדַּאי טָעָה! דְּתַנְיָא: לֹא יֹאמַר חָכָם ״אִילּוּ הָיָה לַח — הָיָה וַדַּאי טָמֵא״.",
-     "en": "The Gemara questions this statement: <b>Perhaps I erred? He certainly erred, as it is taught</b> in a <i>baraita</i> that <b>a halakhic authority may not say: If</b> the blood <b>were moist it would certainly have been impure,</b> and yet here, Rabbi Yehuda HaNasi deemed the blood impure based on that type of reasoning."
     }
    ],
    "span": [
@@ -511,8 +511,8 @@
      "end": 20
     }
    ],
-   "words": 166,
-   "minutes": 2
+   "words": 114,
+   "minutes": 1
   },
   {
    "id": "niddah-22b-2-3",
@@ -1500,13 +1500,18 @@
    "tractate": "niddah",
    "ref": "Niddah 64b",
    "refs": [
-    "Niddah 64b",
-    "Niddah 65a"
+    "Niddah 64b"
    ],
    "start_segment": 18,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The incident is the single report in segment 6; segments 7-13 are the Gemara's legal analysis of how the nights were divided.",
+    "start_trim": 0,
+    "end_trim": 7
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda HaNasi ruled in a specific case that a virgin could attribute blood to her hymen for four nights spread across a twelve-month period.",
    "segments": [
@@ -1515,48 +1520,6 @@
      "i": 18,
      "he": "מֵיתִיבִי: מַעֲשֶׂה וְנָתַן לָהּ רַבִּי (ארבע) [אַרְבָּעָה] לֵילוֹת מִתּוֹךְ שְׁנֵים עָשָׂר חֹדֶשׁ. הֵיכִי דָּמֵי? אִילֵּימָא דְּיָהֵיב לַהּ כּוּלְּהוּ בִּימֵי קַטְנוּת,",
      "en": "The Gemara <b>raises an objection</b> to Rav’s statement from a <i>baraita</i>: There was <b>an incident</b> involving a virgin who married, <b>and Rabbi</b> Yehuda HaNasi <b>gave her four nights</b> in which to engage in intercourse <b>within twelve months</b> of her wedding when the blood is considered to be like blood resulting from the torn hymen. The Gemara asks: <b>What are the circumstances</b> of this case? <b>If we say that</b> Rabbi Yehuda HaNasi <b>gave her all of</b> those nights of purity <b>in</b> her <b>days</b> as <b>a minor,</b>"
-    },
-    {
-     "ref": "Niddah 65a",
-     "i": 0,
-     "he": "״עַד שֶׁתִּחְיֶה הַמַּכָּה״ תְּנַן!",
-     "en": "in accordance with the ruling of the mishna: The Sages give her four nights, then he should have given her longer, as <b>we learned</b> in the mishna that according to Beit Hillel the blood may be attributed to the torn hymen <b>until the wound heals.</b>"
-    },
-    {
-     "ref": "Niddah 65a",
-     "i": 1,
-     "he": "אֶלָּא דְּיָהֵיב לַהּ כּוּלְּהוּ בִּימֵי נַעֲרוּת — נַעֲרוּת שְׁנֵים עָשָׂר חֹדֶשׁ מִי אִיכָּא? וְהָא אָמַר שְׁמוּאֵל: אֵין בֵּין נַעֲרוּת לְבַגְרוּת אֶלָּא שִׁשָּׁה חֳדָשִׁים בִּלְבָד! וְכִי תֵימָא בְּצִיר מֵהָכִי הוּא דְּלֵיכָּא, הָא טְפֵי אִיכָּא — הָא ״בִּלְבָד״ קָאָמַר.",
-     "en": "<b>Rather,</b> you will say <b>that he gave her</b> these four nights <b>all</b> during her <b>days</b> as <b>a young woman. Are there twelve months</b> when one has the status of <b>a young woman? But didn’t Shmuel say: The difference</b> in time <b>between</b> becoming <b>a young woman and</b> becoming <b>a grown woman is only six months? And if you would say</b> that Shmuel is saying that it is in <b>less than</b> six months <b>that there is no</b> transition from young woman to grown woman status, but <b>there is</b> such a transition in <b>more</b> than six months, as women develop differently, that is not so, <b>as</b> Shmuel <b>said: Only,</b> which indicates that the period is neither less nor more than six months."
-    },
-    {
-     "ref": "Niddah 65a",
-     "i": 2,
-     "he": "אֶלָּא, דְּיָהֵיב לַהּ שְׁתַּיִם בִּימֵי קַטְנוּת וּשְׁתַּיִם בִּימֵי נַעֲרוּת, הָא בְּעָא מִינֵּיהּ רַב חִינָּנָא בַּר שֶׁלֶמְיָא מֵרַב: הִגִּיעַ זְמַנָּהּ לִרְאוֹת תַּחַת בַּעְלָהּ, מַהוּ?",
-     "en": "<b>Rather,</b> you will suggest <b>that</b> Rabbi Yehuda HaNasi <b>gave her two</b> days <b>during</b> her <b>days as a minor, and</b> he gave her <b>two</b> days <b>during</b> her <b>days as a young woman.</b> This too is difficult, as <b>Rav Ḥinnana bar Shelamya asked Rav:</b> With regard to a young girl who married before she reached puberty, and then <b>her time to see</b> menstrual blood <b>arrived</b> while she was <b>under</b> the authority of <b>her husband, what is</b> the <i>halakha</i>? Does she have the four nights when the blood is considered to be from her torn hymen?"
-    },
-    {
-     "ref": "Niddah 65a",
-     "i": 3,
-     "he": "אֲמַר לֵיהּ: כׇּל בְּעִילוֹת שֶׁאַתָּה בּוֹעֵל — אֵינָן אֶלָּא אַחַת, וְהַשְּׁאָר מַשְׁלִימִין לְאַרְבָּעָה לֵילוֹת.",
-     "en": "And Rav <b>said to him: All the acts of intercourse that you engage in</b> while she is still too young <b>are</b> considered as <b>only one</b> act of intercourse, <b>and the remainder,</b> i.e., three more acts of intercourse, <b>complete</b> the total number of <b>four nights.</b> If so, Rabbi Yehuda HaNasi could not have given her two nights as a minor, since at most those acts of intercourse count as one."
-    },
-    {
-     "ref": "Niddah 65a",
-     "i": 4,
-     "he": "אֶלָּא, דְּיָהֵיב לַהּ אַחַת בִּימֵי קַטְנוּת, וּשְׁתַּיִם בִּימֵי נַעֲרוּת, וְאַחַת בִּימֵי בַּגְרוּת. אִי אָמְרַתְּ בִּשְׁלָמָא בּוֹגֶרֶת בְּעָלְמָא יָהֲבִינַן לַהּ טְפֵי, כִּי הֵיכִי דְּאַהֲנַי קַטְנוּת בִּימֵי נַעֲרוּת לְמִבְצַר לַהּ חֲדָא, אַהֲנַי נָמֵי נַעֲרוּת לְבַגְרוּת לְמִבְצַר לַהּ חֲדָא.",
-     "en": "<b>Rather,</b> you will suggest <b>that he gave her one</b> night <b>during her days as a minor, and two</b> nights <b>during her days as a young woman, and one</b> night <b>during her days as a grown woman.</b> But this is also difficult: <b>Granted, if you say</b> that <b>we generally give a grown woman more</b> than one night, then one can understand why Rabbi Yehuda HaNasi gave her one night in this case: <b>Just as</b> all the acts of intercourse she engaged in as <b>a minor have the effect to deduct one</b> night <b>for</b> her <b>days as a young woman,</b> similarly all the acts of intercourse she engaged in while <b>a young woman have the effect to deduct one</b> night <b>for</b> her days as <b>a grown woman,</b> leaving her with one."
-    },
-    {
-     "ref": "Niddah 65a",
-     "i": 5,
-     "he": "אֶלָּא אִי אָמְרַתְּ בּוֹגֶרֶת דְּעָלְמָא לָא יָהֲבִינַן לַהּ טְפֵי — לָא לִיתֵּב לַהּ אֶלָּא בְּעִילַת מִצְוָה, וְתוּ לָא!",
-     "en": "<b>But if you say</b> that <b>we generally do not give a grown woman more</b> than one night, then in this case Rabbi Yehuda HaNasi <b>should</b> have <b>given her</b> as a grown woman <b>only</b> the one act of <b>relations</b> that consummate a marriage, which are <b>a mitzva,</b> i.e., merely a single act of intercourse, <b>and nothing more,</b> as otherwise the acts of intercourse before she became a grown woman would not have affected her status."
-    },
-    {
-     "ref": "Niddah 65a",
-     "i": 6,
-     "he": "לְעוֹלָם, דְּיָהֵיב לַהּ אַחַת בִּימֵי קַטְנוּת וְשָׁלֹשׁ בִּימֵי נַעֲרוּת. מִי סָבְרַתְּ כֹּל תְּלָתָא יַרְחֵי — חֲדָא עוֹנָה? כֹּל תְּרֵי יַרְחֵי — חֲדָא עוֹנָה.",
-     "en": "The Gemara answers: <b>Actually,</b> the correct explanation is <b>that</b> Rabbi Yehuda HaNasi <b>gave her one</b> night <b>during her days as a minor and three</b> nights <b>during her days as a young woman.</b> And as for the fact that she has the status of a young woman for only exactly six months, <b>do you maintain</b> that <b>every three months</b> was counted as <b>one period</b> of the husband’s absence, such that she had only two nights in six months? This is not the case. Rather, <b>every two months</b> was counted as <b>one period,</b> and therefore she had three nights during these six months when she could attribute the blood to her torn hymen."
     }
    ],
    "span": [
@@ -1571,8 +1534,8 @@
      "end": 6
     }
    ],
-   "words": 727,
-   "minutes": 5
+   "words": 86,
+   "minutes": 1
   },
   {
    "id": "niddah-65a-7-8",
@@ -1643,37 +1606,6 @@
    "minutes": 1
   },
   {
-   "id": "niddah-66a-11-11",
-   "tractate": "niddah",
-   "ref": "Niddah 66a",
-   "refs": [
-    "Niddah 66a"
-   ],
-   "start_segment": 11,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Shmuel attempts to cure a woman by having Rav Dimi frighten her, but when no clot is expelled, he determines her condition is permanent.",
-   "segments": [
-    {
-     "ref": "Niddah 66a",
-     "i": 11,
-     "he": "הַהִיא אִתְּתָא דַּאֲתַאי לְקַמֵּיהּ דְּמָר שְׁמוּאֵל, אֲמַר לֵיהּ לְרַב דִּימִי בַּר יוֹסֵף: זִיל בַּעֲתַהּ! אֲזַל בַּעֲתַהּ, וְלָא נְפַל (מִמֶּנָּה) [מִינַּהּ] וְלָא מִידֵּי. אָמַר שְׁמוּאֵל: זוֹ מְמַלְּאָה וְנוֹפֶצֶת הִיא, וְכׇל הַמְמַלְּאָה וְנוֹפֶצֶת — אֵין לָהּ תַּקָּנָה.",
-     "en": "The Gemara relates a similar incident: There was <b>a certain</b> woman who experienced bleeding due to sexual intercourse <b>who came before Shmuel.</b> Shmuel <b>said to Rav Dimi bar Yosef: Go</b> and <b>frighten</b> this woman. Rav Dimi <b>went</b> and <b>frightened her, but nothing fell from her at all. Shmuel said: This</b> woman <b>is filled</b> with blood, <b>which falls</b> out of her during intercourse. <b>And any</b> woman who <b>is filled</b> with blood <b>that falls</b> out during intercourse <b>has no cure.</b>"
-    }
-   ],
-   "span": [
-    {
-     "ref": "Niddah 66a",
-     "start": 11,
-     "end": 11
-    }
-   ],
-   "words": 78,
-   "minutes": 1
-  },
-  {
    "id": "niddah-66a-11-14",
    "tractate": "niddah",
    "ref": "Niddah 66a",
@@ -1732,7 +1664,11 @@
    "start_segment": 22,
    "classification": "LOW_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Rav Hanina's question and Ravina's explanation in segments 7-8 finish the episode."
+   },
    "reviewed": false,
    "summary": "Ravina delays his son's wedding to Rav Hanina's daughter to ensure compliance with Rava's ruling regarding the seven clean days after a marriage proposal.",
    "included_by": "low-pool-grader-2026-11-13",
@@ -1742,6 +1678,18 @@
      "i": 22,
      "he": "רָבִינָא אֶיעְסֹק לֵיהּ לִבְרֵיהּ בֵּי רַב חֲנִינָא, אֲמַר לֵיהּ: סָבַר לֵיהּ מָר לְמִכְתַּב כְּתוּבָה לְאַרְבָּעָה יוֹם? אֲמַר לֵיהּ: אִין. כִּי מְטָא לְאַרְבָּעָה, נְטַר עַד אַרְבְּעָה אַחֲרִינָא, אִיעַכַּב שִׁבְעָה יוֹמֵי בָּתַר הָהוּא יוֹמָא.",
      "en": "The Gemara cites a related incident: <b>Ravina arranged for his son</b> to marry into <b>the family of Rav Ḥanina,</b> i.e., to marry Rav Ḥanina’s daughter. Rav Ḥanina <b>said to</b> Ravina: <b>Does the Master hold</b> that it is appropriate <b>to write the marriage contract</b> as stating that the wedding will take place <b>in four days,</b> i.e., on Wednesday? Ravina <b>said: Yes. When</b> the <b>fourth</b> day, i.e., Wednesday <b>arrived, he waited until another fourth</b> day before marrying her, until the following Wednesday, i.e., <b>he delayed seven days after that day</b> when he had planned to marry her."
+    },
+    {
+     "ref": "Niddah 66a",
+     "i": 23,
+     "he": "אֲמַר לֵיהּ: מַאי הַאי? אֲמַר לֵיהּ: לָא סָבַר לַהּ מָר לְהָא דְּרָבָא, דְּאָמַר רָבָא: תְּבָעוּהָ לִינָּשֵׂא וְנִתְפַּיְּיסָה צְרִיכָה לֵישֵׁב שִׁבְעָה נְקִיִּים? אֲמַר לֵיהּ: אֵימַר דְּאָמַר רָבָא בִּגְדוֹלָה דְּקָחָזְיָא דְּמָא, אֲבָל בִּקְטַנָּה דְּלָא חַזְיָא דְּמָא — מִי אָמַר?",
+     "en": "Rav Ḥanina <b>said to</b> Ravina: <b>What is this?</b> Why did you delay the wedding by an extra week? Ravina <b>said to</b> Rav Ḥanina: <b>Doesn’t the Master hold in accordance with this</b> statement <b>of Rava, as Rava said:</b> With regard to <b>one who proposed marriage to</b> a woman <b>and she accepted it, she must wait seven</b> consecutive days that are <b>clean</b> from any flow of menstrual blood and then immerse in a ritual bath? Rav Ḥanina <b>said to</b> Ravina: One can <b>say that Rava said</b> this statement <b>with regard to an adult woman, who has seen</b> menstrual <b>blood. But did</b> Rava actually <b>say</b> this <b>with regard to a minor girl, who has not</b> yet <b>seen</b> menstrual <b>blood?</b>"
+    },
+    {
+     "ref": "Niddah 66a",
+     "i": 24,
+     "he": "אֲמַר לֵיהּ: בְּפֵירוּשׁ אָמַר רָבָא: לָא שְׁנָא גְּדוֹלָה, לָא שְׁנָא קְטַנָּה. גְּדוֹלָה טַעְמָא מַאי? מִשּׁוּם דְּמֵחֲמָדָא, קְטַנָּה נָמֵי מֵחֲמָדָא.",
+     "en": "Ravina <b>said to</b> Rav Ḥanina: <b>Rava said explicitly</b> that there is <b>no difference</b> whether she is <b>an adult woman</b> and <b>no difference</b> whether she is <b>a minor girl. What is the reason</b> that <b>an adult woman</b> must wait for seven days? She must wait <b>because she desires</b> to marry her husband, and this might cause her to have a flow of blood. <b>A minor girl also desires</b> to marry her husband, which could cause a flow of blood."
     }
    ],
    "span": [
@@ -1751,8 +1699,8 @@
      "end": 22
     }
    ],
-   "words": 95,
-   "minutes": 1
+   "words": 289,
+   "minutes": 2
   },
   {
    "id": "niddah-66b-4-4",

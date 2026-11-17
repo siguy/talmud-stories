@@ -1,0 +1,22 @@
+{
+"01": {"code": "0BAAC2", "action": "adjust", "first": 6, "last": 6, "reason": "The incident of Yirmatya's mother is told in full in segment 6; segments 7-12 are rulings on weight vows and the Gemara's reconciliation of the incident."},
+"02": {"code": "7B8E12", "action": "keep", "reason": "Segments 6-7 hold the whole description of the Roman festival, with the legal discussion outside on both sides."},
+"03": {"code": "CA07A0", "action": "merge", "merge_with": "avodah_zarah-18a-3-3", "reason": "The directly following site story gives the reason for the daughter's sentence, which completes this same trial narrative."},
+"04": {"code": "5D3350", "action": "keep", "reason": "Segment 7 mixes the end of Rav Hisda's words with Rabbi Tanhum's teaching and cannot be cut, so it stays; the boundaries are otherwise right."},
+"05": {"code": "BBDE0B", "action": "keep", "reason": "The incident it answers is a separate site story not adjacent to this segment, and the segments before are legal, so no boundary change can complete it."},
+"06": {"code": "0D63E6", "action": "adjust", "first": 6, "last": 8, "reason": "Segment 8 answers the story's closing question (what else he permitted), so it is added to finish the exchange."},
+"07": {"code": "737B6B", "action": "merge", "merge_with": "avodah_zarah-39a-9-9", "reason": "The directly preceding site story holds the setting of the same Rabba bar bar Hana incident (the tzahanta called batei)."},
+"08": {"code": "91BDF0", "action": "merge", "merge_with": "avodah_zarah-39a-10-10", "reason": "The directly following site story is the ending of the same Rabba bar bar Hana incident that this segment begins."},
+"09": {"code": "993051", "action": "adjust", "first": 7, "last": 8, "reason": "Segment 6 is a pure legal baraita on replicas of Temple vessels; the Hasmonean candelabrum report is in segments 7-8."},
+"10": {"code": "84346A", "action": "adjust", "first": 5, "last": 6, "reason": "Segment 6 is the end of a sentence begun in segment 5 (Rava gave the money to gentile poor and Rabbi Ami was angry because...), so segment 5 is added to make it readable."},
+"11": {"code": "775F2C", "action": "keep", "reason": "Binyamin the righteous and King Munbaz are two different charity stories sharing one background, which is acceptable, and dropping Munbaz would remove it from the site."},
+"12": {"code": "E4131A", "action": "adjust", "first": 6, "last": 9, "reason": "Segment 9 holds the outcome (the document of admission and Rava's anger), so it is added to complete the story."},
+"13": {"code": "1E797A", "action": "keep", "reason": "The incident and the legal objection share one segment that cannot be cut, and the surrounding segments are legal argument."},
+"14": {"code": "615FB8", "action": "adjust", "first": 6, "last": 6, "reason": "The Bnei Brak incident is in segment 6; segments 7-9 are legal argument about age and puberty."},
+"15": {"code": "1DA6DA", "action": "keep", "reason": "The two land cases are separate stories sharing one background, which is acceptable, and each is told in full with the legal discussion outside."},
+"16": {"code": "CF7C86", "action": "adjust", "first": 6, "last": 8, "reason": "Rav Nahman's reply to Rava ends mid-sentence and is completed in segment 8."},
+"17": {"code": "A1242B", "action": "adjust", "first": 6, "last": 8, "reason": "Segment 8 holds Rabba's ruling and Rav Yosef's reply, the outcome of the case."},
+"18": {"code": "67F9FF", "action": "adjust", "first": 6, "last": 7, "reason": "Segment 7 holds Rabba's ruling and Rav Yosef's reply on this case; segment 8 is the general halakha for both cases."},
+"19": {"code": "39655D", "action": "adjust", "first": 6, "last": 8, "reason": "Abaye's case and Rava's verdict are in segments 6-8; segment 9 is Rav Ashi's and Rav Aha's hypothetical legal tactics."},
+"20": {"code": "0B5A78", "action": "merge", "merge_with": "bava_batra-58a-8-10", "reason": "The directly preceding site story tells how Rabbi Bena'a was imprisoned, which this story's release and judgeship continue as one narrative."}
+}

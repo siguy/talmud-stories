@@ -143,12 +143,17 @@
    "tractate": "kiddushin",
    "ref": "Kiddushin 12a",
    "refs": [
-    "Kiddushin 12a"
+    "Kiddushin 12a",
+    "Kiddushin 12b"
    ],
    "start_segment": 14,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "The story continues past the mother's objection: Rav Hisda's reply citing Yehudit and the Sages' challenge about witnesses in Idit belong to the same incident, while 9-10 are legal argument."
+   },
    "reviewed": true,
    "summary": "After a man betroths a woman with a blue marble stone, Rav Hisda finds it lacks value, leading the man's mother to unsuccessfully argue that it was worth more at the time of the act.",
    "segments": [
@@ -163,6 +168,18 @@
      "i": 15,
      "he": "אֲמַרָה לֵיהּ אִימֵּיהּ: וְהָא הָהוּא יוֹמָא דְּקַדְּשַׁהּ הֲוָה בַּהּ שָׁוֶה פְּרוּטָה! אֲמַר לַהּ: לָאו כָּל כְּמִינָּךְ דְּאָסְרַתְּ לַהּ אַבָּתְרָא.",
      "en": "<b>The mother of</b> the man who offered the betrothal <b>said to</b> Rav Ḥisda: <b>But on that day that he betrothed her it was worth one <i>peruta</i>. He said to</b> the mother: <b>It is not in your</b> power <b>to render her forbidden to a later</b> man. If another comes and betroths her, his betrothal is not dismissed due to this earlier act. Since the marble stone is not worth one <i>peruta</i> now, the betrothal of the second man may be valid."
+    },
+    {
+     "ref": "Kiddushin 12b",
+     "i": 0,
+     "he": "לָאו הַיְינוּ דִּיהוּדִית דְּבֵיתְהוּ דְּרַבִּי חִיָּיא, (דַּהֲוֵית) [דַּהֲוָה] לַהּ צַעַר לֵידָה, אֲמַרָה לֵיהּ: אֲמַרָה לִי אֵם: קַבֵּיל בִּיךְ אֲבוּךְ קִידּוּשֵׁי כִּי זוּטְרַתְּ. אֲמַר לַהּ: לָאו כָּל כְּמִינַּהּ דְּאִימָּךְ דְּאָסְרָה לִיךְ עִילָּוַאי.",
+     "en": "Rav Ḥisda explained: <b>Is this not</b> similar to the case of <b>Yehudit, wife of Rabbi Ḥiyya, who would have painful childbirths</b> and therefore wished to leave Rabbi Ḥiyya? <b>She said to</b> Rabbi Ḥiyya: <b>My mother told me: When you were young your father accepted betrothal on your behalf</b> from another man, which would render Yehudit forbidden to Rabbi Ḥiyya. <b>He said to her: It is not in your mother’s</b> power <b>to render you forbidden to me,</b> as this testimony is insufficient."
+    },
+    {
+     "ref": "Kiddushin 12b",
+     "i": 1,
+     "he": "אָמְרִי לֵיהּ רַבָּנַן לְרַב חִסְדָּא: אַמַּאי? הָא אִיכָּא סָהֲדִי בְּאִידִית, דְּיָדְעִי דִּבְהָהוּא יוֹמָא הֲוָה בַּיהּ שָׁוֶה פְּרוּטָה! הַשְׁתָּא מִיהָא לָא לֵיתַנְהוּ קַמַּן.",
+     "en": "Returning to the incident with the blue marble stone, the Gemara relates that <b>the Sages said to Rav Ḥisda: Why</b> do you say that she is not betrothed because the item is not worth one <i>peruta</i> in the place where the betrothal occurred? After all, <b>there are witnesses in Idit who know that on that day it had the value of one <i>peruta</i>.</b> Rav Ḥisda said to them: <b>Now, in any event, they are not here,</b> and therefore their potential testimony is disregarded."
     }
    ],
    "span": [
@@ -172,21 +189,26 @@
      "end": 15
     }
    ],
-   "words": 205,
-   "minutes": 2
+   "words": 370,
+   "minutes": 3
   },
   {
    "id": "kiddushin-12b-10-10",
    "tractate": "kiddushin",
    "ref": "Kiddushin 12b",
    "refs": [
-    "Kiddushin 12b",
-    "Kiddushin 13a"
+    "Kiddushin 12b"
    ],
    "start_segment": 10,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The myrtle-mat case and Rava's ruling are complete in segment 6; segments 9-11 are the legal debate over his proof.",
+    "start_trim": 0,
+    "end_trim": 5
+   },
    "reviewed": true,
    "summary": "A man attempted to betroth a woman with a worthless mat, but when told it was valueless, he directed her to the money wrapped inside, to which she responded with silence after taking it.",
    "segments": [
@@ -195,24 +217,6 @@
      "i": 10,
      "he": "הָהוּא גַּבְרָא דְּקַדֵּישׁ בְּצִיפְּתָא דְאָסָא, אֲמַרוּ לֵיהּ: וְהָא לֵית בַּהּ שָׁוֶה פְּרוּטָה! אֲמַר לְהוּ: תִּיקְדּוֹשׁ בְּאַרְבַּע זוּזֵי דְּאִית בַּהּ. שְׁקַלְתַּהּ וְאִישְׁתִּיקָא. אָמַר רָבָא: הָוֵה שְׁתִיקוּתָא דִּלְאַחַר מַתַּן מָעוֹת, וְכֹל שְׁתִיקוּתָא דִּלְאַחַר מַתַּן מָעוֹת, לָאו כְּלוּם הִיא.",
      "en": "§ The Gemara relates: There was <b>a certain man who betrothed</b> a woman <b>with a mat of myrtle branches.</b> People who were present <b>said to him: But it is not worth one <i>peruta</i>. He said to them:</b> If so, <b>let her be betrothed with</b> the <b>four dinars that are</b> wrapped <b>in</b> the mat. The woman <b>took</b> the mat <b>and was silent. Rava said: This is silence after</b> the <b>money is given, and any silence after</b> the <b>money is given is nothing.</b> Since it was assumed at the time that he gave her an item worth less than one <i>peruta</i>, there is no proof that she acted in accordance with his subsequent statement. It is possible that she ignored him and did not intend to become betrothed with the four dinars."
-    },
-    {
-     "ref": "Kiddushin 13a",
-     "i": 0,
-     "he": "כִּי אָמְרָה ״לָא״ נָמֵי הָווּ קִידּוּשִׁין? אַמַּאי, וְהָא קָאָמְרָה ״לָא״! אֶלָּא לָאו: ״רָצְתָה״ – דְּאָמְרָה: ״אִין״, לֹא רָצְתָה – דְּאִישְׁתִּיקָה מִשְׁתָּקה. וּשְׁמַע מִינַּהּ שְׁתִיקָה דִּלְאַחַר מַתַּן מָעוֹת – וְלֹא כְּלוּם הִיא.",
-     "en": "that <b>if</b> she <b>said: No, it would also be</b> a <b>betrothal.</b> But <b>why</b> should that be the case? After all, <b>she said: No. Rather, is it not</b> to be explained in this manner, i.e., that the phrase: <b>She wanted,</b> means <b>she said yes,</b> and: <b>She did not want,</b> means <b>that she remained silent. And</b> one can <b>learn from this</b> that <b>silence after</b> the <b>money is given is nothing.</b> Her silence is not interpreted as an agreement to the betrothal."
-    },
-    {
-     "ref": "Kiddushin 13a",
-     "i": 1,
-     "he": "קָשׁוּ בָּהּ בְּפוּם נַהֲרָא מִשְּׁמֵיהּ דְּרַב הוּנָא בְּרֵיהּ דְּרַב יְהוֹשֻׁעַ: מִי דָּמֵי? הָתָם בְּתוֹרַת פִּקָּדוֹן יַהֲבִינְהוּ נִיהֲלַהּ, סָבְרָה: אִי שָׁדֵינָא לְהוּ וּמִיתַּבְרִי – מְחַיַּיבְנָא בְּהוּ, הָכָא בְּתוֹרַת קִדּוּשִׁין יַהֲבִינְהוּ נִיהֲלַהּ, וְאִי אִיתָא דְּלָא נִיחָא לַהּ – (לִישְׁדִּינְהוּ)!",
-     "en": "<b>In</b> the city of <b>Pum Nahara they raised a difficulty against</b> Rava’s proof, <b>in the name of Rav Huna, son of Rav Yehoshua: Is it comparable? There,</b> in the <i>baraita</i>, <b>he gave her</b> the money <b>as a deposit</b> but they are his. She therefore <b>thinks: If I throw them and they break I will be obligated</b> to pay <b>for them,</b> as would anyone who destroys another person’s property. Consequently, her silence is interpreted as consent only to continue in her role of holding it as a deposit. By contrast, <b>here he gives them to her as betrothal</b> money so that they would belong to her. <b>And if it is so, that she is not amenable</b> to being betrothed, <b>let her throw them</b> away."
-    },
-    {
-     "ref": "Kiddushin 13a",
-     "i": 2,
-     "he": "פָּרֵיךְ רַב אַחַאי: אַטּוּ כּוּלְּהוּ נְשֵׁי דִּינָא גְּמִירִי? הָכִי נָמֵי סַבְרַהּ: אִי שָׁדֵינָא לְהוּ וּמִיתַּבְרִי מִיתְחַיַּיבְנָא בְּאַחְרָיוּתַיְיהוּ. שְׁלַחָה רַב אַחָא בַּר רַב לְקַמֵּיהּ דְּרָבִינָא: כְּהַאי גַּוְונָא מַאי? שְׁלַח לֵיהּ: אֲנַן לָא שְׁמִיעַ לַן הָא דְּרַב הוּנָא בְּרֵיהּ דְּרַב יְהוֹשֻׁעַ, אַתּוּן דִּשְׁמִיעַ לְכוּ – חוּשׁוּ לַהּ.",
-     "en": "<b>Rav Aḥai refutes</b> this argument: <b>Is that to say</b> that <b>all women are learned</b> in <b><i>halakha</i>?</b> In this case <b>also, she thinks: If I throw them and they break I will be responsible for them.</b> Therefore, I will not throw them. One cannot deduce from the fact that she does not throw the coins that she accepted them as betrothal money. <b>Rav Aḥa bar Rav, sent</b> this question <b>to Ravina: In a case like this, what</b> is the <i>halakha</i>? Ravina <b>sent</b> the following response <b>to him: We did not hear this statement of Rav Huna, son of Rav Yehoshua.</b> Therefore, we do not need to take it into consideration. <b>You, who heard it, should be concerned about</b> a possible betrothal."
     }
    ],
    "span": [
@@ -227,8 +231,8 @@
      "end": 2
     }
    ],
-   "words": 457,
-   "minutes": 4
+   "words": 132,
+   "minutes": 1
   },
   {
    "id": "kiddushin-13a-3-3",
@@ -272,11 +276,7 @@
    "start_segment": 18,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 0,
-    "end_forward": 1,
-    "reason": "Segment ends mid-sentence 'this slave was an adult man,' and finishes in 'departed to life by receiving a slave'."
-   },
+   "extended": null,
    "reviewed": true,
    "summary": "Mar Zutra visits the dying convert Rabbi Yehuda and, realizing the man has no heirs, instructs Rabbi Yehuda's slave to perform an act of service for him so that he may legally acquire the slave before the property becomes ownerless. Following the death of Rabbi Yehuda from India, Mar Zutra acquires his slave through a specific act of possession performed just before the death.",
    "segments": [
@@ -291,12 +291,6 @@
      "i": 0,
      "he": "זֶה פֵּירַשׁ לְמִיתָה, וְזֶה פֵּירַשׁ לְחַיִּים.",
      "en": "and <b>this</b> person, Rabbi Yehuda from India, <b>departed to death, and that</b> individual, Mar Zutra, <b>departed to life</b> by receiving a slave."
-    },
-    {
-     "ref": "Kiddushin 23a",
-     "i": 1,
-     "he": "וְאִיכָּא דְּאָמְרִי קָטָן הֲוָה, וּדְלָא כְּאַבָּא שָׁאוּל, דְּתַנְיָא: גֵּר שֶׁמֵּת וּבִזְבְּזוּ יִשְׂרָאֵל נְכָסָיו, וְהָיוּ בָּהֶן עֲבָדִים, בֵּין גְּדוֹלִים בֵּין קְטַנִּים – קָנוּ עַצְמָן בְּנֵי חוֹרִין. אַבָּא שָׁאוּל אוֹמֵר: גְּדוֹלִים – קָנוּ עַצְמָן בְּנֵי חוֹרִין, קְטַנִּים – כׇּל הַמַּחְזִיק בָּהֶן זָכָה בָּהֶן.",
-     "en": "<b>And there are</b> those <b>who say</b> that this slave <b>was a minor, and</b> Mar Zutra did <b>not</b> act <b>in accordance with</b> the opinion of <b>Abba Shaul. As it is taught</b> in a <i>baraita</i>: With regard to <b>a convert who dies</b> without heirs <b>and Jews plundered his property,</b> as it is considered ownerless, <b>and among</b> his possessions <b>were slaves,</b> then, <b>whether</b> the slaves were <b>adults or minors, they acquire</b> ownership of <b>themselves</b> and become <b>freemen,</b> as they can acquire themselves from the ownerless property. <b>Abba Shaul says: Adult</b> slaves <b>acquire</b> ownership of <b>themselves</b> and become <b>freemen.</b> But with regard to <b>minor</b> slaves, <b>anyone who takes possession of them acquires them.</b> According to the opinion of Abba Shaul, Mar Zutra did not have to hasten to acquire the slave during Rabbi Yehuda’s lifetime before the slave would acquire himself. He could have waited until Rabbi Yehuda died before acquiring the slave."
     }
    ],
    "span": [
@@ -311,8 +305,8 @@
      "end": 0
     }
    ],
-   "words": 272,
-   "minutes": 2
+   "words": 122,
+   "minutes": 1
   },
   {
    "id": "kiddushin-25a-1-3",
@@ -473,13 +467,18 @@
    "tractate": "kiddushin",
    "ref": "Kiddushin 29b",
    "refs": [
-    "Kiddushin 29b",
-    "Kiddushin 30a"
+    "Kiddushin 29b"
    ],
    "start_segment": 15,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The Rav Hamnuna incident is segment 6 alone; segment 10 is the tail of Rav Hisda's boast plus Rava's advice on marrying off a son, not part of this story.",
+    "start_trim": 0,
+    "end_trim": 4
+   },
    "reviewed": true,
    "summary": "Rav Huna meets Rav Hamnuna and, upon realizing he is unmarried, tells him not to see him again until he has a wife.",
    "segments": [
@@ -488,12 +487,6 @@
      "i": 15,
      "he": "מִשְׁתַּבַּח לֵיהּ רַב חִסְדָּא לְרַב הוּנָא בִּדְרַב הַמְנוּנָא דְּאָדָם גָּדוֹל הוּא. אֲמַר לֵיהּ: כְּשֶׁיָּבֹא לְיָדְךָ – הֲבִיאֵהוּ לְיָדִי. כִּי אֲתָא חַזְיֵיהּ דְּלָא פָּרֵיס סוּדָרָא. אֲמַר לֵיהּ: מַאי טַעְמָא לָא פָּרֵיסַתְּ סוּדָרָא? אֲמַר לֵיהּ: דְּלָא נְסֵיבְנָא. אַהְדְּרִינְהוּ לְאַפֵּיהּ מִינֵּיהּ. אֲמַר לֵיהּ: חֲזִי דְּלָא חָזֵית לְהוּ לְאַפַּי עַד דְּנָסְבַתְּ.",
      "en": "§ With regard to marriage, the Gemara relates: <b>Rav Ḥisda would praise Rav Hamnuna to Rav Huna</b> by saying <b>that he is a great man.</b> Rav Huna <b>said to him: When he comes to you, send him to me. When</b> Rav Hamnuna <b>came</b> before him, Rav Huna <b>saw that he did not cover</b> his head with <b>a cloth,</b> as Torah scholars did. Rav Huna <b>said to him: What is the reason</b> that <b>you do not cover</b> your head <b>with a cloth?</b> Rav Hamnuna <b>said to him:</b> The reason is <b>that I am not married,</b> and it was not customary for unmarried men to cover their heads with a cloth. Rav Huna <b>turned his face away from him</b> in rebuke, and <b>he said to him: See</b> to it <b>that you do not see my face until you marry.</b>"
-    },
-    {
-     "ref": "Kiddushin 30a",
-     "i": 0,
-     "he": "הֲוָה אָמֵינָא לְשָׂטָן: גִּירָא בְּעֵינָיךְ. אֲמַר לֵיהּ רָבָא לְרַבִּי נָתָן בַּר אַמֵּי: אַדִּידָךְ עַל צַוְּארֵי דִּבְרָיךְ. מִשִּׁיתְּסַר וְעַד עֶשְׂרִים וְתַרְתֵּי וְאָמְרִי לַהּ: מִתַּמְנֵי סְרֵי עַד עֶשְׂרִים וְאַרְבָּעָה.",
-     "en": "<b>I would say to the Satan: An arrow in your eye,</b> i.e., I would not be afraid of the evil inclination at all. <b>Rava said to Rabbi Natan bar Ami: While your hand is still on your son’s neck,</b> i.e., while you still have authority and control over him, find him a wife. What is the appropriate age? <b>From sixteen until twenty-two, and some say from eighteen until twenty-four.</b>"
     }
    ],
    "span": [
@@ -508,8 +501,8 @@
      "end": 0
     }
    ],
-   "words": 206,
-   "minutes": 2
+   "words": 137,
+   "minutes": 1
   },
   {
    "id": "kiddushin-30a-7-7",
@@ -590,13 +583,18 @@
    "tractate": "kiddushin",
    "ref": "Kiddushin 31a",
    "refs": [
-    "Kiddushin 31a",
-    "Kiddushin 31b"
+    "Kiddushin 31a"
    ],
    "start_segment": 12,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Rav Dimi's account of Dama ben Netina and his mother is segment 6; segment 8 is the end of Avimi's separate teaching about sons.",
+    "start_trim": 0,
+    "end_trim": 2
+   },
    "reviewed": true,
    "summary": "While Dama ben Netina was sitting in gold garments among Roman nobles, his mother publicly shamed and struck him, yet he refused to embarrass her.",
    "segments": [
@@ -605,12 +603,6 @@
      "i": 12,
      "he": "כִּי אֲתָא רַב דִּימִי אָמַר: פַּעַם אַחַת הָיָה לָבוּשׁ סִירְקוֹן שֶׁל זָהָב, וְהָיָה יוֹשֵׁב בֵּין גְּדוֹלֵי רוֹמִי. וּבָאתָה אִמּוֹ וּקְרָעַתּוּ מִמֶּנּוּ, וְטָפְחָה לוֹ עַל רֹאשׁוֹ, וְיָרְקָה לוֹ בְּפָנָיו, וְלֹא הִכְלִימָהּ.",
      "en": "<b>When Rav Dimi came</b> from Eretz Yisrael to Babylonia, <b>he said: Once</b> Dama ben Netina <b>was wearing a fine cloak [<i>sirkon</i>] of gold, and was sitting among the nobles</b> of <b>Rome. And his mother came to him and tore</b> his garment <b>from him and smacked him on the head and spat in his face, and</b> yet <b>he did not embarrass her.</b>"
-    },
-    {
-     "ref": "Kiddushin 31b",
-     "i": 0,
-     "he": "וּמְבִיאוֹ לְחַיֵּי הָעוֹלָם הַבָּא.",
-     "en": "and this action <b>brings him to the life of the World-to-Come.</b>"
     }
    ],
    "span": [
@@ -625,7 +617,7 @@
      "end": 0
     }
    ],
-   "words": 74,
+   "words": 63,
    "minutes": 1
   },
   {
@@ -984,10 +976,20 @@
    "start_segment": 13,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "The Hutzpit version only says 'he saw'; segment 4 supplies that this is what caused Aher (Elisha ben Avuya) to sin, without which the story has no subject."
+   },
    "reviewed": true,
    "summary": "Elisha ben Avuya witnesses the tongue of a martyred sage being dragged by a pig and, in despair over the lack of reward for the righteous, abandons his faith.",
    "segments": [
+    {
+     "ref": "Kiddushin 39b",
+     "i": 12,
+     "he": "אָמַר רַב יוֹסֵף: אִילְמָלֵי דַּרְשֵׁיהּ אַחֵר לְהַאי קְרָא כְּרַבִּי יַעֲקֹב בַּר בְּרַתֵּיה – לָא חֲטָא. וְאַחֵר מַאי הוּא? אִיכָּא דְּאָמְרִי: כִּי הַאי גַוְונָא חֲזָא.",
+     "en": "<b>Rav Yosef said: Had Aḥer,</b> literally Other, the appellation of the former Sage Elisha ben Avuya, <b>interpreted this</b> aforementioned <b>verse:</b> “That it may go well with you” (Deuteronomy 5:16), <b>homiletically,</b> as referring to the World-to-Come, <b>as</b> did <b>Rabbi Ya’akov, son of his daughter,</b> he would <b>not have sinned.</b> The Gemara asks: <b>And what</b> caused <b>Aḥer</b> to sin? <b>There are</b> those <b>who say he saw a case like this,</b> where a son went up to the roof on his father’s command, dispatched the mother bird, and then died. It was witnessing this episode that led Elisha ben Avuya astray."
+    },
     {
      "ref": "Kiddushin 39b",
      "i": 13,
@@ -1002,8 +1004,8 @@
      "end": 13
     }
    ],
-   "words": 57,
-   "minutes": 1
+   "words": 155,
+   "minutes": 2
   },
   {
    "id": "kiddushin-39b-15-15",
@@ -1336,20 +1338,10 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 1,
-    "end_forward": 0,
-    "reason": "Starts with bare 'Abaye said: From where do I say this claim of mine?'; previous segment gives the dilemma about one witness and the silent husband."
-   },
+   "extended": null,
    "reviewed": true,
    "summary": "Mar Shmuel sends a messenger to find his late student, and the messenger returns claiming he saw the student's wife committing adultery.",
    "segments": [
-    {
-     "ref": "Kiddushin 66a",
-     "i": 4,
-     "he": "אִיבַּעְיָא לְהוּ: אִשְׁתּוֹ זִינְּתָה בְּעַד אֶחָד וְשׁוֹתֵק, מַהוּ? אָמַר אַבָּיֵי: נֶאֱמָן. רָבָא אָמַר: אֵינוֹ נֶאֱמָן. הָוֵי דָּבָר שֶׁבְּעֶרְוָה, וְאֵין דָּבָר שֶׁבְּעֶרְוָה פָּחוֹת מִשְּׁנַיִם.",
-     "en": "§ <b>A dilemma was raised before</b> the Sages: If a husband is told <b>by one witness</b> that <b>his wife committed adultery, and</b> the husband remains <b>silent, what is</b> the <i>halakha</i>? <b>Abaye said:</b> The witness is <b>deemed credible. Rava said: He is not deemed credible.</b> Why not? Because <b>it is a matter involving forbidden relations, and there is no matter</b> of testimony <b>for forbidden sexual relations</b> that can be attested to by <b>fewer than two</b> witnesses."
-    },
     {
      "ref": "Kiddushin 66a",
      "i": 5,
@@ -1364,8 +1356,8 @@
      "end": 5
     }
    ],
-   "words": 225,
-   "minutes": 2
+   "words": 149,
+   "minutes": 1
   },
   {
    "id": "kiddushin-66a-7-11",
@@ -1433,13 +1425,9 @@
    "start_segment": 11,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": {
-    "start_back": 0,
-    "end_forward": 1,
-    "reason": "Ends \"This is what Shmuel says:\" and the quote completes in the next segment (\"One may not send greetings to a woman even with a messenger\")."
-   },
+   "extended": null,
    "reviewed": true,
-   "summary": "After a man from Neharde’a insults Rav Yehuda in a butcher shop and summons him to court, Rav Yehuda travels to Neharde’a and engages in a sharp-witted exchange with the judge, Rav Naḥman.",
+   "summary": "In a Pumbedita butcher shop, a man from Neharde'a was told to wait until Rav Yehuda bar Yeḥezkel's servant was served, and mocked Rav Yehuda with an insulting name.",
    "segments": [
     {
      "ref": "Kiddushin 70a",
@@ -1482,32 +1470,7 @@
      "i": 0,
      "he": "אֵין שׁוֹאֲלִין בִּשְׁלוֹם אִשָּׁה. עַל יְדֵי בַּעְלָהּ! אֲמַר לֵיהּ: הָכִי אָמַר שְׁמוּאֵל: אֵין שׁוֹאֲלִין בִּשְׁלוֹם אִשָּׁה כְּלָל. שְׁלַחָה לֵיהּ דְּבֵיתְהוּ: שְׁרִי לֵיהּ תִּגְרֵיהּ דְּלָא נִישַׁוְּויָךְ כִּשְׁאָר עַם הָאָרֶץ.",
      "en": "<b>One may not send greetings to a woman</b> even with a messenger, as this may cause the messenger and the woman to relate to each other inappropriately. Rav Naḥman countered by suggesting that he send his greetings <b>with her husband,</b> which would remove all concerns. Rav Yehuda <b>said to him: This is what Shmuel says: One may not send greetings to a woman at all.</b> Yalta, <b>his wife,</b> who overheard that Rav Yehuda was getting the better of the exchange, <b>sent</b> a message <b>to him: Release him</b> and conclude your business with him, <b>so that he not equate you with another ignoramus.</b>"
-    }
-   ],
-   "span": [
-    {
-     "ref": "Kiddushin 70a",
-     "start": 11,
-     "end": 16
-    }
-   ],
-   "words": 781,
-   "minutes": 6
-  },
-  {
-   "id": "kiddushin-70b-1-8",
-   "tractate": "kiddushin",
-   "ref": "Kiddushin 70b",
-   "refs": [
-    "Kiddushin 70b"
-   ],
-   "start_segment": 1,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": true,
-   "summary": "Rav Yehuda travels to Neharde'a to answer a summons, where he successfully challenges the lineage of his accuser and the local community, leading to mass social upheaval and a narrow escape from a mob.",
-   "segments": [
+    },
     {
      "ref": "Kiddushin 70b",
      "i": 1,
@@ -1559,13 +1522,18 @@
    ],
    "span": [
     {
+     "ref": "Kiddushin 70a",
+     "start": 11,
+     "end": 16
+    },
+    {
      "ref": "Kiddushin 70b",
-     "start": 1,
+     "start": 0,
      "end": 8
     }
    ],
-   "words": 952,
-   "minutes": 7
+   "words": 1733,
+   "minutes": 12
   },
   {
    "id": "kiddushin-71a-4-5",

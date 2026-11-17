@@ -7,12 +7,17 @@
    "tractate": "meilah",
    "ref": "Meilah 7a",
    "refs": [
-    "Meilah 7a"
+    "Meilah 7a",
+    "Meilah 7b"
    ],
    "start_segment": 10,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Adds segments 8-9, which finish Rabbi Akiva's reply to Rabbi Shimon; the later Reish Lakish discussion is analysis and stays out."
+   },
    "reviewed": false,
    "summary": "Rabbi Shimon recounts traveling to the village of Pani where an old man challenged him on Rabbi Akiva's rulings, leading Shimon to return to Rabbi Akiva to verify the teaching.",
    "segments": [
@@ -27,6 +32,18 @@
      "i": 11,
      "he": "וּכְשֶׁיָּצָאתִי וְהִרְצֵיתִי דְּבָרִים לִפְנֵי רַבִּי עֲקִיבָא, אָמַר לִי: בְּנִי, אִי אַתָּה אוֹמֵר כֵּן? וַהֲרֵי הַמַּפְרִישׁ חַטָּאתוֹ וְאָבְדָה, וְהִפְרִישׁ אַחֶרֶת תַּחְתֶּיהָ, וְאַחַר כָּךְ נִמְצֵאת הָרִאשׁוֹנָה, וַהֲרֵי שְׁתֵּיהֶן עוֹמְדוֹת – מוֹעֲלִין בִּשְׁתֵּיהֶן. שְׁחָטָן, וַהֲרֵי דָּמָן מוּנָּח בְּכוֹסוֹת – מוֹעֲלִין בִּשְׁתֵּיהֶן.",
      "en": "<b>But when I left</b> their presence <b>and presented</b> this <b>matter before Rabbi Akiva, he said:</b> And you, <b>my son, do you not say so,</b> that sprinkling is effective even with regard to that which is unfit? <b>But</b> in the case of one who <b>designated</b> an animal as <b>his sin offering and it was lost and he designated another</b> animal <b>in its stead, and thereafter the first</b> sin offering <b>was found and both of them stand</b> fit for sacrifice, he may sacrifice either animal, thereby rendering the other unfit, and yet <b>both</b> are subject to the <i>halakhot</i> of <b>misuse.</b> This is due to the fact that these offerings remain consecrated to God, and therefore one who derives benefit from them is liable for misuse. Likewise, if one <b>slaughtered them</b> both, <b>and their blood</b> is <b>placed in cups</b> and the blood of one of them will be sprinkled on the altar, <b>both of them</b> are subject to the <i>halakhot</i> of <b>misuse.</b>"
+    },
+    {
+     "ref": "Meilah 7b",
+     "i": 0,
+     "he": "נִזְרַק דָּם שֶׁל אֶחָד מֵהֶם, אִי אַתָּה מוֹדֶה שֶׁכְּשֵׁם שֶׁדָּמָהּ פּוֹטֵר אֶת בְּשָׂרָהּ מִן הַמְּעִילָה, אַף יִפְטוֹר בְּשַׂר חֲבֶירְתָּהּ מִן הַמְּעִילָה?",
+     "en": "And in a case where the <b>blood of one</b> of the sin offerings <b>was sprinkled, do you not concede that just as</b> the sprinkling of <b>its blood exempts its meat from</b> the <i>halakhot</i> of <b>misuse, so too, it exempts the meat of the other</b> animal <b>from</b> the <i>halakhot</i> of <b>misuse?</b>"
+    },
+    {
+     "ref": "Meilah 7b",
+     "i": 1,
+     "he": "אִם הִצִּיל בְּשַׂר חֲבֶירְתָּהּ מִן הַמְּעִילָה, אַף עַל פִּי שֶׁהוּא פָּסוּל, דִּין הוּא שֶׁיַּצִּיל אֶת בְּשָׂרָהּ!",
+     "en": "If so, one may infer from here by an <i>a fortiori</i> inference with regard to the case of sprinkling the blood of meat that left the courtyard: <b>If</b> the sprinkling of its blood <b>spared the meat of the other</b> animal <b>from</b> the <i>halakhot</i> of <b>misuse, even though</b> that animal <b>is unfit,</b> as it is a leftover sin offering, it is only <b>right that</b> the blood that was sprinkled should <b>exempt its own meat,</b> despite the fact that it left the courtyard."
     }
    ],
    "span": [
@@ -36,8 +53,8 @@
      "end": 11
     }
    ],
-   "words": 283,
-   "minutes": 2
+   "words": 414,
+   "minutes": 3
   },
   {
    "id": "meilah-17a-9-14",

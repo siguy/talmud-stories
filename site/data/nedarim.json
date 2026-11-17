@@ -130,12 +130,17 @@
    "tractate": "nedarim",
    "ref": "Nedarim 22a",
    "refs": [
-    "Nedarim 22a"
+    "Nedarim 22a",
+    "Nedarim 22b"
    ],
    "start_segment": 10,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Rabbi Yohanan's wonder and Ulla's answer that they had not yet crossed the Jordan continue the same conversation and finish the story."
+   },
    "reviewed": false,
    "summary": "While traveling to Israel, Ulla witnesses one of his companions murder the other and, fearing for his life, encourages the murderer, later explaining the incident to Rabbi Yohanan.",
    "segments": [
@@ -144,6 +149,18 @@
      "i": 10,
      "he": "עוּלָּא בְּמִיסְּקֵיהּ לְאַרְעָא דְּיִשְׂרָאֵל אִיתְלְווֹ לֵיהּ תְּרֵין בְּנֵי חוֹזָאֵי בַּהֲדֵיהּ. קָם חַד שַׁחְטֵיהּ לְחַבְרֵיהּ. אֲמַר לֵיהּ לְעוּלָּא: יָאוּת עֲבַדִי? אֲמַר לֵיהּ: אִין, וּפְרַע לֵיהּ בֵּית הַשְּׁחִיטָה. כִּי אֲתָא לְקַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲמַר לֵיהּ: דִּלְמָא חַס וְשָׁלוֹם אַחְזִיקִי יְדֵי עוֹבְרֵי עֲבֵירָה? אֲמַר לֵיהּ: נַפְשְׁךָ הִצַּלְתָּ.",
      "en": "The Gemara relates: <b>Ulla, on his ascent to Eretz Yisrael, had two residents of Ḥozai join him.</b> Because of a brawl between them, <b>one arose</b> and <b>slaughtered the other.</b> The assailant <b>said to Ulla: Did I act properly? He said to him: Yes, and open the place of the slaughter,</b> i.e., cut it more so that he will die faster. <b>When</b> Ulla <b>came before Rabbi Yoḥanan,</b> Ulla <b>said to him: Perhaps, Heaven forbid, I strengthened the hands of sinners</b> by commending him, although I did so merely because I was afraid that he would kill me. <b>He said to him: You saved yourself</b> by doing so, as it is permitted for one to say words like this in order to save his own life."
+    },
+    {
+     "ref": "Nedarim 22a",
+     "i": 11,
+     "he": "קָא תָמַהּ רַבִּי יוֹחָנָן, מִכְּדִי כְּתִיב: ״וְנָתַן ה׳ לְךָ שָׁם לֵב רַגָּז״ בְּבָבֶל כְּתִיב? אֲמַר לֵיהּ: הָהוּא שַׁעְתָּא",
+     "en": "With regard to the narrative itself, <b>Rabbi Yoḥanan wondered: Now, it is written</b> in the passage of curses: <b>“But the Lord shall give you there a trembling heart”</b> (Deuteronomy 28:65) and this <b>is written with regard to Babylonia,</b> because in the exile an individual possesses a trembling and angry heart. How is it possible that in Eretz Yisrael a person can get so angry as to murder another? Ulla <b>said to him: At that moment</b> when the incident occurred"
+    },
+    {
+     "ref": "Nedarim 22b",
+     "i": 0,
+     "he": "לָא עָבְרִינַן יַרְדְּנָא.",
+     "en": "<b>we had not</b> yet <b>crossed the Jordan River,</b> and we were still outside of Eretz Yisrael. Therefore, the curse of a heart of anger was relevant."
     }
    ],
    "span": [
@@ -153,8 +170,8 @@
      "end": 10
     }
    ],
-   "words": 124,
-   "minutes": 1
+   "words": 229,
+   "minutes": 2
   },
   {
    "id": "nedarim-22b-7-9",
@@ -1115,16 +1132,16 @@
    "start_segment": 8,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Drops segment 6, the separate fig-compote lawsuit; the bar Kappara wedding and laughter stories run from segment 7 to 9.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "After being excluded from Rabbi Yehuda HaNasi's son's wedding, Bar Kappara insults the Rabbi, leading to a situation where the Rabbi must bribe Bar Kappara to prevent him from making him laugh. A man uses a tar-smeared basket on his head to fulfill a condition for receiving wheat from Rabbi Yehuda HaNasi, causing the Rabbi to laugh.",
    "segments": [
-    {
-     "ref": "Nedarim 50b",
-     "i": 8,
-     "he": "הָהוּא גַּבְרָא דִּיהַב עַבְדָּא לְחַבְרֵיהּ לְאַגְמוֹרֵיהּ אַלְפָּא מִינֵי לַפְדֵי, אַגְמְרֵיהּ תַּמְנֵי מְאָה. אַזְמְנֵיהּ לְדִינָא לְקַמֵּיהּ דְּרַבִּי. אָמַר רַבִּי: אֲבוֹתֵינוּ אָמְרוּ ״נָשִׁינוּ טוֹבָה״, אָנוּ אֲפִילּוּ בְּעֵינֵינוּ לֹא רָאִינוּ.",
-     "en": "The Gemara relates: There was <b>a certain man who gave a slave to his friend so that</b> the friend would <b>teach him</b> how to prepare <b>a thousand varieties of compote</b> from figs. However, <b>he taught him</b> only <b>eight hundred. He</b> therefore <b>brought</b> his friend <b>for judgment before Rabbi</b> Yehuda HaNasi. <b>Rabbi</b> Yehuda HaNasi <b>said: Our forefathers said: We have forgotten prosperity</b> (see Lamentations 3:17). They forgot the opulence they enjoyed in better times, but they at least experienced it. By contrast, <b>we have not even seen</b> it <b>with our eyes.</b> Rabbi Yehuda HaNasi had not imagined that so many types of compote could be prepared from figs."
-    },
     {
      "ref": "Nedarim 50b",
      "i": 9,
@@ -1156,8 +1173,8 @@
      "end": 0
     }
    ],
-   "words": 394,
-   "minutes": 3
+   "words": 287,
+   "minutes": 2
   },
   {
    "id": "nedarim-51a-1-4",
@@ -1406,37 +1423,6 @@
    "minutes": 2
   },
   {
-   "id": "nedarim-66b-3-3",
-   "tractate": "nedarim",
-   "ref": "Nedarim 66b",
-   "refs": [
-    "Nedarim 66b"
-   ],
-   "start_segment": 3,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "A man requires his wife to spit on Rabban Shimon ben Gamliel to fulfill a vow, and she does so on his clothing.",
-   "segments": [
-    {
-     "ref": "Nedarim 66b",
-     "i": 3,
-     "he": "הַהוּא דְּאָמַר לִדְבֵיתְהוּ ״קֻוֽנָּם שֶׁאִי אַתְּ נֶהֱנֵית לִי עַד שֶׁתָּרוֹקִּי בּוֹ בְּרַבָּן שִׁמְעוֹן בֶּן גַּמְלִיאֵל״. אֲתָת וּרְקַק אַלְּבוּשֵׁיהּ. אָמַר לֵיהּ רַב אַחָא מִדִּפְתִּי לְרָבִינָא: וְהָא הַאי לְזִילוּתָא קָא מִיכַּוֵּין! אָמַר לֵיהּ: מִירָק עַל מָנֵי דְּרַבָּן שִׁמְעוֹן בֶּן גַּמְלִיאֵל זִילוּתָא רַבְּתָא הִיא.",
-     "en": "The Gemara relates: There was <b>a certain</b> person <b>who said to his wife: Benefiting from me is <i>konam</i></b> for <b>you until you have spat on Rabban Shimon ben Gamliel. She came</b> to Rabban Shimon ben Gamliel <b>and spat on his clothing. Rav Aḥa of Difti said to Ravina: But this</b> man <b>intended the humiliation</b> of Rabban Shimon ben Gamliel, which is not achieved by spitting on his clothing. Ravina <b>said to him: Spittle on the clothing of Rabban Shimon ben Gamliel is a great humiliation</b> for him, and she has thereby fulfilled the vow."
-    }
-   ],
-   "span": [
-    {
-     "ref": "Nedarim 66b",
-     "start": 3,
-     "end": 3
-    }
-   ],
-   "words": 94,
-   "minutes": 1
-  },
-  {
    "id": "nedarim-66b-3-5",
    "tractate": "nedarim",
    "ref": "Nedarim 66b",
@@ -1526,7 +1512,11 @@
    "start_segment": 5,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 7 holds Vardimus's answer to Isi's question, which completes the exchange."
+   },
    "reviewed": false,
    "summary": "Vardimus finds Isi bar Yehuda, who had been absent from Rabbi Yosei's academy for three days, and Isi explains that he was preoccupied with a difficulty regarding the biblical source for the necessity of laundering.",
    "segments": [
@@ -1535,6 +1525,12 @@
      "i": 5,
      "he": "אִיסִי בַּר יְהוּדָה לָא אֲתָא לִמְתִיבְתָּא דְּרַבִּי יוֹסֵי תְּלָתָא יוֹמֵי. אַשְׁכְּחֵיהּ וַרְדִּימוֹס בְּרַבִּי יוֹסֵי, אֲמַר לֵיהּ: מַאי טַעְמָא לָא אָתֵי מָר לְבֵי מִדְרְשָׁא דְּאַבָּא הָא תְּלָתָא יוֹמִין? אֲמַר לֵיהּ: כִּי טַעְמֵיהּ דַּאֲבוּךְ לָא יָדַעְנָא, הֵיכָא אֵיתָאי? אֲמַר לֵיהּ: לֵימָא מָר מַאי קָאָמַר לֵיהּ, דִּלְמָא יָדַעְנָא טַעְמֵיהּ. אֲמַר לֵיהּ: הָא דְּתַנְיָא, רַבִּי יוֹסֵי אוֹמֵר: כְּבִיסָתָן קוֹדְמִין לְחַיֵּי אֲחֵרִים, קְרָא מְנָלַן?",
      "en": "§ Returning to the issue of laundering clothes, the Gemara relates that it once happened that <b>Isi bar Yehuda did not come to the academy of Rabbi Yosei</b> for <b>three</b> straight <b>days. Vardimus, son of Rabbi Yosei, found him</b> and <b>said to him: What is the reason that the Master did not come to Father’s academy these three days? He said to him: When I do not know your father’s reasoning, how can I come?</b> Vardimus <b>said to him: Let the Master say what he,</b> my father, <b>is saying to him; perhaps I know his reasoning. He said to him:</b> With regard to <b>that which is taught</b> in a <i>baraita</i>: <b>Rabbi Yosei says</b> that <b>their</b> own <b>laundry takes precedence over the lives of others, from where do we</b> have <b>a verse</b> that teaches this <i>halakha</i>?"
+    },
+    {
+     "ref": "Nedarim 81a",
+     "i": 6,
+     "he": "אֲמַר לֵיהּ, דִּכְתִיב: ״וּמִגְרְשֵׁיהֶם יִהְיוּ לִבְהֶמְתָּם וְגוֹ׳״. מַאי ״חַיָּיתָם״? אִילֵּימָא חַיָּה — וַהֲלֹא חַיָּה בִּכְלַל בְּהֵמָה הִיא. אֶלָּא מַאי ״חַיָּיתָם״ — חַיּוּתָא מַמָּשׁ. פְּשִׁיטָא! אֶלָּא לָאו כְּבִיסָה, דְּהָא אִיכָּא צַעְרָא דְעַרְבּוּבִיתָא.",
+     "en": "Vardimus <b>said to him: As it is written</b> with regard to the Levite cities: <b>“And their open land shall be for their animals</b> and for their substance, and for all their beasts” (Numbers 35:3). <b>What is</b> the meaning of <b>“their beasts”? If we say</b> an actual <b>beast,</b> there is a difficulty, <b>as isn’t a beast included in</b> the category of <b>animal,</b> which has already been mentioned in the verse? <b>Rather, what is</b> the meaning of <b>“their beasts</b> [<b><i>ḥayyatam</i></b>]”? It means <b>their actual lives [<i>ḥiyyuta</i>].</b> This, however, is difficult, as it <b>is obvious</b> that the Levites received their cities in order to live their lives there. <b>Rather, is it not</b> referring to <b>laundering</b> clothes, <b>as there is</b> the <b>pain</b> caused by the <b>grime</b> on one’s unwashed clothes? Since it is vitally necessary for their well-being, laundering the clothing of the city’s residents takes precedence over the lives of others."
     }
    ],
    "span": [
@@ -1544,8 +1540,8 @@
      "end": 5
     }
    ],
-   "words": 137,
-   "minutes": 1
+   "words": 289,
+   "minutes": 2
   },
   {
    "id": "nedarim-89b-5-5",
@@ -1662,37 +1658,6 @@
     }
    ],
    "words": 128,
-   "minutes": 1
-  },
-  {
-   "id": "nedarim-91b-2-2",
-   "tractate": "nedarim",
-   "ref": "Nedarim 91b",
-   "refs": [
-    "Nedarim 91b"
-   ],
-   "start_segment": 2,
-   "classification": "YES",
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "A man caught in seclusion with a married woman flees through a wall when the owner arrives, leading Rava to rule that no adultery occurred.",
-   "segments": [
-    {
-     "ref": "Nedarim 91b",
-     "i": 2,
-     "he": "הָהוּא גַּבְרָא דַּהֲוָה מִהַרְזִיק בְּבֵיתָא הוּא וְאִינְתְּתָא. עָל אֲתָא מָרֵיהּ דְּבֵיתָא, פַּרְטֵיהּ נוֹאֵף לְהוּצָא וַעֲרַק. אָמַר רָבָא: אִיתְּתָא שַׁרְיָא. אִם אִיתָא דַּעֲבַד אִיסּוּרָא — אִרְכוֹסֵי הֲוָה מִירְכַס.",
-     "en": "The Gemara relates another incident about <b>a certain man who was secluding</b> himself <b>[<i>meharzeik</i>] in a house, he and a</b> certain married <b>woman.</b> When <b>the owner of the house entered, the adulterer burst through the wall of palm branches and fled. Rava said: The woman is permitted</b> to her husband. The assumption is that she did not sin, for <b>if it is so that</b> the man <b>had committed a transgression, he would have hidden</b> himself in the house instead of revealing his identity by escaping in the open."
-    }
-   ],
-   "span": [
-    {
-     "ref": "Nedarim 91b",
-     "start": 2,
-     "end": 2
-    }
-   ],
-   "words": 90,
    "minutes": 1
   },
   {

@@ -137,16 +137,16 @@
    "start_segment": 5,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "Segment 5 is the Gemara's question about whose authority the act followed; the story is Rav Dimi's account of bringing the Torah scroll and its corrected telling.",
+    "start_trim": 1,
+    "end_trim": 0
+   },
    "reviewed": false,
    "summary": "In Tzippori, after forgetting to bring a Torah scroll to the synagogue before Shabbat, the community utilized existing sheets on posts as partitions to allow the scroll to be brought and read.",
    "segments": [
-    {
-     "ref": "Sukkah 16b",
-     "i": 5,
-     "he": "וְאִם תֹּאמַר: מַעֲשֶׂה שֶׁנַּעֲשָׂה בְּצִיפּוֹרִי, עַל פִּי מִי נַעֲשָׂה? לֹא עַל פִּי רַבִּי יוֹסֵי, אֶלָּא עַל פִּי רַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי.",
-     "en": "The Gemara asks: <b>And if you say:</b> Since Rabbi Yosei does not hold in accordance with the opinion of Rabbi Yehuda with regard to the laws of Shabbat, <b>according to whose</b> opinion was the <b>action that was taken in Tzippori performed,</b> where they relied on suspended partitions even on Shabbat? The Gemara answers: It was <b>not</b> performed <b>according to</b> the opinion of <b>Rabbi Yosei</b> but <b>rather on the authority of Rabbi Yishmael, son of Rabbi Yosei.</b>"
-    },
     {
      "ref": "Sukkah 16b",
      "i": 6,
@@ -167,7 +167,7 @@
      "end": 7
     }
    ],
-   "words": 260,
+   "words": 184,
    "minutes": 2
   },
   {
@@ -175,12 +175,17 @@
    "tractate": "sukkah",
    "ref": "Sukkah 20a",
    "refs": [
-    "Sukkah 20a"
+    "Sukkah 20a",
+    "Sukkah 20b"
    ],
    "start_segment": 10,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 7 completes Rabbi Hiyya's statement on the mats of Usha that is cut off mid-sentence."
+   },
    "reviewed": false,
    "summary": "Reish Lakish recounts how the Torah was forgotten in Eretz Yisrael and subsequently restored by Ezra, Hillel the Elder, and Rabbi Hiyya and his sons.",
    "segments": [
@@ -189,6 +194,12 @@
      "i": 10,
      "he": "וְאַזְדָּא רֵישׁ לָקִישׁ לְטַעְמֵיהּ. דְּאָמַר רֵישׁ לָקִישׁ: הֲרֵינִי כַּפָּרַת רַבִּי חִיָּיא וּבָנָיו, שֶׁבִּתְחִלָּה כְּשֶׁנִּשְׁתַּכְּחָה תּוֹרָה מִיִּשְׂרָאֵל — עָלָה עֶזְרָא מִבָּבֶל וְיִסְּדָהּ. חָזְרָה וְנִשְׁתַּכְּחָה — עָלָה הִלֵּל הַבַּבְלִי וְיִסְּדָהּ. חָזְרָה וְנִשְׁתַּכְּחָה — עָלוּ רַבִּי חִיָּיא וּבָנָיו וְיִסְּדוּהָ. וְכֵן אָמַר רַבִּי חִיָּיא וּבָנָיו: לֹא נֶחְלְקוּ רַבִּי דּוֹסָא וַחֲכָמִים עַל מַחְצָלוֹת שֶׁל אוּשָׁא",
      "en": "The Gemara notes: <b>And Reish Lakish follows his</b> line of <b>reasoning</b> stated elsewhere, <b>as Reish Lakish said: I am the atonement for Rabbi Ḥiyya and his sons, as initially, when</b> some of the <b>Torah</b> laws were <b>forgotten from</b> the <b>Jewish people</b> in Eretz Yisrael, <b>Ezra ascended from Babylonia and reestablished</b> the forgotten laws. Parts of the Torah were <b>again forgotten</b> in Eretz Yisrael, and <b>Hillel the Babylonian ascended and reestablished</b> the forgotten sections. When parts of the Torah were <b>again forgotten</b> in Eretz Yisrael, <b>Rabbi Ḥiyya and his sons ascended and reestablished</b> the forgotten sections. This expression of deference toward Rabbi Ḥiyya introduces the <i>halakha</i> that Reish Lakish is citing in his name. <b>And so said Rabbi Ḥiyya and his sons: Rabbi Dosa and the Rabbis did not disagree concerning the</b> soft <b>mats of Usha,</b>"
+    },
+    {
+     "ref": "Sukkah 20b",
+     "i": 0,
+     "he": "שֶׁהֵן טְמֵאוֹת, וְשֶׁל טְבֶרְיָא שֶׁהֵן טְהוֹרוֹת. עַל מָה נֶחְלְקוּ? עַל שְׁאָר מְקוֹמוֹת. מָר סָבַר: כֵּיוָן דְּלֵיכָּא דְּיָתֵיב עֲלַיְיהוּ — כְּדִטְבֶרְיָא דָּמְיָין, וּמָר סָבַר: כֵּיוָן דְּמִקְּרֵי וְיָתְבִי עֲלַיְיהוּ — כִּדְאוּשָׁא דָּמְיָין.",
+     "en": "<b>that they</b> can become <b>ritually impure,</b> even with impurity imparted by treading, as those mats are produced for the purpose of lying upon them. <b>And</b> they also agreed concerning the coarse mats <b>of Tiberias, that they are ritually pure,</b> as these are produced exclusively for use in partitions and for roofing. <b>Concerning what</b> mats <b>do they disagree?</b> It is <b>concerning</b> the mats produced in the <b>rest of the places.</b> One <b>Sage,</b> i.e., the Rabbis, <b>holds: Since there is no one who sits on these</b> mats regularly, <b>they are comparable</b> to the mats <b>of Tiberias</b> and are pure. <b>And</b> one <b>Sage,</b> Rabbi Dosa, <b>holds that since</b> it <b>happens and one sits on them</b> on occasion, <b>they are comparable</b> to the mats <b>of Usha</b> and are impure."
     }
    ],
    "span": [
@@ -198,8 +209,8 @@
      "end": 10
     }
    ],
-   "words": 135,
-   "minutes": 1
+   "words": 260,
+   "minutes": 2
   },
   {
    "id": "sukkah-20b-6-6",
@@ -299,15 +310,26 @@
    "tractate": "sukkah",
    "ref": "Sukkah 27a",
    "refs": [
+    "Sukkah 26b",
     "Sukkah 27a"
    ],
    "start_segment": 0,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment 5 contains the incident's opening (the dish and the dates brought) that segment 6 finishes."
+   },
    "reviewed": false,
    "summary": "Rabban Yoḥanan ben Zakkai, Rabban Gamliel, and Rabbi Tzadok are presented with small amounts of food and demonstrate through their actions whether such snacks must be eaten in a Sukka.",
    "segments": [
+    {
+     "ref": "Sukkah 26b",
+     "i": 9,
+     "he": "<big><strong>גְּמָ׳</strong></big> מַעֲשֶׂה לִסְתּוֹר?! חַסּוֹרֵי מְחַסְּרָא וְהָכִי קָתָנֵי: אִם בָּא לְהַחְמִיר עַל עַצְמוֹ — מַחְמִיר, וְלֵית בֵּיהּ מִשּׁוּם יוּהֲרָא. וּמַעֲשֶׂה נָמֵי וְהֵבִיאוּ לוֹ לְרַבָּן יוֹחָנָן בֶּן זַכַּאי לִטְעוֹם אֶת הַתַּבְשִׁיל, וּלְרַבָּן גַּמְלִיאֵל שְׁתֵּי כוֹתָבוֹת וּדְלִי שֶׁל מַיִם,",
+     "en": "<strong>GEMARA:</strong> The Gemara wonders: Is the mishna citing <b>an incident to contradict</b> the <i>halakha</i> cited in the previous mishna that one may eat or drink in the context of a casual meal outside the <i>sukka</i>? The incident involving Rabban Yoḥanan ben Zakkai and Rabban Gamliel indicates that one may eat nothing outside the <i>sukka</i>. The Gemara answers: The mishna is <b>incomplete,</b> as it is lacking a significant element, <b>and it teaches the following: If one seeks to impose a stringency upon himself</b> and eat nothing outside the <i>sukka</i>, <b>he</b> may <b>be stringent, and there is no</b> element of <b>presumptuousness</b> in adopting that stringency. <b>And</b> there was <b>also an incident</b> supporting that ruling: <b>They brought a cooked dish to Rabban Yoḥanan ben Zakkai</b> for him <b>to taste, and to Rabban Gamliel</b> they brought <b>two dates and a bucket of water,</b>"
+    },
     {
      "ref": "Sukkah 27a",
      "i": 0,
@@ -328,8 +350,8 @@
      "end": 1
     }
    ],
-   "words": 163,
-   "minutes": 2
+   "words": 305,
+   "minutes": 3
   },
   {
    "id": "sukkah-27b-7-7",
@@ -695,13 +717,18 @@
    "tractate": "sukkah",
    "ref": "Sukkah 48b",
    "refs": [
-    "Sukkah 48b",
-    "Sukkah 49a"
+    "Sukkah 48b"
    ],
    "start_segment": 11,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 0,
+    "reason": "The Sadducee pelted with etrogim and the altar sealed with salt ends in segment 5; segment 6 is the legal rule about a defective altar, not part of the events.",
+    "start_trim": 0,
+    "end_trim": 1
+   },
    "reviewed": false,
    "summary": "A Sadducee priest intentionally pours the water libation on his feet, causing the people to pelt him with etrogim and damage the altar, which is then temporarily repaired with salt.",
    "segments": [
@@ -710,12 +737,6 @@
      "i": 11,
      "he": "מַעֲרָבוֹ שֶׁל מַיִם. תָּנוּ רַבָּנַן: מַעֲשֶׂה בְּצַדּוּקִי אֶחָד שֶׁנִּיסֵּךְ עַל גַּבֵּי רַגְלָיו, וּרְגָמוּהוּ כׇּל הָעָם בְּאֶתְרוֹגֵיהֶן. וְאוֹתוֹ הַיּוֹם נִפְגְּמָה קֶרֶן הַמִּזְבֵּחַ, וְהֵבִיאוּ בּוּל שֶׁל מֶלַח וּסְתָמוּהוּ. לֹא מִפְּנֵי שֶׁהוּכְשַׁר לַעֲבוֹדָה, אֶלָּא מִפְּנֵי שֶׁלֹּא יֵרָאֶה מִזְבֵּחַ פָּגוּם.",
      "en": "§ The mishna continues: The basin to the <b>west of</b> the altar was <b>for water,</b> and the basin to the east of the altar was for wine, and they would tell the one pouring the water to raise his hand. <b>The Sages taught:</b> There was <b>an incident involving one Sadducee</b> priest <b>who poured</b> the water <b>on his feet,</b> and in anger <b>all the people pelted him with their <i>etrogim</i>. And that day, the horn of the altar was damaged</b> as a result of the pelting and the ensuing chaos. <b>They brought a fistful of salt and sealed</b> the damaged section, <b>not because it rendered</b> the altar <b>fit for the</b> Temple <b>service, but</b> in deference to the altar, <b>so that the altar would not be seen</b> in its <b>damaged</b> state."
-    },
-    {
-     "ref": "Sukkah 49a",
-     "i": 0,
-     "he": "שֶׁכׇּל מִזְבֵּחַ שֶׁאֵין לוֹ לֹא כֶּבֶשׁ וְלֹא קֶרֶן וְלֹא יְסוֹד וְלֹא רִיבּוּעַ — פָּסוּל לַעֲבוֹדָה. רַבִּי יוֹסֵי בַּר יְהוּדָה אוֹמֵר: אַף הַסּוֹבֵב.",
-     "en": "<b>As any altar that lacks a ramp, or a horn, or a base, or</b> the shape of <b>a square,</b> either because it was not erected as a square or due to damage, <b>is disqualified for</b> use in the Temple <b>service. Rabbi Yosei bar Yehuda says: Even the surrounding ledge</b> must be complete, and if it is lacking it disqualifies the altar."
     }
    ],
    "span": [
@@ -730,8 +751,8 @@
      "end": 0
     }
    ],
-   "words": 191,
-   "minutes": 2
+   "words": 130,
+   "minutes": 1
   },
   {
    "id": "sukkah-51b-5-8",

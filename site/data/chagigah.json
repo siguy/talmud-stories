@@ -44,12 +44,17 @@
    "tractate": "chagigah",
    "ref": "Chagigah 3a",
    "refs": [
-    "Chagigah 3a"
+    "Chagigah 3a",
+    "Chagigah 3b"
    ],
    "start_segment": 14,
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Segments 10-11 finish Rabbi Elazar ben Azarya's second teaching, which segment 9 begins; the closing praise is beyond reach."
+   },
    "reviewed": false,
    "summary": "Rabbi Yoḥanan ben Beroka and Rabbi Elazar ben Ḥisma visit Rabbi Yehoshua in Peki'in and recount the inspiring lecture given by Rabbi Elazar ben Azarya.",
    "segments": [
@@ -76,6 +81,18 @@
      "i": 17,
      "he": "וְעוֹד דָּרַשׁ: ״אֶת ה׳ הֶאֱמַרְתָּ הַיּוֹם״, ״וַה׳ הֶאֱמִירְךָ הַיּוֹם״,",
      "en": "Upon seeing that Rabbi Yehoshua was pleased to hear this idea, Rabbi Yoḥanan ben Beroka and Rabbi Elazar ben Ḥisma said to him: <b>Additionally,</b> Rabbi Elazar <b>interpreted</b> the following verses <b>homiletically: “You have affirmed, this day,</b> that <b>the Lord</b> is your God, and that you will walk in His ways and keep His statutes, His mitzvot, and His ordinances, and listen to His voice. <b>And the Lord has affirmed you, this day,</b> to be His treasure, as He promised you, and that you should keep all His mitzvot” (Deuteronomy 26:17–18)."
+    },
+    {
+     "ref": "Chagigah 3a",
+     "i": 18,
+     "he": "אָמַר לָהֶם הַקָּדוֹשׁ בָּרוּךְ הוּא לְיִשְׂרָאֵל: אַתֶּם עֲשִׂיתוּנִי חֲטִיבָה אַחַת בָּעוֹלָם, וַאֲנִי אֶעֱשֶׂה אֶתְכֶם חֲטִיבָה אַחַת בָּעוֹלָם. אַתֶּם עֲשִׂיתוּנִי חֲטִיבָה אַחַת בָּעוֹלָם, דִּכְתִיב: ״שְׁמַע יִשְׂרָאֵל ה׳ אֱלֹהֵינוּ ה׳ אֶחָד״, וַאֲנִי אֶעֱשֶׂה אֶתְכֶם חֲטִיבָה אַחַת בָּעוֹלָם, שֶׁנֶּאֱמַר:",
+     "en": "Rabbi Elazar explained: <b>The Holy One, Blessed be He, said to the Jewish people: You have made Me a single entity in the world,</b> as you singled Me out as separate and unique. <b>And</b> therefore <b>I will make you a single entity in the world,</b> as you will be a treasured nation, chosen by God. <b>You have made Me a single entity in the world, as it is written: “Hear, O Israel, the Lord our God, the Lord is One”</b> (Deuteronomy 6:4). <b>And</b> therefore <b>I will make you a single entity in the world, as it is stated:</b>"
+    },
+    {
+     "ref": "Chagigah 3b",
+     "i": 0,
+     "he": "״וּמִי כְּעַמְּךָ יִשְׂרָאֵל גּוֹי אֶחָד בָּאָרֶץ״.",
+     "en": "<b>“And who is like Your people, Israel, one nation in the land?”</b> (I Chronicles 17:21)."
     }
    ],
    "span": [
@@ -85,8 +102,8 @@
      "end": 17
     }
    ],
-   "words": 348,
-   "minutes": 3
+   "words": 461,
+   "minutes": 4
   },
   {
    "id": "chagigah-3b-5-10",
@@ -321,7 +338,11 @@
    "start_segment": 16,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "The visit to the blind scholar continues when they ask him where he learned the blessing and he tells of Rabbi Ya'akov, so segments 7-8 finish the encounter."
+   },
    "reviewed": false,
    "summary": "Rabbi Yehuda HaNasi insists on visiting a blind scholar despite Rabbi Hiyya's reservations, and is rewarded with a meaningful blessing.",
    "segments": [
@@ -336,6 +357,18 @@
      "i": 17,
      "he": "תַּקְפֵיהּ וַאֲזַל בַּהֲדֵיהּ. כִּי הֲווֹ מִיפַּטְרִי מִינֵּיהּ, אֲמַר לְהוּ: אַתֶּם הִקְבַּלְתֶּם פָּנִים הַנִּרְאִים וְאֵינָן רוֹאִין — תִּזְכּוּ לְהַקְבִּיל פָּנִים הָרוֹאִים וְאֵינָן נִרְאִין. אֲמַר לֵיהּ: אִיכוּ הַשְׁתָּא מְנַעְתַּן מֵהַאי בִּירְכְּתָא.",
      "en": "Rabbi Yehuda HaNasi <b>grabbed him and went with him</b> anyway, and together they greeted the blind scholar. <b>When they were leaving him, he said to them: You greeted</b> one who is <b>seen and does not see; may you be worthy to greet</b> the One Who <b>sees and is not seen.</b> Rabbi Yehuda HaNasi <b>said to</b> Rabbi Ḥiyya: <b>Now, if</b> I had listened to you and not gone to greet him, <b>you would have prevented me from receiving this blessing.</b>"
+    },
+    {
+     "ref": "Chagigah 5b",
+     "i": 18,
+     "he": "אֲמַרוּ לֵיהּ: מִמַּאן שְׁמִיעָא לָךְ? מִפִּרְקֵיהּ דְּרַבִּי יַעֲקֹב שְׁמִיעַ לִי, דְּרַבִּי יַעֲקֹב אִישׁ כְּפַר חִיטַּיָּיא הֲוָה מְקַבֵּיל אַפֵּיהּ דְּרַבֵּיהּ כׇּל יוֹמָא. כִּי קַשׁ, אֲמַר לֵיהּ: לָא נִצְטַעַר מָר, דְּלָא יָכֵיל מָר.",
+     "en": "<b>They said to</b> the blind scholar: <b>From whom did you hear</b> that we are worthy of this blessing? He said to them: <b>I heard</b> it <b>from the instruction of Rabbi Ya’akov, as Rabbi Ya’akov of the village of Ḥitiyya would greet his teacher every day. When</b> Rabbi Ya’akov <b>grew elderly,</b> his teacher <b>said to him: Do not despair, my Master, that my Master is unable</b> to make the effort to greet me. It is better that you should not visit me."
+    },
+    {
+     "ref": "Chagigah 5b",
+     "i": 19,
+     "he": "אֲמַר לֵיהּ, מִי זוּטַר מַאי דִּכְתִיב בְּהוּ בְּרַבָּנַן: ״וִיחִי עוֹד לָנֶצַח לֹא יִרְאֶה הַשָּׁחַת כִּי יִרְאֶה חֲכָמִים יָמוּתוּ״. וּמָה הָרוֹאֶה חֲכָמִים בְּמִיתָתָן יִחְיֶה — בְּחַיֵּיהֶן עַל אַחַת כַּמָּה וְכַמָּה.",
+     "en": "Rabbi Ya’akov <b>said to him: Is it</b> a <b>minor</b> matter, <b>that which is written about the Sages: “That he should still live always, that he should not see the pit. For he sees that wise men die”</b> (Psalms 49:10–11)? In this regard an <i>a fortiori</i> inference applies: <b>Just as one who sees Sages in their death will live, all the more so</b> one who sees them <b>in their lifetime.</b> From here the blind scholar learned the importance of greeting Torah scholars, which is why he blessed the Sages who came to greet him."
     }
    ],
    "span": [
@@ -345,8 +378,8 @@
      "end": 17
     }
    ],
-   "words": 161,
-   "minutes": 2
+   "words": 335,
+   "minutes": 3
   },
   {
    "id": "chagigah-5b-20-21",
