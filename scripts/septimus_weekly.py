@@ -7,20 +7,26 @@ What one run does (plan section 6), in this order:
                  up the next day): release old stories FOR REAL (a story marked learned a second ago is not
                  given away), pause the quiet, deal new stories, record runs/<week>.
   3. other days  still release the stories of people who stopped
-  4. every run   refresh progress/summary, last, from the up-to-date rows
+  4. every run   refresh progress/summary, from the up-to-date rows
+  5. emails      last, and only when RESEND_API_KEY is set (septimus_email.py): the weekly email to everyone
+                 who holds this week's stories and has not had it, one "still with us?" email to anyone just
+                 paused, and the counts to Simon. A later daily run finishes a send that stopped halfway.
 
 Reads are kept small (the free plan allows 50,000 a day): it never reads the whole history, only rows from the
 current round on, plus every open row. Every run logs how many it read.
 
-Safe to run twice: runs/<week> marks a finished week, and row ids are fixed (<week>_<uid>_<storyId>).
+Safe to run twice: runs/<week> marks a finished week, row ids are fixed (<week>_<uid>_<storyId>), and
+sent/<week>_<uid> is created before each email, so nobody is emailed twice.
 The repository is public, so Action logs are public: nothing here logs an id, an email or a row.
 
 Usage:
   python3 scripts/septimus_weekly.py              # the real run (needs FIREBASE_SERVICE_ACCOUNT)
   python3 scripts/septimus_weekly.py --dry-run    # read, compute, print; write nothing
   python3 scripts/septimus_weekly.py --date 2026-12-07
+  python3 scripts/septimus_weekly.py --launch-date 2026-07-26   # STAGING ONLY: pretend the campaign began then
 Environment: FIREBASE_SERVICE_ACCOUNT (the JSON key, as text), SEPTIMUS_PAUSE=1 (no hand-out),
 SEPTIMUS_DEBUG=1 (print full error traces; only for local runs, they can contain ids),
+RESEND_API_KEY and the SEPTIMUS_EMAIL_* / SEPTIMUS_SITE_URL / SEPTIMUS_COUNTS_TO settings (see septimus_email.py),
 FIRESTORE_EMULATOR_HOST / FIREBASE_AUTH_EMULATOR_HOST (point at the local emulator instead).
 """
 import argparse
@@ -38,6 +44,7 @@ from zoneinfo import ZoneInfo
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import septimus_assign as A  # noqa: E402
+import septimus_email as E  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG_JS = ROOT / "site" / "config.js"
@@ -96,6 +103,11 @@ def parse_config(text):
     )
 
 
+def is_test_project(project_id):
+    """True for the staging project and the local emulator's demo projects; False for the live project."""
+    return project_id.endswith("-staging") or project_id.startswith("demo-")
+
+
 def today_eastern(override=None):
     """Today's date in US Eastern (the hand-out week turns over at midnight there, not in UTC)."""
     if override:
@@ -136,8 +148,37 @@ def _release_rows(store, due, rows_by_id, users_by_uid, dry_run):
     return released, just_lapsed, patches
 
 
-def run(store, today, config, dry_run=False, pause=False, story_order=None, list_version=None):
-    """The whole job. Returns the counts dict. `store` is a Store (or a fake with the same methods)."""
+def _send_emails(store, mailer, today, week, config, handout, plan, rows, users, story_order, story_details,
+                 summary, counts):
+    """Step 5. Adds the email numbers to `counts`. Never raises: a hand-out must not fail because of email."""
+    try:
+        details = story_details if story_details is not None else E.load_story_details(DATA_DIR)
+        by_id = {r["id"]: r for r in rows}
+        by_id.update({r["id"]: r for r in (plan.new_rows if plan else [])})
+        total = round(len(story_order) / 100) * 100          # "about 1,800", the same rounding as the site
+        result = E.send_weekly_emails(store, mailer, week, list(by_id.values()), users, details, summary, total,
+                                      config.wpm)
+        done = result.pop("emailDone")
+        counts.update(result)
+        if plan is not None:
+            counts["pauseEmails"] = E.send_pause_emails(store, mailer, week, plan.pause_uids, users)
+        if done:
+            store.mark_emails_done(week)
+        if handout or result["emailSent"] or result["emailFailed"]:
+            E.send_counts_email(mailer, counts, today.isoformat())
+    except Exception as exc:
+        counts["emailFailed"] += 1
+        if os.environ.get("SEPTIMUS_DEBUG"):
+            LOG.exception("the email step failed")
+        else:
+            LOG.error("the email step failed: %s (the hand-out itself is done; the next run tries again)",
+                      type(exc).__name__)
+
+
+def run(store, today, config, dry_run=False, pause=False, story_order=None, list_version=None, mailer=None,
+        story_details=None):
+    """The whole job. Returns the counts dict. `store` is a Store (or a fake with the same methods).
+    `mailer` is a septimus_email.Mailer, or None for no email at all."""
     if story_order is None:
         story_order = A.load_story_order(DATA_DIR)
         list_version = A.load_list_version(DATA_DIR)
@@ -153,7 +194,8 @@ def run(store, today, config, dry_run=False, pause=False, story_order=None, list
 
     week = A.campaign_week(today, config.launch_date) if config.launch_date else 0
     counts = {"week": week, "users": 0, "eligible": 0, "totalMinutes": 0, "handedOut": 0, "released": 0,
-              "paused": 0, "deleted": 0, "deleteFailed": 0, "newSignups": 0, "reads": 0}
+              "paused": 0, "deleted": 0, "deleteFailed": 0, "newSignups": 0, "reads": 0,
+              "emailSent": 0, "emailFailed": 0, "emailUnknown": 0, "emailSkipped": 0, "pauseEmails": 0}
 
     # 1. Delete requests. One person failing must not stop everyone else's hand-out.
     for u in [u for u in users if u.get("deleteRequested")]:
@@ -169,8 +211,8 @@ def run(store, today, config, dry_run=False, pause=False, story_order=None, list
         counts["deleted"] += 1
     LOG.info("delete requests: %d done, %d failed", counts["deleted"], counts["deleteFailed"])
 
-    # Is this a hand-out run?
-    handout = False
+    # Is this a hand-out run? emails_due: this week is handed out but its emails are not all sent yet.
+    handout, emails_due = False, False
     if config.launch_date is None:
         LOG.info("launch date not set: no hand-out")
     elif pause:
@@ -181,8 +223,9 @@ def run(store, today, config, dry_run=False, pause=False, story_order=None, list
         existing = store.get_run(week)
         if existing and existing.get("finishedAt"):
             LOG.info("week %d already handed out: nothing to do", week)
+            emails_due = not existing.get("emailsDone")
         else:
-            handout = True
+            handout = emails_due = True
 
     # 2. Release. On a hand-out run: lapsed and stopped. On any other run: stopped only.
     if handout and not dry_run:
@@ -242,8 +285,16 @@ def run(store, today, config, dry_run=False, pause=False, story_order=None, list
     else:
         store.write_summary(summary)
 
+    # 5. Emails, last: everything above is already saved, so nothing here can undo a hand-out.
+    if mailer is not None and emails_due:
+        if dry_run:
+            LOG.info("DRY RUN: %d people would get the weekly email, %d a still-with-us email",
+                     len({r["uid"] for r in plan.new_rows}) if plan else 0, len(plan.pause_uids) if plan else 0)
+        else:
+            _send_emails(store, mailer, today, week, config, handout, plan, rows, users, story_order,
+                         story_details, summary, counts)
+
     print(json.dumps(counts))
-    # TODO(step e): email these counts to Simon here. It is the alarm for a missed week: no counts, no hand-out.
     # TODO(before launch): delete everyone's personal data (accounts and users records, rows anonymised) on the
     #   configured date six months after the yahrzeit (plan section 6, Leaving). NOT BUILT: nothing does it yet.
     return counts
@@ -273,6 +324,7 @@ class Store:
         else:
             raise SystemExit("Set FIREBASE_SERVICE_ACCOUNT (the service-account JSON) or point at the emulator.")
         LOG.info("database: project %s", project_id)
+        self.project_id = project_id
         firebase_admin.initialize_app(cred, {"projectId": project_id})
         self.db = firestore.client()
 
@@ -360,13 +412,51 @@ class Store:
         return txn(self.db.transaction())
 
     def update_user(self, uid, fields):
-        """Script-only fields on the user record (lastLearnedWeek, lapses)."""
+        """Script-only fields on the user record (lastLearnedWeek, lapses, mailToken)."""
         self.db.collection("users").document(uid).update(fields)
 
     def set_paused(self, uid, value):
         """Pause (also clears `lapses`, so a person who resumes starts counting afresh) or clear the pause."""
         fields = {"pausedAt": self._fs.SERVER_TIMESTAMP, "lapses": []} if value else {"pausedAt": None}
         self.db.collection("users").document(uid).update(fields)
+
+    # -- emails (septimus_email.py). sent/<key> is created BEFORE a send, so nobody is emailed twice.
+
+    def claim_sent(self, key, uid="", week=None):
+        """Create sent/<key>. False when it already exists (that email is taken care of)."""
+        from google.api_core.exceptions import AlreadyExists
+        try:
+            self.db.collection("sent").document(key).create(
+                {"sentAt": self._fs.SERVER_TIMESTAMP, "uid": uid, "week": week})
+        except AlreadyExists:
+            return False
+        return True
+
+    def unclaim_sent(self, key):
+        """Remove sent/<key> after the email service clearly refused the email, so the next run tries again."""
+        self.db.collection("sent").document(key).delete()
+
+    def sent_keys(self, week):
+        """The ids of this week's weekly-email records (<week>_<uid>)."""
+        from google.cloud.firestore_v1.base_query import FieldFilter
+        out = {d.id for d in self.db.collection("sent").where(filter=FieldFilter("week", "==", week)).stream()}
+        self.reads += len(out)
+        return out
+
+    def contacts(self, uids):
+        """{uid: (email, display name)} from the sign-in system, 100 people a call. Name and email are never
+        stored in the database (plan section 5); people with no account or no email are left out."""
+        out = {}
+        for i in range(0, len(uids), 100):
+            found = self._auth.get_users([self._auth.UidIdentifier(uid) for uid in uids[i:i + 100]])
+            for user in found.users:
+                if user.email and not user.disabled:
+                    out[user.uid] = (user.email, user.display_name or "")
+        return out
+
+    def mark_emails_done(self, week):
+        """Everyone due this week's email has been dealt with: later daily runs skip the email step."""
+        self.db.collection("runs").document(str(week)).set({"emailsDone": True}, merge=True)
 
     def write_summary(self, summary):
         self.db.collection("progress").document("summary").set({**summary, "updatedAt": self._fs.SERVER_TIMESTAMP})
@@ -393,6 +483,10 @@ class Store:
                 batch.create(col.document(new_id), copy)
                 batch.delete(d.reference)
             batch.commit()
+        # The email records carry the uid in their id and in a field: remove them too.
+        for d in self.db.collection("sent").where(filter=FieldFilter("uid", "==", uid)).stream():
+            self.reads += 1
+            d.reference.delete()
         try:
             self._auth.delete_user(uid)
         except self._auth.UserNotFoundError:
@@ -408,16 +502,41 @@ def main(argv=None):
     ap.add_argument("--dry-run", action="store_true", help="read and compute, print the plan, write nothing")
     ap.add_argument("--config", default=str(CONFIG_JS), help="config.js to read (default: site/config.js)")
     ap.add_argument("--data-dir", default=str(DATA_DIR), help="story data folder (default: site/data)")
+    ap.add_argument("--launch-date", help="STAGING ONLY: use this start date (a Sunday, YYYY-MM-DD) instead of the "
+                                          "one in config.js, to try a hand-out before the real date is set")
     args = ap.parse_args(argv)
     logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     try:
         config = parse_config(Path(args.config).read_text())
+        if args.launch_date:
+            config.launch_date = date.fromisoformat(args.launch_date)
+            if config.launch_date.weekday() != 6:
+                raise ValueError("--launch-date must be a Sunday")
         today = today_eastern(args.date)
         pause = os.environ.get("SEPTIMUS_PAUSE", "") not in ("", "0", "false")
         LOG.info("today (US Eastern) %s, launch %s, last week %s", today, config.launch_date, config.last_week)
         order = A.load_story_order(args.data_dir)
-        run(Store(config.project_id), today, config, dry_run=args.dry_run, pause=pause,
-            story_order=order, list_version=A.load_list_version(args.data_dir))
+        settings, email_problem = E.Settings.from_env()
+        if email_problem:
+            LOG.error("email is switched on but not set up: %s. No email will be sent.", email_problem)
+        elif settings is None:
+            LOG.info("RESEND_API_KEY is not set: no email")
+        elif settings.only_to:
+            LOG.info("email: test list on, only %d address(es) can be emailed", len(settings.only_to))
+        store = Store(config.project_id)
+        on_emulator = bool(os.environ.get("FIRESTORE_EMULATOR_HOST"))      # the local test database
+        if args.launch_date and not (on_emulator or is_test_project(store.project_id)):
+            # A made-up start date on the real database would hand real people stories on the wrong week.
+            LOG.error("--launch-date is for staging and the emulator only; this is the live project. Nothing done.")
+            return 1
+        counts = run(store, today, config, dry_run=args.dry_run, pause=pause,
+                     story_order=order, list_version=A.load_list_version(args.data_dir),
+                     mailer=E.Mailer(settings) if settings else None,
+                     story_details=E.load_story_details(args.data_dir) if settings else None)
+        if email_problem or counts.get("emailFailed"):
+            # The hand-out is done and saved. Failing the job makes GitHub email the owner; the next run retries.
+            LOG.error("finished, but some email was not sent: see the counts above")
+            return 1
     except Exception as exc:
         # The repository is public, so this log is public: error text can carry ids. Name the kind of error only,
         # unless SEPTIMUS_DEBUG is set (a local run).

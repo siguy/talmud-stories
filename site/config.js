@@ -1,6 +1,6 @@
-// feedbackEndpoint: the deployed worker URL (worker/README.md). Empty = fall back to a pre-filled GitHub issue.
+// feedbackEndpoint: the deployed worker URL (worker/README.md). Empty or failing = the form shows a copy-able report and an email link (feedbackEmail), never a link to the private repo.
 // showDraftNotes: true shows unreviewed AI-drafted notes to everyone. Keep false; reviewers add ?notes=draft to the URL instead.
-window.SEPTIMUS_CONFIG = window.SEPTIMUS_CONFIG || { feedbackEndpoint: "https://septimus-feedback-oumost3ajq-uc.a.run.app", repo: "siguy/talmud-stories-feedback", showDraftNotes: false,
+window.SEPTIMUS_CONFIG = window.SEPTIMUS_CONFIG || { feedbackEndpoint: "https://septimus-feedback-oumost3ajq-uc.a.run.app", feedbackEmail: "Talmud-stories@projects.simonbrief.com", repo: "siguy/talmud-stories-feedback", showDraftNotes: false,
   // readingWpm: reading speed for story minutes ("study pace"). scripts/build_site_data.py reads it from here.
   readingWpm: 150,
   // firebase: public web config for project septimus-stories (Spark, no billing). Not a secret; access is set by

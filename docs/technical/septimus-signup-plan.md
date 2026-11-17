@@ -361,8 +361,9 @@ Firebase APIs and the site's addresses.
 
 **(d) Email.** A transactional email service (for example Resend, Postmark, Brevo or Amazon SES) with a dedicated
 sending subdomain and its SPF, DKIM and DMARC records. Never "From: …@gmail.com" through a service. Free tiers cover
-a few hundred weekly recipients; past that, typically $15–20 a month. Unsubscribe is the service's own, with the
-standard one-click header and a confirm page (mail scanners open links). The script skips unsubscribed and
+a few hundred weekly recipients; past that, typically $15–20 a month. Unsubscribe is **ours** (Resend has none for this kind of
+email; built 2026-11-16, see [`signup-e-email-2026-11-15.md`](signup-e-email-2026-11-15.md)): the standard one-click
+header and a confirm page (mail scanners open links), both checked by a private per-person code. The script skips unsubscribed and
 hard-bounced addresses, and writes `sent/<week>_<uid>` before sending.
 
 **(e) The schedule.** GitHub's scheduler can start late and occasionally skips a run. The script therefore works out
