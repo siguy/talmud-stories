@@ -43,6 +43,10 @@ on:
         description: "Run against the staging project (uses the secret FIREBASE_SERVICE_ACCOUNT_STAGING)"
         type: boolean
         default: false
+      launch_date:
+        description: "Staging only: pretend the campaign began on this Sunday (YYYY-MM-DD). Leave empty normally"
+        type: string
+        default: ""
       send_email:
         description: "Send the emails too (on staging: only to the counts address)"
         type: boolean
@@ -68,6 +72,8 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ inputs.staging && secrets.FIREBASE_SERVICE_ACCOUNT_STAGING || secrets.FIREBASE_SERVICE_ACCOUNT }}
           SEPTIMUS_PAUSE: ${{ vars.SEPTIMUS_PAUSE }}
           DRY_RUN: ${{ inputs.dry_run }}
+          # Only a staging run may pretend a start date; the script also refuses it on the live project.
+          TEST_LAUNCH_DATE: ${{ inputs.staging && inputs.launch_date || '' }}
           RESEND_API_KEY: ${{ (github.event_name == 'schedule' || inputs.send_email) && secrets.RESEND_API_KEY || '' }}
           SEPTIMUS_EMAIL_FROM: ${{ vars.SEPTIMUS_EMAIL_FROM }}
           SEPTIMUS_SITE_URL: ${{ inputs.staging && vars.SEPTIMUS_SITE_URL_STAGING || vars.SEPTIMUS_SITE_URL }}
@@ -75,8 +81,7 @@ jobs:
           # "nobody" matches no address: a staging run with no counts address set emails no one at all.
           SEPTIMUS_EMAIL_ONLY_TO: ${{ inputs.staging && (secrets.SEPTIMUS_COUNTS_TO || 'nobody') || vars.SEPTIMUS_EMAIL_ONLY_TO }}
         run: |
-          if [ "$DRY_RUN" = "true" ]; then
-            python scripts/septimus_weekly.py --dry-run
-          else
-            python scripts/septimus_weekly.py
-          fi
+          args=()
+          if [ "$DRY_RUN" = "true" ]; then args+=(--dry-run); fi
+          if [ -n "$TEST_LAUNCH_DATE" ]; then args+=(--launch-date "$TEST_LAUNCH_DATE"); fi
+          python scripts/septimus_weekly.py "${args[@]}"

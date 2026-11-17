@@ -519,6 +519,20 @@ def test_real_run_from_the_command_line_does_the_job(store, order, tmp_path):
     assert len(rows_of(store)) == json.loads(out.stdout.strip().splitlines()[-1])["handedOut"] > 0
 
 
+def test_a_test_start_date_works_on_a_test_project_from_the_command_line(store, order):
+    """--launch-date lets staging try a hand-out before the real date is in config.js (which has none here)."""
+    seed3(store)
+    r = subprocess.run([sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--date", "2026-12-06",
+                        "--launch-date", "2026-12-06", "--data-dir", str(FIX)],
+                       capture_output=True, text=True, env=_cli_env(**EMU_ENV), timeout=120)
+    assert r.returncode == 0, r.stdout[-2000:] + r.stderr[-2000:]
+    assert json.loads(r.stdout.strip().splitlines()[-1])["handedOut"] > 0
+    not_sunday = subprocess.run([sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--launch-date",
+                                 "2026-12-07", "--data-dir", str(FIX)], capture_output=True, text=True,
+                                env=_cli_env(**EMU_ENV), timeout=120)
+    assert not_sunday.returncode == 1
+
+
 def test_without_the_secret_or_an_emulator_it_fails_clearly_and_early(tmp_path):
     out = subprocess.run(
         [sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--dry-run", "--date", "2026-12-07",

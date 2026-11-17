@@ -422,3 +422,26 @@ def test_config_parsing_survives_spacing_and_a_different_indent():
     text = text.replace("wpm: 75", "wpm  :75").replace('\n  }\n};', '\n    }\n};')
     c = W.parse_config(text)
     assert (c.launch_date, c.wpm, c.max_minutes) == (date(2026, 12, 6), 75, 120)
+
+
+def test_a_test_start_date_is_only_for_staging_and_the_emulator():
+    assert W.is_test_project("septimus-stories-staging") and W.is_test_project("demo-septimus")
+    assert not W.is_test_project("septimus-stories") and not W.is_test_project("staging-septimus-stories")
+
+
+def test_a_test_start_date_is_refused_on_the_live_project(monkeypatch, caplog):
+    """The guard itself: with the live project, --launch-date stops before anything is read or written."""
+    ran = []
+
+    class LiveStore:
+        project_id = "septimus-stories"
+
+        def __init__(self, _project):
+            pass
+
+    monkeypatch.setattr(W, "Store", LiveStore)
+    monkeypatch.delenv("FIRESTORE_EMULATOR_HOST", raising=False)
+    monkeypatch.setattr(W, "run", lambda *a, **k: ran.append(1) or {})
+    with caplog.at_level(logging.ERROR):
+        assert W.main(["--launch-date", "2026-12-06", "--data-dir", str(FIX)]) == 1
+    assert not ran and "staging" in caplog.text
