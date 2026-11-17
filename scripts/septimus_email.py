@@ -182,7 +182,10 @@ def render_weekly(name, week, stories, open_older, learned, total, site_url, wpm
     intro = (f"Here {'is' if len(stories) == 1 else 'are'} your {'story' if len(stories) == 1 else 'stories'} "
              f"for this week, about {sum(minutes)} minutes of learning.")
     older = ""
-    if open_older:
+    if not stories:                      # a week with nothing new still gets a short email (plan review, D)
+        intro = (f"Nothing new this week: you have {open_older} "
+                 f"{'story' if open_older == 1 else 'stories'} still open from earlier weeks.")
+    elif open_older:
         older = (f"You also have {open_older} {'story' if open_older == 1 else 'stories'} still open "
                  f"from earlier weeks.")
     together = f"Together we have learned {learned:,} of about {total:,} stories." if total else ""
@@ -198,7 +201,7 @@ def render_weekly(name, week, stories, open_older, learned, total, site_url, wpm
     text = [f"Hi {name}," if name else "Hello,", "", intro, ""]
     for s, m in zip(stories, minutes):
         text += [f"{ref_label(s)} (about {m} min)", s.get("summary", ""), f"{site_url}/#/s/{s['id']}", ""]
-    text += [f"Open my stories ({count}): {my_url}", ""]
+    text += [f"Open my stories ({count}): {my_url}" if stories else f"Open my stories: {my_url}", ""]
     text += [older, ""] * bool(older)
     text += [DEDICATION, together, f"Change my minutes or stop my stories: {my_url}"]
     return subject, _page(body), "\n".join(line for line in text if line is not None)
@@ -329,7 +332,8 @@ def _is_open(row):
 
 
 def send_weekly_emails(store, mailer, week, rows, users, details, summary, total, wpm):
-    """Email everyone who holds stories handed out in `week` and has not had this week's email.
+    """Email everyone who holds stories handed out in `week` and has not had this week's email, and everyone
+    still taking part who got nothing new but has stories open from earlier weeks (a short "nothing new" email).
 
     Works from the rows, not from "who was served in this run", so a later daily run finishes a send that
     stopped halfway. Returns {"emailSent", "emailFailed", "emailUnknown", "emailSkipped", "emailDone"}."""
@@ -344,6 +348,10 @@ def send_weekly_emails(store, mailer, week, rows, users, details, summary, total
             mine.setdefault(uid, []).append(r)
         elif r.get("week", 0) < week and _is_open(r):
             older[uid] = older.get(uid, 0) + 1
+    for uid, u in users_by_uid.items():          # nothing new, but still taking part and still holding stories
+        active = int(u.get("minutesPerWeek") or 0) > 0 and not u.get("pausedAt") and not u.get("deleteRequested")
+        if uid not in mine and uid in older and active:
+            mine[uid] = []
     already = store.sent_keys(week)
     todo = sorted(uid for uid in mine if f"{week}_{uid}" not in already)
     wanted = [uid for uid in todo if not users_by_uid[uid].get("emailOff")]
@@ -359,7 +367,7 @@ def send_weekly_emails(store, mailer, week, rows, users, details, summary, total
             result["emailFailed"] += 1
             continue
         stories = [{**details[r["storyId"]], "id": r["storyId"]} for r in mine[uid] if r["storyId"] in details]
-        if not stories:
+        if not stories and not older.get(uid):
             result["emailSkipped"] += 1
             continue
         subject, html_body, text = render_weekly(first_name(display), week, stories, older.get(uid, 0),

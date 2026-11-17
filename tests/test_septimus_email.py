@@ -348,3 +348,20 @@ def test_test_send_goes_only_to_the_counts_address_and_prints_no_address(monkeyp
     assert "mail.example" not in capsys.readouterr().out
     monkeypatch.delenv("SEPTIMUS_COUNTS_TO")
     assert E.main(["--test-send"]) == 1 and len(sent) == 1
+
+
+def test_a_week_with_nothing_new_still_gets_a_short_email(order, details):
+    """Someone still taking part who holds open stories but is handed nothing new hears from us anyway."""
+    sid = order[0].id
+    held = {"id": f"1_alice_{sid}", "uid": "alice", "storyId": sid, "round": 1, "week": 1,
+            "doneAt": None, "releasedAt": None}
+    store = MailStore([person("alice", 10, 1), person("bob", 0, 2), person("carol", 10, 3, pausedAt=5)],
+                      rows=[held, {**held, "id": f"1_bob_{sid}", "uid": "bob"}, {**held, "id": f"1_carol_{sid}", "uid": "carol"}])
+    store.runs[2] = {"startedAt": 1, "finishedAt": 102}          # week 2 is handed out; nobody got anything new
+    mailer = E.Mailer(SETTINGS, post=(resend := FakeResend()), sleep=lambda s: None)
+    result = E.send_weekly_emails(store, mailer, 2, list(store.rows.values()), store.users(), details,
+                                  {"learned": 3}, 1800, 75)
+    assert result["emailSent"] == 1                              # not bob (stopped), not carol (paused)
+    (mail,) = resend.to("alice@mail.example")
+    assert "Nothing new this week: you have 1 story still open from earlier weeks." in mail["text"]
+    assert f"{SITE}/#/my" in mail["html"] and "minutes of learning" not in mail["html"]
