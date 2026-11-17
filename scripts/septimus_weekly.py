@@ -23,6 +23,7 @@ Usage:
   python3 scripts/septimus_weekly.py              # the real run (needs FIREBASE_SERVICE_ACCOUNT)
   python3 scripts/septimus_weekly.py --dry-run    # read, compute, print; write nothing
   python3 scripts/septimus_weekly.py --date 2026-12-07
+  python3 scripts/septimus_weekly.py --launch-date 2026-07-26   # STAGING ONLY: pretend the campaign began then
 Environment: FIREBASE_SERVICE_ACCOUNT (the JSON key, as text), SEPTIMUS_PAUSE=1 (no hand-out),
 SEPTIMUS_DEBUG=1 (print full error traces; only for local runs, they can contain ids),
 RESEND_API_KEY and the SEPTIMUS_EMAIL_* / SEPTIMUS_SITE_URL / SEPTIMUS_COUNTS_TO settings (see septimus_email.py),
@@ -100,6 +101,11 @@ def parse_config(text):
         max_minutes=int(grab(r"\bmaxMinutes\s*:\s*(\d+)", "maxMinutes")),
         project_id=project.group(1) if project else "septimus-stories",
     )
+
+
+def is_test_project(project_id):
+    """True for the staging project and the local emulator's demo projects; False for the live project."""
+    return project_id.endswith("-staging") or project_id.startswith("demo-")
 
 
 def today_eastern(override=None):
@@ -318,6 +324,7 @@ class Store:
         else:
             raise SystemExit("Set FIREBASE_SERVICE_ACCOUNT (the service-account JSON) or point at the emulator.")
         LOG.info("database: project %s", project_id)
+        self.project_id = project_id
         firebase_admin.initialize_app(cred, {"projectId": project_id})
         self.db = firestore.client()
 
@@ -495,10 +502,16 @@ def main(argv=None):
     ap.add_argument("--dry-run", action="store_true", help="read and compute, print the plan, write nothing")
     ap.add_argument("--config", default=str(CONFIG_JS), help="config.js to read (default: site/config.js)")
     ap.add_argument("--data-dir", default=str(DATA_DIR), help="story data folder (default: site/data)")
+    ap.add_argument("--launch-date", help="STAGING ONLY: use this start date (a Sunday, YYYY-MM-DD) instead of the "
+                                          "one in config.js, to try a hand-out before the real date is set")
     args = ap.parse_args(argv)
     logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     try:
         config = parse_config(Path(args.config).read_text())
+        if args.launch_date:
+            config.launch_date = date.fromisoformat(args.launch_date)
+            if config.launch_date.weekday() != 6:
+                raise ValueError("--launch-date must be a Sunday")
         today = today_eastern(args.date)
         pause = os.environ.get("SEPTIMUS_PAUSE", "") not in ("", "0", "false")
         LOG.info("today (US Eastern) %s, launch %s, last week %s", today, config.launch_date, config.last_week)
@@ -510,7 +523,13 @@ def main(argv=None):
             LOG.info("RESEND_API_KEY is not set: no email")
         elif settings.only_to:
             LOG.info("email: test list on, only %d address(es) can be emailed", len(settings.only_to))
-        counts = run(Store(config.project_id), today, config, dry_run=args.dry_run, pause=pause,
+        store = Store(config.project_id)
+        on_emulator = bool(os.environ.get("FIRESTORE_EMULATOR_HOST"))      # the local test database
+        if args.launch_date and not (on_emulator or is_test_project(store.project_id)):
+            # A made-up start date on the real database would hand real people stories on the wrong week.
+            LOG.error("--launch-date is for staging and the emulator only; this is the live project. Nothing done.")
+            return 1
+        counts = run(store, today, config, dry_run=args.dry_run, pause=pause,
                      story_order=order, list_version=A.load_list_version(args.data_dir),
                      mailer=E.Mailer(settings) if settings else None,
                      story_details=E.load_story_details(args.data_dir) if settings else None)

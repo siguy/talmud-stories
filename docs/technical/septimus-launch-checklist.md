@@ -46,8 +46,10 @@ Main is merged into all five sign-up branches; staging runs the new list.
       [`signup-e-email-2026-11-15.md`](signup-e-email-2026-11-15.md)): "Your stories this week", a short "nothing new"
       email, one-click unsubscribe, a link that marks a story learned without signing in, the "still with us?" email
       for paused people. Tested with one real send to Simon and, on staging, the unsubscribe and mark-learned clicks.
-      **Not yet done:** a full weekly run on staging with email on (Actions → Septimus weekly → Run workflow, with
-      "staging" and "send_email" ticked and "dry_run" unticked; it can only email the counts address).
+      **Full weekly run on staging with email on, 2026-11-16:** with a test start date (the workflow's
+      "launch_date" box, staging only) the job handed out week 17, paused two test accounts, sent one weekly email
+      (to Simon; the test accounts' made-up addresses were skipped) and the counts email; a second run sent nothing.
+      Simon confirmed both emails arrived.
 - [x] **The weekly counts email to Simon** (the alarm if a week is missed): built with step e; sent after each
       hand-out to the address in the secret `SEPTIMUS_COUNTS_TO`.
 - [ ] Script: remove a sign-up record whose Google account no longer exists (found in the d review).
