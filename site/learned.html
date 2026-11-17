@@ -23,7 +23,7 @@
   <p id="lead">Press the button once you have learned it. It then counts toward the group total.</p>
   <button type="button" class="su-btn" id="go">Mark as learned</button>
   <p class="su-rowmsg" id="msg" role="status" tabindex="-1"></p>
-  <p class="su-links"><a id="read" href="/">Read the story</a> · <a href="/#/my">Open my stories</a></p>
+  <p class="su-links"><span id="readwrap"><a id="read" href="/">Read the story</a> · </span><a href="/#/my">Open my stories</a></p>
 </main>
 <script src="config.js?v=5"></script>
 <script src="email-links.js?v=1"></script>
@@ -32,7 +32,7 @@
   var p = EmailLinks.params(true), go = document.getElementById("go"), msg = document.getElementById("msg"), lead = document.getElementById("lead");
   var busy = false;
   function say(text) { msg.textContent = text; msg.focus(); }
-  if (!p) { go.style.display = "none"; document.getElementById("read").style.display = "none"; lead.textContent = "This link is not complete. Please open your stories on the site instead."; return; }
+  if (!p) { go.style.display = "none"; document.getElementById("readwrap").style.display = "none"; lead.textContent = "This link is not complete. Please open your stories on the site instead."; return; }
   document.getElementById("read").href = "/#/s/" + p.s;
   go.onclick = function () {
     if (busy) return;
