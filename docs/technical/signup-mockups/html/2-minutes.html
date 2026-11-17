@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stories of the Talmud - Sign-up 2: Minutes a week</title>
+<!-- Google Fonts: Cardo (Serif) & Source Sans 3 (Sans) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-error": "#ffffff",
+            "on-surface": "#1a1b1f",
+            "error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#653e10",
+            "on-primary-container": "#849dcd",
+            "inverse-primary": "#aec7f9",
+            "septimus-navy": "#18345d",
+            "gold-ink": "#7a6422",
+            "learned-green": "#2e7d4f",
+            "surface-container": "#efedf1",
+            "primary-fixed-dim": "#aec7f9",
+            "on-tertiary-container": "#c7925d",
+            "surface-tint": "#455f8a",
+            "hairline": "#e6e4df",
+            "ink": "#222222",
+            "paper": "#fbfbfa",
+            "surface": "#faf9fd",
+            "primary-fixed": "#d6e3ff",
+            "surface-dim": "#dad9dd",
+            "error": "#ba1a1a",
+            "outline-variant": "#c4c6d0",
+            "secondary-container": "#fae0a1",
+            "background": "#faf9fd",
+            "surface-container-highest": "#e3e2e6",
+            "on-secondary-container": "#75622f",
+            "on-secondary": "#ffffff",
+            "surface-container-low": "#f4f3f7",
+            "on-tertiary": "#ffffff",
+            "tertiary": "#311a00",
+            "surface-bright": "#faf9fd",
+            "antique-gold": "#ccb479",
+            "on-error-container": "#93000a",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#18345d",
+            "on-secondary-fixed": "#241a00",
+            "tertiary-fixed-dim": "#f5bb82",
+            "chip-stone": "#f1efe9",
+            "primary": "#001e44",
+            "tertiary-fixed": "#ffdcbd",
+            "on-surface-variant": "#44474e",
+            "surface-container-high": "#e9e7ec",
+            "on-tertiary-fixed": "#2c1600",
+            "tertiary-container": "#4f2c00",
+            "on-secondary-fixed-variant": "#564515",
+            "outline": "#74777f",
+            "surface-variant": "#e3e2e6",
+            "muted": "#666666",
+            "on-primary": "#ffffff",
+            "on-background": "#1a1b1f",
+            "inverse-surface": "#2f3034",
+            "secondary-fixed-dim": "#ddc488",
+            "secondary": "#6f5c2a",
+            "inverse-on-surface": "#f1f0f4",
+            "on-primary-fixed-variant": "#2d4771",
+            "on-primary-fixed": "#001b3e",
+            "card-white": "#ffffff",
+            "secondary-fixed": "#fae0a1"
+          },
+          borderRadius: {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-md": "0.7rem",
+            "gutter": "1rem",
+            "space-xl": "1.5rem",
+            "margin": "1rem",
+            "space-sm": "0.5rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1rem"
+          },
+          fontFamily: {
+            "headline-lg": ["\"Cardo\", Georgia, serif"],
+            "footer": ["\"Source Sans 3\", Helvetica Neue, Arial, sans-serif"],
+            "chip": ["\"Source Sans 3\", Helvetica Neue, Arial, sans-serif"],
+            "section-heading": ["\"Cardo\", Georgia, serif"],
+            "body-italic": ["\"Cardo\", Georgia, serif"],
+            "card-title": ["\"Cardo\", Georgia, serif"],
+            "ui-text": ["\"Source Sans 3\", Helvetica Neue, Arial, sans-serif"],
+            "meta": ["\"Source Sans 3\", Helvetica Neue, Arial, sans-serif"]
+          },
+          fontSize: {
+            "headline-lg": ["1.7rem", { lineHeight: "1.25", fontWeight: "700" }],
+            "footer": ["0.8rem", { lineHeight: "1.4", fontWeight: "400" }],
+            "chip": ["0.95rem", { lineHeight: "1.2", fontWeight: "400" }],
+            "section-heading": ["1.15rem", { lineHeight: "1.3", fontWeight: "700" }],
+            "body-italic": ["1.05rem", { lineHeight: "1.5", fontWeight: "400" }],
+            "card-title": ["1.3rem", { lineHeight: "1.3", fontWeight: "700" }],
+            "ui-text": ["1rem", { lineHeight: "1.5", fontWeight: "400" }],
+            "meta": ["0.875rem", { lineHeight: "1.4", fontWeight: "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink min-h-screen flex flex-col font-ui-text text-ui-text antialiased selection:bg-chip-stone">
+<!-- Top Bar (Shared Component Contract: Sticky Septimus Navy) -->
+<header class="sticky top-0 z-50 bg-septimus-navy text-on-primary w-full border-b border-hairline/20">
+<div class="max-w-[42rem] mx-auto px-4 h-14 flex items-center justify-between">
+<div class="flex items-center space-x-2">
+<span class="font-card-title text-card-title font-bold tracking-tight text-on-primary">
+          Stories of the Talmud
+        </span>
+</div>
+<button aria-label="Text display settings" class="h-8 px-2.5 flex items-center justify-center rounded-[6px] border border-white/30 text-white font-ui-text text-meta font-medium tracking-wide hover:bg-white/10 active:scale-[0.98] transition-all" type="button">
+        Aa
+      </button>
+</div>
+</header>
+<!-- Main Content Container: Mobile-first 390px, max-w-[42rem], linear sign-up intent -->
+<main class="flex-1 w-full max-w-[42rem] mx-auto px-4 pt-6 pb-12 flex flex-col justify-between">
+<div class="flex flex-col">
+<!-- Top Meta Line -->
+<div class="mb-4">
+<p class="font-meta text-meta text-muted">
+          Signed in as [name]
+        </p>
+</div>
+<!-- Page Header Section -->
+<section class="mb-8">
+<h1 class="font-headline-lg text-headline-lg text-ink font-bold mb-2">
+          How many minutes a week will you learn?
+        </h1>
+<p class="font-meta text-meta text-muted leading-relaxed">
+          From [launch date] until 8 Elul. You can change this any time.
+        </p>
+</section>
+<!-- Selection Pills (Choice Pills) -->
+<section aria-label="Weekly learning time commitment" class="flex flex-col gap-3 mb-6" role="radiogroup"><!-- 5 minutes (unselected) -->
+<button aria-checked="false" class="w-full min-h-[48px] px-5 py-3 rounded-[6px] bg-card-white border border-hairline text-ink font-chip text-chip text-center flex items-center justify-center hover:bg-chip-stone active:scale-[0.99] transition-colors" role="radio" type="button">
+          5 minutes
+        </button>
+<!-- 10 minutes (selected: Septimus Navy background, white bold text) -->
+<button aria-checked="true" class="w-full min-h-[48px] px-5 py-3 rounded-[6px] bg-septimus-navy border border-septimus-navy text-on-primary font-chip text-chip font-bold text-center flex items-center justify-center active:scale-[0.99] transition-transform" role="radio" type="button">
+          10 minutes
+        </button>
+<!-- 15 minutes (unselected) -->
+<button aria-checked="false" class="w-full min-h-[48px] px-5 py-3 rounded-[6px] bg-card-white border border-hairline text-ink font-chip text-chip text-center flex items-center justify-center hover:bg-chip-stone active:scale-[0.99] transition-colors" role="radio" type="button">
+          15 minutes
+        </button>
+<!-- 30 minutes (unselected) -->
+<button aria-checked="false" class="w-full min-h-[48px] px-5 py-3 rounded-[6px] bg-card-white border border-hairline text-ink font-chip text-chip text-center flex items-center justify-center hover:bg-chip-stone active:scale-[0.99] transition-colors" role="radio" type="button">
+          30 minutes
+        </button>
+<!-- Other (unselected) -->
+<button aria-checked="false" class="w-full min-h-[48px] px-5 py-3 rounded-[6px] bg-card-white border border-hairline text-ink font-chip text-chip text-center flex items-center justify-center hover:bg-chip-stone active:scale-[0.99] transition-colors" role="radio" type="button">
+          Other
+        </button></section>
+<!-- Notice Box: Chip Stone background, 8px radius, 0.9rem padding -->
+<section class="mb-8">
+<div class="bg-chip-stone rounded-[8px] p-[0.9rem] border border-hairline/60">
+<p class="font-meta text-meta text-muted leading-normal">
+            10 minutes a week is about 3 stories.
+          </p>
+</div>
+</section>
+<!-- Primary Action: Learned Green, 48px height, 10px radius -->
+<section class="mb-4">
+<button class="w-full h-12 rounded-[6px] bg-septimus-navy text-on-primary font-ui-text text-ui-text font-bold text-center flex items-center justify-center hover:opacity-95 active:scale-[0.99] transition-all" type="button">
+          Join
+        </button>
+</section>
+<!-- Bottom Meta Note -->
+<div class="text-center px-2 mb-10">
+<p class="font-meta text-meta text-muted leading-relaxed">
+          Everyone starts together on [launch date]. Your first stories arrive by email that week.
+        </p>
+</div>
+</div>
+<!-- Scholarly Footer -->
+<footer class="pt-6 border-t border-hairline mt-auto">
+<p class="font-footer text-footer text-muted leading-relaxed text-center">
+        Text and translation from Sefaria (William Davidson Edition). Stories were found by software and checked, where marked, by Prof. Jeff Rubenstein.
+      </p>
+</footer>
+</main>
+<script>
+    // Lightweight radio selection state handler to support interaction
+    document.addEventListener('DOMContentLoaded', () => {
+      const radioButtons = document.querySelectorAll('[role="radio"]');
+      
+      radioButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          radioButtons.forEach((other) => {
+            other.setAttribute('aria-checked', 'false');
+            other.className = 'w-full min-h-[48px] px-5 py-3 rounded-full bg-card-white border border-hairline text-ink font-chip text-chip text-center flex items-center justify-center hover:bg-chip-stone active:scale-[0.99] transition-colors';
+          });
+          btn.setAttribute('aria-checked', 'true');
+          btn.className = 'w-full min-h-[48px] px-5 py-3 rounded-full bg-septimus-navy border border-septimus-navy text-on-primary font-chip text-chip font-bold text-center flex items-center justify-center active:scale-[0.99] transition-transform';
+        });
+      });
+    });
+  </script>
+</body></html>

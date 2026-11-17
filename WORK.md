@@ -47,7 +47,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Ask Jeff about classes, not passages — contrast pairs per feature, his own sureness on every answer, and a page ranked by what he would teach us](work/2026-10-02-jeff-feature-questions.md) | review, classification | — | — |
 | [Decide the judge's answer categories (confidence tiers?)](work/2026-10-09-judge-answer-categories.md) | classification | — | — |
 | [Story viewer for the Septimus family (mobile, Sefaria-style)](work/2026-10-12-septimus-story-viewer.md) | publication | ketubot, kiddushin, gittin, yevamot | — |
-| ["Learn all the stories" sign-up for the Septimus yahrzeit (v1)](work/2026-11-08-septimus-signup.md) | publication | ketubot, kiddushin, gittin, yevamot | — |
+| ["Learn all the stories" sign-up for the Septimus yahrzeit (v1)](work/2026-11-08-septimus-signup.md) | publication | — | — |
 
 <!-- board-live:start -->
 ## In flight
@@ -58,11 +58,12 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `remove-borderline` | `talmud-stories` | **2 FILES** |
+| `signup-b` | `wt` | **500 FILES** |
 | `signup-flow` | `berakhot-shas-local-run-a26611` | clean |
-| `full-boundary-review` | `jeff-comms-review-92c526` | **2 FILES** |
+| `(detached)` | `jeff-comms-review-92c526` | clean |
 | `narrate-test-a16cdf` | `narrate-test-a16cdf` | clean |
 | `(detached)` | `recent-work-plans-d0818b` | clean |
-| `priceless-volhard-0e79cd` | `sessions-cleanup-consolidate-fc92b3` | clean |
+| `priceless-volhard-0e79cd` | `sessions-cleanup-consolidate-fc92b3` | **3 FILES** |
 | `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | clean |
 | `post-shas-run-fixes` | `shas-run` | **1 FILES** |
 | `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
@@ -143,4 +144,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [The narrate test — can writing a summary tell a story from a non-story, and find its borders?](work/done/2026-11-14-narrate-test.md) | classification, boundaries | [2026-11-14-narrate-test.md](docs/findings/2026-11-14-narrate-test.md) |
 | [Review the boundaries of every story on the Septimus site (display only)](work/done/2026-11-15-full-boundary-review.md) | boundaries, publication | [2026-11-16-full-boundary-review.md](docs/findings/2026-11-16-full-boundary-review.md) |
 | [Background notes (and a "why it's here" line) for every story on the Septimus site](work/done/2026-11-15-shas-background-notes.md) | publication | — |
-<!-- board-checksum: 61c0b1bfcf7e866a -->
+<!-- board-checksum: e98e03bcb358776b -->

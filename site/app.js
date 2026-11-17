@@ -12,7 +12,6 @@
   // localStorage can throw (private windows, blocked storage): the site must work without it.
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
-  var read = new Set(load("septimus-read", []));
   var prefs = load("septimus-prefs", { lang: "both", size: 0 });
   var memoryOnlyNote = false;
 
@@ -35,7 +34,6 @@
   function dafKey(ref) { var m = /(\d+)([ab])/.exec(ref); return m ? m[1] * 2 + (m[2] === "b" ? 1 : 0) : 0; }
   function refLabel(s) { return s.refs.length > 1 ? s.refs[0] + " – " + s.refs[1].split(" ").pop() : s.ref; }
   function sefariaUrl(s) { return "https://www.sefaria.org/" + encodeURIComponent(s.ref.replace(" ", ".")) + "?lang=bi"; }
-  function toggleRead(id) { if (read.has(id)) read.delete(id); else read.add(id); save("septimus-read", Array.from(read)); }
 
   function loadIndex() {
     // redirects.json missing or unreadable: old ids then simply show "not found"; the site still works.
@@ -44,35 +42,20 @@
       var idx = both[0];
       index = idx;
       idx.tractates.forEach(function (t) { NAME[t.tractate] = t.name; HE[t.tractate] = t.he; });
-      if (REDIRECTS !== both[1]) { REDIRECTS = both[1]; migrateRead(); }
+      REDIRECTS = both[1];
       return idx;
     });
   }
 
-  // A checkmark saved under an id that was merged into another story moves to that story's id. A retired id's
-  // checkmark is kept (it may be revived) but counts for nothing: home() counts only ids not in REDIRECTS.
-  function migrateRead() {
-    var changed = false;
-    Array.from(read).forEach(function (id) {
-      var to = REDIRECTS[id];
-      if (to) { read.delete(id); read.add(to); changed = true; }
-    });
-    if (changed) save("septimus-read", Array.from(read));
-  }
-
   // The home page reads ONLY the counts in index.json (36 tractate files are ~8 MB; a phone should not
-  // fetch them to draw a list). "Read" progress is the saved story ids that begin with the tractate's
-  // slug and a hyphen (every id starts <slug>-, slugs have no hyphen), not retired, capped at the count.
+  // fetch them to draw a list).
   function home() {
     return loadIndex().then(function (idx) {
       var cards = idx.tractates.map(function (t) {
-        var done = Math.min(t.story, Array.from(read).filter(function (id) { return id.indexOf(t.tractate + "-") === 0 && !(id in REDIRECTS); }).length);
         return '<a class="card" href="#/t/' + t.tractate + '"><span class="card-he">' + esc(t.he) + '</span>' +
           '<div class="card-name">' + esc(t.name) + '</div>' +
           '<div class="card-meta">' + t.story +  ' stories' +
-          (t.reviewed ? '' : ' · not yet reviewed') + '</div>' +
-          '<div class="bar-track"><div class="bar-fill" style="width:' + (t.story ? 100 * done / t.story : 0) + '%"></div></div>' +
-          '<div class="card-meta">' + done + ' of ' + t.story + ' read</div></a>';
+          (t.reviewed ? '' : ' · not yet reviewed') + '</div></a>';
       }).join("");
       app.innerHTML = '<h1>Stories of the Talmud</h1>' +
         '<p class="dedication">In memory of Joe Septimus.</p>' +
@@ -84,14 +67,14 @@
   function tractate(t) {
     return getJSON("data/" + t + ".json").then(function (d) {
       var list = d.stories.slice().sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
-      var html = '<div class="crumb"><a href="#/">All tractates</a></div><h1>' + NAME[t] + ' <span style="font-family:\'Frank Ruhl Libre\',serif">' + HE[t] + '</span></h1>';
+      var html = '<div class="crumb"><a href="#/browse">All tractates</a></div><h1>' + NAME[t] + ' <span style="font-family:\'Frank Ruhl Libre\',serif">' + HE[t] + '</span></h1>';
       if (!d.reviewed) html += '<p class="notice">These stories were found by software and have not yet been checked by a scholar. Some may not be stories, or may be cut at the wrong place.</p>';
       html += '<div class="tabs"><button class="tab" aria-pressed="true">Stories (' + list.length + ')</button></div>';
       var last = "";
       list.forEach(function (s) {
         var daf = s.ref.split(" ").pop();
         if (daf !== last) { html += '<h2>' + esc(NAME[t]) + ' ' + esc(daf) + '</h2>'; last = daf; }
-        html += '<a class="row' + (read.has(s.id) ? " read" : "") + '" href="#/s/' + s.id + '"><span class="check">' + (read.has(s.id) ? "✓" : "") + '</span><span>' +
+        html += '<a class="row" href="#/s/' + s.id + '"><span>' +
           '<span class="row-ref">' + esc(refLabel(s)) + '</span>' + (s.in_mishnah ? '<span class="chip">Mishnah</span>' : '') +
           '<div class="row-sum">' + esc(s.summary) + '</div></span></a>';
       });
@@ -116,7 +99,7 @@
       var d = both[0], note = both[1].notes[id];
       if (note && !note.approved && !draftMode) note = null; // unreviewed AI drafts never reach readers
       var s = d.stories.filter(function (x) { return x.id === id; })[0];
-      if (!s) { app.innerHTML = '<p>Story not found. <a href="#/">Home</a></p>'; return; }
+      if (!s) { app.innerHTML = '<p>Story not found. <a href="#/browse">Home</a></p>'; return; }
       var siblings = d.stories.slice().sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
       var i = siblings.indexOf(s), prev = siblings[i - 1], next = siblings[i + 1];
       var segs = s.segments.map(function (g, n) { return '<div class="seg"><div class="he" lang="he" dir="rtl">' + g.he + '</div><div class="en" lang="en">' + g.en + '</div><button class="flag" data-seg="' + n + '" aria-label="Report a problem with this passage" title="Report a problem with this passage">⚑ Report</button></div>'; }).join("");
@@ -126,14 +109,11 @@
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span> ') +
         (s.extended && (s.extended.start_back || s.extended.end_forward) ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
         (s.summary ? '<p class="summary">' + esc(s.summary) + '</p>' : '') + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
-        '<div class="actions"><button id="read-btn" class="btn primary" aria-pressed="' + read.has(id) + '"></button>' +
+        '<div class="actions">' +
         '<a class="btn" href="' + sefariaUrl(s) + '" target="_blank" rel="noopener">Open on Sefaria</a></div>' +
         feedbackMarkup() + '<div class="pager actions">' + (prev ? '<a class="btn" href="#/s/' + prev.id + '">← Previous</a>' : '<span></span>') + (next ? '<a class="btn" href="#/s/' + next.id + '">Next →</a>' : '') + '</div>';
-      var btn = document.getElementById("read-btn");
-      function label() { btn.textContent = read.has(id) ? "✓ Marked as read" : "Mark as read"; btn.setAttribute("aria-pressed", read.has(id)); }
-      label();
-      btn.addEventListener("click", function () { toggleRead(id); label(); });
       wireFeedback(s);
+      if (window.SeptimusSignup && window.SeptimusSignup.story) window.SeptimusSignup.story(id);
     });
   }
 
@@ -220,6 +200,7 @@
   function route() {
     var h = location.hash.slice(1) || "/", q = h.split("?"), parts = q[0].split("/"), p;
     window.scrollTo(0, 0);
+    if (window.SeptimusSignup && window.SeptimusSignup.route(parts, q[1] || "")) return;
     p = loadIndex().then(function () {
       if (parts[1] === "t" && NAME[parts[2]]) return tractate(parts[2]);
       if (parts[1] === "s") return story(parts[2]);
