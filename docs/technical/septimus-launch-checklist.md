@@ -4,8 +4,7 @@ Everything between today and real people signing up. Written 2026-11-15. Tick it
 the one list. Background: [`septimus-signup-plan.md`](septimus-signup-plan.md),
 [`septimus-staging.md`](septimus-staging.md), work item `work/2026-11-08-septimus-signup.md`.
 
-**Where things stand:** steps b, c and d and the simplified flow are built (draft pull requests #97 to #101) and
-running on staging, where a real Google sign-in and a nine-week test of the weekly script have worked. Nothing is
+**Where things stand:** steps b, c and d and the simplified flow are on `main` (#101) and running on staging, where a real Google sign-in and a nine-week test of the weekly script have worked. Nothing is
 on the real site.
 
 ## 1. Decisions from Simon
@@ -82,7 +81,7 @@ databases: staging's accounts are test accounts and stay there; real people sign
 
 **Moment 1: open sign-ups** (can happen before the start date is known; nobody is handed stories yet).
 
-- [ ] Merge the sign-up work into `main`.
+- [x] Merge the sign-up work into `main` (2026-11-16, one pull request, #101; #97 to #100 closed as included).
 - [ ] Add the real site's address to the live project's authorised sign-in domains (exact address only).
 - [ ] Restrict the public web key in the Google Cloud console to Firebase and the site's addresses.
 - [ ] `./scripts/deploy_prod.sh`. Sign up once yourself on the real site.
@@ -93,6 +92,8 @@ databases: staging's accounts are test accounts and stay there; real people sign
 - [ ] Put the start date (a Sunday) in `site/config.js`; freeze the story list as list v1; deploy.
 - [ ] Create the live service-account key; store it as the GitHub secret `FIREBASE_SERVICE_ACCOUNT`; delete the
       downloaded file.
+- [ ] Merge the email work (branch `septimus/signup-e-email`) and **deploy its `firestore.rules` to the live project**
+      (it adds two openings for the email's unsubscribe and mark-learned links; staging already has them).
 - [ ] Run the job once by hand as a dry run (Actions → Septimus weekly → Run workflow).
 - [ ] Set the repository variable `SEPTIMUS_WEEKLY_ENABLED` to `true`. The first Sunday run hands out and emails.
 
