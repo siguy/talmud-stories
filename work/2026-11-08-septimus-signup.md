@@ -159,6 +159,9 @@ Review and outcomes: `docs/technical/signup-d-review-2026-11-15.md`. Screenshots
 5. Before launch: the six-months-after deletion job; a service-account key in GitHub secrets; switch the workflow on.
 6. Daniel: launch date, yahrzeit date, communities, About text, "finishing".
 
+**Build plan (inventory, order, schedule, what can start before the Shas PR):**
+[`docs/history/2026-11-10-PLAN-septimus-signup-build.md`](../docs/history/2026-11-10-PLAN-septimus-signup-build.md).
+
 ## How you know it worked
 
 - At 390 px in a real browser: land, sign in, commit 10 min/week; the account is recorded with its `?src=`.
