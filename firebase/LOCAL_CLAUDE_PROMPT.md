@@ -12,7 +12,8 @@ Set up Firebase for the Septimus sign-up. Read `docs/technical/septimus-signup-p
 3. Ask Simon to do the two console clicks the script prints (enable Google sign-in; add `talmud-stories.vercel.app`
    to authorised domains). Wait for him to say done.
 4. Put the printed web config into `site/config.js` as `firebase: {...}` and the project id in the plan. This config is
-   public by design; there are no secrets in this setup. Do not commit anything else, and never commit a service
+   public by design; there are no secrets in this setup. (The weekly script added later does have two, a
+   service-account key and an email API key; they live in GitHub Actions secrets: plan §8c.) Do not commit anything else, and never commit a service
    account key or token.
 5. Verify: `gcloud firestore databases describe --database="(default)" --project <id>` succeeds, and
    `gcloud billing projects describe <id>` shows `billingEnabled: false` (or no billing account).

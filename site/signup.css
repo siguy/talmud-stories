@@ -1,0 +1,80 @@
+/* Sign-up pages (signup.js). Colours and fonts come from style.css variables; classes start with su-. */
+.su-muted{color:var(--muted);margin:.5rem 0}
+.su-small{font-size:.85rem}
+.su-center{text-align:center}
+.su-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.su-dedication{background:var(--chip);padding:.75rem .9rem;margin:.75rem 0;font:italic 1.05rem/1.4 Cardo,Georgia,serif}
+.su-progress{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:10px;padding:.9rem 1rem;margin:1rem 0}
+.su-progress-title{font:700 1.1rem Cardo,Georgia,serif}
+.su-track{height:6px;background:var(--chip);border-radius:3px;margin:.6rem 0;overflow:hidden}
+.su-fill{height:100%;width:0;background:var(--ok)}   /* green means "learned" and nothing else */
+.su-progress .su-muted{margin:0}
+
+/* Buttons: solid navy for the main action, white with a navy outline for sign-in (taken from sefaria.org). */
+.su-btn,.su-google{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;min-height:48px;border-radius:6px;font:700 .95rem "Helvetica Neue",Helvetica,Arial,sans-serif;text-align:center;text-decoration:none;cursor:pointer}
+.su-btn{background:var(--accent);color:#fff;border:1px solid var(--accent);margin:1rem 0 .5rem}
+.su-btn-outline{background:var(--card);color:var(--accent)}
+.su-google{background:#fff;color:#222;border:1px solid var(--accent);margin:1.25rem 0 .5rem}
+.su-google:disabled{opacity:.55;cursor:default}
+.su-g{display:flex}
+@media (prefers-color-scheme:dark){.su-btn{color:#121316}.su-btn-outline{color:var(--accent)}}
+.su-btn:focus-visible,.su-google:focus-visible,.su-choices input:focus-visible+label{outline:3px solid var(--gold);outline-offset:2px}
+.su-signedin{background:var(--chip);border-radius:8px;padding:.75rem .9rem;margin:1.25rem 0 .5rem}
+.su-error{color:var(--ink);background:var(--chip);border-left:4px solid var(--gold);border-radius:6px;padding:.5rem .7rem;font-size:.9rem;margin:.5rem 0}
+.su-links{text-align:center;font-size:.85rem;margin:1.25rem 0}
+.su-links a,.su-center a{display:inline-block;padding:.7rem .2rem}   /* tall enough to tap */
+.su-linkbtn{background:none;border:0;padding:.7rem 0;min-height:44px;color:var(--accent);text-decoration:underline;font:inherit;cursor:pointer}
+.su-list{padding-left:1.1rem}.su-list li{margin:.7rem 0}
+.su-copybox{width:100%;min-height:44px;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.5rem;margin:.25rem 0}
+.su-pic{display:block;width:100%;max-width:15rem;margin:1rem auto}
+.su-pic-bg{fill:var(--card);stroke:var(--line)}
+.su-pic-menu{fill:var(--chip);stroke:var(--line)}
+.su-pic-hi{fill:var(--accent)}
+.su-pic-hitext{fill:#fff;font:700 12px "Helvetica Neue",Helvetica,Arial,sans-serif}
+.su-pic-row{fill:var(--muted);font:12px "Helvetica Neue",Helvetica,Arial,sans-serif}
+.su-pic-dots{fill:var(--ink);font:700 22px Georgia,serif}
+@media (prefers-color-scheme:dark){.su-pic-hitext{fill:#121316}}
+
+/* Minutes choice: real radios, hidden but focusable; the label is the button. */
+.su-choices{border:0;margin:1rem 0 0;padding:0;min-width:0}
+.su-choices input[type=radio]{position:absolute;opacity:0;width:1px;height:1px}
+.su-choices label{display:flex;align-items:center;justify-content:center;min-height:48px;margin:0 0 .6rem;border:1px solid var(--line);border-radius:6px;background:var(--card);color:var(--ink);font:400 1rem "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer}
+.su-choices input:checked+label{background:var(--accent);border-color:var(--accent);color:#fff;font-weight:700}
+@media (prefers-color-scheme:dark){.su-choices input:checked+label{color:#121316}}
+.su-number{width:100%;min-height:48px;font:inherit;font-size:1.1rem;color:var(--ink);background:var(--card);border:1px solid var(--accent);border-radius:6px;padding:.5rem .75rem;margin:0 0 .6rem}
+.su-links a{text-decoration:none;font-weight:500}
+.su-back{display:inline-block;padding:.7rem .2rem .7rem 0;min-height:44px}
+
+/* My stories and Progress. The story rows reuse the reader's .row; the tick is a real button beside the link, not inside it. */
+a.su-progresslink{display:block;color:inherit;text-decoration:none}
+.su-progress-big{font:700 1.4rem Cardo,Georgia,serif;margin:0 0 .3rem}
+p.su-progress-title{margin:.2rem 0}
+.su-h2{display:inline-block}
+.su-myrow{align-items:flex-start}
+.su-tick{flex:none;width:44px;height:44px;margin:-.65rem 0 -.6rem -.8rem;padding:0;background:none;border:0;display:grid;place-items:center;cursor:pointer}
+.su-tick[aria-disabled=true]{cursor:default}
+.su-tick .check{border-color:var(--muted)}   /* the empty ring needs more contrast than the reader's tick; .row.read still wins for the filled one */
+.su-tick:focus-visible{outline:3px solid var(--gold);outline-offset:-3px;border-radius:50%}
+.su-tick .check{margin:0}
+.su-rowbody{flex:1;min-width:0}
+.su-rowlink{display:block;color:inherit;text-decoration:none}
+.su-rowtop{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;flex-wrap:wrap}
+.su-rowmin{color:var(--muted);font-size:.8rem;white-space:nowrap}
+.su-rowmsg{margin:.2rem 0 0;font-size:.85rem;color:var(--muted)}
+.su-rowmsg:empty{display:none}
+@media (prefers-color-scheme:dark){.su-myrow.read .check{color:#121316}}   /* dark tick on the light green fill, like the other dark overrides here */
+.su-staging{margin-left:.6rem;padding:.1rem .5rem;border-radius:999px;background:var(--gold);color:#222;font:700 .7rem "Helvetica Neue",Helvetica,Arial,sans-serif;vertical-align:middle}
+
+/* The three links under the title: one quiet row, lined up with <main>. */
+.su-nav{display:flex;gap:1.25rem;padding:0 max(1rem,calc((100% - 42rem)/2 + 1rem));background:var(--card);border-bottom:1px solid var(--line)}
+.su-nav a{display:flex;align-items:center;min-height:44px;color:var(--accent);text-decoration:none;font:500 .9rem "Helvetica Neue",Helvetica,Arial,sans-serif;border-bottom:2px solid transparent;box-sizing:border-box}
+.su-nav a[aria-current=page]{font-weight:700;border-bottom-color:var(--gold)}
+/* "Mark as learned" on a story that is yours. */
+.su-mine{margin:1.25rem 0}
+.su-mine .btn{width:100%}
+
+/* Progress: "Show them" opens the list of stories you have learned. */
+.su-more summary{display:flex;align-items:center;min-height:44px;color:var(--accent);cursor:pointer}
+.su-learned{list-style:none;padding-left:0}
+.su-learned .su-muted{margin:.1rem 0 0}
+.su-learned-ref{display:inline-block;padding:.3rem 0;font-weight:700}

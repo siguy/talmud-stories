@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sign-up 3: My stories · Stories of the Talmud</title>
+<!-- Google Fonts: Cardo & Source Sans 3 (and Frank Ruhl Libre for scholarly Hebrew context if needed) -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;family=Frank+Ruhl+Libre:wght@400;700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "gold-ink": "#7a6422",
+            "on-secondary-fixed-variant": "#564515",
+            "paper": "#fbfbfa",
+            "surface-container-low": "#f4f3f7",
+            "primary": "#001e44",
+            "outline-variant": "#c4c6d0",
+            "surface-dim": "#dad9dd",
+            "on-secondary-fixed": "#241a00",
+            "secondary-fixed": "#fae0a1",
+            "on-tertiary-fixed-variant": "#653e10",
+            "inverse-primary": "#aec7f9",
+            "hairline": "#e6e4df",
+            "background": "#faf9fd",
+            "error": "#ba1a1a",
+            "on-secondary-container": "#75622f",
+            "antique-gold": "#ccb479",
+            "surface": "#faf9fd",
+            "outline": "#74777f",
+            "surface-container-lowest": "#ffffff",
+            "on-surface-variant": "#44474e",
+            "secondary": "#6f5c2a",
+            "learned-green": "#2e7d4f",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#e9e7ec",
+            "surface-tint": "#455f8a",
+            "septimus-navy": "#18345d",
+            "surface-variant": "#e3e2e6",
+            "surface-container-highest": "#e3e2e6",
+            "primary-container": "#18345d",
+            "on-background": "#1a1b1f",
+            "tertiary": "#311a00",
+            "on-secondary": "#ffffff",
+            "surface-bright": "#faf9fd",
+            "muted": "#666666",
+            "on-primary-container": "#849dcd",
+            "on-primary-fixed-variant": "#2d4771",
+            "inverse-surface": "#2f3034",
+            "tertiary-container": "#4f2c00",
+            "ink": "#222222",
+            "primary-fixed": "#d6e3ff",
+            "tertiary-fixed": "#ffdcbd",
+            "primary-fixed-dim": "#aec7f9",
+            "inverse-on-surface": "#f1f0f4",
+            "on-primary": "#ffffff",
+            "secondary-fixed-dim": "#ddc488",
+            "tertiary-fixed-dim": "#f5bb82",
+            "secondary-container": "#fae0a1",
+            "card-white": "#ffffff",
+            "on-tertiary-fixed": "#2c1600",
+            "on-tertiary-container": "#c7925d",
+            "on-primary-fixed": "#001b3e",
+            "on-tertiary": "#ffffff",
+            "chip-stone": "#f1efe9",
+            "on-error": "#ffffff",
+            "error-container": "#ffdad6",
+            "surface-container": "#efedf1",
+            "on-surface": "#1a1b1f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-md": "0.7rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xs": "0.25rem",
+            "space-xl": "1.5rem",
+            "space-sm": "0.5rem",
+            "space-lg": "1rem"
+          },
+          "fontFamily": {
+            "chip": [
+              "\"Source Sans 3\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+            ],
+            "headline-lg": [
+              "\"Cardo\", Georgia, serif"
+            ],
+            "card-title": [
+              "\"Cardo\", Georgia, serif"
+            ],
+            "body-italic": [
+              "\"Cardo\", Georgia, serif"
+            ],
+            "meta": [
+              "\"Source Sans 3\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+            ],
+            "hebrew-text": [
+              "\"Frank Ruhl Libre\", serif"
+            ],
+            "section-heading": [
+              "\"Cardo\", Georgia, serif"
+            ],
+            "footer": [
+              "\"Source Sans 3\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+            ],
+            "ui-text": [
+              "\"Source Sans 3\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, sans-serif"
+            ]
+          },
+          "fontSize": {
+            "chip": [
+              "0.75rem",
+              {
+                "lineHeight": "1.2",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg": [
+              "1.7rem",
+              {
+                "lineHeight": "1.2",
+                "fontWeight": "700"
+              }
+            ],
+            "card-title": [
+              "1.3rem",
+              {
+                "lineHeight": "1.3",
+                "fontWeight": "700"
+              }
+            ],
+            "body-italic": [
+              "1.05rem",
+              {
+                "lineHeight": "1.5",
+                "fontWeight": "400"
+              }
+            ],
+            "meta": [
+              "0.9rem",
+              {
+                "lineHeight": "1.4",
+                "fontWeight": "400"
+              }
+            ],
+            "hebrew-text": [
+              "1.45rem",
+              {
+                "lineHeight": "1.75",
+                "fontWeight": "400"
+              }
+            ],
+            "section-heading": [
+              "1.15rem",
+              {
+                "lineHeight": "1.3",
+                "fontWeight": "700"
+              }
+            ],
+            "footer": [
+              "0.8rem",
+              {
+                "lineHeight": "1.4",
+                "fontWeight": "400"
+              }
+            ],
+            "ui-text": [
+              "1rem",
+              {
+                "lineHeight": "1.5",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink font-ui-text antialiased min-h-screen selection:bg-antique-gold/30">
+<!-- Top Bar: Shared Component Anchored directly to JSON spec -->
+<header class="sticky top-0 z-50 flex justify-between items-center w-full px-4 h-14 max-w-[42rem] mx-auto bg-septimus-navy border-b border-hairline/20 shadow-none">
+<div class="flex items-center gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-card-white tracking-tight">Stories of the Talmud</span>
+</div>
+<div class="flex items-center">
+<button aria-label="Reading settings" class="h-8 px-2.5 flex items-center justify-center rounded-[6px] border border-card-white/40 text-card-white font-ui-text text-sm hover:bg-card-white/10 active:opacity-80 transition-opacity" type="button">
+<span class="font-semibold tracking-wide">Aa</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas (Mobile-first, max-w-[42rem], restrained bookish aesthetic) -->
+<main class="w-full max-w-[42rem] mx-auto px-4 pt-6 pb-12 flex flex-col">
+<!-- Header Section -->
+<section class="mb-6">
+<h1 class="font-headline-lg text-headline-lg text-ink">My stories</h1>
+<p class="font-meta text-meta text-muted mt-1">Week 3 of 40 · 10 minutes a week</p>
+</section>
+<!-- Section 1: This week -->
+<section class="mb-7">
+<div class="inline-block border-b-2 border-antique-gold pb-0.5 mb-3.5">
+<h2 class="font-section-heading text-section-heading text-gold-ink font-bold tracking-tight">This week</h2>
+</div>
+<div class="flex flex-col gap-[0.7rem]">
+<!-- Row 1: Completed -->
+<article class="bg-card-white border border-hairline rounded-[10px] p-3.5 flex items-start gap-3.5 opacity-75 transition-opacity hover:opacity-90">
+<!-- Filled Learned Green check circle with crisp white tick -->
+<div aria-label="Completed" class="flex-shrink-0 mt-0.5">
+<div class="w-[1.4rem] h-[1.4rem] rounded-full bg-learned-green flex items-center justify-center">
+<svg class="w-3.5 h-3.5 text-card-white" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewbox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</div>
+</div>
+<!-- Text Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="font-ui-text font-bold text-ink text-base">Berakhot 5b</span>
+<span class="font-meta text-meta text-muted text-xs whitespace-nowrap">about 4 min</span>
+</div>
+<p class="font-ui-text text-muted text-sm mt-0.5 leading-snug">Rabbi Yohanan visits Rabbi Elazar, who is ill, and the two weep together.</p>
+</div>
+</article>
+<!-- Row 2: Incomplete -->
+<article class="bg-card-white border border-hairline rounded-[10px] p-3.5 flex items-start gap-3.5 active:bg-paper transition-colors">
+<!-- Empty circular check -->
+<div aria-label="Unread" class="flex-shrink-0 mt-0.5">
+<div class="w-[1.4rem] h-[1.4rem] rounded-full border-[1.5px] border-hairline bg-card-white"></div>
+</div>
+<!-- Text Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="font-ui-text font-bold text-ink text-base">Berakhot 6b</span>
+<span class="font-meta text-meta text-muted text-xs whitespace-nowrap">about 4 min</span>
+</div>
+<p class="font-ui-text text-muted text-sm mt-0.5 leading-snug">Rav Huna asks his son why he does not attend Rav Hisda's lectures.</p>
+</div>
+</article>
+<!-- Row 3: Incomplete -->
+<article class="bg-card-white border border-hairline rounded-[10px] p-3.5 flex items-start gap-3.5 active:bg-paper transition-colors">
+<!-- Empty circular check -->
+<div aria-label="Unread" class="flex-shrink-0 mt-0.5">
+<div class="w-[1.4rem] h-[1.4rem] rounded-full border-[1.5px] border-hairline bg-card-white"></div>
+</div>
+<!-- Text Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="font-ui-text font-bold text-ink text-base">Berakhot 7a</span>
+<span class="font-meta text-meta text-muted text-xs whitespace-nowrap">about 4 min</span>
+</div>
+<p class="font-ui-text text-muted text-sm mt-0.5 leading-snug">Rabbi Yishmael ben Elisha enters the Holy of Holies and is asked for a blessing.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Section 2: Still open from earlier weeks -->
+<section class="mb-5">
+<div class="inline-block border-b-2 border-antique-gold pb-0.5 mb-3.5">
+<h2 class="font-section-heading text-section-heading text-gold-ink font-bold tracking-tight">Still open from earlier weeks</h2>
+</div>
+<div class="flex flex-col gap-[0.7rem]">
+<!-- Row 4: Open from prior week -->
+<article class="bg-card-white border border-hairline rounded-[10px] p-3.5 flex items-start gap-3.5 active:bg-paper transition-colors">
+<!-- Empty circular check -->
+<div aria-label="Unread" class="flex-shrink-0 mt-0.5">
+<div class="w-[1.4rem] h-[1.4rem] rounded-full border-[1.5px] border-hairline bg-card-white"></div>
+</div>
+<!-- Text Body -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2 flex-wrap sm:flex-nowrap">
+<div class="flex items-center gap-2">
+<span class="font-ui-text font-bold text-ink text-base">Berakhot 3a</span>
+<span class="inline-flex items-center px-2 py-0.5 rounded-[999px] bg-chip-stone border border-hairline font-chip text-chip text-muted">from week 2</span>
+</div>
+<span class="font-meta text-meta text-muted text-xs whitespace-nowrap">about 4 min</span>
+</div>
+<p class="font-ui-text text-muted text-sm mt-0.5 leading-snug">Rabbi Yosei prays in a ruin in Jerusalem and meets Elijah.</p>
+</div>
+</article>
+</div>
+</section>
+<!-- Notice Box -->
+<aside class="mb-7 bg-chip-stone border border-hairline rounded-[8px] py-[0.9rem] px-4" role="note">
+<p class="font-meta text-meta text-muted leading-relaxed">
+        Stories you do not get to stay on your list for about two weeks, then go to someone else. Nothing is lost.
+      </p>
+</aside>
+<!-- Section 3: Everyone together -->
+<section class="mb-8">
+<div class="inline-block border-b-2 border-antique-gold pb-0.5 mb-3.5">
+<h2 class="font-section-heading text-section-heading text-gold-ink font-bold tracking-tight">Everyone together</h2>
+</div>
+<!-- Communal Progress Card: 6px solid Antique Gold left edge -->
+<div class="bg-card-white border border-hairline border-l-[6px] border-l-antique-gold rounded-[10px] p-4">
+<div class="flex items-baseline justify-between mb-2.5">
+<p class="font-ui-text font-bold text-ink text-base sm:text-[1.05rem]">
+            412 of about 1,800 stories learned
+          </p>
+</div>
+<!-- 6px progress track: Chip stone background with Learned Green fill -->
+<div aria-valuemax="1800" aria-valuemin="0" aria-valuenow="412" class="w-full h-1.5 bg-chip-stone rounded-[999px] overflow-hidden mb-4" role="progressbar">
+<div class="h-full bg-learned-green rounded-[999px]" style="width: 23%;"></div>
+</div>
+<!-- Outline action button in Septimus Navy -->
+<button class="w-full min-h-[44px] flex items-center justify-center rounded-[8px] border border-septimus-navy bg-card-white text-septimus-navy font-ui-text font-bold text-sm hover:bg-septimus-navy/5 active:bg-septimus-navy/10 transition-colors" type="button">
+          See overall progress
+        </button>
+</div>
+</section>
+<!-- Footer Action Link -->
+<footer class="pt-4 pb-8 flex flex-col items-center justify-center border-t border-hairline/60">
+<a class="font-meta text-meta text-muted hover:text-septimus-navy underline underline-offset-4 decoration-hairline hover:decoration-septimus-navy transition-colors py-2" href="#change-pace">
+        Change my minutes a week
+      </a>
+</footer>
+</main>
+</body></html>

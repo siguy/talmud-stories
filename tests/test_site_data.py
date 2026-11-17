@@ -525,10 +525,10 @@ def test_story_id_registry_round_trip(tmp_path):
 
 
 def test_viewer_resolves_old_ids_through_redirects():
-    """site/app.js follows redirects.json for a story link and migrates a merged id's read-checkmark."""
+    """site/app.js follows redirects.json for a story link (the per-device read-checkmark is gone)."""
     js = (ROOT / "site/app.js").read_text()
     assert 'getJSON("data/redirects.json")' in js and "location.replace(\"#/s/\" + to)" in js
-    assert "function migrateRead()" in js and "!(id in REDIRECTS)" in js
+    assert "septimus-read" not in js and "migrateRead" not in js
 
 
 # ---- `merge`, `keep` and summary `overrides` (Simon 2026-11-14, second twin-pass triage pass) ----------------------
@@ -590,6 +590,26 @@ def test_summary_overrides_replace_only_the_named_cards():
     shown = {s["id"]: s["summary"] for d in _site().values() for s in d["stories"] + d["out_of_scope"]}
     assert over and set(over) <= set(shown)
     assert all(shown[k] == v.strip() for k, v in over.items())
+
+
+def test_signup_reads_fields_that_exist_with_the_right_types():
+    """signup.js reads these fields; a rename or a type change in the data must fail here, not on a phone."""
+    idx = json.loads((ROOT / "site/data/index.json").read_text())
+    for t in idx["tractates"]:
+        slug = t["tractate"]
+        assert all(isinstance(t[k], str) for k in ("tractate", "name", "he")), slug
+        assert isinstance(t["words"], int) and isinstance(t["reviewed"], bool), slug
+        stories = json.loads((ROOT / f"site/data/{slug}.json").read_text())["stories"]
+        assert t["story"] == len(stories), slug
+        for s in stories:
+            assert isinstance(s["id"], str) and s["id"].startswith(slug + "-"), s.get("id")
+            assert s["tractate"] == slug, s["id"]
+            assert isinstance(s["ref"], str) and isinstance(s["summary"], str), s["id"]
+            assert s["refs"] and all(isinstance(r, str) for r in s["refs"]), s["id"]
+            assert isinstance(s["start_segment"], int) and isinstance(s["reviewed"], bool), s["id"]
+            assert isinstance(s["words"], int) and s["words"] > 0, s["id"]
+    redirects = json.loads((ROOT / "site/data/redirects.json").read_text())
+    assert isinstance(redirects, dict) and all(v is None or isinstance(v, str) for v in redirects.values())
 
 
 def test_no_segment_is_shown_in_two_cards():

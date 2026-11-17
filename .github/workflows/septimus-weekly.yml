@@ -1,0 +1,64 @@
+# Septimus sign-up: the daily job that hands out the week's stories, releases unread ones, handles
+# "delete my data" requests and refreshes the public totals (docs/technical/septimus-signup-plan.md section 6).
+#
+# It is OFF until the repository variable SEPTIMUS_WEEKLY_ENABLED is set to "true"
+# (Settings > Secrets and variables > Actions > Variables). "Run workflow" by hand always works;
+# tick "dry_run" to see what it would do without writing anything.
+#
+# Needs one secret: FIREBASE_SERVICE_ACCOUNT, the service-account key (JSON text) of the live Firebase project.
+# For trying the job safely, tick "staging": it then uses FIREBASE_SERVICE_ACCOUNT_STAGING instead.
+# Optional variable: SEPTIMUS_PAUSE=1 stops hand-outs without a deploy.
+#
+# Two things to know:
+#  - GitHub switches scheduled workflows OFF after 60 days without activity in the repository (a commit, a merged
+#    pull request). So check now and then that the daily run is still happening (Actions tab); a week with no run
+#    is a week with no hand-out.
+#  - When a run fails, GitHub emails the repository owner. This repository is public, so the logs are public: the
+#    script never prints names, emails or ids, only counts.
+name: Septimus weekly
+
+# Never two runs at once (a late run and a manual one would trip over each other); queue, do not cancel.
+concurrency:
+  group: septimus-weekly
+  cancel-in-progress: false
+
+on:
+  schedule:
+    - cron: "10 10 * * *"   # daily, 10:10 UTC: early Sunday morning US Eastern on Sundays; the weekly email, when built, goes out with that Sunday run
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Read and print the plan, write nothing"
+        type: boolean
+        default: true
+      staging:
+        description: "Run against the staging project (uses the secret FIREBASE_SERVICE_ACCOUNT_STAGING)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  weekly:
+    if: vars.SEPTIMUS_WEEKLY_ENABLED == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-septimus.txt
+      - name: Run the weekly job
+        env:
+          # The key decides which project is touched. A scheduled run always uses the live key.
+          FIREBASE_SERVICE_ACCOUNT: ${{ inputs.staging && secrets.FIREBASE_SERVICE_ACCOUNT_STAGING || secrets.FIREBASE_SERVICE_ACCOUNT }}
+          SEPTIMUS_PAUSE: ${{ vars.SEPTIMUS_PAUSE }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python scripts/septimus_weekly.py --dry-run
+          else
+            python scripts/septimus_weekly.py
+          fi
