@@ -63,11 +63,15 @@ and needs Jeff's ruling** (Wave 6b, drafted and unsent).
 3. **Post-processing demotion**, deterministic, outside the model: tier-2 verb present AND
    no tier-3 physical or emotional event → drop one band. Emotional and internal reactions
    count as events, per Jeff's 2026-07-06 rule.
-4. **Guard the span confound first.** 9 of 13 candidate demotions flipped to "something
-   happens" when the span was extended by two segments — the demotion rule must read the
-   **two following segments** as context, or it will punish our own truncated boundaries
-   rather than the passage. This is not optional; it is the single largest source of false
-   demotions measured so far.
+4. **Guard the span edge — but the 9-of-13 that motivated this was wrong.** Measured over
+   all 365 accepted golden spans on 2026-09-08: 52 read as speech-only, 15 flip on a
+   +2-segment extension, and **10 of those 15 flip because a different golden story begins
+   inside the window.** Genuine truncation is **5 spans, 1.4%** →
+   [`span-truncation-rate`](../docs/findings/2026-09-08-span-truncation-rate.md).
+   Still read the following segments before demoting — 5 spans is 5 spans, one of them
+   `YES`-tier — but **stop at a story boundary**, or the guard imports a neighbour's action
+   and refuses to demote anything on a dense daf. The un-guarded version of this check is
+   what produced the wrong number in the first place.
 5. **Then re-run.** Ketubot, Kiddushin, Gittin, one manifest, one model. See
    [`rerun-all-tractates`](2026-09-03-rerun-all-tractates.md) for the run protocol — this
    item supplies the change; that one supplies the discipline.
