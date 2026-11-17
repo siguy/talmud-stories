@@ -69,7 +69,8 @@
   function parseISO(s) { var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(s || ""); return m ? new Date(+m[1], +m[2] - 1, +m[3]) : null; }
   function fmtDate(d) { return d.getDate() + " " + MONTHS[d.getMonth()]; }
   function today() { var d = new Date(); d.setHours(0, 0, 0, 0); return d; }
-  function launchText() { var d = parseISO(cfg().launchDate); return d ? fmtDate(d) : "[launch date]"; }
+  function launchText() { var d = parseISO(cfg().launchDate); return d ? fmtDate(d) : ""; }   // "" when no launch date is set; callers branch on it
+  function label() { return cfg().yahrzeitLabel || "8 Elul"; }
   function hasLaunched() { var d = parseISO(cfg().launchDate); return !!d && today() >= d; }
   function afterYahrzeit() { var d = parseISO(cfg().yahrzeit); return !!d && today() > d; }
   function nextSunday() { var d = today(); d.setDate(d.getDate() + ((7 - d.getDay()) % 7 || 7)); return d; }
@@ -78,7 +79,8 @@
   function startLine() {
     if (ended()) return "The weekly stories have ended.";
     return hasLaunched() ? "Your first stories arrive Sunday " + fmtDate(nextSunday()) + "."
-      : "Everyone starts together on " + launchText() + ". Your first stories arrive by email that week.";
+      : launchText() ? "Everyone starts together on " + launchText() + ". Your first stories arrive by email that week."
+      : "We will email you when the learning begins.";
   }
   // Campaign weeks, counted the way campaign_week() in scripts/septimus_assign.py counts them:
   // week 1 is the seven days starting on the launch date. Whole days via rounding, so a clock change does not shift a week.
@@ -108,10 +110,6 @@
     return p;
   }
   function commas(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ","); }
-  function contactNode() {
-    var c = cfg().contactEmail;
-    return c ? link(c, "mailto:" + c) : document.createTextNode("[contact]");
-  }
 
   // Same order as TABLE in scripts/tractates.py. TODO(step s): read the order from index.json instead.
   var SHAS_ORDER = [
@@ -347,7 +345,8 @@
           if (errorLine) kids.push(el("p", { "class": "su-error", role: "alert", text: errorLine }));
           kids.push(el("p", { "class": "su-muted su-small su-center", text: "We email you your stories each week." }));
         }
-        if (!(S.user && S.record)) kids.push(el("p", { "class": "su-muted su-small su-center" }, ["No Google account? Email ", contactNode()]));
+        var contact = cfg().contactEmail;
+        if (contact && !(S.user && S.record)) kids.push(el("p", { "class": "su-muted su-small su-center" }, ["No Google account? Email ", link(contact, "mailto:" + contact)]));
         area.textContent = "";
         kids.forEach(function (k) { area.appendChild(k); });
       }
@@ -356,11 +355,11 @@
         el("h1", { text: "Learn every story in the Talmud, together" }),
         el("p", { "class": "su-dedication", text: "In memory of Joe Septimus." }),
         el("p", { "class": "su-muted", text: afterYahrzeit() ? "Thank you to everyone who learned."
-          : "A few minutes a week, from " + launchText() + " until his yahrzeit, " + (c.yahrzeitLabel || "8 Elul") + "." }),
+          : "A few minutes a week" + (launchText() ? ", from " + launchText() : "") + " until his yahrzeit, " + label() + "." }),
         card,
         area,
         dataLink,
-        el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("How the stories were chosen", "#/how")])
+        el("p", { "class": "su-links" }, aboutLinks())
       ];
       function reveal() { if (held) { held = false; show(page); } }
       S.listener = function () {
@@ -453,7 +452,7 @@
     show([
       el("p", { "class": "su-muted su-small" }, ["Signed in as " + (S.user.email || ""), " ", switchBtn]),
       el("h1", { text: "How many minutes a week will you learn?" }),
-      el("p", { "class": "su-muted", text: "From " + launchText() + " until " + (cfg().yahrzeitLabel || "8 Elul") + ". You can change this any time." }),
+      el("p", { "class": "su-muted", text: (launchText() ? "From " + launchText() + " until " : "Until ") + label() + ". You can change this any time." }),
       group, estimate, joinBtn, errLine,
       has ? el("p", { "class": "su-muted su-small su-center", text: "A change applies from next Sunday." }) : null,
       el("p", { "class": "su-muted su-small su-center", text: startLine() })
@@ -580,7 +579,7 @@
             if (t !== token) return;
             render();
             var said = ended() ? "Resumed." : hasLaunched() ? "Resumed. New stories arrive Sunday " + fmtDate(nextSunday()) + "."
-              : "Resumed. Your first stories arrive the week of " + launchText() + ".";
+              : launchText() ? "Resumed. Your first stories arrive the week of " + launchText() + "." : "Resumed.";
             setTimeout(function () { if (t === token) topStatus.textContent = said; }, 100);   // after the redraw, so it is announced
           }).catch(function () { rmsg.textContent = SAVE_ERR; rbusy = false; resume.textContent = "Resume"; resume.removeAttribute("aria-disabled"); });
         };
@@ -589,7 +588,7 @@
       if (m === 0) nodes.push(el("p", { "class": "notice", text: "Your stories are stopped." }), link("Start again", "#/join", "su-btn"));
       if (!shown.length && m > 0 && !paused) {
         nodes.push(el("p", { text: wk != null && last != null && wk > last ? "The weekly stories have ended."
-          : !hasLaunched() ? "Your first stories arrive the week of " + launchText() + "." : "Nothing open right now. New stories arrive each Sunday." }));
+          : !hasLaunched() ? (launchText() ? "Your first stories arrive the week of " + launchText() + "." : "The learning has not started yet. We will email you when it begins.") : "Nothing open right now. New stories arrive each Sunday." }));
       }
       [["This week", now], ["Still open from earlier weeks", earlier]].forEach(function (sec) {
         if (!sec[1].length) return;
@@ -609,7 +608,7 @@
       nodes.push(card);
       // Two short rows, so no separator dot is left dangling at phone width.
       nodes.push(el("p", { "class": "su-links" }, [link("Change my minutes", "#/join"), " · ", link("Your data", "#/your-data")]));
-      nodes.push(el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("How the stories were chosen", "#/how")]));
+      nodes.push(el("p", { "class": "su-links" }, aboutLinks()));
       show(nodes);
     }
     render();
@@ -794,12 +793,17 @@
     S.listener = draw;
     loadSdk().then(draw, function () {});   // no SDK: the page stays as it is for a signed-out visitor
   }
+  // Paragraphs about Joe Septimus, from his family, separated by blank lines. Empty hides the About page and every link to it.
+  var ABOUT_TEXT = "";
+  // The "About" and "How the stories were chosen" links; no About link (and no separator) while ABOUT_TEXT is empty.
+  function aboutLinks() {
+    var how = link("How the stories were chosen", "#/how");
+    return ABOUT_TEXT ? [link("About Joe Septimus", "#/about"), " · ", how] : [how];
+  }
   function about() {
-    show([
-      el("h1", { text: "About Joe Septimus" }),
-      el("p", { "class": "notice", text: "[Placeholder: a few paragraphs about Joe Septimus, to be written by his family.]" }),
-      back()
-    ]);
+    if (!ABOUT_TEXT) { redirect("#/"); return; }
+    var paras = ABOUT_TEXT.split(/\n\s*\n/).map(function (p) { return el("p", { text: p.trim() }); });
+    show([el("h1", { text: "About Joe Septimus" })].concat(paras, [back()]));
   }
 
   // ---- routing --------------------------------------------------------------------------------

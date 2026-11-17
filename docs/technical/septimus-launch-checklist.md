@@ -19,15 +19,17 @@ on the real site.
 - [ ] The contact address shown as "No Google account? Email …".
 - [ ] The final site address, if it will not be `talmud-stories.vercel.app`.
 
-## 2. Answers from Daniel (asked 2026-11-13, no reply yet)
+## 2. From Daniel (follow-up drafted 2026-11-16: `comms/drafts/2026-11-16-daniel-followup-email.md`)
 
-- [ ] What "finishing" means (built on rounds of Shas meanwhile).
-- [ ] Launch date (must be a Sunday: stories and the email go out Sunday morning).
-- [ ] Yahrzeit date: Friday 10 September 2027?
-- [ ] Weekly email: whose name it comes from, and any wording.
-- [ ] Reading pace feels right (75 words a minute).
-- [ ] The list of communities and what each is called.
-- [ ] A few paragraphs about his father for the About page.
+Simon, 2026-11-16: only two things need Daniel; the rest we decide and he can change later.
+
+- [ ] **When the learning starts** (a Sunday).
+- [ ] **A few paragraphs about his father** for the About page.
+- [ ] He tries the staging link and says what feels wrong.
+
+Decided without him (changeable): finishing = going through Shas together, again and again; the weekly email
+comes from `talmud-stories@projects.simonbrief.com`; 75 words a minute; yahrzeit Friday 10 September 2027 (asked
+him to correct it if wrong); community links are added as communities are named.
 
 ## 3. Unblocked 2026-11-15: the Jeff-responses branch merged (#96; 1,811 stories, permanent ids)
 
@@ -57,7 +59,7 @@ Main is merged into all five sign-up branches; staging runs the new list.
 - [ ] Simon: walk the three flow changes on staging (links under the title; front page is My stories when signed
       in; "Mark as learned" on a story that is yours).
 - [ ] **A real iPhone and a real Android phone:** sign in, Join, mark a story learned.
-- [ ] **A link opened inside WhatsApp, Gmail and Instagram:** the "open in your browser" notice appears and
+- [x] **A link opened from WhatsApp** (Simon, 2026-11-16: worked). Gmail and Instagram not tried**:** the "open in your browser" notice appears and
       "Copy link" works.
 - [x] **Several weeks, several people:** four or five test accounts, the script run for pretend weeks 1 to 8
       (`--date`), checking that an unread story is handed back at week 4 and goes to someone else, a non-reader is
@@ -72,18 +74,27 @@ Main is merged into all five sign-up branches; staging runs the new list.
 - [ ] Dark mode, larger text ("Aa") and a screen reader (VoiceOver) on the new pages.
 - [x] The reader still works after the Jeff-responses branch is merged in (checked on staging, signed out).
 
-## 6. Launch day, in order
+## 6. Going live: two separate moments
 
-- [ ] Merge the pull requests: #97, then #98, #99, #100, #101.
-- [ ] Put the launch date, yahrzeit, contact address and communities into `site/config.js`.
+**How it works.** Everything is tried on staging (`./scripts/deploy_staging.sh`, any branch). The real site only ever
+gets what is on `main` (`./scripts/deploy_prod.sh`, which refuses anything else). Nothing moves between the two
+databases: staging's accounts are test accounts and stay there; real people sign up on the real site.
+
+**Moment 1: open sign-ups** (can happen before the start date is known; nobody is handed stories yet).
+
+- [ ] Merge the sign-up work into `main`.
 - [ ] Add the real site's address to the live project's authorised sign-in domains (exact address only).
 - [ ] Restrict the public web key in the Google Cloud console to Firebase and the site's addresses.
-- [ ] Email: sending domain records (SPF, DKIM, DMARC) in place and a test send received.
+- [ ] `./scripts/deploy_prod.sh`. Sign up once yourself on the real site.
+- [ ] Share the link (with `?src=` for each community).
+
+**Moment 2: start the learning** (needs the start date, and the email finished).
+
+- [ ] Put the start date (a Sunday) in `site/config.js`; freeze the story list as list v1; deploy.
 - [ ] Create the live service-account key; store it as the GitHub secret `FIREBASE_SERVICE_ACCOUNT`; delete the
       downloaded file.
-- [ ] Deploy the real site. Sign up once yourself.
-- [ ] Set the repository variable `SEPTIMUS_WEEKLY_ENABLED` to `true`. Run the workflow once by hand as a dry run.
-- [ ] Send the community links.
+- [ ] Run the job once by hand as a dry run (Actions → Septimus weekly → Run workflow).
+- [ ] Set the repository variable `SEPTIMUS_WEEKLY_ENABLED` to `true`. The first Sunday run hands out and emails.
 
 ## Parked on purpose (Simon, 2026-11-15: keep the site as simple as possible)
 
