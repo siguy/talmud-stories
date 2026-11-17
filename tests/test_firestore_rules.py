@@ -479,3 +479,139 @@ def test_runs_and_sent_client_access_denied(path):
     assert ok(commit(path, SCRIPT, {"x": 1}))
     assert denied(get_doc(path, "alice"))
     assert denied(commit(path, "alice", {"x": 2}))
+
+
+# ---------- EMAIL LINK: the two things a signed-out visitor may do with a person's private code ----------
+# (plan step e: unsubscribe and "Mark as learned" from the weekly email, without signing in)
+
+CODE = "kV3x-9Qz_aB7cD2eF4gH6jK8mN0pR1sT"          # what scripts/septimus_email.py writes as users/<uid>.mailToken
+OTHER_CODE = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz"
+
+
+def seed_user_with_code(uid="alice", code=CODE):
+    seed_user(uid)
+    assert ok(update_user(uid, SCRIPT, {"mailToken": code}))
+
+
+def email_off(uid, code, value=True, as_uid=None, extra=None):
+    f = {"emailOff": value, "mailTokenUsed": code, **(extra or {})}
+    return update_user(uid, as_uid, f)
+
+
+def learned_by_link(row_id, code, as_uid=None, when="server", extra=None):
+    f = {"mailTokenUsed": code, **(extra or {})}
+    if when == "server":
+        return commit(f"assignments/{row_id}", as_uid, f, server_time=("doneAt",), exists=True,
+                      update_mask=list(f) + ["doneAt"])
+    return commit(f"assignments/{row_id}", as_uid, {**f, "doneAt": ts(when) if when else None}, exists=True,
+                  update_mask=list(f) + ["doneAt"])
+
+
+def test_email_link_unsubscribes_and_undoes_without_signing_in():
+    seed_user_with_code()
+    assert ok(email_off("alice", CODE))
+    assert ok(email_off("alice", CODE))                 # pressing twice is harmless
+    assert ok(email_off("alice", CODE, value=False))    # "Undo: email me again"
+
+
+def test_email_link_with_a_wrong_or_missing_code_is_denied():
+    seed_user_with_code()
+    assert denied(email_off("alice", OTHER_CODE))
+    assert denied(email_off("alice", ""))
+    assert denied(update_user("alice", None, {"emailOff": True}))
+    seed_user_with_code("bob", OTHER_CODE)
+    assert denied(email_off("alice", OTHER_CODE))       # bob's code does not open alice's record
+    assert denied(email_off("alice", OTHER_CODE, as_uid="bob"))
+
+
+def test_email_link_cannot_touch_a_person_who_has_no_code_yet():
+    seed_user("alice")
+    assert denied(email_off("alice", ""))
+    assert denied(email_off("alice", OTHER_CODE))
+    assert ok(update_user("alice", SCRIPT, {"mailToken": "short"}))
+    assert denied(email_off("alice", "short"))          # a code too short to be one of ours opens nothing
+
+
+@pytest.mark.parametrize("extra", [
+    {"minutesPerWeek": 0}, {"deleteRequested": True}, {"pausedAt": None}, {"mailToken": OTHER_CODE},
+    {"src": "x"}, {"lapses": 0}, {"lastLearnedWeek": 9},
+])
+def test_email_link_changes_nothing_but_email_off(extra):
+    seed_user_with_code()
+    assert denied(email_off("alice", CODE, extra=extra))
+
+
+def test_email_link_email_off_must_be_true_or_false():
+    seed_user_with_code()
+    assert denied(email_off("alice", CODE, value="yes"))
+    assert denied(email_off("alice", CODE, value=1))
+
+
+def test_email_link_does_not_let_anyone_read_or_create_or_delete_a_record():
+    seed_user_with_code()
+    assert denied(get_doc("users/alice", None))
+    assert denied(get_doc("users/alice", "bob"))
+    assert denied(commit("users/carol", None, {"emailOff": True, "mailTokenUsed": CODE}, exists=False))
+    assert denied(commit("users/alice", None, delete=True))
+
+
+def test_owner_still_cannot_change_their_own_code_or_email_flag_fields_the_old_way():
+    seed_user_with_code()
+    assert denied(update_user("alice", "alice", {"mailToken": OTHER_CODE, "minutesPerWeek": 10,
+                                                 "deleteRequested": False}))
+    assert ok(update_user("alice", "alice", {"minutesPerWeek": 15, "deleteRequested": False}))
+
+
+def test_email_link_marks_a_story_learned_once_without_signing_in():
+    seed_user_with_code()
+    seed_assignment()
+    assert ok(learned_by_link("1_alice_s1", CODE))
+    assert denied(learned_by_link("1_alice_s1", CODE))  # already learned: the link is spent
+    assert ok(set_done("1_alice_s1", "alice", None))    # the person can still untick it, signed in
+
+
+def test_email_link_learned_with_a_wrong_code_or_someone_elses_is_denied():
+    seed_user_with_code()
+    seed_user_with_code("bob", OTHER_CODE)
+    seed_assignment()
+    assert denied(learned_by_link("1_alice_s1", OTHER_CODE))
+    assert denied(learned_by_link("1_alice_s1", ""))
+    assert denied(learned_by_link("1_alice_s1", OTHER_CODE, as_uid="bob"))
+    assert denied(set_done("1_alice_s1", None))         # no code at all, signed out
+
+
+def test_email_link_learned_must_use_the_servers_clock_and_cannot_untick():
+    seed_user_with_code()
+    seed_assignment()
+    assert denied(learned_by_link("1_alice_s1", CODE, when="2020-01-01T00:00:00Z"))
+    seed_assignment("1_alice_s2", story="s2", done="2026-11-02T00:00:00Z")
+    assert denied(learned_by_link("1_alice_s2", CODE, when=None))
+
+
+@pytest.mark.parametrize("extra", [
+    {"uid": "bob"}, {"storyId": "s9"}, {"round": 2}, {"week": 5}, {"releasedAt": None},
+])
+def test_email_link_learned_changes_nothing_but_the_tick(extra):
+    seed_user_with_code()
+    seed_assignment()
+    code = commit("assignments/1_alice_s1", None, {"mailTokenUsed": CODE, **extra}, server_time=("doneAt",),
+                  exists=True, update_mask=["mailTokenUsed", *extra, "doneAt"])
+    # releasedAt: None is what is already there, so that one is not a change and may pass; the rest are denied
+    assert (ok(code) if extra == {"releasedAt": None} else denied(code))
+
+
+def test_email_link_cannot_tick_a_deleted_persons_row_or_a_person_with_no_code():
+    seed_assignment("1_deleted-abc_s1", uid="")
+    assert denied(learned_by_link("1_deleted-abc_s1", ""))
+    assert denied(learned_by_link("1_deleted-abc_s1", CODE))
+    seed_user("carol")
+    seed_assignment("1_carol_s1", uid="carol")
+    assert denied(learned_by_link("1_carol_s1", ""))
+    assert denied(learned_by_link("1_carol_s1", CODE))
+
+
+def test_email_link_does_not_let_anyone_read_rows():
+    seed_user_with_code()
+    seed_assignment()
+    assert denied(get_doc("assignments/1_alice_s1", None))
+    assert query_assignments(None, "alice") in (400, 403)

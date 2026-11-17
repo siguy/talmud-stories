@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#18345d">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Mark as learned · Stories of the Talmud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="signup.css?v=5">
+</head>
+<body>
+<header class="bar">
+  <a class="bar-title" href="/">Stories of the Talmud</a>
+</header>
+<!-- Opened by the "Mark as learned" link under a story in the weekly email. Nothing changes until the button is
+     pressed, because mail scanners open links on their own. Works without signing in (see email-links.js). -->
+<main>
+  <h1>Mark this story as learned?</h1>
+  <p id="lead">Press the button once you have learned it. It then counts toward the group total.</p>
+  <button type="button" class="su-btn" id="go">Mark as learned</button>
+  <p class="su-rowmsg" id="msg" role="status" tabindex="-1"></p>
+  <p class="su-links"><a id="read" href="/">Read the story</a> · <a href="/#/my">Open my stories</a></p>
+</main>
+<script src="config.js?v=5"></script>
+<script src="email-links.js?v=1"></script>
+<script>
+(function () {
+  var p = EmailLinks.params(true), go = document.getElementById("go"), msg = document.getElementById("msg"), lead = document.getElementById("lead");
+  var busy = false;
+  function say(text) { msg.textContent = text; msg.focus(); }
+  if (!p) { go.hidden = true; document.getElementById("read").hidden = true; lead.textContent = "This link is not complete. Please open your stories on the site instead."; return; }
+  document.getElementById("read").href = "/#/s/" + p.s;
+  go.onclick = function () {
+    if (busy) return;
+    busy = true; go.setAttribute("aria-disabled", "true");
+    EmailLinks.markLearned(p).then(function (ok) {
+      busy = false;
+      if (!ok) { go.removeAttribute("aria-disabled"); say("That did not work. The story may already be marked, or the link is out of date: open your stories to check."); return; }
+      go.hidden = true;
+      document.querySelector("h1").textContent = "Marked as learned";
+      lead.textContent = "Thank you. This story now counts toward the group total.";
+      say("Saved.");
+    }).catch(function () { busy = false; go.removeAttribute("aria-disabled"); say("No connection. Please try again."); });
+  };
+})();
+</script>
+</body>
+</html>

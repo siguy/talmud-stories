@@ -12,6 +12,12 @@ same key goes to Resend as its Idempotency-Key (Resend ignores a repeat of a key
   - Resend clearly refused it    the record is removed, so the next daily run tries again
   - no clear answer (timeout, server error)   the record stays: one missed email is better than two
 
+Links that work without signing in. Each person has a private code (users/<uid>.mailToken, made here the first
+time they are emailed). Every email carries it in two kinds of link: unsubscribe (the standard one-click header,
+plus a link in the footer to a confirm page) and "Mark as learned" under each story. firestore.rules lets a
+signed-out visitor holding that code switch emailOff or tick that person's story, and nothing else. A person
+with emailOff set is not emailed.
+
 Email is OFF unless RESEND_API_KEY is set, and a hand-out never depends on it: every failure here is counted,
 logged without names, and left for the next run.
 
@@ -30,6 +36,7 @@ import json
 import logging
 import math
 import os
+import secrets
 import time
 import urllib.error
 import urllib.request
@@ -112,6 +119,29 @@ def first_name(display_name):
     return parts[0] if parts else ""
 
 
+# ---------------------------------------------------------------- links that work without signing in
+
+def new_mail_token():
+    """A person's private code: 32 characters nobody can guess (letters, digits, - and _)."""
+    return secrets.token_urlsafe(24)
+
+
+def email_links(site_url, uid, token, week=None, story_ids=()):
+    """The no-sign-in links for one person's email.
+      header       what goes in List-Unsubscribe: the address a mail program POSTs to (site/api/unsubscribe.js)
+      unsubscribe  the confirm page a person opens from the footer (site/unsubscribe.html)
+      learned      {story id: the confirm page that ticks that story} (site/learned.html)"""
+    who = f"u={uid}&t={token}"
+    return {"header": f"{site_url}/api/unsubscribe?{who}",
+            "unsubscribe": f"{site_url}/unsubscribe.html?{who}",
+            "learned": {sid: f"{site_url}/learned.html?{who}&w={week}&s={sid}" for sid in story_ids}}
+
+
+def unsubscribe_headers(links):
+    """The two standard headers (RFC 8058) that put an Unsubscribe button in the mail program itself."""
+    return {"List-Unsubscribe": f"<{links['header']}>", "List-Unsubscribe-Post": "List-Unsubscribe=One-Click"}
+
+
 # ---------------------------------------------------------------- rendering
 
 def _esc(text):
@@ -145,7 +175,7 @@ def _button(label, url):
             '</td></tr></table>')
 
 
-def _card(story, url, minutes):
+def _card(story, url, minutes, learned_url=None):
     summary = (f'<div style="font-size:15px;line-height:1.45;color:{MUTED};margin:6px 0 10px 0;">'
                f'{_esc(story["summary"])}</div>') if story.get("summary") else '<div style="height:8px;"></div>'
     return (
@@ -156,7 +186,9 @@ def _card(story, url, minutes):
         f'<td style="font-family:{SERIF};font-weight:700;font-size:18px;color:#222222;">{_esc(ref_label(story))}</td>'
         f'<td align="right"><a href="{_esc(url)}" style="color:{NAVY};font-weight:600;font-size:15px;">Read</a></td>'
         f'</tr></table>{summary}'
-        f'<div style="font-size:13px;color:#888888;">about {minutes} min</div>'
+        f'<div style="font-size:13px;color:#888888;">about {minutes} min'
+        + (f' &nbsp;·&nbsp; <a href="{_esc(learned_url)}" style="color:{NAVY};">Mark as learned</a>'
+           if learned_url else '') + '</div>'
         '</td></tr></table>')
 
 
@@ -173,10 +205,21 @@ def _link(label, url):
     return f'<a href="{_esc(url)}" style="color:{MUTED};">{_esc(label)}</a>'
 
 
-def render_weekly(name, week, stories, open_older, learned, total, site_url, wpm):
+def _foot_links(my_url, links):
+    """The footer's links, as (label, url) pairs: change or stop on the site, and unsubscribe when we can."""
+    out = [("Change my minutes or stop my stories", my_url)]
+    if links:
+        out.append(("Unsubscribe from these emails", links["unsubscribe"]))
+    return out
+
+
+def render_weekly(name, week, stories, open_older, learned, total, site_url, wpm, links=None):
     """Returns (subject, html, text). `stories`: this week's story detail dicts, each with "id", in order.
-    `open_older`: how many stories from earlier weeks the person still has open."""
+    `open_older`: how many stories from earlier weeks the person still has open. `links`: email_links(...)
+    for this person, or None for an email without the no-sign-in links."""
     my_url = f"{site_url}/#/my"
+    learned_url = (links or {}).get("learned", {})
+    foot = _foot_links(my_url, links)
     minutes = [about_minutes(s["words"], wpm) for s in stories]
     count = "1 story" if len(stories) == 1 else f"{len(stories)} stories"
     intro = (f"Here {'is' if len(stories) == 1 else 'are'} your {'story' if len(stories) == 1 else 'stories'} "
@@ -192,32 +235,39 @@ def render_weekly(name, week, stories, open_older, learned, total, site_url, wpm
     subject = f"Your stories this week (week {week})"
 
     body = _greeting(name) + f'<p style="margin:0 0 24px 0;font-size:16px;line-height:1.5;">{_esc(intro)}</p>'
-    body += "".join(_card(s, f"{site_url}/#/s/{s['id']}", m) for s, m in zip(stories, minutes))
+    body += "".join(_card(s, f"{site_url}/#/s/{s['id']}", m, learned_url.get(s["id"]))
+                    for s, m in zip(stories, minutes))
     body += f'<div style="margin:12px 0 14px 0;">{_button("Open my stories", my_url)}</div>'
     if older:
         body += f'<p style="margin:0;font-size:14px;color:{MUTED};text-align:center;">{_esc(older)}</p>'
-    body += _footer([_esc(together)] * bool(together) + [_link("Change my minutes or stop my stories", my_url)])
+    body += _footer([_esc(together)] * bool(together) + [" &nbsp;·&nbsp; ".join(_link(*pair) for pair in foot)])
 
     text = [f"Hi {name}," if name else "Hello,", "", intro, ""]
     for s, m in zip(stories, minutes):
-        text += [f"{ref_label(s)} (about {m} min)", s.get("summary", ""), f"{site_url}/#/s/{s['id']}", ""]
+        text += [f"{ref_label(s)} (about {m} min)", s.get("summary", ""), f"Read: {site_url}/#/s/{s['id']}"]
+        if s["id"] in learned_url:
+            text.append(f"Mark as learned: {learned_url[s['id']]}")
+        text.append("")
     text += [f"Open my stories ({count}): {my_url}" if stories else f"Open my stories: {my_url}", ""]
     text += [older, ""] * bool(older)
-    text += [DEDICATION, together, f"Change my minutes or stop my stories: {my_url}"]
+    text += [DEDICATION, together] + [f"{label}: {url}" for label, url in foot]
     return subject, _page(body), "\n".join(line for line in text if line is not None)
 
 
-def render_still_with_us(name, site_url):
+def render_still_with_us(name, site_url, links=None):
     """The one email a person gets when the script pauses them (plan section 6)."""
     my_url = f"{site_url}/#/my"
+    foot = _foot_links(my_url, links)[1:]            # only the unsubscribe link, when there is one
     lines = ["We have not seen you mark a story as learned for a while, so we have paused your weekly stories "
              "and passed them to others.",
              "If you would like to carry on, open your stories and choose Resume. You will get new stories "
              "the following Sunday. If not, there is nothing to do: you will not hear from us again."]
     body = _greeting(name) + "".join(f'<p style="margin:0 0 16px 0;font-size:16px;line-height:1.5;">{_esc(p)}</p>'
                                      for p in lines)
-    body += f'<div style="margin:8px 0 0 0;">{_button("Open my stories", my_url)}</div>' + _footer([])
-    text = "\n\n".join([f"Hi {name}," if name else "Hello,"] + lines + [f"Open my stories: {my_url}", DEDICATION])
+    body += (f'<div style="margin:8px 0 0 0;">{_button("Open my stories", my_url)}</div>'
+             + _footer([_link(*pair) for pair in foot]))
+    text = "\n\n".join([f"Hi {name}," if name else "Hello,"] + lines + [f"Open my stories: {my_url}", DEDICATION]
+                       + [f"{label}: {url}" for label, url in foot])
     return "Still with us?", _page(body), text
 
 
@@ -285,9 +335,12 @@ class Mailer:
         self._post = post or (lambda payload, key: _http_post(settings.api_key, payload, key))
         self._sleep = sleep
 
-    def send(self, to, subject, html_body, text, key):
-        """Send, or raise SendError. `key` is the Idempotency-Key: Resend ignores a repeat for 24 hours."""
+    def send(self, to, subject, html_body, text, key, headers=None):
+        """Send, or raise SendError. `key` is the Idempotency-Key: Resend ignores a repeat for 24 hours.
+        `headers`: extra email headers (the unsubscribe pair)."""
         payload = {"from": self.settings.sender, "to": [to], "subject": subject, "html": html_body, "text": text}
+        if headers:
+            payload["headers"] = headers
         for _attempt in range(MAX_RATE_LIMIT_WAITS + 1):
             try:
                 status, body, headers = self._post(payload, key)
@@ -311,14 +364,14 @@ class Mailer:
         raise SendError("refused", "429 still rate limited")
 
 
-def send_once(store, mailer, key, to, subject, html_body, text, uid="", week=None):
+def send_once(store, mailer, key, to, subject, html_body, text, uid="", week=None, headers=None):
     """Send one email at most once ever. Returns "sent", "already", "refused", "quota" or "unknown".
     `uid` and `week` are stored on the sent/<key> record: uid so "delete my data" can find it, week so one
     small query lists who has had this week's email (None for emails that are not the weekly one)."""
     if not store.claim_sent(key, uid, week):
         return "already"
     try:
-        mailer.send(to, subject, html_body, text, key=f"septimus-{key}")
+        mailer.send(to, subject, html_body, text, key=f"septimus-{key}", headers=headers)
     except SendError as err:
         LOG.warning("an email was not sent: %s", err)
         if err.kind in ("refused", "quota"):
@@ -329,6 +382,15 @@ def send_once(store, mailer, key, to, subject, html_body, text, uid="", week=Non
 
 def _is_open(row):
     return not row.get("doneAt") and not row.get("releasedAt")
+
+
+def _mail_token(store, user):
+    """The person's private code, made and saved the first time it is needed. It never changes afterwards,
+    so the links in an old email keep working."""
+    if not user.get("mailToken"):
+        user["mailToken"] = new_mail_token()
+        store.update_user(user["uid"], {"mailToken": user["mailToken"]})
+    return user["mailToken"]
 
 
 def send_weekly_emails(store, mailer, week, rows, users, details, summary, total, wpm):
@@ -370,9 +432,12 @@ def send_weekly_emails(store, mailer, week, rows, users, details, summary, total
         if not stories and not older.get(uid):
             result["emailSkipped"] += 1
             continue
+        site = mailer.settings.site_url
+        links = email_links(site, uid, _mail_token(store, users_by_uid[uid]), week, [s["id"] for s in stories])
         subject, html_body, text = render_weekly(first_name(display), week, stories, older.get(uid, 0),
-                                                 summary.get("learned", 0), total, mailer.settings.site_url, wpm)
-        outcome = send_once(store, mailer, f"{week}_{uid}", address, subject, html_body, text, uid, week)
+                                                 summary.get("learned", 0), total, site, wpm, links)
+        outcome = send_once(store, mailer, f"{week}_{uid}", address, subject, html_body, text, uid, week,
+                            unsubscribe_headers(links))
         if outcome == "sent":
             result["emailSent"] += 1
         elif outcome == "unknown":
@@ -386,16 +451,22 @@ def send_weekly_emails(store, mailer, week, rows, users, details, summary, total
     return result
 
 
-def send_pause_emails(store, mailer, week, uids):
-    """One "still with us?" email to each person paused in this run. Tried once: no later run knows who they were."""
+def send_pause_emails(store, mailer, week, uids, users=()):
+    """One "still with us?" email to each person paused in this run. Tried once: no later run knows who they
+    were. Not sent to someone who has unsubscribed."""
     sent = 0
+    users_by_uid = {u["uid"]: u for u in users}
+    uids = [uid for uid in uids if not users_by_uid.get(uid, {}).get("emailOff")]
     contacts = store.contacts(list(uids)) if uids else {}
     for uid in uids:
         address, display = contacts.get(uid, ("", ""))
         if not address or not mailer.settings.may_email(address):
             continue
-        subject, html_body, text = render_still_with_us(first_name(display), mailer.settings.site_url)
-        sent += send_once(store, mailer, f"pause-{week}_{uid}", address, subject, html_body, text, uid) == "sent"
+        user = users_by_uid.get(uid)
+        links = email_links(mailer.settings.site_url, uid, _mail_token(store, user)) if user else None
+        subject, html_body, text = render_still_with_us(first_name(display), mailer.settings.site_url, links)
+        sent += send_once(store, mailer, f"pause-{week}_{uid}", address, subject, html_body, text, uid,
+                          headers=unsubscribe_headers(links) if links else None) == "sent"
     LOG.info("still-with-us emails: %d sent of %d people paused", sent, len(uids))
     return sent
 
@@ -432,12 +503,17 @@ def main(argv=None):
     details = load_story_details(args.data_dir)
     stories = [{**d, "id": sid} for sid, d in list(details.items())[:3]]
     total = round(len(details) / 100) * 100
+
+    def sample_links(site):      # a made-up person: the links show where they sit, but change nothing if pressed
+        return email_links(site, "sample-person", "sample-code-that-opens-nothing", 1, [s["id"] for s in stories])
+
     if args.test_send:
         settings, problem = Settings.from_env()
         if settings is None or not settings.counts_to:
             print("not sent: " + (problem or "RESEND_API_KEY and SEPTIMUS_COUNTS_TO must both be set"))
             return 1
-        subject, html_body, text = render_weekly("Simon", 1, stories, 1, 412, total, settings.site_url, 75)
+        subject, html_body, text = render_weekly("Simon", 1, stories, 1, 412, total, settings.site_url, 75,
+                                                 sample_links(settings.site_url))
         try:
             Mailer(settings).send(settings.counts_to, "[TEST] " + subject, html_body, text,
                                   key=f"septimus-test-{int(time.time())}")
@@ -448,7 +524,8 @@ def main(argv=None):
         return 0
     if not args.preview:
         ap.error("give --preview FILE or --test-send")
-    _subject, html_body, _text = render_weekly("Dana", 3, stories, 1, 412, total, args.site_url.rstrip("/"), 75)
+    site = args.site_url.rstrip("/")
+    _subject, html_body, _text = render_weekly("Dana", 3, stories, 1, 412, total, site, 75, sample_links(site))
     Path(args.preview).write_text(html_body)
     print(f"wrote {args.preview}")
     return 0

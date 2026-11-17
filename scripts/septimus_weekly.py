@@ -155,7 +155,7 @@ def _send_emails(store, mailer, today, week, config, handout, plan, rows, users,
         done = result.pop("emailDone")
         counts.update(result)
         if plan is not None:
-            counts["pauseEmails"] = E.send_pause_emails(store, mailer, week, plan.pause_uids)
+            counts["pauseEmails"] = E.send_pause_emails(store, mailer, week, plan.pause_uids, users)
         if done:
             store.mark_emails_done(week)
         if handout or result["emailSent"] or result["emailFailed"]:
@@ -405,7 +405,7 @@ class Store:
         return txn(self.db.transaction())
 
     def update_user(self, uid, fields):
-        """Script-only fields on the user record (lastLearnedWeek, lapses)."""
+        """Script-only fields on the user record (lastLearnedWeek, lapses, mailToken)."""
         self.db.collection("users").document(uid).update(fields)
 
     def set_paused(self, uid, value):

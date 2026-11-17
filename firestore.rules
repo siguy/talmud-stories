@@ -2,7 +2,8 @@ rules_version = '2';
 
 // Firestore access rules for the Septimus sign-up.
 // The weekly script uses the Admin SDK, which bypasses these rules entirely.
-// So these rules only govern what a signed-in person's browser may do.
+// So these rules only govern what a person's browser may do: signed in, or (two narrow cases, marked
+// "EMAIL LINK" below) signed out but holding the private code from that person's own weekly email.
 // Anything not matched below is denied.
 // Tested in the local emulator: tests/test_firestore_rules.py
 
@@ -29,7 +30,7 @@ service cloud.firestore {
 
       // Changing settings: only minutesPerWeek (0 = stop) and deleteRequested,
       // plus pausedAt, but only to clear it (resume after a pause): a person
-      // can never SET pausedAt. createdAt, src, everLearned and lapses (the
+      // can never SET pausedAt. createdAt, src, lastLearnedWeek, lapses and mailToken (the
       // script's own bookkeeping) can never be changed by the person.
       allow update: if request.auth != null && request.auth.uid == uid
         && request.resource.data.diff(resource.data).affectedKeys()
@@ -40,6 +41,17 @@ service cloud.firestore {
         && request.resource.data.minutesPerWeek >= 0
         && request.resource.data.minutesPerWeek <= 120
         && request.resource.data.deleteRequested is bool;
+
+      // EMAIL LINK: unsubscribe (or undo it) without signing in. Every weekly email carries the person's
+      // private code (mailToken, written only by the script). Whoever holds that code may switch emailOff
+      // on or off, and nothing else. The code used is written alongside (mailTokenUsed) because a rule can
+      // only check what is being written. A person with no code yet cannot be touched this way.
+      allow update: if request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['emailOff', 'mailTokenUsed'])
+        && resource.data.mailToken is string
+        && resource.data.mailToken.size() >= 20
+        && request.resource.data.mailTokenUsed == resource.data.mailToken
+        && request.resource.data.emailOff is bool;
     }
 
     // One row per person per hand-out story. A person can read only their own
@@ -56,6 +68,20 @@ service cloud.firestore {
              .hasOnly(['doneAt'])
         && (request.resource.data.doneAt == request.time
             || request.resource.data.doneAt == null);
+
+      // EMAIL LINK: "Mark as learned" without signing in. Whoever holds the private code of the person the
+      // row belongs to may tick it (server time), once. Never untick, never anything else, and never a row
+      // whose person has been deleted (its uid is empty, so there is no record to hold a code).
+      allow update: if resource.data.uid is string
+        && resource.data.uid != ''
+        && resource.data.doneAt == null
+        && request.resource.data.diff(resource.data).affectedKeys()
+             .hasOnly(['doneAt', 'mailTokenUsed'])
+        && request.resource.data.doneAt == request.time
+        && get(/databases/$(database)/documents/users/$(resource.data.uid)).data.mailToken is string
+        && get(/databases/$(database)/documents/users/$(resource.data.uid)).data.mailToken.size() >= 20
+        && request.resource.data.mailTokenUsed
+             == get(/databases/$(database)/documents/users/$(resource.data.uid)).data.mailToken;
     }
 
     // The public community counts. Anyone, even signed out, may read.

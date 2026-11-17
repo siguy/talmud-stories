@@ -339,7 +339,7 @@ def test_the_real_post_builds_the_request_resend_documents(monkeypatch):
 
 def test_test_send_goes_only_to_the_counts_address_and_prints_no_address(monkeypatch, capsys):
     sent = []
-    monkeypatch.setattr(E.Mailer, "send", lambda self, to, subject, html_body, text, key: sent.append((to, subject)))
+    monkeypatch.setattr(E.Mailer, "send", lambda self, to, subject, html_body, text, key, headers=None: sent.append((to, subject)))
     for name, value in (("RESEND_API_KEY", "re_x"), ("SEPTIMUS_EMAIL_FROM", "A <a@mail.example>"),
                         ("SEPTIMUS_SITE_URL", SITE), ("SEPTIMUS_COUNTS_TO", "simon@mail.example")):
         monkeypatch.setenv(name, value)
@@ -365,3 +365,69 @@ def test_a_week_with_nothing_new_still_gets_a_short_email(order, details):
     (mail,) = resend.to("alice@mail.example")
     assert "Nothing new this week: you have 1 story still open from earlier weeks." in mail["text"]
     assert f"{SITE}/#/my" in mail["html"] and "minutes of learning" not in mail["html"]
+
+
+# ---------------------------------------------------------------- links that work without signing in
+
+def test_every_weekly_email_carries_the_unsubscribe_headers_and_the_persons_own_links(order, details):
+    store, resend = two_people(), FakeResend()
+    go(store, SUNDAY, order, details, resend)
+    tokens = {uid: store.user_docs[uid]["mailToken"] for uid in ("alice", "bob")}
+    assert len(tokens["alice"]) >= 20 and tokens["alice"] != tokens["bob"]
+    for uid, token in tokens.items():
+        (mail,) = resend.to(f"{uid}@mail.example")
+        who = f"u={uid}&t={token}"
+        assert mail["headers"] == {"List-Unsubscribe": f"<{SITE}/api/unsubscribe?{who}>",
+                                   "List-Unsubscribe-Post": "List-Unsubscribe=One-Click"}
+        assert f"{SITE}/unsubscribe.html?u={uid}&amp;t={token}" in mail["html"]
+        assert f"Unsubscribe from these emails: {SITE}/unsubscribe.html?{who}" in mail["text"]
+        for r in (r for r in store.rows.values() if r["uid"] == uid):
+            assert f"Mark as learned: {SITE}/learned.html?{who}&w=1&s={r['storyId']}" in mail["text"]
+        other = tokens["bob" if uid == "alice" else "alice"]
+        assert other not in mail["html"] and other not in mail["text"]
+    (counts_mail,) = resend.to("simon@mail.example")
+    assert "headers" not in counts_mail and not any(t in counts_mail["text"] for t in tokens.values())
+
+
+def test_the_private_code_is_made_once_and_kept(order, details):
+    """The links in an old email must keep working, so the code never changes."""
+    store, resend = two_people(), FakeResend()
+    go(store, SUNDAY, order, details, resend)
+    first = store.user_docs["alice"]["mailToken"]
+    go(store, SUNDAY + timedelta(weeks=1), order, details, resend)
+    assert store.user_docs["alice"]["mailToken"] == first
+    assert [f for uid, f in store.user_updates if uid == "alice" and "mailToken" in f] == [{"mailToken": first}]
+    assert first in resend.to("alice@mail.example")[1]["text"]
+
+
+def test_the_private_code_never_reaches_a_log(order, details, caplog, capsys):
+    store, resend = two_people(), FakeResend()
+    with caplog.at_level(logging.DEBUG):
+        go(store, SUNDAY, order, details, resend)
+    assert store.user_docs["alice"]["mailToken"] not in caplog.text + capsys.readouterr().out
+
+
+def test_an_unsubscribed_person_gets_no_still_with_us_email():
+    store = MailStore([person("zed", 5, 1, emailOff=True), person("yael", 5, 2)])
+    mailer = E.Mailer(SETTINGS, post=(resend := FakeResend()), sleep=lambda s: None)
+    assert E.send_pause_emails(store, mailer, 7, ["zed", "yael"], store.users()) == 1
+    (mail,) = resend.delivered
+    assert mail["to"] == ["yael@mail.example"] and "List-Unsubscribe" in mail["headers"]
+    assert "Unsubscribe from these emails" in mail["text"]
+
+
+def test_the_unsubscribe_function_names_the_same_projects_and_staging_host_as_config_js():
+    function = (ROOT / "site" / "api" / "unsubscribe.js").read_text()
+    site_config = (ROOT / "site" / "config.js").read_text()
+    for value in ('"septimus-stories"', '"septimus-stories-staging"', r"/^talmud-stories-staging[a-z0-9-]*\.vercel\.app$/"):
+        assert value in function and value in site_config, value
+
+
+def test_unsubscribe_function_node_tests():
+    import shutil
+    import subprocess
+    if not shutil.which("node"):
+        pytest.skip("node not installed")
+    r = subprocess.run(["node", "--test", str(ROOT / "tests/js/unsubscribe.test.mjs")], capture_output=True,
+                       text=True, timeout=120)
+    assert r.returncode == 0, r.stdout[-4000:] + r.stderr[-2000:]
