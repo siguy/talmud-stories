@@ -433,6 +433,35 @@ real stories with the wrong edges. The old numbers are kept next to the new ones
 nothing silently changes meaning — that's a habit worth keeping: **when you fix how a
 number is computed, publish the new one beside the old, don't overwrite it.**
 
+## The Unsubscribe Link With No Password (2026-11-16)
+
+The weekly sign-up email needed two links that work for someone who is not signed in: "unsubscribe" and "mark
+this story as learned". The obvious way is a small server that holds a master key to the database and does the
+change for you. That works, but now a master key lives in one more place, and that place has to be deployed,
+watched and kept alive.
+
+We did it the way a coat check does. Every person gets a ticket: 32 random characters, made once, printed in
+their emails and nowhere else. The database's own rule book (`firestore.rules`) says: a visitor holding the
+right ticket may do exactly two things for that person, switch their emails off or on, and tick one of their
+stories as learned. No reading, nothing else. The "server" (`site/api/unsubscribe.js`) is a few lines that pass
+the ticket along; it has no key of its own to steal.
+
+**The bug worth remembering.** After pressing "Mark as learned" the button was supposed to vanish. The code set
+`hidden` on it, the test read the page text and passed, and the button was still on screen. The site's own
+stylesheet says buttons are `display: flex`, and a stylesheet rule beats the plain `hidden` attribute. Reading
+the page's text told me nothing about what a person sees. Lesson: when the claim is "it disappears", look at
+the screen.
+
+**The thing nobody had noticed.** The 44 tests that guard the database rules had been skipping on this Mac,
+silently, because there was no Java to run the test database. Every run said "passed". A skipped test is not a
+passed test; it is an unanswered question. The repo already had a switch for this (`REQUIRE_RULES_TESTS=1`
+turns a skip into a failure), which is the habit to copy: make "could not check" loud.
+
+**What good engineers think about here.** Give each piece the least power that does its job (the function
+cannot do anything a stranger with the ticket could not). Make a click that changes something need a second,
+deliberate press, because mail scanners follow links on their own. And write down what a secret opens before
+you hand it out.
+
 ## What's Next
 
 1. **Score Kiddushin** once Jeff reviews. If 0.85+ composite, the detector generalizes and we can scale to more tractates.

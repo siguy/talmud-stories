@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#18345d">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Unsubscribe · Stories of the Talmud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=3">
+<link rel="stylesheet" href="signup.css?v=5">
+</head>
+<body>
+<header class="bar">
+  <a class="bar-title" href="/">Stories of the Talmud</a>
+</header>
+<!-- Opened by the "Unsubscribe from these emails" link in the weekly email. Nothing changes until the button is
+     pressed, because mail scanners open links on their own. Works without signing in (see email-links.js). -->
+<main>
+  <h1>Stop the weekly emails?</h1>
+  <p id="lead">You will stop getting the weekly email. Your stories stay yours: you can still read them and mark them learned on the site.</p>
+  <button type="button" class="su-btn" id="go">Stop the emails</button>
+  <p class="su-rowmsg" id="msg" role="status" tabindex="-1"></p>
+  <p class="su-links"><a href="/#/my">Open my stories</a></p>
+  <p class="su-muted su-small su-center">To stop taking part altogether, open your stories and choose "Stop my stories".</p>
+</main>
+<script src="config.js?v=5"></script>
+<script src="email-links.js?v=1"></script>
+<script>
+(function () {
+  var p = EmailLinks.params(false), go = document.getElementById("go"), msg = document.getElementById("msg"), lead = document.getElementById("lead");
+  var off = false, busy = false;
+  function say(text) { msg.textContent = text; msg.focus(); }
+  if (!p) { go.style.display = "none"; lead.textContent = "This link is not complete. Please use the link at the bottom of your latest email."; return; }
+  go.onclick = function () {
+    if (busy) return;
+    busy = true; go.setAttribute("aria-disabled", "true");
+    EmailLinks.setEmailOff(p, !off).then(function (ok) {
+      busy = false; go.removeAttribute("aria-disabled");
+      if (!ok) { say("That did not work. The link may be out of date: please use the one in your latest email."); return; }
+      off = !off;
+      document.querySelector("h1").textContent = off ? "The weekly emails are stopped" : "The weekly emails are back on";
+      lead.textContent = off ? "You will get no more weekly emails. Your stories are still yours on the site." : "You will get the weekly email again from next Sunday.";
+      go.textContent = off ? "Undo: email me again" : "Stop the emails";
+      go.className = off ? "su-btn su-btn-outline" : "su-btn";
+      say("Saved.");
+    }).catch(function () { busy = false; go.removeAttribute("aria-disabled"); say("No connection. Please try again."); });
+  };
+})();
+</script>
+</body>
+</html>

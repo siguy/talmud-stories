@@ -416,6 +416,62 @@ def test_set_paused_clears_lapses_and_update_user_writes_only_what_it_is_given(s
 
 # ---------------------------------------------------------------- 7 and 8: the command line
 
+# ---------------------------------------------------------------- the email step (plan step e)
+
+def test_sent_records_are_claimed_once_listed_by_week_and_can_be_given_back(store):
+    assert store.claim_sent("3_pa", "pa", 3) is True
+    assert store.claim_sent("3_pa", "pa", 3) is False               # the second claim loses: no double send
+    assert store.claim_sent("pause-3_pb", "pb") is True             # not a weekly email: no week on it
+    assert store.claim_sent("4_pa", "pa", 4) is True
+    assert store.sent_keys(3) == {"3_pa"} and store.sent_keys(4) == {"4_pa"} and store.sent_keys(9) == set()
+    store.unclaim_sent("3_pa")
+    assert store.sent_keys(3) == set() and store.claim_sent("3_pa", "pa", 3) is True
+
+
+def test_contacts_come_from_the_sign_in_system_and_skip_people_who_cannot_be_emailed(store):
+    seed_person(store, "pa", 30, 1)
+    fb_auth.update_user("pa", display_name="Pa Cohen")
+    fb_auth.create_user(uid="noemail")
+    fb_auth.create_user(uid="off", email="off@example.com", disabled=True)
+    many = [fb_auth.create_user(uid=f"m{i}", email=f"m{i}@example.com").uid for i in range(105)]   # over one call's 100
+    found = store.contacts(["pa", "noemail", "off", "ghost"] + many)
+    assert found["pa"] == ("pa@example.com", "Pa Cohen")
+    assert "noemail" not in found and "off" not in found and "ghost" not in found
+    assert all(found[uid] == (f"{uid}@example.com", "") for uid in many)
+
+
+def test_a_week_with_email_on_sends_once_writes_codes_and_marks_the_week_done(store, order):
+    import septimus_email as E
+    uids, sent = seed3(store), []
+
+    def post(payload, key):
+        sent.append((payload["to"][0], key, payload.get("headers")))
+        return 200, {"id": "x"}, {}
+
+    mailer = E.Mailer(E.Settings("re_test", "S <s@mail.example>", "https://site.example"), post=post)
+    details = E.load_story_details(FIX)
+    first = go(store, WEEK1, order, mailer=mailer, story_details=details)
+    again = go(store, WEEK1, order, mailer=mailer, story_details=details)
+    assert first["emailSent"] == 3 and again["emailSent"] == 0 and len(sent) == 3
+    assert {to for to, _, _ in sent} == {f"{u}@example.com" for u in uids}
+    users = dump(store, "users")["users"]
+    for to, key, headers in sent:
+        uid = to.split("@")[0]
+        assert key == f"septimus-1_{uid}" and len(users[uid]["mailToken"]) >= 20
+        assert headers["List-Unsubscribe"] == f"<https://site.example/api/unsubscribe?u={uid}&t={users[uid]['mailToken']}>"
+    runs = dump(store, "runs")["runs"]
+    assert runs["1"]["emailsDone"] is True and runs["1"]["finishedAt"]
+    assert set(dump(store, "sent")["sent"]) == {f"1_{u}" for u in uids}
+
+
+def test_delete_my_data_also_removes_the_persons_email_records(store, order):
+    seed3(store)
+    go(store, WEEK1, order)
+    assert store.claim_sent("1_pa", "pa", 1) and store.claim_sent("pause-1_pa", "pa") and store.claim_sent("1_pb", "pb", 1)
+    store.delete_person("pa")
+    assert set(dump(store, "sent")["sent"]) == {"1_pb"}
+
+
 def _cli_env(**extra):
     env = {k: v for k, v in os.environ.items()
            if k not in ("FIREBASE_SERVICE_ACCOUNT", "GOOGLE_APPLICATION_CREDENTIALS",
