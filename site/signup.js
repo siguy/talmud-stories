@@ -707,10 +707,54 @@
     withIndex(t, function (idx, st) {
       var names = idx.tractates.filter(function (x) { return x.reviewed; }).map(function (x) { return x.name; });
       var list = names.length > 1 ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1] : names.join("");
+      var other = idx.tractates.filter(function (x) { return !x.reviewed; }).length;
+      function p(text) { return el("p", { text: text }); }
+      function li(lead, text) { return el("li", {}, [el("strong", { text: lead }), " " + text]); }
+      function ext(text, href) { return el("a", { href: href, text: text, target: "_blank", rel: "noopener" }); }
       show([
         el("h1", { text: "How the stories were chosen" }),
-        el("p", { text: "A story here is a passage of the Babylonian Talmud that tells of something that happened: people, an event, and how it turned out." }),
-        el("p", { text: "The stories were found by software. In " + list + " they were then checked by Prof. Jeff Rubenstein of New York University. The other tractates are marked “not yet reviewed”: some passages there may not be stories, or may start or end in the wrong place." }),
+        el("h2", { text: "What this is" }),
+        p("The Babylonian Talmud is mostly legal argument, but stories are scattered through it: rabbis travelling, quarrelling, getting things wrong, being kind. No index says where they are. This site gathers them: " + commas(st.stories) + " stories from all " + st.tractates + " tractates, in Hebrew and English."),
+        el("h2", { text: "What counts as a story" }),
+        p("We follow rules set by Prof. Jeffrey Rubenstein, a scholar of these stories (more about him below). In short:"),
+        el("ul", { "class": "su-list" }, [
+          li("Something happened.", "A story tells of an event, even a legendary one. “If a man steals a cow…” is a legal case. “A certain man stole a cow…” may be a story."),
+          li("There is action, and something changes.", "Talk alone is not a story, however sharp the exchange. In his words, a story needs “at least two actions and change”."),
+          li("A bare report is not enough.", "“Rabbi Akiva once did such-and-such” tells us what he did. A story goes somewhere."),
+          li("It is about the sages and their world.", "Retellings of events from the Bible are left out. They are stories, but of a different kind."),
+          li("It is told in the Talmud’s own discussion.", "A story that appears only in the Mishnah printed on the page is left out, unless the Talmud itself retells it."),
+          li("Only clear cases.", "Where a scholar could reasonably say “maybe”, the passage is left off this site.")
+        ]),
+        p("A story begins with the line that introduces it (“Rabbi X said in the name of Rabbi Y…”) and ends where the telling ends. The legal discussion that follows is left out where we could separate it."),
+        el("h2", { text: "How they were found" }),
+        el("ol", { "class": "su-list" }, [
+          el("li", { text: "The text and translation come from Sefaria (William Davidson Edition)." }),
+          el("li", { text: "Software, an AI language model, read every page and marked the passages that look like stories. It worked from a written rulebook built from Prof. Rubenstein’s rulings." }),
+          el("li", { text: "It then looked beside every story it found, because the Talmud often tells two or three similar stories in a row." }),
+          el("li", { text: "Each tractate was read twice, independently. Only passages marked as clear stories both times are shown." }),
+          el("li", { text: "A second AI model checked for passages outside the rules above." }),
+          el("li", { text: "Every story was then re-read for where it starts and ends. 110 were trimmed, extended or joined to a neighbour." })
+        ]),
+        p("The “Background” note under a story was drafted with AI from the passage itself and passed automatic checks before being shown. It can still be wrong."),
+        el("h2", { text: "What a scholar has checked" }),
+        p("In " + list + ", Prof. Rubenstein went through what the software found, passage by passage: Is this a story? Does it start and end in the right place? Is it one story or two? In those three tractates only passages he accepted, or that are on his own story lists, are shown, and his answers became the rulebook the software works from."),
+        p("The other " + other + " tractates are marked “not yet reviewed”. No scholar has gone through them."),
+        el("h2", { text: "How good is it" }),
+        el("ul", { "class": "su-list" }, [
+          li("Stories are missing.", "Because only clear cases are shown, real stories have been left out, probably several hundred across the Talmud."),
+          li("A few things here are not stories,", "or start or end in the wrong place. When we checked a sample of 60, 54 were clearly stories.")
+        ]),
+        p("If you spot a mistake, use “Report a problem” under any story. Reports are read."),
+        el("h2", { text: "Prof. Jeffrey Rubenstein" }),
+        el("p", {}, ["Jeffrey L. Rubenstein is the Skirball Professor of Talmud and Rabbinic Literature at New York University, where he has taught since 1993. His research is on the stories of the Babylonian Talmud. His books include ",
+          el("em", { text: "Talmudic Stories: Narrative Art, Composition, and Culture" }), ", ", el("em", { text: "Rabbinic Stories" }), ", ",
+          el("em", { text: "The Culture of the Babylonian Talmud" }), ", ", el("em", { text: "Stories of the Babylonian Talmud" }), " and ",
+          el("em", { text: "The Land of Truth: Talmud Tales, Timeless Teachings" }), "."]),
+        p("He advises this project. He has not reviewed every story on the site."),
+        el("h2", { text: "Who made this" }),
+        el("p", {}, ["Simon Brief built this site. I am not a Talmud scholar or a professional programmer. I set out to find every story in the Talmud and make them easy to read, with a scholar keeping the work honest. More about the project: ",
+          ext("simonbrief.com/talmud-stories", "https://simonbrief.com/talmud-stories"), "."]),
+        el("p", {}, ["Text and translation: ", ext("Sefaria", "https://www.sefaria.org"), ". The AI that reads the pages: Google Gemini. The second AI, which also helped build the site: Anthropic Claude."]),
         el("p", { text: listLine(idx, st) }),
         back()
       ]);
