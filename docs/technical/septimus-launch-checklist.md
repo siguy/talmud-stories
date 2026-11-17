@@ -42,10 +42,14 @@ Main is merged into all five sign-up branches; staging runs the new list.
 
 ## 4. Still to build
 
-- [ ] **Step e, the weekly email** (being built in a separate session, on its own branch cut from
-      `septimus/signup-flow`; it adds a module and a small hook in `scripts/septimus_weekly.py` and the workflow)**:** "Your stories this week", one-click unsubscribe, a link that marks a story
-      learned without signing in, the "still with us?" email for paused people.
-- [ ] **The weekly counts email to Simon** (the alarm if a week is missed).
+- [x] **Step e, the weekly email** (merged 2026-11-16, pull request #105; notes:
+      [`signup-e-email-2026-11-15.md`](signup-e-email-2026-11-15.md)): "Your stories this week", a short "nothing new"
+      email, one-click unsubscribe, a link that marks a story learned without signing in, the "still with us?" email
+      for paused people. Tested with one real send to Simon and, on staging, the unsubscribe and mark-learned clicks.
+      **Not yet done:** a full weekly run on staging with email on (Actions → Septimus weekly → Run workflow, with
+      "staging" and "send_email" ticked and "dry_run" unticked; it can only email the counts address).
+- [x] **The weekly counts email to Simon** (the alarm if a week is missed): built with step e; sent after each
+      hand-out to the address in the secret `SEPTIMUS_COUNTS_TO`.
 - [ ] Script: remove a sign-up record whose Google account no longer exists (found in the d review).
 - [ ] Script: delete everyone's personal data six months after the yahrzeit.
 - [ ] About Joe Septimus page: put in Daniel's text.
@@ -92,8 +96,15 @@ databases: staging's accounts are test accounts and stay there; real people sign
 - [ ] Put the start date (a Sunday) in `site/config.js`; freeze the story list as list v1; deploy.
 - [ ] Create the live service-account key; store it as the GitHub secret `FIREBASE_SERVICE_ACCOUNT`; delete the
       downloaded file.
-- [ ] Merge the email work (branch `septimus/signup-e-email`) and **deploy its `firestore.rules` to the live project**
-      (it adds two openings for the email's unsubscribe and mark-learned links; staging already has them).
+- [x] Merge the email work (done 2026-11-16, pull request #105).
+- [ ] **Deploy `firestore.rules` to the live project** (`firebase deploy --only firestore:rules --project
+      septimus-stories`). The merge did not do this. The rules add two openings for the email's unsubscribe and
+      mark-learned links; until they are live, those links are refused on the real site. Staging already has them.
+- [ ] Set the repository variable `SEPTIMUS_SITE_URL` to the real site's address (the email's links are built
+      from it). Already set: `SEPTIMUS_EMAIL_FROM`, `SEPTIMUS_SITE_URL_STAGING`, and the secrets `RESEND_API_KEY`
+      and `SEPTIMUS_COUNTS_TO`.
+- [ ] Resend: move to the paid plan before the first Sunday with more than 100 people (the free plan stops at
+      100 emails a day; anyone over the limit is emailed by the next daily run instead).
 - [ ] Run the job once by hand as a dry run (Actions → Septimus weekly → Run workflow).
 - [ ] Set the repository variable `SEPTIMUS_WEEKLY_ENABLED` to `true`. The first Sunday run hands out and emails.
 
